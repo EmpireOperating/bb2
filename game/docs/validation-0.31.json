@@ -1,0 +1,125 @@
+{
+  "release": "0.31",
+  "base_revision": 33,
+  "engine": "4.4.1",
+  "checks": 4461,
+  "failures": 0,
+  "suites": [
+    {
+      "suite": "month_campaigns",
+      "checks": 2004,
+      "failures": 0,
+      "evidence": "16 companies, eight seeds, two unchanged cautious policies; actual travel, upkeep, battles, purchases, losses and endings"
+    },
+    {
+      "suite": "living_integration",
+      "checks": 104,
+      "failures": 0,
+      "evidence": "Merged rosters, midnight recovery/upkeep, atomic rejection, original 0.30 and separate-preview save continuation"
+    },
+    {
+      "suite": "bandits",
+      "checks": 585,
+      "failures": 0,
+      "evidence": "Strength decisions, scouting, persistent casualties, repeat encounters, corruption and six supplied month-long world simulations"
+    },
+    {
+      "suite": "bandit_edges",
+      "checks": 52,
+      "failures": 0,
+      "evidence": "Visibility, grace, recovery, abandoned cargo, protection, three real camp wins and explicit voluntary camp withdrawal"
+    },
+    {
+      "suite": "traffic",
+      "checks": 599,
+      "failures": 0,
+      "evidence": "Physical raids, hauling, rescue, evidence, delivery, six supplied world simulations and exact roundtrips"
+    },
+    {
+      "suite": "traffic_edges",
+      "checks": 20,
+      "failures": 0,
+      "evidence": "Camp/patrol release, interrupted rescue, frame subdivision and single-owner freight timing"
+    },
+    {
+      "suite": "campaign_progression",
+      "checks": 262,
+      "failures": 0,
+      "evidence": "0.30 prices, grades, counts, guarded delivery, reoccupation and original 0.29 saves"
+    },
+    {
+      "suite": "merged_maps_compat",
+      "checks": 150,
+      "failures": 0,
+      "evidence": "Original 0.28 and standalone-map saves and combat continuation"
+    },
+    {
+      "suite": "inventory",
+      "checks": 31,
+      "failures": 0,
+      "evidence": "Four-AP swaps, Quick Hands, Bags and Belts, load/refill and live inventory saves"
+    },
+    {
+      "suite": "recovery",
+      "checks": 21,
+      "failures": 0,
+      "evidence": "Partial hours, tools, shortages, medicine, temple treatment, scars and repair queues"
+    },
+    {
+      "suite": "ammunition",
+      "checks": 291,
+      "failures": 0,
+      "evidence": "Ammunition conservation, 12 fresh battles and nine historical continuations"
+    },
+    {
+      "suite": "equipment_economy",
+      "checks": 269,
+      "failures": 0,
+      "evidence": "Retained catalogue and prior economy; trades, repairs, 15 fresh fights and old companies"
+    },
+    {
+      "suite": "opening_native",
+      "checks": 26,
+      "failures": 0,
+      "evidence": "Actual new company, fourth hire, camp victory, inspection, first mail, recovery, discovery and save/load"
+    },
+    {
+      "suite": "band_native",
+      "checks": 18,
+      "failures": 0,
+      "evidence": "Actual visible-band pursuit, flight, catch, tactical victory, permanent party defeat and F5/F9"
+    },
+    {
+      "suite": "retreat_native",
+      "checks": 10,
+      "failures": 0,
+      "evidence": "Actual legal combat kills one raider; UI withdrawal retains survivor recovery, casualty and zero bounty"
+    },
+    {
+      "suite": "trade_native",
+      "checks": 19,
+      "failures": 0,
+      "evidence": "Native natural raid, intimidation release, delivery, unanswered raid, wreck inspection and physical follow order"
+    }
+  ],
+  "month_policies": [
+    {
+      "policy": "balanced",
+      "companies": 8,
+      "successes": 7,
+      "contracts": 62,
+      "battles": 24,
+      "deaths": 25,
+      "replacements": 20
+    },
+    {
+      "policy": "lean",
+      "companies": 8,
+      "successes": 6,
+      "contracts": 51,
+      "battles": 24,
+      "deaths": 20,
+      "replacements": 9
+    }
+  ]
+}

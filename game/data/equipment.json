@@ -1,0 +1,694 @@
+{
+  "sword": {
+    "name": "Arming sword",
+    "slot": "weapon",
+    "weapon": "sword",
+    "durability": 0,
+    "price": 65
+  },
+  "spear": {
+    "name": "Boar spear",
+    "slot": "weapon",
+    "weapon": "spear",
+    "durability": 0,
+    "price": 60
+  },
+  "axe": {
+    "name": "Bearded axe",
+    "slot": "weapon",
+    "weapon": "axe",
+    "durability": 0,
+    "price": 80
+  },
+  "bow": {
+    "name": "Ash longbow",
+    "slot": "weapon",
+    "weapon": "bow",
+    "durability": 0,
+    "price": 90
+  },
+  "leather": {
+    "name": "Stitched leather",
+    "slot": "body",
+    "durability": 55,
+    "group": "body",
+    "layer": "outer",
+    "weight": 5,
+    "color": "795b40",
+    "shape": "leather",
+    "price": 65
+  },
+  "mail": {
+    "name": "Riveted mail",
+    "slot": "body",
+    "durability": 95,
+    "group": "body",
+    "layer": "mail",
+    "weight": 9,
+    "color": "a3aaa0",
+    "shape": "mail",
+    "price": 95
+  },
+  "heavy_mail": {
+    "name": "Reinforced mail",
+    "slot": "body",
+    "durability": 140,
+    "group": "body",
+    "layer": "mail",
+    "weight": 15,
+    "color": "8e9693",
+    "shape": "mail_long",
+    "price": 155
+  },
+  "linen": {
+    "name": "Quilted linen",
+    "slot": "under",
+    "durability": 30,
+    "group": "body",
+    "layer": "base",
+    "weight": 3,
+    "color": "b39a71",
+    "shape": "quilt",
+    "price": 24
+  },
+  "gambeson": {
+    "name": "Padded gambeson",
+    "slot": "under",
+    "durability": 45,
+    "group": "body",
+    "layer": "base",
+    "weight": 6,
+    "color": "896c45",
+    "shape": "quilt",
+    "price": 48
+  },
+  "cap": {
+    "name": "Iron cap",
+    "slot": "head",
+    "durability": 70,
+    "group": "head",
+    "layer": "shell",
+    "weight": 4,
+    "color": "afb4a5",
+    "shape": "cap",
+    "price": 40
+  },
+  "nasal": {
+    "name": "Nasal helm",
+    "slot": "head",
+    "durability": 110,
+    "group": "head",
+    "layer": "shell",
+    "weight": 6,
+    "color": "aeb1a7",
+    "shape": "nasal",
+    "price": 66
+  },
+  "shield": {
+    "name": "Heater shield",
+    "slot": "shield",
+    "durability": 40,
+    "price": 45
+  },
+  "body_kit": {
+    "name": "Body assembly",
+    "slot": "body",
+    "durability": 0,
+    "assembly": true
+  },
+  "head_kit": {
+    "name": "Helmet assembly",
+    "slot": "head",
+    "durability": 0,
+    "assembly": true
+  },
+  "light_quilt": {
+    "name": "Light blue quilting",
+    "slot": "component",
+    "durability": 22,
+    "group": "body",
+    "layer": "base",
+    "weight": 2,
+    "color": "617f8a",
+    "shape": "quilt",
+    "price": 22
+  },
+  "red_gambeson": {
+    "name": "Russet gambeson",
+    "slot": "component",
+    "durability": 38,
+    "group": "body",
+    "layer": "base",
+    "weight": 5,
+    "color": "945b48",
+    "shape": "quilt",
+    "price": 40
+  },
+  "green_jack": {
+    "name": "Green padded jack",
+    "slot": "component",
+    "durability": 32,
+    "group": "body",
+    "layer": "base",
+    "weight": 4,
+    "color": "607459",
+    "shape": "quilt",
+    "price": 32
+  },
+  "short_mail": {
+    "name": "Short mail shirt",
+    "slot": "component",
+    "durability": 70,
+    "group": "body",
+    "layer": "mail",
+    "weight": 6,
+    "color": "aeb6b0",
+    "shape": "mail_short",
+    "price": 72
+  },
+  "long_mail": {
+    "name": "Long sleeved hauberk",
+    "slot": "component",
+    "durability": 120,
+    "group": "body",
+    "layer": "mail",
+    "weight": 12,
+    "color": "899490",
+    "shape": "mail_long",
+    "price": 128
+  },
+  "breastplate": {
+    "name": "Plain breastplate",
+    "slot": "component",
+    "durability": 100,
+    "group": "body",
+    "layer": "outer",
+    "weight": 13,
+    "color": "a3b0af",
+    "shape": "plate",
+    "price": 135
+  },
+  "brigandine": {
+    "name": "Red brigandine",
+    "slot": "component",
+    "durability": 80,
+    "group": "body",
+    "layer": "outer",
+    "weight": 10,
+    "color": "8b4e42",
+    "shape": "brigandine",
+    "price": 108
+  },
+  "scale_vest": {
+    "name": "Bronze scale vest",
+    "slot": "component",
+    "durability": 80,
+    "group": "body",
+    "layer": "outer",
+    "weight": 12,
+    "color": "9d8659",
+    "shape": "scale",
+    "price": 112
+  },
+  "patched_plate": {
+    "name": "Patched iron plates",
+    "slot": "component",
+    "durability": 58,
+    "group": "body",
+    "layer": "outer",
+    "weight": 12,
+    "color": "777c78",
+    "shape": "patched",
+    "price": 70
+  },
+  "shoulders": {
+    "name": "Iron shoulder guards",
+    "slot": "component",
+    "durability": 22,
+    "group": "body",
+    "layer": "reinforce",
+    "weight": 4,
+    "color": "9ba6a2",
+    "shape": "shoulders",
+    "price": 43
+  },
+  "collar": {
+    "name": "Reinforced collar",
+    "slot": "component",
+    "durability": 16,
+    "group": "body",
+    "layer": "reinforce",
+    "weight": 3,
+    "color": "899791",
+    "shape": "collar",
+    "price": 30
+  },
+  "blue_tabard": {
+    "name": "Blue company tabard",
+    "slot": "component",
+    "durability": 0,
+    "group": "body",
+    "layer": "cloth",
+    "weight": 0,
+    "color": "436e8b",
+    "shape": "tabard",
+    "price": 12
+  },
+  "red_surcoat": {
+    "name": "Faded red surcoat",
+    "slot": "component",
+    "durability": 0,
+    "group": "body",
+    "layer": "cloth",
+    "weight": 0,
+    "color": "944f43",
+    "shape": "surcoat",
+    "price": 12
+  },
+  "sash": {
+    "name": "Ochre sash",
+    "slot": "component",
+    "durability": 0,
+    "group": "body",
+    "layer": "cloth",
+    "weight": 0,
+    "color": "b99b55",
+    "shape": "sash",
+    "price": 9
+  },
+  "forest_cloak": {
+    "name": "Forest travelling cloak",
+    "slot": "component",
+    "durability": 0,
+    "group": "body",
+    "layer": "cloak",
+    "weight": 1,
+    "color": "496451",
+    "shape": "cloak",
+    "price": 18
+  },
+  "red_cape": {
+    "name": "Short crimson cape",
+    "slot": "component",
+    "durability": 0,
+    "group": "body",
+    "layer": "cloak",
+    "weight": 1,
+    "color": "813e3b",
+    "shape": "cape",
+    "price": 18
+  },
+  "fur_mantle": {
+    "name": "Grey fur mantle",
+    "slot": "component",
+    "durability": 8,
+    "group": "body",
+    "layer": "cloak",
+    "weight": 3,
+    "color": "989383",
+    "shape": "fur",
+    "price": 28
+  },
+  "arming_cap": {
+    "name": "Padded arming cap",
+    "slot": "component",
+    "durability": 10,
+    "group": "head",
+    "layer": "padding",
+    "weight": 1,
+    "color": "b6a582",
+    "shape": "liner",
+    "price": 14
+  },
+  "padded_hood": {
+    "name": "Padded hood",
+    "slot": "component",
+    "durability": 16,
+    "group": "head",
+    "layer": "padding",
+    "weight": 2,
+    "color": "91795a",
+    "shape": "hood",
+    "price": 22
+  },
+  "mail_coif": {
+    "name": "Mail coif",
+    "slot": "component",
+    "durability": 24,
+    "group": "head",
+    "layer": "mail",
+    "weight": 3,
+    "color": "929d98",
+    "shape": "coif",
+    "price": 32
+  },
+  "mail_curtain": {
+    "name": "Mail neck curtain",
+    "slot": "component",
+    "durability": 16,
+    "group": "head",
+    "layer": "mail",
+    "weight": 2,
+    "color": "a8b0a8",
+    "shape": "curtain",
+    "price": 24
+  },
+  "kettle": {
+    "name": "Kettle helmet",
+    "slot": "component",
+    "durability": 100,
+    "group": "head",
+    "layer": "shell",
+    "weight": 5,
+    "color": "9ca89f",
+    "shape": "kettle",
+    "price": 59
+  },
+  "bascinet": {
+    "name": "Bascinet shell",
+    "slot": "component",
+    "durability": 135,
+    "group": "head",
+    "layer": "shell",
+    "weight": 7,
+    "color": "aab6b3",
+    "shape": "bascinet",
+    "price": 82
+  },
+  "visor": {
+    "name": "Hinged steel visor",
+    "slot": "component",
+    "durability": 24,
+    "group": "head",
+    "layer": "face",
+    "weight": 4,
+    "color": "9aa9a8",
+    "shape": "visor",
+    "price": 42,
+    "requires": [
+      "bascinet"
+    ]
+  },
+  "cheek_guards": {
+    "name": "Iron cheek guards",
+    "slot": "component",
+    "durability": 14,
+    "group": "head",
+    "layer": "face",
+    "weight": 2,
+    "color": "9ca7a0",
+    "shape": "cheeks",
+    "price": 24,
+    "requires": [
+      "cap",
+      "nasal",
+      "bascinet"
+    ]
+  },
+  "red_plume": {
+    "name": "Red horsehair plume",
+    "slot": "component",
+    "durability": 0,
+    "group": "head",
+    "layer": "decor",
+    "weight": 0,
+    "color": "a6493e",
+    "shape": "plume",
+    "price": 14,
+    "needs_shell": true
+  },
+  "blue_wrap": {
+    "name": "Blue cloth wrap",
+    "slot": "component",
+    "durability": 0,
+    "group": "head",
+    "layer": "decor",
+    "weight": 0,
+    "color": "507e9b",
+    "shape": "wrap",
+    "price": 9
+  },
+  "crest": {
+    "name": "Brass ridge crest",
+    "slot": "component",
+    "durability": 0,
+    "group": "head",
+    "layer": "decor",
+    "weight": 1,
+    "color": "b99c5b",
+    "shape": "crest",
+    "price": 20,
+    "needs_shell": true
+  },
+  "mace": {
+    "name": "Flanged mace",
+    "slot": "weapon",
+    "weapon": "mace",
+    "durability": 0,
+    "price": 85
+  },
+  "hammer": {
+    "name": "War hammer",
+    "slot": "weapon",
+    "weapon": "hammer",
+    "durability": 0,
+    "price": 110
+  },
+  "dagger": {
+    "name": "Rondel dagger",
+    "slot": "weapon",
+    "weapon": "dagger",
+    "durability": 0,
+    "price": 35
+  },
+  "polearm": {
+    "name": "Billhook",
+    "slot": "weapon",
+    "weapon": "polearm",
+    "durability": 0,
+    "price": 100
+  },
+  "crossbow": {
+    "name": "Light crossbow",
+    "slot": "weapon",
+    "weapon": "crossbow",
+    "durability": 0,
+    "price": 115
+  },
+  "arrows": {
+    "name": "Field quiver",
+    "slot": "ammo",
+    "durability": 12,
+    "price": 12,
+    "ammo": "arrows",
+    "description": "Quiver and arrows: 12 arrows. Standard bow damage and armour penetration."
+  },
+  "bodkin_quiver": {
+    "name": "Bodkin quiver",
+    "slot": "ammo",
+    "durability": 8,
+    "price": 20,
+    "ammo": "arrows",
+    "description": "Quiver and arrows: 8 arrows. Compatible bow shots gain +15 percentage points armour penetration (maximum 100%); no raw damage bonus."
+  },
+  "deep_quiver": {
+    "name": "Deep quiver",
+    "slot": "ammo",
+    "durability": 18,
+    "price": 18,
+    "ammo": "arrows",
+    "description": "Quiver and arrows: 18 arrows. Compatible bow shots deal 90% regular and armour damage (10% less), applied once before armour resolution."
+  },
+  "bolts": {
+    "name": "Bolt case",
+    "slot": "ammo",
+    "durability": 8,
+    "price": 16,
+    "ammo": "bolts"
+  },
+  "shortsword": {
+    "name": "Short sword",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "shortsword",
+    "price": 38
+  },
+  "falchion": {
+    "name": "Falchion",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "falchion",
+    "price": 92
+  },
+  "greatsword": {
+    "name": "Greatsword",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "greatsword",
+    "price": 210
+  },
+  "militia_spear": {
+    "name": "Light militia spear",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "militia_spear",
+    "price": 28
+  },
+  "heavy_spear": {
+    "name": "Heavy spear",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "heavy_spear",
+    "price": 105
+  },
+  "hatchet": {
+    "name": "Belt hatchet",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "hatchet",
+    "price": 32
+  },
+  "greataxe": {
+    "name": "Two-handed axe",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "greataxe",
+    "price": 200
+  },
+  "club": {
+    "name": "Ironbound club",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "club",
+    "price": 24
+  },
+  "maul": {
+    "name": "Two-handed maul",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "maul",
+    "price": 225
+  },
+  "knife": {
+    "name": "Belt knife",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "knife",
+    "price": 16
+  },
+  "glaive": {
+    "name": "Long glaive",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "glaive",
+    "price": 185
+  },
+  "shortbow": {
+    "name": "Hunting shortbow",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "shortbow",
+    "price": 42
+  },
+  "warbow": {
+    "name": "Heavy warbow",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "warbow",
+    "price": 195
+  },
+  "heavy_crossbow": {
+    "name": "Heavy crossbow",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "heavy_crossbow",
+    "price": 220
+  },
+  "javelins": {
+    "name": "Javelin bundle",
+    "slot": "weapon",
+    "weapon": "javelins",
+    "durability": 5,
+    "price": 85
+  },
+  "throwing_axes": {
+    "name": "Throwing axe bundle",
+    "slot": "weapon",
+    "weapon": "throwing_axes",
+    "durability": 5,
+    "price": 95
+  },
+  "bolas": {
+    "name": "Bolas bundle",
+    "slot": "weapon",
+    "weapon": "bolas",
+    "durability": 5,
+    "price": 55
+  },
+  "tunic": {
+    "name": "Wool tunic",
+    "slot": "component",
+    "durability": 12,
+    "group": "body",
+    "layer": "base",
+    "weight": 1,
+    "price": 10,
+    "shape": "quilt",
+    "color": "807157",
+    "opening_item": true
+  },
+  "jerkin": {
+    "name": "Leather jerkin",
+    "slot": "component",
+    "durability": 30,
+    "group": "body",
+    "layer": "outer",
+    "weight": 3,
+    "price": 30,
+    "shape": "leather",
+    "color": "725039",
+    "opening_item": true
+  },
+  "felt_cap": {
+    "name": "Thick felt cap",
+    "slot": "component",
+    "durability": 12,
+    "group": "head",
+    "layer": "padding",
+    "weight": 1,
+    "price": 10,
+    "shape": "hood",
+    "color": "736b57",
+    "opening_item": true
+  },
+  "simple_helm": {
+    "name": "Simple iron helmet",
+    "slot": "component",
+    "durability": 35,
+    "group": "head",
+    "layer": "shell",
+    "weight": 3,
+    "price": 25,
+    "shape": "cap",
+    "color": "868c82",
+    "opening_item": true
+  },
+  "buckler": {
+    "name": "Wooden buckler",
+    "slot": "shield",
+    "durability": 16,
+    "price": 15,
+    "melee_defense": 8,
+    "ranged_defense": 8,
+    "opening_item": true
+  },
+  "round_shield": {
+    "name": "Wooden round shield",
+    "slot": "shield",
+    "durability": 24,
+    "price": 28,
+    "melee_defense": 12,
+    "ranged_defense": 12,
+    "opening_item": true
+  }
+}

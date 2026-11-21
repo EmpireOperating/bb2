@@ -1,0 +1,577 @@
+[
+  {
+    "alive": 2,
+    "arrears": 8,
+    "attempted": false,
+    "battles": [
+      {
+        "day": 19,
+        "deaths": 0,
+        "enemies": "Raider scouts",
+        "field": 2,
+        "kind": "scout",
+        "map": "ridge",
+        "perks": {
+          "0": [],
+          "1": [
+            "fast_adaptation"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 6,
+        "commands_by_initial_weapon": {
+          "crossbow/basic": 2,
+          "crossbow/special": 2,
+          "spear/basic": 8
+        }
+      },
+      {
+        "day": 20,
+        "deaths": 1,
+        "enemies": "Veteran deserters",
+        "field": 2,
+        "kind": "escort",
+        "map": "ridge",
+        "perks": {
+          "0": [
+            "colossus"
+          ],
+          "1": [
+            "fast_adaptation"
+          ]
+        },
+        "result": "defeat",
+        "retreat": true,
+        "rounds": 4,
+        "commands_by_initial_weapon": {
+          "crossbow/basic": 2,
+          "crossbow/special": 1,
+          "spear/basic": 4
+        }
+      }
+    ],
+    "crowns": 0,
+    "day": 31,
+    "deaths": 6,
+    "end_body": 122,
+    "end_levels": 3,
+    "ending": "The month ends. The company falls short.",
+    "food": 11,
+    "hires": [
+      {
+        "day": 22,
+        "id": "dunmere_recruit_3_0",
+        "price": 119
+      }
+    ],
+    "key": "planned-mixed-cautious-395",
+    "max_field": 2,
+    "named_day": 0,
+    "planned": true,
+    "planning": [
+      {
+        "alive": 2,
+        "crowns": 121,
+        "day": 12,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 121,
+        "day": 12,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 137,
+        "day": 14,
+        "from": "stonecross",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 100,
+        "day": 14,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 105,
+        "day": 15,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 105,
+        "day": 15,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 105,
+        "day": 15,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 105,
+        "day": 15,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 98,
+        "day": 16,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 98,
+        "day": 16,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 98,
+        "day": 16,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 98,
+        "day": 16,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 141,
+        "day": 18,
+        "from": "stonecross",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 149,
+        "day": 18,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 34,
+        "day": 24,
+        "from": "dunmere",
+        "work_town": "dunmere"
+      },
+      {
+        "alive": 2,
+        "crowns": 28,
+        "day": 25,
+        "from": "dunmere",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 2,
+        "crowns": 22,
+        "day": 26,
+        "from": "ashwick",
+        "work_town": "dunmere"
+      },
+      {
+        "alive": 2,
+        "crowns": 22,
+        "day": 26,
+        "from": "dunmere",
+        "work_town": "dunmere"
+      }
+    ],
+    "purchases": [
+      {
+        "day": 11,
+        "definition": "round_shield",
+        "price": 24,
+        "soldier": 5
+      },
+      {
+        "day": 14,
+        "definition": "crossbow",
+        "price": 113,
+        "soldier": 5
+      },
+      {
+        "day": 14,
+        "definition": "bolts",
+        "price": 16,
+        "soldier": 5
+      },
+      {
+        "day": 14,
+        "definition": "spear",
+        "price": 48,
+        "soldier": 6
+      },
+      {
+        "day": 18,
+        "definition": "round_shield",
+        "price": 28,
+        "soldier": 6
+      },
+      {
+        "day": 18,
+        "definition": "leather",
+        "price": 80,
+        "soldier": 6
+      },
+      {
+        "day": 22,
+        "definition": "round_shield",
+        "price": 28,
+        "soldier": 7
+      },
+      {
+        "day": 22,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 7
+      }
+    ],
+    "recoveries": 13,
+    "seed": 395.0,
+    "source_policy": "cautious",
+    "start_alive": 2.0,
+    "start_body": 145.0,
+    "start_crowns": 149,
+    "start_day": 11,
+    "style": "mixed",
+    "tools": 20,
+    "wins": 5
+  },
+  {
+    "alive": 3,
+    "arrears": 0,
+    "attempted": true,
+    "battles": [
+      {
+        "day": 22,
+        "deaths": 3,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [],
+          "2": [],
+          "3": [
+            "fast_adaptation",
+            "pathfinder"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 11,
+        "commands_by_initial_weapon": {
+          "crossbow/basic": 1,
+          "hammer/basic": 4,
+          "spear/basic": 7,
+          "sword/basic": 7,
+          "sword/special": 1
+        }
+      }
+    ],
+    "crowns": 25,
+    "day": 31,
+    "deaths": 4,
+    "end_body": 207,
+    "end_levels": 6,
+    "ending": "The Ashen Company endures.",
+    "food": 26,
+    "hires": [
+      {
+        "day": 11,
+        "id": "stonecross_recruit_1_0",
+        "price": 113
+      },
+      {
+        "day": 11,
+        "id": "stonecross_recruit_1_1",
+        "price": 132
+      },
+      {
+        "day": 25,
+        "id": "stonecross_recruit_3_1",
+        "price": 128
+      },
+      {
+        "day": 25,
+        "id": "stonecross_recruit_3_0",
+        "price": 134
+      }
+    ],
+    "key": "planned-mixed-rush-395",
+    "max_field": 4,
+    "named_day": 0,
+    "planned": true,
+    "planning": [
+      {
+        "alive": 4,
+        "crowns": 187,
+        "day": 12,
+        "from": "stonecross",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 287,
+        "day": 14,
+        "from": "stonecross",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 133,
+        "day": 15,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 134,
+        "day": 15,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 140,
+        "day": 15,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 128,
+        "day": 16,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 128,
+        "day": 16,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 128,
+        "day": 16,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 128,
+        "day": 16,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 181,
+        "day": 17,
+        "from": "stonecross",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 119,
+        "day": 18,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 127,
+        "day": 18,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 4,
+        "crowns": 74,
+        "day": 20,
+        "from": "dunmere",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 1,
+        "crowns": 155,
+        "day": 24,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 3,
+        "crowns": 109,
+        "day": 25,
+        "from": "stonecross",
+        "work_town": "ashwick"
+      },
+      {
+        "alive": 3,
+        "crowns": 100,
+        "day": 26,
+        "from": "ashwick",
+        "work_town": "ashwick"
+      }
+    ],
+    "purchases": [
+      {
+        "day": 11,
+        "definition": "crossbow",
+        "price": 113,
+        "soldier": 1
+      },
+      {
+        "day": 11,
+        "definition": "bolts",
+        "price": 16,
+        "soldier": 1
+      },
+      {
+        "day": 11,
+        "definition": "round_shield",
+        "price": 27,
+        "soldier": 0
+      },
+      {
+        "day": 11,
+        "definition": "hammer",
+        "price": 108,
+        "soldier": 4
+      },
+      {
+        "day": 11,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 1
+      },
+      {
+        "day": 11,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 1
+      },
+      {
+        "day": 11,
+        "definition": "short_mail",
+        "price": 157,
+        "soldier": 0
+      },
+      {
+        "day": 11,
+        "definition": "leather",
+        "price": 78,
+        "soldier": 0
+      },
+      {
+        "day": 11,
+        "definition": "nasal",
+        "price": 118,
+        "soldier": 0
+      },
+      {
+        "day": 13,
+        "definition": "round_shield",
+        "price": 22,
+        "soldier": 4
+      },
+      {
+        "day": 15,
+        "definition": "spear",
+        "price": 48,
+        "soldier": 3
+      },
+      {
+        "day": 15,
+        "definition": "round_shield",
+        "price": 22,
+        "soldier": 3
+      },
+      {
+        "day": 15,
+        "definition": "sword",
+        "price": 52,
+        "soldier": 0
+      },
+      {
+        "day": 15,
+        "definition": "simple_helm",
+        "price": 20,
+        "soldier": 4
+      },
+      {
+        "day": 15,
+        "definition": "linen",
+        "price": 19,
+        "soldier": 3
+      },
+      {
+        "day": 17,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 4
+      },
+      {
+        "day": 17,
+        "definition": "leather",
+        "price": 82,
+        "soldier": 1
+      },
+      {
+        "day": 18,
+        "definition": "leather",
+        "price": 64,
+        "soldier": 3
+      },
+      {
+        "day": 25,
+        "definition": "round_shield",
+        "price": 29,
+        "soldier": 6
+      },
+      {
+        "day": 25,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 5
+      }
+    ],
+    "recoveries": 8,
+    "seed": 395.0,
+    "source_policy": "rush",
+    "start_alive": 2.0,
+    "start_body": 112.0,
+    "start_crowns": 1080,
+    "start_day": 11,
+    "style": "mixed",
+    "tools": 22,
+    "wins": 7
+  }
+]

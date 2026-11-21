@@ -1,0 +1,620 @@
+{
+  "candidate_budget": 1,
+  "condition": {
+    "body_head_present_at_zero": true,
+    "broken_shield_omitted": true,
+    "formula": "RGB * (1 - worn*0.64 + worn*0.64*[54,49,39]/255), nearest integer; alpha unchanged. Offline rounding, not engine equality.",
+    "skin_never_tinted": true,
+    "zero_maximum_untinted": true
+  },
+  "draw_order": [
+    "foundation: own original; choose right keep only short mainhand, left keep only spear",
+    "body10: corrected march_mail",
+    "head50: unchanged iron_cap",
+    "weapon60: complete whole original source",
+    "hand70: matching conditional hand only, no wear tint",
+    "shield80: accepted face over unchanged original left hand; forbidden with spear"
+  ],
+  "frame": {
+    "body_size": [
+      256,
+      320
+    ],
+    "normalization": {
+      "inverse_affine": [
+        2.7932203389830508,
+        0,
+        -81.03220338983049,
+        0,
+        2.7932203389830508,
+        -0.8983050847458043
+      ],
+      "resampler": "Pillow BICUBIC",
+      "scale": 0.3580097087378641,
+      "translation": [
+        29.010315533980574,
+        0.3216019417475877
+      ],
+      "uniform": true
+    },
+    "note": "Exact predecessor combined frame and normalization retained; new upright spear fits it without extra headroom or body scaling.",
+    "old_source_padding": [
+      96,
+      0
+    ],
+    "runtime_base_origin": [
+      96,
+      64
+    ],
+    "runtime_canvas": [
+      416,
+      416
+    ],
+    "runtime_stance_ground": [
+      224,
+      374
+    ],
+    "source_base_origin": [
+      192,
+      160
+    ],
+    "source_canvas": [
+      896,
+      1100
+    ],
+    "source_stance_ground": [
+      468.5,
+      1025
+    ],
+    "tactical_rule": "actual90/120px painted stature: resize expanded runtime by h/296; original frozen bbox height296, not frame416"
+  },
+  "generation_calls": 1,
+  "hand_routes": {
+    "accepted_short": {
+      "activation_keys": [
+        "blade",
+        "axe",
+        "mace"
+      ],
+      "keep_mask": "layers/hand-context-keep.png",
+      "physical_hand": "anatomical right / viewer-left lowered",
+      "preservation": "exact copied layer/mask PNG bytes and all saved accepted compositions",
+      "registered_layer": "layers/closed-hand.png",
+      "source": "inputs/accepted/build-a/recipe.json",
+      "z": 70
+    },
+    "spear": {
+      "activation_keys": [
+        "spear"
+      ],
+      "blend": "rows374..380 alpha=min(new,original)*((y-373)/8); exact original kept underneath; original rows<=373 exact",
+      "context_box": [
+        424,
+        374,
+        492,
+        448
+      ],
+      "grip_anchor_base": [
+        455,
+        407
+      ],
+      "inverse_affine": [
+        8.572265625,
+        0,
+        -3230.51953125,
+        0,
+        8.572265625,
+        -2801.90625
+      ],
+      "keep_mask": "layers/spear-hand-context-keep.png",
+      "keep_suppression_box": [
+        424,
+        381,
+        492,
+        448
+      ],
+      "key_formula": "alpha=round(clip((70-(min(G,B)-R))/80,0,1)*255); RGB unchanged",
+      "physical_hand": "anatomical left / viewer-right raised",
+      "primary_crop": [
+        390,
+        340,
+        510,
+        460
+      ],
+      "primary_placement": [
+        92,
+        92
+      ],
+      "primary_scale": 7,
+      "raw_source": "raw/raised-left-hand-provider.png",
+      "registered_layer": "layers/spear-hand.png",
+      "source_layer": "layers/spear-hand-source.png",
+      "suppressed_original_alpha_pixels": 3001,
+      "z": 70
+    }
+  },
+  "items": {
+    "axe": {
+      "clockwise_degrees": 140,
+      "definition_id": "hm_trial_v1:additional_fighting_axe",
+      "hands_required": 1,
+      "integer_translation": [
+        -1,
+        -13
+      ],
+      "maximum": 0,
+      "method": "exact prior whole-item layer plus integer translation and frame padding; no second resample",
+      "physical_hand": "right",
+      "reason": "Genuine same-person curled fingers/thumb enclose complete unchanged approved handle; parent static review required.",
+      "scale": 0.2,
+      "source": "inputs/axe-extracted.png",
+      "source_grip": [
+        300,
+        850
+      ],
+      "source_sha256": "c503da494b0d8b12e7df0f4c19957a2c2c210c01b0a0f9ceed3944abbe816432",
+      "status": "FIT",
+      "target_grip_base": [
+        126,
+        490
+      ],
+      "viewer_side": "left"
+    },
+    "blade": {
+      "clockwise_degrees": 0,
+      "definition_id": "hm_trial_v1:old24-gatewarden_blade",
+      "hands_required": 1,
+      "integer_translation": [
+        -1,
+        -13
+      ],
+      "maximum": 0,
+      "method": "exact prior whole-item layer plus integer translation and frame padding; no second resample",
+      "physical_hand": "right",
+      "reason": "Genuine same-person curled fingers/thumb enclose complete unchanged approved handle; parent static review required.",
+      "scale": 2.3,
+      "source": "inputs/blade-source.png",
+      "source_grip": [
+        77,
+        166
+      ],
+      "source_sha256": "4b489a9aab76f3babff7b2ebea7b77fb5ca8664aa1f394e8c32b021d72adbfe2",
+      "status": "FIT",
+      "target_grip_base": [
+        126,
+        490
+      ],
+      "viewer_side": "left"
+    },
+    "mace": {
+      "clockwise_degrees": 0,
+      "definition_id": "hm_trial_v1:old24-shieldbearer_heavy",
+      "hands_required": 1,
+      "integer_translation": [
+        -1,
+        -13
+      ],
+      "maximum": 0,
+      "method": "exact prior whole-item layer plus integer translation and frame padding; no second resample",
+      "physical_hand": "right",
+      "reason": "Genuine same-person curled fingers/thumb enclose complete unchanged approved handle; parent static review required.",
+      "scale": 2.5,
+      "source": "inputs/mace-source.png",
+      "source_grip": [
+        77,
+        167
+      ],
+      "source_sha256": "37214c8994cf8776ddb752804adfd44d48c60589122231522eb2ca3ff352d810",
+      "status": "FIT",
+      "target_grip_base": [
+        126,
+        490
+      ],
+      "viewer_side": "left"
+    },
+    "spear": {
+      "clockwise_degrees": 8,
+      "definition_id": "hm_trial_v1:old24-ward_spear",
+      "hands_required": 2,
+      "inverse_affine": [
+        0.300081232951991,
+        0.04217366695759559,
+        -8.065026884894905,
+        -0.04217366695759559,
+        0.300081232951991,
+        22.140303437785406
+      ],
+      "maximum": 0,
+      "method": "single whole-source similarity; source anchor retained; no repaint",
+      "physical_hand": "left",
+      "reason": "Worker static FIT candidate: complete authentic upright spear has credible closed own-left contact and butt above unchanged ground; parent visual acceptance remains required. Mechanically 2H/no offhand.",
+      "scale": 3.3,
+      "source": "inputs/spear-source.png",
+      "source_grip": [
+        210,
+        165
+      ],
+      "source_sha256": "e588bf78be909791ade469ba36b2f38c09332913ef3526e0a784c9f1eac36c67",
+      "static_carry": "Raised anatomical-left one-hand resting carry; mechanically 2H, never offhand. No second grip or animation implied.",
+      "status": "FIT",
+      "target_grip_base": [
+        455,
+        407
+      ],
+      "target_grip_frame": [
+        647,
+        567
+      ],
+      "viewer_side": "right"
+    }
+  },
+  "layers": {
+    "axe": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "frame_origin": [
+        0,
+        0
+      ],
+      "mode": "RGBA",
+      "path": "layers/axe.png",
+      "sha256": "cd6ce2ddd9a0fc74d9520e1c92be7a8c5e68b063b4378566aedd09438e0b53e7",
+      "space": "frame"
+    },
+    "blade": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "frame_origin": [
+        0,
+        0
+      ],
+      "mode": "RGBA",
+      "path": "layers/blade.png",
+      "sha256": "c9225796706d727e01d267ac5cb818a6daac98982c5114e5aac842fadced62d9",
+      "space": "frame"
+    },
+    "cape-front": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "frame_origin": [
+        0,
+        0
+      ],
+      "mode": "RGBA",
+      "path": "layers/waxed-cape-front.png",
+      "sha256": "8c36e0d354288e852c549e26896465d7441e249aceee0411a7f82320fe519528",
+      "space": "frame"
+    },
+    "cape-rear": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "frame_origin": [
+        0,
+        0
+      ],
+      "mode": "RGBA",
+      "path": "layers/waxed-cape-rear.png",
+      "sha256": "8eeb7786085d262e65af155484ae7a94882e82b00a7dd6e39f29980055fd81fb",
+      "space": "frame"
+    },
+    "closed-hand": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "frame_origin": [
+        192,
+        160
+      ],
+      "mode": "RGBA",
+      "path": "layers/closed-hand.png",
+      "sha256": "d95870ef54364ebfd664913c8924f1169583b9a04b043a2201883c9041718f11",
+      "space": "base"
+    },
+    "estoc": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "frame_origin": [
+        0,
+        0
+      ],
+      "mode": "RGBA",
+      "path": "layers/quarry-estoc.png",
+      "sha256": "675c5e14f47d64acafa86cbc796de0596c13f601b13bd33668cc5b359f05b4f3",
+      "space": "frame"
+    },
+    "foundation": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "frame_origin": [
+        192,
+        160
+      ],
+      "mode": "RGBA",
+      "path": "layers/foundation.png",
+      "sha256": "3edc9e7b5e44e3b64b61f6c39f63d1e0e9832355e308b457063d14464ac3f345",
+      "space": "base"
+    },
+    "hand-context-keep": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "frame_origin": [
+        192,
+        160
+      ],
+      "mode": "L",
+      "path": "layers/hand-context-keep.png",
+      "sha256": "bdaebdf58755f5725bf922353d2f2695e9ee0cf07462bac58a05bf3813894359",
+      "space": "base"
+    },
+    "iron_cap": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "frame_origin": [
+        192,
+        160
+      ],
+      "mode": "RGBA",
+      "path": "layers/iron_cap.png",
+      "sha256": "1e3988309676b075e671043a76e0f4bd03509bd88ff98a68953fcde58d7f6b68",
+      "space": "base"
+    },
+    "mace": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "frame_origin": [
+        0,
+        0
+      ],
+      "mode": "RGBA",
+      "path": "layers/mace.png",
+      "sha256": "c127dd86682beeef96a7441eac45d38139a559ce46f1640ffa29739d62c45bb7",
+      "space": "frame"
+    },
+    "march_mail": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "frame_origin": [
+        192,
+        160
+      ],
+      "mode": "RGBA",
+      "path": "layers/march_mail.png",
+      "sha256": "11952702cef73d183bc24d10944ba5590fcaecdba0ca20ba9ed78131f8a081a2",
+      "space": "base"
+    },
+    "shield": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "frame_origin": [
+        0,
+        0
+      ],
+      "mode": "RGBA",
+      "path": "layers/shield.png",
+      "sha256": "30b62b9ba4ef05907c39287de47a5047450bf3b35777bc7acd1a01c372327eb5",
+      "space": "frame"
+    },
+    "spear": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "frame_origin": [
+        0,
+        0
+      ],
+      "mode": "RGBA",
+      "path": "layers/spear.png",
+      "sha256": "64181f4d2ecd69c5560d25ca624b1817c353fee47840802714cb4f669f4914fd",
+      "space": "frame"
+    },
+    "spear-hand": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "frame_origin": [
+        192,
+        160
+      ],
+      "mode": "RGBA",
+      "path": "layers/spear-hand.png",
+      "sha256": "189e555aeb952864d530ad418bf5e91917e77ff6607abaf4c462399765325bf0",
+      "space": "base"
+    },
+    "spear-hand-context-keep": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "frame_origin": [
+        192,
+        160
+      ],
+      "mode": "L",
+      "path": "layers/spear-hand-context-keep.png",
+      "sha256": "d2d763fed0f89f7664518612629003ea5f0a795f5e1c3daf4a17906e31a16903",
+      "space": "base"
+    },
+    "spear-hand-source": {
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "frame_origin": [
+        0,
+        0
+      ],
+      "mode": "RGBA",
+      "path": "layers/spear-hand-source.png",
+      "sha256": "a35e4096acc8df1d1a1f3036cef9253a49110b3bd1e26ef4dcb677fead8aaee4",
+      "space": "raw_provider"
+    }
+  },
+  "native_accepted": false,
+  "parent_acceptance": {
+    "predecessor_recipe_sha256": "4a825c9d4dc562f081e2b2f90d18e08be13d137cdfe3687502065d668b99df63",
+    "predecessor_seal_sha256": "841859c01ccee837942b0f185f07553abe3aaaef280f8a3659a789d54b3c16cf",
+    "record": "inputs/PARENT-RAIDER-CLOSED-GRIP-REVIEW.json"
+  },
+  "raw_sha256": "72acbc7cb0e86c65176e9f7e5c2ef6e05982d2e0cde1d02640f27f1c064b0cbb",
+  "request_id": "700cf915-169c-4a3c-b5aa-c9f1e357ffea",
+  "routes": {
+    "axe": {
+      "conditional_hand": "accepted_short",
+      "definition_id": "hm_trial_v1:additional_fighting_axe",
+      "layer": "layers/axe.png",
+      "maximum": 0,
+      "offhand_allowed": true,
+      "owner": "mainhand",
+      "physical_hand": "right",
+      "status": "FIT",
+      "z": 60
+    },
+    "blade": {
+      "conditional_hand": "accepted_short",
+      "definition_id": "hm_trial_v1:old24-gatewarden_blade",
+      "layer": "layers/blade.png",
+      "maximum": 0,
+      "offhand_allowed": true,
+      "owner": "mainhand",
+      "physical_hand": "right",
+      "status": "FIT",
+      "z": 60
+    },
+    "body": {
+      "definition_id": "march_mail",
+      "layer": "layers/march_mail.png",
+      "maximum": 100,
+      "owner": "body",
+      "z": 10
+    },
+    "cape": {
+      "definition_id": "hm_trial_v1:cloaks-04-waxed-cape",
+      "layers": [
+        {
+          "layer": "layers/waxed-cape-rear.png",
+          "offset": [
+            0,
+            0
+          ],
+          "tint": true,
+          "z": -20
+        },
+        {
+          "layer": "layers/waxed-cape-front.png",
+          "offset": [
+            0,
+            0
+          ],
+          "tint": true,
+          "z": 20
+        }
+      ],
+      "maximum": 12,
+      "owner": "cloak"
+    },
+    "estoc": {
+      "conditional_hand": "accepted_short",
+      "definition_id": "hm_trial_v1:old24-quarry_estoc",
+      "layer": "layers/quarry-estoc.png",
+      "maximum": 0,
+      "offhand_allowed": true,
+      "owner": "mainhand",
+      "physical_hand": "right",
+      "status": "USER_STATIC_ACCEPTED",
+      "z": 60
+    },
+    "head": {
+      "definition_id": "iron_cap",
+      "layer": "layers/iron_cap.png",
+      "maximum": 50,
+      "owner": "head",
+      "z": 50
+    },
+    "mace": {
+      "conditional_hand": "accepted_short",
+      "definition_id": "hm_trial_v1:old24-shieldbearer_heavy",
+      "layer": "layers/mace.png",
+      "maximum": 0,
+      "offhand_allowed": true,
+      "owner": "mainhand",
+      "physical_hand": "right",
+      "status": "FIT",
+      "z": 60
+    },
+    "shield": {
+      "conditional_hand": null,
+      "definition_id": "hm_trial_v1:offhands-02-round-wooden-shield",
+      "layer": "layers/shield.png",
+      "maximum": 24,
+      "owner": "offhand",
+      "physical_hand": "original left",
+      "status": "PARENT_STATIC_ACCEPTED",
+      "z": 80
+    },
+    "spear": {
+      "conditional_hand": "spear",
+      "definition_id": "hm_trial_v1:old24-ward_spear",
+      "layer": "layers/spear.png",
+      "maximum": 0,
+      "offhand_allowed": false,
+      "owner": "mainhand",
+      "physical_hand": "left",
+      "status": "FIT",
+      "z": 60
+    }
+  },
+  "runtime_adopted": false,
+  "schema": "bb2-raider-grade2-combined-offline-v1",
+  "scope": "one bounded raised-left Ward Spear; exact parent-accepted short routes and shield; source-space offline only",
+  "shield": {
+    "definition_id": "hm_trial_v1:offhands-02-round-wooden-shield",
+    "integer_frame_padding": [
+      96,
+      0
+    ],
+    "layer": "inputs/old-items/shield.png",
+    "maximum": 24,
+    "physical_hand": "original anatomical left / viewer-right bent",
+    "source_face_unchanged": true,
+    "status": "FIT_RETAINED"
+  },
+  "source_root": "..",
+  "visual_status": "WORKER_STATIC_FIT_PARENT_REVIEW_REQUIRED",
+  "wardrobe": {
+    "body": "inputs/march_mail.png",
+    "body_id": "march_mail",
+    "body_maximum": 100,
+    "body_z": 10,
+    "head": "inputs/iron_cap.png",
+    "head_id": "iron_cap",
+    "head_maximum": 50,
+    "head_z": 50,
+    "mail_context": "corrected raider-seam-correction/build-a, parent accepted; NOT historical seam HOLD",
+    "new_wardrobe_generation": 0
+  }
+}

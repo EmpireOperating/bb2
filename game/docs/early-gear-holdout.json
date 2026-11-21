@@ -1,0 +1,335 @@
+[
+  {
+    "alive": 4,
+    "arrears": 0,
+    "body": 296,
+    "crowns": 192,
+    "day": 11,
+    "deaths": 1,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 2,
+    "food": 10,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_1",
+        "price": 107
+      },
+      {
+        "day": 8,
+        "id": "stonecross_recruit_1_0",
+        "price": 132
+      }
+    ],
+    "levels": 9,
+    "policy": "gear",
+    "purchases": [
+      {
+        "day": 2,
+        "definition": "short_mail",
+        "price": 147,
+        "soldier": 0
+      },
+      {
+        "day": 6,
+        "definition": "short_mail",
+        "price": 166,
+        "soldier": 1
+      }
+    ],
+    "retreats": 0,
+    "seed": 1577,
+    "tools": 28,
+    "wins": 3
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "body": 304,
+    "crowns": 179,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 3,
+    "food": 8,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_0",
+        "price": 138
+      }
+    ],
+    "levels": 8,
+    "policy": "gear",
+    "purchases": [
+      {
+        "day": 3,
+        "definition": "short_mail",
+        "price": 147,
+        "soldier": 0
+      },
+      {
+        "day": 10,
+        "definition": "short_mail",
+        "price": 166,
+        "soldier": 1
+      }
+    ],
+    "retreats": 0,
+    "seed": 1774,
+    "tools": 22,
+    "wins": 2
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "body": 306,
+    "crowns": 103,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 8,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_0",
+        "price": 107
+      }
+    ],
+    "levels": 8,
+    "policy": "gear",
+    "purchases": [
+      {
+        "day": 2,
+        "definition": "short_mail",
+        "price": 147,
+        "soldier": 0
+      },
+      {
+        "day": 6,
+        "definition": "short_mail",
+        "price": 166,
+        "soldier": 1
+      },
+      {
+        "day": 10,
+        "definition": "short_mail",
+        "price": 170,
+        "soldier": 2
+      }
+    ],
+    "retreats": 0,
+    "seed": 1971,
+    "tools": 27,
+    "wins": 3
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "body": 288,
+    "crowns": 179,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 3,
+    "food": 8,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_0",
+        "price": 134
+      }
+    ],
+    "levels": 9,
+    "policy": "gear",
+    "purchases": [
+      {
+        "day": 3,
+        "definition": "short_mail",
+        "price": 147,
+        "soldier": 0
+      },
+      {
+        "day": 10,
+        "definition": "short_mail",
+        "price": 166,
+        "soldier": 1
+      }
+    ],
+    "retreats": 0,
+    "seed": 2168,
+    "tools": 21,
+    "wins": 2
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "body": 188,
+    "crowns": 148,
+    "day": 11,
+    "deaths": 1,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 9,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_0",
+        "price": 122
+      },
+      {
+        "day": 2,
+        "id": "ashwick_recruit_0_1",
+        "price": 132
+      }
+    ],
+    "levels": 7,
+    "policy": "gear",
+    "purchases": [
+      {
+        "day": 3,
+        "definition": "short_mail",
+        "price": 147,
+        "soldier": 0
+      }
+    ],
+    "retreats": 0,
+    "seed": 2365,
+    "tools": 26,
+    "wins": 2
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "body": 274,
+    "crowns": 91,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 8,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_1",
+        "price": 128
+      }
+    ],
+    "levels": 8,
+    "policy": "gear",
+    "purchases": [
+      {
+        "day": 2,
+        "definition": "short_mail",
+        "price": 147,
+        "soldier": 0
+      },
+      {
+        "day": 6,
+        "definition": "short_mail",
+        "price": 166,
+        "soldier": 1
+      }
+    ],
+    "retreats": 0,
+    "seed": 2562,
+    "tools": 18,
+    "wins": 2
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "body": 336,
+    "crowns": 96,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 8,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_0",
+        "price": 113
+      }
+    ],
+    "levels": 8,
+    "policy": "gear",
+    "purchases": [
+      {
+        "day": 2,
+        "definition": "short_mail",
+        "price": 147,
+        "soldier": 0
+      },
+      {
+        "day": 6,
+        "definition": "short_mail",
+        "price": 166,
+        "soldier": 1
+      },
+      {
+        "day": 10,
+        "definition": "short_mail",
+        "price": 170,
+        "soldier": 2
+      }
+    ],
+    "retreats": 0,
+    "seed": 2759,
+    "tools": 26,
+    "wins": 3
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "body": 288,
+    "crowns": 111,
+    "day": 11,
+    "deaths": 1,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 9,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_1",
+        "price": 113
+      },
+      {
+        "day": 2,
+        "id": "ashwick_recruit_0_0",
+        "price": 138
+      }
+    ],
+    "levels": 7,
+    "policy": "gear",
+    "purchases": [
+      {
+        "day": 6,
+        "definition": "short_mail",
+        "price": 166,
+        "soldier": 1
+      },
+      {
+        "day": 10,
+        "definition": "short_mail",
+        "price": 170,
+        "soldier": 2
+      }
+    ],
+    "retreats": 0,
+    "seed": 2956,
+    "tools": 28,
+    "wins": 3
+  }
+]

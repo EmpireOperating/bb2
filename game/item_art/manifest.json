@@ -1,0 +1,1048 @@
+{
+  "schema": "bb2-generic-item-art-v1",
+  "source_kind": "generic_concept",
+  "authority": {
+    "icon_map_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/icon-map.json",
+    "icon_map_sha256": "eb2ad5b47935de2a8d2af1e90b9f535281d35399ea15b2ffa3bd395d88f940e3",
+    "canonical_bindings_path": "/home/quatro/games/hollow-march-workstreams/medic-catalogue-reconciliation-20261024/combined/wardrobe-recipe.json",
+    "canonical_bindings_sha256": "9b79a75923dfd428f96f30b3d35c5f26df5f5ca48b065389387be96710b3f88c",
+    "normalized_path": "res://hollow_experiment/donor/data/normalized.json",
+    "normalized_sha256": "48b72c24bb5b29a3dd97432f29ddba02216458e9ab7c0200ceb693d9e7e2db8f"
+  },
+  "definitions": {
+    "hm_trial_v1:twohand_maul": {
+      "definition": "hm_trial_v1:twohand_maul",
+      "donor_definition": "",
+      "catalog_binding": "authored_ringbound_maul",
+      "art_key": "ringbound-iron-painted-v1",
+      "source_path": "res://item_art/transparent/ringbound-iron.png",
+      "source_sha256": "847ada8481bf8f24ec9869fe2150b7fbd21ab78a1f2c47a67a7e64ac6989655b",
+      "source_dimensions": [
+        320,
+        320
+      ],
+      "origin_path": "/home/quatro/Games/BB2-Playtest-Fixes/previews/maul-painted/ringbound-painted-master.png",
+      "origin_sha256": "4111745705c057f24bd66671555a827091c1a19dd2e3585f6a7f7e45f1d5bcd5",
+      "transformation": "Painted Maul A; isolated silhouette matte and 320x320 export. No fitted-character pixels.",
+      "approval_status": "USER_SELECTED_MAUL_A; PAINTED_INVENTORY_REVISION"
+    },
+    "arrows": {
+        "definition": "arrows",
+        "donor_definition": "",
+        "catalog_binding": "stock_arrow_quiver",
+        "art_key": "quivers-field",
+        "source_path": "res://item_art/transparent/quivers-field.png",
+        "source_sha256": "a4abcd3a0007d039ab16212feb0b4783719c6ea23f3dfcfcb017cf09c11f2602",
+        "source_dimensions": [
+            368,
+            1007
+        ],
+        "origin_path": "/home/quatro/games/battle-brothers-2-quiver-art-01/art/arrow-quiver-01.png",
+        "transformation": "byte_exact_copy_of_approved_transparent_derivative",
+        "approval_status": "USER_APPROVED_STANDALONE_DESIGN"
+    },
+    "bodkin_quiver": {
+        "definition": "bodkin_quiver",
+        "donor_definition": "",
+        "catalog_binding": "stock_arrow_quiver",
+        "art_key": "quivers-bodkin",
+        "source_path": "res://item_art/transparent/quivers-bodkin.png",
+        "source_sha256": "4d8cea73056e80f573d24751a94ac627926c2313b1deb35a1f8541c8436af0d2",
+        "source_dimensions": [
+            360,
+            947
+        ],
+        "origin_path": "/home/quatro/games/battle-brothers-2-quiver-variants-01/art/sources/bodkin-deep-raw.png",
+        "transformation": "painted_chroma_extraction_with_documented_edge_rgb_decontamination",
+        "approval_status": "USER_APPROVED_STANDALONE_DESIGN"
+    },
+    "deep_quiver": {
+        "definition": "deep_quiver",
+        "donor_definition": "",
+        "catalog_binding": "stock_arrow_quiver",
+        "art_key": "quivers-deep",
+        "source_path": "res://item_art/transparent/quivers-deep.png",
+        "source_sha256": "e99e7d8abe00590f674f83e7b537ca1402cb6109badeb794f78b003d146b8959",
+        "source_dimensions": [
+            512,
+            1042
+        ],
+        "origin_path": "/home/quatro/games/battle-brothers-2-quiver-variants-01/art/sources/bodkin-deep-raw.png",
+        "transformation": "painted_chroma_extraction_with_documented_edge_rgb_decontamination",
+        "approval_status": "USER_APPROVED_STANDALONE_DESIGN"
+    },
+    "short_sword": {
+      "definition": "short_sword",
+      "donor_definition": "short_sword",
+      "art_key": "old24-shieldbearer_weapon",
+      "source_path": "res://item_art/concepts/old24-shieldbearer_weapon.png",
+      "source_sha256": "ddabedb2297a30b8248123bc9fe60dc5dad36a1c059c959c45be6465fbc261cb",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/01-old24-shieldbearer_weapon.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "cudgel": {
+      "definition": "cudgel",
+      "donor_definition": "cudgel",
+      "art_key": "new-current-iron-cudgel",
+      "source_path": "res://item_art/transparent/new-current-iron-cudgel.png",
+      "source_sha256": "2319c8b4e3e9f1a2836a4a0789b1bdece13c060ba8a5ffb36e310b537393e875",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/medic-catalogue-reconciliation-20261024/lanes/iron-cudgel/sources/01-standalone-raw.png",
+      "source_dimensions": [
+        1024,
+        1536
+      ],
+      "transformation": {
+        "method": "border-connected-color-distance-alpha-v1",
+        "background_rgb": [
+          86.0,
+          89.0,
+          77.0
+        ],
+        "limit": 18.0,
+        "core": 8.0,
+        "interior_background_seeds": [],
+        "rgb_preserved": true,
+        "canvas_preserved": true
+      },
+      "origin_status": "stale_icon_map_missing_resolved_by_exact_canonical_binding",
+      "source_art_status": "HOLD",
+      "approval_status": "CANDIDATE_NOT_USER_APPROVED",
+      "original_source_path": "res://item_art/concepts/new-current-iron-cudgel.png",
+      "original_source_sha256": "860af225491cc3f3db3e340563ea7d59f5a780eee18373fed25dd05fdfb90d22",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "pike": {
+      "definition": "pike",
+      "donor_definition": "pike",
+      "art_key": "new-current-ash-pike",
+      "source_path": "res://item_art/concepts/new-current-ash-pike.png",
+      "source_sha256": "6a7bb1f59cf1f93c8a22de2bfd9c19e553523583ec9baac6f8772ad98407a59c",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/medic-catalogue-reconciliation-20261024/lanes/ash-pike/sources/01-standalone-pike-only.png",
+      "source_dimensions": [
+        1024,
+        1536
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "stale_icon_map_missing_resolved_by_exact_canonical_binding",
+      "source_art_status": "READY_OFFLINE_CANDIDATE_PARENT_VISUAL_REVIEW_REQUIRED",
+      "approval_status": "NOT_APPROVED_NEW_REVIEW_CANDIDATE"
+    },
+    "short_bow": {
+      "definition": "short_bow",
+      "donor_definition": "short_bow",
+      "art_key": "old24-reedrunner_bow",
+      "source_path": "res://item_art/concepts/old24-reedrunner_bow.png",
+      "source_sha256": "fbc5f3880ef42f23a8f4eb5bf4cad9113df4e5a57d38678af314fea5bfb3c4e7",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/49-old24-reedrunner_bow.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "stale_icon_map_missing_resolved_by_exact_canonical_binding",
+      "source_art_status": "Parent reviewed new presentation-only selection; original source label and all gameplay definitions retained",
+      "approval_status": "EXISTING_EXPLICIT_PRESENTATION_BINDING_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-shieldbearer_heavy": {
+      "definition": "hm_trial_v1:old24-shieldbearer_heavy",
+      "donor_definition": "hm_trial_v1:old24-shieldbearer_heavy",
+      "art_key": "old24-shieldbearer_heavy",
+      "source_path": "res://item_art/concepts/old24-shieldbearer_heavy.png",
+      "source_sha256": "fe395e4fe2329cab157210974f6048b4d3d3d44936b4c2240e1b7f3ef30baf5e",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/35-old24-shieldbearer_heavy.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-archer_weapon": {
+      "definition": "hm_trial_v1:old24-archer_weapon",
+      "donor_definition": "hm_trial_v1:old24-archer_weapon",
+      "art_key": "old24-archer_weapon",
+      "source_path": "res://item_art/concepts/old24-archer_weapon.png",
+      "source_sha256": "050b3ef5f38afeda7771282f8b27a209b8670b712b9175abe898c3337866e74b",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/36-old24-archer_weapon.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-archer_heavy": {
+      "definition": "hm_trial_v1:old24-archer_heavy",
+      "donor_definition": "hm_trial_v1:old24-archer_heavy",
+      "art_key": "old24-archer_heavy",
+      "source_path": "res://item_art/concepts/old24-archer_heavy.png",
+      "source_sha256": "12b9ac8b90d20f7d83708a4f184c9d746a87ff74d58d428605f86a200da88c19",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/37-old24-archer_heavy.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-polearm_weapon": {
+      "definition": "hm_trial_v1:old24-polearm_weapon",
+      "donor_definition": "hm_trial_v1:old24-polearm_weapon",
+      "art_key": "old24-polearm_weapon",
+      "source_path": "res://item_art/concepts/old24-polearm_weapon.png",
+      "source_sha256": "c1d5e017fe211856d3e662bada6b072fc56a5894fcaf1e531016d8fd48ec496e",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/38-old24-polearm_weapon.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-polearm_heavy": {
+      "definition": "hm_trial_v1:old24-polearm_heavy",
+      "donor_definition": "hm_trial_v1:old24-polearm_heavy",
+      "art_key": "old24-polearm_heavy",
+      "source_path": "res://item_art/concepts/old24-polearm_heavy.png",
+      "source_sha256": "faff4ac1c701f3672fc37818e1c76314a1ab71996ddde2c93ef89e3c9932e65b",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/39-old24-polearm_heavy.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-duelist_weapon": {
+      "definition": "hm_trial_v1:old24-duelist_weapon",
+      "donor_definition": "hm_trial_v1:old24-duelist_weapon",
+      "art_key": "old24-duelist_weapon",
+      "source_path": "res://item_art/concepts/old24-duelist_weapon.png",
+      "source_sha256": "0681e8c92880e528f09496fd6673b3295eaa0199601ed615a9a2c5ab74c09249",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/40-old24-duelist_weapon.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-duelist_heavy": {
+      "definition": "hm_trial_v1:old24-duelist_heavy",
+      "donor_definition": "hm_trial_v1:old24-duelist_heavy",
+      "art_key": "old24-duelist_heavy",
+      "source_path": "res://item_art/concepts/old24-duelist_heavy.png",
+      "source_sha256": "c978f58071eccd4462e8c2c002d8a16f40428c1dc908fb2b010b2992d3696382",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/41-old24-duelist_heavy.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-medic_weapon": {
+      "definition": "hm_trial_v1:old24-medic_weapon",
+      "donor_definition": "hm_trial_v1:old24-medic_weapon",
+      "art_key": "old24-medic_weapon",
+      "source_path": "res://item_art/concepts/old24-medic_weapon.png",
+      "source_sha256": "16b79b0d7f95bce275fb4b7a28932c64b00b8872bcd8ef6d14745c76810e5413",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/42-old24-medic_weapon.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-medic_heavy": {
+      "definition": "hm_trial_v1:old24-medic_heavy",
+      "donor_definition": "hm_trial_v1:old24-medic_heavy",
+      "art_key": "old24-medic_heavy",
+      "source_path": "res://item_art/concepts/old24-medic_heavy.png",
+      "source_sha256": "149facf683a9d5dc2b696e151f172e398fa722f5b7d93cb9e1aab35c5eef560a",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/43-old24-medic_heavy.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-ward_spear": {
+      "definition": "hm_trial_v1:old24-ward_spear",
+      "donor_definition": "hm_trial_v1:old24-ward_spear",
+      "art_key": "old24-ward_spear",
+      "source_path": "res://item_art/concepts/old24-ward_spear.png",
+      "source_sha256": "e78213bff5731e15102365fdf3fe335a06f562444211b4e8e7654ba5accce8d1",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/45-old24-ward_spear.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-gatewarden_blade": {
+      "definition": "hm_trial_v1:old24-gatewarden_blade",
+      "donor_definition": "hm_trial_v1:old24-gatewarden_blade",
+      "art_key": "old24-gatewarden_blade",
+      "source_path": "res://item_art/concepts/old24-gatewarden_blade.png",
+      "source_sha256": "82bfae94950aa025c50f87e11f4f364365a57bcb32cf136bea2dd560e3f685ff",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/48-old24-gatewarden_blade.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-reedrunner_bow": {
+      "definition": "hm_trial_v1:old24-reedrunner_bow",
+      "donor_definition": "hm_trial_v1:old24-reedrunner_bow",
+      "art_key": "old24-reedrunner_bow",
+      "source_path": "res://item_art/concepts/old24-reedrunner_bow.png",
+      "source_sha256": "fbc5f3880ef42f23a8f4eb5bf4cad9113df4e5a57d38678af314fea5bfb3c4e7",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/49-old24-reedrunner_bow.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-ferryman_hook": {
+      "definition": "hm_trial_v1:old24-ferryman_hook",
+      "donor_definition": "hm_trial_v1:old24-ferryman_hook",
+      "art_key": "old24-ferryman_hook",
+      "source_path": "res://item_art/concepts/old24-ferryman_hook.png",
+      "source_sha256": "cfe6a2c554af0907877f13aa8c20bf207cefcbd24e33add34712d716e12f8c4a",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/50-old24-ferryman_hook.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-quarry_estoc": {
+      "definition": "hm_trial_v1:old24-quarry_estoc",
+      "donor_definition": "hm_trial_v1:old24-quarry_estoc",
+      "art_key": "old24-quarry_estoc",
+      "source_path": "res://item_art/concepts/old24-quarry_estoc.png",
+      "source_sha256": "998a48532a0dc1358fc30c06b71835865d9cf89300928f9ce211f7f20551a17a",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/51-old24-quarry_estoc.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-wayfarer_lancet": {
+      "definition": "hm_trial_v1:old24-wayfarer_lancet",
+      "donor_definition": "hm_trial_v1:old24-wayfarer_lancet",
+      "art_key": "old24-wayfarer_lancet",
+      "source_path": "res://item_art/concepts/old24-wayfarer_lancet.png",
+      "source_sha256": "79ce3538729549063f2ac7466b31a5902468a55f4a764b33914a037edfb5a046",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/52-old24-wayfarer_lancet.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:additional_fighting_axe": {
+      "definition": "hm_trial_v1:additional_fighting_axe",
+      "donor_definition": "hm_trial_v1:additional_fighting_axe",
+      "art_key": "approved-medic-fighting-axe",
+      "source_path": "res://item_art/transparent/approved-medic-fighting-axe.png",
+      "source_sha256": "89ac31ae31d386af099e46324620d97ad19666334c18f692c11e45ea3eb11eb3",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/54-additional_fighting_axe.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": {
+        "method": "border-connected-color-distance-alpha-v1",
+        "background_rgb": [
+          61.0,
+          61.0,
+          49.0
+        ],
+        "limit": 32.0,
+        "core": 22.0,
+        "interior_background_seeds": [],
+        "rgb_preserved": true,
+        "canvas_preserved": true
+      },
+      "origin_status": "valid",
+      "source_art_status": "USER_APPROVED_STANDALONE_SOURCE_ART_NOT_FITTED_OR_RUNTIME_READY",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/approved-medic-fighting-axe.png",
+      "original_source_sha256": "e8aa87b96107631ff8ef09acb5323d781803dfdeb6c3fe80529ab69e6250bf6e",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:twohand_sword": {
+      "definition": "hm_trial_v1:twohand_sword",
+      "donor_definition": "hm_trial_v1:twohand_sword",
+      "art_key": "approved-medic-upright-greatsword",
+      "source_path": "res://item_art/transparent/approved-medic-upright-greatsword.png",
+      "source_sha256": "296649eb6d8afe1327228a99a74d9c1e867b87a5ef81350da85f451bf4d16046",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/55-twohand_sword.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": {
+        "method": "border-connected-color-distance-alpha-v1",
+        "background_rgb": [
+          60.0,
+          59.0,
+          44.0
+        ],
+        "limit": 32.0,
+        "core": 22.0,
+        "interior_background_seeds": [],
+        "rgb_preserved": true,
+        "canvas_preserved": true
+      },
+      "origin_status": "valid",
+      "source_art_status": "EXPLICIT_PROPOSAL_SOURCE_BINDING_WITH_RECORDED_APPROVAL",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/approved-medic-upright-greatsword.png",
+      "original_source_sha256": "7fd4eaaaea0a9d13cb6e35fa9c139007baeba4bc46112dee1b554084e27ed337",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "sword_gloves": {
+      "definition": "sword_gloves",
+      "donor_definition": "sword_gloves",
+      "art_key": "gloves-02-grip-gloves",
+      "source_path": "res://item_art/transparent/gloves-02-grip-gloves.png",
+      "source_sha256": "98099aabeb49e841cfb1308ca0f6adacb670dd76a985c4a7dff82e440bd57ce1",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/14-gloves-02-grip-gloves.png",
+      "source_dimensions": [
+        680,
+        508
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "98099aabeb49e841cfb1308ca0f6adacb670dd76a985c4a7dff82e440bd57ce1"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/gloves-02-grip-gloves.png",
+      "original_source_sha256": "6128fcd5a25ed74ccff544da3928842337433bf7c17d70932840ee7a4020cf0f",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "archer_gloves": {
+      "definition": "archer_gloves",
+      "donor_definition": "archer_gloves",
+      "art_key": "gloves-03-draw-gloves",
+      "source_path": "res://item_art/transparent/gloves-03-draw-gloves.png",
+      "source_sha256": "54f00a5a3281d3754bc3fdfac5aae65ffff1a059fce466f6f4062fce02bbf307",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/15-gloves-03-draw-gloves.png",
+      "source_dimensions": [
+        681,
+        468
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "54f00a5a3281d3754bc3fdfac5aae65ffff1a059fce466f6f4062fce02bbf307"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/gloves-03-draw-gloves.png",
+      "original_source_sha256": "b91a28779cfcfe019be3aff72a98b72813f30960348867ccb6e8b8ed1b85d3b0",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:gloves-01-linen-handwraps": {
+      "definition": "hm_trial_v1:gloves-01-linen-handwraps",
+      "donor_definition": "hm_trial_v1:gloves-01-linen-handwraps",
+      "art_key": "gloves-01-linen-handwraps",
+      "source_path": "res://item_art/transparent/gloves-01-linen-handwraps.png",
+      "source_sha256": "c996262adf4aae3a1579b7a6f0b9a17e180f3f39ab06b5f213518195c6bb4c13",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/26-gloves-01-linen-handwraps.png",
+      "source_dimensions": [
+        675,
+        516
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "c996262adf4aae3a1579b7a6f0b9a17e180f3f39ab06b5f213518195c6bb4c13"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/gloves-01-linen-handwraps.png",
+      "original_source_sha256": "87dee6ac0dfc0dc338d1f04389526bac346247e21f15724bf0e7f7bda314932b",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:gloves-04-mail-gloves": {
+      "definition": "hm_trial_v1:gloves-04-mail-gloves",
+      "donor_definition": "hm_trial_v1:gloves-04-mail-gloves",
+      "art_key": "gloves-04-mail-gloves",
+      "source_path": "res://item_art/transparent/gloves-04-mail-gloves.png",
+      "source_sha256": "2765913416396947dbc4a142f128f15d66f159281388dbb7bd05e6f934e78920",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/27-gloves-04-mail-gloves.png",
+      "source_dimensions": [
+        670,
+        516
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "2765913416396947dbc4a142f128f15d66f159281388dbb7bd05e6f934e78920"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/gloves-04-mail-gloves.png",
+      "original_source_sha256": "b42f7b932dadd5be14e94b5ce798ef4645cb2d46ae28bb01bd0a3c260c6bf61a",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "light_boots": {
+      "definition": "light_boots",
+      "donor_definition": "light_boots",
+      "art_key": "footwear-01-soft-boots",
+      "source_path": "res://item_art/transparent/footwear-01-soft-boots.png",
+      "source_sha256": "83206a64cfa35c6255064ac03587d4600584a8f2546e345e0de3d36c25927366",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/16-footwear-01-soft-boots.png",
+      "source_dimensions": [
+        602,
+        449
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "83206a64cfa35c6255064ac03587d4600584a8f2546e345e0de3d36c25927366"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/footwear-01-soft-boots.png",
+      "original_source_sha256": "323f3b9b309c61a5fe202a84bd27a80c3b2c1943e5b7eb43e57b0c0d04011244",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "trail_boots": {
+      "definition": "trail_boots",
+      "donor_definition": "trail_boots",
+      "art_key": "footwear-02-trail-boots",
+      "source_path": "res://item_art/transparent/footwear-02-trail-boots.png",
+      "source_sha256": "da6c1f3a8786efb4bfbec5fef90b1f4d8e3a8315758d5654c176da1925a0c913",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/17-footwear-02-trail-boots.png",
+      "source_dimensions": [
+        674,
+        502
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "da6c1f3a8786efb4bfbec5fef90b1f4d8e3a8315758d5654c176da1925a0c913"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/footwear-02-trail-boots.png",
+      "original_source_sha256": "bed318c507f585d4f1e3f01fe95c2d1f7cde69ff6c0b0be8f842ec1ccb8b5fbd",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:footwear-03-wrapped-shoes": {
+      "definition": "hm_trial_v1:footwear-03-wrapped-shoes",
+      "donor_definition": "hm_trial_v1:footwear-03-wrapped-shoes",
+      "art_key": "footwear-03-wrapped-shoes",
+      "source_path": "res://item_art/transparent/footwear-03-wrapped-shoes.png",
+      "source_sha256": "ab87bb761dfeb6a560c516eec423b26de932deb8ad07c703f298916952a3602e",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/28-footwear-03-wrapped-shoes.png",
+      "source_dimensions": [
+        623,
+        473
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "ab87bb761dfeb6a560c516eec423b26de932deb8ad07c703f298916952a3602e"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/footwear-03-wrapped-shoes.png",
+      "original_source_sha256": "1dabdaafe4673f27c6372477c461c79bd8e3029444e7c666e2db7a854f3ce7b5",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:footwear-04-reinforced-boots": {
+      "definition": "hm_trial_v1:footwear-04-reinforced-boots",
+      "donor_definition": "hm_trial_v1:footwear-04-reinforced-boots",
+      "art_key": "footwear-04-reinforced-boots",
+      "source_path": "res://item_art/transparent/footwear-04-reinforced-boots.png",
+      "source_sha256": "aa1ec9b258b634181fb35eca571eedbad594649734237585c07e4918e6c8e511",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/29-footwear-04-reinforced-boots.png",
+      "source_dimensions": [
+        672,
+        527
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "aa1ec9b258b634181fb35eca571eedbad594649734237585c07e4918e6c8e511"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/footwear-04-reinforced-boots.png",
+      "original_source_sha256": "17bbbd181365c558165ed5d041bac17c0aacc1c2f180599c069bfbb957e403c6",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "travel_cloak": {
+      "definition": "travel_cloak",
+      "donor_definition": "travel_cloak",
+      "art_key": "cloaks-01-travel-cloak",
+      "source_path": "res://item_art/transparent/cloaks-01-travel-cloak.png",
+      "source_sha256": "f33d9639bf98ea66a5f55f41014d6f8a8aa1836c7cc82de2f73cffa1daccaf0e",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/18-cloaks-01-travel-cloak.png",
+      "source_dimensions": [
+        547,
+        528
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "f33d9639bf98ea66a5f55f41014d6f8a8aa1836c7cc82de2f73cffa1daccaf0e"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/cloaks-01-travel-cloak.png",
+      "original_source_sha256": "55221cc0fa89a853799c6de07e2f112badd3676d5bc55d35d708ceb1feeb98e6",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:cloaks-02-scout-cloak": {
+      "definition": "hm_trial_v1:cloaks-02-scout-cloak",
+      "donor_definition": "hm_trial_v1:cloaks-02-scout-cloak",
+      "art_key": "cloaks-02-scout-cloak",
+      "source_path": "res://item_art/transparent/cloaks-02-scout-cloak.png",
+      "source_sha256": "127621f7bc250e3bb679fe699134912933c05e7e63e1351988cab8b456d40857",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/30-cloaks-02-scout-cloak.png",
+      "source_dimensions": [
+        475,
+        564
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "127621f7bc250e3bb679fe699134912933c05e7e63e1351988cab8b456d40857"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/cloaks-02-scout-cloak.png",
+      "original_source_sha256": "6a66863dad8e99fe8cb72fdb364a15ab39bac1a7004caae2855c2eb4568d78e6",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "scholar_cloak": {
+      "definition": "scholar_cloak",
+      "donor_definition": "scholar_cloak",
+      "art_key": "cloaks-03-scholar-cloak",
+      "source_path": "res://item_art/transparent/cloaks-03-scholar-cloak.png",
+      "source_sha256": "104deafcab3689a5900f8d70518a051597aa76ce648d3c0ca1d47e0113c03f4d",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/19-cloaks-03-scholar-cloak.png",
+      "source_dimensions": [
+        584,
+        590
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "104deafcab3689a5900f8d70518a051597aa76ce648d3c0ca1d47e0113c03f4d"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/cloaks-03-scholar-cloak.png",
+      "original_source_sha256": "d450e73bf8241232bf1287e26cff3687b7aa9da790d6b06daceadb9ae020a5bd",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:cloaks-04-waxed-cape": {
+      "definition": "hm_trial_v1:cloaks-04-waxed-cape",
+      "donor_definition": "hm_trial_v1:cloaks-04-waxed-cape",
+      "art_key": "cloaks-04-waxed-cape",
+      "source_path": "res://item_art/transparent/cloaks-04-waxed-cape.png",
+      "source_sha256": "2931e5a7a511dd36fe36b80aad93fbf04529a3ebd63fb2955f2632b046818b8b",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/31-cloaks-04-waxed-cape.png",
+      "source_dimensions": [
+        672,
+        512
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "2931e5a7a511dd36fe36b80aad93fbf04529a3ebd63fb2955f2632b046818b8b"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/cloaks-04-waxed-cape.png",
+      "original_source_sha256": "3b2876c72b009fe07d8a187ed04841519c6993b9b1f17c16f7512e47a20ba453",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:belts-01-utility-belt": {
+      "definition": "hm_trial_v1:belts-01-utility-belt",
+      "donor_definition": "hm_trial_v1:belts-01-utility-belt",
+      "art_key": "belts-01-utility-belt",
+      "source_path": "res://item_art/transparent/belts-01-utility-belt.png",
+      "source_sha256": "d2ff9d02cebca4abc5388a105fdbb0c659aafdcea485e7f5471b97aa377acecf",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/32-belts-01-utility-belt.png",
+      "source_dimensions": [
+        659,
+        283
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "d2ff9d02cebca4abc5388a105fdbb0c659aafdcea485e7f5471b97aa377acecf"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/belts-01-utility-belt.png",
+      "original_source_sha256": "9cd4621707ae3ef7a04cb3c7c9fdbce85a6cfbc6840dd0531cc5713df43ee95a",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "pouch_belt": {
+      "definition": "pouch_belt",
+      "donor_definition": "pouch_belt",
+      "art_key": "belts-02-pouch-belt",
+      "source_path": "res://item_art/transparent/belts-02-pouch-belt.png",
+      "source_sha256": "e98c9f3d61ecfcf86512afc5b8bbd88a39e730303dc101e05e625efa6724bea5",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/20-belts-02-pouch-belt.png",
+      "source_dimensions": [
+        689,
+        438
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "e98c9f3d61ecfcf86512afc5b8bbd88a39e730303dc101e05e625efa6724bea5"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/belts-02-pouch-belt.png",
+      "original_source_sha256": "7b5b801dd1bb7569b4d10dbf8e4f1ac944625418e2f9a3a907e28cf9a33ae7c8",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "breather_belt": {
+      "definition": "breather_belt",
+      "donor_definition": "breather_belt",
+      "art_key": "belts-03-support-belt",
+      "source_path": "res://item_art/transparent/belts-03-support-belt.png",
+      "source_sha256": "f522a7657cb7c833c8e07e5084af7498d0776df5b52c698116e390592c1af411",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/33-belts-03-support-belt.png",
+      "source_dimensions": [
+        671,
+        435
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "f522a7657cb7c833c8e07e5084af7498d0776df5b52c698116e390592c1af411"
+      },
+      "origin_status": "stale_icon_map_missing_resolved_by_exact_canonical_binding",
+      "source_art_status": "Parent reviewed new presentation-only selection; original source label and all gameplay definitions retained",
+      "approval_status": "EXISTING_EXPLICIT_PRESENTATION_BINDING_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/belts-03-support-belt.png",
+      "original_source_sha256": "8f62542efac07a08f39b948f1b46ae29231ebd138bea015543723a5002b86cd6",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:belts-03-support-belt": {
+      "definition": "hm_trial_v1:belts-03-support-belt",
+      "donor_definition": "hm_trial_v1:belts-03-support-belt",
+      "art_key": "belts-03-support-belt",
+      "source_path": "res://item_art/transparent/belts-03-support-belt.png",
+      "source_sha256": "f522a7657cb7c833c8e07e5084af7498d0776df5b52c698116e390592c1af411",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/33-belts-03-support-belt.png",
+      "source_dimensions": [
+        671,
+        435
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "f522a7657cb7c833c8e07e5084af7498d0776df5b52c698116e390592c1af411"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/belts-03-support-belt.png",
+      "original_source_sha256": "8f62542efac07a08f39b948f1b46ae29231ebd138bea015543723a5002b86cd6",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:belts-04-woven-sash": {
+      "definition": "hm_trial_v1:belts-04-woven-sash",
+      "donor_definition": "hm_trial_v1:belts-04-woven-sash",
+      "art_key": "belts-04-woven-sash",
+      "source_path": "res://item_art/transparent/belts-04-woven-sash.png",
+      "source_sha256": "e39e71bd2c21a634a30ad3d5da406d6d574a2586747f0b82e0a9926e64acf57c",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/34-belts-04-woven-sash.png",
+      "source_dimensions": [
+        631,
+        540
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "e39e71bd2c21a634a30ad3d5da406d6d574a2586747f0b82e0a9926e64acf57c"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/belts-04-woven-sash.png",
+      "original_source_sha256": "793dcaf7189950cd7508328cfbc3b7c006e4e6ef09d9ccb7442992f493a02333",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:old24-scout_coat": {
+      "definition": "hm_trial_v1:old24-scout_coat",
+      "donor_definition": "hm_trial_v1:old24-scout_coat",
+      "art_key": "old24-scout_coat",
+      "source_path": "res://item_art/concepts/old24-scout_coat.png",
+      "source_sha256": "b865345c381621bc9ede7766cb3a3ccc79315933ba0fb5e00581bf2465a31e3a",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/46-old24-scout_coat.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "travel_leather": {
+      "definition": "travel_leather",
+      "donor_definition": "travel_leather",
+      "art_key": "old24-travel_leather",
+      "source_path": "res://item_art/concepts/old24-travel_leather.png",
+      "source_sha256": "4719942ffe7166973be7a6ef74b740c355d4152bd1383037d091a28a980eb29a",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/12-old24-travel_leather.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "march_mail": {
+      "definition": "march_mail",
+      "donor_definition": "march_mail",
+      "art_key": "old24-march_mail",
+      "source_path": "res://item_art/concepts/old24-march_mail.png",
+      "source_sha256": "b7d8698d6d2325b5426a0c3c9165922e8aeea2af2f610bfb9d033b5328c125e9",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/13-old24-march_mail.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hm_trial_v1:old24-banded_mail": {
+      "definition": "hm_trial_v1:old24-banded_mail",
+      "donor_definition": "hm_trial_v1:old24-banded_mail",
+      "art_key": "old24-banded_mail",
+      "source_path": "res://item_art/concepts/old24-banded_mail.png",
+      "source_sha256": "a629a60f50a5941a778fea98aa6c0193bf5262b6f921a87b8527d03bede8084f",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/47-old24-banded_mail.png",
+      "source_dimensions": [
+        256,
+        256
+      ],
+      "transformation": "byte_exact_copy",
+      "origin_status": "valid",
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL"
+    },
+    "hollow_campaign:padded_hood": {
+      "definition": "hollow_campaign:padded_hood",
+      "donor_definition": "padded_hood",
+      "art_key": "headwear-01-padded-hood",
+      "source_path": "res://item_art/transparent/headwear-01-padded-hood.png",
+      "source_sha256": "47594a73baeeeda61e7796e6fada0837e8ca01ce0877eabc1e940729eae8a529",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/11-headwear-01-padded-hood.png",
+      "source_dimensions": [
+        558,
+        605
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "47594a73baeeeda61e7796e6fada0837e8ca01ce0877eabc1e940729eae8a529"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/headwear-01-padded-hood.png",
+      "original_source_sha256": "7d457f34a8a9c2d695260e3719d919a3b3ca667da308442b3e752e7274b7d9fd",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:headwear-02-leather-cap": {
+      "definition": "hm_trial_v1:headwear-02-leather-cap",
+      "donor_definition": "hm_trial_v1:headwear-02-leather-cap",
+      "art_key": "headwear-02-leather-cap",
+      "source_path": "res://item_art/transparent/headwear-02-leather-cap.png",
+      "source_sha256": "a8ea0aa7eac2738cc568ddbbfc30e3b3543e4c6705709eb15929d4379e82abc3",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/23-headwear-02-leather-cap.png",
+      "source_dimensions": [
+        415,
+        588
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "a8ea0aa7eac2738cc568ddbbfc30e3b3543e4c6705709eb15929d4379e82abc3"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/headwear-02-leather-cap.png",
+      "original_source_sha256": "5332faf40e9ecf554953307a8ecbf36a2acaed7eddb533b532076621c2d3837f",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "iron_cap": {
+      "definition": "iron_cap",
+      "donor_definition": "iron_cap",
+      "art_key": "headwear-03-iron-skullcap",
+      "source_path": "res://item_art/transparent/headwear-03-iron-skullcap.png",
+      "source_sha256": "cfa906d8a68c20f0054d28420790c59f288740129f4167810996319188c6dc23",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/24-headwear-03-iron-skullcap.png",
+      "source_dimensions": [
+        492,
+        434
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "cfa906d8a68c20f0054d28420790c59f288740129f4167810996319188c6dc23"
+      },
+      "origin_status": "stale_icon_map_missing_resolved_by_exact_canonical_binding",
+      "source_art_status": "Parent reviewed new presentation-only selection; original source label and all gameplay definitions retained",
+      "approval_status": "EXISTING_EXPLICIT_PRESENTATION_BINDING_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/headwear-03-iron-skullcap.png",
+      "original_source_sha256": "3e69998795441a341d3411cc11fbd7443b40b3c82de7cc62abe3140689bd26a7",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:headwear-03-iron-skullcap": {
+      "definition": "hm_trial_v1:headwear-03-iron-skullcap",
+      "donor_definition": "hm_trial_v1:headwear-03-iron-skullcap",
+      "art_key": "headwear-03-iron-skullcap",
+      "source_path": "res://item_art/transparent/headwear-03-iron-skullcap.png",
+      "source_sha256": "cfa906d8a68c20f0054d28420790c59f288740129f4167810996319188c6dc23",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/24-headwear-03-iron-skullcap.png",
+      "source_dimensions": [
+        492,
+        434
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "cfa906d8a68c20f0054d28420790c59f288740129f4167810996319188c6dc23"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/headwear-03-iron-skullcap.png",
+      "original_source_sha256": "3e69998795441a341d3411cc11fbd7443b40b3c82de7cc62abe3140689bd26a7",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:headwear-04-kettle-helm": {
+      "definition": "hm_trial_v1:headwear-04-kettle-helm",
+      "donor_definition": "hm_trial_v1:headwear-04-kettle-helm",
+      "art_key": "headwear-04-kettle-helm",
+      "source_path": "res://item_art/transparent/headwear-04-kettle-helm.png",
+      "source_sha256": "74306356230ce709654652db200e541db71a1980bfad08fbf4708a19f8245c54",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/25-headwear-04-kettle-helm.png",
+      "source_dimensions": [
+        705,
+        459
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "74306356230ce709654652db200e541db71a1980bfad08fbf4708a19f8245c54"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/headwear-04-kettle-helm.png",
+      "original_source_sha256": "4fa822659d2a0086db89c8575b0ef6ade8f134cb2229d2042a33914465700b63",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hollow_campaign:buckler": {
+      "definition": "hollow_campaign:buckler",
+      "donor_definition": "buckler",
+      "art_key": "offhands-01-iron-buckler",
+      "source_path": "res://item_art/transparent/offhands-01-iron-buckler.png",
+      "source_sha256": "0beb655740b31370df6b6cb1d1e655b8869c2412b26cedd0e2b60b8b355bd703",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/08-offhands-01-iron-buckler.png",
+      "source_dimensions": [
+        470,
+        523
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "0beb655740b31370df6b6cb1d1e655b8869c2412b26cedd0e2b60b8b355bd703"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/offhands-01-iron-buckler.png",
+      "original_source_sha256": "4cc12694b2bb14f831af574c4a723528ba744a6dd17254ec89c5b6de29a857cf",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    },
+    "hm_trial_v1:offhands-02-round-wooden-shield": {
+      "definition": "hm_trial_v1:offhands-02-round-wooden-shield",
+      "donor_definition": "hm_trial_v1:offhands-02-round-wooden-shield",
+      "art_key": "offhands-02-round-wooden-shield",
+      "source_path": "res://item_art/transparent/offhands-02-round-wooden-shield.png",
+      "source_sha256": "0fc8f4e771f11fc44d3fc23cdb005368d8aabb37f04ec24fe4dd07bc66cfad2f",
+      "origin_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/item-icons/assets/item-icons/22-offhands-02-round-wooden-shield.png",
+      "source_dimensions": [
+        756,
+        816
+      ],
+      "transformation": {
+        "method": "byte_exact_existing_transparent_export",
+        "export_sha256": "0fc8f4e771f11fc44d3fc23cdb005368d8aabb37f04ec24fe4dd07bc66cfad2f"
+      },
+      "origin_status": "valid",
+      "source_art_status": "working_baseline_hash_verified",
+      "approval_status": "RETAINED_SOURCE_STATUS_NO_NEW_APPROVAL",
+      "original_source_path": "res://item_art/concepts/offhands-02-round-wooden-shield.png",
+      "original_source_sha256": "ea0328a8e6cf5ef91feed660565c25de81ccfa943febfdba57f3bacdf14638ff",
+      "background_removal_authorization": "User requested removal of grey item-art squares; inventory icons only"
+    }
+  }
+}

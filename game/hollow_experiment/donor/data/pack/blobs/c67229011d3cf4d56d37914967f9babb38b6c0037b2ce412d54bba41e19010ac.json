@@ -1,0 +1,4846 @@
+{
+  "schema": "hm-equipment-definitions-v1",
+  "authority": "FULL_EQUIPMENT_SCOPE.md; AO TEST DEFAULTS NOT APPROVED BALANCE",
+  "slots": [
+    "mainhand",
+    "offhand",
+    "head",
+    "body",
+    "hands",
+    "feet",
+    "cloak",
+    "belt",
+    "ring1",
+    "ring2",
+    "amulet"
+  ],
+  "base_stats": {
+    "Health": 40,
+    "Stamina": 30,
+    "Recovery": 5,
+    "Initiative": 60,
+    "Melee_skill": 70,
+    "Ranged_skill": 70,
+    "Magic_power": 8,
+    "Defense": 10
+  },
+  "base_armor_max": 0,
+  "economy": {
+    "ap_per_turn": 4,
+    "attack_ap": 2,
+    "paired_attack_ap": 2,
+    "move_ap_per_hex": 1,
+    "move_stamina_per_hex": 1,
+    "swap_ap": 2,
+    "swap_stamina": 2,
+    "paired_stamina_surcharge": 2,
+    "double_grip_multiplier": 1.25,
+    "ordinary_offhand_multiplier": 0.75,
+    "hit_floor_percent": 5,
+    "hit_ceiling_percent": 95
+  },
+  "items": {
+    "short_sword": {
+      "id": "short_sword",
+      "name": "Short sword",
+      "family": "swords",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          8,
+          12
+        ],
+        "accuracy_bonus": 10,
+        "swing_stamina": 3,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "short_sword",
+        "original_definition": {
+          "name": "Short sword",
+          "slot": "mainhand",
+          "tier": 1,
+          "fixed": {
+            "damage": 10
+          },
+          "rolls": {
+            "damage": "weapon"
+          },
+          "hands": 1,
+          "tags": [
+            "blade",
+            "melee",
+            "physical_melee"
+          ],
+          "reach": 1
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/short_sword"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "old24-shieldbearer_weapon",
+          "name": "Arming sword",
+          "family": "swords",
+          "slot": "mainhand",
+          "canonical_id": "short_sword",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/shieldbearer_weapon.png",
+          "source_sha256": "ddabedb2297a30b8248123bc9fe60dc5dad36a1c059c959c45be6465fbc261cb",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/22/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "RETAINED_SELECTED",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-grip-gloves-proof-20261024/layers/medic/natural-painted-sword.png",
+              "z": 20,
+              "sha256": "8d7789902b8e326c4fb736ea6f536026fd6e6172cb8ef27855703bfa4ac82103"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-grip-gloves-proof-20261024/layers/medic/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "AO: reliable tight-range accurate ordinary sword; candidate for unchanged numerical reliable profile, NOT assigned by this packet.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "grip_and_pair"
+          ],
+          "identity_note": "Current explicit short_sword binding retained despite standalone Arming sword display name."
+        }
+      ],
+      "proposal_bindings": [
+        {
+          "proposal_profile": "draft_sword",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/numeric-proposal/proposal.json",
+          "selection_authority": "Reversible AO TEST assignment, not a historical canonical binding"
+        }
+      ],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "cudgel": {
+      "id": "cudgel",
+      "name": "Iron cudgel",
+      "family": "maces",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 3,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          7,
+          11
+        ],
+        "accuracy_bonus": 0,
+        "swing_stamina": 4,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.5,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "cudgel",
+        "original_definition": {
+          "name": "Iron cudgel",
+          "slot": "mainhand",
+          "tier": 1,
+          "fixed": {
+            "damage": 11
+          },
+          "rolls": {
+            "damage": "weapon"
+          },
+          "hands": 1,
+          "tags": [
+            "blunt",
+            "melee",
+            "physical_melee"
+          ],
+          "reach": 1
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/cudgel"
+        }
+      },
+      "source_bindings": [],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "estoc": {
+      "id": "estoc",
+      "name": "Narrow estoc",
+      "family": "swords",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          7,
+          10
+        ],
+        "accuracy_bonus": 12,
+        "swing_stamina": 3,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "estoc",
+        "original_definition": {
+          "name": "Narrow estoc",
+          "slot": "mainhand",
+          "tier": 1,
+          "fixed": {
+            "damage": 9
+          },
+          "rolls": {
+            "damage": "weapon"
+          },
+          "hands": 1,
+          "tags": [
+            "blade",
+            "melee",
+            "physical_melee"
+          ],
+          "reach": 1
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/estoc"
+        }
+      },
+      "source_bindings": [],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "pike": {
+      "id": "pike",
+      "name": "Ash pike",
+      "family": "spears_and_polearms",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {
+        "Initiative": -3
+      },
+      "armor": 0,
+      "stamina_burden": 4,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          8,
+          11
+        ],
+        "accuracy_bonus": 0,
+        "swing_stamina": 4,
+        "range": 2,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "pike",
+        "original_definition": {
+          "name": "Ash pike",
+          "slot": "mainhand",
+          "tier": 1,
+          "fixed": {
+            "damage": 12,
+            "Initiative": -3
+          },
+          "rolls": {
+            "damage": "weapon"
+          },
+          "hands": 2,
+          "tags": [
+            "polearm",
+            "melee",
+            "physical_melee"
+          ],
+          "reach": 2
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/pike"
+        }
+      },
+      "source_bindings": [],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "short_bow": {
+      "id": "short_bow",
+      "name": "Short bow",
+      "family": "bows",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          6,
+          10
+        ],
+        "accuracy_bonus": 0,
+        "swing_stamina": 2,
+        "range": 4,
+        "channel": "physical_projectile",
+        "skill": "Ranged_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "short_bow",
+        "original_definition": {
+          "name": "Short bow",
+          "slot": "mainhand",
+          "tier": 1,
+          "fixed": {
+            "damage": 10
+          },
+          "rolls": {
+            "damage": "weapon"
+          },
+          "hands": 2,
+          "tags": [
+            "bow",
+            "physical_projectile"
+          ],
+          "reach": 4
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/short_bow"
+        }
+      },
+      "source_bindings": [],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "ash_staff": {
+      "id": "ash_staff",
+      "name": "Ash staff",
+      "family": "magic_foci",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {
+        "Magic_power": 6
+      },
+      "armor": 0,
+      "stamina_burden": 3,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [
+        "arcane"
+      ],
+      "strike": {
+        "damage": [
+          2,
+          4
+        ],
+        "accuracy_bonus": 0,
+        "swing_stamina": 3,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "ash_staff",
+        "original_definition": {
+          "name": "Ash staff",
+          "slot": "mainhand",
+          "tier": 1,
+          "fixed": {
+            "damage": 6,
+            "Magic power": 2
+          },
+          "rolls": {
+            "Magic power": "small"
+          },
+          "hands": 2,
+          "tags": [
+            "restorative_focus",
+            "arcane_focus",
+            "melee",
+            "physical_melee"
+          ],
+          "reach": 1
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/ash_staff"
+        }
+      },
+      "source_bindings": [],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "ember_focus": {
+      "id": "ember_focus",
+      "name": "Ember focus",
+      "family": "magic_foci",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {
+        "Magic_power": 3
+      },
+      "armor": 0,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [
+        "arcane"
+      ],
+      "strike": {
+        "damage": [
+          2,
+          4
+        ],
+        "accuracy_bonus": 0,
+        "swing_stamina": 2,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "ember_focus",
+        "original_definition": {
+          "name": "Ember focus",
+          "slot": "mainhand",
+          "tier": 1,
+          "fixed": {
+            "damage": 6,
+            "Magic power": 2
+          },
+          "rolls": {
+            "Magic power": "small"
+          },
+          "hands": 1,
+          "tags": [
+            "restorative_focus",
+            "arcane_focus",
+            "aimed_arcane"
+          ],
+          "reach": 3
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/ember_focus"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "old24-occultist_weapon",
+          "name": "Ember focus",
+          "family": "magic_foci",
+          "slot": "mainhand",
+          "canonical_id": "ember_focus",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/occultist_weapon.png",
+          "source_sha256": "9e9c1307e6aaf8c633f373f9a1a5407b664e590325e9fb25d9a31c2614f12f5c",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/32/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-a/layers/old24-occultist_weapon.png",
+              "z": 20,
+              "sha256": "18c53402ffd062d41dcf0c20a2bbd91dd5e18edc76fab9fcd15473ac8e126810"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-a/layers/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "User: good magic, weak physical melee. AO: one-handed focus, hand compatibility still to decide.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "focus_access",
+            "focus_profiles"
+          ],
+          "identity_note": "Existing ember_focus currently uses aimed_arcane basic; weak physical-melee option is behavior change, not stat-only."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "buckler": {
+      "id": "buckler",
+      "name": "Buckler",
+      "family": "shields",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {
+        "Initiative": -2
+      },
+      "armor": 0,
+      "stamina_burden": 3,
+      "melee_defense": 12,
+      "ranged_defense": 15,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "buckler",
+        "original_definition": {
+          "name": "Buckler",
+          "slot": "offhand",
+          "tier": 1,
+          "fixed": {
+            "shield_defense": 5,
+            "Initiative": -2
+          },
+          "rolls": {
+            "shield_defense": "small"
+          },
+          "tags": [
+            "shield"
+          ]
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/buckler"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "offhands-01-iron-buckler",
+          "name": "Iron buckler",
+          "family": "shields",
+          "slot": "offhand",
+          "canonical_id": "buckler",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/offhands-01-iron-buckler.png",
+          "source_sha256": "4cc12694b2bb14f831af574c4a723528ba744a6dd17254ec89c5b6de29a857cf",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/0/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "RETAINED_SELECTED",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-grip-gloves-proof-20261024/layers/medic/natural-buckler.png",
+              "z": 35,
+              "sha256": "6b5952b0d50f2bc4312c6295480b3d0d5fa0023b7267196d4a8e328e97c90e1d"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "Shield reference direction: melee AND physical-ranged Defense; no damage reduction or weapon strike.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "defense_channels",
+            "held_burden"
+          ],
+          "identity_note": "Numeric shield is unmapped; do not assert +12/+15 are this buckler's stats."
+        }
+      ],
+      "proposal_bindings": [
+        {
+          "proposal_profile": "shield",
+          "selection_authority": "AO TEST reference shield assignment"
+        }
+      ],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "field_tome": {
+      "id": "field_tome",
+      "name": "Field tome",
+      "family": "magic_foci",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {
+        "Magic_power": 4
+      },
+      "armor": 0,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [
+        "arcane"
+      ],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "field_tome",
+        "original_definition": {
+          "name": "Field tome",
+          "slot": "offhand",
+          "tier": 1,
+          "fixed": {
+            "Magic power": 1
+          },
+          "rolls": {
+            "Magic power": "small"
+          },
+          "tags": [
+            "restorative_focus"
+          ],
+          "grants": [
+            "mend"
+          ]
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/field_tome"
+        }
+      },
+      "source_bindings": [],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "iron_cap": {
+      "id": "iron_cap",
+      "name": "Iron cap",
+      "family": "head",
+      "tier": 1,
+      "slot": "head",
+      "hands": 0,
+      "stats": {
+        "Initiative": -1
+      },
+      "armor": 4,
+      "stamina_burden": 1,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "iron_cap",
+        "original_definition": {
+          "name": "Iron cap",
+          "slot": "head",
+          "tier": 1,
+          "fixed": {
+            "armor": 1,
+            "Initiative": -1
+          },
+          "rolls": {
+            "armor": "small"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/iron_cap"
+        }
+      },
+      "source_bindings": [],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "padded_hood": {
+      "id": "padded_hood",
+      "name": "Padded hood",
+      "family": "head",
+      "tier": 1,
+      "slot": "head",
+      "hands": 0,
+      "stats": {},
+      "armor": 4,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "padded_hood",
+        "original_definition": {
+          "name": "Padded hood",
+          "slot": "head",
+          "tier": 1,
+          "fixed": {
+            "armor": 0
+          },
+          "rolls": {
+            "armor": "small"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/padded_hood"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "headwear-01-padded-hood",
+          "name": "Padded hood",
+          "family": "head",
+          "slot": "head",
+          "canonical_id": "padded_hood",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/headwear-01-padded-hood.png",
+          "source_sha256": "7d457f34a8a9c2d695260e3719d919a3b3ca667da308442b3e752e7274b7d9fd",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/2/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/hood-boots/layers/headwear-01-padded-hood.png",
+              "sha256": "6a55d4f57ea99ac4996740eff70a4662e3d8bb6d63e49028496a66354d3707fb",
+              "z": 50
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "AO: lowest shared-pool armor contribution with minimal stamina burden; no special magic/medic role.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "armor_pool"
+          ],
+          "identity_note": "Existing definition; do not reuse rejected old cream medic wrap."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "travel_leather": {
+      "id": "travel_leather",
+      "name": "Travel leathers",
+      "family": "body",
+      "tier": 1,
+      "slot": "body",
+      "hands": 0,
+      "stats": {},
+      "armor": 16,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "travel_leather",
+        "original_definition": {
+          "name": "Travel leathers",
+          "slot": "body",
+          "tier": 1,
+          "fixed": {
+            "armor": 2,
+            "Stamina": -1
+          },
+          "rolls": {
+            "armor": "body"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/travel_leather"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "old24-travel_leather",
+          "name": "Travel leathers",
+          "family": "body",
+          "slot": "body",
+          "canonical_id": "travel_leather",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/travel_leather.png",
+          "source_sha256": "4719942ffe7166973be7a6ef74b740c355d4152bd1383037d091a28a980eb29a",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/35/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/body/layers/old24-travel_leather.png",
+              "z": 10,
+              "sha256": "0d4d71d48caad52cfcac7a6c6c75432462bd279ab59ab8e2c0e71097925a0634"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "AO: light balanced armor pool/burden, more protection and cost than Scout Coat.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "armor_pool"
+          ],
+          "identity_note": "Existing definition; full clothing depiction does not add leg slot."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "march_mail": {
+      "id": "march_mail",
+      "name": "Marcher's mail",
+      "family": "body",
+      "tier": 1,
+      "slot": "body",
+      "hands": 0,
+      "stats": {
+        "Initiative": -4
+      },
+      "armor": 36,
+      "stamina_burden": 5,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "march_mail",
+        "original_definition": {
+          "name": "Marcher's mail",
+          "slot": "body",
+          "tier": 1,
+          "fixed": {
+            "armor": 4,
+            "Stamina": -4,
+            "Initiative": -4
+          },
+          "rolls": {
+            "armor": "body"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/march_mail"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "old24-march_mail",
+          "name": "Marcher's mail",
+          "family": "body",
+          "slot": "body",
+          "canonical_id": "march_mail",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/march_mail.png",
+          "source_sha256": "b7d8698d6d2325b5426a0c3c9165922e8aeea2af2f610bfb9d033b5328c125e9",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/34/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/approved-mail/layers/old24-march_mail.png",
+              "sha256": "07b036983ed92fe284588d0f1e85aebb0836fce0bae1e51d40498d1ed418ed91",
+              "z": 10
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "AO: high shared armor and stamina burden below Banded; no separate head pool.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "armor_pool"
+          ],
+          "identity_note": "Actual short-sleeved ring mail, leather/gold shoulder caps and collar; NOT long blue medic robe."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "sword_gloves": {
+      "id": "sword_gloves",
+      "name": "Grip gloves",
+      "family": "gloves",
+      "tier": 1,
+      "slot": "hands",
+      "hands": 0,
+      "stats": {
+        "Melee_skill": 4
+      },
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "sword_gloves",
+        "original_definition": {
+          "name": "Grip gloves",
+          "slot": "hands",
+          "tier": 1,
+          "fixed": {
+            "Melee skill": 2
+          },
+          "rolls": {
+            "Melee skill": "handling"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/sword_gloves"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "gloves-02-grip-gloves",
+          "name": "Grip gloves",
+          "family": "gloves",
+          "slot": "hands",
+          "canonical_id": "sword_gloves",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/gloves-02-grip-gloves.png",
+          "source_sha256": "6128fcd5a25ed74ccff544da3928842337433bf7c17d70932840ee7a4020cf0f",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/7/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "RETAINED_SELECTED",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-grip-gloves-proof-20261024/layers/medic/grip-glove-main.png",
+              "z": 40,
+              "sha256": "5e7319d8b41e7c9238d31966e7d49a3e8ace483bb36e80599ec7db252feb267e"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-grip-gloves-proof-20261024/layers/medic/grip-glove-off.png",
+              "z": 32,
+              "sha256": "bd2901038269916122a0c8b977e147c57cb17a08e5784bb767821b4926cb851f"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "User family: melee accuracy specialist; retain identity of existing sword_gloves.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "accuracy_sources"
+          ],
+          "identity_note": "Existing profile change only once skill/weapon accuracy aggregation is defined."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "archer_gloves": {
+      "id": "archer_gloves",
+      "name": "Draw gloves",
+      "family": "gloves",
+      "tier": 1,
+      "slot": "hands",
+      "hands": 0,
+      "stats": {
+        "Ranged_skill": 4
+      },
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "archer_gloves",
+        "original_definition": {
+          "name": "Draw gloves",
+          "slot": "hands",
+          "tier": 1,
+          "fixed": {
+            "Ranged skill": 2
+          },
+          "rolls": {
+            "Ranged skill": "handling"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/archer_gloves"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "gloves-03-draw-gloves",
+          "name": "Draw gloves",
+          "family": "gloves",
+          "slot": "hands",
+          "canonical_id": "archer_gloves",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/gloves-03-draw-gloves.png",
+          "source_sha256": "b91a28779cfcfe019be3aff72a98b72813f30960348867ccb6e8b8ed1b85d3b0",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/8/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/hands-feet/layers/gloves-03-draw-gloves-main.png",
+              "z": 40,
+              "sha256": "addf0e63985da487290753189340a8c05335ccd070eb4a21facc5fc5b2bedccf"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/hands-feet/layers/gloves-03-draw-gloves-off.png",
+              "z": 32,
+              "sha256": "38037174ef39cd99fe41fc24b9525ad01052479bfddae310706d31644ae69dce"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "User family: ranged accuracy specialist; retain fingerless Draw design.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "accuracy_sources"
+          ],
+          "identity_note": "Existing profile change; ranged physical vs spell accuracy eligibility must be stated."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "light_boots": {
+      "id": "light_boots",
+      "name": "Soft boots",
+      "family": "boots",
+      "tier": 1,
+      "slot": "feet",
+      "hands": 0,
+      "stats": {
+        "Initiative": 4
+      },
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "light_boots",
+        "original_definition": {
+          "name": "Soft boots",
+          "slot": "feet",
+          "tier": 1,
+          "fixed": {
+            "Initiative": 2
+          },
+          "rolls": {
+            "Initiative": "small"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/light_boots"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "footwear-01-soft-boots",
+          "name": "Soft boots",
+          "family": "boots",
+          "slot": "feet",
+          "canonical_id": "light_boots",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/footwear-01-soft-boots.png",
+          "source_sha256": "323f3b9b309c61a5fe202a84bd27a80c3b2c1943e5b7eb43e57b0c0d04011244",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/10/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/hood-boots/layers/footwear-01-soft-boots.png",
+              "sha256": "f29babc1ac9180916e7327baca12da42377e50b4022c8adf577efaaca26da1a7",
+              "z": 12
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "AO mapping to user role: initiative specialist, no proc.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "initiative"
+          ],
+          "identity_note": "Existing definition; exact new initiative budget unset."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "trail_boots": {
+      "id": "trail_boots",
+      "name": "Trail boots",
+      "family": "boots",
+      "tier": 1,
+      "slot": "feet",
+      "hands": 0,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 1,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "trail_boots",
+        "original_definition": {
+          "name": "Trail boots",
+          "slot": "feet",
+          "tier": 1,
+          "fixed": {
+            "move_stamina_discount": 1,
+            "Initiative": 0
+          },
+          "rolls": {
+            "Initiative": "small"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/trail_boots"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "footwear-02-trail-boots",
+          "name": "Trail boots",
+          "family": "boots",
+          "slot": "feet",
+          "canonical_id": "trail_boots",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/footwear-02-trail-boots.png",
+          "source_sha256": "bed318c507f585d4f1e3f01fe95c2d1f7cde69ff6c0b0be8f842ec1ccb8b5fbd",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/11/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "RETAINED_SELECTED",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-grip-gloves-proof-20261024/layers/medic/natural-trail-boots.png",
+              "z": 12,
+              "sha256": "6d4fe02860a4c92ef3da0a2b80dfdb2460067910b8a8e51255e2094e7ef346ed"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "AO efficient-movement candidate for missing boot alternative; do not assume user approval of this role.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "movement_efficiency"
+          ],
+          "identity_note": "Existing move_stamina_discount=1 is inherited, not authority to make trial movement free."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "travel_cloak": {
+      "id": "travel_cloak",
+      "name": "Travel cloak",
+      "family": "capes",
+      "tier": 1,
+      "slot": "cloak",
+      "hands": 0,
+      "stats": {
+        "Recovery": 1
+      },
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "travel_cloak",
+        "original_definition": {
+          "name": "Travel cloak",
+          "slot": "cloak",
+          "tier": 1,
+          "fixed": {
+            "Defense": 1
+          },
+          "rolls": {
+            "Defense": "small"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/travel_cloak"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "cloaks-01-travel-cloak",
+          "name": "Travel cloak",
+          "family": "capes",
+          "slot": "cloak",
+          "canonical_id": "travel_cloak",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/cloaks-01-travel-cloak.png",
+          "source_sha256": "55221cc0fa89a853799c6de07e2f112badd3676d5bc55d35d708ceb1feeb98e6",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/14/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/cloaks/layers/cloaks-01-travel-cloak-rear.png",
+              "z": -20,
+              "sha256": "91346a867e11700f5dc5dfa8ea7fcfe2db5275146ad212e2e11dfeccce96bff5"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/cloaks/layers/cloaks-01-travel-cloak-front.png",
+              "z": 15,
+              "sha256": "10f4643f6c6553c9b6428feef32b54e9bde4b90625b1122a30b16d4f75ba6d5e"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "UNSET. AO candidate: modest Recovery; inherited general Defense is not an adopted cape rule.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "cape_decision"
+          ],
+          "identity_note": "Existing definition; no automatic Defense expansion."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "scholar_cloak": {
+      "id": "scholar_cloak",
+      "name": "Scholar cloak",
+      "family": "capes",
+      "tier": 1,
+      "slot": "cloak",
+      "hands": 0,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 2,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "scholar_cloak",
+        "original_definition": {
+          "name": "Scholar cloak",
+          "slot": "cloak",
+          "tier": 1,
+          "fixed": {
+            "Magic power": 1
+          },
+          "rolls": {
+            "Magic power": "small"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/scholar_cloak"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "cloaks-03-scholar-cloak",
+          "name": "Scholar cloak",
+          "family": "capes",
+          "slot": "cloak",
+          "canonical_id": "scholar_cloak",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/cloaks-03-scholar-cloak.png",
+          "source_sha256": "d450e73bf8241232bf1287e26cff3687b7aa9da790d6b06daceadb9ae020a5bd",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/16/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/cloaks/layers/cloaks-03-scholar-cloak-rear.png",
+              "z": -20,
+              "sha256": "ce80923571917c36d8a1237238799ed8042342b640baff44e0ae14904ff39b75"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/cloaks/layers/cloaks-03-scholar-cloak-front.png",
+              "z": 15,
+              "sha256": "356d37ebdd69118e0089810d4bce61c243d445fdd76265669e68c7748163d9fe"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "UNSET. AO candidate: physical-ranged Defense rather than more ordinary magic power; user has not chosen this.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "cape_decision",
+            "defense_channels"
+          ],
+          "identity_note": "Existing Magic power profile would change; do not claim a magic ward."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "pouch_belt": {
+      "id": "pouch_belt",
+      "name": "Pouch belt",
+      "family": "belts",
+      "tier": 1,
+      "slot": "belt",
+      "hands": 0,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 2,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "pouch_belt",
+        "original_definition": {
+          "name": "Pouch belt",
+          "slot": "belt",
+          "tier": 1,
+          "fixed": {
+            "consumable_capacity": 1
+          },
+          "rolls": {
+            "consumable_capacity": "utility"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/pouch_belt"
+        }
+      },
+      "source_bindings": [
+        {
+          "key": "belts-02-pouch-belt",
+          "name": "Pouch belt",
+          "family": "belts",
+          "slot": "belt",
+          "canonical_id": "pouch_belt",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/belts-02-pouch-belt.png",
+          "source_sha256": "7b5b801dd1bb7569b4d10dbf8e4f1ac944625418e2f9a3a907e28cf9a33ae7c8",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/19/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/belts/layers/medic/belts-02-pouch-belt.png",
+              "z": 18,
+              "sha256": "b367cbb5224d1b56e29dae0428a011a452b12bfaa3a6c5610806542b25be8ac4"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "definition_exists_in_frozen_seed",
+          "definition_work": "existing_definition_profile_change_after_system_gates",
+          "proposed_profile": "User bagged-belt role / AO mapping: baseline reserve access plus extra equipment reserve capacity.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "reserve_swap",
+            "reserve_capacity"
+          ],
+          "identity_note": "Existing consumable_capacity is NOT equipment capacity; schema/behavior change needed."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "breather_belt": {
+      "id": "breather_belt",
+      "name": "Breather belt",
+      "family": "belts",
+      "tier": 1,
+      "slot": "belt",
+      "hands": 0,
+      "stats": {
+        "Stamina": 2
+      },
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 1,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": "breather_belt",
+        "original_definition": {
+          "name": "Breather belt",
+          "slot": "belt",
+          "tier": 1,
+          "fixed": {
+            "Stamina": 2
+          },
+          "rolls": {
+            "Stamina": "small"
+          }
+        },
+        "definition_source": {
+          "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/rules.json",
+          "json_pointer": "/items/breather_belt"
+        }
+      },
+      "source_bindings": [],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:offhands-02-round-wooden-shield": {
+      "id": "hm_trial_v1:offhands-02-round-wooden-shield",
+      "name": "Round wooden shield",
+      "family": "shields",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {
+        "Initiative": -3
+      },
+      "armor": 0,
+      "stamina_burden": 5,
+      "melee_defense": 15,
+      "ranged_defense": 18,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "offhands-02-round-wooden-shield",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "offhands-02-round-wooden-shield",
+          "name": "Round wooden shield",
+          "family": "shields",
+          "slot": "offhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/offhands-02-round-wooden-shield.png",
+          "source_sha256": "ea0328a8e6cf5ef91feed660565c25de81ccfa943febfdba57f3bacdf14638ff",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/1/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/wooden-shield/layers/offhands-02-round-wooden-shield.png",
+              "sha256": "aa7e89e5b69005f79be5727819ac2d7c3258efeabb8df151025e7b7136227159",
+              "z": 35
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: stronger/heavier shield alternative; both Defense channels, with greater held burden than a small buckler; exact comparison unset.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "defense_channels",
+            "held_burden"
+          ],
+          "identity_note": "New canonical definition needed; source is plank-and-metal-rim shield, not old test buckler."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:headwear-02-leather-cap": {
+      "id": "hm_trial_v1:headwear-02-leather-cap",
+      "name": "Leather cap",
+      "family": "head",
+      "tier": 1,
+      "slot": "head",
+      "hands": 0,
+      "stats": {},
+      "armor": 5,
+      "stamina_burden": 1,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "headwear-02-leather-cap",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "headwear-02-leather-cap",
+          "name": "Leather cap",
+          "family": "head",
+          "slot": "head",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/headwear-02-leather-cap.png",
+          "source_sha256": "5332faf40e9ecf554953307a8ecbf36a2acaed7eddb533b532076621c2d3837f",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/3/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/head-offhand/layers/headwear-02-leather-cap.png",
+              "z": 50,
+              "sha256": "3380affcdb447f70d45460b9f07d0571a1b8e5ba801ca88571b23bd0c1fa9650"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: light shared-pool armor contribution above hood with small burden.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "armor_pool"
+          ],
+          "identity_note": "New definition, not an alias for padded_hood."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:headwear-03-iron-skullcap": {
+      "id": "hm_trial_v1:headwear-03-iron-skullcap",
+      "name": "Iron skullcap",
+      "family": "head",
+      "tier": 1,
+      "slot": "head",
+      "hands": 0,
+      "stats": {
+        "Initiative": -1
+      },
+      "armor": 6,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "headwear-03-iron-skullcap",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "headwear-03-iron-skullcap",
+          "name": "Iron skullcap",
+          "family": "head",
+          "slot": "head",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/headwear-03-iron-skullcap.png",
+          "source_sha256": "3e69998795441a341d3411cc11fbd7443b40b3c82de7cc62abe3140689bd26a7",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/4/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/head-offhand/layers/headwear-03-iron-skullcap.png",
+              "z": 50,
+              "sha256": "acb8851f2dba58b99ce1dd5c073cc8f8a78d5bad1a8b8480c935745831b57d00"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: medium shared-pool armor contribution with stamina burden; initiative trade-off can be discussed.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "armor_pool"
+          ],
+          "identity_note": "Null binding remains null; NOT iron_cap despite apparent name similarity."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:headwear-04-kettle-helm": {
+      "id": "hm_trial_v1:headwear-04-kettle-helm",
+      "name": "Kettle helm",
+      "family": "head",
+      "tier": 1,
+      "slot": "head",
+      "hands": 0,
+      "stats": {
+        "Initiative": -2
+      },
+      "armor": 10,
+      "stamina_burden": 3,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "headwear-04-kettle-helm",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "headwear-04-kettle-helm",
+          "name": "Kettle helm",
+          "family": "head",
+          "slot": "head",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/headwear-04-kettle-helm.png",
+          "source_sha256": "4fa822659d2a0086db89c8575b0ef6ade8f134cb2229d2042a33914465700b63",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/5/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/kettle-brim/layers/kettle-rear.png",
+              "z": -10,
+              "sha256": "8f29aed84e41f7560bdabe65f801bddabd00f2870d1a50f2e6e7ba56ad50b0de"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/kettle-brim/layers/kettle-front.png",
+              "z": 50,
+              "sha256": "13f959a6c3ad5e110a1a481fa1d3151d51550f1fa59661d86076da780f173cb9"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: largest of these head armor contributions, highest head burden; brim is visual, not headshot/ranged mitigation.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "armor_pool"
+          ],
+          "identity_note": "New definition; no crit or hit-location mechanic."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:gloves-01-linen-handwraps": {
+      "id": "hm_trial_v1:gloves-01-linen-handwraps",
+      "name": "Linen handwraps",
+      "family": "gloves",
+      "tier": 1,
+      "slot": "hands",
+      "hands": 0,
+      "stats": {
+        "Melee_skill": 2,
+        "Ranged_skill": 2
+      },
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "gloves-01-linen-handwraps",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "gloves-01-linen-handwraps",
+          "name": "Linen handwraps",
+          "family": "gloves",
+          "slot": "hands",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/gloves-01-linen-handwraps.png",
+          "source_sha256": "87dee6ac0dfc0dc338d1f04389526bac346247e21f15724bf0e7f7bda314932b",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/6/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/hands-feet/layers/gloves-01-linen-handwraps-main.png",
+              "z": 40,
+              "sha256": "2d1dd4012aa86fc3bbf41c2e90271aecd308d10e29d0b342c058b0a103971c3e"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/hands-feet/layers/gloves-01-linen-handwraps-off.png",
+              "z": 32,
+              "sha256": "ce5866268429b99303e18bc8e3a5a04a8869b4784a7a8fd3928b658510192663"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: modest mixed melee/ranged accuracy; smaller specialist bonuses than Grip/Draw.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "accuracy_sources"
+          ],
+          "identity_note": "New definition; no Recovery proc."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:gloves-04-mail-gloves": {
+      "id": "hm_trial_v1:gloves-04-mail-gloves",
+      "name": "Mail gloves",
+      "family": "gloves",
+      "tier": 1,
+      "slot": "hands",
+      "hands": 0,
+      "stats": {},
+      "armor": 6,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "gloves-04-mail-gloves",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "gloves-04-mail-gloves",
+          "name": "Mail gloves",
+          "family": "gloves",
+          "slot": "hands",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/gloves-04-mail-gloves.png",
+          "source_sha256": "b42f7b932dadd5be14e94b5ce798ef4645cb2d46ae28bb01bd0a3c260c6bf61a",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/9/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/hands-feet/layers/gloves-04-mail-gloves-main.png",
+              "z": 40,
+              "sha256": "bc9f3bdf8ece2160b240e8a06bfdad0cb07fd7dcfc27b8786fd69c88826aeac1"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/hands-feet/layers/gloves-04-mail-gloves-off.png",
+              "z": 32,
+              "sha256": "9d18ca20b039f1f091de9faa1402c4c0827c455b98240513e0d4f5a8f134ac57"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "User family: shared armor contribution with maximum-stamina cost, not accuracy plus armor for free.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "armor_pool",
+            "held_burden"
+          ],
+          "identity_note": "New definition; glove-pair counts as ONE item."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:footwear-03-wrapped-shoes": {
+      "id": "hm_trial_v1:footwear-03-wrapped-shoes",
+      "name": "Wrapped shoes",
+      "family": "boots",
+      "tier": 1,
+      "slot": "feet",
+      "hands": 0,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {
+        "ap": 1,
+        "stamina": 4,
+        "range": 2,
+        "cooldown_own_turns": 4,
+        "targeting": "reachable_empty_hex",
+        "path_required": true,
+        "ignores_terrain": false,
+        "ignores_occupants": false
+      },
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "footwear-03-wrapped-shoes",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "footwear-03-wrapped-shoes",
+          "name": "Wrapped shoes",
+          "family": "boots",
+          "slot": "feet",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/footwear-03-wrapped-shoes.png",
+          "source_sha256": "1dabdaafe4673f27c6372477c461c79bd8e3029444e7c666e2db7a854f3ce7b5",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/12/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/hands-feet/layers/footwear-03-wrapped-shoes.png",
+              "z": 12,
+              "sha256": "9b452ddc693f75628f4f5601627426db29af52f5599dbb82534938a6ae6e6aa4"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO mapping to user-proposed short dash / long cooldown; costs, distance, targeting and cooldown UNSET.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "dash"
+          ],
+          "identity_note": "New definition + explicit active ability; no automatic extra movement."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:footwear-04-reinforced-boots": {
+      "id": "hm_trial_v1:footwear-04-reinforced-boots",
+      "name": "Reinforced boots",
+      "family": "boots",
+      "tier": 1,
+      "slot": "feet",
+      "hands": 0,
+      "stats": {
+        "Initiative": -4
+      },
+      "armor": 6,
+      "stamina_burden": 1,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "footwear-04-reinforced-boots",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "footwear-04-reinforced-boots",
+          "name": "Reinforced boots",
+          "family": "boots",
+          "slot": "feet",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/footwear-04-reinforced-boots.png",
+          "source_sha256": "17bbbd181365c558165ed5d041bac17c0aacc1c2f180599c069bfbb957e403c6",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/13/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/hands-feet/layers/footwear-04-reinforced-boots.png",
+              "z": 12,
+              "sha256": "2d2644e0cd4f9ce943cae474f9935e54f76e48c7091a3d2e0a2273c741b4a96e"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "User role / AO mapping: shared armor contribution paid with initiative cost; any stamina cost still unset.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "armor_pool",
+            "initiative"
+          ],
+          "identity_note": "New definition; do not turn into free armor plus initiative."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:cloaks-02-scout-cloak": {
+      "id": "hm_trial_v1:cloaks-02-scout-cloak",
+      "name": "Scout cloak",
+      "family": "capes",
+      "tier": 1,
+      "slot": "cloak",
+      "hands": 0,
+      "stats": {
+        "Initiative": 2
+      },
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "cloaks-02-scout-cloak",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "cloaks-02-scout-cloak",
+          "name": "Scout cloak",
+          "family": "capes",
+          "slot": "cloak",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/cloaks-02-scout-cloak.png",
+          "source_sha256": "6a66863dad8e99fe8cb72fdb364a15ab39bac1a7004caae2855c2eb4568d78e6",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/15/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/cloaks/layers/cloaks-02-scout-cloak-rear.png",
+              "z": -20,
+              "sha256": "0076dec9f37f631e08d55d33de236119fec3c24485a98bc07dc7d12230e2064d"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/cloaks/layers/cloaks-02-scout-cloak-front.png",
+              "z": 15,
+              "sha256": "c8ae550716cb400ca356ef39e7c80c2cf9bbe590edc782432f8b8bb35f9f26fc"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "UNSET. AO candidate: initiative, keeping shield/parry defensive test clean.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "cape_decision"
+          ],
+          "identity_note": "New definition only after cape role choice."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:cloaks-04-waxed-cape": {
+      "id": "hm_trial_v1:cloaks-04-waxed-cape",
+      "name": "Waxed cape",
+      "family": "capes",
+      "tier": 1,
+      "slot": "cloak",
+      "hands": 0,
+      "stats": {
+        "Initiative": -1
+      },
+      "armor": 3,
+      "stamina_burden": 1,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "cloaks-04-waxed-cape",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "cloaks-04-waxed-cape",
+          "name": "Waxed cape",
+          "family": "capes",
+          "slot": "cloak",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/cloaks-04-waxed-cape.png",
+          "source_sha256": "3b2876c72b009fe07d8a187ed04841519c6993b9b1f17c16f7512e47a20ba453",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/17/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/combined/corrections/waxed-cape-rear-clean.png",
+              "z": -20,
+              "sha256": "97150a3edddfb102d29b3b617fe9e2a3b8ba80ce46b6c061febc4312806dd00c"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/cloaks/layers/cloaks-04-waxed-cape-front.png",
+              "z": 15,
+              "sha256": "93e6e3a5bfcbeb537774a4a04a9f034730be62ccc02013a9e9403c9386837288"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "UNSET. AO candidate: modest armor with burden; waxed cloth source is NOT proof of an armored cape design.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "cape_decision",
+            "armor_pool"
+          ],
+          "identity_note": "New definition; armored art identity may need separate source decision, not relabeling."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval",
+      "selection_note": "AO modest armor pool for cloth; does NOT claim metal-armored source art"
+    },
+    "hm_trial_v1:belts-01-utility-belt": {
+      "id": "hm_trial_v1:belts-01-utility-belt",
+      "name": "Utility belt",
+      "family": "belts",
+      "tier": 1,
+      "slot": "belt",
+      "hands": 0,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 1,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "belts-01-utility-belt",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "belts-01-utility-belt",
+          "name": "Utility belt",
+          "family": "belts",
+          "slot": "belt",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/belts-01-utility-belt.png",
+          "source_sha256": "9cd4621707ae3ef7a04cb3c7c9fdbce85a6cfbc6840dd0531cc5713df43ee95a",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/18/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/belts/layers/medic/belts-01-utility-belt.png",
+              "z": 18,
+              "sha256": "24fbf894419d976ef9fefbb187199c88a13d838893466012e72503b6a3d6848a"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO mapping: baseline belt-accessible reserve held loadout; no extra capacity.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "reserve_swap"
+          ],
+          "identity_note": "New definition; access is bounded reserve, not whole stash."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:belts-03-support-belt": {
+      "id": "hm_trial_v1:belts-03-support-belt",
+      "name": "Support belt",
+      "family": "belts",
+      "tier": 1,
+      "slot": "belt",
+      "hands": 0,
+      "stats": {},
+      "armor": 4,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 1,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "belts-03-support-belt",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "belts-03-support-belt",
+          "name": "Support belt",
+          "family": "belts",
+          "slot": "belt",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/belts-03-support-belt.png",
+          "source_sha256": "8f62542efac07a08f39b948f1b46ae29231ebd138bea015543723a5002b86cd6",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/20/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/belts/layers/medic/belts-03-support-belt.png",
+              "z": 18,
+              "sha256": "c6b99bb16675860af6090f78aafadd0bf2787658e769636bf1621c06ee987c5f"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO mapping candidate: armored belt contribution paid with maximum stamina. Current leather support source is not a metal-armored source approval.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "reserve_swap",
+            "armor_pool"
+          ],
+          "identity_note": "New definition; armored interpretation/source choice unresolved; NOT breather_belt alias."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval",
+      "selection_note": "AO support-belt shared armor budget; source remains leather, not metal-art approval"
+    },
+    "hm_trial_v1:belts-04-woven-sash": {
+      "id": "hm_trial_v1:belts-04-woven-sash",
+      "name": "Woven sash",
+      "family": "belts",
+      "tier": 1,
+      "slot": "belt",
+      "hands": 0,
+      "stats": {
+        "Initiative": 2
+      },
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 1,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "belts-04-woven-sash",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "belts-04-woven-sash",
+          "name": "Woven sash",
+          "family": "belts",
+          "slot": "belt",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/individual/belts-04-woven-sash.png",
+          "source_sha256": "793dcaf7189950cd7508328cfbc3b7c006e4e6ef09d9ccb7442992f493a02333",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/21/canonical_id"
+          },
+          "source_art_status": "working_baseline_hash_verified",
+          "working_art_approval_path": "/home/quatro/games/hollow-march-workstreams/tier1-catalogue-art-20261024/APPROVAL.json",
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/belts/layers/medic/belts-04-woven-sash.png",
+              "z": 18,
+              "sha256": "2c058e7e0b7c7188b0736639f7cf627399f5bb50a5369d9421effdee29f338d6"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "User sash role / AO mapping: initiative with baseline reserve access if all equipped belts grant access (scope to confirm).",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "reserve_swap",
+            "initiative"
+          ],
+          "identity_note": "New definition; access across variants requires player decision."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-shieldbearer_heavy": {
+      "id": "hm_trial_v1:old24-shieldbearer_heavy",
+      "name": "War mace",
+      "family": "maces",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 5,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          9,
+          13
+        ],
+        "accuracy_bonus": -2,
+        "swing_stamina": 6,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 2.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-shieldbearer_heavy",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-shieldbearer_heavy",
+          "name": "War mace",
+          "family": "maces",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/shieldbearer_heavy.png",
+          "source_sha256": "fe395e4fe2329cab157210974f6048b4d3d3d44936b4c2240e1b7f3ef30baf5e",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/23/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/blade-mace/layers/old24-shieldbearer_heavy.png",
+              "z": 20,
+              "sha256": "d3bcf990283c44d047039d6fd0d920aeadb85476ed70a4be4a7d8d8affdacb15"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/blade-mace/layers/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "User family / AO item: stamina-heavy high armor-damage mace; restrained HP efficiency.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "armor_breaking"
+          ],
+          "identity_note": "New definition; NOT cudgel alias; no armor multiplier chosen."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-archer_weapon": {
+      "id": "hm_trial_v1:old24-archer_weapon",
+      "name": "Ash longbow",
+      "family": "bows",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 3,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          8,
+          12
+        ],
+        "accuracy_bonus": 5,
+        "swing_stamina": 3,
+        "range": 4,
+        "channel": "physical_projectile",
+        "skill": "Ranged_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-archer_weapon",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-archer_weapon",
+          "name": "Ash longbow",
+          "family": "bows",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/archer_weapon.png",
+          "source_sha256": "050b3ef5f38afeda7771282f8b27a209b8670b712b9175abe898c3337866e74b",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/24/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/bows/layers/old24-archer_weapon.png",
+              "relative_path": "layers/old24-archer_weapon.png",
+              "sha256": "0115bb204fa73de903ce35c877fb64a9ee75abb402757521ae930d5ec036cc76",
+              "z": 20
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/bows/layers/original-leading-fingers.png",
+              "relative_path": "layers/original-leading-fingers.png",
+              "sha256": "efc5a01dea8f06cd16ddda2d472ed7429b77e50765f2775e9c09ceef248551f6",
+              "z": 30
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: balanced/reliable longbow with moderate swing cost and accuracy.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "ranged_profiles"
+          ],
+          "identity_note": "New definition; NOT short_bow alias."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-archer_heavy": {
+      "id": "hm_trial_v1:old24-archer_heavy",
+      "name": "Heavy hunting bow",
+      "family": "bows",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 5,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          12,
+          18
+        ],
+        "accuracy_bonus": 0,
+        "swing_stamina": 5,
+        "range": 4,
+        "channel": "physical_projectile",
+        "skill": "Ranged_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-archer_heavy",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-archer_heavy",
+          "name": "Heavy hunting bow",
+          "family": "bows",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/archer_heavy.png",
+          "source_sha256": "12b9ac8b90d20f7d83708a4f184c9d746a87ff74d58d428605f86a200da88c19",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/25/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/bows/layers/old24-archer_heavy.png",
+              "relative_path": "layers/old24-archer_heavy.png",
+              "sha256": "042c5683bf16b03923d75042a8ac6a79cc5da3f060ae8078779cd225281392aa",
+              "z": 20
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/bows/layers/original-leading-fingers.png",
+              "relative_path": "layers/original-leading-fingers.png",
+              "sha256": "efc5a01dea8f06cd16ddda2d472ed7429b77e50765f2775e9c09ceef248551f6",
+              "z": 30
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: power bow; higher damage and stamina burden, lower economy than balanced bow.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "ranged_profiles"
+          ],
+          "identity_note": "New definition; range superiority not assumed."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-polearm_weapon": {
+      "id": "hm_trial_v1:old24-polearm_weapon",
+      "name": "Boar spear",
+      "family": "spears_and_polearms",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {
+        "Initiative": -2
+      },
+      "armor": 0,
+      "stamina_burden": 4,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          8,
+          12
+        ],
+        "accuracy_bonus": 2,
+        "swing_stamina": 4,
+        "range": 2,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-polearm_weapon",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-polearm_weapon",
+          "name": "Boar spear",
+          "family": "spears_and_polearms",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/polearm_weapon.png",
+          "source_sha256": "c1d5e017fe211856d3e662bada6b072fc56a5894fcaf1e531016d8fd48ec496e",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/26/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/polearms/layers/old24-polearm_weapon.png",
+              "sha256": "87f1ca2bb69b058906662a8ea8d8a746930f0d8976a9de321fd3cdfda10a53e9",
+              "z": 20
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/polearms/layers/original-leading-fingers.png",
+              "sha256": "4bfee73c6caedd012109bbef56d08484a23ee96474759aef3d74f3afd0521531",
+              "z": 30
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: reliable reach-two spear with conservative damage/accuracy and paid stamina cost.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "reach_tradeoff"
+          ],
+          "identity_note": "New definition; NOT pike alias."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-polearm_heavy": {
+      "id": "hm_trial_v1:old24-polearm_heavy",
+      "name": "Billhook",
+      "family": "spears_and_polearms",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {
+        "Initiative": -3
+      },
+      "armor": 0,
+      "stamina_burden": 5,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          10,
+          14
+        ],
+        "accuracy_bonus": -3,
+        "swing_stamina": 5,
+        "range": 2,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-polearm_heavy",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-polearm_heavy",
+          "name": "Billhook",
+          "family": "spears_and_polearms",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/polearm_heavy.png",
+          "source_sha256": "faff4ac1c701f3672fc37818e1c76314a1ab71996ddde2c93ef89e3c9932e65b",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/27/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/polearms/layers/old24-polearm_heavy.png",
+              "sha256": "ab83da2720b7ad6465d1873fe735f0f4fc905815bd67b0f39eda55e79e935ee1",
+              "z": 20
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/polearms/layers/original-leading-fingers.png",
+              "sha256": "4bfee73c6caedd012109bbef56d08484a23ee96474759aef3d74f3afd0521531",
+              "z": 30
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: heavier hooked polearm, costlier damage trade-off at reach two; no pull ability approved.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "reach_tradeoff"
+          ],
+          "identity_note": "New definition; billhook is not an axe merely because its head cuts."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-duelist_weapon": {
+      "id": "hm_trial_v1:old24-duelist_weapon",
+      "name": "Narrow sabre",
+      "family": "swords",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 1,
+      "melee_defense": 6,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          4,
+          7
+        ],
+        "accuracy_bonus": 5,
+        "swing_stamina": 2,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 1.0,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-duelist_weapon",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-duelist_weapon",
+          "name": "Narrow sabre",
+          "family": "swords",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/duelist_weapon.png",
+          "source_sha256": "0681e8c92880e528f09496fd6673b3295eaa0199601ed615a9a2c5ab74c09249",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/28/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-a/layers/old24-duelist_weapon.png",
+              "z": 20,
+              "sha256": "a2722cf7391d374e1a45d136b4575a01c77d78980b02025d2c105540a54bd4b4"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-a/layers/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO option: light accurate/parrying-sword candidate with low damage and melee-only Defense, if user selects this identity.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "grip_and_pair",
+            "defense_channels"
+          ],
+          "identity_note": "New definition; NOT estoc alias; no automatic parry assignment."
+        }
+      ],
+      "proposal_bindings": [
+        {
+          "proposal_profile": "draft_parrying_sword",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/numeric-proposal/proposal.json",
+          "selection_authority": "Reversible AO TEST assignment, not a historical canonical binding"
+        }
+      ],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-duelist_heavy": {
+      "id": "hm_trial_v1:old24-duelist_heavy",
+      "name": "Heavy falchion",
+      "family": "swords",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 3,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          10,
+          14
+        ],
+        "accuracy_bonus": 5,
+        "swing_stamina": 4,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-duelist_heavy",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-duelist_heavy",
+          "name": "Heavy falchion",
+          "family": "swords",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/duelist_heavy.png",
+          "source_sha256": "c978f58071eccd4462e8c2c002d8a16f40428c1dc908fb2b010b2992d3696382",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/29/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-a/layers/old24-duelist_heavy.png",
+              "z": 20,
+              "sha256": "dce9285096cffcc56aee24b774a76168a05692e47319fad87f824b7e87594c55"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-a/layers/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: heavier cutting sword, more damage and stamina than reliable sword, less accuracy; stays Tier1.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "grip_and_pair"
+          ],
+          "identity_note": "New definition; heavy falchion is not automatically two-handed."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-medic_weapon": {
+      "id": "hm_trial_v1:old24-medic_weapon",
+      "name": "Field knife",
+      "family": "daggers",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 1,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          4,
+          7
+        ],
+        "accuracy_bonus": 5,
+        "swing_stamina": 1,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0.2,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-medic_weapon",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-medic_weapon",
+          "name": "Field knife",
+          "family": "daggers",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/medic_weapon.png",
+          "source_sha256": "16b79b0d7f95bce275fb4b7a28932c64b00b8872bcd8ef6d14745c76810e5413",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/30/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-a/layers/old24-medic_weapon.png",
+              "z": 20,
+              "sha256": "b0f89768be5bf485d54ae04ec697a7f1b8d25abd81466f22065a4cebc065438c"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-a/layers/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: lightweight cheap low-swing-cost backup knife, not default parrying Defense.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "grip_and_pair"
+          ],
+          "identity_note": "New definition; no healing merely because historical filename says medic."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-medic_heavy": {
+      "id": "hm_trial_v1:old24-medic_heavy",
+      "name": "Surgical hatchet",
+      "family": "axes",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          5,
+          17
+        ],
+        "accuracy_bonus": 0,
+        "swing_stamina": 4,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-medic_heavy",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-medic_heavy",
+          "name": "Surgical hatchet",
+          "family": "axes",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/medic_heavy.png",
+          "source_sha256": "149facf683a9d5dc2b696e151f172e398fa722f5b7d93cb9e1aab35c5eef560a",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/31/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-a/layers/old24-medic_heavy.png",
+              "z": 20,
+              "sha256": "25ad1c447d5c461c980c7d8e2d9d2b4f52805f673cb641a9cd37f1bf07afe10a"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-a/layers/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "User wide-range axe direction / AO item: light hatchet, wide high ceiling at moderate stamina; numeric light-axe comparison remains unmapped.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "grip_and_pair"
+          ],
+          "identity_note": "New definition; actual one standalone axe in this recipe, NONE in frozen rules."
+        }
+      ],
+      "proposal_bindings": [
+        {
+          "proposal_profile": "draft_light_axe",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/numeric-proposal/proposal.json",
+          "selection_authority": "Reversible AO TEST assignment, not a historical canonical binding"
+        }
+      ],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-occultist_heavy": {
+      "id": "hm_trial_v1:old24-occultist_heavy",
+      "name": "Ironbound focus",
+      "family": "magic_foci",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {
+        "Magic_power": 2
+      },
+      "armor": 0,
+      "stamina_burden": 3,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [
+        "arcane"
+      ],
+      "strike": {
+        "damage": [
+          6,
+          9
+        ],
+        "accuracy_bonus": 0,
+        "swing_stamina": 3,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-occultist_heavy",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-occultist_heavy",
+          "name": "Ironbound focus",
+          "family": "magic_foci",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/occultist_heavy.png",
+          "source_sha256": "0388f3cc48ee0855ceca331dfbee8bb650f7b45c1e5af7f6d48de46aec70ccc4",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/33/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/parent-weapon-corrections/ironbound-focus/layers/medic/old24-occultist_heavy.png",
+              "z": 20,
+              "sha256": "8e759a4aab0e40008d126a1db927f4afdb7cc6a4050b4b6eec6c9d3f4b7d498f"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/parent-weapon-corrections/ironbound-focus/layers/medic/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "User: moderate magic and moderate melee; below staff/tome/Ember magic, better melee than Ember.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "focus_access",
+            "focus_profiles"
+          ],
+          "identity_note": "New definition; Ironbound remains source-only."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-ward_spear": {
+      "id": "hm_trial_v1:old24-ward_spear",
+      "name": "Ward Spear",
+      "family": "spears_and_polearms",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {
+        "Initiative": -2
+      },
+      "armor": 0,
+      "stamina_burden": 4,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          7,
+          10
+        ],
+        "accuracy_bonus": 7,
+        "swing_stamina": 4,
+        "range": 2,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-ward_spear",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-ward_spear",
+          "name": "Ward Spear",
+          "family": "spears_and_polearms",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/ward_spear.png",
+          "source_sha256": "e78213bff5731e15102365fdf3fe335a06f562444211b4e8e7654ba5accce8d1",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/36/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/polearms/layers/old24-ward_spear.png",
+              "sha256": "9926db04246da152e2048a409cd5ce53e0a2117a8fd2bd754e443ec97f385050",
+              "z": 20
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/polearms/layers/original-leading-fingers.png",
+              "sha256": "4bfee73c6caedd012109bbef56d08484a23ee96474759aef3d74f3afd0521531",
+              "z": 30
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: accuracy-leaning reach-two spear with lower damage than a costlier damage polearm; no free ward proc.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "reach_tradeoff"
+          ],
+          "identity_note": "New definition; substantial shouldered spearhead/pennant, not pike alias."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-scout_coat": {
+      "id": "hm_trial_v1:old24-scout_coat",
+      "name": "Scout Coat",
+      "family": "body",
+      "tier": 1,
+      "slot": "body",
+      "hands": 0,
+      "stats": {},
+      "armor": 10,
+      "stamina_burden": 1,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-scout_coat",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-scout_coat",
+          "name": "Scout Coat",
+          "family": "body",
+          "slot": "body",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/scout_coat.png",
+          "source_sha256": "b865345c381621bc9ede7766cb3a3ccc79315933ba0fb5e00581bf2465a31e3a",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/37/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/body/layers/old24-scout_coat.png",
+              "z": 10,
+              "sha256": "a6fc32d86d398fc751e5c31cba3a6c7dc4af67ba84b12b0e1685614a679dc03f"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: lowest body armor and lowest burden; mobility through low burden rather than extra proc.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "armor_pool"
+          ],
+          "identity_note": "New definition; distinct approved standalone, not travel_leather alias."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-banded_mail": {
+      "id": "hm_trial_v1:old24-banded_mail",
+      "name": "Banded Mail",
+      "family": "body",
+      "tier": 1,
+      "slot": "body",
+      "hands": 0,
+      "stats": {
+        "Initiative": -6
+      },
+      "armor": 48,
+      "stamina_burden": 8,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-banded_mail",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-banded_mail",
+          "name": "Banded Mail",
+          "family": "body",
+          "slot": "body",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/banded_mail.png",
+          "source_sha256": "a629a60f50a5941a778fea98aa6c0193bf5262b6f921a87b8527d03bede8084f",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/38/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/body/layers/old24-banded_mail.png",
+              "z": 10,
+              "sha256": "d39783ec2cbbbdd3b4e9e46fded4c7079fe84943540294aa58e38affd2dfc8c0"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: highest body shared-pool armor and highest stamina burden; initiative cost to budget explicitly.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "armor_pool"
+          ],
+          "identity_note": "New definition; ordinary trousers alone do not prove armored leg coverage."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-gatewarden_blade": {
+      "id": "hm_trial_v1:old24-gatewarden_blade",
+      "name": "Gatewarden's Blade",
+      "family": "swords",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 4,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          11,
+          15
+        ],
+        "accuracy_bonus": 7,
+        "swing_stamina": 5,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-gatewarden_blade",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-gatewarden_blade",
+          "name": "Gatewarden's Blade",
+          "family": "swords",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/gatewarden_blade.png",
+          "source_sha256": "82bfae94950aa025c50f87e11f4f364365a57bcb32cf136bea2dd560e3f685ff",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/40/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-b/layers/medic/old24-gatewarden_blade.png",
+              "z": 20,
+              "sha256": "663fd929c4ad999ad116287fea15d1c998083644f06d968bd14127eca4796e67"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-b/layers/medic/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: heavier reliable blade with damage-versus-accuracy trade-off; all blades remain Tier1.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "grip_and_pair"
+          ],
+          "identity_note": "New definition; not proof of two-handed use. Two-hand sword remains separate unresolved design."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-reedrunner_bow": {
+      "id": "hm_trial_v1:old24-reedrunner_bow",
+      "name": "Reedrunner Bow",
+      "family": "bows",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 3,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          7,
+          10
+        ],
+        "accuracy_bonus": 12,
+        "swing_stamina": 4,
+        "range": 4,
+        "channel": "physical_projectile",
+        "skill": "Ranged_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-reedrunner_bow",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-reedrunner_bow",
+          "name": "Reedrunner Bow",
+          "family": "bows",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/reedrunner_bow.png",
+          "source_sha256": "fbc5f3880ef42f23a8f4eb5bf4cad9113df4e5a57d38678af314fea5bfb3c4e7",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/41/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/bows/layers/old24-reedrunner_bow.png",
+              "relative_path": "layers/old24-reedrunner_bow.png",
+              "sha256": "d7d3885a1f9e9c0522fedbc1263b339a4953373b335b0bb60c721e168222bc35",
+              "z": 20
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/bows/layers/original-leading-fingers.png",
+              "relative_path": "layers/original-leading-fingers.png",
+              "sha256": "efc5a01dea8f06cd16ddda2d472ed7429b77e50765f2775e9c09ceef248551f6",
+              "z": 30
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: accuracy-focused bow; trades damage/efficiency against reliable bow, no proc.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "ranged_profiles"
+          ],
+          "identity_note": "New definition; choosing this vs longbow as accuracy role remains design proposal."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-ferryman_hook": {
+      "id": "hm_trial_v1:old24-ferryman_hook",
+      "name": "Ferryman's Hook",
+      "family": "spears_and_polearms",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {
+        "Initiative": -4
+      },
+      "armor": 0,
+      "stamina_burden": 6,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          11,
+          15
+        ],
+        "accuracy_bonus": -5,
+        "swing_stamina": 6,
+        "range": 2,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-ferryman_hook",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-ferryman_hook",
+          "name": "Ferryman's Hook",
+          "family": "spears_and_polearms",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/ferryman_hook.png",
+          "source_sha256": "cfe6a2c554af0907877f13aa8c20bf207cefcbd24e33add34712d716e12f8c4a",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/42/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/polearms/layers/old24-ferryman_hook.png",
+              "sha256": "7466419306beeeeb765588d430429553f2c1a2d1d23dbe83b515b9588098759a",
+              "z": 20
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/polearms/layers/original-leading-fingers.png",
+              "sha256": "4bfee73c6caedd012109bbef56d08484a23ee96474759aef3d74f3afd0521531",
+              "z": 30
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: reach-two hooked damage-leaning polearm at higher cost/lower accuracy; no pull/disarm special approved.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "reach_tradeoff"
+          ],
+          "identity_note": "New definition; keep full hook/spike/butt silhouette; not a spear or axe alias."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-quarry_estoc": {
+      "id": "hm_trial_v1:old24-quarry_estoc",
+      "name": "Quarry Estoc",
+      "family": "swords",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 1,
+      "melee_defense": 6,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          4,
+          7
+        ],
+        "accuracy_bonus": 5,
+        "swing_stamina": 2,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 1.0,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-quarry_estoc",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-quarry_estoc",
+          "name": "Quarry Estoc",
+          "family": "swords",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/quarry_estoc.png",
+          "source_sha256": "998a48532a0dc1358fc30c06b71835865d9cf89300928f9ce211f7f20551a17a",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/43/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/blade-mace/layers/old24-quarry_estoc.png",
+              "z": 20,
+              "sha256": "48827c1bffb9777fb316d4cd6a259c0f6bfa4581d78691387cb293d2d2bf8f1d"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/lanes/blade-mace/layers/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: precise tight-range thrusting blade, possible second parrying-sword design only if selected; Tier1.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "grip_and_pair",
+            "defense_channels"
+          ],
+          "identity_note": "New definition; NULL binding remains NULL, not canonical estoc."
+        }
+      ],
+      "proposal_bindings": [
+        {
+          "proposal_profile": "draft_parrying_sword",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/numeric-proposal/proposal.json",
+          "selection_authority": "Reversible AO TEST assignment, not a historical canonical binding"
+        }
+      ],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-wayfarer_lancet": {
+      "id": "hm_trial_v1:old24-wayfarer_lancet",
+      "name": "Wayfarer's Lancet",
+      "family": "daggers",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 1,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          5,
+          8
+        ],
+        "accuracy_bonus": 5,
+        "swing_stamina": 2,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0.35,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-wayfarer_lancet",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-wayfarer_lancet",
+          "name": "Wayfarer's Lancet",
+          "family": "daggers",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/wayfarer_lancet.png",
+          "source_sha256": "79ce3538729549063f2ac7466b31a5902468a55f4a764b33914a037edfb5a046",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/44/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-b/layers/medic/old24-wayfarer_lancet.png",
+              "z": 20,
+              "sha256": "a7090a5dcb48ff27e321e5ab23c34ecb32a58076c3c0daeac257a2ebc14309de"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-b/layers/medic/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "AO: assassin/penetration-leaning low-cost dagger; exact penetration and cost trade-off unresolved.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "weapon_ranges",
+            "penetration"
+          ],
+          "identity_note": "New definition; not a parrying sword or healing focus by default."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:old24-ashen_bell": {
+      "id": "hm_trial_v1:old24-ashen_bell",
+      "name": "Ashen Bell",
+      "family": "medic_foci",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 2,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 6,
+      "focus_tags": [
+        "medic"
+      ],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "source_key": "old24-ashen_bell",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "key": "old24-ashen_bell",
+          "name": "Ashen Bell",
+          "family": "medic_foci",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/ashen_bell.png",
+          "source_sha256": "7e555b06b9199d45b928aa93c50f49b007b4bce17d76c05765655b67415614a0",
+          "mapping_evidence": {
+            "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+            "json_pointer": "/records/45/canonical_id"
+          },
+          "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+          "working_art_approval_path": null,
+          "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+          "character_layers_as_recorded": [
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-b/layers/medic/old24-ashen_bell.png",
+              "z": 20,
+              "sha256": "cf360ca966161860f91aa9aa42f2ebe9d01a209ee88ba7d8de46ccde2426ff42"
+            },
+            {
+              "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-b/layers/medic/approved-new-base-fingers.png",
+              "z": 30,
+              "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+            }
+          ],
+          "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+          "runtime_status": "source_only_no_canonical_definition_binding",
+          "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+          "proposed_profile": "User: best medic/healing focus. AO: one hand, highest healing bonus but no ordinary magic or strong melee role.",
+          "profile_authority": "AO per-item assignment; user family direction separately recorded",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "dependencies": [
+            "focus_access",
+            "medic_profiles"
+          ],
+          "identity_note": "New definition; no Bell runtime item in frozen seed; no Bell stats invented."
+        }
+      ],
+      "proposal_bindings": [],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:additional_fighting_axe": {
+      "id": "hm_trial_v1:additional_fighting_axe",
+      "name": "Fighting axe",
+      "family": "axes",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 4,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          7,
+          23
+        ],
+        "accuracy_bonus": 0,
+        "swing_stamina": 5,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": true
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "proposal_id": "additional_fighting_axe",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "proposal_id": "additional_fighting_axe",
+          "source_art_status": "USER_APPROVED_STANDALONE_SOURCE_ART_NOT_FITTED_OR_RUNTIME_READY",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/art/tier1-fighting-axe-concept-v1.png",
+          "source_sha256": "bb53e95cd6f5847773ea4e1d391379bdcaf263b024fc585f196cad813ac7771b",
+          "source_approval_receipt": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/art/USER_APPROVAL.json",
+          "user_approval_verbatim": "its perfect. i approve",
+          "canonical_id": null,
+          "runtime_definition_created_by_this_catalogue": false,
+          "source_transparent": false,
+          "character_fit_status": "NOT_FITTED"
+        }
+      ],
+      "proposal_bindings": [
+        {
+          "proposal_id": "additional_fighting_axe",
+          "name": "Fighting axe",
+          "family": "axes",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": null,
+          "runtime_definition_exists": false,
+          "proposed_profile": "One additional Tier1 one-handed axe; exact profile retained in numerical_profiles. Actual usable mechanical item authorized only inside isolated trial. Separate concept review; no art result inspected here.",
+          "dependencies": [
+            "weapon_ranges",
+            "grip_and_pair"
+          ],
+          "authority": "user_requested_one_axe_trial_mechanics_authorized_separate_concept_lane",
+          "proposed_numbers": {
+            "label": "Fighting axe — proposed additional Tier 1 one-handed axe",
+            "damage": [
+              7,
+              23
+            ],
+            "accuracy_bonus": 0,
+            "swing_stamina": 5,
+            "carry_stamina_burden": 4,
+            "melee_defense": 0,
+            "offhand_specialist": false
+          },
+          "proposed_price": null,
+          "definition_work": "NEW_definition_or_explicit_profile_assignment_required_not_runtime_data"
+        },
+        {
+          "proposal_profile": "draft_fighting_axe",
+          "source_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/seed/numeric-proposal/proposal.json",
+          "selection_authority": "Reversible AO TEST assignment, not a historical canonical binding"
+        }
+      ],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:twohand_sword": {
+      "id": "hm_trial_v1:twohand_sword",
+      "name": "Two-handed sword option",
+      "family": "swords",
+      "tier": 1,
+      "slot": "held",
+      "hands": 2,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 6,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 0,
+      "focus_tags": [],
+      "strike": {
+        "damage": [
+          15,
+          19
+        ],
+        "accuracy_bonus": 8,
+        "swing_stamina": 6,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "proposal_id": "twohand_sword",
+        "trial_definition": true
+      },
+      "source_bindings": [],
+      "proposal_bindings": [
+        {
+          "proposal_id": "twohand_sword",
+          "name": "Two-handed sword option",
+          "family": "swords",
+          "slot": "mainhand",
+          "canonical_id": null,
+          "source_path": null,
+          "runtime_definition_exists": false,
+          "proposed_profile": "User possible twohand option; higher paid damage, tight range/reliability, no simultaneous offhand, all blades remain Tier1. No approved standalone identity (do NOT silently use falchion/Gatewarden).",
+          "dependencies": [
+            "weapon_ranges",
+            "grip_and_pair"
+          ],
+          "authority": "user_possibility_design_unresolved",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "definition_work": "NEW_definition_or_explicit_profile_assignment_required_not_runtime_data"
+        }
+      ],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval",
+      "selection_note": "Separate proposal identity, no art; NOT a relabel of Falchion or Gatewarden"
+    },
+    "hm_trial_v1:medic_prayer_beads": {
+      "id": "hm_trial_v1:medic_prayer_beads",
+      "name": "Prayer beads",
+      "family": "medic_foci",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 0,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 2,
+      "focus_tags": [
+        "medic"
+      ],
+      "strike": {},
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "proposal_id": "medic_prayer_beads",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "proposal_id": "medic_prayer_beads",
+          "name": "Prayer beads",
+          "family": "medic_foci",
+          "slot": "mainhand/offhand_unset",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art/medic-focus-concepts-raw.png",
+          "runtime_definition_exists": false,
+          "proposed_profile": "USER REQUESTED earlier AO suggestion: lightweight held medic implement, smaller healing bonus than Bell, no own melee. NOT worn ring/amulet. Exact healing/burden/cost and hand permissions unresolved. Standalone source art now USER APPROVED by exact receipt; opaque RGB sheet, not transparent/fitted/runtime-ready.",
+          "dependencies": [
+            "focus_access",
+            "medic_profiles"
+          ],
+          "authority": "user_requested_new_design_not_canonical_or_runtime_adoption",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "definition_work": "NEW_CANONICAL_DEFINITION_NEEDED_NOT_CREATED",
+          "source_art_status": "USER_APPROVED_STANDALONE_SOURCE_ART_NOT_FITTED_OR_RUNTIME_READY",
+          "source_sha256": "be4698d6fe42ae8289c080da841cac68283020e532b7c02b34301b84105d7e08",
+          "source_approval_receipt": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art/USER_APPROVAL.json",
+          "source_approval_receipt_sha256": "05e27c7814d56bbc7a2235e8679fd359ad0d264e797ff6994f300dc4002d4be5",
+          "source_approval_verbatim": "i love them. i approve",
+          "source_mode": "RGB",
+          "source_dimensions": [
+            1983,
+            793
+          ],
+          "source_position": "left",
+          "source_transparent": false,
+          "character_fit_status": "NOT_FITTED",
+          "source_art_owner_directory": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art",
+          "request_provenance": {
+            "kind": "direct_user_steering_received_during_catalogue_preparation",
+            "quote": "we need concept art for the medic focuss too ... we need to add those suggestions you had",
+            "designs_named_by_coordinator": [
+              "Prayer beads",
+              "Pilgrim's censer"
+            ],
+            "scope": "Requested concepts subsequently explicitly user-approved as standalone source art only; needed definitions not created and no automatic canonical/runtime adoption. Exact approved receipt/image read only after direct user delivery."
+          },
+          "held_implement_not_jewelry": true,
+          "chain_or_flail_mechanics": false
+        }
+      ],
+      "proposal_bindings": [
+        {
+          "proposal_id": "medic_prayer_beads",
+          "name": "Prayer beads",
+          "family": "medic_foci",
+          "slot": "mainhand/offhand_unset",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art/medic-focus-concepts-raw.png",
+          "runtime_definition_exists": false,
+          "proposed_profile": "USER REQUESTED earlier AO suggestion: lightweight held medic implement, smaller healing bonus than Bell, no own melee. NOT worn ring/amulet. Exact healing/burden/cost and hand permissions unresolved. Standalone source art now USER APPROVED by exact receipt; opaque RGB sheet, not transparent/fitted/runtime-ready.",
+          "dependencies": [
+            "focus_access",
+            "medic_profiles"
+          ],
+          "authority": "user_requested_new_design_not_canonical_or_runtime_adoption",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "definition_work": "NEW_CANONICAL_DEFINITION_NEEDED_NOT_CREATED",
+          "source_art_status": "USER_APPROVED_STANDALONE_SOURCE_ART_NOT_FITTED_OR_RUNTIME_READY",
+          "source_sha256": "be4698d6fe42ae8289c080da841cac68283020e532b7c02b34301b84105d7e08",
+          "source_approval_receipt": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art/USER_APPROVAL.json",
+          "source_approval_receipt_sha256": "05e27c7814d56bbc7a2235e8679fd359ad0d264e797ff6994f300dc4002d4be5",
+          "source_approval_verbatim": "i love them. i approve",
+          "source_mode": "RGB",
+          "source_dimensions": [
+            1983,
+            793
+          ],
+          "source_position": "left",
+          "source_transparent": false,
+          "character_fit_status": "NOT_FITTED",
+          "source_art_owner_directory": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art",
+          "request_provenance": {
+            "kind": "direct_user_steering_received_during_catalogue_preparation",
+            "quote": "we need concept art for the medic focuss too ... we need to add those suggestions you had",
+            "designs_named_by_coordinator": [
+              "Prayer beads",
+              "Pilgrim's censer"
+            ],
+            "scope": "Requested concepts subsequently explicitly user-approved as standalone source art only; needed definitions not created and no automatic canonical/runtime adoption. Exact approved receipt/image read only after direct user delivery."
+          },
+          "held_implement_not_jewelry": true,
+          "chain_or_flail_mechanics": false
+        }
+      ],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    },
+    "hm_trial_v1:medic_pilgrims_censer": {
+      "id": "hm_trial_v1:medic_pilgrims_censer",
+      "name": "Pilgrim's censer",
+      "family": "medic_foci",
+      "tier": 1,
+      "slot": "held",
+      "hands": 1,
+      "stats": {},
+      "armor": 0,
+      "stamina_burden": 1,
+      "melee_defense": 0,
+      "ranged_defense": 0,
+      "heal_bonus": 4,
+      "focus_tags": [
+        "medic"
+      ],
+      "strike": {
+        "damage": [
+          2,
+          4
+        ],
+        "accuracy_bonus": 0,
+        "swing_stamina": 2,
+        "range": 1,
+        "channel": "physical_melee",
+        "skill": "Melee_skill",
+        "penetration_fraction": 0,
+        "armor_damage_multiplier": 1.0,
+        "ordinary_offhand_multiplier": 0.75,
+        "double_grip_eligible": false
+      },
+      "reserve_capacity": 0,
+      "movement": {
+        "ap_per_hex": 1,
+        "stamina_per_hex": 1,
+        "discount_per_two_hexes": 0,
+        "minimum_stamina_per_move": 1
+      },
+      "dash": {},
+      "numeric_authority": "AO TEST DEFAULTS; NOT APPROVED BALANCE",
+      "provenance": {
+        "canonical_id": null,
+        "proposal_id": "medic_pilgrims_censer",
+        "trial_definition": true
+      },
+      "source_bindings": [
+        {
+          "proposal_id": "medic_pilgrims_censer",
+          "name": "Pilgrim's censer",
+          "family": "medic_foci",
+          "slot": "mainhand/offhand_unset",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art/medic-focus-concepts-raw.png",
+          "runtime_definition_exists": false,
+          "proposed_profile": "USER REQUESTED earlier AO suggestion: held medic implement, moderate healing below Bell, weak blunt melee. Short rigid grip, NOT chain/flail mechanics and NOT jewelry. Exact healing/damage/swing cost/burden and hand permissions unresolved. Standalone source art now USER APPROVED by exact receipt; opaque RGB sheet, not transparent/fitted/runtime-ready.",
+          "dependencies": [
+            "focus_access",
+            "medic_profiles"
+          ],
+          "authority": "user_requested_new_design_not_canonical_or_runtime_adoption",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "definition_work": "NEW_CANONICAL_DEFINITION_NEEDED_NOT_CREATED",
+          "source_art_status": "USER_APPROVED_STANDALONE_SOURCE_ART_NOT_FITTED_OR_RUNTIME_READY",
+          "source_sha256": "be4698d6fe42ae8289c080da841cac68283020e532b7c02b34301b84105d7e08",
+          "source_approval_receipt": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art/USER_APPROVAL.json",
+          "source_approval_receipt_sha256": "05e27c7814d56bbc7a2235e8679fd359ad0d264e797ff6994f300dc4002d4be5",
+          "source_approval_verbatim": "i love them. i approve",
+          "source_mode": "RGB",
+          "source_dimensions": [
+            1983,
+            793
+          ],
+          "source_position": "right",
+          "source_transparent": false,
+          "character_fit_status": "NOT_FITTED",
+          "source_art_owner_directory": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art",
+          "request_provenance": {
+            "kind": "direct_user_steering_received_during_catalogue_preparation",
+            "quote": "we need concept art for the medic focuss too ... we need to add those suggestions you had",
+            "designs_named_by_coordinator": [
+              "Prayer beads",
+              "Pilgrim's censer"
+            ],
+            "scope": "Requested concepts subsequently explicitly user-approved as standalone source art only; needed definitions not created and no automatic canonical/runtime adoption. Exact approved receipt/image read only after direct user delivery."
+          },
+          "held_implement_not_jewelry": true,
+          "chain_or_flail_mechanics": false
+        }
+      ],
+      "proposal_bindings": [
+        {
+          "proposal_id": "medic_pilgrims_censer",
+          "name": "Pilgrim's censer",
+          "family": "medic_foci",
+          "slot": "mainhand/offhand_unset",
+          "canonical_id": null,
+          "source_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art/medic-focus-concepts-raw.png",
+          "runtime_definition_exists": false,
+          "proposed_profile": "USER REQUESTED earlier AO suggestion: held medic implement, moderate healing below Bell, weak blunt melee. Short rigid grip, NOT chain/flail mechanics and NOT jewelry. Exact healing/damage/swing cost/burden and hand permissions unresolved. Standalone source art now USER APPROVED by exact receipt; opaque RGB sheet, not transparent/fitted/runtime-ready.",
+          "dependencies": [
+            "focus_access",
+            "medic_profiles"
+          ],
+          "authority": "user_requested_new_design_not_canonical_or_runtime_adoption",
+          "proposed_numbers": null,
+          "proposed_price": null,
+          "definition_work": "NEW_CANONICAL_DEFINITION_NEEDED_NOT_CREATED",
+          "source_art_status": "USER_APPROVED_STANDALONE_SOURCE_ART_NOT_FITTED_OR_RUNTIME_READY",
+          "source_sha256": "be4698d6fe42ae8289c080da841cac68283020e532b7c02b34301b84105d7e08",
+          "source_approval_receipt": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art/USER_APPROVAL.json",
+          "source_approval_receipt_sha256": "05e27c7814d56bbc7a2235e8679fd359ad0d264e797ff6994f300dc4002d4be5",
+          "source_approval_verbatim": "i love them. i approve",
+          "source_mode": "RGB",
+          "source_dimensions": [
+            1983,
+            793
+          ],
+          "source_position": "right",
+          "source_transparent": false,
+          "character_fit_status": "NOT_FITTED",
+          "source_art_owner_directory": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/medic-focus-art",
+          "request_provenance": {
+            "kind": "direct_user_steering_received_during_catalogue_preparation",
+            "quote": "we need concept art for the medic focuss too ... we need to add those suggestions you had",
+            "designs_named_by_coordinator": [
+              "Prayer beads",
+              "Pilgrim's censer"
+            ],
+            "scope": "Requested concepts subsequently explicitly user-approved as standalone source art only; needed definitions not created and no automatic canonical/runtime adoption. Exact approved receipt/image read only after direct user delivery."
+          },
+          "held_implement_not_jewelry": true,
+          "chain_or_flail_mechanics": false
+        }
+      ],
+      "art_limit": "Exact source identity only; no new character fitting or runtime depiction approval"
+    }
+  },
+  "reserved_slots": [
+    "ring1",
+    "ring2",
+    "amulet"
+  ],
+  "historical_excluded_sources": [
+    {
+      "key": "old24-cinder_focus",
+      "name": "Cinder Focus",
+      "family": "magic_foci",
+      "slot": "mainhand",
+      "canonical_id": null,
+      "source_path": "/home/quatro/games/hollow-march-workstreams/part2-worktrees-20261022/icon-completion/game/assets/items/cinder_focus.png",
+      "source_sha256": "1282730734424d871630854bccaacaa2a40d2eca50992c405071f6ea6d4fbd6b",
+      "mapping_evidence": {
+        "path": "/home/quatro/games/hollow-march-workstreams/medic-wardrobe-revision-20261024/combined/wardrobe-recipe.json",
+        "json_pointer": "/records/39/canonical_id"
+      },
+      "source_art_status": "retained_original_standalone_reference_no_new_approval_in_this_pass",
+      "working_art_approval_path": null,
+      "character_fit_status_as_recorded": "CANDIDATE_PARENT_REVIEW_PENDING",
+      "character_layers_as_recorded": [
+        {
+          "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-b/layers/medic/old24-cinder_focus.png",
+          "z": 20,
+          "sha256": "3a6196f843ce29c0e380987ba9917e27a84b43a03bf4a071f4770525ff563629"
+        },
+        {
+          "path": "/home/quatro/games/hollow-march-workstreams/medic-full-wardrobe-batch-20261024/lanes/weapons-b/layers/medic/approved-new-base-fingers.png",
+          "z": 30,
+          "sha256": "cb4dc1a420cfb10d93aeb4fb6fae4cf88755d58963b762c980a8f8f2b1d48f6b"
+        }
+      ],
+      "visual_selection_as_recorded": "PENDING_REVISED_CONSOLIDATED_REVIEW",
+      "runtime_status": "source_only_no_canonical_definition_binding",
+      "definition_work": "NEW_definition_required_if_selected_no_binding_created",
+      "proposed_profile": "User PROPOSAL: remove from future catalogue to reduce focus overlap; do not implement removal.",
+      "profile_authority": "AO per-item assignment; user family direction separately recorded",
+      "proposed_numbers": null,
+      "proposed_price": null,
+      "dependencies": [
+        "focus_access"
+      ],
+      "identity_note": "Source-only in this recipe; no cinder definition in seed. Preserve source/history and any runtime elsewhere."
+    }
+  ],
+  "uninstantiated_proposals": [
+    {
+      "proposal_id": "ring_special",
+      "name": "Future authored ring designs",
+      "family": "jewelry",
+      "slot": "ring1/ring2",
+      "canonical_id": null,
+      "source_path": null,
+      "runtime_definition_exists": false,
+      "proposed_profile": "Reserve both slots for special effects; no starter ordinary stat/proc expansion, no exact effect chosen.",
+      "dependencies": [
+        "jewelry"
+      ],
+      "authority": "reserved_not_implemented",
+      "proposed_numbers": null,
+      "proposed_price": null,
+      "definition_work": "NEW_definition_or_explicit_profile_assignment_required_not_runtime_data"
+    },
+    {
+      "proposal_id": "amulet_special",
+      "name": "Future authored amulet designs",
+      "family": "jewelry",
+      "slot": "amulet",
+      "canonical_id": null,
+      "source_path": null,
+      "runtime_definition_exists": false,
+      "proposed_profile": "Reserve for authored special effects; no starter ordinary stats/procs.",
+      "dependencies": [
+        "jewelry"
+      ],
+      "authority": "reserved_not_implemented",
+      "proposed_numbers": null,
+      "proposed_price": null,
+      "definition_work": "NEW_definition_or_explicit_profile_assignment_required_not_runtime_data"
+    }
+  ],
+  "abilities": {
+    "spark": {
+      "id": "spark",
+      "label": "Spark",
+      "focus": "arcane",
+      "ap": 2,
+      "stamina": 5,
+      "range": 3,
+      "channel": "aimed_arcane",
+      "skill": "Ranged_skill",
+      "base_magnitude": 8,
+      "power_scale": 0.5,
+      "power_stat": "Magic_power",
+      "uses_armor": true,
+      "cooldown_own_turns": 0
+    },
+    "mend": {
+      "id": "mend",
+      "label": "Mend",
+      "focus": "medic",
+      "ap": 2,
+      "stamina": 5,
+      "range": 3,
+      "channel": "restorative",
+      "base_magnitude": 8,
+      "power_scale": 0.5,
+      "power_stat": "Magic_power",
+      "uses_armor": false,
+      "cooldown_own_turns": 0,
+      "target": "living_ally_hp_only",
+      "can_revive": false
+    }
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "version": "0.29",
+  "engine": "4.4.1",
+  "base_revision": 31,
+  "checks": 18180,
+  "failures": 0,
+  "suites": [
+    {
+      "suite": "procedural",
+      "checks": 15100,
+      "failures": 0,
+      "evidence": "128 seeded maps, connectivity/spacing, deterministic generation, first-route bounds, diagonal road ETA versus travel, fog/save/exploration/reoccupation rules"
+    },
+    {
+      "suite": "procedural_journeys",
+      "checks": 184,
+      "failures": 0,
+      "evidence": "Eight real generated campaigns: six camp victories, two defeats and seven scout battles; economic conservation and roundtrips"
+    },
+    {
+      "suite": "opening_routes",
+      "checks": 328,
+      "failures": 0,
+      "evidence": "32 ten-day policies over 16 matching seeds; actual spatial travel/contact/combat, recovery, earned mail and upkeep"
+    },
+    {
+      "suite": "merged_maps_compat",
+      "checks": 150,
+      "failures": 0,
+      "evidence": "Three original 0.28 and three isolated-preview companies; camp, ongoing battle and aftermath; exact combat/settlement and migration"
+    },
+    {
+      "suite": "scout_equipment",
+      "checks": 84,
+      "failures": 0,
+      "evidence": "12 low-tier encounters, including weapon families without a tier-one item; complete enemy equipment"
+    },
+    {
+      "suite": "opening_compat",
+      "checks": 63,
+      "failures": 0,
+      "evidence": "Three captured 0.27 companies: original fields, exact commands/RNG/casualties, settlement and camp adoption"
+    },
+    {
+      "suite": "inventory",
+      "checks": 31,
+      "failures": 0,
+      "evidence": "Four-AP swaps, Quick Hands, Wait, shields, extra bags/load/refill and live inventory saves"
+    },
+    {
+      "suite": "recovery",
+      "checks": 21,
+      "failures": 0,
+      "evidence": "Partial hours, reload continuation, travel/camp recovery, tools, shortages, temples, scars, queues and midnight"
+    },
+    {
+      "suite": "overworld",
+      "checks": 1339,
+      "failures": 0,
+      "evidence": "Classic routes, physical services, clocks, pursuit/evasion, contacts, escorts and corrupt saves"
+    },
+    {
+      "suite": "ammunition",
+      "checks": 291,
+      "failures": 0,
+      "evidence": "Ammo conservation, attacks/reloads/refills, purchases/salvage/retreat, 12 real fights and historical continuations"
+    },
+    {
+      "suite": "equipment_economy",
+      "checks": 269,
+      "failures": 0,
+      "evidence": "26 weapons, markets, trades, queued repairs, merchant accounts, 15 fresh fights and historical companies"
+    },
+    {
+      "suite": "perks",
+      "checks": 134,
+      "failures": 0,
+      "evidence": "Shared perk progression, purchases, costs, pools and saves"
+    },
+    {
+      "suite": "hammer_dagger",
+      "checks": 94,
+      "failures": 0,
+      "evidence": "Both controllers/offhands, costs/damage, chain/debuff timing, AI, previews and older continuations"
+    },
+    {
+      "suite": "playability",
+      "checks": 42,
+      "failures": 0,
+      "evidence": "Forecasts, feedback, guide persistence and a complete escort"
+    },
+    {
+      "suite": "opening_ui",
+      "checks": 23,
+      "failures": 0,
+      "evidence": "Native classic-map fog, three-person roster, Bags, temple purchase, F5/F9 and paused enemy-turn inspection"
+    },
+    {
+      "suite": "merged_maps_ui",
+      "checks": 27,
+      "failures": 0,
+      "evidence": "Native seeded start, hire/contract, two real battles, inspection, mail upgrade, recovery, rumour/survey/search and saves"
+    }
+  ],
+  "opening_policies": [
+    {
+      "policy": "Three founders, direct assault",
+      "wins": 12,
+      "wipes": 3,
+      "survivors": 31,
+      "initial": 48,
+      "mail": 12
+    },
+    {
+      "policy": "Fourth hire, town recovery",
+      "wins": 13,
+      "wipes": 1,
+      "survivors": 42,
+      "initial": 64,
+      "mail": 13
+    }
+  ],
+  "first_route_hours": [
+    6.66666666666667,
+    7.7712361017863
+  ]
+}

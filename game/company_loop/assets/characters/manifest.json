@@ -1,0 +1,115 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "foot": [
+    512,
+    1490
+  ],
+  "identities": [
+    "original",
+    "copper",
+    "silver"
+  ],
+  "source_crop": [
+    440,
+    20,
+    720,
+    340
+  ],
+  "source_reference_resize": [
+    840,
+    960
+  ],
+  "generated_registration": {
+    "resize": [
+      280,
+      320
+    ],
+    "paste": [
+      440,
+      20
+    ],
+    "resampling": "Pillow LANCZOS"
+  },
+  "head_polygon": [
+    [
+      462,
+      20
+    ],
+    [
+      720,
+      20
+    ],
+    [
+      720,
+      272
+    ],
+    [
+      680,
+      297
+    ],
+    [
+      624,
+      307
+    ],
+    [
+      582,
+      292
+    ],
+    [
+      548,
+      275
+    ],
+    [
+      529,
+      250
+    ],
+    [
+      506,
+      232
+    ],
+    [
+      484,
+      223
+    ],
+    [
+      463,
+      204
+    ]
+  ],
+  "join_feather_radius": 1.1,
+  "helmet_alpha": "min(identity alpha, accepted foundation_helmet alpha); exact accepted outside head mask",
+  "inputs": {
+    "sprite_study/assets/characters/body_brigandine.png": "ac77fd8a3d322b0186ef8d36f559429717121b08236463aa23215309f7d759e9",
+    "sprite_study/assets/characters/body_mail.png": "1f324f6ab6767d80fdcf79d157ccc7923de6afbbaf63559393361e615e28ba09",
+    "sprite_study/assets/characters/body_quilt.png": "f1cf50f437a9f190b7b58394b5afcf3319ebbdf17e654b097ee6496eb502d457",
+    "sprite_study/assets/characters/foundation.png": "fe00b979cf2fe7739b98913add48eb579a8072c810d5c2bca60e8a6619a10ead",
+    "sprite_study/assets/characters/foundation_helmet.png": "e820ac150e455aa739ce68ab85f5631bc059b1764b5c684cf0abbab73e7a1c10",
+    "sprite_study/assets/characters/grip_axe.png": "59edb4ed0f8b97e842716730e3c743c8ff33889796e8eb2c4eb0e7e8d0f36335",
+    "sprite_study/assets/characters/grip_bow.png": "07a103076008fb0fdbef359278d08e7f1dd44d58e1f57fd7b34de4621b828980",
+    "sprite_study/assets/characters/grip_spear.png": "2215c995618032548252d4c9ab5b5ca18cca1e05829a91c0b74452d9a00bb186",
+    "sprite_study/assets/characters/grip_sword.png": "f42f1c02565532d19198bb02df9fe14388cbe1329b2f6b94fe0c93c73fcabf72",
+    "sprite_study/assets/characters/head_kettle.png": "51dde77f21a5a75ae3b29b000b1dc05f64ba14d4904137306fa45a2fe445ee8d",
+    "sprite_study/assets/characters/head_nasal.png": "0bee53ee9dfcde4d35d94c98b8edf15f36193c29c99a17b82d3333ee5e82ab5e",
+    "sprite_study/assets/characters/shield_kite.png": "ba50b9328c104e5edd78aa2f93c5ff062d87303de0adcb23ebd39a24d30c2eb8",
+    "sprite_study/assets/characters/shield_round.png": "a2b1ddaac4605e7e41e25b4d82107db88a7a09e9b79530bb67fa7a8de6b15061",
+    "sprite_study/assets/characters/weapon_axe.png": "ca57c6c1280cb1cf125e6dde7bf9ffcd712b898c34b00d03cf8edb91d92b378a",
+    "sprite_study/assets/characters/weapon_bow.png": "39596c901b54e69348c146d03f34fdafe3f5a5e35fb64213e7ea6dae36c87ff6",
+    "sprite_study/assets/characters/weapon_spear.png": "8c22cfebda220ed0d43f88ca7414c6c72abc7c5d835f6b699f213a77acf34f55",
+    "sprite_study/assets/characters/weapon_sword.png": "a305547acaeb9096aa1158c2a880d9f67d0fd5dac6530fb2b4daaaf2d8b4ac7b",
+    "sprite_study/assets/sources/base-master.png": "7ac84c8821b4c9b2ff5af232b5e45e318daf3c9ceb30c9653ef083dd81ea6c52",
+    "company_loop/assets/sources/copper-master.png": "180fc9ff1c841cd09ffd2247bb7546fa750ae147a42c5559ca7e4d08fc9a7647",
+    "company_loop/assets/sources/head-reference.png": "08f0abd96f3d7ae1906e71b46a1a82101fcd004dc18a67ac70146b69dd67cf62",
+    "company_loop/assets/sources/silver-master.png": "4a311ff3ddcbc880441839663d5b3d0ec4530c6843791a8cd58cb9e94dbd54a3"
+  },
+  "outputs": {
+    "foundation_copper.png": "ecbdc855ec7d06c9833d1e771b34800820a729572cd43ecf5117e30be338880c",
+    "foundation_copper_helmet.png": "ae8d3c4a95f01484599e9f915937216c985ba8ac8506d368946050ec22a5502a",
+    "foundation_silver.png": "0b74972df3672918c9cfcc2b19df568db2e77fe2996894041c8ad760362a0de2",
+    "foundation_silver_helmet.png": "a80b779adcd3501f701e3e9e3232662e97ffae087a76129c33f8d17093892ba0",
+    "identity-sheet.png": "9b98f91de7b899f85ad36ef98a746b5d01ed5ef805da3d605fe4ddb5f4709193"
+  },
+  "limits": "Head-only registered source edits; shared original body and original equipment. Offline sheet is not native renderer acceptance."
+}

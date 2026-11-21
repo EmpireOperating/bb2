@@ -1,0 +1,331 @@
+{
+  "outcomes": {
+    "Lysa: Patient archer / fatigue": {
+      "damage": 1681,
+      "draws": 0,
+      "losses": 1,
+      "recoveries": 8,
+      "rounds": 111,
+      "survived": 7,
+      "wins": 7
+    },
+    "Lysa: Patient archer / flanked": {
+      "damage": 1340,
+      "draws": 0,
+      "losses": 3,
+      "recoveries": 23,
+      "rounds": 102,
+      "survived": 3,
+      "wins": 5
+    },
+    "Lysa: Patient archer / open": {
+      "damage": 1803,
+      "draws": 0,
+      "losses": 0,
+      "recoveries": 3,
+      "rounds": 111,
+      "survived": 8,
+      "wins": 8
+    },
+    "Lysa: Sword skirmisher / fatigue": {
+      "damage": 826,
+      "draws": 0,
+      "losses": 7,
+      "recoveries": 12,
+      "rounds": 110,
+      "survived": 0,
+      "wins": 1
+    },
+    "Lysa: Sword skirmisher / flanked": {
+      "damage": 1653,
+      "draws": 0,
+      "losses": 1,
+      "recoveries": 10,
+      "rounds": 107,
+      "survived": 3,
+      "wins": 7
+    },
+    "Lysa: Sword skirmisher / open": {
+      "damage": 932,
+      "draws": 0,
+      "losses": 6,
+      "recoveries": 4,
+      "rounds": 107,
+      "survived": 2,
+      "wins": 2
+    },
+    "Lysa: Volley archer / fatigue": {
+      "damage": 1349,
+      "draws": 0,
+      "losses": 4,
+      "recoveries": 9,
+      "rounds": 117,
+      "survived": 6,
+      "wins": 4
+    },
+    "Lysa: Volley archer / flanked": {
+      "damage": 1250,
+      "draws": 0,
+      "losses": 4,
+      "recoveries": 12,
+      "rounds": 109,
+      "survived": 0,
+      "wins": 4
+    },
+    "Lysa: Volley archer / open": {
+      "damage": 1550,
+      "draws": 0,
+      "losses": 2,
+      "recoveries": 6,
+      "rounds": 115,
+      "survived": 6,
+      "wins": 6
+    },
+    "Oren: Crossbow harrier / fatigue": {
+      "damage": 1503,
+      "draws": 3,
+      "losses": 1,
+      "recoveries": 6,
+      "rounds": 154,
+      "survived": 7,
+      "wins": 4
+    },
+    "Oren: Crossbow harrier / flanked": {
+      "damage": 1499,
+      "draws": 0,
+      "losses": 3,
+      "recoveries": 2,
+      "rounds": 99,
+      "survived": 4,
+      "wins": 5
+    },
+    "Oren: Crossbow harrier / open": {
+      "damage": 1687,
+      "draws": 1,
+      "losses": 0,
+      "recoveries": 1,
+      "rounds": 118,
+      "survived": 8,
+      "wins": 7
+    },
+    "Oren: Iron hunter / fatigue": {
+      "damage": 1813,
+      "draws": 0,
+      "losses": 0,
+      "recoveries": 6,
+      "rounds": 91,
+      "survived": 8,
+      "wins": 8
+    },
+    "Oren: Iron hunter / flanked": {
+      "damage": 1660,
+      "draws": 0,
+      "losses": 2,
+      "recoveries": 4,
+      "rounds": 98,
+      "survived": 5,
+      "wins": 6
+    },
+    "Oren: Iron hunter / open": {
+      "damage": 1771,
+      "draws": 0,
+      "losses": 1,
+      "recoveries": 3,
+      "rounds": 92,
+      "survived": 7,
+      "wins": 7
+    },
+    "Oren: Polearm hybrid / fatigue": {
+      "damage": 1632,
+      "draws": 0,
+      "losses": 1,
+      "recoveries": 5,
+      "rounds": 107,
+      "survived": 5,
+      "wins": 7
+    },
+    "Oren: Polearm hybrid / flanked": {
+      "damage": 1757,
+      "draws": 0,
+      "losses": 1,
+      "recoveries": 0,
+      "rounds": 88,
+      "survived": 7,
+      "wins": 7
+    },
+    "Oren: Polearm hybrid / open": {
+      "damage": 1714,
+      "draws": 0,
+      "losses": 1,
+      "recoveries": 1,
+      "rounds": 96,
+      "survived": 6,
+      "wins": 7
+    },
+    "Tova: Axe skirmisher / fatigue": {
+      "damage": 1466,
+      "draws": 0,
+      "losses": 3,
+      "recoveries": 8,
+      "rounds": 129,
+      "survived": 6,
+      "wins": 5
+    },
+    "Tova: Axe skirmisher / flanked": {
+      "damage": 1816,
+      "draws": 0,
+      "losses": 0,
+      "recoveries": 7,
+      "rounds": 86,
+      "survived": 8,
+      "wins": 8
+    },
+    "Tova: Axe skirmisher / open": {
+      "damage": 1673,
+      "draws": 0,
+      "losses": 1,
+      "recoveries": 6,
+      "rounds": 147,
+      "survived": 6,
+      "wins": 7
+    },
+    "Tova: Shield thrower / fatigue": {
+      "damage": 1676,
+      "draws": 0,
+      "losses": 1,
+      "recoveries": 22,
+      "rounds": 157,
+      "survived": 7,
+      "wins": 7
+    },
+    "Tova: Shield thrower / flanked": {
+      "damage": 1792,
+      "draws": 1,
+      "losses": 0,
+      "recoveries": 16,
+      "rounds": 106,
+      "survived": 8,
+      "wins": 7
+    },
+    "Tova: Shield thrower / open": {
+      "damage": 1770,
+      "draws": 0,
+      "losses": 0,
+      "recoveries": 16,
+      "rounds": 137,
+      "survived": 8,
+      "wins": 8
+    },
+    "Tova: Spear hybrid / fatigue": {
+      "damage": 1743,
+      "draws": 0,
+      "losses": 1,
+      "recoveries": 11,
+      "rounds": 99,
+      "survived": 6,
+      "wins": 7
+    },
+    "Tova: Spear hybrid / flanked": {
+      "damage": 1844,
+      "draws": 0,
+      "losses": 0,
+      "recoveries": 5,
+      "rounds": 85,
+      "survived": 7,
+      "wins": 8
+    },
+    "Tova: Spear hybrid / open": {
+      "damage": 1612,
+      "draws": 0,
+      "losses": 2,
+      "recoveries": 3,
+      "rounds": 105,
+      "survived": 6,
+      "wins": 6
+    }
+  },
+  "profiles": [
+    {
+      "cost": 340,
+      "fatigue_capacity": 85,
+      "hp": 70,
+      "initiative": 99,
+      "name": "Lysa: Volley archer",
+      "pool": 36,
+      "raw_load": 15
+    },
+    {
+      "cost": 580,
+      "fatigue_capacity": 66,
+      "hp": 87,
+      "initiative": 80,
+      "name": "Lysa: Patient archer",
+      "pool": 36,
+      "raw_load": 30
+    },
+    {
+      "cost": 335,
+      "fatigue_capacity": 88,
+      "hp": 87,
+      "initiative": 102,
+      "name": "Lysa: Sword skirmisher",
+      "pool": 36,
+      "raw_load": 15
+    },
+    {
+      "cost": 535,
+      "fatigue_capacity": 77,
+      "hp": 78,
+      "initiative": 61,
+      "name": "Oren: Crossbow harrier",
+      "pool": 39,
+      "raw_load": 30
+    },
+    {
+      "cost": 901,
+      "fatigue_capacity": 64,
+      "hp": 97,
+      "initiative": 48,
+      "name": "Oren: Iron hunter",
+      "pool": 39,
+      "raw_load": 55
+    },
+    {
+      "cost": 505,
+      "fatigue_capacity": 80,
+      "hp": 97,
+      "initiative": 64,
+      "name": "Oren: Polearm hybrid",
+      "pool": 39,
+      "raw_load": 30
+    },
+    {
+      "cost": 771,
+      "fatigue_capacity": 61,
+      "hp": 100,
+      "initiative": 59,
+      "name": "Tova: Shield thrower",
+      "pool": 38,
+      "raw_load": 55
+    },
+    {
+      "cost": 425,
+      "fatigue_capacity": 92,
+      "hp": 80,
+      "initiative": 90,
+      "name": "Tova: Axe skirmisher",
+      "pool": 38,
+      "raw_load": 15
+    },
+    {
+      "cost": 375,
+      "fatigue_capacity": 84,
+      "hp": 100,
+      "initiative": 82,
+      "name": "Tova: Spear hybrid",
+      "pool": 38,
+      "raw_load": 15
+    }
+  ],
+  "scope": "Nine ranged/hybrid fixtures, ten points each. Matched-seed three-versus-three AI smoke trials, both sides. The same person keeps the same stats and personal pool across three builds. Gear costs differ and are recorded, so this is not an equal-investment balance verdict. AI does not plan Wait/Patient Hunter, Footwork, Rotation or Indomitable. Command/UI tests cover player actions."
+}

@@ -1,0 +1,44 @@
+THE ASHEN COMPANY — CHARACTER & PERKS PREVIEW 01
+
+This is an isolated fresh-company preview, not an installed replacement.
+
+Launch with the pinned local runtime:
+  /home/quatro/games/battle-brothers-2-character-sheet-01/launch-hollow-campaign-experiment.sh
+
+Save isolation:
+  Its custom user-data directory is ashen-company-character-sheet-01.
+  It does not load or overwrite ashen-company-next-build-02 saves.
+  Generation policy 1 is required; older saves are refused, not migrated or
+  rerolled. Keep using the older build for those companies.
+
+Character:
+  Company > choose person > Character opens the endorsed original attribute
+  table and stat training. That entire table/training block is byte-identical.
+  The compact summary shows service, health/injuries, next-rank progress,
+  temperament, sustain and equipment. Details retains complete history, bonds,
+  effective/permanent stats, wounds/scars and gear in a read-only scroll.
+  Close/Escape returns to the same person and Company context.
+
+Perks:
+  Company > Perks and Character > Personal Perks open the same original tree.
+  Tiers are centered. Active filter matches have gold wash/outline/diamond;
+  nonmatches stay inspectable and eligibility is unchanged. +N on Perks means
+  earned unspent perk points. Stat training is on Character, not this tree.
+
+Founders and talent:
+  New companies have three Companions: 2H, Shield and Ranged, with researched
+  Battle Brothers baseline talents/ranges and modest game-specific gear and
+  compatible perk affinities. Ordinary recruit talents select three eligible
+  stats uniformly; Deserters exclude Resolve. Selected stats receive 1/2/3
+  stars at 60/30/10, not invented favored-background weighting.
+
+Shops:
+  Town equipment and Company market show actual catalogue properties and
+  clearly identify catalogue bases. Actual owned rolls are assigned on buying;
+  inspection does not purchase, reroll or equip.
+
+Scope:
+  Portrait/vitals, battle-report and contract-payment work in other sessions
+  is not folded into this candidate. Existing builds/packages/saves are intact.
+  The external evidence report records executed checks and visual limitations:
+  /home/quatro/games/battle-brothers-2-character-sheet-evidence/attempt-01/

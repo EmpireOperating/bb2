@@ -1,0 +1,57 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "foot_anchor": [
+    512,
+    1490
+  ],
+  "pixel_size": 0.00134,
+  "source_hashes": {
+    "quilt": "0242df59fc95fa3230a5011eaa2e2a2318d13016e54a5a586e0ef5d2de066ea7",
+    "mail": "bb019c454657f577e1a823dbd2691958447792ce53f5406b24d79197a226086c",
+    "brigandine": "f1a8768552bb9d572e1fd1170b6adbc840dc7bd3334187897adf15c1d623b197"
+  },
+  "lower_only_from_y": 700,
+  "hem_underlap_pixels": 8,
+  "hem_alpha_threshold": 32,
+  "leg_split_x": 510,
+  "leg_integer_translations": {
+    "quilt": {
+      "left": [
+        0,
+        0
+      ],
+      "right": [
+        0,
+        3
+      ]
+    },
+    "mail": {
+      "left": [
+        0,
+        0
+      ],
+      "right": [
+        0,
+        1
+      ]
+    },
+    "brigandine": {
+      "left": [
+        0,
+        0
+      ],
+      "right": [
+        0,
+        2
+      ]
+    }
+  },
+  "mask_rule": "Common foundation keep alpha=255 strictly above per-column earliest accepted-body hem minus 8px (minimum y700); 0 below. Derived only from immutable accepted body alphas. All obsolete lower/boot pixels suppressed. Each lower begins underneath its own retained upper hem.",
+  "upper_rule": "Original body asset alpha-composited over extracted lower; every original opaque equipment pixel exact. Entire region y<700 RGBA copied exactly. Only lower source paint adopted.",
+  "registration": "No scaling, warping or anatomy adoption. Whole left/right lower paint integer translations align alpha>200 sole extrema to original. Split is hidden by original upper at crotch; foot widths stay within 3px.",
+  "key": "Pure magenta color-difference edge unmatting; no interior repaint, contrast, sharpening or recoloring.",
+  "font": "/usr/share/fonts/ttf-ia-writer/iAWriterQuattroS-Regular.ttf"
+}

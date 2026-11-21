@@ -1,0 +1,416 @@
+{
+  "colossus": {
+    "name": "Colossus",
+    "tier": 1,
+    "reference": "V",
+    "effect": "Maximum HP \u00d71.25, rounded down. Apply to permanent HP after injuries, before temporary effects. Learning it outside combat adds the same max-HP increase to current HP, preserving existing wounds."
+  },
+  "pathfinder": {
+    "name": "Pathfinder",
+    "tier": 1,
+    "reference": "V",
+    "effect": "Ordinary movement uses max(2, terrain AP \u22121), with uphill AP surcharge removed. Halve terrain fatigue, rounded up; retain uphill fatigue and formation-order surcharges. No discount to Footwork or Rotation."
+  },
+  "fast_adaptation": {
+    "name": "Fast Adaptation",
+    "tier": 1,
+    "reference": "V",
+    "effect": "Each missed paid weapon attack grants +8 accuracy to later paid weapon attacks, capped at +24. A hit resets it. Persists across turns, Wait and swaps; clears after battle. Reactions neither change nor use it."
+  },
+  "fortified_mind": {
+    "name": "Fortified Mind",
+    "tier": 2,
+    "reference": "V",
+    "effect": "Permanent Resolve \u00d71.25, rounded down, before morale multipliers and temporary bonuses. Does not increase the Resolve value used by Mind Over Body."
+  },
+  "steel_brow": {
+    "name": "Steel Brow",
+    "tier": 2,
+    "reference": "V",
+    "effect": "Direct head hits use \u00d71.0 HP damage instead of \u00d71.5. Head-hit chance and helmet damage are unchanged. Does not prevent a head hit or grant injury immunity."
+  },
+  "quick_hands": {
+    "name": "Quick Hands",
+    "tier": 2,
+    "reference": "V",
+    "effect": "First eligible equipment swap each round costs 0 AP; swapping costs no fatigue. Excludes any swap that equips or removes a shield. Swapping still cancels stances. Wait does not refresh the allowance."
+  },
+  "through_the_gaps": {
+    "name": "Through the Gaps",
+    "tier": 2,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_through_the_gaps.nut)",
+    "effect": "Spear piercing attacks gain +15 percentage points of armour penetration, capped at 100%. Applies to Spearwall counters. Full armour-bypass attacks receive no extra benefit."
+  },
+  "spear_mastery": {
+    "name": "Spear Mastery",
+    "tier": 4,
+    "reference": "V",
+    "effect": "Spear attacks and Spearwall cost 25% less fatigue. You can set Spearwall while engaged, and a breach no longer stops coverage of the other adjacent hexes."
+  },
+  "spearwaller": {
+    "name": "Spearwaller",
+    "tier": 5,
+    "reference": "[L](https://github.com/Battle-Brothers-Legends/Legends-public/blob/9651d89bca426df9f2679cb79b6872f71c5ecdcb/scripts/skills/perks/perk_legend_spearwaller.nut)",
+    "effect": "Spearwall costs 1 less AP and has a fatigue factor of 0.75. Its counters gain +20% regular and armour damage after the standard half-damage scaling."
+  },
+  "king_of_all_weapons": {
+    "name": "King of All Weapons",
+    "tier": 7,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_king_of_all_weapons.nut)",
+    "effect": "On each successful spear piercing attack, a 50% check forces the hit to the location with less remaining pooled armour. Otherwise use the normal head/body roll. Ties use the normal roll. Includes brace reactions; does not change hit chance. A prepared Head Hunter attack takes priority."
+  },
+  "feint": {
+    "name": "Feint",
+    "tier": 2,
+    "reference": "[L](https://github.com/Battle-Brothers-Legends/Legends-public/blob/9651d89bca426df9f2679cb79b6872f71c5ecdcb/scripts/skills/perks/perk_legend_feint.nut)",
+    "effect": "A missed paid sword attack refunds floor(25% of fatigue actually paid) and marks that target. The next paid sword attack gains +10 accuracy if aimed at the marked target, then consumes the mark; a miss may replace it. Moving, swapping, Wait or final End clears the mark. Reactions cannot mark, refund or consume."
+  },
+  "sword_mastery": {
+    "name": "Sword Mastery",
+    "tier": 4,
+    "reference": "V",
+    "effect": "Sword attacks, Riposte activation and sword reactions cost 25% less fatigue. No AP or accuracy bonus. Covers one-handed and two-handed swords."
+  },
+  "en_garde": {
+    "name": "En Garde",
+    "tier": 6,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_en_garde.nut)",
+    "effect": "With a one-handed sword, Riposte activation costs 2 AP instead of 4 and has a fatigue factor of 2/3. Riposte reactions gain +10 accuracy. The existing two-attempt reaction cap and stance cancellation rules remain. No automatic cast."
+  },
+  "leverage": {
+    "name": "Leverage",
+    "tier": 2,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_leverage.nut)",
+    "effect": "Paid polearm attacks at exactly two hexes gain +15 percentage points of head-hit chance, capped at 100%. Applies only to actions that can hit either location; a body-only action stays body-only."
+  },
+  "polearm_mastery": {
+    "name": "Polearm Mastery",
+    "tier": 4,
+    "reference": "V",
+    "effect": "Polearm actions cost 25% less fatigue. The 6 AP primary reach attack costs 5 AP and loses its \u221215 adjacent-target accuracy penalty. Hook and other specials keep their own AP costs. No extra range."
+  },
+  "long_reach": {
+    "name": "Long Reach",
+    "tier": 6,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_long_reach.nut)",
+    "effect": "A standing ally with a polearm may count as one extra surrounding attacker for another ally's melee attack if a two-hex primary attack would be geometrically legal. Ignore the supporter's AP/current-fatigue affordability. At most one virtual supporter per target, never double-counted as adjacent. No ranged bonus, extended zone of control or extra reaction range."
+  },
+  "dodge": {
+    "name": "Dodge",
+    "tier": 2,
+    "reference": "V",
+    "effect": "Gain melee and ranged defence equal to floor(15% of positive effective Initiative), recalculated after fatigue/equipment changes. Use Initiative before the queue-only Wait modifier. Negative Initiative grants zero."
+  },
+  "relentless": {
+    "name": "Relentless",
+    "tier": 3,
+    "reference": "V",
+    "effect": "Current fatigue contributes only half its normal Initiative penalty, rounded up. Ignore the next-round Wait penalty. Does not reduce actual fatigue or grant another recovery/activation."
+  },
+  "nimble": {
+    "name": "Nimble",
+    "tier": 6,
+    "reference": "V",
+    "effect": "Direct weapon HP multiplier = min(1, 0.40 + 0.03\u00d7max(0, W\u221215)), where W is raw armour load. Armour damage is unchanged. Does not reduce status damage or fatigue pressure."
+  },
+  "balance": {
+    "name": "Balance",
+    "tier": 2,
+    "reference": "[L](https://github.com/Battle-Brothers-Legends/Legends-public/blob/9651d89bca426df9f2679cb79b6872f71c5ecdcb/scripts/skills/perks/perk_legend_balance.nut)",
+    "effect": "Gain floor(6e) melee defence and floor(6e) ranged defence, where e is medium-armour effectiveness. This is a flat defence bonus before the normal high-defence adjustment."
+  },
+  "perfect_fit": {
+    "name": "Perfect Fit",
+    "tier": 3,
+    "reference": "[L](https://github.com/Battle-Brothers-Legends/Legends-public/blob/9651d89bca426df9f2679cb79b6872f71c5ecdcb/scripts/skills/perks/perk_legend_perfect_fit.nut)",
+    "effect": "Reduce the armour contribution to Initiative loss by 20%\u00d7e, rounded up after all armour-load modifiers. Weapon/stance fatigue costs have factor (1\u22120.10e). Does not increase fatigue capacity."
+  },
+  "poise": {
+    "name": "Poise",
+    "tier": 6,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_poise.nut)",
+    "effect": "Direct weapon HP multiplier = 1\u22120.30e; armour-damage multiplier = 1\u22120.15e. Uses raw armour load only. No Reach stat or Initiative comparison."
+  },
+  "brawny": {
+    "name": "Brawny",
+    "tier": 3,
+    "reference": "V",
+    "effect": "Armour contributes ceil(0.70\u00d7W) instead of W to fatigue-capacity and Initiative penalties. Weapon/shield/bag loads are unchanged. W for armour-perk effectiveness remains the unreduced raw value."
+  },
+  "bulwark": {
+    "name": "Bulwark",
+    "tier": 4,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_bulwark.nut)",
+    "effect": "On a negative combat morale check caused by physical injury, deaths or nearby enemies, add min(15, floor((current body armour + current head armour)/25)) Resolve. No benefit to offensive morale effects or mental-status checks."
+  },
+  "battle_forged": {
+    "name": "Battle Forged",
+    "tier": 6,
+    "reference": "V",
+    "effect": "Armour damage is reduced by min(35%, 0.05%\u00d7(current body armour + current head armour)), using armour immediately before the hit. HP is then resolved normally using the reduced armour loss. No direct HP reduction."
+  },
+  "exploit_opening": {
+    "name": "Exploit Opening",
+    "tier": 2,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_exploit_opening.nut)",
+    "effect": "When an adjacent enemy misses a non-reaction melee attack against you, mark that enemy. Your next paid melee attack against that mark gains +10 accuracy and +20% regular/armour damage, then consumes it hit or miss. A new mark replaces the old one; expire at the end of your next own activation. Reactions neither grant nor consume."
+  },
+  "shield_expert": {
+    "name": "Shield Expert",
+    "tier": 3,
+    "reference": "V",
+    "effect": "A functional shield's inherent melee/ranged defence is \u00d71.25, rounded down. Guard adds that modified shield bonus once more; never multiply the resulting total again. Damage to shield condition is halved, rounded up, minimum one."
+  },
+  "rotation": {
+    "name": "Rotation",
+    "tier": 3,
+    "reference": "V",
+    "effect": "Active: 3 AP, 25 fatigue. Swap positions with one adjacent standing, allied, non-immobilised unit, provided both destinations are legal. No opportunity attacks. Both lose Guard/stances. Ally pays nothing and keeps its queue position/AP. Does not earn movement-trigger bonuses."
+  },
+  "phalanx": {
+    "name": "Phalanx",
+    "tier": 5,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_phalanx.nut)",
+    "effect": "While holding a functional shield, gain +3 melee defence per adjacent standing ally with a functional shield, maximum +6. This is the named shield-neighbour bonus in the new rules, not an addition to the old passive bonus. No Reach component."
+  },
+  "backstabber": {
+    "name": "Backstabber",
+    "tier": 3,
+    "reference": "V",
+    "effect": "Your melee surround accuracy becomes +10 per additional surrounding attacker instead of +5. A valid Long Reach supporter may count once. No ranged benefit; Underdog removes the target's surround penalty before multiplication."
+  },
+  "double_strike": {
+    "name": "Double Strike",
+    "tier": 5,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_double_strike.nut)",
+    "effect": "A successful paid, single-target, one-handed melee attack enables +15% regular/armour damage for the next qualifying attack. A further hit maintains the bonus; it never stacks. Miss, movement, swap, Wait or final End clears it. Reactions neither gain nor consume it."
+  },
+  "duelist": {
+    "name": "Duelist",
+    "tier": 7,
+    "reference": "V",
+    "effect": "One-handed melee attacks with an empty offhand gain +25 percentage points of armour penetration, capped at 100%. Works with spear/sword and other supported one-handed melee families; no benefit to full-bypass attacks. A shield disables it."
+  },
+  "footwork": {
+    "name": "Footwork",
+    "tier": 5,
+    "reference": "V",
+    "effect": "Active: 3 AP, 20 fatigue. Move to one adjacent empty, passable hex without opportunity attacks. May enter another enemy zone of control. Clears Guard/stances and attack sequences. Pathfinder does not discount it; it does not charge Vigorous Assault."
+  },
+  "vigorous_assault": {
+    "name": "Vigorous Assault",
+    "tier": 3,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_vigorous_assault.nut)",
+    "effect": "Once per round, after ordinary walking creates at least two hexes of displacement, your next paid two-handed melee attack costs 1 less AP, minimum 4, and has a 0.90 fatigue factor. At attack time you must still be at least two hexes from the segment origin. A segment starts on first activation or after Wait, swapping or forced movement resets it. Attack consumes the round allowance."
+  },
+  "reach_advantage": {
+    "name": "Reach Advantage",
+    "tier": 5,
+    "reference": "V",
+    "effect": "Each successful paid two-handed melee hit grants +5 melee defence, maximum +10, until your next first activation. One gain per target per attack. Reactions do not grant it. This is a defence bonus, not Reforged's Reach stat."
+  },
+  "underdog": {
+    "name": "Underdog",
+    "tier": 5,
+    "reference": "V",
+    "effect": "Enemies receive no surround accuracy bonus against you, including virtual Long Reach support and Backstabber's amplification. Other accuracy bonuses remain."
+  },
+  "killing_frenzy": {
+    "name": "Killing Frenzy",
+    "tier": 7,
+    "reference": "V",
+    "effect": "After a kill with your paid weapon attack, subsequent weapon hits gain +20% regular/armour damage through the end of your next own activation. Further qualifying kills refresh duration without stacking. The killing hit itself receives no new bonus; reaction kills do not trigger/refresh."
+  },
+  "nine_lives": {
+    "name": "Nine Lives",
+    "tier": 1,
+    "reference": "V",
+    "effect": "Once per battle, a direct weapon hit that would kill instead leaves you at 1 HP. No extra invulnerability, healing or status cleanse. Later hits can kill. Save the used flag."
+  },
+  "indomitable": {
+    "name": "Indomitable",
+    "tier": 7,
+    "reference": "V",
+    "effect": "Active: 5 AP, 25 fatigue. Until your next first activation, direct weapon HP and armour-damage multipliers are 0.50 and hostile knockback/pulls cannot move you. Damage from the attempted displacement attack still resolves. Voluntary movement and allied Rotation remain allowed."
+  },
+  "anticipation": {
+    "name": "Anticipation",
+    "tier": 3,
+    "reference": "V",
+    "effect": "Against a ranged weapon attack, gain ranged defence = min(15, 3\u00d7distance in hexes). Calculate using attacker/defender positions at attack resolution; no melee effect."
+  },
+  "overwhelm": {
+    "name": "Overwhelm",
+    "tier": 5,
+    "reference": "V",
+    "effect": "A paid weapon attack, hit or miss, against an enemy that has not begun its first activation this round applies \u221210% melee/ranged skill until that enemy's final End. Maximum two stacks on the target across all attackers. No defence reduction; reactions do not apply it. Waiting never makes an activated target eligible again."
+  },
+  "gifted": {
+    "name": "Gifted",
+    "tier": 2,
+    "reference": "V",
+    "effect": "Once on purchase, choose three distinct attributes: HP +4, Stamina +4, Resolve +4, Initiative +5, Melee Skill +3, Ranged Skill +4, Melee Defence +3, Ranged Defence +4. Talents do not change these grants. No XP, level or perk point is granted. Record the three selections."
+  },
+  "finesse": {
+    "name": "Finesse",
+    "tier": 7,
+    "reference": "[R](https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_finesse.nut)",
+    "effect": "Weapon and defensive active-skill fatigue costs have factor 0.85. Excludes ordinary movement, equipment swaps and defender pressure. Includes weapon reload/stance costs; gives Recover no extra reduction."
+  },
+  "mind_over_body": {
+    "name": "Mind Over Body",
+    "tier": 5,
+    "reference": "[L](https://github.com/Battle-Brothers-Legends/Legends-public/blob/9651d89bca426df9f2679cb79b6872f71c5ecdcb/scripts/skills/perks/perk_legend_mind_over_body.nut)",
+    "effect": "Weapon and defensive active-skill fatigue factor = 1\u2212min(0.20, max(0, (R\u221250)\u00d70.005)), where R is permanent Resolve before Fortified Mind/morale/temporary effects. Same action scope as Finesse. No effect on incoming pressure."
+  },
+  "deep_breath": {
+    "name": "Deep Breath",
+    "tier": 3,
+    "reference": "O",
+    "effect": "Recover removes ceil(65% of current fatigue) instead of ceil(50%), still costing 9 AP and ending the activation. No AP refund or second recovery on Wait. A successor to our placeholder recovery perk."
+  },
+  "target_practice": {
+    "name": "Target Practice",
+    "tier": 2,
+    "reference": "R adaptation: https://github.com/Battle-Modders/mod-reforged/wiki/DevDiary-4-Weapons-Design",
+    "effect": "Bow shots gain +10 accuracy against ranged weapon users, or targets with neither a working shield nor an adjacent standing ally. Applies only to deliberate shots; does not bypass line of sight."
+  },
+  "bow_mastery": {
+    "name": "Bow Mastery",
+    "tier": 4,
+    "reference": "V adaptation: Battle Brothers vanilla concept",
+    "effect": "Bow actions cost 25% less fatigue and gain one hex of maximum range. Applies to Quick Shot and Aimed Shot; does not bypass engagement, ammunition or line-of-sight requirements."
+  },
+  "patient_hunter": {
+    "name": "Patient Hunter",
+    "tier": 5,
+    "reference": "L adaptation: https://github.com/Battle-Brothers-Legends/Legends-public/wiki/Perk-Trees",
+    "effect": "After using Wait this round, Aimed Shot gains +20% regular and armour damage. Quick Shot receives no bonus. Waiting preserves AP and gives no additional fatigue recovery; the benefit ends with the round."
+  },
+  "hip_shooter": {
+    "name": "Hip Shooter",
+    "tier": 6,
+    "reference": "R adaptation: https://github.com/Battle-Modders/mod-reforged/wiki/DevDiary-4-Weapons-Design",
+    "effect": "Quick Shot costs 3 AP instead of 4. Each earlier paid bow shot this round adds 7 to its non-perk fatigue cost, hit or miss. Aimed Shot keeps its normal AP and fatigue. Wait and switching never reset this escalating cost; only your first activation next round does."
+  },
+  "power_shot": {
+    "name": "Power Shot",
+    "tier": 2,
+    "reference": "R adaptation: https://github.com/Battle-Modders/mod-reforged/wiki/DevDiary-4-Weapons-Design",
+    "effect": "A paid crossbow hit that removes at least 10 HP has a 35% chance to stagger a standing target: -2 current AP and -2 AP on its next first activation. Repeated staggers do not stack. Armour-only hits and reactions cannot trigger it. Indomitable prevents the stagger."
+  },
+  "crossbow_mastery": {
+    "name": "Crossbow Mastery",
+    "tier": 4,
+    "reference": "R adaptation: https://github.com/Battle-Modders/mod-reforged/wiki/DevDiary-4-Weapons-Design",
+    "effect": "Crossbow shots and reloads cost 25% less fatigue. Reload costs 3 AP instead of 4, including heavy crossbows. Loaded state stays with the physical weapon; mastery grants no ammunition or free reload."
+  },
+  "iron_sights": {
+    "name": "Iron Sights",
+    "tier": 6,
+    "reference": "R adaptation: https://github.com/Battle-Modders/mod-reforged/wiki/DevDiary-4-Weapons-Design",
+    "effect": "Paid crossbow shots gain +20 percentage points of head-hit chance. Accuracy and damage multipliers do not change. Combines with Head Hunter; no effect on bows, throws or melee."
+  },
+  "hybridization": {
+    "name": "Hybridization",
+    "tier": 2,
+    "reference": "R adaptation: https://github.com/Battle-Modders/mod-reforged/wiki/DevDiary-4-Weapons-Design",
+    "effect": "Add floor(10% of ranged skill after wounds/scars) to melee attack skill and floor(10% of melee skill after wounds/scars) to ranged attack skill, before morale and Overwhelm. Use unmodified input skills; never feed the bonuses into each other. Once per round a swap to or from a throwing weapon costs 0 AP, excluding shield changes. Shares its allowance with Quick Hands; swapping costs no fatigue."
+  },
+  "throwing_mastery": {
+    "name": "Throwing Mastery",
+    "tier": 4,
+    "reference": "V adaptation: Battle Brothers vanilla concept",
+    "effect": "Throwing actions cost 25% less fatigue. Throws gain +20% regular and armour damage at one or two hexes, or +10% at three hexes. No damage bonus at four hexes. Includes javelins and throwing axes; does not replenish bundles."
+  },
+  "opportunist": {
+    "name": "Opportunist",
+    "tier": 6,
+    "reference": "R adaptation: https://github.com/Battle-Modders/mod-reforged/wiki/DevDiary-4-Weapons-Design",
+    "effect": "Your first two paid throwing attacks of the battle cost one less AP, minimum 3. Hit or miss consumes an allowance and one weapon from the held bundle. Switching, Wait and new rounds never restore these allowances. No corpse ammunition or AP recovery in this adaptation."
+  },
+  "head_hunter": {
+    "name": "Head Hunter",
+    "tier": 5,
+    "reference": "V adaptation: Battle Brothers vanilla concept",
+    "effect": "A paid head hit prepares one guaranteed head hit on your next eligible paid weapon attack. The prepared attack consumes the charge even on a miss, and cannot rearm it. Body-only attacks and reactions neither use nor build the charge. Persists through turns, Wait and swaps; clears after battle."
+  },
+  "bullseye": {
+    "name": "Bullseye",
+    "tier": 6,
+    "reference": "R adaptation: https://github.com/Battle-Modders/mod-reforged/wiki/DevDiary-4-Weapons-Design",
+    "effect": "Paid ranged attacks gain +15 percentage points of armour penetration, capped at 100%. Includes bows, crossbows and thrown weapons. This adaptation changes penetration only: blocked shots remain blocked and full armour bypass is a separate property."
+  },
+  "smashing_shields": {
+    "name": "Smashing Shields",
+    "tier": 2,
+    "reference": "https://github.com/Battle-Brothers-Legends/Legends-public/blob/9651d89bca426df9f2679cb79b6872f71c5ecdcb/scripts/skills/perks/perk_legend_smashing_shields.nut",
+    "effect": "Axe Split Shield deals 50% more shield damage: 36 condition, or 18 against Shield Expert. No hitpoint damage. Works with either hand setup; throwing axes do not qualify."
+  },
+  "axe_mastery": {
+    "name": "Axe Mastery",
+    "tier": 4,
+    "reference": "https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/mod_reforged/hooks/skills/perks/perk_mastery_axe.nut",
+    "effect": "Axe attacks and Split Shield cost 25% less fatigue. No accuracy, AP or additional shield-damage bonus. Includes two-handed axes; excludes throwing axes. Adapted mastery: Reforged hook attacks are not included."
+  },
+  "concussive_strikes": {
+    "name": "Concussive Strikes",
+    "tier": 2,
+    "reference": "https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_concussive_strikes.nut",
+    "effect": "A paid mace head hit that damages HP or armour staggers a surviving enemy: -2 current and next-turn AP. Does not stack, trigger on reactions, or affect Indomitable. Adapted from Reforged: stagger, not daze or stun."
+  },
+  "mace_mastery": {
+    "name": "Mace Mastery",
+    "tier": 4,
+    "reference": "https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/mod_reforged/hooks/skills/perks/perk_mastery_mace.nut",
+    "effect": "Mace attacks and Staggering Blow cost 25% less fatigue. No AP or accuracy bonus; Staggering Blow keeps its -10 accuracy. Applies to clubs and flanged maces. Adapted mastery: no stun guarantee or Bear Down."
+  },
+  "push_the_advantage": {
+    "name": "Push the Advantage",
+    "tier": 5,
+    "reference": "https://github.com/Battle-Brothers-Legends/Legends-public/blob/9651d89bca426df9f2679cb79b6872f71c5ecdcb/scripts/skills/perks/perk_legend_push_the_advantage.nut",
+    "effect": "Paid mace attacks against an already-staggered enemy gain +10 percentage points of head-hit chance and +10% head HP damage. Body damage is unchanged. Does not trigger on reactions or the hit that first staggers. Adapted from Legends; works with a shield or free offhand."
+  },
+  "smackdown": {
+    "name": "Smackdown",
+    "tier": 3,
+    "reference": "https://github.com/Battle-Brothers-Legends/Legends-public/blob/9651d89bca426df9f2679cb79b6872f71c5ecdcb/scripts/skills/perks/perk_legend_smackdown.nut",
+    "effect": "Hammer attacks deal 30% more armour damage, including Shatter Armour and reactions. No direct HP multiplier. Includes the maul. Adapted from Legends: no Wind Up or knockback."
+  },
+  "hammer_mastery": {
+    "name": "Hammer Mastery",
+    "tier": 4,
+    "reference": "https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/mod_reforged/hooks/skills/perks/perk_mastery_hammer.nut",
+    "effect": "Hammer attacks and Shatter Armour cost 25% less fatigue. No AP or accuracy bonus. Includes the maul. Adapted mastery: no dented-armour effect or Pummel."
+  },
+  "deep_impact": {
+    "name": "Deep Impact",
+    "tier": 6,
+    "reference": "https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/actives/rf_deep_impact_skill.nut",
+    "effect": "Shatter Armour hits that damage HP weaken a surviving target: -10 attack accuracy and 20% less regular/armour damage through its next activation. Repeated hits refresh; no stacking. No reaction trigger. Adapted from Reforged: fixed penalties on our existing action."
+  },
+  "between_the_ribs": {
+    "name": "Between the Ribs",
+    "tier": 1,
+    "reference": "https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_between_the_ribs.nut",
+    "effect": "Paid dagger attacks gain 10% HP damage per extra adjacent melee ally surrounding the target, up to 30%. Includes Puncture; armour damage is unchanged. Underdog prevents the bonus. No reaction bonus. Adapted from Reforged."
+  },
+  "dagger_mastery": {
+    "name": "Dagger Mastery",
+    "tier": 4,
+    "reference": "https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/mod_reforged/hooks/skills/perks/perk_mastery_dagger.nut",
+    "effect": "Dagger attacks and Puncture cost 25% less fatigue. No AP or accuracy bonus; Puncture keeps its -20 accuracy. Includes knives. Adapted mastery: Reforged reach rules are not present."
+  },
+  "swift_stabs": {
+    "name": "Swift Stabs",
+    "tier": 7,
+    "reference": "https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/scripts/skills/perks/perk_rf_swift_stabs.nut",
+    "effect": "After hitting a surviving enemy with a paid dagger attack, further dagger attacks against that enemy cost 2 fewer AP (minimum 2). Includes Puncture. A miss, kill, different target, movement, weapon swap, non-attack action, Wait or turn end breaks the chain. Reactions neither prime nor consume it."
+  },
+  "bags_and_belts": {
+    "name": "Bags and Belts",
+    "tier": 1,
+    "effect": "Two additional carried slots. Carried items have no maximum fatigue or initiative penalty, except two-handed weapons. Equipped gear retains its normal load.",
+    "reference": "V"
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "bb2-static-enemy-art-v1",
+  "roles": {
+    "raider": {
+      "file": "raider.png",
+      "sha256": "a3917544dffffa44004a26c5bdae2ae249b3e6ac9260f22430679633178c5760",
+      "width": 430,
+      "height": 948,
+      "foot_anchor": [
+        215,
+        931
+      ],
+      "body_height": 915
+    },
+    "archer": {
+      "file": "archer.png",
+      "sha256": "c9c6b6a7241b6b9a9a86c42d82e73d60d468f2f55400b045a34362888e80f465",
+      "width": 413,
+      "height": 944,
+      "foot_anchor": [
+        180,
+        927
+      ],
+      "body_height": 911
+    },
+    "shieldbearer": {
+      "file": "shieldbearer.png",
+      "sha256": "c491e2346eb2547107a3f6e057afaa018e22e99bbace3709690eaeef8b1ec496",
+      "width": 513,
+      "height": 951,
+      "foot_anchor": [
+        234,
+        934
+      ],
+      "body_height": 918
+    },
+    "two_hander": {
+      "file": "two_hander.png",
+      "sha256": "b0289b3c7c1d4ffd4c5fdb846b6d1c3ce72415fb62a8b6a35668682d0a529c8c",
+      "width": 357,
+      "height": 1120,
+      "foot_anchor": [
+        165,
+        1103
+      ],
+      "body_height": 833
+    },
+    "pikeman": {
+      "file": "pikeman.png",
+      "sha256": "1a52a6c29f5316d8dac7c2b21148ed22d803ab6ba862b2590e353cd24ed638d1",
+      "width": 320,
+      "height": 1498,
+      "foot_anchor": [
+        145,
+        1481
+      ],
+      "body_height": 829
+    },
+    "leader": {
+      "file": "leader.png",
+      "sha256": "9dffcfa91b0fcf7f42a29f7fc02e7ac0e7bb700f8809fbc62624f1319ca88a1b",
+      "width": 408,
+      "height": 878,
+      "foot_anchor": [
+        220,
+        861
+      ],
+      "body_height": 845
+    }
+  }
+}

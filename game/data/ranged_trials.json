@@ -1,0 +1,425 @@
+[
+  {
+    "person": "Lysa",
+    "background": "Outrider",
+    "title": "Volley archer",
+    "weapon": "bow",
+    "armor": "Light",
+    "shield": false,
+    "carry": [
+      "sword",
+      ""
+    ],
+    "perks": [
+      "pathfinder",
+      "target_practice",
+      "relentless",
+      "bow_mastery",
+      "overwhelm",
+      "hip_shooter",
+      "nimble",
+      "head_hunter",
+      "bullseye",
+      "footwork"
+    ],
+    "groups": [
+      "Bow",
+      "Crossbow",
+      "Throwing",
+      "Sword",
+      "Light",
+      "Medium",
+      "Marksman",
+      "Swift",
+      "Tough",
+      "Fast"
+    ],
+    "stats": [
+      70,
+      114,
+      52,
+      128,
+      78,
+      24,
+      89,
+      18
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Lysa",
+    "background": "Outrider",
+    "title": "Patient archer",
+    "weapon": "warbow",
+    "armor": "Medium",
+    "shield": false,
+    "carry": [
+      "sword",
+      ""
+    ],
+    "perks": [
+      "colossus",
+      "target_practice",
+      "anticipation",
+      "bow_mastery",
+      "patient_hunter",
+      "poise",
+      "head_hunter",
+      "bullseye",
+      "killing_frenzy",
+      "footwork"
+    ],
+    "groups": [
+      "Bow",
+      "Crossbow",
+      "Throwing",
+      "Sword",
+      "Light",
+      "Medium",
+      "Marksman",
+      "Swift",
+      "Tough",
+      "Fast"
+    ],
+    "stats": [
+      70,
+      114,
+      52,
+      128,
+      78,
+      24,
+      89,
+      18
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Lysa",
+    "background": "Outrider",
+    "title": "Sword skirmisher",
+    "weapon": "sword",
+    "armor": "Light",
+    "shield": false,
+    "carry": [
+      "javelins",
+      ""
+    ],
+    "perks": [
+      "colossus",
+      "hybridization",
+      "dodge",
+      "sword_mastery",
+      "double_strike",
+      "nimble",
+      "duelist",
+      "throwing_mastery",
+      "footwork",
+      "killing_frenzy"
+    ],
+    "groups": [
+      "Bow",
+      "Crossbow",
+      "Throwing",
+      "Sword",
+      "Light",
+      "Medium",
+      "Marksman",
+      "Swift",
+      "Tough",
+      "Fast"
+    ],
+    "stats": [
+      70,
+      114,
+      52,
+      128,
+      78,
+      24,
+      89,
+      18
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Oren",
+    "background": "Militia",
+    "title": "Crossbow harrier",
+    "weapon": "crossbow",
+    "armor": "Medium",
+    "shield": false,
+    "carry": [
+      "polearm",
+      ""
+    ],
+    "perks": [
+      "pathfinder",
+      "power_shot",
+      "anticipation",
+      "crossbow_mastery",
+      "head_hunter",
+      "bullseye",
+      "poise",
+      "iron_sights",
+      "footwork",
+      "overwhelm"
+    ],
+    "groups": [
+      "Bow",
+      "Crossbow",
+      "Throwing",
+      "Polearm",
+      "Medium",
+      "Heavy",
+      "Marksman",
+      "Power",
+      "Trained",
+      "Vigorous"
+    ],
+    "stats": [
+      78,
+      125,
+      61,
+      109,
+      81,
+      25,
+      84,
+      16
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Oren",
+    "background": "Militia",
+    "title": "Iron hunter",
+    "weapon": "heavy_crossbow",
+    "armor": "Heavy",
+    "shield": false,
+    "carry": [
+      "polearm",
+      ""
+    ],
+    "perks": [
+      "colossus",
+      "power_shot",
+      "brawny",
+      "crossbow_mastery",
+      "head_hunter",
+      "iron_sights",
+      "battle_forged",
+      "bullseye",
+      "mind_over_body",
+      "deep_breath"
+    ],
+    "groups": [
+      "Bow",
+      "Crossbow",
+      "Throwing",
+      "Polearm",
+      "Medium",
+      "Heavy",
+      "Marksman",
+      "Power",
+      "Trained",
+      "Vigorous"
+    ],
+    "stats": [
+      78,
+      125,
+      61,
+      109,
+      81,
+      25,
+      84,
+      16
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Oren",
+    "background": "Militia",
+    "title": "Polearm hybrid",
+    "weapon": "polearm",
+    "armor": "Medium",
+    "shield": false,
+    "carry": [
+      "javelins",
+      ""
+    ],
+    "perks": [
+      "colossus",
+      "hybridization",
+      "anticipation",
+      "polearm_mastery",
+      "leverage",
+      "poise",
+      "throwing_mastery",
+      "bullseye",
+      "footwork",
+      "killing_frenzy"
+    ],
+    "groups": [
+      "Bow",
+      "Crossbow",
+      "Throwing",
+      "Polearm",
+      "Medium",
+      "Heavy",
+      "Marksman",
+      "Power",
+      "Trained",
+      "Vigorous"
+    ],
+    "stats": [
+      78,
+      125,
+      61,
+      109,
+      81,
+      25,
+      84,
+      16
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Tova",
+    "background": "Farmhand",
+    "title": "Shield thrower",
+    "weapon": "javelins",
+    "armor": "Heavy",
+    "shield": true,
+    "carry": [
+      "spear",
+      ""
+    ],
+    "perks": [
+      "colossus",
+      "hybridization",
+      "shield_expert",
+      "throwing_mastery",
+      "brawny",
+      "opportunist",
+      "battle_forged",
+      "bullseye",
+      "rotation",
+      "indomitable"
+    ],
+    "groups": [
+      "Bow",
+      "Crossbow",
+      "Throwing",
+      "Spear",
+      "Light",
+      "Heavy",
+      "Marksman",
+      "Shield",
+      "Tough",
+      "Fast"
+    ],
+    "stats": [
+      80,
+      122,
+      52,
+      120,
+      82,
+      28,
+      83,
+      13
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Tova",
+    "background": "Farmhand",
+    "title": "Axe skirmisher",
+    "weapon": "throwing_axes",
+    "armor": "Light",
+    "shield": false,
+    "carry": [
+      "spear",
+      "javelins"
+    ],
+    "perks": [
+      "pathfinder",
+      "hybridization",
+      "dodge",
+      "throwing_mastery",
+      "overwhelm",
+      "opportunist",
+      "nimble",
+      "bullseye",
+      "footwork",
+      "killing_frenzy"
+    ],
+    "groups": [
+      "Bow",
+      "Crossbow",
+      "Throwing",
+      "Spear",
+      "Light",
+      "Heavy",
+      "Marksman",
+      "Shield",
+      "Tough",
+      "Fast"
+    ],
+    "stats": [
+      80,
+      122,
+      52,
+      120,
+      82,
+      28,
+      83,
+      13
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Tova",
+    "background": "Farmhand",
+    "title": "Spear hybrid",
+    "weapon": "spear",
+    "armor": "Light",
+    "shield": true,
+    "carry": [
+      "javelins",
+      ""
+    ],
+    "perks": [
+      "colossus",
+      "hybridization",
+      "shield_expert",
+      "spear_mastery",
+      "spearwaller",
+      "nimble",
+      "throwing_mastery",
+      "bullseye",
+      "king_of_all_weapons",
+      "rotation"
+    ],
+    "groups": [
+      "Bow",
+      "Crossbow",
+      "Throwing",
+      "Spear",
+      "Light",
+      "Heavy",
+      "Marksman",
+      "Shield",
+      "Tough",
+      "Fast"
+    ],
+    "stats": [
+      80,
+      122,
+      52,
+      120,
+      82,
+      28,
+      83,
+      13
+    ],
+    "gifts": []
+  }
+]

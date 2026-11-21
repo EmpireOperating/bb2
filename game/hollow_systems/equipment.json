@@ -1,0 +1,7 @@
+{
+  "hollow_gloves": {"name":"Leather gloves","slot":"hands","group":"body","layer":"hands","durability":12,"weight":1,"price":20,"donor_definition":"sword_gloves","budget_note":"12 pooled body protection, 1 load; independently worn and damaged."},
+  "hollow_gauntlets": {"name":"Iron gauntlets","slot":"hands","group":"body","layer":"hands","durability":22,"weight":3,"price":45,"donor_definition":"hm_trial_v1:gloves-04-mail-gloves","budget_note":"22 pooled body protection, 3 load; trial budget, not balance acceptance."},
+  "hollow_boots": {"name":"Leather boots","slot":"feet","group":"body","layer":"feet","durability":18,"weight":2,"price":25,"donor_definition":"light_boots","budget_note":"18 pooled body protection, 2 load; independently worn and damaged."},
+  "hollow_cloak": {"name":"Travel cloak","slot":"cloak","group":"body","layer":"cloak","durability":10,"weight":1,"price":18,"donor_definition":"travel_cloak","budget_note":"10 pooled body protection, 1 load; outermost wear."},
+  "hollow_belt": {"name":"Utility belt","slot":"belt","group":"body","layer":"belt","durability":0,"weight":1,"price":22,"capacity":1,"donor_definition":"hm_trial_v1:belts-01-utility-belt","budget_note":"No protection or invented durability. 1 load, one extra ordinary carried-arm position (carry3), up to the existing four with Bags and Belts. Existing paid single-item switches only; no paired donor swap."}
+}

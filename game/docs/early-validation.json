@@ -1,0 +1,90 @@
+{
+  "baseline": "0.33",
+  "gameplay_changes": false,
+  "runtime_files_identical": 236,
+  "seed_count": 16,
+  "policy_runs": 48,
+  "town_control_runs": 16,
+  "policies": {
+    "cautious": {
+      "runs": 16,
+      "survived": 15,
+      "deaths": 17,
+      "hires": 47,
+      "median_jobs": 3.0,
+      "median_crowns": 126.0,
+      "mail_buyers": 0,
+      "first_mail_days": []
+    },
+    "gear": {
+      "runs": 16,
+      "survived": 15,
+      "deaths": 9,
+      "hires": 21,
+      "median_jobs": 3.0,
+      "median_crowns": 156.0,
+      "mail_buyers": 16,
+      "first_mail_days": [
+        2,
+        2,
+        3,
+        2,
+        2,
+        2,
+        3,
+        3,
+        2,
+        3,
+        2,
+        3,
+        3,
+        2,
+        2,
+        6
+      ]
+    },
+    "rush": {
+      "runs": 16,
+      "survived": 11,
+      "deaths": 22,
+      "hires": 0,
+      "median_jobs": 2.0,
+      "median_crowns": 680.5,
+      "mail_buyers": 0,
+      "first_mail_days": []
+    }
+  },
+  "suites": [
+    {
+      "name": "baseline",
+      "checks": 171,
+      "failures": 0
+    },
+    {
+      "name": "holdout",
+      "checks": 151,
+      "failures": 0
+    },
+    {
+      "name": "gear",
+      "checks": 89,
+      "failures": 0
+    },
+    {
+      "name": "gear-holdout",
+      "checks": 79,
+      "failures": 0
+    },
+    {
+      "name": "world",
+      "checks": 96,
+      "failures": 0
+    },
+    {
+      "name": "native-early_journey_ui-v34",
+      "checks": 17,
+      "failures": 0
+    }
+  ],
+  "checks": 603
+}

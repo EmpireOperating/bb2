@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+ <defs>
+  <linearGradient id="rim" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f3eee0"/><stop offset=".25" stop-color="#aebfc7"/><stop offset=".48" stop-color="#4a606f"/><stop offset=".72" stop-color="#c8d0ca"/><stop offset="1" stop-color="#41515d"/></linearGradient>
+  <linearGradient id="enamel" x1="0" y1="0" x2=".6" y2="1"><stop stop-color="#447ca2"/><stop offset=".4" stop-color="#234f79"/><stop offset=".7" stop-color="#14314e"/><stop offset="1" stop-color="#0a1e32"/></linearGradient>
+ </defs>
+ <!-- A cut steel heater-shield, sunk into the dark card, not a flat token. -->
+ <path d="M14 2 24 5.5 23.1 16.8Q22.2 22 14 26.3 5.8 22 4.9 16.8L4 5.5Z" fill="#05080b" opacity=".75" transform="translate(0 1)"/>
+ <path d="M14 1.8 24 5.3 23.1 16.6Q22.2 21.8 14 25.8 5.8 21.8 4.9 16.6L4 5.3Z" fill="url(#rim)" stroke="#151d24" stroke-width=".8"/>
+ <path d="M14 4 21.9 6.7 21.2 16.1Q20.5 20 14 23.5 7.5 20 6.8 16.1L6.1 6.7Z" fill="url(#enamel)" stroke="#1c2a35" stroke-width=".8"/>
+ <path d="M6.6 8 7.1 16.2Q7.9 19.8 13.6 23" fill="none" stroke="#82a4b5" stroke-width=".45" opacity=".7"/>
+ <path d="M7.5 7 13.8 4.9 20 7" fill="none" stroke="#b5d1da" stroke-width=".45" opacity=".65"/>
+ <!-- Raised four-point cut diamond: the four facets remain distinct at 1x. -->
+ <path d="m14 6.2 3.2 5.5 4.3 2.2-4.3 2.2-3.2 6-3.2-6-4.3-2.2 4.3-2.2Z" fill="#081826" transform="translate(.2 .75)"/>
+ <path d="m14 6.2 3 5.5 4.1 2.1-4.1 2.1-3 5.8-3-5.8-4.1-2.1 4.1-2.1Z" fill="#d7e7e7" stroke="#536c7a" stroke-width=".45"/>
+ <path d="M14 6.5V13.8L11.1 11.9Z" fill="#fff9e7"/>
+ <path d="m14 6.5 2.9 5.4-2.9 1.9Z" fill="#a9c6d2"/>
+ <path d="m14 13.8 6.7 0-3.9 2Z" fill="#718eaa"/>
+ <path d="M14 13.8V21.1L11.1 15.7Z" fill="#a9b8c3"/>
+ <path d="m14 13.8 2.8 2-2.8 5.3Z" fill="#496981"/>
+ <path d="m7.3 13.8 3.9-1.9 2.8 1.9Z" fill="#f0f2dc"/>
+ <path d="m14 8.2 0 3.9" stroke="#fffde9" stroke-width=".5" opacity=".75"/>
+ <!-- Restrained hand-worked scratches, never a noisy halo. -->
+ <path d="m8 18 .7 .7m11.8-8.9.4-1m-10-2 .8-.2" stroke="#e4e7d4" stroke-width=".35" opacity=".55"/>
+</svg>

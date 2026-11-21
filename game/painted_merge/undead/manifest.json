@@ -1,0 +1,662 @@
+{
+  "approval": "PARENT_CANDIDATE_INTEGRATION_NOT_NATIVE_ACCEPTANCE",
+  "base": {
+    "dimensions": [
+      384,
+      384
+    ],
+    "path": "res://painted_merge/undead/assets/base/undead-foundation.png",
+    "sha256": "bc81cdd56bf89731c6dbe466f8c45aa605eefc65aaa36f491775876a42b5dc4b"
+  },
+  "delivery_seal_sha256": "a3df9eac5f805d7c70c288bd0e41ab35bbb2564458ddb2117bea042306853c33",
+  "frame": {
+    "base_origin": [
+      0,
+      0
+    ],
+    "body_ground_reference": [
+      160,
+      352
+    ],
+    "body_size": [
+      256,
+      320
+    ],
+    "canvas": [
+      384,
+      384
+    ],
+    "copied_equipment_origin": [
+      32,
+      32
+    ],
+    "foot_anchor": [
+      208,
+      343
+    ],
+    "foot_anchor_source": "candidate opaque toe witness, NOT inherited living anchor; actual pixel verified by tests"
+  },
+  "geometry": {
+    "base_alpha_top": 48,
+    "body_height": 1.94,
+    "foot_x_extents": [
+      [
+        106,
+        144
+      ],
+      [
+        204,
+        228
+      ]
+    ],
+    "foot_y": 343,
+    "method": "midpoint of low-foot silhouette centers, alpha>0 in source rows >=320, split at x192; immutable base alpha top",
+    "stance_x": 170.5
+  },
+  "recipe_sha256": "f4ea157272e577a1fbdd7ba82337854981b6a1708aef01f112cd584110fd73c1",
+  "schema": "bb2-skeletal-equipment-v1",
+  "shield": {
+    "bone_foreground": "intentionally empty; complete shield face occludes rear hand",
+    "condition_owner": "offhand",
+    "definition_id": "hm_trial_v1:offhands-02-round-wooden-shield",
+    "dimensions": [
+      384,
+      384
+    ],
+    "path": "res://painted_merge/undead/assets/layers/round-wooden-shield.png",
+    "physical_hand": "left",
+    "sha256": "53d06cbd81f7bd54ba6df0f3f794451001d7bc39492ad78226d7e3ffc0f0f0bd",
+    "status": "EXACT_REUSED_USER_APPROVED_TRACER_ROUTE",
+    "z": 35
+  },
+  "wardrobe": {
+    "hm_trial_v1:headwear-02-leather-cap": {
+      "art_key": "headwear-02-leather-cap",
+      "layers": [
+        {
+          "condition_owner": "head",
+          "dimensions": [
+            384,
+            384
+          ],
+          "part": "front",
+          "path": "res://painted_merge/undead/assets/layers/wardrobe/headwear-02-leather-cap-0.png",
+          "sha256": "f3559bb06ae3f789c829a46b8b49c84e513c245c4750a41c990e69071da6edc7",
+          "z": 50
+        }
+      ],
+      "slot": "head"
+    },
+    "hm_trial_v1:headwear-04-kettle-helm": {
+      "art_key": "headwear-04-kettle-helm",
+      "layers": [
+        {
+          "condition_owner": "head",
+          "dimensions": [
+            384,
+            384
+          ],
+          "part": "rear",
+          "path": "res://painted_merge/undead/assets/layers/wardrobe/headwear-04-kettle-helm-0.png",
+          "sha256": "1b525958ed7f75b2299d7df42a9517f8229dd0f837904f641c52997bf04c2416",
+          "z": -10
+        },
+        {
+          "condition_owner": "head",
+          "dimensions": [
+            384,
+            384
+          ],
+          "part": "front",
+          "path": "res://painted_merge/undead/assets/layers/wardrobe/headwear-04-kettle-helm-1.png",
+          "sha256": "e9c74f52e6fcf04ee99afb5b0e972d326fd53ac0eda5795eb560b4e783e1e77c",
+          "z": 50
+        }
+      ],
+      "slot": "head"
+    },
+    "hm_trial_v1:old24-banded_mail": {
+      "art_key": "old24-banded_mail",
+      "layers": [
+        {
+          "condition_owner": "body",
+          "dimensions": [
+            384,
+            384
+          ],
+          "part": "whole",
+          "path": "res://painted_merge/undead/assets/layers/wardrobe/old24-banded_mail-0.png",
+          "sha256": "60e1614591f6eaa559da3dc6f006f22a18278bcfd2365dad2b567b6de82e1231",
+          "z": 10
+        }
+      ],
+      "slot": "body"
+    },
+    "hm_trial_v1:old24-scout_coat": {
+      "art_key": "old24-scout_coat",
+      "layers": [
+        {
+          "condition_owner": "body",
+          "dimensions": [
+            384,
+            384
+          ],
+          "part": "whole",
+          "path": "res://painted_merge/undead/assets/layers/wardrobe/old24-scout_coat-0.png",
+          "sha256": "46287a86efcbe0cf365d0f8f3080ff61e8a49923611097a9d9cd46ee6c3535a1",
+          "z": 10
+        }
+      ],
+      "slot": "body"
+    },
+    "hollow_campaign:padded_hood": {
+      "art_key": "headwear-01-padded-hood",
+      "layers": [
+        {
+          "condition_owner": "head",
+          "dimensions": [
+            384,
+            384
+          ],
+          "part": "front",
+          "path": "res://painted_merge/undead/assets/layers/wardrobe/headwear-01-padded-hood-0.png",
+          "sha256": "a047992aad0b3cd38e797268cad834aaf465c9bbcf577cde25dec47af0d0fc09",
+          "z": 50
+        }
+      ],
+      "slot": "head"
+    },
+    "iron_cap": {
+      "art_key": "headwear-03-iron-skullcap",
+      "layers": [
+        {
+          "condition_owner": "head",
+          "dimensions": [
+            384,
+            384
+          ],
+          "part": "front",
+          "path": "res://painted_merge/undead/assets/layers/wardrobe/headwear-03-iron-skullcap-0.png",
+          "sha256": "be57800f8326bc7dd0d13b1001bef50ac9a2e760a103b32915c778d8563d1685",
+          "z": 50
+        }
+      ],
+      "slot": "head"
+    },
+    "march_mail": {
+      "art_key": "old24-march_mail",
+      "layers": [
+        {
+          "condition_owner": "body",
+          "dimensions": [
+            384,
+            384
+          ],
+          "part": "whole",
+          "path": "res://painted_merge/undead/assets/layers/wardrobe/old24-march_mail-0.png",
+          "sha256": "17e74e881ed46f3d11f7dd0f5c4f1bee4338eddd19366478fbf6b58e590806b6",
+          "z": 10
+        }
+      ],
+      "slot": "body"
+    },
+    "travel_leather": {
+      "art_key": "old24-travel_leather",
+      "layers": [
+        {
+          "condition_owner": "body",
+          "dimensions": [
+            384,
+            384
+          ],
+          "part": "whole",
+          "path": "res://painted_merge/undead/assets/layers/wardrobe/old24-travel_leather-0.png",
+          "sha256": "f77018225bbc12edef6ea498e1b2852d6a78f51d0f61dc7e6f424133cf8f887d",
+          "z": 10
+        }
+      ],
+      "slot": "body"
+    }
+  },
+  "weapons": {
+    "cudgel": {
+      "art_key": "new-current-iron-cudgel",
+      "bone_foreground": {
+        "condition_owner": null,
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/bones/new-current-iron-cudgel.png",
+        "physical_hand": "right",
+        "requires_exact_definition": "cudgel",
+        "sha256": "b0559dbc3075c9ef58e429bf3d3c3f6c08f09c331071ff52610485d8eac6b79a",
+        "source": "exact accepted skeleton RGBA at identical registered coordinates",
+        "z": 70
+      },
+      "frame": {
+        "base_origin": [
+          0,
+          0
+        ],
+        "body_ground_reference": [
+          160,
+          352
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          384,
+          384
+        ],
+        "copied_equipment_origin": [
+          32,
+          32
+        ],
+        "foot_anchor": [
+          208,
+          343
+        ],
+        "foot_anchor_source": "candidate opaque toe witness, NOT inherited living anchor; actual pixel verified by tests"
+      },
+      "hands_required": 1,
+      "physical_hand": "right",
+      "weapon": {
+        "condition_owner": "mainhand",
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/weapons/new-current-iron-cudgel.png",
+        "sha256": "60f73a41ef1fb987b3485a9060715e4624b4b4b3685223a828a25907ad407c6e",
+        "z": 60
+      }
+    },
+    "hm_trial_v1:old24-archer_heavy": {
+      "art_key": "old24-archer_heavy",
+      "bone_foreground": {
+        "condition_owner": null,
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/bones/old24-archer_heavy.png",
+        "physical_hand": "left",
+        "requires_exact_definition": "hm_trial_v1:old24-archer_heavy",
+        "sha256": "f4abc31bf26e5209f7da4c6fd7a57a35cb9e8d282a9d1ffaf9c157c4580363d6",
+        "source": "exact accepted skeleton RGBA at identical registered coordinates",
+        "z": 70
+      },
+      "frame": {
+        "base_origin": [
+          0,
+          0
+        ],
+        "body_ground_reference": [
+          160,
+          352
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          384,
+          384
+        ],
+        "copied_equipment_origin": [
+          32,
+          32
+        ],
+        "foot_anchor": [
+          208,
+          343
+        ],
+        "foot_anchor_source": "candidate opaque toe witness, NOT inherited living anchor; actual pixel verified by tests"
+      },
+      "hands_required": 2,
+      "physical_hand": "left",
+      "weapon": {
+        "condition_owner": "mainhand",
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/weapons/old24-archer_heavy.png",
+        "sha256": "616225dc1ddb70f135207f883b5a8ffeeaefc7d3c23852acf938caf40ce179ff",
+        "z": 60
+      }
+    },
+    "hm_trial_v1:old24-gatewarden_blade": {
+      "art_key": "old24-gatewarden_blade",
+      "bone_foreground": {
+        "condition_owner": null,
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/bones/old24-gatewarden_blade.png",
+        "physical_hand": "right",
+        "requires_exact_definition": "hm_trial_v1:old24-gatewarden_blade",
+        "sha256": "d08744079a91465854ef2513bf43ed59b6e1b550fe7f6a11e9d85bc57da01664",
+        "source": "exact accepted skeleton RGBA at identical registered coordinates",
+        "z": 70
+      },
+      "frame": {
+        "base_origin": [
+          0,
+          0
+        ],
+        "body_ground_reference": [
+          160,
+          352
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          384,
+          384
+        ],
+        "copied_equipment_origin": [
+          32,
+          32
+        ],
+        "foot_anchor": [
+          208,
+          343
+        ],
+        "foot_anchor_source": "candidate opaque toe witness, NOT inherited living anchor; actual pixel verified by tests"
+      },
+      "hands_required": 1,
+      "physical_hand": "right",
+      "weapon": {
+        "condition_owner": "mainhand",
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/weapons/old24-gatewarden_blade.png",
+        "sha256": "f16c6c5b331c6e11cea7f848921af27b6c42fba7a08f50ad16dafe7a9ec4bded",
+        "z": 60
+      }
+    },
+    "hm_trial_v1:old24-medic_weapon": {
+      "art_key": "old24-medic_weapon",
+      "bone_foreground": {
+        "condition_owner": null,
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/bones/old24-medic_weapon.png",
+        "physical_hand": "right",
+        "requires_exact_definition": "hm_trial_v1:old24-medic_weapon",
+        "sha256": "7d369e9570196e14d174527e7f0f5a7b13c6f73d8cb9cc96d6caf639f284297c",
+        "source": "exact accepted skeleton RGBA at identical registered coordinates",
+        "z": 70
+      },
+      "frame": {
+        "base_origin": [
+          0,
+          0
+        ],
+        "body_ground_reference": [
+          160,
+          352
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          384,
+          384
+        ],
+        "copied_equipment_origin": [
+          32,
+          32
+        ],
+        "foot_anchor": [
+          208,
+          343
+        ],
+        "foot_anchor_source": "candidate opaque toe witness, NOT inherited living anchor; actual pixel verified by tests"
+      },
+      "hands_required": 1,
+      "physical_hand": "right",
+      "weapon": {
+        "condition_owner": "mainhand",
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/weapons/old24-medic_weapon.png",
+        "sha256": "86d299d9f7261c127083c42c526ff9e762d9fe2493a61b8755af28543244f64a",
+        "z": 60
+      }
+    },
+    "hm_trial_v1:old24-shieldbearer_heavy": {
+      "art_key": "old24-shieldbearer_heavy",
+      "bone_foreground": {
+        "condition_owner": null,
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/bones/old24-shieldbearer_heavy.png",
+        "physical_hand": "right",
+        "requires_exact_definition": "hm_trial_v1:old24-shieldbearer_heavy",
+        "sha256": "5ffb56e428e2f5f687660867c33a44a8f8d6cc3b8ec5b157ec1c8114172cad4b",
+        "source": "exact accepted skeleton RGBA at identical registered coordinates",
+        "z": 70
+      },
+      "frame": {
+        "base_origin": [
+          0,
+          0
+        ],
+        "body_ground_reference": [
+          160,
+          352
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          384,
+          384
+        ],
+        "copied_equipment_origin": [
+          32,
+          32
+        ],
+        "foot_anchor": [
+          208,
+          343
+        ],
+        "foot_anchor_source": "candidate opaque toe witness, NOT inherited living anchor; actual pixel verified by tests"
+      },
+      "hands_required": 1,
+      "physical_hand": "right",
+      "weapon": {
+        "condition_owner": "mainhand",
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/weapons/old24-shieldbearer_heavy.png",
+        "sha256": "001ad883c71ddefe28d892bcabdfd0b1deccaf4f64d27e40cd53d15c2dadc16a",
+        "z": 60
+      }
+    },
+    "hm_trial_v1:old24-ward_spear": {
+      "art_key": "old24-ward_spear",
+      "bone_foreground": {
+        "condition_owner": null,
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/bones/old24-ward_spear.png",
+        "physical_hand": "left",
+        "requires_exact_definition": "hm_trial_v1:old24-ward_spear",
+        "sha256": "58d481853b2bbed29d510b580e77a6c7c8d8da1dda03e866d62549eff74b5abe",
+        "source": "exact accepted skeleton RGBA at identical registered coordinates",
+        "z": 30
+      },
+      "frame": {
+        "base_origin": [
+          0,
+          0
+        ],
+        "body_ground_reference": [
+          160,
+          352
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          384,
+          384
+        ],
+        "copied_equipment_origin": [
+          32,
+          32
+        ],
+        "foot_anchor": [
+          208,
+          343
+        ],
+        "foot_anchor_source": "candidate opaque toe witness, NOT inherited living anchor; actual pixel verified by tests"
+      },
+      "hands_required": 2,
+      "physical_hand": "left",
+      "weapon": {
+        "condition_owner": "mainhand",
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/weapons/old24-ward_spear.png",
+        "sha256": "df6d11cb4cc787c664b58dd4a69435581429cf5c572fb69bfbde83e871af1eea",
+        "z": 20
+      }
+    },
+    "hm_trial_v1:twohand_sword": {
+      "art_key": "approved-medic-upright-greatsword",
+      "bone_foreground": {
+        "condition_owner": null,
+        "dimensions": [
+          384,
+          416
+        ],
+        "path": "res://painted_merge/undead/assets/layers/bones/approved-medic-upright-greatsword.png",
+        "physical_hand": "left",
+        "requires_exact_definition": "hm_trial_v1:twohand_sword",
+        "sha256": "cde7391d6fea114624bddf5d3400260887abc2c0f901b52c3a5abbbfd18375ef",
+        "source": "exact accepted skeleton RGBA at identical registered coordinates",
+        "z": 70
+      },
+      "frame": {
+        "base_origin": [
+          0,
+          32
+        ],
+        "body_ground_reference": [
+          160,
+          384
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          384,
+          416
+        ],
+        "copied_equipment_origin": [
+          32,
+          64
+        ],
+        "foot_anchor": [
+          208,
+          375
+        ]
+      },
+      "hands_required": 2,
+      "physical_hand": "left",
+      "weapon": {
+        "condition_owner": "mainhand",
+        "dimensions": [
+          384,
+          416
+        ],
+        "path": "res://painted_merge/undead/assets/layers/weapons/approved-medic-upright-greatsword.png",
+        "sha256": "d637a8d156be13aa8c09ded1cd85dbd2acdf724d428747ed8372cd064e5f5be1",
+        "z": 60
+      }
+    },
+    "short_bow": {
+      "art_key": "old24-reedrunner_bow",
+      "bone_foreground": {
+        "condition_owner": null,
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/bones/old24-reedrunner_bow.png",
+        "physical_hand": "left",
+        "requires_exact_definition": "short_bow",
+        "sha256": "f0b5b165569f9c22cecc46b6f4e2351a15fe31808ac39ef12463613f6373f480",
+        "source": "exact accepted skeleton RGBA at identical registered coordinates",
+        "z": 70
+      },
+      "frame": {
+        "base_origin": [
+          0,
+          0
+        ],
+        "body_ground_reference": [
+          160,
+          352
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          384,
+          384
+        ],
+        "copied_equipment_origin": [
+          32,
+          32
+        ],
+        "foot_anchor": [
+          208,
+          343
+        ],
+        "foot_anchor_source": "candidate opaque toe witness, NOT inherited living anchor; actual pixel verified by tests"
+      },
+      "hands_required": 2,
+      "physical_hand": "left",
+      "weapon": {
+        "condition_owner": "mainhand",
+        "dimensions": [
+          384,
+          384
+        ],
+        "path": "res://painted_merge/undead/assets/layers/weapons/old24-reedrunner_bow.png",
+        "sha256": "50c05e084f4d6dbe5c0dbfa64a05147f3177290d4097e7f7fcf45308e42e39ed",
+        "z": 60
+      }
+    }
+  }
+}

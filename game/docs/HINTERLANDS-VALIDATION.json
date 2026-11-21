@@ -1,0 +1,109 @@
+{
+  "baseline": "Integrated campaign 0.33",
+  "baseline_sha256": "98e456f18f5674076d8cda08f2c18a966677aa0c4858272db9a92bb0f6a3ffcd",
+  "baseline_commit": "981579b84ec21ba66f776ec26a060603a0233bfb",
+  "branch": "world/hinterlands",
+  "tests": [
+    {
+      "suite": "hinterlands",
+      "checks": 705,
+      "failures": 0,
+      "log": "hinterland-hinterlands.log"
+    },
+    {
+      "suite": "hinterlands_edges",
+      "checks": 587,
+      "failures": 0,
+      "log": "hinterland-hinterlands_edges.log"
+    },
+    {
+      "suite": "hinterlands_ui",
+      "checks": 39,
+      "failures": 0,
+      "log": "hinterlands_ui.log"
+    },
+    {
+      "suite": "hinterlands_actions_ui",
+      "checks": 33,
+      "failures": 0,
+      "log": "hinterlands_actions_ui.log"
+    },
+    {
+      "suite": "hinterlands_dungeons",
+      "checks": 114,
+      "failures": 0,
+      "log": "hinterland-dungeons.log"
+    },
+    {
+      "suite": "guards",
+      "checks": 34,
+      "failures": 0,
+      "log": "hinterland-final-guards.log"
+    },
+    {
+      "suite": "world_preview_compat",
+      "checks": 24,
+      "failures": 0,
+      "log": "hinterland-final-compat.log"
+    },
+    {
+      "suite": "farm",
+      "checks": 46,
+      "failures": 0,
+      "log": "hinterland-regression-farm.log"
+    },
+    {
+      "suite": "farm_edges",
+      "checks": 840,
+      "failures": 0,
+      "log": "hinterland-regression-farm_edges.log"
+    },
+    {
+      "suite": "guards_edges",
+      "checks": 575,
+      "failures": 0,
+      "log": "hinterland-regression-guards_edges.log"
+    },
+    {
+      "suite": "combined_integration",
+      "checks": 59,
+      "failures": 0,
+      "log": "hinterland-regression-combined_integration.log"
+    },
+    {
+      "suite": "v032_integration",
+      "checks": 26,
+      "failures": 0,
+      "log": "hinterland-regression-v032_integration.log"
+    },
+    {
+      "suite": "company_roster",
+      "checks": 101,
+      "failures": 0,
+      "log": "hinterland-regression-company_roster.log"
+    },
+    {
+      "suite": "living_integration",
+      "checks": 104,
+      "failures": 0,
+      "log": "hinterland-regression-living_integration.log"
+    },
+    {
+      "suite": "dungeons",
+      "checks": 1119,
+      "failures": 0,
+      "log": "hinterland-regression-dungeons.log"
+    }
+  ],
+  "checks": 4406,
+  "failures": 0,
+  "boundaries": [
+    "Counts include repeated checks, not unique scenarios.",
+    "64 map seeds; six observer months with company-only survival resources.",
+    "Native normal-start journey: all three towns and farms by day four, real raid evidence, zero tactical battles, no injected position/resources/results.",
+    "Native action suite uses company-position fixtures; donations and commission escrow use actual money.",
+    "Dungeon-time suite uses entrance-position and extra-rations fixtures.",
+    "All six observer months end with patrol victory over the initial roaming bands; no final difficulty certification."
+  ],
+  "unchanged_runtime_data_files": 226
+}

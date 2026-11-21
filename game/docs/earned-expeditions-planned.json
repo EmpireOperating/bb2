@@ -1,0 +1,246 @@
+[
+  {
+    "alive": 3,
+    "battles": [
+      {
+        "commands_by_initial_weapon": {
+          "crossbow/basic": 10,
+          "crossbow/special": 7,
+          "militia_spear/basic": 4,
+          "militia_spear/special": 2
+        },
+        "day": 21,
+        "deaths": 1,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "leverage"
+          ],
+          "2": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 13
+      }
+    ],
+    "completed": false,
+    "crowns": 107,
+    "day": 22,
+    "food": 62,
+    "key": "defensive-planned-mixed-gear-1",
+    "named_day": 0,
+    "source": "earned-planned-mixed-gear-1.json",
+    "start_alive": 4,
+    "start_crowns": 50,
+    "start_day": 21,
+    "start_food": 64,
+    "start_tools": 33,
+    "tools": 36
+  },
+  {
+    "alive": 1,
+    "battles": [
+      {
+        "commands_by_initial_weapon": {
+          "crossbow/basic": 14,
+          "crossbow/special": 7,
+          "hammer/basic": 3,
+          "spear/basic": 5,
+          "spear/special": 3,
+          "sword/basic": 1,
+          "sword/special": 1
+        },
+        "day": 22,
+        "deaths": 0,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [],
+          "2": [],
+          "3": [
+            "fast_adaptation",
+            "pathfinder"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 15
+      },
+      {
+        "commands_by_initial_weapon": {
+          "hammer/basic": 4,
+          "knife/basic": 22,
+          "spear/basic": 6,
+          "spear/special": 2,
+          "sword/basic": 19
+        },
+        "day": 23,
+        "deaths": 3,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation",
+            "pathfinder"
+          ],
+          "1": [
+            "colossus"
+          ],
+          "2": [
+            "colossus"
+          ],
+          "3": [
+            "fast_adaptation",
+            "pathfinder",
+            "leverage"
+          ]
+        },
+        "result": "defeat",
+        "retreat": false,
+        "rounds": 24
+      }
+    ],
+    "completed": false,
+    "crowns": 119,
+    "day": 24,
+    "food": 18,
+    "key": "defensive-planned-mixed-rush-395",
+    "named_day": 22,
+    "source": "earned-planned-mixed-rush-395.json",
+    "start_alive": 4,
+    "start_crowns": 50,
+    "start_day": 22,
+    "start_food": 27,
+    "start_tools": 25,
+    "tools": 27
+  },
+  {
+    "alive": 3,
+    "battles": [
+      {
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 26,
+          "militia_spear/special": 5,
+          "shortsword/basic": 6,
+          "shortsword/special": 2
+        },
+        "day": 21,
+        "deaths": 3,
+        "enemies": "Undead",
+        "field": 6,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus"
+          ],
+          "1": [
+            "colossus"
+          ],
+          "2": [
+            "colossus"
+          ],
+          "3": [
+            "colossus"
+          ],
+          "4": [],
+          "5": [
+            "fast_adaptation"
+          ]
+        },
+        "result": "defeat",
+        "retreat": true,
+        "rounds": 25
+      }
+    ],
+    "completed": false,
+    "crowns": 60,
+    "day": 22,
+    "food": 29,
+    "key": "defensive-planned-wide-cautious-789",
+    "named_day": 0,
+    "source": "earned-planned-wide-cautious-789.json",
+    "start_alive": 6,
+    "start_crowns": 69,
+    "start_day": 21,
+    "start_food": 34,
+    "start_tools": 43,
+    "tools": 43
+  },
+  {
+    "alive": 1,
+    "battles": [
+      {
+        "commands_by_initial_weapon": {
+          "crossbow/basic": 8,
+          "crossbow/special": 7,
+          "hammer/basic": 3,
+          "militia_spear/basic": 6,
+          "militia_spear/special": 2,
+          "polearm/basic": 5,
+          "shortbow/basic": 1,
+          "shortbow/special": 12
+        },
+        "day": 21,
+        "deaths": 4,
+        "enemies": "Undead",
+        "field": 5,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [],
+          "1": [
+            "colossus"
+          ],
+          "2": [
+            "fast_adaptation"
+          ],
+          "3": [
+            "colossus"
+          ],
+          "4": []
+        },
+        "result": "defeat",
+        "retreat": false,
+        "rounds": 20
+      }
+    ],
+    "completed": false,
+    "crowns": 48,
+    "day": 22,
+    "food": 37,
+    "key": "defensive-planned-wide-rush-789",
+    "named_day": 0,
+    "source": "earned-planned-wide-rush-789.json",
+    "start_alive": 5,
+    "start_crowns": 51,
+    "start_day": 21,
+    "start_food": 40,
+    "start_tools": 36,
+    "tools": 36
+  }
+]

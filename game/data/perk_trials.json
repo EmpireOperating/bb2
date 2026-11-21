@@ -1,0 +1,415 @@
+[
+  {
+    "person": "Runa",
+    "title": "Spear sentinel",
+    "perks": [
+      "colossus",
+      "through_the_gaps",
+      "shield_expert",
+      "spear_mastery",
+      "spearwaller",
+      "poise",
+      "king_of_all_weapons",
+      "phalanx",
+      "rotation",
+      "indomitable"
+    ],
+    "groups": [
+      "Spear",
+      "Sword",
+      "Polearm",
+      "Light",
+      "Medium",
+      "Shield",
+      "Swift",
+      "Tough",
+      "Trained"
+    ],
+    "stats": [
+      78,
+      117,
+      51,
+      105,
+      87,
+      26,
+      40,
+      3
+    ],
+    "weapon": "spear",
+    "armor": "Medium",
+    "shield": true,
+    "carry": [
+      "",
+      ""
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Runa",
+    "title": "Sword duelist",
+    "perks": [
+      "pathfinder",
+      "dodge",
+      "relentless",
+      "sword_mastery",
+      "double_strike",
+      "nimble",
+      "duelist",
+      "feint",
+      "en_garde",
+      "exploit_opening"
+    ],
+    "groups": [
+      "Spear",
+      "Sword",
+      "Polearm",
+      "Light",
+      "Medium",
+      "Shield",
+      "Swift",
+      "Tough",
+      "Trained"
+    ],
+    "stats": [
+      69,
+      105,
+      45,
+      133,
+      87,
+      30,
+      40,
+      3
+    ],
+    "weapon": "sword",
+    "armor": "Light",
+    "shield": false,
+    "carry": [
+      "",
+      ""
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Runa",
+    "title": "Polearm bodyguard",
+    "perks": [
+      "fast_adaptation",
+      "quick_hands",
+      "rotation",
+      "polearm_mastery",
+      "backstabber",
+      "long_reach",
+      "finesse",
+      "balance",
+      "poise",
+      "shield_expert"
+    ],
+    "groups": [
+      "Spear",
+      "Sword",
+      "Polearm",
+      "Light",
+      "Medium",
+      "Shield",
+      "Swift",
+      "Tough",
+      "Trained"
+    ],
+    "stats": [
+      75,
+      120,
+      51,
+      105,
+      87,
+      26,
+      40,
+      3
+    ],
+    "weapon": "polearm",
+    "armor": "Medium",
+    "shield": false,
+    "carry": [
+      "sword",
+      "shield"
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Hagen",
+    "title": "Heavy shield anchor",
+    "perks": [
+      "colossus",
+      "fortified_mind",
+      "brawny",
+      "spear_mastery",
+      "phalanx",
+      "battle_forged",
+      "indomitable",
+      "shield_expert",
+      "bulwark",
+      "deep_breath"
+    ],
+    "groups": [
+      "Spear",
+      "Sword",
+      "Polearm",
+      "Medium",
+      "Heavy",
+      "Shield",
+      "Power",
+      "Tough",
+      "Vigorous"
+    ],
+    "stats": [
+      65,
+      143,
+      52,
+      95,
+      75,
+      23,
+      35,
+      2
+    ],
+    "weapon": "spear",
+    "armor": "Heavy",
+    "shield": true,
+    "carry": [
+      "",
+      ""
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Hagen",
+    "title": "Armoured greatsword",
+    "perks": [
+      "colossus",
+      "fast_adaptation",
+      "brawny",
+      "sword_mastery",
+      "reach_advantage",
+      "battle_forged",
+      "killing_frenzy",
+      "vigorous_assault",
+      "underdog",
+      "deep_breath"
+    ],
+    "groups": [
+      "Spear",
+      "Sword",
+      "Polearm",
+      "Medium",
+      "Heavy",
+      "Shield",
+      "Power",
+      "Tough",
+      "Vigorous"
+    ],
+    "stats": [
+      73,
+      134,
+      52,
+      95,
+      80,
+      19,
+      35,
+      2
+    ],
+    "weapon": "greatsword",
+    "armor": "Heavy",
+    "shield": false,
+    "carry": [
+      "",
+      ""
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Hagen",
+    "title": "Resolute polearm support",
+    "perks": [
+      "pathfinder",
+      "fortified_mind",
+      "deep_breath",
+      "polearm_mastery",
+      "mind_over_body",
+      "poise",
+      "long_reach",
+      "perfect_fit",
+      "rotation",
+      "bulwark"
+    ],
+    "groups": [
+      "Spear",
+      "Sword",
+      "Polearm",
+      "Medium",
+      "Heavy",
+      "Shield",
+      "Power",
+      "Tough",
+      "Vigorous"
+    ],
+    "stats": [
+      73,
+      130,
+      70,
+      95,
+      76,
+      13,
+      35,
+      2
+    ],
+    "weapon": "polearm",
+    "armor": "Medium",
+    "shield": false,
+    "carry": [
+      "",
+      ""
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Mara",
+    "title": "Spear skirmisher",
+    "perks": [
+      "pathfinder",
+      "dodge",
+      "relentless",
+      "spear_mastery",
+      "overwhelm",
+      "nimble",
+      "duelist",
+      "through_the_gaps",
+      "king_of_all_weapons",
+      "footwork"
+    ],
+    "groups": [
+      "Spear",
+      "Sword",
+      "Polearm",
+      "Light",
+      "Medium",
+      "Swift",
+      "Power",
+      "Fast",
+      "Trained"
+    ],
+    "stats": [
+      73,
+      100,
+      42,
+      160,
+      81,
+      14,
+      48,
+      7
+    ],
+    "weapon": "spear",
+    "armor": "Light",
+    "shield": false,
+    "carry": [
+      "",
+      ""
+    ],
+    "gifts": []
+  },
+  {
+    "person": "Mara",
+    "title": "Medium greatsword",
+    "perks": [
+      "colossus",
+      "gifted",
+      "vigorous_assault",
+      "sword_mastery",
+      "reach_advantage",
+      "poise",
+      "killing_frenzy",
+      "balance",
+      "underdog",
+      "perfect_fit"
+    ],
+    "groups": [
+      "Spear",
+      "Sword",
+      "Polearm",
+      "Light",
+      "Medium",
+      "Swift",
+      "Power",
+      "Fast",
+      "Trained"
+    ],
+    "stats": [
+      73,
+      122,
+      42,
+      115,
+      84,
+      23,
+      48,
+      7
+    ],
+    "weapon": "greatsword",
+    "armor": "Medium",
+    "shield": false,
+    "carry": [
+      "",
+      ""
+    ],
+    "gifts": [
+      "skill",
+      "defense",
+      "stamina"
+    ]
+  },
+  {
+    "person": "Mara",
+    "title": "Sword and polearm opportunist",
+    "perks": [
+      "fast_adaptation",
+      "quick_hands",
+      "gifted",
+      "polearm_mastery",
+      "overwhelm",
+      "nimble",
+      "finesse",
+      "sword_mastery",
+      "footwork",
+      "anticipation"
+    ],
+    "groups": [
+      "Spear",
+      "Sword",
+      "Polearm",
+      "Light",
+      "Medium",
+      "Swift",
+      "Power",
+      "Fast",
+      "Trained"
+    ],
+    "stats": [
+      71,
+      100,
+      42,
+      155,
+      84,
+      23,
+      48,
+      7
+    ],
+    "weapon": "polearm",
+    "armor": "Light",
+    "shield": false,
+    "carry": [
+      "sword",
+      ""
+    ],
+    "gifts": [
+      "health",
+      "skill",
+      "defense"
+    ]
+  }
+]

@@ -1,0 +1,147 @@
+{
+  "geometry": {
+    "base_alpha_top": 41,
+    "body_height": 1.94,
+    "foot_y": 865,
+    "stance_x": 276.5
+  },
+  "recipe_sha256": "f5c78f97a6c6219f1f973da554b9e6227b3916ef41cb68414d4c6e59f79a401b",
+  "schema": "raider-runtime-source-space-v1",
+  "sources": {
+    "layers/axe.png": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/axe.png",
+      "sha256": "cd6ce2ddd9a0fc74d9520e1c92be7a8c5e68b063b4378566aedd09438e0b53e7"
+    },
+    "layers/blade.png": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/blade.png",
+      "sha256": "c9225796706d727e01d267ac5cb818a6daac98982c5114e5aac842fadced62d9"
+    },
+    "layers/closed-hand.png": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/closed-hand.png",
+      "sha256": "d95870ef54364ebfd664913c8924f1169583b9a04b043a2201883c9041718f11"
+    },
+    "layers/foundation.png": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/foundation.png",
+      "sha256": "3edc9e7b5e44e3b64b61f6c39f63d1e0e9832355e308b457063d14464ac3f345"
+    },
+    "layers/hand-context-keep.png": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "mask": true,
+      "path": "res://painted_merge/bandits/raider/assets/layers/hand-context-keep.png",
+      "sha256": "bdaebdf58755f5725bf922353d2f2695e9ee0cf07462bac58a05bf3813894359"
+    },
+    "layers/iron_cap.png": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/iron_cap.png",
+      "sha256": "1e3988309676b075e671043a76e0f4bd03509bd88ff98a68953fcde58d7f6b68"
+    },
+    "layers/mace.png": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/mace.png",
+      "sha256": "c127dd86682beeef96a7441eac45d38139a559ce46f1640ffa29739d62c45bb7"
+    },
+    "layers/march_mail.png": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/march_mail.png",
+      "sha256": "11952702cef73d183bc24d10944ba5590fcaecdba0ca20ba9ed78131f8a081a2"
+    },
+    "layers/quarry-estoc.png": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/quarry-estoc.png",
+      "sha256": "675c5e14f47d64acafa86cbc796de0596c13f601b13bd33668cc5b359f05b4f3"
+    },
+    "layers/shield.png": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/shield.png",
+      "sha256": "30b62b9ba4ef05907c39287de47a5047450bf3b35777bc7acd1a01c372327eb5"
+    },
+    "layers/spear-hand-context-keep.png": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "mask": true,
+      "path": "res://painted_merge/bandits/raider/assets/layers/spear-hand-context-keep.png",
+      "sha256": "d2d763fed0f89f7664518612629003ea5f0a795f5e1c3daf4a17906e31a16903"
+    },
+    "layers/spear-hand.png": {
+      "dimensions": [
+        592,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/spear-hand.png",
+      "sha256": "189e555aeb952864d530ad418bf5e91917e77ff6607abaf4c462399765325bf0"
+    },
+    "layers/spear.png": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/spear.png",
+      "sha256": "64181f4d2ecd69c5560d25ca624b1817c353fee47840802714cb4f669f4914fd"
+    },
+    "layers/waxed-cape-front.png": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/waxed-cape-front.png",
+      "sha256": "8c36e0d354288e852c549e26896465d7441e249aceee0411a7f82320fe519528"
+    },
+    "layers/waxed-cape-rear.png": {
+      "dimensions": [
+        896,
+        1100
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/raider/assets/layers/waxed-cape-rear.png",
+      "sha256": "8eeb7786085d262e65af155484ae7a94882e82b00a7dd6e39f29980055fd81fb"
+    }
+  }
+}

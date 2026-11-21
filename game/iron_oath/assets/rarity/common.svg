@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+ <defs>
+  <linearGradient id="iron" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#c9c8b9"/><stop offset=".24" stop-color="#8c9698"/><stop offset=".5" stop-color="#485258"/><stop offset=".75" stop-color="#838b89"/><stop offset="1" stop-color="#424a4d"/></linearGradient>
+  <linearGradient id="face" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#6f797b"/><stop offset=".42" stop-color="#454f53"/><stop offset="1" stop-color="#262d31"/></linearGradient>
+ </defs>
+ <path d="M6 3.5H22V15.2Q22 21 14 25.5 6 21 6 15.2Z" fill="#060808" opacity=".8" transform="translate(0 1)"/>
+ <path d="M6 3H22V15Q22 20.8 14 25 6 20.8 6 15Z" fill="url(#iron)" stroke="#191e20" stroke-width=".8"/>
+ <path d="M8 5H20V15Q20 19.2 14 22.7 8 19.2 8 15Z" fill="url(#face)" stroke="#242d31" stroke-width=".7"/>
+ <path d="M6.8 14.8V3.9H20.8" stroke="#e0ded0" stroke-width=".5" opacity=".68" fill="none"/>
+ <!-- A struck chevron cut into the iron, with an illuminated lower edge. -->
+ <path d="m9.3 15 4.7-4.1 4.7 4.1v3.4L14 14.3l-4.7 4.1Z" fill="#20272a"/>
+ <path d="m9.7 15.6 4.3-3.8 4.3 3.8v1.2L14 13l-4.3 3.8Z" fill="#a6ada7"/>
+ <path d="m10 16.8 4-3.5 4 3.5" fill="none" stroke="#d3d3be" stroke-width=".4" opacity=".6"/>
+ <circle cx="14" cy="7.9" r="1.5" fill="#1b2325"/><circle cx="14" cy="7.5" r="1.1" fill="url(#iron)"/><path d="m13.4 7.1.8-.2" stroke="#f0ebd6" stroke-width=".4"/>
+ <g fill="#aaa998" stroke="#283034" stroke-width=".35"><circle cx="7.2" cy="6.7" r=".65"/><circle cx="20.8" cy="6.7" r=".65"/><circle cx="14" cy="23.5" r=".6"/></g>
+ <path d="m8.6 9.7.8-.2m7.2 9 .4 1m2-10.5-.6 1.5" stroke="#b6bbb1" stroke-width=".35" opacity=".45"/>
+</svg>

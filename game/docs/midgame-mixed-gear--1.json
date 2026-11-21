@@ -1,0 +1,787 @@
+[
+  {
+    "alive": 0,
+    "arrears": 0,
+    "attempted": true,
+    "battles": [
+      {
+        "day": 17,
+        "deaths": 2,
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "colossus",
+            "leverage"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 6,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 16
+        }
+      },
+      {
+        "day": 18,
+        "deaths": 2,
+        "field": 2,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "defeat",
+        "retreat": false,
+        "rounds": 10,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 1,
+          "shortbow/basic": 4,
+          "shortbow/special": 6
+        }
+      }
+    ],
+    "crowns": 25,
+    "day": 19,
+    "deaths": 4,
+    "end_body": 0,
+    "end_levels": 0,
+    "ending": "The company is gone.",
+    "food": 21,
+    "hires": [],
+    "key": "mixed-gear-1.0",
+    "max_field": 4,
+    "named_day": 0,
+    "purchases": [
+      {
+        "day": 14,
+        "definition": "round_shield",
+        "price": 27,
+        "soldier": 0
+      },
+      {
+        "day": 14,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 0
+      },
+      {
+        "day": 14,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 0
+      }
+    ],
+    "seed": 1.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_body": 358.0,
+    "start_crowns": 138,
+    "start_day": 11,
+    "style": "mixed",
+    "tools": 28,
+    "wins": 4
+  },
+  {
+    "alive": 0,
+    "arrears": 0,
+    "attempted": true,
+    "battles": [
+      {
+        "day": 16,
+        "deaths": 3,
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus"
+          ],
+          "1": [
+            "colossus"
+          ],
+          "2": [
+            "fast_adaptation"
+          ],
+          "3": [
+            "fast_adaptation"
+          ]
+        },
+        "result": "defeat",
+        "retreat": true,
+        "rounds": 13,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 1,
+          "shortbow/basic": 8,
+          "shortbow/special": 13,
+          "shortsword/basic": 1,
+          "shortsword/special": 1
+        }
+      },
+      {
+        "day": 23,
+        "deaths": 1,
+        "field": 1,
+        "kind": "scout",
+        "map": "ridge",
+        "perks": {
+          "0": [
+            "fast_adaptation"
+          ]
+        },
+        "result": "defeat",
+        "retreat": false,
+        "rounds": 5,
+        "commands_by_initial_weapon": {
+          "knife/basic": 7,
+          "knife/special": 1
+        }
+      }
+    ],
+    "crowns": 162,
+    "day": 24,
+    "deaths": 4,
+    "end_body": 0,
+    "end_levels": 0,
+    "ending": "The company is gone.",
+    "food": 26,
+    "hires": [],
+    "key": "mixed-gear-198.0",
+    "max_field": 4,
+    "named_day": 0,
+    "purchases": [
+      {
+        "day": 11,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 0
+      },
+      {
+        "day": 11,
+        "definition": "round_shield",
+        "price": 30,
+        "soldier": 1
+      },
+      {
+        "day": 14,
+        "definition": "nasal",
+        "price": 130,
+        "soldier": 0
+      },
+      {
+        "day": 22,
+        "definition": "round_shield",
+        "price": 31,
+        "soldier": 3
+      },
+      {
+        "day": 22,
+        "definition": "simple_helm",
+        "price": 28,
+        "soldier": 3
+      },
+      {
+        "day": 22,
+        "definition": "linen",
+        "price": 26,
+        "soldier": 3
+      }
+    ],
+    "seed": 198.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_body": 258.0,
+    "start_crowns": 238,
+    "start_day": 11,
+    "style": "mixed",
+    "tools": 50,
+    "wins": 5
+  },
+  {
+    "alive": 0,
+    "arrears": 0,
+    "attempted": true,
+    "battles": [
+      {
+        "day": 19,
+        "deaths": 3,
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 14,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 16,
+          "militia_spear/special": 2,
+          "shortbow/basic": 4,
+          "shortbow/special": 7,
+          "shortsword/basic": 4
+        }
+      },
+      {
+        "day": 21,
+        "deaths": 1,
+        "field": 1,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "defeat",
+        "retreat": false,
+        "rounds": 5,
+        "commands_by_initial_weapon": {
+          "knife/basic": 7
+        }
+      }
+    ],
+    "crowns": 83,
+    "day": 22,
+    "deaths": 4,
+    "end_body": 0,
+    "end_levels": 0,
+    "ending": "The company is gone.",
+    "food": 37,
+    "hires": [],
+    "key": "mixed-gear-592.0",
+    "max_field": 4,
+    "named_day": 0,
+    "purchases": [],
+    "seed": 592.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_body": 298.0,
+    "start_crowns": 164,
+    "start_day": 11,
+    "style": "mixed",
+    "tools": 65,
+    "wins": 4
+  },
+  {
+    "alive": 3,
+    "arrears": 0,
+    "attempted": false,
+    "battles": [
+      {
+        "day": 15,
+        "deaths": 2,
+        "field": 4,
+        "kind": "scout",
+        "map": "ridge",
+        "perks": {
+          "0": [
+            "colossus"
+          ],
+          "1": [
+            "colossus"
+          ],
+          "2": [
+            "colossus"
+          ],
+          "3": [
+            "fast_adaptation"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 7,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 17,
+          "shortbow/special": 1
+        }
+      }
+    ],
+    "crowns": 106,
+    "day": 31,
+    "deaths": 2,
+    "end_body": 260,
+    "end_levels": 7,
+    "ending": "The Ashen Company endures.",
+    "food": 43,
+    "hires": [
+      {
+        "day": 18,
+        "id": "stonecross_recruit_2_0",
+        "price": 113
+      }
+    ],
+    "key": "mixed-gear-789.0",
+    "max_field": 4,
+    "named_day": 0,
+    "purchases": [
+      {
+        "day": 11,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 0
+      },
+      {
+        "day": 11,
+        "definition": "round_shield",
+        "price": 30,
+        "soldier": 1
+      },
+      {
+        "day": 14,
+        "definition": "nasal",
+        "price": 130,
+        "soldier": 0
+      },
+      {
+        "day": 18,
+        "definition": "simple_helm",
+        "price": 28,
+        "soldier": 1
+      },
+      {
+        "day": 18,
+        "definition": "linen",
+        "price": 26,
+        "soldier": 1
+      },
+      {
+        "day": 19,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 4
+      },
+      {
+        "day": 26,
+        "definition": "linen",
+        "price": 27,
+        "soldier": 4
+      }
+    ],
+    "seed": 789.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_body": 258.0,
+    "start_crowns": 247,
+    "start_day": 11,
+    "style": "mixed",
+    "tools": 63,
+    "wins": 6
+  },
+  {
+    "alive": 0,
+    "arrears": 0,
+    "attempted": true,
+    "battles": [
+      {
+        "day": 17,
+        "deaths": 2,
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "colossus",
+            "leverage"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "defeat",
+        "retreat": false,
+        "rounds": 4,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 7,
+          "shortbow/special": 2,
+          "shortsword/basic": 2
+        }
+      },
+      {
+        "day": 20,
+        "deaths": 1,
+        "field": 2,
+        "kind": "clear",
+        "map": "forest",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "defeat",
+        "retreat": true,
+        "rounds": 6,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 5,
+          "shortbow/basic": 5,
+          "shortbow/special": 2
+        }
+      },
+      {
+        "day": 26,
+        "deaths": 1,
+        "field": 1,
+        "kind": "scout",
+        "map": "ridge",
+        "perks": {
+          "0": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "defeat",
+        "retreat": false,
+        "rounds": 4,
+        "commands_by_initial_weapon": {
+          "knife/basic": 9
+        }
+      }
+    ],
+    "crowns": 27,
+    "day": 27,
+    "deaths": 4,
+    "end_body": 0,
+    "end_levels": 0,
+    "ending": "The company is gone.",
+    "food": 20,
+    "hires": [],
+    "key": "mixed-gear-986.0",
+    "max_field": 4,
+    "named_day": 0,
+    "purchases": [
+      {
+        "day": 14,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 0
+      }
+    ],
+    "seed": 986.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_body": 328.0,
+    "start_crowns": 126,
+    "start_day": 11,
+    "style": "mixed",
+    "tools": 23,
+    "wins": 4
+  },
+  {
+    "alive": 2,
+    "arrears": 0,
+    "attempted": true,
+    "battles": [
+      {
+        "day": 12,
+        "deaths": 0,
+        "field": 4,
+        "kind": "scout",
+        "map": "ridge",
+        "perks": {
+          "0": [
+            "colossus"
+          ],
+          "1": [
+            "colossus"
+          ],
+          "2": [
+            "colossus"
+          ],
+          "3": [
+            "fast_adaptation"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 5,
+        "commands_by_initial_weapon": {
+          "bolas/basic": 5,
+          "militia_spear/basic": 6,
+          "militia_spear/special": 1,
+          "shortsword/basic": 6
+        }
+      },
+      {
+        "day": 17,
+        "deaths": 2,
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "fast_adaptation",
+            "colossus"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "3": [
+            "colossus",
+            "fast_adaptation"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 6,
+        "commands_by_initial_weapon": {
+          "knife/basic": 1,
+          "militia_spear/basic": 8,
+          "shortsword/basic": 2,
+          "spear/basic": 6,
+          "spear/special": 1
+        }
+      },
+      {
+        "day": 19,
+        "deaths": 1,
+        "field": 2,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ]
+        },
+        "result": "defeat",
+        "retreat": true,
+        "rounds": 6,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 7,
+          "spear/basic": 3
+        }
+      }
+    ],
+    "crowns": 131,
+    "day": 31,
+    "deaths": 3,
+    "end_body": 130,
+    "end_levels": 4,
+    "ending": "The month ends. The company falls short.",
+    "food": 20,
+    "hires": [
+      {
+        "day": 26,
+        "id": "stonecross_recruit_3_0",
+        "price": 107
+      }
+    ],
+    "key": "mixed-gear-1183.0",
+    "max_field": 4,
+    "named_day": 0,
+    "purchases": [
+      {
+        "day": 14,
+        "definition": "spear",
+        "price": 50,
+        "soldier": 0
+      },
+      {
+        "day": 14,
+        "definition": "round_shield",
+        "price": 24,
+        "soldier": 0
+      },
+      {
+        "day": 20,
+        "definition": "linen",
+        "price": 20,
+        "soldier": 1
+      },
+      {
+        "day": 26,
+        "definition": "simple_helm",
+        "price": 27,
+        "soldier": 4
+      },
+      {
+        "day": 26,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 4
+      }
+    ],
+    "seed": 1183.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_body": 244.0,
+    "start_crowns": 195,
+    "start_day": 11,
+    "style": "mixed",
+    "tools": 31,
+    "wins": 3
+  },
+  {
+    "alive": 0,
+    "arrears": 0,
+    "attempted": true,
+    "battles": [
+      {
+        "day": 15,
+        "deaths": 0,
+        "field": 4,
+        "kind": "clear",
+        "map": "forest",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "fast_adaptation",
+            "colossus"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 6,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 9,
+          "shortbow/special": 1,
+          "shortsword/basic": 8
+        }
+      },
+      {
+        "day": 20,
+        "deaths": 4,
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "fast_adaptation",
+            "colossus"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "defeat",
+        "retreat": false,
+        "rounds": 16,
+        "commands_by_initial_weapon": {
+          "hammer/basic": 4,
+          "shortbow/basic": 5,
+          "shortbow/special": 14,
+          "shortsword/special": 1
+        }
+      }
+    ],
+    "crowns": 144,
+    "day": 21,
+    "deaths": 4,
+    "end_body": 0,
+    "end_levels": 0,
+    "ending": "The company is gone.",
+    "food": 48,
+    "hires": [],
+    "key": "mixed-gear-1380.0",
+    "max_field": 4,
+    "named_day": 0,
+    "purchases": [
+      {
+        "day": 16,
+        "definition": "linen",
+        "price": 22,
+        "soldier": 0
+      },
+      {
+        "day": 16,
+        "definition": "hammer",
+        "price": 101,
+        "soldier": 1
+      },
+      {
+        "day": 17,
+        "definition": "round_shield",
+        "price": 26,
+        "soldier": 2
+      }
+    ],
+    "seed": 1380.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_body": 314.0,
+    "start_crowns": 126,
+    "start_day": 11,
+    "style": "mixed",
+    "tools": 56,
+    "wins": 5
+  }
+]

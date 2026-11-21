@@ -1,0 +1,150 @@
+{
+  "engine": "Godot 4.4.1",
+  "base": "3b614c572435dfb5e946d24f9c857a4214f39124",
+  "tests": [
+    {
+      "test": "guards",
+      "exit": 0,
+      "seconds": 9.3,
+      "log": "camps-regression-guards.log",
+      "summary": "GUARDS_MODEL: 34 checks, 0 failures",
+      "errors": false,
+      "checks": 34
+    },
+    {
+      "test": "farm",
+      "exit": 0,
+      "seconds": 9.3,
+      "log": "camps-regression-farm.log",
+      "summary": "FARM_MODEL: 46 checks, 0 failures",
+      "errors": false,
+      "checks": 46
+    },
+    {
+      "test": "world_preview_compat",
+      "exit": 0,
+      "seconds": 5.3,
+      "log": "camps-regression-world_preview_compat.log",
+      "summary": "WORLD_PREVIEW_COMPAT: 24 checks; 0 failures",
+      "errors": false,
+      "checks": 24
+    },
+    {
+      "test": "combined_integration",
+      "exit": 0,
+      "seconds": 8.3,
+      "log": "camps-regression-combined_integration.log",
+      "summary": "COMBINED_INTEGRATION: 59 checks; 0 failures",
+      "errors": false,
+      "checks": 59
+    },
+    {
+      "test": "named_integration",
+      "exit": 0,
+      "seconds": 5.3,
+      "log": "camps-regression-named_integration.log",
+      "summary": "NAMED_INTEGRATION: 57 checks; 0 failures",
+      "errors": false,
+      "checks": 57
+    },
+    {
+      "test": "bandits",
+      "exit": 0,
+      "seconds": 69.2,
+      "log": "camps-regression-bandits.log",
+      "summary": "BANDITS_MODEL: 585 checks, 0 failures",
+      "errors": false,
+      "checks": 585
+    },
+    {
+      "test": "traffic",
+      "exit": 0,
+      "seconds": 54.3,
+      "log": "camps-regression-traffic.log",
+      "summary": "TRAFFIC_MODEL: 599 checks, 0 failures",
+      "errors": false,
+      "checks": 599
+    },
+    {
+      "test": "hinterlands",
+      "exit": 0,
+      "seconds": 34.3,
+      "log": "camps-regression-hinterlands.log",
+      "summary": "HINTERLANDS: 705 checks, 0 failures",
+      "errors": false,
+      "checks": 705
+    },
+    {
+      "test": "hinterlands_dungeons",
+      "exit": 0,
+      "seconds": 8.2,
+      "log": "camps-regression-hinterlands_dungeons.log",
+      "summary": "HINTERLANDS_DUNGEONS: 114 checks, 0 failures",
+      "errors": false,
+      "checks": 114
+    },
+    {
+      "test": "legacy",
+      "exit": 0,
+      "seconds": 24.2,
+      "log": "camps-regression-legacy.log",
+      "summary": "COMPANY TESTS: 949 checks; 0 failures; 40 company runs; 120 resolved battles; 40 reached third contract.",
+      "errors": false,
+      "checks": 949
+    },
+    {
+      "test": "camp_life",
+      "exit": 0,
+      "seconds": 57.2,
+      "log": "camps-regression-camp_life.log",
+      "summary": "CAMP_LIFE: 304 checks, 0 failures",
+      "errors": false,
+      "checks": 304
+    },
+    {
+      "test": "camp_loot",
+      "exit": 0,
+      "seconds": 8.2,
+      "log": "camps-regression-camp_loot.log",
+      "summary": "CAMP_LOOT: 38 checks, 0 failures",
+      "errors": false,
+      "checks": 38
+    },
+    {
+      "test": "camp_life_months",
+      "exit": 0,
+      "seconds": 78.2,
+      "log": "camps-regression-camp_life_months.log",
+      "summary": "CAMP_LIFE_MONTHS: 565 checks, 0 failures",
+      "errors": false,
+      "checks": 565
+    },
+    {
+      "test": "camp_life_edges",
+      "exit": 0,
+      "log": "camps-regression-camp_life_edges.log",
+      "summary": "CAMP_LIFE_EDGES: 124 checks, 0 failures",
+      "errors": false,
+      "checks": 124
+    },
+    {
+      "test": "camp_life_ui",
+      "exit": 0,
+      "log": "camp_life_ui.log",
+      "summary": "CAMP_LIFE_UI: 14 checks, 0 failures; named=Torsten's Boar spear",
+      "errors": false,
+      "checks": 14
+    }
+  ],
+  "checks": 4217,
+  "failures": 0,
+  "natural_months": 6,
+  "natural_replacement_parties": 47,
+  "native_loot": "Torsten's Boar spear: +14% damage, -1 action fatigue",
+  "fixture_limits": [
+    "Six observer months inject company crowns and food only; world supplies and councils remain untouched.",
+    "Native camp victory uses a position fixture at the camp; founders, equipment and combat remain ordinary.",
+    "Native training emerges naturally, then a position fixture inspects its camp.",
+    "Contract/no-drop/scout settlement branches include explicitly declared outcome fixtures; direct camp victory uses legal tactical AI."
+  ]
+}

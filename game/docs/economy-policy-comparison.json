@@ -1,0 +1,46 @@
+[
+  {
+    "seed": 1,
+    "policy": "large idle reserve; supplies-first buying; equal-count optional fights",
+    "outcome": {
+      "day": 24,
+      "alive": 4,
+      "deaths": 2,
+      "crowns": 0,
+      "ending": "Three unpaid days. The company disbands."
+    }
+  },
+  {
+    "seed": 71,
+    "policy": "large idle reserve; supplies-first buying; equal-count optional fights",
+    "outcome": {
+      "day": 6,
+      "alive": 0,
+      "deaths": 4,
+      "crowns": 133,
+      "ending": "The company is gone."
+    }
+  },
+  {
+    "seed": 592,
+    "policy": "large idle reserve; supplies-first buying; equal-count optional fights",
+    "outcome": {
+      "day": 16,
+      "alive": 3,
+      "deaths": 2,
+      "crowns": 0,
+      "ending": "Three unpaid days. The company disbands."
+    }
+  },
+  {
+    "seed": 789,
+    "policy": "large idle reserve; supplies-first buying; equal-count optional fights",
+    "outcome": {
+      "day": 5,
+      "alive": 0,
+      "deaths": 4,
+      "crowns": 88,
+      "ending": "The company is gone."
+    }
+  }
+]

@@ -1,0 +1,13 @@
+{
+  "schema": "bb2-vault-key-art-v1",
+  "art_key": "vault-key",
+  "source_path": "res://vault_key_items/art/vault-key.png",
+  "source_sha256": "2f1887b18d4ab8134d939a5a6d9f46451b92f510de9d9aacfaa70fa92ec4b094",
+  "source_dimensions": [512, 512],
+  "approval_status": "GENERATED_CANDIDATE_NOT_USER_APPROVED",
+  "provider": "openai-codex",
+  "model": "gpt-image-2-medium",
+  "imagegen_request_id": "8c148187-8706-4765-85a1-397c17b2ca5d",
+  "generated_master_sha256": "05cc5c4011c19829760df0a9e784f885af6232020bbc91591ccff2d385a84dad",
+  "transformation": "Connected near-white background and bow-hole alpha extraction, original RGB retained, one Lanczos resize from1254x1254 to512x512. Full master/provenance and script retained outside game."
+}

@@ -1,0 +1,77 @@
+{
+  "towns": {
+    "ashwick": {
+      "stock": 240,
+      "production": 24,
+      "demand": 6,
+      "base_price": 24
+    },
+    "stonecross": {
+      "stock": 36,
+      "production": 0,
+      "demand": 8,
+      "base_price": 30
+    },
+    "dunmere": {
+      "stock": 96,
+      "production": 6,
+      "demand": 6,
+      "base_price": 30
+    }
+  },
+  "camps": {
+    "ford": {
+      "strength": 1
+    },
+    "forest": {
+      "strength": 2
+    },
+    "ridge": {
+      "strength": 2
+    }
+  },
+  "routes": [
+    {
+      "id": "grain_road",
+      "path": [
+        "ashwick",
+        "ford",
+        "stonecross"
+      ],
+      "days": [
+        1,
+        1
+      ],
+      "cargo": 48,
+      "period": 4
+    },
+    {
+      "id": "cairn_road",
+      "path": [
+        "ashwick",
+        "ridge",
+        "dunmere"
+      ],
+      "days": [
+        2,
+        1
+      ],
+      "cargo": 36,
+      "period": 6
+    },
+    {
+      "id": "wood_road",
+      "path": [
+        "dunmere",
+        "forest",
+        "stonecross"
+      ],
+      "days": [
+        2,
+        1
+      ],
+      "cargo": 30,
+      "period": 6
+    }
+  ]
+}

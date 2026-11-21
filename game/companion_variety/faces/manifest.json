@@ -1,0 +1,203 @@
+{
+  "schema": "bb2-reviewed-face-foundations-v1",
+  "appearances": {
+    "shieldbearer": {
+      "base_sha256": "5a2c974b509e8136d2d0b0f007bb0fc1baf37906e3cbc4357c1e315f4cf173f5",
+      "size": [
+        256,
+        320
+      ],
+      "variants": {
+        "male-angular": {
+          "id": "male-angular",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/shieldbearer/male-angular-foundation.png",
+          "sha256": "d08dad1fbe95459f0f7565f729912790389970490a116412dd8e6a993a54274b"
+        },
+        "male-broad": {
+          "id": "male-broad",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/shieldbearer/male-broad-foundation.png",
+          "sha256": "aca92d817e9cd7732f0111fb3104ea0be69bc735985540fb5f7196e3f8bd0a73"
+        },
+        "female-long": {
+          "id": "female-long",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/shieldbearer/female-long-foundation.png",
+          "sha256": "f88dadbacdf93d6b2696db7244ebd4dbbb3e15ea0f3e885e565ce81eca94a4df"
+        },
+        "female-broad": {
+          "id": "female-broad",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/shieldbearer/female-broad-foundation.png",
+          "sha256": "34a33b2e5417bc32feae4649abcedb1dc4ca430e7ef52d4e316e0ef2e46d3773"
+        }
+      }
+    },
+    "duelist": {
+      "base_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+      "size": [
+        256,
+        320
+      ],
+      "variants": {
+        "male-angular": {
+          "id": "male-angular",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/duelist/male-angular-foundation.png",
+          "sha256": "e61949c475181e3551f11ec80c58ae1d76052c519a9f5b5e6f6a758b3d427ace"
+        },
+        "male-broad": {
+          "id": "male-broad",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/duelist/male-broad-foundation.png",
+          "sha256": "f5d744e1f3017daf1b599a1d49498c804b4b35d491e89c8d04f47ea1ce04c821"
+        },
+        "female-long": {
+          "id": "female-long",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/duelist/female-long-foundation.png",
+          "sha256": "1703c101b5a6f479ee7a18b713ed23c47e6deb302a6c8017b9e2a9120f1cae88"
+        },
+        "female-broad": {
+          "id": "female-broad",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/duelist/female-broad-foundation.png",
+          "sha256": "efa828b3bf5cc59d48a55d42bd6aadca9dac45f235d59ce1fe67c1eeeed94146"
+        }
+      }
+    },
+    "polearm": {
+      "base_sha256": "f2e4f1e13c344d99f315f7ba9d64256f8eb2752d1483408817cc297d3ad19ce2",
+      "size": [
+        256,
+        320
+      ],
+      "variants": {
+        "male-angular": {
+          "id": "male-angular",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/polearm/male-angular-foundation.png",
+          "sha256": "e7b1b0be3f853152639612414bc798d311144d48e78aa2681357d7d924b934eb"
+        },
+        "male-broad": {
+          "id": "male-broad",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/polearm/male-broad-foundation.png",
+          "sha256": "e1058d7d3afff83951bb6636fae9ff5884c6c5c2626d7dc83ed76a2f852c6594"
+        },
+        "female-long": {
+          "id": "female-long",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/polearm/female-long-foundation.png",
+          "sha256": "7239a09751efc7621b4fbf1b946c3367761a8e5f44b02867c498d6b0442b2cd5"
+        },
+        "female-broad": {
+          "id": "female-broad",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/polearm/female-broad-foundation.png",
+          "sha256": "4efbd70871bbc1aa262ea63eeb54d90e73b7f79f44a55d668f6d89ec9576aad9"
+        }
+      }
+    },
+    "archer": {
+      "base_sha256": "35aab9905a6d43a9a4e0cb2e6db30e73c18be149a3498ae170fe907159e1deed",
+      "size": [
+        256,
+        320
+      ],
+      "variants": {
+        "male-angular": {
+          "id": "male-angular",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/archer/male-angular-foundation.png",
+          "sha256": "fddd8772ca2e3bbfd1778377cfba510fc80b8e39616896b64c63a6c92f14c014"
+        },
+        "male-broad": {
+          "id": "male-broad",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/archer/male-broad-foundation.png",
+          "sha256": "92ba75abbba3be85d77577074e442f271fc5bb554a52b4d64976060f5cfe73f7"
+        },
+        "female-long": {
+          "id": "female-long",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/archer/female-long-foundation.png",
+          "sha256": "6ecd84fafe40344ac3daa1285b421899258cdeab5441ef2bf25d9ace559e33d0"
+        },
+        "female-broad": {
+          "id": "female-broad",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/archer/female-broad-foundation.png",
+          "sha256": "c6c84e2e619e6490b9bdb91fc8ca8d3d64626c5da26d05e514eb9ee0aef15cfc"
+        }
+      }
+    },
+    "medic": {
+      "base_sha256": "006f7647a0a66e33c3334260b1c292845fabeb7dd33089b548c53d2a17dccc10",
+      "size": [
+        256,
+        320
+      ],
+      "variants": {
+        "male-angular": {
+          "id": "male-angular",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/medic/male-angular-foundation.png",
+          "sha256": "b12da785c774f8fc15b52d865c4ff5b5687ff8924da3117994d4160a1774eb7a"
+        },
+        "male-broad": {
+          "id": "male-broad",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/medic/male-broad-foundation.png",
+          "sha256": "24e301042ff99f8f852bd961bdcce09da0d5bdf07e437a0f92dbc96ece1c3ed5"
+        },
+        "female-long": {
+          "id": "female-long",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/medic/female-long-foundation.png",
+          "sha256": "6e9f30e716d828f93b0a79111fae2872934d9f3f771227307929158270bc99c9"
+        },
+        "female-broad": {
+          "id": "female-broad",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/medic/female-broad-foundation.png",
+          "sha256": "9b1bb813418a1528666d625d354644e4d5f332b6093436bb6ab18863a7511097"
+        }
+      }
+    },
+    "occultist": {
+      "base_sha256": "afdd366de4228efc03c4292065138eca07ba6bd72c4f51db85ac42dee1b5e88e",
+      "size": [
+        256,
+        320
+      ],
+      "variants": {
+        "male-angular": {
+          "id": "male-angular",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/occultist/male-angular-foundation.png",
+          "sha256": "41b71740c8f90aef3224e2bd0cd6c382245ecf94c1e998ea5a29097264d8d6f9"
+        },
+        "male-broad": {
+          "id": "male-broad",
+          "presentation": "male",
+          "path": "res://companion_variety/faces/occultist/male-broad-foundation.png",
+          "sha256": "78ae8fbef1963f7f59a9ad0220f23d4b77b734fe4ebb763afb9c0e8b1cc57910"
+        },
+        "female-long": {
+          "id": "female-long",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/occultist/female-long-foundation.png",
+          "sha256": "746143ed68417862036ef557d3d9753ef1ba1e3f2a8671848762f87aa2c14e33"
+        },
+        "female-broad": {
+          "id": "female-broad",
+          "presentation": "female",
+          "path": "res://companion_variety/faces/occultist/female-broad-foundation.png",
+          "sha256": "c1930f31f29a1d0632abdd4804c913353ba8e40608f906fea4516ed86bd36f7d"
+        }
+      }
+    }
+  }
+}

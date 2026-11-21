@@ -1,0 +1,63 @@
+{
+  "release": "0.32",
+  "engine": "4.4.1",
+  "base_revision": 34,
+  "checks": 3901,
+  "suites": [
+    {
+      "suite": "company_roster",
+      "checks": 101,
+      "evidence": "20/12 hiring and swaps, upkeep/recovery, reserves, combat settlement, ambush, death pruning; three paired 12-v-12 legal-AI battles"
+    },
+    {
+      "suite": "roster_edges",
+      "checks": 36,
+      "evidence": "High unit IDs, perk origins and corrupt saves; edge placement on all maps/objectives; isolated contract-XP branch"
+    },
+    {
+      "suite": "roster_compat",
+      "checks": 26,
+      "evidence": "Exact delivered 0.31 snapshots, tactical continuation and settlement across two seeds; adoption at camp"
+    },
+    {
+      "suite": "living_integration",
+      "checks": 104,
+      "evidence": "Prior living-world integration and older-save migrations"
+    },
+    {
+      "suite": "inventory",
+      "checks": 31,
+      "evidence": "4 AP, Quick Hands, Bags and Belts and equipment persistence"
+    },
+    {
+      "suite": "recovery",
+      "checks": 21,
+      "evidence": "Passive repairs, healing, supplies, injuries and temples"
+    },
+    {
+      "suite": "turns",
+      "checks": 2821,
+      "evidence": "Initiative, waiting and 24 historical campaign fights"
+    },
+    {
+      "suite": "archer_rules",
+      "checks": 396,
+      "evidence": "Friendly adjacency, ranged lanes and three model battles"
+    },
+    {
+      "suite": "ammunition",
+      "checks": 291,
+      "evidence": "Supply conservation, 12 campaign battles and nine historical continuations"
+    },
+    {
+      "suite": "roster_ui",
+      "checks": 48,
+      "evidence": "Native pointer moves/swaps, all twenty reserves, twelve allies, 24 queue portraits, twelve targets, combat settlement and F5/F9"
+    },
+    {
+      "suite": "opening_ui",
+      "checks": 26,
+      "evidence": "Real three-founder start, fourth hire, travel, camp victory, mail upgrade, recovery and exploration"
+    }
+  ]
+}

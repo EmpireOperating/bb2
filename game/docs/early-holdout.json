@@ -1,0 +1,602 @@
+[
+  {
+    "alive": 6,
+    "arrears": 0,
+    "body": 369,
+    "crowns": 88,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 2,
+    "food": 42,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_1",
+        "price": 107,
+        "replacement": false
+      },
+      {
+        "day": 2,
+        "id": "ashwick_recruit_0_0",
+        "price": 138,
+        "replacement": false
+      },
+      {
+        "day": 6,
+        "id": "stonecross_recruit_0_0",
+        "price": 122,
+        "replacement": false
+      }
+    ],
+    "levels": 13,
+    "policy": "cautious",
+    "purchases": [
+      {
+        "day": 1,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 0
+      },
+      {
+        "day": 2,
+        "definition": "simple_helm",
+        "price": 23,
+        "soldier": 0
+      },
+      {
+        "day": 7,
+        "definition": "linen",
+        "price": 23,
+        "soldier": 0
+      },
+      {
+        "day": 8,
+        "definition": "linen",
+        "price": 23,
+        "soldier": 1
+      }
+    ],
+    "retreats": 0,
+    "seed": 1577,
+    "tools": 30,
+    "wins": 3
+  },
+  {
+    "alive": 5,
+    "arrears": 0,
+    "body": 270,
+    "crowns": 182,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 3,
+    "food": 24,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_0",
+        "price": 138,
+        "replacement": false
+      },
+      {
+        "day": 3,
+        "id": "ashwick_recruit_0_1",
+        "price": 138,
+        "replacement": false
+      }
+    ],
+    "levels": 9,
+    "policy": "cautious",
+    "purchases": [
+      {
+        "day": 3,
+        "definition": "linen",
+        "price": 22,
+        "soldier": 0
+      },
+      {
+        "day": 4,
+        "definition": "simple_helm",
+        "price": 23,
+        "soldier": 0
+      },
+      {
+        "day": 10,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 3
+      }
+    ],
+    "retreats": 0,
+    "seed": 1774,
+    "tools": 32,
+    "wins": 2
+  },
+  {
+    "alive": 6,
+    "arrears": 0,
+    "body": 148,
+    "crowns": 122,
+    "day": 11,
+    "deaths": 1,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 26,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_0",
+        "price": 107,
+        "replacement": false
+      },
+      {
+        "day": 2,
+        "id": "ashwick_recruit_0_1",
+        "price": 128,
+        "replacement": true
+      },
+      {
+        "day": 6,
+        "id": "stonecross_recruit_0_0",
+        "price": 113,
+        "replacement": false
+      },
+      {
+        "day": 9,
+        "id": "stonecross_recruit_1_0",
+        "price": 122,
+        "replacement": false
+      }
+    ],
+    "levels": 9,
+    "policy": "cautious",
+    "purchases": [
+      {
+        "day": 1,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 1
+      },
+      {
+        "day": 2,
+        "definition": "cap",
+        "price": 55,
+        "soldier": 0
+      }
+    ],
+    "retreats": 0,
+    "seed": 1971,
+    "tools": 31,
+    "wins": 3
+  },
+  {
+    "alive": 5,
+    "arrears": 0,
+    "body": 244,
+    "crowns": 183,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 3,
+    "food": 24,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_0",
+        "price": 134,
+        "replacement": false
+      },
+      {
+        "day": 3,
+        "id": "ashwick_recruit_0_1",
+        "price": 144,
+        "replacement": false
+      }
+    ],
+    "levels": 10,
+    "policy": "cautious",
+    "purchases": [
+      {
+        "day": 3,
+        "definition": "linen",
+        "price": 22,
+        "soldier": 0
+      },
+      {
+        "day": 4,
+        "definition": "simple_helm",
+        "price": 23,
+        "soldier": 1
+      },
+      {
+        "day": 10,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 1
+      }
+    ],
+    "retreats": 0,
+    "seed": 2168,
+    "tools": 29,
+    "wins": 2
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "body": 257,
+    "crowns": 98,
+    "day": 11,
+    "deaths": 3,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 2,
+    "food": 35,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_0",
+        "price": 122,
+        "replacement": false
+      },
+      {
+        "day": 2,
+        "id": "ashwick_recruit_0_1",
+        "price": 132,
+        "replacement": true
+      },
+      {
+        "day": 6,
+        "id": "stonecross_recruit_0_1",
+        "price": 144,
+        "replacement": false
+      },
+      {
+        "day": 8,
+        "id": "stonecross_recruit_1_1",
+        "price": 107,
+        "replacement": true
+      }
+    ],
+    "levels": 7,
+    "policy": "cautious",
+    "purchases": [
+      {
+        "day": 2,
+        "definition": "linen",
+        "price": 22,
+        "soldier": 0
+      },
+      {
+        "day": 2,
+        "definition": "simple_helm",
+        "price": 23,
+        "soldier": 0
+      },
+      {
+        "day": 8,
+        "definition": "linen",
+        "price": 23,
+        "soldier": 3
+      }
+    ],
+    "retreats": 0,
+    "seed": 2365,
+    "tools": 29,
+    "wins": 3
+  },
+  {
+    "alive": 5,
+    "arrears": 0,
+    "body": 224,
+    "crowns": 124,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 23,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_1",
+        "price": 128,
+        "replacement": false
+      },
+      {
+        "day": 2,
+        "id": "ashwick_recruit_0_0",
+        "price": 132,
+        "replacement": false
+      }
+    ],
+    "levels": 9,
+    "policy": "cautious",
+    "purchases": [
+      {
+        "day": 6,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 0
+      }
+    ],
+    "retreats": 0,
+    "seed": 2562,
+    "tools": 27,
+    "wins": 2
+  },
+  {
+    "alive": 5,
+    "arrears": 0,
+    "body": 194,
+    "crowns": 179,
+    "day": 11,
+    "deaths": 1,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 28,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_0",
+        "price": 113,
+        "replacement": false
+      },
+      {
+        "day": 2,
+        "id": "ashwick_recruit_0_1",
+        "price": 150,
+        "replacement": true
+      },
+      {
+        "day": 6,
+        "id": "stonecross_recruit_0_0",
+        "price": 113,
+        "replacement": false
+      }
+    ],
+    "levels": 8,
+    "policy": "cautious",
+    "purchases": [
+      {
+        "day": 1,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 1
+      },
+      {
+        "day": 2,
+        "definition": "simple_helm",
+        "price": 23,
+        "soldier": 4
+      },
+      {
+        "day": 10,
+        "definition": "cap",
+        "price": 64,
+        "soldier": 0
+      }
+    ],
+    "retreats": 0,
+    "seed": 2759,
+    "tools": 29,
+    "wins": 3
+  },
+  {
+    "alive": 6,
+    "arrears": 0,
+    "body": 212,
+    "crowns": 110,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 46,
+    "hires": [
+      {
+        "day": 1,
+        "id": "ashwick_recruit_0_1",
+        "price": 113,
+        "replacement": false
+      },
+      {
+        "day": 2,
+        "id": "ashwick_recruit_0_0",
+        "price": 138,
+        "replacement": false
+      },
+      {
+        "day": 10,
+        "id": "stonecross_recruit_1_0",
+        "price": 128,
+        "replacement": false
+      }
+    ],
+    "levels": 10,
+    "policy": "cautious",
+    "purchases": [
+      {
+        "day": 1,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 0
+      },
+      {
+        "day": 2,
+        "definition": "simple_helm",
+        "price": 23,
+        "soldier": 0
+      }
+    ],
+    "retreats": 0,
+    "seed": 2956,
+    "tools": 37,
+    "wins": 3
+  },
+  {
+    "alive": 1,
+    "arrears": 0,
+    "body": 30,
+    "crowns": 603,
+    "day": 11,
+    "deaths": 2,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 2,
+    "food": 4,
+    "hires": [],
+    "levels": 2,
+    "policy": "rush",
+    "purchases": [],
+    "retreats": 0,
+    "seed": 1577,
+    "tools": 18,
+    "wins": 2
+  },
+  {
+    "alive": 3,
+    "arrears": 0,
+    "body": 112,
+    "crowns": 643,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 3,
+    "food": 18,
+    "hires": [],
+    "levels": 6,
+    "policy": "rush",
+    "purchases": [],
+    "retreats": 0,
+    "seed": 1774,
+    "tools": 21,
+    "wins": 2
+  },
+  {
+    "alive": 3,
+    "arrears": 0,
+    "body": 74,
+    "crowns": 720,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 18,
+    "hires": [],
+    "levels": 6,
+    "policy": "rush",
+    "purchases": [],
+    "retreats": 0,
+    "seed": 1971,
+    "tools": 28,
+    "wins": 3
+  },
+  {
+    "alive": 2,
+    "arrears": 0,
+    "body": 104,
+    "crowns": 869,
+    "day": 11,
+    "deaths": 1,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 3,
+    "food": 3,
+    "hires": [],
+    "levels": 5,
+    "policy": "rush",
+    "purchases": [],
+    "retreats": 0,
+    "seed": 2168,
+    "tools": 26,
+    "wins": 3
+  },
+  {
+    "alive": 2,
+    "arrears": 0,
+    "body": 44,
+    "crowns": 613,
+    "day": 11,
+    "deaths": 1,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 4,
+    "hires": [],
+    "levels": 4,
+    "policy": "rush",
+    "purchases": [],
+    "retreats": 0,
+    "seed": 2365,
+    "tools": 25,
+    "wins": 2
+  },
+  {
+    "alive": 3,
+    "arrears": 0,
+    "body": 104,
+    "crowns": 759,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 2,
+    "first_win_day": 2,
+    "food": 18,
+    "hires": [],
+    "levels": 8,
+    "policy": "rush",
+    "purchases": [],
+    "retreats": 0,
+    "seed": 2562,
+    "tools": 19,
+    "wins": 3
+  },
+  {
+    "alive": 3,
+    "arrears": 0,
+    "body": 104,
+    "crowns": 718,
+    "day": 11,
+    "deaths": 0,
+    "ending": "",
+    "fights": 1,
+    "first_win_day": 2,
+    "food": 18,
+    "hires": [],
+    "levels": 6,
+    "policy": "rush",
+    "purchases": [],
+    "retreats": 0,
+    "seed": 2759,
+    "tools": 26,
+    "wins": 3
+  },
+  {
+    "alive": 0,
+    "arrears": 0,
+    "body": 0,
+    "crowns": 514,
+    "day": 6,
+    "deaths": 3,
+    "ending": "The company is gone.",
+    "fights": 2,
+    "first_win_day": 2,
+    "food": 20,
+    "hires": [],
+    "levels": 0,
+    "policy": "rush",
+    "purchases": [],
+    "retreats": 0,
+    "seed": 2956,
+    "tools": 22,
+    "wins": 1
+  }
+]

@@ -1,0 +1,1724 @@
+{
+  "appearances": {
+    "archer": {
+      "base_sha256": "35aab9905a6d43a9a4e0cb2e6db30e73c18be149a3498ae170fe907159e1deed",
+      "fits": {
+        "hm_trial_v1:additional_fighting_axe": {
+          "gloves": {
+            "gloves-01-linen-handwraps": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/6bbbf319b46d05d26d944f079f3198c67b97d11be15729a3bc254e1e30a7dc1d.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "6bbbf319b46d05d26d944f079f3198c67b97d11be15729a3bc254e1e30a7dc1d",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/2e8263130a5728d18a42a391d0ccc928de52d13a8b8d1193e2f8143d19c669a5.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "2e8263130a5728d18a42a391d0ccc928de52d13a8b8d1193e2f8143d19c669a5",
+                "z": 59
+              }
+            },
+            "gloves-02-grip-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/6006063eb5faf75b01bb69cbb1d6c5d097b15bb6fcf4a2df402280d2086ae826.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "6006063eb5faf75b01bb69cbb1d6c5d097b15bb6fcf4a2df402280d2086ae826",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/a9edd4454b2e2d8290b7defe4680fcca99964016b5f5d19e331f405417af006c.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "a9edd4454b2e2d8290b7defe4680fcca99964016b5f5d19e331f405417af006c",
+                "z": 59
+              }
+            },
+            "gloves-03-draw-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/fd011e1c5d151b8a97a83069d82fa6084b5fb27f16ec9ea37e7105ca617812aa.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "fd011e1c5d151b8a97a83069d82fa6084b5fb27f16ec9ea37e7105ca617812aa",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/28849e52456141a21c4ac034402c648f70bd0c3749b5e47fe7a59df311c5cfa9.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "28849e52456141a21c4ac034402c648f70bd0c3749b5e47fe7a59df311c5cfa9",
+                "z": 59
+              }
+            },
+            "gloves-04-mail-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/76f23fe9bc812bebf8adcef197a5950fe4a16a5345cf3e1e304118e06e8f43e6.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "76f23fe9bc812bebf8adcef197a5950fe4a16a5345cf3e1e304118e06e8f43e6",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/410fc1844d653c61acf6da61e338a4a0f9b24dfb476c4b688c357d75d1745376.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "410fc1844d653c61acf6da61e338a4a0f9b24dfb476c4b688c357d75d1745376",
+                "z": 59
+              }
+            }
+          },
+          "hands": 1,
+          "key": "approved-medic-fighting-axe",
+          "physical_hand": "right",
+          "skin": {
+            "extension_source": true,
+            "owner_art_key": "",
+            "path": "blobs/450776a3fd287b807cfb0f0e2c8a2dabccc4c8bdcbd54c9b33f7c5d2b05d2c02.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "original_skin",
+            "sha256": "450776a3fd287b807cfb0f0e2c8a2dabccc4c8bdcbd54c9b33f7c5d2b05d2c02",
+            "z": 70
+          },
+          "weapon": {
+            "extension_source": true,
+            "owner_art_key": "approved-medic-fighting-axe",
+            "path": "blobs/3da4260ff4ec97ce73bde7bdf11071d92ba35153438330a23689acefebeff615.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "equipment",
+            "sha256": "3da4260ff4ec97ce73bde7bdf11071d92ba35153438330a23689acefebeff615",
+            "z": 60
+          }
+        },
+        "hm_trial_v1:twohand_sword": {
+          "gloves": {
+            "gloves-01-linen-handwraps": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/e7ee40b89903b7acccb4153a08f947770e71a8bce907d837117683d65531d0d0.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "e7ee40b89903b7acccb4153a08f947770e71a8bce907d837117683d65531d0d0",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/d28f9a00e854d635c4078d3cfb0da615163655c2c7389a302240a5430bdd06aa.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "d28f9a00e854d635c4078d3cfb0da615163655c2c7389a302240a5430bdd06aa",
+                "z": 59
+              }
+            },
+            "gloves-02-grip-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/2aa708d691ff2b46bb2312d758669a89f235877bd4fb8f1a619a91a8689e63f2.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "2aa708d691ff2b46bb2312d758669a89f235877bd4fb8f1a619a91a8689e63f2",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/d5bc1ac73843a7c6d9fe860fdc5cac7139d0c3d68748ae00d3f8e2e6c251a9bf.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "d5bc1ac73843a7c6d9fe860fdc5cac7139d0c3d68748ae00d3f8e2e6c251a9bf",
+                "z": 59
+              }
+            },
+            "gloves-03-draw-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/f45abef6b4f12518131b031a4b80ccb4e6a317a98fbec44af15a745bbdb38f5c.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "f45abef6b4f12518131b031a4b80ccb4e6a317a98fbec44af15a745bbdb38f5c",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/03365325deef7d6ca2dfb0a03fa90fa8282b591c039a8abbc76fdd9b2cd03805.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "03365325deef7d6ca2dfb0a03fa90fa8282b591c039a8abbc76fdd9b2cd03805",
+                "z": 59
+              }
+            },
+            "gloves-04-mail-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/e8aa7336a77c997259a0ebefa60aa48c1a2d5a2dfef6f3dcd3f5b048a63498e0.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "e8aa7336a77c997259a0ebefa60aa48c1a2d5a2dfef6f3dcd3f5b048a63498e0",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/5cfbde41660f37bce6e2a93f53dd5684d76d01c32d49c0a2ca96015c76b213d4.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "5cfbde41660f37bce6e2a93f53dd5684d76d01c32d49c0a2ca96015c76b213d4",
+                "z": 59
+              }
+            }
+          },
+          "hands": 2,
+          "key": "approved-medic-upright-greatsword",
+          "physical_hand": "left",
+          "skin": {
+            "extension_source": true,
+            "owner_art_key": "",
+            "path": "blobs/701c035930ee06c292e3eaf1917b37b5e1c7317b4492be09e9cf46f789b93bdf.png",
+            "physical_hand": "left",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "original_skin",
+            "sha256": "701c035930ee06c292e3eaf1917b37b5e1c7317b4492be09e9cf46f789b93bdf",
+            "z": 70
+          },
+          "weapon": {
+            "extension_source": true,
+            "owner_art_key": "approved-medic-upright-greatsword",
+            "path": "blobs/7bcf3ceda78b35c97a9a83570f015ea8b1f70f74a598ad0b4ea6ee5dcf977a52.png",
+            "physical_hand": "left",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "equipment",
+            "sha256": "7bcf3ceda78b35c97a9a83570f015ea8b1f70f74a598ad0b4ea6ee5dcf977a52",
+            "z": 60
+          }
+        }
+      },
+      "frame": {
+        "base_origin": [
+          0,
+          32
+        ],
+        "body_ground_reference": [
+          128,
+          352
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          256,
+          352
+        ],
+        "foot_anchor": [
+          167,
+          346
+        ],
+        "scale": 1
+      },
+      "recipe_sha256": "2b928d26b5e4dcb09e13346cce23bbc3c2f94af14cd08d53840f1d3969ed7a48",
+      "translation": [
+        0,
+        32
+      ]
+    },
+    "duelist": {
+      "base_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+      "fits": {
+        "hm_trial_v1:additional_fighting_axe": {
+          "gloves": {
+            "gloves-01-linen-handwraps": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/3f57757d539a31826d51fd449215b27354877c94587d0d4ee9a194dba998033d.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "3f57757d539a31826d51fd449215b27354877c94587d0d4ee9a194dba998033d",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/e497054f901cb8c01836a9fc5c73281e6c45e13866de991ebe9f0268f6c95bde.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "e497054f901cb8c01836a9fc5c73281e6c45e13866de991ebe9f0268f6c95bde",
+                "z": 59
+              }
+            },
+            "gloves-02-grip-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/3b3b67bfa8103e655f582a6159babd94d2816a7030a2f8d80b59931bb2f48f1a.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "3b3b67bfa8103e655f582a6159babd94d2816a7030a2f8d80b59931bb2f48f1a",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/f9e9f278a15a7cd497e3bd1b5c442c92f9f8b2e72dc152e0093d70b2a62bf808.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "f9e9f278a15a7cd497e3bd1b5c442c92f9f8b2e72dc152e0093d70b2a62bf808",
+                "z": 59
+              }
+            },
+            "gloves-03-draw-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/2d081e8791df7ee0e2c1bd039a25d99f9771ab6d81943d1ddc486037f0c21d9f.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "2d081e8791df7ee0e2c1bd039a25d99f9771ab6d81943d1ddc486037f0c21d9f",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/fabebc091812b39ab5884ea04b9bcb44c92466ee0c2757394bb40ebd90514188.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "fabebc091812b39ab5884ea04b9bcb44c92466ee0c2757394bb40ebd90514188",
+                "z": 59
+              }
+            },
+            "gloves-04-mail-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/cd08f559bcf05214ce7f44b5023904b5fb8e4356d5ee4c7bdd0c26c3fc153f78.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "cd08f559bcf05214ce7f44b5023904b5fb8e4356d5ee4c7bdd0c26c3fc153f78",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/abcf403a9e45bacfe5bd480e4298989ef36fa574fc15f5d6c91f54877514b583.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "abcf403a9e45bacfe5bd480e4298989ef36fa574fc15f5d6c91f54877514b583",
+                "z": 59
+              }
+            }
+          },
+          "hands": 1,
+          "key": "approved-medic-fighting-axe",
+          "physical_hand": "right",
+          "skin": {
+            "extension_source": true,
+            "owner_art_key": "",
+            "path": "blobs/1c810eeb42ee256746c3bd3dcf35e69ff2646193ad985ac4bfac5ab0fa508f4c.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "original_skin",
+            "sha256": "1c810eeb42ee256746c3bd3dcf35e69ff2646193ad985ac4bfac5ab0fa508f4c",
+            "z": 70
+          },
+          "weapon": {
+            "extension_source": true,
+            "owner_art_key": "approved-medic-fighting-axe",
+            "path": "blobs/c7de92dbaf1a596f8a62f2eeca2c3860819e704f621c614e412211e8403d4108.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "equipment",
+            "sha256": "c7de92dbaf1a596f8a62f2eeca2c3860819e704f621c614e412211e8403d4108",
+            "z": 60
+          }
+        },
+        "hm_trial_v1:twohand_sword": {
+          "gloves": {
+            "gloves-01-linen-handwraps": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/b15ad42edca8f63788327d27509bc64f2625e785bf7974f2af2673ccaba38b7d.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "b15ad42edca8f63788327d27509bc64f2625e785bf7974f2af2673ccaba38b7d",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/f4f31236a65ef2c1850a701c27f764aaff8fc72db272e319ee1d58986ac73793.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "f4f31236a65ef2c1850a701c27f764aaff8fc72db272e319ee1d58986ac73793",
+                "z": 59
+              }
+            },
+            "gloves-02-grip-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/33321efe499fb2455f09ea7367459f325b2cf19b8944f11093f039ca9f4d590e.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "33321efe499fb2455f09ea7367459f325b2cf19b8944f11093f039ca9f4d590e",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/6bc5c1572acebd766b578269c5ce784e9f921053336c030257d3d290be149f56.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "6bc5c1572acebd766b578269c5ce784e9f921053336c030257d3d290be149f56",
+                "z": 59
+              }
+            },
+            "gloves-03-draw-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/5a0a723b83a00713b0d9e8321710cc3d23586d1867df41a61adfcb74e2c6ade0.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "5a0a723b83a00713b0d9e8321710cc3d23586d1867df41a61adfcb74e2c6ade0",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/4cebedad569e08f116559f4e3f7ad1c907879d7bba4b7a43c7cc34886676a804.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "4cebedad569e08f116559f4e3f7ad1c907879d7bba4b7a43c7cc34886676a804",
+                "z": 59
+              }
+            },
+            "gloves-04-mail-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/7fc128cedc5bcb85cf311c18781383d67f00360c8bcc4c4b26b204112b6422a9.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "7fc128cedc5bcb85cf311c18781383d67f00360c8bcc4c4b26b204112b6422a9",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/a1e90e31a266d60b7a45870cdd310332e440cabb69242b0ea9d2c5e7cb927e06.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "a1e90e31a266d60b7a45870cdd310332e440cabb69242b0ea9d2c5e7cb927e06",
+                "z": 59
+              }
+            }
+          },
+          "hands": 2,
+          "key": "approved-medic-upright-greatsword",
+          "physical_hand": "right",
+          "skin": {
+            "extension_source": true,
+            "owner_art_key": "",
+            "path": "blobs/d589d17caeabf254a6f97bcce3f9af741d265d08a47718be05f5c64b5030766c.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "original_skin",
+            "sha256": "d589d17caeabf254a6f97bcce3f9af741d265d08a47718be05f5c64b5030766c",
+            "z": 70
+          },
+          "weapon": {
+            "extension_source": true,
+            "owner_art_key": "approved-medic-upright-greatsword",
+            "path": "blobs/a30ee74438233f58e9e34febca878c861399470dd7cdf743649f4ecd9ceb398d.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "equipment",
+            "sha256": "a30ee74438233f58e9e34febca878c861399470dd7cdf743649f4ecd9ceb398d",
+            "z": 60
+          }
+        }
+      },
+      "frame": {
+        "base_origin": [
+          32,
+          48
+        ],
+        "body_ground_reference": [
+          160,
+          368
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          320,
+          384
+        ],
+        "foot_anchor": [
+          255,
+          359
+        ],
+        "scale": 1
+      },
+      "recipe_sha256": "1170d3cc692991659d69b8835c056cd899340a12fc61f9b0efee73cd82e08dbf",
+      "translation": [
+        32,
+        48
+      ]
+    },
+    "occultist": {
+      "base_sha256": "afdd366de4228efc03c4292065138eca07ba6bd72c4f51db85ac42dee1b5e88e",
+      "fits": {
+        "hm_trial_v1:additional_fighting_axe": {
+          "gloves": {
+            "gloves-01-linen-handwraps": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/2a5361486431dbfd5747f5427c2ad3a828681fddc8516e80fe0d27ffc67d7c0a.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "2a5361486431dbfd5747f5427c2ad3a828681fddc8516e80fe0d27ffc67d7c0a",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/dc40eb1d427174d799ae354164b8a0f17f2bed6f0f5ba21cecabb35edee17c44.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "dc40eb1d427174d799ae354164b8a0f17f2bed6f0f5ba21cecabb35edee17c44",
+                "z": 59
+              }
+            },
+            "gloves-02-grip-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/23f0bf2b1238f47e8866d5b224946b09c1967b92563b29abe589f3cbd56da4a8.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "23f0bf2b1238f47e8866d5b224946b09c1967b92563b29abe589f3cbd56da4a8",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/be168e154cd347a935c310b70f208764f91a7282024689aea54504d5b058def5.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "be168e154cd347a935c310b70f208764f91a7282024689aea54504d5b058def5",
+                "z": 59
+              }
+            },
+            "gloves-03-draw-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/68f4791b299622684c01150be96ab4f4b46529bf09d65c9ac61c8b6173c6d1df.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "68f4791b299622684c01150be96ab4f4b46529bf09d65c9ac61c8b6173c6d1df",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/ba4f10da25752781c84d2a1abf8b7129770981ed43daaa9b5c986e4ccb06ecb7.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "ba4f10da25752781c84d2a1abf8b7129770981ed43daaa9b5c986e4ccb06ecb7",
+                "z": 59
+              }
+            },
+            "gloves-04-mail-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/32baf0d73f3e8d6e46191c19f5ff677a5c38cf6122a87448a7adf687ea1709ae.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "32baf0d73f3e8d6e46191c19f5ff677a5c38cf6122a87448a7adf687ea1709ae",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/de8b6f5efbb11232baf7694e11ab6e78014027e0bbd7e0261a36cd73feddff02.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "de8b6f5efbb11232baf7694e11ab6e78014027e0bbd7e0261a36cd73feddff02",
+                "z": 59
+              }
+            }
+          },
+          "hands": 1,
+          "key": "approved-medic-fighting-axe",
+          "physical_hand": "right",
+          "skin": {
+            "extension_source": true,
+            "owner_art_key": "",
+            "path": "blobs/0b5b8f4ca0370b08adc1a700827ed5fa32899227955f77b89b16128ba2face73.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "original_skin",
+            "sha256": "0b5b8f4ca0370b08adc1a700827ed5fa32899227955f77b89b16128ba2face73",
+            "z": 70
+          },
+          "weapon": {
+            "extension_source": true,
+            "owner_art_key": "approved-medic-fighting-axe",
+            "path": "blobs/17046c2c9ca34882de5e0f26cafc8dedea1361e5b16b3ac94b15428247414787.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "equipment",
+            "sha256": "17046c2c9ca34882de5e0f26cafc8dedea1361e5b16b3ac94b15428247414787",
+            "z": 60
+          }
+        },
+        "hm_trial_v1:twohand_sword": {
+          "gloves": {
+            "gloves-01-linen-handwraps": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/26e8256073609610b88b31e59c9a02b7e105f2a9562dbe23aa39139400499688.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "26e8256073609610b88b31e59c9a02b7e105f2a9562dbe23aa39139400499688",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/de4ab944da1886510526b65b1a5447bdd84cdd852d6db6f590bd6c1fbedb96b3.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "de4ab944da1886510526b65b1a5447bdd84cdd852d6db6f590bd6c1fbedb96b3",
+                "z": 59
+              }
+            },
+            "gloves-02-grip-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/a1ba8ce1249de9a0f1fa90c3a37b94096b5c4342516a229a61d9b16eebdd5878.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "a1ba8ce1249de9a0f1fa90c3a37b94096b5c4342516a229a61d9b16eebdd5878",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/bd89c4e957f194c058a92d272d82bc7de33e980a0f12c0df01586c82eb3d0cb5.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "bd89c4e957f194c058a92d272d82bc7de33e980a0f12c0df01586c82eb3d0cb5",
+                "z": 59
+              }
+            },
+            "gloves-03-draw-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/9aa2983bff89555be916e3fd295fbd908c36b31f703d6086286df925b8660491.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "9aa2983bff89555be916e3fd295fbd908c36b31f703d6086286df925b8660491",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/b1c18c26c481f4fec4d285ac2bdc1d11f195f187a5a5757a78d005df8a8f9973.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "b1c18c26c481f4fec4d285ac2bdc1d11f195f187a5a5757a78d005df8a8f9973",
+                "z": 59
+              }
+            },
+            "gloves-04-mail-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/a85a83cdeac4b2cb37e8c3369f9774799a9915c6c747ccb5957a2ffc66a06291.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "a85a83cdeac4b2cb37e8c3369f9774799a9915c6c747ccb5957a2ffc66a06291",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/604fbaad4da05cf66cc9916707a73a702ec90f0172fbef20a2f19f3918ca01ea.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "604fbaad4da05cf66cc9916707a73a702ec90f0172fbef20a2f19f3918ca01ea",
+                "z": 59
+              }
+            }
+          },
+          "hands": 2,
+          "key": "approved-medic-upright-greatsword",
+          "physical_hand": "left",
+          "skin": {
+            "extension_source": true,
+            "owner_art_key": "",
+            "path": "blobs/2fd51747e081c6f0bdf32eb96785129370412d126eb6486bd5a8030b6a1f58bd.png",
+            "physical_hand": "left",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "original_skin",
+            "sha256": "2fd51747e081c6f0bdf32eb96785129370412d126eb6486bd5a8030b6a1f58bd",
+            "z": 70
+          },
+          "weapon": {
+            "extension_source": true,
+            "owner_art_key": "approved-medic-upright-greatsword",
+            "path": "blobs/d9d8696f518b593009de827ba6668d2759e9e7092f9013423582b429e9af783c.png",
+            "physical_hand": "left",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "equipment",
+            "sha256": "d9d8696f518b593009de827ba6668d2759e9e7092f9013423582b429e9af783c",
+            "z": 60
+          }
+        }
+      },
+      "frame": {
+        "base_origin": [
+          32,
+          160
+        ],
+        "body_ground_reference": [
+          160,
+          480
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          320,
+          480
+        ],
+        "foot_anchor": [
+          97,
+          470
+        ],
+        "scale": 1
+      },
+      "recipe_sha256": "a9c8ea2d501c7e77fec5851d0018e8cec7af3798f0feb2ca7e4f4a70aa3a997d",
+      "translation": [
+        32,
+        80
+      ]
+    },
+    "polearm": {
+      "base_sha256": "f2e4f1e13c344d99f315f7ba9d64256f8eb2752d1483408817cc297d3ad19ce2",
+      "fits": {
+        "hm_trial_v1:additional_fighting_axe": {
+          "gloves": {
+            "gloves-01-linen-handwraps": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/8f80b45afbbd0e95824f0a4025c56ad24e5cfbf6cfa20ca6680daad247478370.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "8f80b45afbbd0e95824f0a4025c56ad24e5cfbf6cfa20ca6680daad247478370",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/c1680b7ad892ff563efc2ef77bcf1656ba748fa477a9b7de8546a47332ab6abc.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "c1680b7ad892ff563efc2ef77bcf1656ba748fa477a9b7de8546a47332ab6abc",
+                "z": 40
+              }
+            },
+            "gloves-02-grip-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/1151539f139b19508de541d69bbaa5c5cf26b65eb092c8f2e891e64b3b78f899.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "1151539f139b19508de541d69bbaa5c5cf26b65eb092c8f2e891e64b3b78f899",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/964d151c09e9e600c2668c5cfe4ec92e51de5420083b21e75f5ac9376b15ed40.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "964d151c09e9e600c2668c5cfe4ec92e51de5420083b21e75f5ac9376b15ed40",
+                "z": 40
+              }
+            },
+            "gloves-03-draw-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/f3080edb96f9a336fb2c192d5f2c5c34f8a276f8e35e36ad2d16f5b81ba720cf.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "f3080edb96f9a336fb2c192d5f2c5c34f8a276f8e35e36ad2d16f5b81ba720cf",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/1b5f15c83b348910b0766806ff274bf250955548641f12ba96798bc1452523df.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "1b5f15c83b348910b0766806ff274bf250955548641f12ba96798bc1452523df",
+                "z": 40
+              }
+            },
+            "gloves-04-mail-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/c92dfca01c471a2a29ce6a16354e71b1f53b91dc091ab5f2e6e3a3e7d398a8c8.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "c92dfca01c471a2a29ce6a16354e71b1f53b91dc091ab5f2e6e3a3e7d398a8c8",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/190f8544547ba8fc459059caff5a2b28defad724854c2e3ce44e4b71f716c4d5.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "190f8544547ba8fc459059caff5a2b28defad724854c2e3ce44e4b71f716c4d5",
+                "z": 40
+              }
+            }
+          },
+          "hands": 1,
+          "key": "approved-medic-fighting-axe",
+          "physical_hand": "right",
+          "skin": {
+            "extension_source": true,
+            "owner_art_key": "",
+            "path": "blobs/2783d14810bedc0d80f6846fd7a0974bd8099ab10f1b6857ddf5f8f4c4e70f09.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "original_skin",
+            "sha256": "2783d14810bedc0d80f6846fd7a0974bd8099ab10f1b6857ddf5f8f4c4e70f09",
+            "z": 70
+          },
+          "weapon": {
+            "extension_source": true,
+            "owner_art_key": "approved-medic-fighting-axe",
+            "path": "blobs/fde7f3d5319be73c733f9896f13dd82483a749aa9f76d55005604fb6b3557d7f.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "equipment",
+            "sha256": "fde7f3d5319be73c733f9896f13dd82483a749aa9f76d55005604fb6b3557d7f",
+            "z": 60
+          }
+        },
+        "hm_trial_v1:twohand_sword": {
+          "gloves": {
+            "gloves-01-linen-handwraps": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/e860a4a5b445ec3ca628e0e47e76f0c6e005187590a1eb0f10810ad97c330cd6.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "e860a4a5b445ec3ca628e0e47e76f0c6e005187590a1eb0f10810ad97c330cd6",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/ba5af06e88c3b66129ffd3664a16260909a92a2bc3ffe1a5fcb2e2ed044f5928.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "ba5af06e88c3b66129ffd3664a16260909a92a2bc3ffe1a5fcb2e2ed044f5928",
+                "z": 40
+              }
+            },
+            "gloves-02-grip-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/1642573cda521cb4b8f2ae126d25aa1563d796546835e91deb417442663b47c8.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "1642573cda521cb4b8f2ae126d25aa1563d796546835e91deb417442663b47c8",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/e15f8c7a36a88a897ff676cb1ce2bf6a2b30babbb5841ed8e26d4646096970f1.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "e15f8c7a36a88a897ff676cb1ce2bf6a2b30babbb5841ed8e26d4646096970f1",
+                "z": 40
+              }
+            },
+            "gloves-03-draw-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/6092b816dc94635c32a11ca0ff21e1aa69f18843b3a99dd04bd91ae920b78b30.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "6092b816dc94635c32a11ca0ff21e1aa69f18843b3a99dd04bd91ae920b78b30",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/832b84b5de4003d9c772888507ad9a7d28d1185a053fac295cad2f6782427586.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "832b84b5de4003d9c772888507ad9a7d28d1185a053fac295cad2f6782427586",
+                "z": 40
+              }
+            },
+            "gloves-04-mail-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/4dbb4d66c0c4abf9f31984a3ffe7999109e38fc0fd9f795fda15e0fbfa3973dc.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "4dbb4d66c0c4abf9f31984a3ffe7999109e38fc0fd9f795fda15e0fbfa3973dc",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/950fc2c7825681554c6754c2eedab15399dcb5eaec1343c2a09a29f4f0b5b671.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "950fc2c7825681554c6754c2eedab15399dcb5eaec1343c2a09a29f4f0b5b671",
+                "z": 40
+              }
+            }
+          },
+          "hands": 2,
+          "key": "approved-medic-upright-greatsword",
+          "physical_hand": "right",
+          "skin": {
+            "extension_source": true,
+            "owner_art_key": "",
+            "path": "blobs/3baf64b4c2e2f3e87f169eff30673f794f4d736299f07e830f65895090a3863d.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "original_skin",
+            "sha256": "3baf64b4c2e2f3e87f169eff30673f794f4d736299f07e830f65895090a3863d",
+            "z": 70
+          },
+          "weapon": {
+            "extension_source": true,
+            "owner_art_key": "approved-medic-upright-greatsword",
+            "path": "blobs/9707bfbb4de3929e4f760abf17adf003ab44f4f54757f9f413eebc3fab7d38dc.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "equipment",
+            "sha256": "9707bfbb4de3929e4f760abf17adf003ab44f4f54757f9f413eebc3fab7d38dc",
+            "z": 60
+          }
+        }
+      },
+      "frame": {
+        "base_origin": [
+          32,
+          112
+        ],
+        "body_ground_reference": [
+          160,
+          432
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          320,
+          448
+        ],
+        "foot_anchor": [
+          209,
+          425
+        ],
+        "scale": 1
+      },
+      "recipe_sha256": "757cc1fd978d094c713ed8a6ad2c715ce46c4ea624f21c17e4022109d13ae20a",
+      "translation": [
+        32,
+        112
+      ]
+    },
+    "shieldbearer": {
+      "base_sha256": "5a2c974b509e8136d2d0b0f007bb0fc1baf37906e3cbc4357c1e315f4cf173f5",
+      "fits": {
+        "hm_trial_v1:additional_fighting_axe": {
+          "gloves": {
+            "gloves-01-linen-handwraps": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/bb4ec13d6521addc074b2d998e194658c7f2c6802103846d599f4d41073818e4.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "bb4ec13d6521addc074b2d998e194658c7f2c6802103846d599f4d41073818e4",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/3d4fd076b0b252f147397363e763dfac2003f5999ed81c9c4bc61359d0aa3f12.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "3d4fd076b0b252f147397363e763dfac2003f5999ed81c9c4bc61359d0aa3f12",
+                "z": 59
+              }
+            },
+            "gloves-02-grip-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/55044f7fbfca82d06f5042c86c7e9dc0a163557f9d176cfcd9bea099e1ea5bab.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "55044f7fbfca82d06f5042c86c7e9dc0a163557f9d176cfcd9bea099e1ea5bab",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/1c75ad90f58c6d7a12dca51e453b375d972ef95e1b69a9ea4a48dc5c43e9cb49.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "1c75ad90f58c6d7a12dca51e453b375d972ef95e1b69a9ea4a48dc5c43e9cb49",
+                "z": 59
+              }
+            },
+            "gloves-03-draw-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/c25aa94047a1d75821f497f94796a317c6d6547ddc561bfab60702494b61b3f8.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "c25aa94047a1d75821f497f94796a317c6d6547ddc561bfab60702494b61b3f8",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/f945fb6b9b22731b786cc85b78bebceb46250cebad1b83fbef50fcfefb682b66.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "f945fb6b9b22731b786cc85b78bebceb46250cebad1b83fbef50fcfefb682b66",
+                "z": 59
+              }
+            },
+            "gloves-04-mail-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/5f9b9b6baa8277e2982e4b7a1d03861ff73b7cf524215986745cc70d430cb1fa.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "5f9b9b6baa8277e2982e4b7a1d03861ff73b7cf524215986745cc70d430cb1fa",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/729d8dbff17cc3a9d695f2446e05ccaa0e96047b3ff3193769842fa1d85eca87.png",
+                "physical_hand": "right",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "729d8dbff17cc3a9d695f2446e05ccaa0e96047b3ff3193769842fa1d85eca87",
+                "z": 59
+              }
+            }
+          },
+          "hands": 1,
+          "key": "approved-medic-fighting-axe",
+          "physical_hand": "right",
+          "skin": {
+            "extension_source": true,
+            "owner_art_key": "",
+            "path": "blobs/5a6465504e1270439611d25bf6668963128f4efe93150a146382f88f354d4d2d.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "original_skin",
+            "sha256": "5a6465504e1270439611d25bf6668963128f4efe93150a146382f88f354d4d2d",
+            "z": 70
+          },
+          "weapon": {
+            "extension_source": true,
+            "owner_art_key": "approved-medic-fighting-axe",
+            "path": "blobs/cbf84aa5cb46ec1292f236680d196098c1fb9be4e81b0c56cff091bc3490314b.png",
+            "physical_hand": "right",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "equipment",
+            "sha256": "cbf84aa5cb46ec1292f236680d196098c1fb9be4e81b0c56cff091bc3490314b",
+            "z": 60
+          }
+        },
+        "hm_trial_v1:twohand_sword": {
+          "gloves": {
+            "gloves-01-linen-handwraps": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/8e8a6205896701ab7c0096a4c83fa218f9a521b345d627d5d5b69a3abe8da884.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "8e8a6205896701ab7c0096a4c83fa218f9a521b345d627d5d5b69a3abe8da884",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-01-linen-handwraps",
+                "path": "blobs/661d71c19ae650ad04ce7344d70f5d4efe8a28be349567c639fbc323fba41e2e.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "661d71c19ae650ad04ce7344d70f5d4efe8a28be349567c639fbc323fba41e2e",
+                "z": 59
+              }
+            },
+            "gloves-02-grip-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/8d4cadfce1730fb45e71f9459b7c03da630c282f23d87c045c5e1b40996a5b49.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "8d4cadfce1730fb45e71f9459b7c03da630c282f23d87c045c5e1b40996a5b49",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-02-grip-gloves",
+                "path": "blobs/70c52c9e3f99577ae7d35e6ffb9fe6f605ce2037fff71d0c54ad44ca9c8f7d22.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "70c52c9e3f99577ae7d35e6ffb9fe6f605ce2037fff71d0c54ad44ca9c8f7d22",
+                "z": 59
+              }
+            },
+            "gloves-03-draw-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/a740d6a8729eb645b2738ef585e2c16bd9f33d3d6c06f534a015cce309a7851c.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "a740d6a8729eb645b2738ef585e2c16bd9f33d3d6c06f534a015cce309a7851c",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-03-draw-gloves",
+                "path": "blobs/af47939c6b2b15d1c602e7a54d92e918e58c8493ab3ff24590d96672016ba23a.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "af47939c6b2b15d1c602e7a54d92e918e58c8493ab3ff24590d96672016ba23a",
+                "z": 59
+              }
+            },
+            "gloves-04-mail-gloves": {
+              "front": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/5a8e5cb05c3dc31c15ffd4eb57ed924445c1ca469e19156eb03c510dad65ab05.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_front",
+                "sha256": "5a8e5cb05c3dc31c15ffd4eb57ed924445c1ca469e19156eb03c510dad65ab05",
+                "z": 80
+              },
+              "rear": {
+                "extension_source": true,
+                "owner_art_key": "gloves-04-mail-gloves",
+                "path": "blobs/3d06021778abe2d7caf5b832a10bfd4b31ab2b9d0bf8e1cb9e1c159ec42a048a.png",
+                "physical_hand": "left",
+                "placement": [
+                  0,
+                  0
+                ],
+                "role": "glove_rear",
+                "sha256": "3d06021778abe2d7caf5b832a10bfd4b31ab2b9d0bf8e1cb9e1c159ec42a048a",
+                "z": 59
+              }
+            }
+          },
+          "hands": 2,
+          "key": "approved-medic-upright-greatsword",
+          "physical_hand": "left",
+          "skin": {
+            "extension_source": true,
+            "owner_art_key": "",
+            "path": "blobs/ef5ecf25428f391dc3ff2f8b2e1ff88e208d8910a3437152e7f497b6aa4550f0.png",
+            "physical_hand": "left",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "original_skin",
+            "sha256": "ef5ecf25428f391dc3ff2f8b2e1ff88e208d8910a3437152e7f497b6aa4550f0",
+            "z": 70
+          },
+          "weapon": {
+            "extension_source": true,
+            "owner_art_key": "approved-medic-upright-greatsword",
+            "path": "blobs/de60e6807d5270db746bb9efea05fa55d760c7d9c2304d6da137c68e9aa73326.png",
+            "physical_hand": "left",
+            "placement": [
+              0,
+              0
+            ],
+            "role": "equipment",
+            "sha256": "de60e6807d5270db746bb9efea05fa55d760c7d9c2304d6da137c68e9aa73326",
+            "z": 60
+          }
+        }
+      },
+      "frame": {
+        "base_origin": [
+          32,
+          64
+        ],
+        "body_ground_reference": [
+          160,
+          384
+        ],
+        "body_size": [
+          256,
+          320
+        ],
+        "canvas": [
+          384,
+          416
+        ],
+        "foot_anchor": [
+          221,
+          375
+        ],
+        "scale": 1
+      },
+      "recipe_sha256": "8e054cffaedcb71ae3b2ad814854e51441168c68bd53887dec719c0777429c38",
+      "translation": [
+        0,
+        32
+      ]
+    }
+  },
+  "donor_model_sha256": "48b72c24bb5b29a3dd97432f29ddba02216458e9ab7c0200ceb693d9e7e2db8f",
+  "files": {
+    "blobs/03365325deef7d6ca2dfb0a03fa90fa8282b591c039a8abbc76fdd9b2cd03805.png": "03365325deef7d6ca2dfb0a03fa90fa8282b591c039a8abbc76fdd9b2cd03805",
+    "blobs/0b5b8f4ca0370b08adc1a700827ed5fa32899227955f77b89b16128ba2face73.png": "0b5b8f4ca0370b08adc1a700827ed5fa32899227955f77b89b16128ba2face73",
+    "blobs/1151539f139b19508de541d69bbaa5c5cf26b65eb092c8f2e891e64b3b78f899.png": "1151539f139b19508de541d69bbaa5c5cf26b65eb092c8f2e891e64b3b78f899",
+    "blobs/1642573cda521cb4b8f2ae126d25aa1563d796546835e91deb417442663b47c8.png": "1642573cda521cb4b8f2ae126d25aa1563d796546835e91deb417442663b47c8",
+    "blobs/17046c2c9ca34882de5e0f26cafc8dedea1361e5b16b3ac94b15428247414787.png": "17046c2c9ca34882de5e0f26cafc8dedea1361e5b16b3ac94b15428247414787",
+    "blobs/190f8544547ba8fc459059caff5a2b28defad724854c2e3ce44e4b71f716c4d5.png": "190f8544547ba8fc459059caff5a2b28defad724854c2e3ce44e4b71f716c4d5",
+    "blobs/1b5f15c83b348910b0766806ff274bf250955548641f12ba96798bc1452523df.png": "1b5f15c83b348910b0766806ff274bf250955548641f12ba96798bc1452523df",
+    "blobs/1c75ad90f58c6d7a12dca51e453b375d972ef95e1b69a9ea4a48dc5c43e9cb49.png": "1c75ad90f58c6d7a12dca51e453b375d972ef95e1b69a9ea4a48dc5c43e9cb49",
+    "blobs/1c810eeb42ee256746c3bd3dcf35e69ff2646193ad985ac4bfac5ab0fa508f4c.png": "1c810eeb42ee256746c3bd3dcf35e69ff2646193ad985ac4bfac5ab0fa508f4c",
+    "blobs/23f0bf2b1238f47e8866d5b224946b09c1967b92563b29abe589f3cbd56da4a8.png": "23f0bf2b1238f47e8866d5b224946b09c1967b92563b29abe589f3cbd56da4a8",
+    "blobs/26e8256073609610b88b31e59c9a02b7e105f2a9562dbe23aa39139400499688.png": "26e8256073609610b88b31e59c9a02b7e105f2a9562dbe23aa39139400499688",
+    "blobs/2783d14810bedc0d80f6846fd7a0974bd8099ab10f1b6857ddf5f8f4c4e70f09.png": "2783d14810bedc0d80f6846fd7a0974bd8099ab10f1b6857ddf5f8f4c4e70f09",
+    "blobs/28849e52456141a21c4ac034402c648f70bd0c3749b5e47fe7a59df311c5cfa9.png": "28849e52456141a21c4ac034402c648f70bd0c3749b5e47fe7a59df311c5cfa9",
+    "blobs/2a5361486431dbfd5747f5427c2ad3a828681fddc8516e80fe0d27ffc67d7c0a.png": "2a5361486431dbfd5747f5427c2ad3a828681fddc8516e80fe0d27ffc67d7c0a",
+    "blobs/2aa708d691ff2b46bb2312d758669a89f235877bd4fb8f1a619a91a8689e63f2.png": "2aa708d691ff2b46bb2312d758669a89f235877bd4fb8f1a619a91a8689e63f2",
+    "blobs/2d081e8791df7ee0e2c1bd039a25d99f9771ab6d81943d1ddc486037f0c21d9f.png": "2d081e8791df7ee0e2c1bd039a25d99f9771ab6d81943d1ddc486037f0c21d9f",
+    "blobs/2e8263130a5728d18a42a391d0ccc928de52d13a8b8d1193e2f8143d19c669a5.png": "2e8263130a5728d18a42a391d0ccc928de52d13a8b8d1193e2f8143d19c669a5",
+    "blobs/2fd51747e081c6f0bdf32eb96785129370412d126eb6486bd5a8030b6a1f58bd.png": "2fd51747e081c6f0bdf32eb96785129370412d126eb6486bd5a8030b6a1f58bd",
+    "blobs/32baf0d73f3e8d6e46191c19f5ff677a5c38cf6122a87448a7adf687ea1709ae.png": "32baf0d73f3e8d6e46191c19f5ff677a5c38cf6122a87448a7adf687ea1709ae",
+    "blobs/33321efe499fb2455f09ea7367459f325b2cf19b8944f11093f039ca9f4d590e.png": "33321efe499fb2455f09ea7367459f325b2cf19b8944f11093f039ca9f4d590e",
+    "blobs/3b3b67bfa8103e655f582a6159babd94d2816a7030a2f8d80b59931bb2f48f1a.png": "3b3b67bfa8103e655f582a6159babd94d2816a7030a2f8d80b59931bb2f48f1a",
+    "blobs/3baf64b4c2e2f3e87f169eff30673f794f4d736299f07e830f65895090a3863d.png": "3baf64b4c2e2f3e87f169eff30673f794f4d736299f07e830f65895090a3863d",
+    "blobs/3d06021778abe2d7caf5b832a10bfd4b31ab2b9d0bf8e1cb9e1c159ec42a048a.png": "3d06021778abe2d7caf5b832a10bfd4b31ab2b9d0bf8e1cb9e1c159ec42a048a",
+    "blobs/3d4fd076b0b252f147397363e763dfac2003f5999ed81c9c4bc61359d0aa3f12.png": "3d4fd076b0b252f147397363e763dfac2003f5999ed81c9c4bc61359d0aa3f12",
+    "blobs/3da4260ff4ec97ce73bde7bdf11071d92ba35153438330a23689acefebeff615.png": "3da4260ff4ec97ce73bde7bdf11071d92ba35153438330a23689acefebeff615",
+    "blobs/3f57757d539a31826d51fd449215b27354877c94587d0d4ee9a194dba998033d.png": "3f57757d539a31826d51fd449215b27354877c94587d0d4ee9a194dba998033d",
+    "blobs/410fc1844d653c61acf6da61e338a4a0f9b24dfb476c4b688c357d75d1745376.png": "410fc1844d653c61acf6da61e338a4a0f9b24dfb476c4b688c357d75d1745376",
+    "blobs/450776a3fd287b807cfb0f0e2c8a2dabccc4c8bdcbd54c9b33f7c5d2b05d2c02.png": "450776a3fd287b807cfb0f0e2c8a2dabccc4c8bdcbd54c9b33f7c5d2b05d2c02",
+    "blobs/4cebedad569e08f116559f4e3f7ad1c907879d7bba4b7a43c7cc34886676a804.png": "4cebedad569e08f116559f4e3f7ad1c907879d7bba4b7a43c7cc34886676a804",
+    "blobs/4dbb4d66c0c4abf9f31984a3ffe7999109e38fc0fd9f795fda15e0fbfa3973dc.png": "4dbb4d66c0c4abf9f31984a3ffe7999109e38fc0fd9f795fda15e0fbfa3973dc",
+    "blobs/55044f7fbfca82d06f5042c86c7e9dc0a163557f9d176cfcd9bea099e1ea5bab.png": "55044f7fbfca82d06f5042c86c7e9dc0a163557f9d176cfcd9bea099e1ea5bab",
+    "blobs/5a0a723b83a00713b0d9e8321710cc3d23586d1867df41a61adfcb74e2c6ade0.png": "5a0a723b83a00713b0d9e8321710cc3d23586d1867df41a61adfcb74e2c6ade0",
+    "blobs/5a6465504e1270439611d25bf6668963128f4efe93150a146382f88f354d4d2d.png": "5a6465504e1270439611d25bf6668963128f4efe93150a146382f88f354d4d2d",
+    "blobs/5a8e5cb05c3dc31c15ffd4eb57ed924445c1ca469e19156eb03c510dad65ab05.png": "5a8e5cb05c3dc31c15ffd4eb57ed924445c1ca469e19156eb03c510dad65ab05",
+    "blobs/5cfbde41660f37bce6e2a93f53dd5684d76d01c32d49c0a2ca96015c76b213d4.png": "5cfbde41660f37bce6e2a93f53dd5684d76d01c32d49c0a2ca96015c76b213d4",
+    "blobs/5f9b9b6baa8277e2982e4b7a1d03861ff73b7cf524215986745cc70d430cb1fa.png": "5f9b9b6baa8277e2982e4b7a1d03861ff73b7cf524215986745cc70d430cb1fa",
+    "blobs/6006063eb5faf75b01bb69cbb1d6c5d097b15bb6fcf4a2df402280d2086ae826.png": "6006063eb5faf75b01bb69cbb1d6c5d097b15bb6fcf4a2df402280d2086ae826",
+    "blobs/604fbaad4da05cf66cc9916707a73a702ec90f0172fbef20a2f19f3918ca01ea.png": "604fbaad4da05cf66cc9916707a73a702ec90f0172fbef20a2f19f3918ca01ea",
+    "blobs/6092b816dc94635c32a11ca0ff21e1aa69f18843b3a99dd04bd91ae920b78b30.png": "6092b816dc94635c32a11ca0ff21e1aa69f18843b3a99dd04bd91ae920b78b30",
+    "blobs/661d71c19ae650ad04ce7344d70f5d4efe8a28be349567c639fbc323fba41e2e.png": "661d71c19ae650ad04ce7344d70f5d4efe8a28be349567c639fbc323fba41e2e",
+    "blobs/68f4791b299622684c01150be96ab4f4b46529bf09d65c9ac61c8b6173c6d1df.png": "68f4791b299622684c01150be96ab4f4b46529bf09d65c9ac61c8b6173c6d1df",
+    "blobs/6bbbf319b46d05d26d944f079f3198c67b97d11be15729a3bc254e1e30a7dc1d.png": "6bbbf319b46d05d26d944f079f3198c67b97d11be15729a3bc254e1e30a7dc1d",
+    "blobs/6bc5c1572acebd766b578269c5ce784e9f921053336c030257d3d290be149f56.png": "6bc5c1572acebd766b578269c5ce784e9f921053336c030257d3d290be149f56",
+    "blobs/701c035930ee06c292e3eaf1917b37b5e1c7317b4492be09e9cf46f789b93bdf.png": "701c035930ee06c292e3eaf1917b37b5e1c7317b4492be09e9cf46f789b93bdf",
+    "blobs/70c52c9e3f99577ae7d35e6ffb9fe6f605ce2037fff71d0c54ad44ca9c8f7d22.png": "70c52c9e3f99577ae7d35e6ffb9fe6f605ce2037fff71d0c54ad44ca9c8f7d22",
+    "blobs/729d8dbff17cc3a9d695f2446e05ccaa0e96047b3ff3193769842fa1d85eca87.png": "729d8dbff17cc3a9d695f2446e05ccaa0e96047b3ff3193769842fa1d85eca87",
+    "blobs/76f23fe9bc812bebf8adcef197a5950fe4a16a5345cf3e1e304118e06e8f43e6.png": "76f23fe9bc812bebf8adcef197a5950fe4a16a5345cf3e1e304118e06e8f43e6",
+    "blobs/7bcf3ceda78b35c97a9a83570f015ea8b1f70f74a598ad0b4ea6ee5dcf977a52.png": "7bcf3ceda78b35c97a9a83570f015ea8b1f70f74a598ad0b4ea6ee5dcf977a52",
+    "blobs/7fc128cedc5bcb85cf311c18781383d67f00360c8bcc4c4b26b204112b6422a9.png": "7fc128cedc5bcb85cf311c18781383d67f00360c8bcc4c4b26b204112b6422a9",
+    "blobs/832b84b5de4003d9c772888507ad9a7d28d1185a053fac295cad2f6782427586.png": "832b84b5de4003d9c772888507ad9a7d28d1185a053fac295cad2f6782427586",
+    "blobs/8d4cadfce1730fb45e71f9459b7c03da630c282f23d87c045c5e1b40996a5b49.png": "8d4cadfce1730fb45e71f9459b7c03da630c282f23d87c045c5e1b40996a5b49",
+    "blobs/8e8a6205896701ab7c0096a4c83fa218f9a521b345d627d5d5b69a3abe8da884.png": "8e8a6205896701ab7c0096a4c83fa218f9a521b345d627d5d5b69a3abe8da884",
+    "blobs/8f80b45afbbd0e95824f0a4025c56ad24e5cfbf6cfa20ca6680daad247478370.png": "8f80b45afbbd0e95824f0a4025c56ad24e5cfbf6cfa20ca6680daad247478370",
+    "blobs/950fc2c7825681554c6754c2eedab15399dcb5eaec1343c2a09a29f4f0b5b671.png": "950fc2c7825681554c6754c2eedab15399dcb5eaec1343c2a09a29f4f0b5b671",
+    "blobs/964d151c09e9e600c2668c5cfe4ec92e51de5420083b21e75f5ac9376b15ed40.png": "964d151c09e9e600c2668c5cfe4ec92e51de5420083b21e75f5ac9376b15ed40",
+    "blobs/9707bfbb4de3929e4f760abf17adf003ab44f4f54757f9f413eebc3fab7d38dc.png": "9707bfbb4de3929e4f760abf17adf003ab44f4f54757f9f413eebc3fab7d38dc",
+    "blobs/9aa2983bff89555be916e3fd295fbd908c36b31f703d6086286df925b8660491.png": "9aa2983bff89555be916e3fd295fbd908c36b31f703d6086286df925b8660491",
+    "blobs/a1ba8ce1249de9a0f1fa90c3a37b94096b5c4342516a229a61d9b16eebdd5878.png": "a1ba8ce1249de9a0f1fa90c3a37b94096b5c4342516a229a61d9b16eebdd5878",
+    "blobs/a1e90e31a266d60b7a45870cdd310332e440cabb69242b0ea9d2c5e7cb927e06.png": "a1e90e31a266d60b7a45870cdd310332e440cabb69242b0ea9d2c5e7cb927e06",
+    "blobs/a30ee74438233f58e9e34febca878c861399470dd7cdf743649f4ecd9ceb398d.png": "a30ee74438233f58e9e34febca878c861399470dd7cdf743649f4ecd9ceb398d",
+    "blobs/a740d6a8729eb645b2738ef585e2c16bd9f33d3d6c06f534a015cce309a7851c.png": "a740d6a8729eb645b2738ef585e2c16bd9f33d3d6c06f534a015cce309a7851c",
+    "blobs/a85a83cdeac4b2cb37e8c3369f9774799a9915c6c747ccb5957a2ffc66a06291.png": "a85a83cdeac4b2cb37e8c3369f9774799a9915c6c747ccb5957a2ffc66a06291",
+    "blobs/a9edd4454b2e2d8290b7defe4680fcca99964016b5f5d19e331f405417af006c.png": "a9edd4454b2e2d8290b7defe4680fcca99964016b5f5d19e331f405417af006c",
+    "blobs/abcf403a9e45bacfe5bd480e4298989ef36fa574fc15f5d6c91f54877514b583.png": "abcf403a9e45bacfe5bd480e4298989ef36fa574fc15f5d6c91f54877514b583",
+    "blobs/af47939c6b2b15d1c602e7a54d92e918e58c8493ab3ff24590d96672016ba23a.png": "af47939c6b2b15d1c602e7a54d92e918e58c8493ab3ff24590d96672016ba23a",
+    "blobs/b15ad42edca8f63788327d27509bc64f2625e785bf7974f2af2673ccaba38b7d.png": "b15ad42edca8f63788327d27509bc64f2625e785bf7974f2af2673ccaba38b7d",
+    "blobs/b1c18c26c481f4fec4d285ac2bdc1d11f195f187a5a5757a78d005df8a8f9973.png": "b1c18c26c481f4fec4d285ac2bdc1d11f195f187a5a5757a78d005df8a8f9973",
+    "blobs/ba4f10da25752781c84d2a1abf8b7129770981ed43daaa9b5c986e4ccb06ecb7.png": "ba4f10da25752781c84d2a1abf8b7129770981ed43daaa9b5c986e4ccb06ecb7",
+    "blobs/ba5af06e88c3b66129ffd3664a16260909a92a2bc3ffe1a5fcb2e2ed044f5928.png": "ba5af06e88c3b66129ffd3664a16260909a92a2bc3ffe1a5fcb2e2ed044f5928",
+    "blobs/bb4ec13d6521addc074b2d998e194658c7f2c6802103846d599f4d41073818e4.png": "bb4ec13d6521addc074b2d998e194658c7f2c6802103846d599f4d41073818e4",
+    "blobs/bd89c4e957f194c058a92d272d82bc7de33e980a0f12c0df01586c82eb3d0cb5.png": "bd89c4e957f194c058a92d272d82bc7de33e980a0f12c0df01586c82eb3d0cb5",
+    "blobs/be168e154cd347a935c310b70f208764f91a7282024689aea54504d5b058def5.png": "be168e154cd347a935c310b70f208764f91a7282024689aea54504d5b058def5",
+    "blobs/c1680b7ad892ff563efc2ef77bcf1656ba748fa477a9b7de8546a47332ab6abc.png": "c1680b7ad892ff563efc2ef77bcf1656ba748fa477a9b7de8546a47332ab6abc",
+    "blobs/c25aa94047a1d75821f497f94796a317c6d6547ddc561bfab60702494b61b3f8.png": "c25aa94047a1d75821f497f94796a317c6d6547ddc561bfab60702494b61b3f8",
+    "blobs/c7de92dbaf1a596f8a62f2eeca2c3860819e704f621c614e412211e8403d4108.png": "c7de92dbaf1a596f8a62f2eeca2c3860819e704f621c614e412211e8403d4108",
+    "blobs/c92dfca01c471a2a29ce6a16354e71b1f53b91dc091ab5f2e6e3a3e7d398a8c8.png": "c92dfca01c471a2a29ce6a16354e71b1f53b91dc091ab5f2e6e3a3e7d398a8c8",
+    "blobs/cbf84aa5cb46ec1292f236680d196098c1fb9be4e81b0c56cff091bc3490314b.png": "cbf84aa5cb46ec1292f236680d196098c1fb9be4e81b0c56cff091bc3490314b",
+    "blobs/cd08f559bcf05214ce7f44b5023904b5fb8e4356d5ee4c7bdd0c26c3fc153f78.png": "cd08f559bcf05214ce7f44b5023904b5fb8e4356d5ee4c7bdd0c26c3fc153f78",
+    "blobs/d28f9a00e854d635c4078d3cfb0da615163655c2c7389a302240a5430bdd06aa.png": "d28f9a00e854d635c4078d3cfb0da615163655c2c7389a302240a5430bdd06aa",
+    "blobs/d589d17caeabf254a6f97bcce3f9af741d265d08a47718be05f5c64b5030766c.png": "d589d17caeabf254a6f97bcce3f9af741d265d08a47718be05f5c64b5030766c",
+    "blobs/d5bc1ac73843a7c6d9fe860fdc5cac7139d0c3d68748ae00d3f8e2e6c251a9bf.png": "d5bc1ac73843a7c6d9fe860fdc5cac7139d0c3d68748ae00d3f8e2e6c251a9bf",
+    "blobs/d9d8696f518b593009de827ba6668d2759e9e7092f9013423582b429e9af783c.png": "d9d8696f518b593009de827ba6668d2759e9e7092f9013423582b429e9af783c",
+    "blobs/dc40eb1d427174d799ae354164b8a0f17f2bed6f0f5ba21cecabb35edee17c44.png": "dc40eb1d427174d799ae354164b8a0f17f2bed6f0f5ba21cecabb35edee17c44",
+    "blobs/de4ab944da1886510526b65b1a5447bdd84cdd852d6db6f590bd6c1fbedb96b3.png": "de4ab944da1886510526b65b1a5447bdd84cdd852d6db6f590bd6c1fbedb96b3",
+    "blobs/de60e6807d5270db746bb9efea05fa55d760c7d9c2304d6da137c68e9aa73326.png": "de60e6807d5270db746bb9efea05fa55d760c7d9c2304d6da137c68e9aa73326",
+    "blobs/de8b6f5efbb11232baf7694e11ab6e78014027e0bbd7e0261a36cd73feddff02.png": "de8b6f5efbb11232baf7694e11ab6e78014027e0bbd7e0261a36cd73feddff02",
+    "blobs/e15f8c7a36a88a897ff676cb1ce2bf6a2b30babbb5841ed8e26d4646096970f1.png": "e15f8c7a36a88a897ff676cb1ce2bf6a2b30babbb5841ed8e26d4646096970f1",
+    "blobs/e497054f901cb8c01836a9fc5c73281e6c45e13866de991ebe9f0268f6c95bde.png": "e497054f901cb8c01836a9fc5c73281e6c45e13866de991ebe9f0268f6c95bde",
+    "blobs/e7ee40b89903b7acccb4153a08f947770e71a8bce907d837117683d65531d0d0.png": "e7ee40b89903b7acccb4153a08f947770e71a8bce907d837117683d65531d0d0",
+    "blobs/e860a4a5b445ec3ca628e0e47e76f0c6e005187590a1eb0f10810ad97c330cd6.png": "e860a4a5b445ec3ca628e0e47e76f0c6e005187590a1eb0f10810ad97c330cd6",
+    "blobs/e8aa7336a77c997259a0ebefa60aa48c1a2d5a2dfef6f3dcd3f5b048a63498e0.png": "e8aa7336a77c997259a0ebefa60aa48c1a2d5a2dfef6f3dcd3f5b048a63498e0",
+    "blobs/ef5ecf25428f391dc3ff2f8b2e1ff88e208d8910a3437152e7f497b6aa4550f0.png": "ef5ecf25428f391dc3ff2f8b2e1ff88e208d8910a3437152e7f497b6aa4550f0",
+    "blobs/f3080edb96f9a336fb2c192d5f2c5c34f8a276f8e35e36ad2d16f5b81ba720cf.png": "f3080edb96f9a336fb2c192d5f2c5c34f8a276f8e35e36ad2d16f5b81ba720cf",
+    "blobs/f45abef6b4f12518131b031a4b80ccb4e6a317a98fbec44af15a745bbdb38f5c.png": "f45abef6b4f12518131b031a4b80ccb4e6a317a98fbec44af15a745bbdb38f5c",
+    "blobs/f4f31236a65ef2c1850a701c27f764aaff8fc72db272e319ee1d58986ac73793.png": "f4f31236a65ef2c1850a701c27f764aaff8fc72db272e319ee1d58986ac73793",
+    "blobs/f945fb6b9b22731b786cc85b78bebceb46250cebad1b83fbef50fcfefb682b66.png": "f945fb6b9b22731b786cc85b78bebceb46250cebad1b83fbef50fcfefb682b66",
+    "blobs/f9e9f278a15a7cd497e3bd1b5c442c92f9f8b2e72dc152e0093d70b2a62bf808.png": "f9e9f278a15a7cd497e3bd1b5c442c92f9f8b2e72dc152e0093d70b2a62bf808",
+    "blobs/fabebc091812b39ab5884ea04b9bcb44c92466ee0c2757394bb40ebd90514188.png": "fabebc091812b39ab5884ea04b9bcb44c92466ee0c2757394bb40ebd90514188",
+    "blobs/fd011e1c5d151b8a97a83069d82fa6084b5fb27f16ec9ea37e7105ca617812aa.png": "fd011e1c5d151b8a97a83069d82fa6084b5fb27f16ec9ea37e7105ca617812aa",
+    "blobs/fde7f3d5319be73c733f9896f13dd82483a749aa9f76d55005604fb6b3557d7f.png": "fde7f3d5319be73c733f9896f13dd82483a749aa9f76d55005604fb6b3557d7f"
+  },
+  "parent_review_sha256": "7352edf4316a45891195abf24b589461f0d9392632f953abc4d9539b2bd1b45e",
+  "schema": "bb2-parent-reviewed-weapon-fits-v1"
+}

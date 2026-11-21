@@ -1,0 +1,120 @@
+{
+  "towns": {
+    "ashwick": {
+      "stock": 240,
+      "production": 24,
+      "demand": 6,
+      "base_price": 24,
+      "owner": "wardens"
+    },
+    "stonecross": {
+      "stock": 36,
+      "production": 0,
+      "demand": 8,
+      "base_price": 30,
+      "owner": "guild"
+    },
+    "dunmere": {
+      "stock": 96,
+      "production": 6,
+      "demand": 6,
+      "base_price": 30,
+      "owner": "compact"
+    }
+  },
+  "camps": {
+    "ford": {
+      "strength": 1,
+      "raid_target": "stonecross"
+    },
+    "forest": {
+      "strength": 2,
+      "raid_target": "dunmere"
+    },
+    "ridge": {
+      "strength": 2,
+      "raid_target": "ashwick"
+    }
+  },
+  "routes": [
+    {
+      "id": "grain_road",
+      "path": [
+        "ashwick",
+        "ford",
+        "stonecross"
+      ],
+      "days": [
+        1,
+        1
+      ],
+      "cargo": 48,
+      "period": 4
+    },
+    {
+      "id": "cairn_road",
+      "path": [
+        "ashwick",
+        "ridge",
+        "dunmere"
+      ],
+      "days": [
+        2,
+        1
+      ],
+      "cargo": 36,
+      "period": 6
+    },
+    {
+      "id": "wood_road",
+      "path": [
+        "dunmere",
+        "forest",
+        "stonecross"
+      ],
+      "days": [
+        2,
+        1
+      ],
+      "cargo": 30,
+      "period": 6
+    }
+  ],
+  "factions": {
+    "wardens": {
+      "name": "Ashwick Wardens",
+      "town": "ashwick",
+      "rival": "guild",
+      "treasury": 60,
+      "tax": 18,
+      "color": "8fb5ae"
+    },
+    "guild": {
+      "name": "Stonecross Guild",
+      "town": "stonecross",
+      "rival": "wardens",
+      "treasury": 20,
+      "tax": 12,
+      "color": "d7b66b"
+    },
+    "compact": {
+      "name": "Dunmere Compact",
+      "town": "dunmere",
+      "rival": "guild",
+      "treasury": 35,
+      "tax": 12,
+      "color": "a6af81"
+    }
+  },
+  "politics": {
+    "patrol_cost": 90,
+    "patrol_wage": 6,
+    "patrol_strength": 2,
+    "patrol_days": 4,
+    "recruit_food": 36,
+    "expand_food": 36,
+    "raid_cost": 12,
+    "raid_loot": 18,
+    "raid_interval": 5
+  }
+}

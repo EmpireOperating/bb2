@@ -1,0 +1,27 @@
+{
+  "status": "exploratory sprite study, not approved production artwork",
+  "provider": "openai-codex",
+  "model": "gpt-image-2-medium",
+  "request_id": "e22dc620-6f5b-4e5e-bc0a-3056f820fd8f",
+  "requested_size": "1024x1536",
+  "reported_size": "1024x1536",
+  "requested_quality": "medium",
+  "reported_quality": "low",
+  "role": "Braced, ink-edged, high-contrast unarmored base; generated from prompt using user reference only for visual direction. Not gameplay evidence.",
+  "source_reference": "/home/quatro/.hermes/cache/images/img_0c6011e05763.jpg",
+  "decoded_canvas": [
+    1024,
+    1536
+  ],
+  "contract": {
+    "canvas": [
+      1024,
+      1536
+    ],
+    "foot": [
+      512,
+      1490
+    ],
+    "pixel_size": 0.00134
+  }
+}

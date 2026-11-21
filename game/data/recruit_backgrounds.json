@@ -1,0 +1,134 @@
+{
+  "Militia": {
+    "weapons": [
+      "Spear",
+      "Sword",
+      "Crossbow"
+    ],
+    "armour": [
+      "Medium",
+      "Heavy"
+    ],
+    "styles": [
+      "Shield"
+    ],
+    "character": [
+      "Trained",
+      "Tough"
+    ]
+  },
+  "Poacher": {
+    "weapons": [
+      "Bow",
+      "Throwing"
+    ],
+    "armour": [
+      "Light"
+    ],
+    "styles": [
+      "Swift",
+      "Marksman"
+    ],
+    "character": [
+      "Fast",
+      "Vigorous"
+    ]
+  },
+  "Woodcutter": {
+    "weapons": [
+      "Polearm",
+      "Throwing"
+    ],
+    "armour": [
+      "Medium"
+    ],
+    "styles": [
+      "Power"
+    ],
+    "character": [
+      "Tough",
+      "Vigorous"
+    ]
+  },
+  "Deserter": {
+    "weapons": [
+      "Sword",
+      "Crossbow"
+    ],
+    "armour": [
+      "Medium"
+    ],
+    "styles": [
+      "Swift"
+    ],
+    "character": [
+      "Trained",
+      "Fast"
+    ]
+  },
+  "Caravan guard": {
+    "weapons": [
+      "Spear",
+      "Crossbow"
+    ],
+    "armour": [
+      "Medium"
+    ],
+    "styles": [
+      "Shield"
+    ],
+    "character": [
+      "Trained",
+      "Vigorous"
+    ]
+  },
+  "Farmhand": {
+    "weapons": [
+      "Spear",
+      "Polearm"
+    ],
+    "armour": [
+      "Light"
+    ],
+    "styles": [
+      "Power"
+    ],
+    "character": [
+      "Tough",
+      "Vigorous"
+    ]
+  },
+  "Gravedigger": {
+    "weapons": [
+      "Polearm",
+      "Crossbow"
+    ],
+    "armour": [
+      "Medium"
+    ],
+    "styles": [
+      "Shield"
+    ],
+    "character": [
+      "Tough",
+      "Trained"
+    ]
+  },
+  "Outrider": {
+    "weapons": [
+      "Bow",
+      "Sword"
+    ],
+    "armour": [
+      "Light"
+    ],
+    "styles": [
+      "Swift",
+      "Marksman"
+    ],
+    "character": [
+      "Fast",
+      "Trained"
+    ]
+  }
+}

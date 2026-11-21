@@ -1,0 +1,237 @@
+{
+	"fixture": "Only company crowns and rations are supplied. All town and band resources, patrols and shipments evolve normally; company waits at its starting town.",
+	"results": [
+		{
+			"day": 46,
+			"recovery": false,
+			"relief": {
+
+			},
+			"seed": 1,
+			"towns": {
+				"ashwick": {
+					"damage": 0,
+					"delivered": 936,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 0,
+					"stock": 30
+				},
+				"dunmere": {
+					"damage": 0,
+					"delivered": 216,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 1,
+					"stock": 18
+				},
+				"east_ashwick": {
+					"damage": 0,
+					"delivered": 960,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 0,
+					"stock": 26
+				},
+				"east_dunmere": {
+					"damage": 960,
+					"delivered": 0,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 35,
+					"stock": 0
+				},
+				"east_stonecross": {
+					"damage": 960,
+					"delivered": 0,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 33,
+					"stock": 0
+				},
+				"stonecross": {
+					"damage": 0,
+					"delivered": 56,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 13,
+					"stock": 28
+				}
+			}
+		},
+		{
+			"day": 46,
+			"recovery": true,
+			"relief": {
+				"seized": 1
+			},
+			"seed": 1,
+			"towns": {
+				"ashwick": {
+					"damage": 0,
+					"delivered": 912,
+					"raids": 1,
+					"repairs": 1,
+					"shortage_days": 0,
+					"stock": 48
+				},
+				"dunmere": {
+					"damage": 0,
+					"delivered": 246,
+					"raids": 1,
+					"repairs": 1,
+					"shortage_days": 0,
+					"stock": 36
+				},
+				"east_ashwick": {
+					"damage": 960,
+					"delivered": 0,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 36,
+					"stock": 0
+				},
+				"east_dunmere": {
+					"damage": 0,
+					"delivered": 228,
+					"raids": 1,
+					"repairs": 1,
+					"shortage_days": 1,
+					"stock": 0
+				},
+				"east_stonecross": {
+					"damage": 0,
+					"delivered": 92,
+					"raids": 1,
+					"repairs": 1,
+					"shortage_days": 39,
+					"stock": 0
+				},
+				"stonecross": {
+					"damage": 0,
+					"delivered": 136,
+					"raids": 1,
+					"repairs": 1,
+					"shortage_days": 29,
+					"stock": 10
+				}
+			}
+		},
+		{
+			"day": 46,
+			"recovery": false,
+			"relief": {
+
+			},
+			"seed": 7,
+			"towns": {
+				"ashwick": {
+					"damage": 0,
+					"delivered": 960,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 0,
+					"stock": 48
+				},
+				"dunmere": {
+					"damage": 0,
+					"delivered": 228,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 0,
+					"stock": 18
+				},
+				"east_ashwick": {
+					"damage": 0,
+					"delivered": 912,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 0,
+					"stock": 58
+				},
+				"east_dunmere": {
+					"damage": 960,
+					"delivered": 0,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 36,
+					"stock": 0
+				},
+				"east_stonecross": {
+					"damage": 960,
+					"delivered": 0,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 31,
+					"stock": 22
+				},
+				"stonecross": {
+					"damage": 742,
+					"delivered": 20,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 30,
+					"stock": 0
+				}
+			}
+		},
+		{
+			"day": 46,
+			"recovery": true,
+			"relief": {
+
+			},
+			"seed": 7,
+			"towns": {
+				"ashwick": {
+					"damage": 960,
+					"delivered": 0,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 37,
+					"stock": 0
+				},
+				"dunmere": {
+					"damage": 0,
+					"delivered": 240,
+					"raids": 1,
+					"repairs": 1,
+					"shortage_days": 0,
+					"stock": 0
+				},
+				"east_ashwick": {
+					"damage": 960,
+					"delivered": 0,
+					"raids": 1,
+					"repairs": 0,
+					"shortage_days": 37,
+					"stock": 0
+				},
+				"east_dunmere": {
+					"damage": 0,
+					"delivered": 228,
+					"raids": 1,
+					"repairs": 1,
+					"shortage_days": 1,
+					"stock": 0
+				},
+				"east_stonecross": {
+					"damage": 0,
+					"delivered": 152,
+					"raids": 1,
+					"repairs": 1,
+					"shortage_days": 36,
+					"stock": 0
+				},
+				"stonecross": {
+					"damage": 0,
+					"delivered": 152,
+					"raids": 1,
+					"repairs": 1,
+					"shortage_days": 36,
+					"stock": 0
+				}
+			}
+		}
+	]
+}

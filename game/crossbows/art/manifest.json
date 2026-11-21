@@ -1,0 +1,376 @@
+{
+  "schema": "bb2-crossbow-art-v1",
+  "icons": {
+    "crossbow": {
+      "path": "res://crossbows/art/icons/crossbow.png",
+      "sha256": "7cbcafb501b1c4dd4739f7005e022ee5d792c23236e98fb967579c41ae0c267f",
+      "dimensions": [
+        723,
+        723
+      ],
+      "slot": "weapon",
+      "identity_field": "weapon",
+      "identity_value": "crossbow"
+    },
+    "heavy_crossbow": {
+      "path": "res://crossbows/art/icons/heavy_crossbow.png",
+      "sha256": "b646792b502e6f935a202a8aaa2f80348b6637764b7acd33e745de66b1c62388",
+      "dimensions": [
+        810,
+        810
+      ],
+      "slot": "weapon",
+      "identity_field": "weapon",
+      "identity_value": "heavy_crossbow"
+    },
+    "bolts": {
+      "path": "res://crossbows/art/icons/bolts.png",
+      "sha256": "36c25d6b581b7c5a03df05f4cb345b0bd73719d14397a363961a84c1de654cec",
+      "dimensions": [
+        662,
+        662
+      ],
+      "slot": "ammo",
+      "identity_field": "ammo",
+      "identity_value": "bolts"
+    }
+  },
+  "fits": {
+    "archer": {
+      "crossbow": {
+        "path": "res://crossbows/art/fitted/archer/crossbow.png",
+        "sha256": "eaf5af5f57e6c1590a73bfd1c8065c40219591b0e23856a44bc0126cd2f585bd",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          167,
+          157
+        ]
+      },
+      "heavy_crossbow": {
+        "path": "res://crossbows/art/fitted/archer/heavy_crossbow.png",
+        "sha256": "41eed3b32c4d85bd77ada2d46e98e9ae0cdfafa555201e08f7b5437d0e6b126f",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          167,
+          157
+        ]
+      },
+      "hand_restore": {
+        "path": "res://crossbows/art/fitted/archer/hand-restore.png",
+        "sha256": "0594207ebdb25c7dc9c4a3f1f6da11a6cad25bb4cd0ff62f37693c410ba6b8b5",
+        "dimensions": [
+          256,
+          320
+        ]
+      },
+      "bolts": {
+        "path": "res://crossbows/art/fitted/archer/bolts.png",
+        "sha256": "67ff4b9961b195ba842ba3e039a09659d5187a1c9792e7023c72e1eec455b28b",
+        "dimensions": [
+          256,
+          320
+        ]
+      }
+    },
+    "duelist": {
+      "crossbow": {
+        "path": "res://crossbows/art/fitted/duelist/crossbow.png",
+        "sha256": "ac85eb15fbd0ad531b3455eb784d6202c06086123dc565ddb9bf18383fac5e1b",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          222,
+          158
+        ]
+      },
+      "heavy_crossbow": {
+        "path": "res://crossbows/art/fitted/duelist/heavy_crossbow.png",
+        "sha256": "d8fb1b51888ce775576900e5bc6b14debe5acdf8437b003b2466a0fb7a4a9353",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          222,
+          158
+        ]
+      },
+      "hand_restore": {
+        "path": "res://crossbows/art/fitted/duelist/hand-restore.png",
+        "sha256": "3789ec1ea3eeb194fe31f3e46f75cededaed09d2bc95d6180f30c2875eea9f26",
+        "dimensions": [
+          256,
+          320
+        ]
+      },
+      "bolts": {
+        "path": "res://crossbows/art/fitted/duelist/bolts.png",
+        "sha256": "67ff4b9961b195ba842ba3e039a09659d5187a1c9792e7023c72e1eec455b28b",
+        "dimensions": [
+          256,
+          320
+        ]
+      }
+    },
+    "medic": {
+      "crossbow": {
+        "path": "res://crossbows/art/fitted/medic/crossbow.png",
+        "sha256": "149190f4087d18ab0e6d514ddebb2504a8ba3a35df3db0650bfecfe23f59207a",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          193,
+          110
+        ]
+      },
+      "heavy_crossbow": {
+        "path": "res://crossbows/art/fitted/medic/heavy_crossbow.png",
+        "sha256": "e490c6fe42e88d3e44d3031a7059bc3dbc18790c4208db21fccd871ed1e0a703",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          193,
+          110
+        ]
+      },
+      "hand_restore": {
+        "path": "res://crossbows/art/fitted/medic/hand-restore.png",
+        "sha256": "aa947f9431409f88f664b7fda465bf09164a5191081451fa3d9a702741027817",
+        "dimensions": [
+          256,
+          320
+        ]
+      },
+      "bolts": {
+        "path": "res://crossbows/art/fitted/medic/bolts.png",
+        "sha256": "3c832d375caa45cb8f14bc8c26cdfd8695f67760b0b222af27f2c320a669b8ab",
+        "dimensions": [
+          256,
+          320
+        ]
+      }
+    },
+    "occultist": {
+      "crossbow": {
+        "path": "res://crossbows/art/fitted/occultist/crossbow.png",
+        "sha256": "ef009a220fcaa0461f9d84b53619fd5895f9cfaa0a466b687fcacccef10361a0",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          202,
+          62
+        ]
+      },
+      "heavy_crossbow": {
+        "path": "res://crossbows/art/fitted/occultist/heavy_crossbow.png",
+        "sha256": "d2dcbdb9e50597dba9a380672765f6242e4f4129de3f7294adc89b3187a4b1a4",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          202,
+          62
+        ]
+      },
+      "hand_restore": {
+        "path": "res://crossbows/art/fitted/occultist/hand-restore.png",
+        "sha256": "c56bc09da314954d113745e20ffa42055dba5b7e340f67a2ab998a814bc3b31a",
+        "dimensions": [
+          256,
+          320
+        ]
+      },
+      "bolts": {
+        "path": "res://crossbows/art/fitted/occultist/bolts.png",
+        "sha256": "67ff4b9961b195ba842ba3e039a09659d5187a1c9792e7023c72e1eec455b28b",
+        "dimensions": [
+          256,
+          320
+        ]
+      }
+    },
+    "polearm": {
+      "crossbow": {
+        "path": "res://crossbows/art/fitted/polearm/crossbow.png",
+        "sha256": "dd95cb6bf9e54ff016d5dd8823434d5478d078d82b1dccef285b8805b2f4b931",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          177,
+          174
+        ]
+      },
+      "heavy_crossbow": {
+        "path": "res://crossbows/art/fitted/polearm/heavy_crossbow.png",
+        "sha256": "c6c7a51038bcfc146dfdb73df3d7ae9e08bccfe4a45e69b2d05e4537af290d7d",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          177,
+          174
+        ]
+      },
+      "hand_restore": {
+        "path": "res://crossbows/art/fitted/polearm/hand-restore.png",
+        "sha256": "e81dd4bf9db7919b506bc2a27d41c324883646ac372cb7f53d6803800343f15f",
+        "dimensions": [
+          256,
+          320
+        ]
+      },
+      "bolts": {
+        "path": "res://crossbows/art/fitted/polearm/bolts.png",
+        "sha256": "3c832d375caa45cb8f14bc8c26cdfd8695f67760b0b222af27f2c320a669b8ab",
+        "dimensions": [
+          256,
+          320
+        ]
+      }
+    },
+    "shieldbearer": {
+      "crossbow": {
+        "path": "res://crossbows/art/fitted/shieldbearer/crossbow.png",
+        "sha256": "efe1e5cc8c5f65ca6ad6ba870a3348733d4629a8c9196cbc3684ab1ad170066a",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          202,
+          139
+        ]
+      },
+      "heavy_crossbow": {
+        "path": "res://crossbows/art/fitted/shieldbearer/heavy_crossbow.png",
+        "sha256": "932794e18a9be91396d42c321c6adfd7b71e10a180fb13e002f8784ff54168f0",
+        "dimensions": [
+          384,
+          320
+        ],
+        "grip_anchor": [
+          202,
+          139
+        ]
+      },
+      "hand_restore": {
+        "path": "res://crossbows/art/fitted/shieldbearer/hand-restore.png",
+        "sha256": "f0ac6e631ffac192b19e2e154b3cf83468dd058fd9fc0c591a8361b269584026",
+        "dimensions": [
+          256,
+          320
+        ]
+      },
+      "bolts": {
+        "path": "res://crossbows/art/fitted/shieldbearer/bolts.png",
+        "sha256": "67ff4b9961b195ba842ba3e039a09659d5187a1c9792e7023c72e1eec455b28b",
+        "dimensions": [
+          256,
+          320
+        ]
+      }
+    },
+    "highwayman": {
+      "crossbow": {
+        "path": "res://crossbows/art/fitted/highwayman/crossbow.png",
+        "sha256": "5f3564dc99f687bf00eb591f4393a093811617c724cd89df5d4bd4b605d0debd",
+        "dimensions": [
+          1024,
+          887
+        ],
+        "grip_anchor": [
+          485,
+          387
+        ]
+      },
+      "heavy_crossbow": {
+        "path": "res://crossbows/art/fitted/highwayman/heavy_crossbow.png",
+        "sha256": "cd24c221e3518a0d60a6c0dd69c409b987d42968f608a4ec67e562f85038cb8a",
+        "dimensions": [
+          1024,
+          887
+        ],
+        "grip_anchor": [
+          485,
+          387
+        ]
+      },
+      "hand_restore": {
+        "path": "res://crossbows/art/fitted/highwayman/hand-restore.png",
+        "sha256": "777defe97fb726071b3e0424f2f1ba429dcc1ff6353992723c0b7ace8ed4435f",
+        "dimensions": [
+          591,
+          887
+        ]
+      },
+      "bolts": {
+        "path": "res://crossbows/art/fitted/highwayman/bolts.png",
+        "sha256": "b4100e8a6c40d78a6347bd85b11479bbf5cba875f48a2debfe76cb5e34424613",
+        "dimensions": [
+          591,
+          887
+        ]
+      }
+    },
+    "raider": {
+      "crossbow": {
+        "path": "res://crossbows/art/fitted/raider/crossbow.png",
+        "sha256": "de6970742cdc63f02d4f663ef0525fd5a5b249b15563177e5680f8e599c222cd",
+        "dimensions": [
+          1024,
+          887
+        ],
+        "grip_anchor": [
+          454,
+          400
+        ]
+      },
+      "heavy_crossbow": {
+        "path": "res://crossbows/art/fitted/raider/heavy_crossbow.png",
+        "sha256": "fc7c62c0a213e3ffbbbce40efc84a288d60faf7f3d7439c03e9ec1d7dcf6e7a4",
+        "dimensions": [
+          1024,
+          887
+        ],
+        "grip_anchor": [
+          454,
+          400
+        ]
+      },
+      "hand_restore": {
+        "path": "res://crossbows/art/fitted/raider/hand-restore.png",
+        "sha256": "bed7f51149cc11e121da72f713fdaedb6cca30059515c6fe3e8ce2614fc79407",
+        "dimensions": [
+          592,
+          887
+        ]
+      },
+      "bolts": {
+        "path": "res://crossbows/art/fitted/raider/bolts.png",
+        "sha256": "588c60e74f38d1ac31b760a9952bb3e66465bfa50a53b8cfe088ac3893160eb3",
+        "dimensions": [
+          592,
+          887
+        ]
+      }
+    }
+  }
+}

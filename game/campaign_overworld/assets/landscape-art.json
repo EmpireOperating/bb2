@@ -1,0 +1,403 @@
+{
+  "provider": "openai-codex",
+  "requested_model": "gpt-image-2-medium",
+  "reported_model": "gpt-image-2-medium",
+  "requested_quality": "medium",
+  "reported_quality": "low",
+  "sources": {
+    "materials": {
+      "path": "art-source/polish-materials.png",
+      "sha256": "c5bae6815ae7dda1f71191262127b86484048c4c96a35a8628eb9bdf05ead09b",
+      "request_id": "763f58d3-88c4-452f-bb26-42603aa72409",
+      "reported_size": "1254x1254",
+      "requested_size": "1024x1024"
+    },
+    "landscape": {
+      "path": "art-source/polish-landscape.png",
+      "sha256": "3366be9c70e85877a98d51c6ee6fb7c7c33f064ad2c95c7e2d0da29305ff94e6",
+      "request_id": "99924170-530e-42a2-9036-12dbf497c22f",
+      "reported_size": "1671x941",
+      "requested_size": "1536x1024"
+    },
+    "bridges": {
+      "path": "art-source/polish-bridges.png",
+      "sha256": "13e40b13197cfcdd3c20dd057d5890fec11e59182230b5ee42f133e477f1770f",
+      "request_id": "ce4be734-dc93-4740-86b1-575fb8dbfa4c",
+      "reported_size": "1671x941",
+      "requested_size": "1536x1024"
+    }
+  },
+  "assets": [
+    {
+      "name": "ground_meadow",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "b1277a0ef225801bcbc05d726037492e96b9a37ab8c798862b544c1163aafdac",
+      "source": "materials",
+      "crop": [
+        12,
+        12,
+        615,
+        615
+      ],
+      "process": "512px resample; periodic-plus-smooth FFT decomposition; opposite-edge averaging and quantization; no mirrored mosaic"
+    },
+    {
+      "name": "ground_rock",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "1da89c17f3efad87e5c664a0c3bb7a4ef5c43344fe2f98a224bde6b04f5fdd3a",
+      "source": "materials",
+      "crop": [
+        639,
+        12,
+        1242,
+        615
+      ],
+      "process": "512px resample; periodic-plus-smooth FFT decomposition; opposite-edge averaging and quantization; no mirrored mosaic"
+    },
+    {
+      "name": "ground_earth",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "e979a204bd73919eb6c608112c0727de3f21920b99bd6ab3736af86137b04df7",
+      "source": "materials",
+      "crop": [
+        12,
+        639,
+        615,
+        1242
+      ],
+      "process": "512px resample; periodic-plus-smooth FFT decomposition; opposite-edge averaging and quantization; no mirrored mosaic"
+    },
+    {
+      "name": "ground_water",
+      "size": [
+        512,
+        512
+      ],
+      "sha256": "9d537846a5ed4d35d8dce634c6f08830c507f1844a79779439337d4c7c0243f4",
+      "source": "materials",
+      "crop": [
+        639,
+        639,
+        1242,
+        1242
+      ],
+      "process": "512px resample; periodic-plus-smooth FFT decomposition; opposite-edge averaging and quantization; no mirrored mosaic"
+    },
+    {
+      "name": "hill_01",
+      "size": [
+        810,
+        222
+      ],
+      "sha256": "99e50db2658602105805d8d672e3b8004d99b9ed102bbf966fb8cbcc88cdd07c",
+      "source": "landscape",
+      "cell_crop": [
+        0,
+        0,
+        835,
+        470
+      ],
+      "alpha_bbox": [
+        17,
+        174,
+        819,
+        388
+      ],
+      "margin": 4,
+      "foot_anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "name": "hill_02",
+      "size": [
+        811,
+        208
+      ],
+      "sha256": "cc8061abb13b6579c5655209e95ac175d3263459c3bf3509a9cb50cde9001c70",
+      "source": "landscape",
+      "cell_crop": [
+        835,
+        0,
+        1671,
+        470
+      ],
+      "alpha_bbox": [
+        17,
+        178,
+        820,
+        378
+      ],
+      "margin": 4,
+      "foot_anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "name": "bank_01",
+      "size": [
+        728,
+        140
+      ],
+      "sha256": "e59552372cfc62d636d88b06a52c5bcf767d330b7fc4c84061a652ba6fadd05e",
+      "source": "landscape",
+      "cell_crop": [
+        0,
+        470,
+        835,
+        941
+      ],
+      "alpha_bbox": [
+        53,
+        184,
+        773,
+        316
+      ],
+      "margin": 4,
+      "foot_anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "name": "bank_02",
+      "size": [
+        728,
+        164
+      ],
+      "sha256": "bc760f751d59722e090a37ab395456d6e5c8157b3c78a1d2ebaa8de86f4b7811",
+      "source": "landscape",
+      "cell_crop": [
+        835,
+        470,
+        1671,
+        941
+      ],
+      "alpha_bbox": [
+        53,
+        160,
+        773,
+        316
+      ],
+      "margin": 4,
+      "foot_anchor": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "name": "bridge_h",
+      "size": [
+        866,
+        245
+      ],
+      "sha256": "65b697c9a5c1e52ccb7de8557409041dfbc1fa0222b0f80d42d3a8365cfb04ec",
+      "source": "bridges",
+      "crop": [
+        380,
+        60,
+        1290,
+        310
+      ],
+      "source_axis_a": [
+        428.0,
+        153.5
+      ],
+      "source_axis_b": [
+        1240.0,
+        153.5
+      ],
+      "source_inner_floor_width_at_exits": 43.0,
+      "x_knots_full": [
+        428.0,
+        500.0,
+        550.0,
+        600.0,
+        650.0,
+        700.0,
+        835.0,
+        975.0,
+        1010.0,
+        1060.0,
+        1110.0,
+        1160.0,
+        1240.0
+      ],
+      "far_deck_y_full": [
+        132.0,
+        126.0,
+        125.0,
+        121.0,
+        112.0,
+        112.0,
+        112.0,
+        112.0,
+        112.0,
+        121.0,
+        125.0,
+        126.0,
+        132.0
+      ],
+      "near_deck_y_full": [
+        175.0,
+        166.0,
+        165.0,
+        159.0,
+        148.0,
+        147.0,
+        147.0,
+        147.0,
+        148.0,
+        159.0,
+        165.0,
+        166.0,
+        175.0
+      ],
+      "residual_crown_y": [
+        0.0,
+        -1.0,
+        -2.0,
+        -4.0,
+        -7.0,
+        -9.0,
+        -10.0,
+        -9.0,
+        -7.0,
+        -4.0,
+        -2.0,
+        -1.0,
+        0.0
+      ],
+      "target_bands_y": [
+        0.0,
+        20.0,
+        48.0,
+        180.0,
+        244.0
+      ],
+      "source_bands": [
+        "60",
+        "far_deck_y-26",
+        "far_deck_y",
+        "near_deck_y",
+        "285"
+      ],
+      "interpolation": "C1 cosine along X; piecewise-linear inverse Y; premultiplied-alpha bilinear",
+      "alpha_bbox": [
+        27,
+        7,
+        885,
+        244
+      ],
+      "frame_shift": [
+        -23,
+        -3
+      ],
+      "margin": 4,
+      "process": "Local curved-floor normalization; no rotation/reflection/repaint; source stonework and light retained."
+    },
+    {
+      "name": "bridge_v",
+      "size": [
+        555,
+        899
+      ],
+      "sha256": "17c7dd82970cba1d6cc103599a4163e2df69c56044225374188106f3b601c6cd",
+      "source": "bridges",
+      "crop": [
+        690,
+        390,
+        970,
+        885
+      ],
+      "y_knots_full": [
+        423.0,
+        470.0,
+        530.0,
+        590.0,
+        650.0,
+        710.0,
+        775.0,
+        838.0
+      ],
+      "deck_center_x_full": [
+        837.0,
+        827.0,
+        815.0,
+        804.0,
+        799.0,
+        798.0,
+        797.0,
+        790.0
+      ],
+      "retained_lateral_curve": 0.15,
+      "source_axis_a": [
+        837.0,
+        423.0
+      ],
+      "source_axis_b": [
+        790.0,
+        838.0
+      ],
+      "source_deck_width_before_projection": 96.0,
+      "output_origin": [
+        300.0,
+        70.0
+      ],
+      "along_scale": 1.9,
+      "across_scale": 2.5,
+      "interpolation": "C1 cosine source center; row-shear inverse map; premultiplied-alpha bilinear",
+      "alpha_bbox": [
+        86,
+        33,
+        633,
+        924
+      ],
+      "frame_shift": [
+        -82,
+        -29
+      ],
+      "margin": 4,
+      "process": "Local road centerline normalization; source stonework/light retained; no rotation/reflection/repaint; complete isolated crop."
+    }
+  ],
+  "bridges": {
+    "bridge_h": {
+      "axis_a": [
+        25,
+        111
+      ],
+      "axis_b": [
+        837,
+        111
+      ],
+      "source_deck_width": 188.0,
+      "painted_inner_floor_width": 132.0,
+      "width_definition": "Approximate 188px deck envelope including raised parapets and shoulders; inner visible paving is 132px. Renderer maps envelope to physical 48px width.",
+      "calibration": "Local floor de-crown before bounded overhead expansion; gentle residual crown. Endpoints are inner-floor centers; width is parapet-inclusive authored approximation, NOT collision/navigation authority."
+    },
+    "bridge_v": {
+      "axis_a": [
+        218,
+        41
+      ],
+      "axis_b": [
+        218,
+        829.5
+      ],
+      "source_deck_width": 240.0,
+      "calibration": "Inspected road center samples gently row-sheared to registered endpoints; 96px raw transverse floor width. Authored floor approximation, NOT collision/navigation authority."
+    }
+  }
+}

@@ -1,0 +1,806 @@
+[
+  {
+    "alive": 4,
+    "arrears": 0,
+    "battles": [],
+    "contracts": [],
+    "crowns": 51,
+    "day": 31,
+    "ending": "The Ashen Company endures.",
+    "hires": [],
+    "key": "control-gear-1",
+    "max_field": 4,
+    "purchases": [
+      {
+        "day": 13,
+        "definition": "round_shield",
+        "price": 27,
+        "soldier": 3
+      },
+      {
+        "day": 13,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 2
+      },
+      {
+        "day": 13,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 0
+      },
+      {
+        "day": 18,
+        "definition": "round_shield",
+        "price": 28,
+        "soldier": 0
+      },
+      {
+        "day": 18,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 3
+      },
+      {
+        "day": 18,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 1
+      },
+      {
+        "day": 19,
+        "definition": "crossbow",
+        "price": 117,
+        "soldier": 1
+      },
+      {
+        "day": 19,
+        "definition": "bolts",
+        "price": 16,
+        "soldier": 1
+      },
+      {
+        "day": 22,
+        "definition": "hammer",
+        "price": 114,
+        "soldier": 2
+      },
+      {
+        "day": 25,
+        "definition": "round_shield",
+        "price": 30,
+        "soldier": 2
+      },
+      {
+        "day": 25,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 2
+      },
+      {
+        "day": 26,
+        "definition": "spear",
+        "price": 48,
+        "soldier": 3
+      }
+    ],
+    "seed": 1.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_crowns": 138,
+    "wins": 8
+  },
+  {
+    "alive": 5,
+    "arrears": 0,
+    "battles": [],
+    "contracts": [],
+    "crowns": 67,
+    "day": 31,
+    "ending": "The Ashen Company endures.",
+    "hires": [
+      {
+        "day": 19,
+        "id": "dunmere_recruit_2_1",
+        "price": 113
+      }
+    ],
+    "key": "control-gear-198",
+    "max_field": 5,
+    "purchases": [
+      {
+        "day": 11,
+        "definition": "round_shield",
+        "price": 30,
+        "soldier": 2
+      },
+      {
+        "day": 11,
+        "definition": "simple_helm",
+        "price": 27,
+        "soldier": 1
+      },
+      {
+        "day": 11,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 0
+      },
+      {
+        "day": 14,
+        "definition": "crossbow",
+        "price": 124,
+        "soldier": 3
+      },
+      {
+        "day": 14,
+        "definition": "bolts",
+        "price": 17,
+        "soldier": 3
+      },
+      {
+        "day": 18,
+        "definition": "round_shield",
+        "price": 31,
+        "soldier": 1
+      },
+      {
+        "day": 18,
+        "definition": "simple_helm",
+        "price": 28,
+        "soldier": 2
+      },
+      {
+        "day": 18,
+        "definition": "linen",
+        "price": 26,
+        "soldier": 1
+      },
+      {
+        "day": 19,
+        "definition": "simple_helm",
+        "price": 20,
+        "soldier": 3
+      },
+      {
+        "day": 19,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 4
+      },
+      {
+        "day": 19,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 2
+      },
+      {
+        "day": 22,
+        "definition": "spear",
+        "price": 48,
+        "soldier": 4
+      },
+      {
+        "day": 22,
+        "definition": "linen",
+        "price": 19,
+        "soldier": 3
+      },
+      {
+        "day": 25,
+        "definition": "round_shield",
+        "price": 32,
+        "soldier": 4
+      },
+      {
+        "day": 25,
+        "definition": "linen",
+        "price": 28,
+        "soldier": 4
+      }
+    ],
+    "seed": 198.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_crowns": 238,
+    "wins": 8
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "battles": [],
+    "contracts": [],
+    "crowns": 37,
+    "day": 31,
+    "ending": "The Ashen Company endures.",
+    "hires": [],
+    "key": "control-gear-592",
+    "max_field": 4,
+    "purchases": [
+      {
+        "day": 11,
+        "definition": "round_shield",
+        "price": 24,
+        "soldier": 1
+      },
+      {
+        "day": 14,
+        "definition": "crossbow",
+        "price": 113,
+        "soldier": 1
+      },
+      {
+        "day": 14,
+        "definition": "bolts",
+        "price": 13,
+        "soldier": 1
+      },
+      {
+        "day": 18,
+        "definition": "round_shield",
+        "price": 28,
+        "soldier": 3
+      },
+      {
+        "day": 18,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 0
+      },
+      {
+        "day": 18,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 0
+      },
+      {
+        "day": 18,
+        "definition": "simple_helm",
+        "price": 20,
+        "soldier": 2
+      },
+      {
+        "day": 19,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 3
+      },
+      {
+        "day": 19,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 1
+      },
+      {
+        "day": 19,
+        "definition": "leather",
+        "price": 80,
+        "soldier": 0
+      },
+      {
+        "day": 21,
+        "definition": "hammer",
+        "price": 114,
+        "soldier": 3
+      },
+      {
+        "day": 25,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 2
+      },
+      {
+        "day": 25,
+        "definition": "leather",
+        "price": 85,
+        "soldier": 1
+      }
+    ],
+    "seed": 592.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_crowns": 164,
+    "wins": 8
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "battles": [],
+    "contracts": [],
+    "crowns": 27,
+    "day": 31,
+    "ending": "The Ashen Company endures.",
+    "hires": [],
+    "key": "control-gear-789",
+    "max_field": 4,
+    "purchases": [
+      {
+        "day": 11,
+        "definition": "round_shield",
+        "price": 30,
+        "soldier": 2
+      },
+      {
+        "day": 11,
+        "definition": "simple_helm",
+        "price": 27,
+        "soldier": 1
+      },
+      {
+        "day": 11,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 0
+      },
+      {
+        "day": 11,
+        "definition": "round_shield",
+        "price": 22,
+        "soldier": 1
+      },
+      {
+        "day": 13,
+        "definition": "crossbow",
+        "price": 124,
+        "soldier": 2
+      },
+      {
+        "day": 13,
+        "definition": "bolts",
+        "price": 17,
+        "soldier": 2
+      },
+      {
+        "day": 17,
+        "definition": "simple_helm",
+        "price": 28,
+        "soldier": 2
+      },
+      {
+        "day": 17,
+        "definition": "linen",
+        "price": 26,
+        "soldier": 1
+      },
+      {
+        "day": 18,
+        "definition": "spear",
+        "price": 48,
+        "soldier": 0
+      },
+      {
+        "day": 18,
+        "definition": "round_shield",
+        "price": 22,
+        "soldier": 0
+      },
+      {
+        "day": 21,
+        "definition": "hammer",
+        "price": 123,
+        "soldier": 3
+      },
+      {
+        "day": 25,
+        "definition": "linen",
+        "price": 27,
+        "soldier": 2
+      },
+      {
+        "day": 25,
+        "definition": "leather",
+        "price": 91,
+        "soldier": 0
+      }
+    ],
+    "seed": 789.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_crowns": 247,
+    "wins": 7
+  },
+  {
+    "alive": 6,
+    "arrears": 0,
+    "battles": [
+      {
+        "commands_by_initial_weapon": {
+          "crossbow/basic": 2,
+          "crossbow/special": 2,
+          "militia_spear/basic": 5,
+          "shortsword/basic": 3
+        },
+        "day": 22,
+        "deaths": 0,
+        "enemies": "Outlaws",
+        "field": 4,
+        "kind": "clear",
+        "map": "forest",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "colossus",
+            "leverage"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 3
+      }
+    ],
+    "contracts": [
+      {
+        "day": 22,
+        "kind": "clear",
+        "pay": 236,
+        "result": "victory"
+      }
+    ],
+    "crowns": 58,
+    "day": 31,
+    "ending": "The Ashen Company endures.",
+    "hires": [
+      {
+        "day": 23,
+        "id": "stonecross_recruit_3_0",
+        "price": 122
+      },
+      {
+        "day": 23,
+        "id": "stonecross_recruit_3_1",
+        "price": 134
+      }
+    ],
+    "key": "control-gear-986",
+    "max_field": 6,
+    "purchases": [
+      {
+        "day": 14,
+        "definition": "round_shield",
+        "price": 27,
+        "soldier": 2
+      },
+      {
+        "day": 14,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 0
+      },
+      {
+        "day": 16,
+        "definition": "round_shield",
+        "price": 28,
+        "soldier": 1
+      },
+      {
+        "day": 16,
+        "definition": "simple_helm",
+        "price": 25,
+        "soldier": 3
+      },
+      {
+        "day": 18,
+        "definition": "crossbow",
+        "price": 117,
+        "soldier": 0
+      },
+      {
+        "day": 18,
+        "definition": "bolts",
+        "price": 16,
+        "soldier": 0
+      },
+      {
+        "day": 18,
+        "definition": "linen",
+        "price": 24,
+        "soldier": 0
+      },
+      {
+        "day": 22,
+        "definition": "round_shield",
+        "price": 29,
+        "soldier": 3
+      },
+      {
+        "day": 22,
+        "definition": "linen",
+        "price": 25,
+        "soldier": 1
+      },
+      {
+        "day": 28,
+        "definition": "leather",
+        "price": 78,
+        "soldier": 0
+      }
+    ],
+    "seed": 986.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_crowns": 126,
+    "wins": 9
+  },
+  {
+    "alive": 4,
+    "arrears": 0,
+    "battles": [],
+    "contracts": [],
+    "crowns": 68,
+    "day": 31,
+    "ending": "The Ashen Company endures.",
+    "hires": [],
+    "key": "control-gear-1183",
+    "max_field": 4,
+    "purchases": [
+      {
+        "day": 11,
+        "definition": "round_shield",
+        "price": 29,
+        "soldier": 3
+      },
+      {
+        "day": 13,
+        "definition": "crossbow",
+        "price": 122,
+        "soldier": 3
+      },
+      {
+        "day": 18,
+        "definition": "bolts",
+        "price": 17,
+        "soldier": 3
+      },
+      {
+        "day": 18,
+        "definition": "round_shield",
+        "price": 30,
+        "soldier": 0
+      },
+      {
+        "day": 18,
+        "definition": "simple_helm",
+        "price": 27,
+        "soldier": 0
+      },
+      {
+        "day": 19,
+        "definition": "hammer",
+        "price": 121,
+        "soldier": 0
+      },
+      {
+        "day": 22,
+        "definition": "simple_helm",
+        "price": 28,
+        "soldier": 3
+      },
+      {
+        "day": 22,
+        "definition": "linen",
+        "price": 27,
+        "soldier": 1
+      },
+      {
+        "day": 23,
+        "definition": "linen",
+        "price": 20,
+        "soldier": 2
+      },
+      {
+        "day": 25,
+        "definition": "leather",
+        "price": 91,
+        "soldier": 0
+      },
+      {
+        "day": 27,
+        "definition": "spear",
+        "price": 48,
+        "soldier": 2
+      }
+    ],
+    "seed": 1183.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_crowns": 195,
+    "wins": 7
+  },
+  {
+    "alive": 6,
+    "arrears": 0,
+    "battles": [
+      {
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 6,
+          "shortbow/special": 4,
+          "shortsword/basic": 5,
+          "shortsword/special": 1
+        },
+        "day": 22,
+        "deaths": 0,
+        "enemies": "Outlaws",
+        "field": 4,
+        "kind": "clear",
+        "map": "forest",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "fast_adaptation",
+            "colossus"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 5
+      },
+      {
+        "commands_by_initial_weapon": {
+          "bolas/basic": 3,
+          "crossbow/basic": 5,
+          "crossbow/special": 1,
+          "militia_spear/basic": 10,
+          "shortbow/special": 3,
+          "shortsword/basic": 8,
+          "shortsword/special": 1
+        },
+        "day": 27,
+        "deaths": 1,
+        "enemies": "Outlaws",
+        "field": 6,
+        "kind": "clear",
+        "map": "forest",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation",
+            "shield_expert"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation",
+            "pathfinder"
+          ],
+          "2": [],
+          "3": [],
+          "4": [
+            "fast_adaptation",
+            "colossus"
+          ],
+          "5": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 6
+      }
+    ],
+    "contracts": [
+      {
+        "day": 22,
+        "kind": "clear",
+        "pay": 226,
+        "result": "victory"
+      },
+      {
+        "day": 27,
+        "kind": "clear",
+        "pay": 233,
+        "result": "victory"
+      }
+    ],
+    "crowns": 112,
+    "day": 31,
+    "ending": "The Ashen Company endures.",
+    "hires": [
+      {
+        "day": 23,
+        "id": "dunmere_recruit_3_1",
+        "price": 128
+      },
+      {
+        "day": 27,
+        "id": "stonecross_recruit_3_0",
+        "price": 119
+      },
+      {
+        "day": 28,
+        "id": "dunmere_recruit_3_0",
+        "price": 150
+      }
+    ],
+    "key": "control-gear-1380",
+    "max_field": 6,
+    "purchases": [
+      {
+        "day": 15,
+        "definition": "round_shield",
+        "price": 30,
+        "soldier": 1
+      },
+      {
+        "day": 15,
+        "definition": "simple_helm",
+        "price": 27,
+        "soldier": 2
+      },
+      {
+        "day": 15,
+        "definition": "linen",
+        "price": 22,
+        "soldier": 0
+      },
+      {
+        "day": 16,
+        "definition": "linen",
+        "price": 26,
+        "soldier": 2
+      },
+      {
+        "day": 18,
+        "definition": "round_shield",
+        "price": 22,
+        "soldier": 2
+      },
+      {
+        "day": 23,
+        "definition": "linen",
+        "price": 20,
+        "soldier": 3
+      },
+      {
+        "day": 27,
+        "definition": "crossbow",
+        "price": 122,
+        "soldier": 0
+      },
+      {
+        "day": 28,
+        "definition": "round_shield",
+        "price": 24,
+        "soldier": 0
+      },
+      {
+        "day": 28,
+        "definition": "simple_helm",
+        "price": 21,
+        "soldier": 6
+      },
+      {
+        "day": 29,
+        "definition": "linen",
+        "price": 20,
+        "soldier": 4
+      }
+    ],
+    "seed": 1380.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_crowns": 126,
+    "wins": 9
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "foot": [
+    512,
+    1490
+  ],
+  "polygons": [
+    [
+      [
+        486,
+        150
+      ],
+      [
+        555,
+        104
+      ],
+      [
+        654,
+        108
+      ],
+      [
+        681,
+        205
+      ],
+      [
+        647,
+        281
+      ],
+      [
+        579,
+        323
+      ],
+      [
+        533,
+        361
+      ],
+      [
+        475,
+        316
+      ],
+      [
+        468,
+        240
+      ]
+    ],
+    [
+      [
+        213,
+        437
+      ],
+      [
+        257,
+        451
+      ],
+      [
+        307,
+        495
+      ],
+      [
+        283,
+        544
+      ],
+      [
+        256,
+        500
+      ]
+    ],
+    [
+      [
+        790,
+        502
+      ],
+      [
+        842,
+        509
+      ],
+      [
+        879,
+        557
+      ],
+      [
+        861,
+        625
+      ],
+      [
+        825,
+        650
+      ],
+      [
+        822,
+        591
+      ]
+    ]
+  ],
+  "recipe": "foundation_skin_pallor_v1",
+  "recipe_sha256": "be344e89a803123e674300c0869bbc0016b0cf305328d4eebb68233263d335ec",
+  "rights": "Derivative of sealed in-project painted foundation; originals immutable. Locally processed; no service/provider spend. Not newly painted skull anatomy.",
+  "rows": [
+    {
+      "alpha_exact": true,
+      "changed_rgb_pixels": 39695,
+      "output": "burial_foundation.png",
+      "output_sha256": "7a0c6c35c9b48dfcf78fb34eb3b19ec8c15ea75b12e774f12a85e447dc75dd78",
+      "source": "sprite_study/assets/characters/foundation.png",
+      "source_sha256": "fe00b979cf2fe7739b98913add48eb579a8072c810d5c2bca60e8a6619a10ead"
+    },
+    {
+      "alpha_exact": true,
+      "changed_rgb_pixels": 35935,
+      "output": "burial_foundation_helmet.png",
+      "output_sha256": "9e99c3b8bb903a802937eff82ca448660b47422c481e82ce73a80670c4ac483b",
+      "source": "sprite_study/assets/characters/foundation_helmet.png",
+      "source_sha256": "e820ac150e455aa739ce68ab85f5631bc059b1764b5c684cf0abbab73e7a1c10"
+    },
+    {
+      "alpha_exact": true,
+      "changed_rgb_pixels": 43890,
+      "output": "burial_foundation_copper.png",
+      "output_sha256": "d5f8bf05e4f5a74f7944caef71cba22c59351661badb345e32bc1cfce822ab80",
+      "source": "company_loop/assets/characters/foundation_copper.png",
+      "source_sha256": "ecbdc855ec7d06c9833d1e771b34800820a729572cd43ecf5117e30be338880c"
+    },
+    {
+      "alpha_exact": true,
+      "changed_rgb_pixels": 38727,
+      "output": "burial_foundation_copper_helmet.png",
+      "output_sha256": "85d969dabda468fcf8ba562d4244e61d26d7e11019c6017b55e7131a663a2e63",
+      "source": "company_loop/assets/characters/foundation_copper_helmet.png",
+      "source_sha256": "ae8d3c4a95f01484599e9f915937216c985ba8ac8506d368946050ec22a5502a"
+    },
+    {
+      "alpha_exact": true,
+      "changed_rgb_pixels": 42478,
+      "output": "burial_foundation_silver.png",
+      "output_sha256": "51975670e064cc71f7b4fed315fc0f81da0d632900b9cc1015628156f081653a",
+      "source": "company_loop/assets/characters/foundation_silver.png",
+      "source_sha256": "0b74972df3672918c9cfcc2b19df568db2e77fe2996894041c8ad760362a0de2"
+    },
+    {
+      "alpha_exact": true,
+      "changed_rgb_pixels": 37756,
+      "output": "burial_foundation_silver_helmet.png",
+      "output_sha256": "66d85504eec79ed1784a8c6223087e47754563ae3639a070538e1b9f8e01c77f",
+      "source": "company_loop/assets/characters/foundation_silver_helmet.png",
+      "source_sha256": "a80b779adcd3501f701e3e9e3232662e97ffae087a76129c33f8d17093892ba0"
+    }
+  ]
+}

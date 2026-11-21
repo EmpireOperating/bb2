@@ -1,0 +1,192 @@
+{
+  "version": 1,
+  "provider": "openai-codex",
+  "model": "gpt-image-2-medium",
+  "request_id": "ff517eff-9dee-458d-9375-32203691db97",
+  "requested_size": "1536x1024",
+  "reported_and_actual_size": [
+    1199,
+    1312
+  ],
+  "master": "masters/six-painted-standards.png",
+  "master_sha256": "6171625baca9487723139743187c076b38a3ef0da33970aa30f28b800128aa3f",
+  "extraction": "RGB>230 connected matte with exterior or near-white>246 seeds; one-pixel boundary decontamination; Lanczos uniform scaling; no artwork repaint",
+  "canvas": [
+    320,
+    640
+  ],
+  "foot_anchor": [
+    160,
+    624
+  ],
+  "banners": [
+    {
+      "id": "ash_raven",
+      "name": "Ash Raven",
+      "file": "art/ash_raven.png",
+      "sha256": "02b315c8dc9f07e9f79e0335ef212aed876f3a19be8a0a159139faca37a27566",
+      "source_cell": [
+        0,
+        0,
+        400,
+        656
+      ],
+      "source_alpha_bounds": [
+        53,
+        10,
+        355,
+        643
+      ],
+      "pole_x_in_cutout": 149.76694915254237,
+      "scale": 0.9605055292259084,
+      "placement": [
+        16,
+        16
+      ],
+      "resized": [
+        290,
+        608
+      ]
+    },
+    {
+      "id": "gilded_stag",
+      "name": "Gilded Stag",
+      "file": "art/gilded_stag.png",
+      "sha256": "7b3bb954993245fdaa7fb600782dac6c11f9a09200d335aa6d8b4911ffa09e66",
+      "source_cell": [
+        400,
+        0,
+        799,
+        656
+      ],
+      "source_alpha_bounds": [
+        44,
+        10,
+        350,
+        643
+      ],
+      "pole_x_in_cutout": 154.92083333333332,
+      "scale": 0.9605055292259084,
+      "placement": [
+        11,
+        16
+      ],
+      "resized": [
+        294,
+        608
+      ]
+    },
+    {
+      "id": "iron_wolf",
+      "name": "Iron Wolf",
+      "file": "art/iron_wolf.png",
+      "sha256": "5c42b8a6ff0ba286c7302d8630e9adebf14aaefad7ae1f5284a004ed8662cab8",
+      "source_cell": [
+        799,
+        0,
+        1199,
+        656
+      ],
+      "source_alpha_bounds": [
+        39,
+        10,
+        341,
+        643
+      ],
+      "pole_x_in_cutout": 152.9375,
+      "scale": 0.9605055292259084,
+      "placement": [
+        13,
+        16
+      ],
+      "resized": [
+        290,
+        608
+      ]
+    },
+    {
+      "id": "ivory_sun",
+      "name": "Ivory Sun",
+      "file": "art/ivory_sun.png",
+      "sha256": "75a94e6ae850dbf8eb6b18907e4a95c53b7e502bdd6322386bdf037007ab213a",
+      "source_cell": [
+        0,
+        656,
+        400,
+        1312
+      ],
+      "source_alpha_bounds": [
+        52,
+        7,
+        354,
+        641
+      ],
+      "pole_x_in_cutout": 149.97119341563786,
+      "scale": 0.9589905362776026,
+      "placement": [
+        16,
+        16
+      ],
+      "resized": [
+        290,
+        608
+      ]
+    },
+    {
+      "id": "thorn_rose",
+      "name": "Thorn Rose",
+      "file": "art/thorn_rose.png",
+      "sha256": "e69fd610bf547eb1a5fd8f038a7830fefd518485b57a67ce8f85812567719a3e",
+      "source_cell": [
+        400,
+        656,
+        799,
+        1312
+      ],
+      "source_alpha_bounds": [
+        43,
+        7,
+        349,
+        642
+      ],
+      "pole_x_in_cutout": 153.6782608695652,
+      "scale": 0.9574803149606299,
+      "placement": [
+        13,
+        16
+      ],
+      "resized": [
+        293,
+        608
+      ]
+    },
+    {
+      "id": "silver_griffin",
+      "name": "Silver Griffin",
+      "file": "art/silver_griffin.png",
+      "sha256": "73237583b052c72e25192aeb146e17f4afe74400658cb7ab8534ebc6058ae847",
+      "source_cell": [
+        799,
+        656,
+        1199,
+        1312
+      ],
+      "source_alpha_bounds": [
+        39,
+        7,
+        341,
+        642
+      ],
+      "pole_x_in_cutout": 154.09821428571428,
+      "scale": 0.9574803149606299,
+      "placement": [
+        12,
+        16
+      ],
+      "resized": [
+        289,
+        608
+      ]
+    }
+  ]
+}

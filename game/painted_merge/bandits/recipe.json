@@ -1,0 +1,762 @@
+{
+  "closed_hand": {
+    "activation_definitions": [
+      "cudgel",
+      "hm_trial_v1:old24-medic_heavy",
+      "hm_trial_v1:old24-medic_weapon",
+      "short_sword"
+    ],
+    "complete_hand_not_item_overlap_mask": true,
+    "context_box": [
+      164,
+      450,
+      226,
+      535
+    ],
+    "grip_anchor": [
+      199,
+      489
+    ],
+    "keep_mask": "layers/hand-context-keep.png",
+    "keep_sha256": "4c16d4a795bfd46e23a209c94af0c8540beae18efe8f17c96dfbb6d0dcf72a4c",
+    "mask_owner": "ORIGINAL FOUNDATION ALPHA ONLY, before any garment; never mask final dressed composite",
+    "path": "layers/closed-hand.png",
+    "restore": "no scoped mainhand: exact original foundation, including pike and standalone shields",
+    "sha256": "241e28ac5c4b56799812319eb1338616584a2003ce81bfbe9071054cb3699ef1",
+    "tint": "never",
+    "wrist_anchor": [
+      195,
+      448
+    ],
+    "z": 70
+  },
+  "excluded_actual_branch": {
+    "definition": "short_bow",
+    "reason": "Actual ranged override logical_id10 in contract; no accepted Highwayman bow in requested packet. Explicit refusal, not proxy or full-enemy approval.",
+    "reserve": "Field knife is supported when selected as mainhand; carry/ammo is nonvisual and not an equipment slot in this packet."
+  },
+  "foundation": {
+    "empty_normalized_reference": "layers/base-normalized.png",
+    "path": "layers/base.png",
+    "sha256": "5ff8f6c62b06aaa0e6a436d96ca4578f4393af3184649f3c935b17677d06cab1",
+    "z": 0
+  },
+  "frames": {
+    "ordinary": {
+      "base_origin": [
+        0,
+        0
+      ],
+      "runtime_origin": [
+        0,
+        0
+      ],
+      "runtime_size": [
+        256,
+        320
+      ],
+      "runtime_stance_anchor": [
+        128,
+        310
+      ],
+      "size": [
+        591,
+        887
+      ],
+      "stance_anchor": [
+        333,
+        866
+      ]
+    },
+    "pike": {
+      "base_origin": [
+        64,
+        560
+      ],
+      "runtime_origin": [
+        24,
+        200
+      ],
+      "runtime_size": [
+        320,
+        536
+      ],
+      "runtime_stance_anchor": [
+        152,
+        510
+      ],
+      "size": [
+        768,
+        1480
+      ],
+      "stance_anchor": [
+        397,
+        1426
+      ]
+    },
+    "round-shield": {
+      "base_origin": [
+        0,
+        0
+      ],
+      "runtime_origin": [
+        0,
+        0
+      ],
+      "runtime_size": [
+        296,
+        320
+      ],
+      "runtime_stance_anchor": [
+        128,
+        310
+      ],
+      "size": [
+        704,
+        887
+      ],
+      "stance_anchor": [
+        333,
+        866
+      ]
+    }
+  },
+  "full_enemy_approved": false,
+  "generation_calls": 0,
+  "inherited_holds": {
+    "alpha_goal": 250,
+    "remaining": [
+      {
+        "alpha": 119,
+        "x": 448,
+        "y": 490
+      },
+      {
+        "alpha": 184,
+        "x": 447,
+        "y": 491
+      },
+      {
+        "alpha": 6,
+        "x": 448,
+        "y": 491
+      }
+    ],
+    "status": "HOLD"
+  },
+  "items": {
+    "cudgel": {
+      "condition_owner": "mainhand",
+      "frame": "ordinary",
+      "hand_route": "accepted_closed_right",
+      "key": "cudgel",
+      "layer": "layers/cudgel.png",
+      "lineage": "closed-recipe.json + accepted (+9,-18) already baked",
+      "mechanical_hands": 1,
+      "ownership": [
+        "complete genuine item"
+      ],
+      "parent_authentication": "../lineage/parent-closed.json",
+      "physical_hand": "right",
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "2e13a885fdf4f4eaa07f6bb7aa9e257dbe116990296a1f0b02772c100567876d",
+      "slot": "mainhand",
+      "source_origin": [
+        0,
+        0
+      ],
+      "source_paint": {
+        "path": "../sources/cudgel.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "44d51a3319c6207dce5135687e9f52123f8d97c2c11672a6b5b3fe913ddccf3c"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        333,
+        866
+      ],
+      "viewer_side": "left",
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": true,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 60
+    },
+    "hm_trial_v1:headwear-02-leather-cap": {
+      "condition_owner": "head",
+      "frame": "ordinary",
+      "hand_route": "no_hand_authority",
+      "key": "cap",
+      "layer": "layers/cap.png",
+      "lineage": "grade1-recipe.json",
+      "mechanical_hands": 0,
+      "ownership": [
+        "stitched dome",
+        "brow band",
+        "ear flaps",
+        "both knotted ties"
+      ],
+      "parent_authentication": "../lineage/parent-batch.json",
+      "physical_hand": null,
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "fb51dc9cb125ee00469ff3ab0b45c963d590ab0ef6843a8babde6a996b87959a",
+      "slot": "head",
+      "source_origin": [
+        0,
+        0
+      ],
+      "source_paint": {
+        "path": "../sources/cap.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "e8891948bc0a3bc8a015b6ad757c9468099b0bd2a387e855c4dd5e04c83ba35f"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        333,
+        866
+      ],
+      "viewer_side": null,
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": true,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 15
+    },
+    "hm_trial_v1:offhands-02-round-wooden-shield": {
+      "condition_owner": "offhand",
+      "frame": "round-shield",
+      "hand_route": "original_left_fully_behind_face",
+      "key": "round-shield",
+      "layer": "layers/round-shield.png",
+      "lineage": "held-recipe.json",
+      "mechanical_hands": 1,
+      "ownership": [
+        "complete genuine item"
+      ],
+      "parent_authentication": "../lineage/parent-batch.json",
+      "physical_hand": "left",
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "fb41af022dfbe580e19f03f5727a84b5f24636bbc190933f53d5f85fea8a05ea",
+      "slot": "offhand",
+      "source_origin": [
+        0,
+        0
+      ],
+      "source_paint": {
+        "path": "../sources/round-shield.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "ea0328a8e6cf5ef91feed660565c25de81ccfa943febfdba57f3bacdf14638ff"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        333,
+        866
+      ],
+      "viewer_side": "right",
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": false,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 75
+    },
+    "hm_trial_v1:old24-medic_heavy": {
+      "condition_owner": "mainhand",
+      "frame": "ordinary",
+      "hand_route": "accepted_closed_right",
+      "key": "hatchet",
+      "layer": "layers/hatchet.png",
+      "lineage": "closed-recipe.json + accepted (+9,-18) already baked",
+      "mechanical_hands": 1,
+      "ownership": [
+        "complete genuine item"
+      ],
+      "parent_authentication": "../lineage/parent-closed.json",
+      "physical_hand": "right",
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "ba6a9e91c015b6c98d6fbd99edafac5dce0e9b75f91f7d1aefa8d8ac7c173578",
+      "slot": "mainhand",
+      "source_origin": [
+        0,
+        0
+      ],
+      "source_paint": {
+        "path": "../sources/hatchet.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "149facf683a9d5dc2b696e151f172e398fa722f5b7d93cb9e1aab35c5eef560a"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        333,
+        866
+      ],
+      "viewer_side": "left",
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": true,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 60
+    },
+    "hm_trial_v1:old24-medic_weapon": {
+      "condition_owner": "mainhand",
+      "frame": "ordinary",
+      "hand_route": "accepted_closed_right",
+      "key": "knife",
+      "layer": "layers/knife.png",
+      "lineage": "closed-recipe.json + accepted (+9,-18) already baked",
+      "mechanical_hands": 1,
+      "ownership": [
+        "complete genuine item"
+      ],
+      "parent_authentication": "../lineage/parent-closed.json",
+      "physical_hand": "right",
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "a3df9740dec72f36d806519bcb7852fffad5b4ae23a6a672258b1a10305ea5b7",
+      "slot": "mainhand",
+      "source_origin": [
+        0,
+        0
+      ],
+      "source_paint": {
+        "path": "../sources/knife.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "16b79b0d7f95bce275fb4b7a28932c64b00b8872bcd8ef6d14745c76810e5413"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        333,
+        866
+      ],
+      "viewer_side": "left",
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": true,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 60
+    },
+    "hm_trial_v1:old24-scout_coat": {
+      "condition_owner": "body",
+      "frame": "ordinary",
+      "hand_route": "no_hand_authority",
+      "key": "coat",
+      "layer": "layers/coat.png",
+      "lineage": "scout-recipe.json",
+      "mechanical_hands": 0,
+      "ownership": [
+        "coat",
+        "matching trousers"
+      ],
+      "parent_authentication": "../lineage/parent-foundation.json",
+      "physical_hand": null,
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "0de41ef96170e82f3980958ec4649eccaad6a70ad66dcbfffeff48054407c97e",
+      "slot": "body",
+      "source_origin": [
+        0,
+        0
+      ],
+      "source_paint": {
+        "path": "../sources/coat.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "e08fcae9ad2d899b0acdb090b01711c69bdacd80e137d43a5b7cecc6346ebee6"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        333,
+        866
+      ],
+      "viewer_side": null,
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": true,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 10
+    },
+    "hollow_campaign:buckler": {
+      "condition_owner": "offhand",
+      "frame": "ordinary",
+      "hand_route": "original_left_fully_behind_face",
+      "key": "buckler",
+      "layer": "layers/buckler.png",
+      "lineage": "held-recipe.json",
+      "mechanical_hands": 1,
+      "ownership": [
+        "complete genuine item"
+      ],
+      "parent_authentication": "../lineage/parent-batch.json",
+      "physical_hand": "left",
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "8ece8899fd2f62e32d36834eab814f7a695bba074189812719551d690e0cc5f4",
+      "slot": "offhand",
+      "source_origin": [
+        0,
+        0
+      ],
+      "source_paint": {
+        "path": "../sources/buckler.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "8ece8899fd2f62e32d36834eab814f7a695bba074189812719551d690e0cc5f4"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        333,
+        866
+      ],
+      "viewer_side": "right",
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": false,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 75
+    },
+    "hollow_campaign:padded_hood": {
+      "condition_owner": "head",
+      "frame": "ordinary",
+      "hand_route": "no_hand_authority",
+      "key": "hood",
+      "layer": "layers/hood.png",
+      "lineage": "scout-recipe.json",
+      "mechanical_hands": 0,
+      "ownership": [
+        "hood shell",
+        "shoulder cowl",
+        "ties"
+      ],
+      "parent_authentication": "../lineage/parent-foundation.json",
+      "physical_hand": null,
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "06c3fc560ac890510c97c324baa052cab47158f6735dc156a181946d24273c90",
+      "slot": "head",
+      "source_origin": [
+        0,
+        0
+      ],
+      "source_paint": {
+        "path": "../sources/hood.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "7562abfbceb5614ad62ae067c7cacd899029011bc2c5761c43028c52d8b7b778"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        333,
+        866
+      ],
+      "viewer_side": null,
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": true,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 20
+    },
+    "pike": {
+      "condition_owner": "mainhand",
+      "finger_condition": "never tint anatomy",
+      "finger_foreground": "layers/pike-fingers.png",
+      "finger_z": 70,
+      "frame": "pike",
+      "hand_route": "retained_original_left_fingers",
+      "key": "pike",
+      "layer": "layers/pike.png",
+      "lineage": "held-recipe.json",
+      "mechanical_hands": 2,
+      "ownership": [
+        "complete genuine item"
+      ],
+      "parent_authentication": "../lineage/parent-batch.json",
+      "physical_hand": "left",
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "3ec0db84415b4fd8ce3c1ffa6636893a7f7c0b292e42046f0972f0487a640091",
+      "slot": "mainhand",
+      "source_origin": [
+        64,
+        560
+      ],
+      "source_paint": {
+        "path": "../sources/pike.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "6a7bb1f59cf1f93c8a22de2bfd9c19e553523583ec9baac6f8772ad98407a59c"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        397,
+        1426
+      ],
+      "viewer_side": "right",
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": true,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 60
+    },
+    "short_sword": {
+      "condition_owner": "mainhand",
+      "frame": "ordinary",
+      "hand_route": "accepted_closed_right",
+      "key": "sword",
+      "layer": "layers/sword.png",
+      "lineage": "closed-recipe.json + accepted (+9,-18) already baked",
+      "mechanical_hands": 1,
+      "ownership": [
+        "complete genuine item"
+      ],
+      "parent_authentication": "../lineage/parent-closed.json",
+      "physical_hand": "right",
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "457a2b89c4af309eda909a43657ec2ebd1a30d4e47e348bbe583a2b4201a2811",
+      "slot": "mainhand",
+      "source_origin": [
+        0,
+        0
+      ],
+      "source_paint": {
+        "path": "../sources/sword.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "ddabedb2297a30b8248123bc9fe60dc5dad36a1c059c959c45be6465fbc261cb"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        333,
+        866
+      ],
+      "viewer_side": "left",
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": true,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 60
+    },
+    "travel_leather": {
+      "condition_owner": "body",
+      "frame": "ordinary",
+      "hand_route": "no_hand_authority",
+      "key": "leathers",
+      "layer": "layers/leathers.png",
+      "lineage": "hem-recipe.json",
+      "mechanical_hands": 0,
+      "ownership": [
+        "leather torso",
+        "collar",
+        "shoulder caps",
+        "sleeves",
+        "integral belt",
+        "split skirts",
+        "matching cloth trousers"
+      ],
+      "parent_authentication": "../lineage/parent-hem.json",
+      "physical_hand": null,
+      "registration": "byte-identical accepted registered layer; no transform or fit change",
+      "sha256": "3a6b1674eb2768f166acced793f02d086cb5b8076f985b6e7eec7f147f8a4d66",
+      "slot": "body",
+      "source_origin": [
+        0,
+        0
+      ],
+      "source_paint": {
+        "path": "../sources/leathers.png",
+        "role": "actual predecessor paint; imported registered layer remains authoritative",
+        "sha256": "4b53621810dbe7060ab7e62c6172cb884eba33018b8e5967948dd8405cef574c"
+      },
+      "source_pin": "../PROVENANCE.json",
+      "stance_anchor": [
+        333,
+        866
+      ],
+      "viewer_side": null,
+      "wear": {
+        "alpha": "unchanged",
+        "formula": "nearest_integer(RGB * (1 + ([54,49,39]/255 - 1) * (1-clamp(current/maximum,0,1)) * 0.64))",
+        "input": "actual owned current/maximum, not fixture maximum",
+        "maximum_zero": "untinted",
+        "visible_at_zero": true,
+        "zero_visibility_qualifier": "only maximum>0 broken offhand disappears; maximum0 remains visible and untinted"
+      },
+      "z": 10
+    }
+  },
+  "native_accepted": false,
+  "normalization": {
+    "inverse_affine": [
+      2.823728813559322,
+      0,
+      -28.437288135593228,
+      0,
+      2.823728813559322,
+      -9.35593220338981
+    ],
+    "resampler": "Pillow BICUBIC",
+    "scale": 0.35414165666266506,
+    "translation": [
+      10.070828331332535,
+      3.313325330132045
+    ],
+    "uniform": true
+  },
+  "preview_contract": "Source-space registered layers are authoritative. Normalized/full/tactical PNGs resample the completed source composition, except exact empty normalized original. Retained normalized wardrobe references are not silently substituted; source-composite vs separately normalized layering can differ by resampling/rounding. No GPU/native equality claim. Importer must preserve source stack/mask order and stance, not apply the source mask to an already dressed normalized frame.",
+  "repaint_calls": 0,
+  "retained_caveats": [
+    "Warmer new fist and tiny cyan/green extraction fringe",
+    "Parent-accepted cap/forelock and raised cuff boundary",
+    "Strict grade1 three-pixel alpha coverage HOLD remains; no garment edits"
+  ],
+  "runtime_installed": false,
+  "schema": "highwayman-composed-offline-v1",
+  "scope": "ONLY Highwayman grade0/1 requested melee union, two bodies, two heads and two shields",
+  "selection_rules": [
+    "literal definition and canonical slot only; reject unknown/mismatched slots",
+    "reject pike plus any selected offhand BEFORE zero-condition visibility",
+    "one item per slot; no duplicate hidden layers",
+    "visible pike chooses pike frame; else visible round shield chooses round-shield frame; else ordinary",
+    "body/head stay visible at zero; shield with maximum>0 and current<=0 disappears; reset frame on disappearance",
+    "base -> body10 -> cap15 or hood20 -> weapon60 -> corresponding hand70 -> shield75",
+    "wear operates on owner item paint only, never original or new skin"
+  ],
+  "support_items": {
+    "hm_trial_v1:gloves-01-linen-handwraps": {
+      "slot": "hands",
+      "layers": [
+        {
+          "layer": "support/wraps-main-open.png",
+          "z": 32,
+          "hand": "open"
+        },
+        {
+          "layer": "support/wraps-off.png",
+          "z": 32
+        },
+        {
+          "layer": "support/wraps-main-closed.png",
+          "z": 80,
+          "hand": "closed"
+        }
+      ]
+    },
+    "light_boots": {
+      "slot": "feet",
+      "layers": [
+        {
+          "layer": "support/boots-left.png",
+          "z": 11
+        },
+        {
+          "layer": "support/boots-right.png",
+          "z": 11
+        }
+      ]
+    },
+    "trail_boots": {
+      "slot": "feet",
+      "layers": [
+        {
+          "layer": "support/footwear-02-trail-boots-left.png",
+          "z": 11
+        },
+        {
+          "layer": "support/footwear-02-trail-boots-right.png",
+          "z": 11
+        }
+      ]
+    },
+    "hm_trial_v1:footwear-03-wrapped-shoes": {
+      "slot": "feet",
+      "layers": [
+        {
+          "layer": "support/footwear-03-wrapped-shoes-left.png",
+          "z": 11
+        },
+        {
+          "layer": "support/footwear-03-wrapped-shoes-right.png",
+          "z": 11
+        }
+      ]
+    },
+    "hm_trial_v1:footwear-04-reinforced-boots": {
+      "slot": "feet",
+      "layers": [
+        {
+          "layer": "support/footwear-04-reinforced-boots-left.png",
+          "z": 11
+        },
+        {
+          "layer": "support/footwear-04-reinforced-boots-right.png",
+          "z": 11
+        }
+      ]
+    },
+    "travel_cloak": {
+      "slot": "cloak",
+      "layers": [
+        {
+          "layer": "support/cloak-rear.png",
+          "z": -20
+        },
+        {
+          "layer": "support/cloak-front.png",
+          "z": 14
+        }
+      ]
+    },
+    "hm_trial_v1:belts-01-utility-belt": {
+      "slot": "belt",
+      "contexts": {
+        "": "support/belt-bare.png",
+        "hm_trial_v1:old24-scout_coat": "support/belt-coat.png",
+        "travel_leather": "support/belt-leathers.png"
+      },
+      "z": 13
+    }
+  },
+  "support_scope": {
+    "schema": "highwayman-user-accepted-support-v1",
+    "definitions": [
+      "hm_trial_v1:gloves-01-linen-handwraps",
+      "light_boots",
+      "trail_boots",
+      "hm_trial_v1:footwear-03-wrapped-shoes",
+      "hm_trial_v1:footwear-04-reinforced-boots",
+      "travel_cloak",
+      "hm_trial_v1:belts-01-utility-belt"
+    ],
+    "art_manifest_sha256": "4e4d86fbb704d20bfa27dc1af6a1d854a91033b7d67ea77870001e11cc2f60c5",
+    "user_acceptance_sha256": "4d86118e834e2a918fc842935f50a32f13813b00f39706860e7f7107ea2cc9fb",
+    "limits": "Exact Highwayman fixed pose only; unlisted definitions and other foundations remain omitted. No acquisition or mechanics change."
+  }
+}

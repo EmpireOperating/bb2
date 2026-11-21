@@ -1,0 +1,45 @@
+{
+  "status": "exploratory visual-slice assets, not approved production art",
+  "provider": "openai-codex",
+  "model": "gpt-image-2-medium",
+  "reference": "user-supplied visual target img_0c6011e05763.jpg; not used as gameplay evidence",
+  "files": {
+    "base-mercenary.png": {
+      "request_id": "497f59f7-422c-4aa4-b081-c0417eba1a4f",
+      "requested_size": "1024x1536",
+      "reported_size": "1024x1536",
+      "actual_size": [
+        1024,
+        1536
+      ],
+      "requested_quality": "medium",
+      "reported_quality": "low",
+      "purpose": "base empty-handed unhelmeted painted sprite master"
+    },
+    "mail-mercenary.png": {
+      "request_id": "8fcc8905-3bd5-4314-8ccd-b5a0b7551021",
+      "requested_size": "1024x1536",
+      "reported_size": "1024x1536",
+      "actual_size": [
+        1024,
+        1536
+      ],
+      "requested_quality": "medium",
+      "reported_quality": "medium",
+      "purpose": "edited mail+nasal master for separate equipment layers"
+    },
+    "material-atlas.png": {
+      "request_id": "621dc3da-68b7-4c39-94d2-21fc03a41d91",
+      "requested_size": "1024x1024",
+      "reported_size": "1448x1086",
+      "actual_size": [
+        1448,
+        1086
+      ],
+      "requested_quality": "medium",
+      "reported_quality": "low",
+      "purpose": "terrain albedo atlas; cropped equally at x724/y543 intoearth,paving,rock,meadow PNGs"
+    }
+  },
+  "claims": "Generated art sources are NOT screenshots of implementation. Only later native Godot captures establish integration."
+}

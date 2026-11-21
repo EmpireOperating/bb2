@@ -1,0 +1,392 @@
+[
+  {
+    "alive": 4,
+    "battles": [
+      {
+        "day": 17,
+        "deaths": 0,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "colossus",
+            "leverage"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 15,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 17,
+          "militia_spear/special": 4,
+          "shortbow/special": 11
+        }
+      }
+    ],
+    "completed": false,
+    "crowns": 72,
+    "day": 19,
+    "food": 1,
+    "key": "defensive-mixed-gear-1.0",
+    "named_day": 0,
+    "source": "earned-mixed-gear-1.0.json",
+    "start_alive": 4,
+    "start_crowns": 31,
+    "start_day": 17,
+    "start_food": 32,
+    "start_tools": 31,
+    "tools": 21
+  },
+  {
+    "alive": 3,
+    "battles": [
+      {
+        "day": 17,
+        "deaths": 1,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "fast_adaptation",
+            "colossus"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "3": [
+            "colossus",
+            "fast_adaptation"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 18,
+        "commands_by_initial_weapon": {
+          "knife/basic": 6,
+          "militia_spear/basic": 9,
+          "shortsword/basic": 2,
+          "shortsword/special": 1,
+          "spear/basic": 6
+        }
+      }
+    ],
+    "completed": false,
+    "crowns": 83,
+    "day": 18,
+    "food": 51,
+    "key": "defensive-mixed-gear-1183.0",
+    "named_day": 16,
+    "source": "earned-mixed-gear-1183.0.json",
+    "start_alive": 4,
+    "start_crowns": 37,
+    "start_day": 16,
+    "start_food": 60,
+    "start_tools": 30,
+    "tools": 33
+  },
+  {
+    "alive": 2,
+    "battles": [
+      {
+        "day": 20,
+        "deaths": 2,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "fast_adaptation",
+            "colossus"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 23,
+        "commands_by_initial_weapon": {
+          "hammer/basic": 2,
+          "shortbow/basic": 20,
+          "shortbow/special": 17,
+          "shortsword/basic": 7
+        }
+      }
+    ],
+    "completed": false,
+    "crowns": 137,
+    "day": 21,
+    "food": 46,
+    "key": "defensive-mixed-gear-1380.0",
+    "named_day": 0,
+    "source": "earned-mixed-gear-1380.0.json",
+    "start_alive": 4,
+    "start_crowns": 99,
+    "start_day": 20,
+    "start_food": 44,
+    "start_tools": 53,
+    "tools": 56
+  },
+  {
+    "alive": 0,
+    "battles": [
+      {
+        "day": 16,
+        "deaths": 4,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus"
+          ],
+          "1": [
+            "colossus"
+          ],
+          "2": [
+            "fast_adaptation"
+          ],
+          "3": [
+            "fast_adaptation"
+          ]
+        },
+        "result": "defeat",
+        "retreat": false,
+        "rounds": 23,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 3,
+          "militia_spear/special": 2,
+          "shortbow/basic": 8,
+          "shortbow/special": 22,
+          "shortsword/basic": 4
+        }
+      }
+    ],
+    "completed": false,
+    "crowns": 91,
+    "day": 17,
+    "food": 33,
+    "key": "defensive-mixed-gear-198.0",
+    "named_day": 0,
+    "source": "earned-mixed-gear-198.0.json",
+    "start_alive": 4,
+    "start_crowns": 29,
+    "start_day": 16,
+    "start_food": 36,
+    "start_tools": 46,
+    "tools": 51
+  },
+  {
+    "alive": 1,
+    "battles": [
+      {
+        "day": 19,
+        "deaths": 0,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 13,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 10,
+          "militia_spear/special": 6,
+          "shortbow/special": 11,
+          "shortsword/basic": 1
+        }
+      },
+      {
+        "day": 20,
+        "deaths": 0,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 13,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 13,
+          "militia_spear/special": 5,
+          "shortbow/special": 10,
+          "shortsword/basic": 1
+        }
+      },
+      {
+        "day": 22,
+        "deaths": 3,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation",
+            "pathfinder"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation",
+            "pathfinder"
+          ],
+          "2": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "defeat",
+        "retreat": false,
+        "rounds": 23,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 16,
+          "militia_spear/special": 4,
+          "shortbow/basic": 11,
+          "shortbow/special": 12,
+          "shortsword/basic": 8,
+          "shortsword/special": 1
+        }
+      }
+    ],
+    "completed": false,
+    "crowns": 101,
+    "day": 23,
+    "food": 17,
+    "key": "defensive-mixed-gear-592.0",
+    "named_day": 22,
+    "source": "earned-mixed-gear-592.0.json",
+    "start_alive": 4,
+    "start_crowns": 21,
+    "start_day": 19,
+    "start_food": 48,
+    "start_tools": 61,
+    "tools": 66
+  },
+  {
+    "alive": 2,
+    "battles": [
+      {
+        "day": 17,
+        "deaths": 2,
+        "enemies": "Undead",
+        "field": 4,
+        "kind": "dungeon",
+        "map": "crypt",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "2": [
+            "colossus",
+            "leverage"
+          ],
+          "3": [
+            "fast_adaptation",
+            "colossus"
+          ]
+        },
+        "result": "victory",
+        "retreat": false,
+        "rounds": 19,
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 17,
+          "militia_spear/special": 5,
+          "shortbow/basic": 3,
+          "shortbow/special": 12,
+          "shortsword/basic": 8
+        }
+      }
+    ],
+    "completed": false,
+    "crowns": 88,
+    "day": 18,
+    "food": 30,
+    "key": "defensive-mixed-gear-986.0",
+    "named_day": 0,
+    "source": "earned-mixed-gear-986.0.json",
+    "start_alive": 4,
+    "start_crowns": 45,
+    "start_day": 16,
+    "start_food": 36,
+    "start_tools": 39,
+    "tools": 42
+  }
+]

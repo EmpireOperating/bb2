@@ -1,0 +1,179 @@
+{
+  "outcomes": {
+    "archer_vs_heavy_distance_1": {
+      "armour_removed": 2880,
+      "defeat": 40,
+      "draw": 0,
+      "hp_lost": 2400,
+      "rounds": 294,
+      "victory": 0
+    },
+    "archer_vs_heavy_distance_5": {
+      "armour_removed": 3628,
+      "defeat": 40,
+      "draw": 0,
+      "hp_lost": 2400,
+      "rounds": 364,
+      "victory": 0
+    },
+    "archer_vs_light_distance_1": {
+      "armour_removed": 2698,
+      "defeat": 40,
+      "draw": 0,
+      "hp_lost": 2400,
+      "rounds": 314,
+      "victory": 0
+    },
+    "archer_vs_light_distance_5": {
+      "armour_removed": 2490,
+      "defeat": 38,
+      "draw": 0,
+      "hp_lost": 2302,
+      "rounds": 328,
+      "victory": 2
+    },
+    "heavy_vs_heavy_distance_1": {
+      "armour_removed": 6460,
+      "defeat": 22,
+      "draw": 0,
+      "hp_lost": 1686,
+      "rounds": 252,
+      "victory": 18
+    },
+    "heavy_vs_heavy_distance_5": {
+      "armour_removed": 6105,
+      "defeat": 27,
+      "draw": 0,
+      "hp_lost": 1959,
+      "rounds": 282,
+      "victory": 13
+    },
+    "heavy_vs_light_distance_1": {
+      "armour_removed": 3020,
+      "defeat": 20,
+      "draw": 0,
+      "hp_lost": 1596,
+      "rounds": 218,
+      "victory": 20
+    },
+    "heavy_vs_light_distance_5": {
+      "armour_removed": 2370,
+      "defeat": 34,
+      "draw": 0,
+      "hp_lost": 2182,
+      "rounds": 256,
+      "victory": 6
+    },
+    "light_vs_heavy_distance_1": {
+      "armour_removed": 3846,
+      "defeat": 40,
+      "draw": 0,
+      "hp_lost": 2400,
+      "rounds": 242,
+      "victory": 0
+    },
+    "light_vs_heavy_distance_5": {
+      "armour_removed": 2557,
+      "defeat": 39,
+      "draw": 0,
+      "hp_lost": 2361,
+      "rounds": 214,
+      "victory": 1
+    },
+    "light_vs_light_distance_1": {
+      "armour_removed": 2843,
+      "defeat": 33,
+      "draw": 0,
+      "hp_lost": 2136,
+      "rounds": 220,
+      "victory": 7
+    },
+    "light_vs_light_distance_5": {
+      "armour_removed": 2594,
+      "defeat": 38,
+      "draw": 0,
+      "hp_lost": 2310,
+      "rounds": 246,
+      "victory": 2
+    },
+    "shield_vs_heavy_distance_1": {
+      "armour_removed": 8070,
+      "defeat": 25,
+      "draw": 0,
+      "hp_lost": 1891,
+      "rounds": 494,
+      "victory": 15
+    },
+    "shield_vs_heavy_distance_5": {
+      "armour_removed": 6690,
+      "defeat": 28,
+      "draw": 0,
+      "hp_lost": 2010,
+      "rounds": 501,
+      "victory": 12
+    },
+    "shield_vs_light_distance_1": {
+      "armour_removed": 4604,
+      "defeat": 11,
+      "draw": 0,
+      "hp_lost": 1264,
+      "rounds": 390,
+      "victory": 29
+    },
+    "shield_vs_light_distance_5": {
+      "armour_removed": 4643,
+      "defeat": 6,
+      "draw": 0,
+      "hp_lost": 940,
+      "rounds": 342,
+      "victory": 34
+    }
+  },
+  "profiles": {
+    "archer": {
+      "attack_ap": 4,
+      "body": 77,
+      "capacity": 82,
+      "cost": 264,
+      "damage_max": 60.0,
+      "damage_min": 40.0,
+      "helmet": 70,
+      "initiative": 82,
+      "reserve": 136
+    },
+    "heavy": {
+      "attack_ap": 6,
+      "body": 100,
+      "capacity": 72,
+      "cost": 387,
+      "damage_max": 75.0,
+      "damage_min": 55.0,
+      "helmet": 110,
+      "initiative": 72,
+      "reserve": 13
+    },
+    "light": {
+      "attack_ap": 4,
+      "body": 77,
+      "capacity": 85,
+      "cost": 219,
+      "damage_max": 55.0,
+      "damage_min": 40.0,
+      "helmet": 70,
+      "initiative": 85,
+      "reserve": 181
+    },
+    "shield": {
+      "attack_ap": 4,
+      "body": 140,
+      "capacity": 64,
+      "cost": 319,
+      "damage_max": 45.0,
+      "damage_min": 40.0,
+      "helmet": 110,
+      "initiative": 64,
+      "reserve": 81
+    }
+  },
+  "scope": "Controlled AI duels, paired across both sides, equal personal stats and a 400-crown equipment ceiling. Actual kit costs and unspent reserves differ; no hidden stat boosts. No formation allies, training or campaign economy simulated."
+}

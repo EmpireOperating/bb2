@@ -1,0 +1,109 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "foot_anchor": [
+    512,
+    1490
+  ],
+  "pixel_size": 0.00134,
+  "authority_priority": [
+    "body/outer",
+    "body/mail",
+    "body/base"
+  ],
+  "mechanical_changes": [],
+  "bindings": {
+    "body_quilt": "outfit_quilt",
+    "body_mail": "outfit_mail",
+    "body_brigandine": "outfit_brigandine"
+  },
+  "mask": "foundation_keep_mask",
+  "mask_channel": "alpha",
+  "status": "offline painted-art candidate; native runtime acceptance owned separately",
+  "generation_calls": 3,
+  "repair_calls": 0,
+  "recipe_sha256": "858423e84ad26a614d8a5d6c56f6a5f1cade53926ad847c5b40378be11246638",
+  "builder_sha256": "4896c31a795c5768d7fff2fedfce274715c14b53f2569ff5641018e08abd5937",
+  "protected_inputs_sha256": "f2eb58288f3e3bb5e6e1d8819811c238d8ff1adedaeac8c382532ad6d0a5e082",
+  "receipts_sha256": "4ee8b375dd080032c0e258a11e887d874fb7511365b740f9200ef3bea575ed9e",
+  "metrics": {
+    "quilt": {
+      "preserved_upper_opaque_pixels": 255974,
+      "lower_visible_pixels": 201921,
+      "lower_opaque_pixels": 199785,
+      "sole_bbox_alpha_gt_200": [
+        [
+          75,
+          1250,
+          328,
+          1379
+        ],
+        [
+          811,
+          1350,
+          975,
+          1486
+        ]
+      ]
+    },
+    "mail": {
+      "preserved_upper_opaque_pixels": 258805,
+      "lower_visible_pixels": 207377,
+      "lower_opaque_pixels": 205318,
+      "sole_bbox_alpha_gt_200": [
+        [
+          73,
+          1250,
+          329,
+          1379
+        ],
+        [
+          812,
+          1350,
+          975,
+          1486
+        ]
+      ]
+    },
+    "brigandine": {
+      "preserved_upper_opaque_pixels": 262947,
+      "lower_visible_pixels": 199943,
+      "lower_opaque_pixels": 197839,
+      "sole_bbox_alpha_gt_200": [
+        [
+          73,
+          1250,
+          329,
+          1379
+        ],
+        [
+          811,
+          1350,
+          975,
+          1486
+        ]
+      ]
+    }
+  },
+  "artifacts": {
+    "characters/foundation_keep_mask.png": "f8c4e9d794e41c4aa566c83d7802c87caa5d80136785722c509ba99fe1cb88ae",
+    "characters/outfit_brigandine.png": "f9df809610be17b6c5f692ede5d417a64c87bbef817dd1e992543a18f88fb34d",
+    "characters/outfit_mail.png": "82476a6be1cf0b1c95922231ccf6553b213768dc0e2e0346427b08acec2a7ab1",
+    "characters/outfit_quilt.png": "c658785ef4fa1aa47d57d05269927aefdd032e2ee2729ef619e64a2f2c087df5",
+    "evidence/actual-menu-400.png": "cad36eb8a1b84035bd76f3a692222b9ac5e450dfb99a99586f3cb045f54b6309",
+    "evidence/actual-tactical-120-90.png": "b89c746f5fc6bdf3179e280544530a68b1763c2a8a0b87700b1205dcc969a244",
+    "evidence/composite-brigandine.png": "2eee298410c5390a1ba2c162ccdf5141c12fad3d7181ce7d2906ff397dde65f7",
+    "evidence/composite-mail.png": "037ed0238824869438896a03905240b731d727a2d79570fa03d9f389503f41c3",
+    "evidence/composite-quilt.png": "e6efef2a913cef8668d7f97cc170efa206a3673b3510b93af53a160a47a16e68",
+    "evidence/hem-and-boot-joins.png": "f3f65f6b963900086c8f6af2657fe29cb3c6b281a5b9c0ff214e08eac74eff06",
+    "evidence/identity-and-removal.png": "512b30bb79548864522b2626dac08dab0d4f2d0dee0a99bfeeed0fd37af04bb7",
+    "evidence/isolated-layers-and-mask.png": "2c4e52a47df65f6cf6456a2c8a61a2d4e12fe31aaa0f78a139f5efb8277f096b",
+    "evidence/lower-brigandine.png": "97bb33f93c04452b556370b36c84fc2e6796bbd0b621075b3b28fca8345ead5d",
+    "evidence/lower-mail.png": "7fe27bfaaacafc6f7053bc87f84a151ec5ac5b7145022dec640f84329d062839",
+    "evidence/lower-quilt.png": "f41d7d9ea8f9fe006b6b61989c4bf5f845efedc80a21bf217d20c0f953b92946",
+    "evidence/readability-400-120-90.png": "a95576e83f9f3ab6f8b1db14a0ff7bc39cbb15979e3ac1c762dda1e3cfca2af5",
+    "evidence/reference-source-delivery.png": "6b88827ae02a79543c97d89b816ade9a7c9db6dec89ac79c2627a2b230c9902c"
+  }
+}

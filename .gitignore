@@ -1,0 +1,13 @@
+.godot/
+__pycache__/
+*.pyc
+.env
+.env.*
+*.log
+*.save
+*.sav
+/player/
+/saves/
+/recovery-profile/
+/builds/
+/dist/

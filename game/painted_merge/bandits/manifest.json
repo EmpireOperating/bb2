@@ -1,0 +1,291 @@
+{
+  "geometry": {
+    "base_alpha_top": 32,
+    "body_height": 1.94,
+    "foot_y": 866,
+    "stance_x": 333
+  },
+  "recipe_sha256": "87c329118486a97dd041dc75449452b01fdaf5124b477daa26cc66072032a4b4",
+  "schema": "highwayman-runtime-source-space-v1",
+  "sources": {
+    "layers/base.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/base.png",
+      "sha256": "5ff8f6c62b06aaa0e6a436d96ca4578f4393af3184649f3c935b17677d06cab1"
+    },
+    "layers/buckler.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/buckler.png",
+      "sha256": "8ece8899fd2f62e32d36834eab814f7a695bba074189812719551d690e0cc5f4"
+    },
+    "layers/cap.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/cap.png",
+      "sha256": "fb51dc9cb125ee00469ff3ab0b45c963d590ab0ef6843a8babde6a996b87959a"
+    },
+    "layers/closed-hand.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/closed-hand.png",
+      "sha256": "241e28ac5c4b56799812319eb1338616584a2003ce81bfbe9071054cb3699ef1"
+    },
+    "layers/coat.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/coat.png",
+      "sha256": "0de41ef96170e82f3980958ec4649eccaad6a70ad66dcbfffeff48054407c97e"
+    },
+    "layers/cudgel.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/cudgel.png",
+      "sha256": "2e13a885fdf4f4eaa07f6bb7aa9e257dbe116990296a1f0b02772c100567876d"
+    },
+    "layers/hand-context-keep.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": true,
+      "path": "res://painted_merge/bandits/assets/layers/hand-context-keep.png",
+      "sha256": "4c16d4a795bfd46e23a209c94af0c8540beae18efe8f17c96dfbb6d0dcf72a4c"
+    },
+    "layers/hatchet.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/hatchet.png",
+      "sha256": "ba6a9e91c015b6c98d6fbd99edafac5dce0e9b75f91f7d1aefa8d8ac7c173578"
+    },
+    "layers/hood.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/hood.png",
+      "sha256": "06c3fc560ac890510c97c324baa052cab47158f6735dc156a181946d24273c90"
+    },
+    "layers/knife.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/knife.png",
+      "sha256": "a3df9740dec72f36d806519bcb7852fffad5b4ae23a6a672258b1a10305ea5b7"
+    },
+    "layers/leathers.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/leathers.png",
+      "sha256": "3a6b1674eb2768f166acced793f02d086cb5b8076f985b6e7eec7f147f8a4d66"
+    },
+    "layers/pike-fingers.png": {
+      "dimensions": [
+        768,
+        1480
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/pike-fingers.png",
+      "sha256": "faf2941a2a332ac53ac177f8f88999d00b6b0085eeb3adcd91f8a0d0a43bd7aa"
+    },
+    "layers/pike.png": {
+      "dimensions": [
+        768,
+        1480
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/pike.png",
+      "sha256": "3ec0db84415b4fd8ce3c1ffa6636893a7f7c0b292e42046f0972f0487a640091"
+    },
+    "layers/round-shield.png": {
+      "dimensions": [
+        704,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/round-shield.png",
+      "sha256": "fb41af022dfbe580e19f03f5727a84b5f24636bbc190933f53d5f85fea8a05ea"
+    },
+    "layers/sword.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/layers/sword.png",
+      "sha256": "457a2b89c4af309eda909a43657ec2ebd1a30d4e47e348bbe583a2b4201a2811"
+    },
+    "support/belt-bare.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/belt-bare.png",
+      "sha256": "8f7247be53b877c2679a4427d36fbc97dec7db1ba5176c0b6850f59abae37ab8"
+    },
+    "support/belt-coat.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/belt-coat.png",
+      "sha256": "0439279ca6d65552e8569558e7a18e4f72e7386f75fc8dc11af2adc0212de43e"
+    },
+    "support/belt-leathers.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/belt-leathers.png",
+      "sha256": "86139859f45f79e3a938232dd48953b5220aed4c3d0d6a5ff9e591931c837dfb"
+    },
+    "support/boots-left.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/boots-left.png",
+      "sha256": "5c0134e0d9a376e14939c97a9571986602f87256f0c551c9245f40b16c9136ce"
+    },
+    "support/boots-right.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/boots-right.png",
+      "sha256": "66ee640bc46fd2d092976a56e8f34e91964a4e49ec2c055a8fcc9c99b3967714"
+    },
+    "support/cloak-front.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/cloak-front.png",
+      "sha256": "66f7d05a0289827c2ad5b2fbf8be7caeb8846a3a68c6720ce9f48672d0adc6e3"
+    },
+    "support/cloak-rear.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/cloak-rear.png",
+      "sha256": "07e5bb4d426d9c74b6d7a101b595a43c0b9afd3d9aa5531ce9daaf3621a63e18"
+    },
+    "support/footwear-02-trail-boots-left.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/footwear-02-trail-boots-left.png",
+      "sha256": "a09bb84faa0cf0baa80309ed6bb11f1c1d04e25618c7ea8a0acfc79621145d37"
+    },
+    "support/footwear-02-trail-boots-right.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/footwear-02-trail-boots-right.png",
+      "sha256": "9847fcf55b224ca1cbe75571ccbbea362bbe79d8d7e9540f6bd9139b739b5039"
+    },
+    "support/footwear-03-wrapped-shoes-left.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/footwear-03-wrapped-shoes-left.png",
+      "sha256": "3736a4f8e7860796eeca06ae60f2ef1ab9033336d492a5d6ff17684921c6eff0"
+    },
+    "support/footwear-03-wrapped-shoes-right.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/footwear-03-wrapped-shoes-right.png",
+      "sha256": "ede6028b3b27c2d34a16ebc120b274c28fa7f247966297a4adb89b6e0f30f7c4"
+    },
+    "support/footwear-04-reinforced-boots-left.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/footwear-04-reinforced-boots-left.png",
+      "sha256": "2dff4f9f092dcc4a809376399c72a0440804ebf0e229e900fc13a56b14804007"
+    },
+    "support/footwear-04-reinforced-boots-right.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/footwear-04-reinforced-boots-right.png",
+      "sha256": "9bebb12a0c18d716ab902c97b0ff44b52d3188bddc37f9f936d2b61f954f678c"
+    },
+    "support/wraps-main-closed.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/wraps-main-closed.png",
+      "sha256": "8d6ad50707b77a010d54cff037678258aeb19248978cfded4fba57f2999e6ea1"
+    },
+    "support/wraps-main-open.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/wraps-main-open.png",
+      "sha256": "3acf87a303d3d664b426ec960ffa8893e48e287fc4133177ef7c41483562808f"
+    },
+    "support/wraps-off.png": {
+      "dimensions": [
+        591,
+        887
+      ],
+      "mask": false,
+      "path": "res://painted_merge/bandits/assets/support/wraps-off.png",
+      "sha256": "0c3fc6413b792c3cbb07afe937f7bda6cb9f086f3e34b60307a2ded03efd13c8"
+    }
+  }
+}

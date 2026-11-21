@@ -1,0 +1,153 @@
+{
+  "locations": [
+    {
+      "id": "ashwick",
+      "name": "Ashwick",
+      "kind": "town",
+      "x": 165,
+      "y": 385,
+      "description": "Grain fields, cheap provisions, and the southern contract board."
+    },
+    {
+      "id": "ford",
+      "name": "Blackwater Ford",
+      "kind": "camp",
+      "x": 445,
+      "y": 335,
+      "description": "A narrow river crossing. Hold the ground before the raiders do.",
+      "map": "ford"
+    },
+    {
+      "id": "stonecross",
+      "name": "Stonecross",
+      "kind": "town",
+      "x": 695,
+      "y": 235,
+      "description": "A fortified market. The watch pays well for dangerous work."
+    },
+    {
+      "id": "forest",
+      "name": "Brackenwood",
+      "kind": "camp",
+      "x": 790,
+      "y": 465,
+      "description": "Raiders shelter beneath the trees. Break their entire band.",
+      "map": "forest"
+    },
+    {
+      "id": "dunmere",
+      "name": "Dunmere",
+      "kind": "town",
+      "x": 615,
+      "y": 650,
+      "description": "A lakeside settlement with hunters and worn-out soldiers for hire."
+    },
+    {
+      "id": "ridge",
+      "name": "Cairn Ridge",
+      "kind": "camp",
+      "x": 305,
+      "y": 600,
+      "description": "Hold the high banner until a relief column reaches the ridge.",
+      "map": "ridge"
+    }
+  ],
+  "roads": [
+    [
+      "ashwick",
+      "ford",
+      1
+    ],
+    [
+      "ford",
+      "stonecross",
+      1
+    ],
+    [
+      "stonecross",
+      "forest",
+      1
+    ],
+    [
+      "forest",
+      "dunmere",
+      2
+    ],
+    [
+      "dunmere",
+      "ridge",
+      1
+    ],
+    [
+      "ridge",
+      "ashwick",
+      2
+    ],
+    [
+      "ford",
+      "ridge",
+      2
+    ],
+    [
+      "stonecross",
+      "dunmere",
+      2
+    ]
+  ],
+  "jobs": {
+    "ashwick": [
+      {
+        "title": "Open the Grain Road",
+        "target": "ford",
+        "objective": "hold",
+        "brief": "Seize the crossing so the grain carts can pass.",
+        "pay": 340,
+        "threat": 1
+      },
+      {
+        "title": "The Cairn Watch",
+        "target": "ridge",
+        "objective": "defend",
+        "brief": "Hold the high banner until the watch relieves you.",
+        "pay": 480,
+        "threat": 2
+      }
+    ],
+    "stonecross": [
+      {
+        "title": "Smoke in Brackenwood",
+        "target": "forest",
+        "objective": "eliminate",
+        "brief": "Break the raiders hiding along the forest road.",
+        "pay": 430,
+        "threat": 2
+      },
+      {
+        "title": "The Captain at the Ford",
+        "target": "ford",
+        "objective": "hold",
+        "brief": "Drive a veteran company from the river crossing.",
+        "pay": 600,
+        "threat": 3
+      }
+    ],
+    "dunmere": [
+      {
+        "title": "The Long Watch",
+        "target": "ridge",
+        "objective": "defend",
+        "brief": "Protect the ridge while the village brings its people home.",
+        "pay": 350,
+        "threat": 1
+      },
+      {
+        "title": "A Debt in the Woods",
+        "target": "forest",
+        "objective": "eliminate",
+        "brief": "Hunt the band that robbed the northern caravans.",
+        "pay": 580,
+        "threat": 3
+      }
+    ]
+  }
+}

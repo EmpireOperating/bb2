@@ -1,0 +1,21 @@
+{
+  "provider": "openai-codex",
+  "model": "gpt-image-2-medium",
+  "imagegen_request_id": "d1d77b4d-32c3-420a-8589-e8910e317d8d",
+  "requested_quality": "medium",
+  "reported_quality": "medium",
+  "requested_size": "1024x1536",
+  "reported_size": "1024x1536",
+  "decoded_size": [
+    1024,
+    1536
+  ],
+  "decoded_mode": "RGB",
+  "input_images": [
+    "base-master.png"
+  ],
+  "input_sha256": "7ac84c8821b4c9b2ff5af232b5e45e318daf3c9ceb30c9653ef083dd81ea6c52",
+  "original_result_path": "/home/quatro/.hermes/cache/images/openai_codex_gpt-image-2-medium_20261101_074512_fe9f3d81.png",
+  "sha256": "fb6839f8e39ae596661b60e813730ba55a1191f904ff72d821c2621a7c2716ed",
+  "purpose": "exact-base equipment-edit source"
+}

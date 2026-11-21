@@ -1,0 +1,45 @@
+{
+  "all_output_hashes_rechecked": true,
+  "art_render_lock": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/.resource-locks/art-render.lock",
+  "cells": 160,
+  "current_original50": "final-b/CURRENT_ORIGINAL_ALL.png",
+  "delta": "final-b/CONTACT_DELTA.png",
+  "files": {
+    "FROZEN_INPUTS.json": "8af4d05506557a028a8a636a3e7b21dfdfe82cdb3d79ec074a21399d50bf63c2",
+    "HANDOFF.md": "c2b25ee980898b81c53025967c79c6bcaaad3457183c8e22e5a8614a9f3ced22",
+    "INPUTS.json": "0856203aaf89c8b96f30bc22e282f05353f278abedc1acd4ccf5e71f24902b8f",
+    "OWNERSHIP_READBACK.json": "066b1b5dfcda0e3994a7e512263bc7054c09cb2debe6f7c693ce97e9478c885c",
+    "PAINTING_REQUESTS.json": "2c415257deaed5a1839a425251df0ade5c8d081f2f6c4d5207420ea929aa138c",
+    "corrective.py": "8181af0ecfbc675464091ddafcbfdb750da2dd22b2adeaa51e5549e9e467803c",
+    "final-a/MANIFEST.json": "0348e901048689a4de78f4cfa7bfad6e65831bdf48132f4c06b298cd1be55da0",
+    "final-b/MANIFEST.json": "0348e901048689a4de78f4cfa7bfad6e65831bdf48132f4c06b298cd1be55da0",
+    "finalize.py": "c11b24e11424e0c82ca8b1242f5f8affab9e64389427f8ced9655cb7816e812d"
+  },
+  "new_generation_calls": 0,
+  "new_rigid_attempts": 0,
+  "original_reference_gap_items": [
+    "offhands-01-iron-buckler",
+    "offhands-02-round-wooden-shield"
+  ],
+  "outputs_per_build": 3027,
+  "protected_files": 1418,
+  "protected_mismatches": 0,
+  "real_nonzero_unsplit_differences_retained": 320,
+  "recipe": "final-b/CORRECTED_REMOVABLE_LAYERS.json",
+  "review": "final-b/CONSOLIDATED_REVIEW.png",
+  "review_counts": {
+    "HOLD": 79,
+    "PENDING": 81
+  },
+  "runtime_adoption": false,
+  "saved_reference_comparisons": 30,
+  "saved_reference_exact": 30,
+  "source_pose_and_contact_holds_retained": true,
+  "status": "SEALED_CONCRETE_DEPTH_SUCCESSOR_PENDING_WITH_SOURCE_HOLDS_NOT_ADOPTION",
+  "technical": {
+    "PASS": 160
+  },
+  "technical_PASS_means": "source/layer selection, exact removal and independent literal composition only; NOT pose/coverage/contact or visual acceptance",
+  "two_final_manifests_match": true,
+  "unsplit_ledger_replayed": 400
+}

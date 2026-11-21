@@ -1,0 +1,3064 @@
+{
+  "base": {
+    "declared_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+    "path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+    "role": "immutable_base",
+    "sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1"
+  },
+  "full_glove_skin_suppression": [
+    "gloves-02-grip-gloves",
+    "gloves-04-mail-gloves"
+  ],
+  "inputs": "../INPUTS.json",
+  "opposite_layers": [
+    {
+      "key": "old24-shieldbearer_weapon",
+      "path": "layers/old24-shieldbearer_weapon-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_weapon"
+      ],
+      "role": "item",
+      "sha256": "33a88c62dd9bc920ebb1626f8189d3648aee99bcdbf7e0d1f78d7c5a12e4cc60",
+      "source": {
+        "canonical_id": "short_sword",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-shieldbearer_weapon-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-shieldbearer_weapon"
+        ],
+        "role": "item",
+        "sha256": "33a88c62dd9bc920ebb1626f8189d3648aee99bcdbf7e0d1f78d7c5a12e4cc60",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-shieldbearer_weapon-whole-weapon.png",
+        "source_sha256": "d83290537e7723d7fc9a2e9d772ef3a14985f6e07611204370fa72279a8adfd0",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-shieldbearer_weapon",
+      "path": "layers/old24-shieldbearer_weapon-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_weapon"
+      ],
+      "role": "skin",
+      "sha256": "7004af144879cc0c6cbacf15d9d07338227d778367167e8298a9a495d37c6c8a",
+      "source": {
+        "canonical_id": "short_sword",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-shieldbearer_weapon-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-shieldbearer_weapon"
+        ],
+        "role": "original-left-skin",
+        "sha256": "7004af144879cc0c6cbacf15d9d07338227d778367167e8298a9a495d37c6c8a",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-shieldbearer_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_weapon--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "70d3512948eac5db4323ff29df229b4eadb0818591df2316e47fd6f6023b5a42",
+      "path": "layers/gloves/old24-shieldbearer_weapon--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_weapon",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "70d3512948eac5db4323ff29df229b4eadb0818591df2316e47fd6f6023b5a42",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-shieldbearer_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_weapon--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "7b7ab64454904949aabcf17204b3150ea2a6d18cd51899eb1f48d4614acc2c5e",
+      "path": "layers/gloves/old24-shieldbearer_weapon--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_weapon",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "7b7ab64454904949aabcf17204b3150ea2a6d18cd51899eb1f48d4614acc2c5e",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-shieldbearer_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_weapon--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "e0baf71f2d068fafa8a6bf872181ae3b1060773938e8ce7838c6b06343a3d0d1",
+      "path": "layers/gloves/old24-shieldbearer_weapon--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_weapon",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "7d2d8e9878b242991c08af9338ba4b21fc9800c23331f3af7dfdb25d382f6784",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-shieldbearer_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_weapon--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "4be8f43481427000b811752501534637bd2de8fce399154599a0449914aacdc6",
+      "path": "layers/gloves/old24-shieldbearer_weapon--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_weapon",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "d3050941d1d1965ef286706b2766f93965d56e00c608c7b395451485411322e1",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-shieldbearer_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_weapon--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "0d9c2e5a185c28fda193d34444872663d22a16bcbf819e76b569a3e5666c4ba4",
+      "path": "layers/gloves/old24-shieldbearer_weapon--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_weapon",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "0d9c2e5a185c28fda193d34444872663d22a16bcbf819e76b569a3e5666c4ba4",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-shieldbearer_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_weapon--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "c9f4e1a1278cea0682e91f52eca9dc039085f9cce92a8d014c8c619702e9c270",
+      "path": "layers/gloves/old24-shieldbearer_weapon--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_weapon",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "c9f4e1a1278cea0682e91f52eca9dc039085f9cce92a8d014c8c619702e9c270",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-shieldbearer_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_weapon--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "6bb33b23a728e599c1256512f040e2b1a2811777cb1a3af9e457853892f8a5ab",
+      "path": "layers/gloves/old24-shieldbearer_weapon--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_weapon",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "254573202553a17d9cdefc4cb52c3fbf04a82b49394a8931b2aff24fc1ab0574",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-shieldbearer_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_weapon--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "c37ecb75cb0dc8283faf4504df443e5e5d90f13034aa9807025b33554c865c98",
+      "path": "layers/gloves/old24-shieldbearer_weapon--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_weapon",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "7b457d0aaad8d7b08d8c58984d14f6c0503323311595413c2541d2c69dea81e2",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "new-current-iron-cudgel",
+      "path": "layers/new-current-iron-cudgel-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:new-current-iron-cudgel"
+      ],
+      "role": "item",
+      "sha256": "a0692ea1f8d7b911bafddcd29153bb7690da90206bfe1e43a793fa2caa1f32e7",
+      "source": {
+        "canonical_id": "cudgel",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/new-current-iron-cudgel-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:new-current-iron-cudgel"
+        ],
+        "role": "item",
+        "sha256": "a0692ea1f8d7b911bafddcd29153bb7690da90206bfe1e43a793fa2caa1f32e7",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/new-current-iron-cudgel-whole-weapon.png",
+        "source_sha256": "2e6f67666d8cb93cde2720da43ebfe77093e1b799d6dba6e8399a367a293dceb",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "new-current-iron-cudgel",
+      "path": "layers/new-current-iron-cudgel-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:new-current-iron-cudgel"
+      ],
+      "role": "skin",
+      "sha256": "5f3135c3927aa18a1e010789f81cd203bbeb074b3f0bc13c3d6b2bc88570f714",
+      "source": {
+        "canonical_id": "cudgel",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/new-current-iron-cudgel-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:new-current-iron-cudgel"
+        ],
+        "role": "original-left-skin",
+        "sha256": "5f3135c3927aa18a1e010789f81cd203bbeb074b3f0bc13c3d6b2bc88570f714",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "new-current-iron-cudgel",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-iron-cudgel--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "2be0bce40a39e4b438828299fca5eb33370d3599fd8e82efbb4c079e0069e9c0",
+      "path": "layers/gloves/new-current-iron-cudgel--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:new-current-iron-cudgel",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "2be0bce40a39e4b438828299fca5eb33370d3599fd8e82efbb4c079e0069e9c0",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "new-current-iron-cudgel",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-iron-cudgel--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "1afb6d00f083ecbf605a925e3456032328d0e314198271cd0eb5a36fc3c7a32a",
+      "path": "layers/gloves/new-current-iron-cudgel--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:new-current-iron-cudgel",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "1afb6d00f083ecbf605a925e3456032328d0e314198271cd0eb5a36fc3c7a32a",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "new-current-iron-cudgel",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-iron-cudgel--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "77b54674c381a8ef97ccc3027626881ef097e4f6fa3807e8cfb8d3b4345e39a3",
+      "path": "layers/gloves/new-current-iron-cudgel--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:new-current-iron-cudgel",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "c8896d794f7faade20ced20d7a2c69f473fa9eca3a64da6e10802d7e83102c8a",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "new-current-iron-cudgel",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-iron-cudgel--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "7e8dbfec686eff7fb8976976d3b85c8565718aefd8e851b637d8557eab41f28a",
+      "path": "layers/gloves/new-current-iron-cudgel--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:new-current-iron-cudgel",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "9c25a085a807de76b9901c758c52a8a8d523948648072d0b2cfdeeb561c35e9f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "new-current-iron-cudgel",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-iron-cudgel--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "7e58fe773711bbda9a2d06e98cf875840ed978c2c053c2e3db6a5ed75782f098",
+      "path": "layers/gloves/new-current-iron-cudgel--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:new-current-iron-cudgel",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "7e58fe773711bbda9a2d06e98cf875840ed978c2c053c2e3db6a5ed75782f098",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "new-current-iron-cudgel",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-iron-cudgel--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "d41f5386fadfcc1033c7e0d5633347023a690e700e8fd4894b98b9feff260e0e",
+      "path": "layers/gloves/new-current-iron-cudgel--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:new-current-iron-cudgel",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "d41f5386fadfcc1033c7e0d5633347023a690e700e8fd4894b98b9feff260e0e",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "new-current-iron-cudgel",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-iron-cudgel--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "0a1e370f27f6cbf5b68733effafabe6e68482866a17d69be5250934a882881fa",
+      "path": "layers/gloves/new-current-iron-cudgel--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:new-current-iron-cudgel",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "785d9431f034935a7e723fddd2c81b13e408f8ff0ded7a70d186a0b2cc9ab203",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "new-current-iron-cudgel",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-iron-cudgel--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "9b03efa9277bbf278657fb5369ab7766ec8290fddbf05175146253823cdf7dcb",
+      "path": "layers/gloves/new-current-iron-cudgel--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:new-current-iron-cudgel",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "ccadfb8d8b473379f191ea3eb215af280a084bd1cd5ca3cc1aca472b6a5d7c31",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "old24-occultist_weapon",
+      "path": "layers/old24-occultist_weapon-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_weapon"
+      ],
+      "role": "item",
+      "sha256": "276a2084ce11816aae2249978c81f12564c8b2f539405e2a98954ff9de1a8e35",
+      "source": {
+        "canonical_id": "ember_focus",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-occultist_weapon-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-occultist_weapon"
+        ],
+        "role": "item",
+        "sha256": "276a2084ce11816aae2249978c81f12564c8b2f539405e2a98954ff9de1a8e35",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-occultist_weapon-whole-weapon.png",
+        "source_sha256": "4d50780b81e6a1f2c0ed890a9381e120bca1d3a28c27b94ff02f2f52c966d069",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-occultist_weapon",
+      "path": "layers/old24-occultist_weapon-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_weapon"
+      ],
+      "role": "skin",
+      "sha256": "432bda4048f58abc67c8c575d785616a37bdf9fa607971bd7d3753583ca03f37",
+      "source": {
+        "canonical_id": "ember_focus",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-occultist_weapon-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-occultist_weapon"
+        ],
+        "role": "original-left-skin",
+        "sha256": "432bda4048f58abc67c8c575d785616a37bdf9fa607971bd7d3753583ca03f37",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-occultist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_weapon--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "e4679ba7969164bf1df6fa4a9f0a757f420082e4d637a58a436241d814919891",
+      "path": "layers/gloves/old24-occultist_weapon--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_weapon",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "e4679ba7969164bf1df6fa4a9f0a757f420082e4d637a58a436241d814919891",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-occultist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_weapon--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "dd477ab2088a4c0117063ddfd4fb2fff466bb49384fc5a00d0fcf910cf36c267",
+      "path": "layers/gloves/old24-occultist_weapon--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_weapon",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "dd477ab2088a4c0117063ddfd4fb2fff466bb49384fc5a00d0fcf910cf36c267",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-occultist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_weapon--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "71c0963f3144c7150d04ecf4ca606bc78e7f5dcd6fc59069c7e5d388c625c093",
+      "path": "layers/gloves/old24-occultist_weapon--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_weapon",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "6a533ffda86435d5011fb7023974966ead06b328b9fbfdc1051740abbf54b12f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-occultist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_weapon--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "6196f6cde9401aa8e7b4f631ef88b0d09e8b760f1bc4a5ff3f2e4d0c8ef1a9f3",
+      "path": "layers/gloves/old24-occultist_weapon--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_weapon",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "a1966230a62610cfc5cfe7550284cdedd299b938cb06fd5d1e0bb736477b1b43",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-occultist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_weapon--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "5b36fdd2d749e95cc2edaed503abb2f6d83c17405333a7d694d5ce904f829f87",
+      "path": "layers/gloves/old24-occultist_weapon--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_weapon",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "5b36fdd2d749e95cc2edaed503abb2f6d83c17405333a7d694d5ce904f829f87",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-occultist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_weapon--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "652ee0e1b79d27c9eba9b469023f6db8969bc7338f1892a801970b5f19fe0c86",
+      "path": "layers/gloves/old24-occultist_weapon--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_weapon",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "652ee0e1b79d27c9eba9b469023f6db8969bc7338f1892a801970b5f19fe0c86",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-occultist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_weapon--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "8d95fb1b9c10a8bd49775d7d0cfb574e9d81193e2a2f3396cbe047ad7a3771bb",
+      "path": "layers/gloves/old24-occultist_weapon--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_weapon",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "4f73e39f80c5c43c3ad1e49acc5d690a37966dc9f541582b056e8d74e8ef88ea",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-occultist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_weapon--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "5a440d9a50b46b3a972c1f2dc1b780a7b2151fe7da603f2e830fcbb01dcd9649",
+      "path": "layers/gloves/old24-occultist_weapon--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_weapon",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "e6b6a360243b0dfb0f65795db0a50776d57db79f97ada29cd778e4fae442cb34",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "offhands-01-iron-buckler",
+      "path": "layers/offhands-01-iron-buckler-item.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-01-iron-buckler"
+      ],
+      "role": "item",
+      "sha256": "be28a17c6f6c0129e2f71e5ccaf96de2aa4132678adf686e0db751eefadc0f1f",
+      "source": {
+        "canonical_id": "buckler",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/offhands-01-iron-buckler-item.png",
+        "physical_hand": "right",
+        "requires": [
+          "opposite:offhands-01-iron-buckler"
+        ],
+        "role": "item",
+        "sha256": "be28a17c6f6c0129e2f71e5ccaf96de2aa4132678adf686e0db751eefadc0f1f",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/cloaks-shields/layers/offhands-01-iron-buckler-shield.png",
+        "source_sha256": "8811f180d09a64a1b27d4c6426bfdedd84aa10e5771ddc58b93e2a80d37316ae",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "offhands-01-iron-buckler",
+      "path": "layers/offhands-01-iron-buckler-skin.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-01-iron-buckler"
+      ],
+      "role": "skin",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": {
+        "canonical_id": "buckler",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/offhands-01-iron-buckler-original-right-skin.png",
+        "physical_hand": "right",
+        "requires": [
+          "opposite:offhands-01-iron-buckler"
+        ],
+        "role": "original-right-skin",
+        "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "offhands-01-iron-buckler",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-01-iron-buckler--gloves-01-linen-handwraps-right-rear.png",
+      "old_sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "path": "layers/gloves/offhands-01-iron-buckler--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-01-iron-buckler",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-main.png",
+      "source_sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "offhands-01-iron-buckler",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-01-iron-buckler--gloves-01-linen-handwraps-right-front.png",
+      "old_sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "path": "layers/gloves/offhands-01-iron-buckler--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-01-iron-buckler",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-main.png",
+      "source_sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "offhands-01-iron-buckler",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-01-iron-buckler--gloves-02-grip-gloves-right-rear.png",
+      "old_sha256": "5163b6b54b70cdc14ad506cf3a452444fd0fab0ff5ec11b0161c976115dfd4f5",
+      "path": "layers/gloves/offhands-01-iron-buckler--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-01-iron-buckler",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "5163b6b54b70cdc14ad506cf3a452444fd0fab0ff5ec11b0161c976115dfd4f5",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-main.png",
+      "source_sha256": "5163b6b54b70cdc14ad506cf3a452444fd0fab0ff5ec11b0161c976115dfd4f5",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "offhands-01-iron-buckler",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-01-iron-buckler--gloves-02-grip-gloves-right-front.png",
+      "old_sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "path": "layers/gloves/offhands-01-iron-buckler--gloves-02-grip-gloves-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-01-iron-buckler",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-main.png",
+      "source_sha256": "5163b6b54b70cdc14ad506cf3a452444fd0fab0ff5ec11b0161c976115dfd4f5",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "offhands-01-iron-buckler",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-01-iron-buckler--gloves-03-draw-gloves-right-rear.png",
+      "old_sha256": "d16553502e2d622e57258d93e82fa396ac4ac5d35a85de5d2bb1539fd563f5ff",
+      "path": "layers/gloves/offhands-01-iron-buckler--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-01-iron-buckler",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "d16553502e2d622e57258d93e82fa396ac4ac5d35a85de5d2bb1539fd563f5ff",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-main.png",
+      "source_sha256": "d16553502e2d622e57258d93e82fa396ac4ac5d35a85de5d2bb1539fd563f5ff",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "offhands-01-iron-buckler",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-01-iron-buckler--gloves-03-draw-gloves-right-front.png",
+      "old_sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "path": "layers/gloves/offhands-01-iron-buckler--gloves-03-draw-gloves-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-01-iron-buckler",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-main.png",
+      "source_sha256": "d16553502e2d622e57258d93e82fa396ac4ac5d35a85de5d2bb1539fd563f5ff",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "offhands-01-iron-buckler",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-01-iron-buckler--gloves-04-mail-gloves-right-rear.png",
+      "old_sha256": "b639840a14d819a90f549dc2b5c9399f65769a51b3231c8ed81161966af2152b",
+      "path": "layers/gloves/offhands-01-iron-buckler--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-01-iron-buckler",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "b639840a14d819a90f549dc2b5c9399f65769a51b3231c8ed81161966af2152b",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-main.png",
+      "source_sha256": "b639840a14d819a90f549dc2b5c9399f65769a51b3231c8ed81161966af2152b",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "offhands-01-iron-buckler",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-01-iron-buckler--gloves-04-mail-gloves-right-front.png",
+      "old_sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "path": "layers/gloves/offhands-01-iron-buckler--gloves-04-mail-gloves-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-01-iron-buckler",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-main.png",
+      "source_sha256": "b639840a14d819a90f549dc2b5c9399f65769a51b3231c8ed81161966af2152b",
+      "z": 80
+    },
+    {
+      "key": "new-current-field-tome",
+      "path": "layers/new-current-field-tome-item.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:new-current-field-tome"
+      ],
+      "role": "item",
+      "sha256": "3db4f83fc2c94e6399ac0bb9291630bf35ae0bb562eb9d27d396061d7a8aa582",
+      "source": {
+        "canonical_id": "field_tome",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/new-current-field-tome-item.png",
+        "physical_hand": "right",
+        "requires": [
+          "opposite:new-current-field-tome"
+        ],
+        "role": "item",
+        "sha256": "3db4f83fc2c94e6399ac0bb9291630bf35ae0bb562eb9d27d396061d7a8aa582",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/new-current-field-tome-whole-weapon.png",
+        "source_sha256": "5d87d5dd03bd747424b2d0efdbed4edfc18e56354b654c57c4891da94e10d4d7",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "new-current-field-tome",
+      "path": "layers/new-current-field-tome-skin.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:new-current-field-tome"
+      ],
+      "role": "skin",
+      "sha256": "485a45c2cc49f1ab1158b55d1434112a64d7622859e47f132c44cd24304ea856",
+      "source": {
+        "canonical_id": "field_tome",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/new-current-field-tome-original-right-skin.png",
+        "physical_hand": "right",
+        "requires": [
+          "opposite:new-current-field-tome"
+        ],
+        "role": "original-right-skin",
+        "sha256": "485a45c2cc49f1ab1158b55d1434112a64d7622859e47f132c44cd24304ea856",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "new-current-field-tome",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-field-tome--gloves-01-linen-handwraps-right-rear.png",
+      "old_sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "path": "layers/gloves/new-current-field-tome--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:new-current-field-tome",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-main.png",
+      "source_sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "new-current-field-tome",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-field-tome--gloves-01-linen-handwraps-right-front.png",
+      "old_sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "path": "layers/gloves/new-current-field-tome--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:new-current-field-tome",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-main.png",
+      "source_sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "new-current-field-tome",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-field-tome--gloves-02-grip-gloves-right-rear.png",
+      "old_sha256": "1a0fd754ad1f79fa9a0cb3d379d81c264175e535999f852b0d4bdabd75bbaba9",
+      "path": "layers/gloves/new-current-field-tome--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:new-current-field-tome",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "1d778e7b8b3b1fd9d43b460d226f21f0fc484cebde6df2ff5b9887ad9211ce49",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-main.png",
+      "source_sha256": "5163b6b54b70cdc14ad506cf3a452444fd0fab0ff5ec11b0161c976115dfd4f5",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "new-current-field-tome",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-field-tome--gloves-02-grip-gloves-right-front.png",
+      "old_sha256": "16f2a6c82deb4baec514c86a61bd297f53ea61bcd5aa27f46117f89c10da0678",
+      "path": "layers/gloves/new-current-field-tome--gloves-02-grip-gloves-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:new-current-field-tome",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "274cba97e94fb4d3c717e7b9de9dc8d9981750365bcced675e2813b489ede821",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-main.png",
+      "source_sha256": "5163b6b54b70cdc14ad506cf3a452444fd0fab0ff5ec11b0161c976115dfd4f5",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "new-current-field-tome",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-field-tome--gloves-03-draw-gloves-right-rear.png",
+      "old_sha256": "1531582bbd9ddbb82d7b7b0bdbd5ead1896ec703d47355011087a2a7b5dfdb57",
+      "path": "layers/gloves/new-current-field-tome--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:new-current-field-tome",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "1531582bbd9ddbb82d7b7b0bdbd5ead1896ec703d47355011087a2a7b5dfdb57",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-main.png",
+      "source_sha256": "d16553502e2d622e57258d93e82fa396ac4ac5d35a85de5d2bb1539fd563f5ff",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "new-current-field-tome",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-field-tome--gloves-03-draw-gloves-right-front.png",
+      "old_sha256": "93b73660ad3362c2a2a7773ed04fa5246cd1d872b6bd44d51e3de3aa19482639",
+      "path": "layers/gloves/new-current-field-tome--gloves-03-draw-gloves-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:new-current-field-tome",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "93b73660ad3362c2a2a7773ed04fa5246cd1d872b6bd44d51e3de3aa19482639",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-main.png",
+      "source_sha256": "d16553502e2d622e57258d93e82fa396ac4ac5d35a85de5d2bb1539fd563f5ff",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "new-current-field-tome",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-field-tome--gloves-04-mail-gloves-right-rear.png",
+      "old_sha256": "f2d8c8fb99351764f216f2e5650ec9ce65dd7bde89ed28b1824b1201572c9b4c",
+      "path": "layers/gloves/new-current-field-tome--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:new-current-field-tome",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "b94654e9e49e1c30d80d4346ae545e014ca1dc79c325fee33fb773cebc1a363c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-main.png",
+      "source_sha256": "b639840a14d819a90f549dc2b5c9399f65769a51b3231c8ed81161966af2152b",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "new-current-field-tome",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/new-current-field-tome--gloves-04-mail-gloves-right-front.png",
+      "old_sha256": "7f65d62733e0014c330459bbb08cce748dfe619350f84ac8f89ac1d65f6e2291",
+      "path": "layers/gloves/new-current-field-tome--gloves-04-mail-gloves-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:new-current-field-tome",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "52007810423caf2bee8361b9e06c39d1305377e5235e52454a1b376d7ad56ad8",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-main.png",
+      "source_sha256": "b639840a14d819a90f549dc2b5c9399f65769a51b3231c8ed81161966af2152b",
+      "z": 80
+    },
+    {
+      "key": "offhands-02-round-wooden-shield",
+      "path": "layers/offhands-02-round-wooden-shield-item.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-02-round-wooden-shield"
+      ],
+      "role": "item",
+      "sha256": "e93df15eac7ef22bc94b370e761b34cd1f5a68ef3c6019fd31cb6339f9a6cf83",
+      "source": {
+        "canonical_id": "hm_trial_v1:offhands-02-round-wooden-shield",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/offhands-02-round-wooden-shield-item.png",
+        "physical_hand": "right",
+        "requires": [
+          "opposite:offhands-02-round-wooden-shield"
+        ],
+        "role": "item",
+        "sha256": "e93df15eac7ef22bc94b370e761b34cd1f5a68ef3c6019fd31cb6339f9a6cf83",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/cloaks-shields/layers/offhands-02-round-wooden-shield-shield.png",
+        "source_sha256": "64f8af2826a2405b6349cdac4d97267c7bed9c296c82bc4409e06f547ce20071",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "offhands-02-round-wooden-shield",
+      "path": "layers/offhands-02-round-wooden-shield-skin.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-02-round-wooden-shield"
+      ],
+      "role": "skin",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": {
+        "canonical_id": "hm_trial_v1:offhands-02-round-wooden-shield",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/offhands-02-round-wooden-shield-original-right-skin.png",
+        "physical_hand": "right",
+        "requires": [
+          "opposite:offhands-02-round-wooden-shield"
+        ],
+        "role": "original-right-skin",
+        "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "offhands-02-round-wooden-shield",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-02-round-wooden-shield--gloves-01-linen-handwraps-right-rear.png",
+      "old_sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "path": "layers/gloves/offhands-02-round-wooden-shield--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-02-round-wooden-shield",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-main.png",
+      "source_sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "offhands-02-round-wooden-shield",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-02-round-wooden-shield--gloves-01-linen-handwraps-right-front.png",
+      "old_sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "path": "layers/gloves/offhands-02-round-wooden-shield--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-02-round-wooden-shield",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-main.png",
+      "source_sha256": "6919383f1bc71fc8d93571fe9fc46339f4495517e537f37768822741f81aee9f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "offhands-02-round-wooden-shield",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-02-round-wooden-shield--gloves-02-grip-gloves-right-rear.png",
+      "old_sha256": "5163b6b54b70cdc14ad506cf3a452444fd0fab0ff5ec11b0161c976115dfd4f5",
+      "path": "layers/gloves/offhands-02-round-wooden-shield--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-02-round-wooden-shield",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "5163b6b54b70cdc14ad506cf3a452444fd0fab0ff5ec11b0161c976115dfd4f5",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-main.png",
+      "source_sha256": "5163b6b54b70cdc14ad506cf3a452444fd0fab0ff5ec11b0161c976115dfd4f5",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "offhands-02-round-wooden-shield",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-02-round-wooden-shield--gloves-02-grip-gloves-right-front.png",
+      "old_sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "path": "layers/gloves/offhands-02-round-wooden-shield--gloves-02-grip-gloves-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-02-round-wooden-shield",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-main.png",
+      "source_sha256": "5163b6b54b70cdc14ad506cf3a452444fd0fab0ff5ec11b0161c976115dfd4f5",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "offhands-02-round-wooden-shield",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-02-round-wooden-shield--gloves-03-draw-gloves-right-rear.png",
+      "old_sha256": "d16553502e2d622e57258d93e82fa396ac4ac5d35a85de5d2bb1539fd563f5ff",
+      "path": "layers/gloves/offhands-02-round-wooden-shield--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-02-round-wooden-shield",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "d16553502e2d622e57258d93e82fa396ac4ac5d35a85de5d2bb1539fd563f5ff",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-main.png",
+      "source_sha256": "d16553502e2d622e57258d93e82fa396ac4ac5d35a85de5d2bb1539fd563f5ff",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "offhands-02-round-wooden-shield",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-02-round-wooden-shield--gloves-03-draw-gloves-right-front.png",
+      "old_sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "path": "layers/gloves/offhands-02-round-wooden-shield--gloves-03-draw-gloves-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-02-round-wooden-shield",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-main.png",
+      "source_sha256": "d16553502e2d622e57258d93e82fa396ac4ac5d35a85de5d2bb1539fd563f5ff",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "offhands-02-round-wooden-shield",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-02-round-wooden-shield--gloves-04-mail-gloves-right-rear.png",
+      "old_sha256": "b639840a14d819a90f549dc2b5c9399f65769a51b3231c8ed81161966af2152b",
+      "path": "layers/gloves/offhands-02-round-wooden-shield--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-02-round-wooden-shield",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "b639840a14d819a90f549dc2b5c9399f65769a51b3231c8ed81161966af2152b",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-main.png",
+      "source_sha256": "b639840a14d819a90f549dc2b5c9399f65769a51b3231c8ed81161966af2152b",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "offhands-02-round-wooden-shield",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/offhands-02-round-wooden-shield--gloves-04-mail-gloves-right-front.png",
+      "old_sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "path": "layers/gloves/offhands-02-round-wooden-shield--gloves-04-mail-gloves-front.png",
+      "physical_hand": "right",
+      "requires": [
+        "opposite:offhands-02-round-wooden-shield",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "69b56ce4a30aa63caa8d03e1a1c78442680c045ce48fe10533bd8ae1c648c01c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-main.png",
+      "source_sha256": "b639840a14d819a90f549dc2b5c9399f65769a51b3231c8ed81161966af2152b",
+      "z": 80
+    },
+    {
+      "key": "old24-shieldbearer_heavy",
+      "path": "layers/old24-shieldbearer_heavy-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_heavy"
+      ],
+      "role": "item",
+      "sha256": "e410d84b24ad98ec14f85101e8a5eb189a9f8a3285c71401968161fd438406bf",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-shieldbearer_heavy",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-shieldbearer_heavy-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-shieldbearer_heavy"
+        ],
+        "role": "item",
+        "sha256": "e410d84b24ad98ec14f85101e8a5eb189a9f8a3285c71401968161fd438406bf",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-shieldbearer_heavy-whole-weapon.png",
+        "source_sha256": "44bcd3b3c582564095e75ea88584580115d194051557cdfbbc214278e64177e9",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-shieldbearer_heavy",
+      "path": "layers/old24-shieldbearer_heavy-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_heavy"
+      ],
+      "role": "skin",
+      "sha256": "27af2e29439bd542f176ddf4c2dd77dfa182993a39281f4efdf13604f80b4051",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-shieldbearer_heavy",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-shieldbearer_heavy-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-shieldbearer_heavy"
+        ],
+        "role": "original-left-skin",
+        "sha256": "27af2e29439bd542f176ddf4c2dd77dfa182993a39281f4efdf13604f80b4051",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-shieldbearer_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_heavy--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "8549a9a8e268c08db4aab18a59e8f424c2784fb88a07563ebe9cbcaebb7bf101",
+      "path": "layers/gloves/old24-shieldbearer_heavy--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_heavy",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "8549a9a8e268c08db4aab18a59e8f424c2784fb88a07563ebe9cbcaebb7bf101",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-shieldbearer_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_heavy--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "3c71157a1981d201ed4403af61cf9508e868aba3b39ce99bc9f382976b43fafd",
+      "path": "layers/gloves/old24-shieldbearer_heavy--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_heavy",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "3c71157a1981d201ed4403af61cf9508e868aba3b39ce99bc9f382976b43fafd",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-shieldbearer_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_heavy--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "f33f21a1228006c6c20b8a47077bbfc015863fbfbf9e81c88942004a35ad2193",
+      "path": "layers/gloves/old24-shieldbearer_heavy--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_heavy",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "b2067a9fb2fd7317b6fad4c6eb9c18eea5e561957822faccce5479f838a0538d",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-shieldbearer_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_heavy--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "50fbc67f7a9830f9482b98ed96e3a39a537c696043eb2620c8e3c9fc669e2bca",
+      "path": "layers/gloves/old24-shieldbearer_heavy--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_heavy",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "34561a3db47b0f332b3668c77a88a73f4b523bd4ddb7ec3515d352ba2fe3c5c2",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-shieldbearer_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_heavy--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "465919112cff82086704896684f6c2844cfef670275e0b42764109dd93a42cc3",
+      "path": "layers/gloves/old24-shieldbearer_heavy--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_heavy",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "465919112cff82086704896684f6c2844cfef670275e0b42764109dd93a42cc3",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-shieldbearer_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_heavy--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "be52a4cb8145d892156b3d4c31912ff6d049bf0ecd3f47657da7d0f8e9faa993",
+      "path": "layers/gloves/old24-shieldbearer_heavy--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_heavy",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "be52a4cb8145d892156b3d4c31912ff6d049bf0ecd3f47657da7d0f8e9faa993",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-shieldbearer_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_heavy--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "ae8e3a080876f37a00ecea47a8a92f8dd47c769ebeb4b2c4bf6dacd0987bf46d",
+      "path": "layers/gloves/old24-shieldbearer_heavy--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_heavy",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "4f3d758a091c0905c8d7f309eec453aca5823dfca85ea493fdb0215e81406b0e",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-shieldbearer_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-shieldbearer_heavy--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "b442dba306b9d9fd33ec8ca0163eb46c0245925e3cced85531a65bf829c9e501",
+      "path": "layers/gloves/old24-shieldbearer_heavy--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-shieldbearer_heavy",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "f2595d9185d781d9e3aecd952c9be5348b414feaf9c3486139bfb749ab0a3697",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "old24-duelist_weapon",
+      "path": "layers/old24-duelist_weapon-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_weapon"
+      ],
+      "role": "item",
+      "sha256": "02c92b3a309258708dc7927d96d614c45391c74fd3eea329958cc63f4430605d",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-duelist_weapon",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-duelist_weapon-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-duelist_weapon"
+        ],
+        "role": "item",
+        "sha256": "02c92b3a309258708dc7927d96d614c45391c74fd3eea329958cc63f4430605d",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-duelist_weapon-whole-weapon.png",
+        "source_sha256": "7d1b58d9e393de7e4100130157784599d5da12accb1710e38ca447a40d630446",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-duelist_weapon",
+      "path": "layers/old24-duelist_weapon-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_weapon"
+      ],
+      "role": "skin",
+      "sha256": "ea5526c1ea9f800ac8c5233200240bb76b1c6980448a2ac1552c67a40c8f0008",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-duelist_weapon",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-duelist_weapon-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-duelist_weapon"
+        ],
+        "role": "original-left-skin",
+        "sha256": "ea5526c1ea9f800ac8c5233200240bb76b1c6980448a2ac1552c67a40c8f0008",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-duelist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_weapon--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "a79da94412348a4d225d7048c2523d6d58b5976dee0613cb27a989e5303df001",
+      "path": "layers/gloves/old24-duelist_weapon--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_weapon",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "a79da94412348a4d225d7048c2523d6d58b5976dee0613cb27a989e5303df001",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-duelist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_weapon--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "dc1b660fd8f28aec5c52c4a9ef90c29979374a72805d43f18d4eaeb1222b55cd",
+      "path": "layers/gloves/old24-duelist_weapon--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_weapon",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "dc1b660fd8f28aec5c52c4a9ef90c29979374a72805d43f18d4eaeb1222b55cd",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-duelist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_weapon--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "405cc372a45aac769a09dc156e32fd51b9326fe7a4442c01cf2371df7225bdc3",
+      "path": "layers/gloves/old24-duelist_weapon--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_weapon",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "695bbba649bc88b14b94655fafdc082ceceed4f2be16114b961bdd03bf5cac9b",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-duelist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_weapon--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "ffe242531dc995f0ca8fa2591f5118cda02b274a0cd83b054682d4ce5664318f",
+      "path": "layers/gloves/old24-duelist_weapon--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_weapon",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "fbea78cd695b0d34a45aa2ddf46ba1d7887f5f37a3734138877820088ea0605e",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-duelist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_weapon--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "8cf25436c881f1af2cd78e7111df8e3e62c0aa5bffdf656da26fd45bccacd2f6",
+      "path": "layers/gloves/old24-duelist_weapon--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_weapon",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "8cf25436c881f1af2cd78e7111df8e3e62c0aa5bffdf656da26fd45bccacd2f6",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-duelist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_weapon--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "6c2ea21b1673f52113e03aafc4de35ff6aafe12445c5aa1a5ae90093cfbcf3bd",
+      "path": "layers/gloves/old24-duelist_weapon--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_weapon",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "6c2ea21b1673f52113e03aafc4de35ff6aafe12445c5aa1a5ae90093cfbcf3bd",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-duelist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_weapon--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "c3a4c636fc3e156342d72e4bda33d0f83dd29dcf4d02facbf1d26eb9eacf9a17",
+      "path": "layers/gloves/old24-duelist_weapon--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_weapon",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "764b177815a7849069b2c9ff2a9f4d65d21d736931ced197afe9943f111d2994",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-duelist_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_weapon--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "d972aad1546b86c4c2fbc14263bf94374f816f3644b57221f84d7f49d922be9c",
+      "path": "layers/gloves/old24-duelist_weapon--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_weapon",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "bb8c39d8066b9209ba4ec9838f3dbda62fefc7d7eb0e66994173fe0e6b17fa2b",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "old24-duelist_heavy",
+      "path": "layers/old24-duelist_heavy-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_heavy"
+      ],
+      "role": "item",
+      "sha256": "3769a50fe356401002c6eeba30f1cc3bbffc1b5c9ec477207ff5ba1de5e5f963",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-duelist_heavy",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-duelist_heavy-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-duelist_heavy"
+        ],
+        "role": "item",
+        "sha256": "3769a50fe356401002c6eeba30f1cc3bbffc1b5c9ec477207ff5ba1de5e5f963",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-duelist_heavy-whole-weapon.png",
+        "source_sha256": "28b2c7d569db64d59363c86fbfa581175cb09a06b030e5c0ec007e4e72f16bd7",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-duelist_heavy",
+      "path": "layers/old24-duelist_heavy-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_heavy"
+      ],
+      "role": "skin",
+      "sha256": "e251b092bf0e82c5709663dc178018127083cba47e8f9e25f6dabd6cb6920bbe",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-duelist_heavy",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-duelist_heavy-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-duelist_heavy"
+        ],
+        "role": "original-left-skin",
+        "sha256": "e251b092bf0e82c5709663dc178018127083cba47e8f9e25f6dabd6cb6920bbe",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-duelist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_heavy--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "c0ce2a87375acc8e4fd67a134d2995304b0f2db8acb428c30fcf527e2d01135a",
+      "path": "layers/gloves/old24-duelist_heavy--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_heavy",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "c0ce2a87375acc8e4fd67a134d2995304b0f2db8acb428c30fcf527e2d01135a",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-duelist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_heavy--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "da3737e8b6180aa471d0e006722f53d267d9f2f21d94333b17d7c889263eb1a2",
+      "path": "layers/gloves/old24-duelist_heavy--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_heavy",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "da3737e8b6180aa471d0e006722f53d267d9f2f21d94333b17d7c889263eb1a2",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-duelist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_heavy--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "b0db4f234737416d566a740f9085a843d086376ab983c4958bc7d8e9ba30174a",
+      "path": "layers/gloves/old24-duelist_heavy--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_heavy",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "e6cd8e4b819343e4ade4ed694df5ca0f64a5e6916d49ae21c5dfd5e3801ba535",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-duelist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_heavy--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "ed749492a6201672afc6e566a10eb47cc902f06ffd33264f20ba2929fcbd3dbf",
+      "path": "layers/gloves/old24-duelist_heavy--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_heavy",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "e7a9ac9627fb24ab4d6dd2a62da05c3cf89af204ded1757fe6fa7b667b55b02e",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-duelist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_heavy--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "d1f296c78b5f0fd372df26bee06ed138b6dfa450dd2a3e6864ffd94b19b0b07e",
+      "path": "layers/gloves/old24-duelist_heavy--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_heavy",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "d1f296c78b5f0fd372df26bee06ed138b6dfa450dd2a3e6864ffd94b19b0b07e",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-duelist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_heavy--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "278ed966afb56c5b4dcaa98c8f785ae67a30e183efa4aa53ffd6f98af08bbba3",
+      "path": "layers/gloves/old24-duelist_heavy--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_heavy",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "278ed966afb56c5b4dcaa98c8f785ae67a30e183efa4aa53ffd6f98af08bbba3",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-duelist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_heavy--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "bcaba1aaa12e3964233754740a938c6b4d930bef47a5adf6a897c334963b85dd",
+      "path": "layers/gloves/old24-duelist_heavy--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_heavy",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "f2529dc550d07abfdcbdc85a582f34a6a3739bdeb66e845c56c85861db67d28f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-duelist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-duelist_heavy--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "28f1aacdc2837face64bb5bde4f51a918f923b0c40cdff0a0facb6619a3ecd73",
+      "path": "layers/gloves/old24-duelist_heavy--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-duelist_heavy",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "fefc288986bedc90ec3bad535e06a8bceeb1f0ef6a7ceced50f367764e165752",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "old24-medic_weapon",
+      "path": "layers/old24-medic_weapon-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_weapon"
+      ],
+      "role": "item",
+      "sha256": "12e2fb7c7770dd73180dfbd3b6e6f2986b316a9ddc77bdcf5f34ada546fdcc21",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-medic_weapon",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-medic_weapon-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-medic_weapon"
+        ],
+        "role": "item",
+        "sha256": "12e2fb7c7770dd73180dfbd3b6e6f2986b316a9ddc77bdcf5f34ada546fdcc21",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-medic_weapon-whole-weapon.png",
+        "source_sha256": "892061f1564484ec875faaacb5fda7069dc8c608558eb4ac428a11250ea10196",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-medic_weapon",
+      "path": "layers/old24-medic_weapon-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_weapon"
+      ],
+      "role": "skin",
+      "sha256": "9a3a28ac96ee7b126c27015e96ecfc74d9142c10acb94ad2d2b8cbf8b36d8692",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-medic_weapon",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-medic_weapon-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-medic_weapon"
+        ],
+        "role": "original-left-skin",
+        "sha256": "9a3a28ac96ee7b126c27015e96ecfc74d9142c10acb94ad2d2b8cbf8b36d8692",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-medic_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_weapon--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "d9c8dfebc7b8e2cc5dbb36b51db5a4d5188721958716c53addee26b5e183c123",
+      "path": "layers/gloves/old24-medic_weapon--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_weapon",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "d9c8dfebc7b8e2cc5dbb36b51db5a4d5188721958716c53addee26b5e183c123",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-medic_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_weapon--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "c9e80ceae2a132f5dcb5558f59aa764bfdd1376c47b7f91db0c8331866dbfff4",
+      "path": "layers/gloves/old24-medic_weapon--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_weapon",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "c9e80ceae2a132f5dcb5558f59aa764bfdd1376c47b7f91db0c8331866dbfff4",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-medic_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_weapon--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "92ec3f329c51b699183e017d614acf4e50281f4cd32c17c191c8ac890ada0a84",
+      "path": "layers/gloves/old24-medic_weapon--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_weapon",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "074f762048c3362d7ae8d35595f938c96574679175b8fd5336f5e4c7ca8d6e94",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-medic_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_weapon--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "cf72cc6c8a788f7054e23795d8c5034632ef17580d7b7ad2ac08561ce92f67c0",
+      "path": "layers/gloves/old24-medic_weapon--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_weapon",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "c2c99c0990e6daed8f4e2c0a072bdb7bc307409fe7e8a3796bcde4293ab8f078",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-medic_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_weapon--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "b41d2f144c33370fac174a0900ced7485289ab034db02c6c778989a6115ef1d6",
+      "path": "layers/gloves/old24-medic_weapon--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_weapon",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "b41d2f144c33370fac174a0900ced7485289ab034db02c6c778989a6115ef1d6",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-medic_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_weapon--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "656c396d4d5e58f5409fe02eecfd0895ccf10bd34d3a6d77ca749259e628c51d",
+      "path": "layers/gloves/old24-medic_weapon--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_weapon",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "656c396d4d5e58f5409fe02eecfd0895ccf10bd34d3a6d77ca749259e628c51d",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-medic_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_weapon--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "c5d0259dfe0f0601d415b2ff842b01498563a053f856ec145f9271588afa6f42",
+      "path": "layers/gloves/old24-medic_weapon--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_weapon",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "120b091e62de0e146092042574ee77ddd58bb35638b2bd66ee24cf1c1def2307",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-medic_weapon",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_weapon--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "0dfe14b8316a932dc6960c978e123d32cf038742bf9bd645806491ffdc924260",
+      "path": "layers/gloves/old24-medic_weapon--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_weapon",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "44db6c85df1135dbf41c8abbd6a33fb2b3367bdc723a41cee5930b64de06a6d2",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "old24-medic_heavy",
+      "path": "layers/old24-medic_heavy-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_heavy"
+      ],
+      "role": "item",
+      "sha256": "62d292ab1bb640f63e7cdde8843db9b457430e614b29f4d0f139d2357c926838",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-medic_heavy",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-medic_heavy-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-medic_heavy"
+        ],
+        "role": "item",
+        "sha256": "62d292ab1bb640f63e7cdde8843db9b457430e614b29f4d0f139d2357c926838",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-medic_heavy-whole-weapon.png",
+        "source_sha256": "562231a208677d7de17a4acfd8d2e6d5c9ddf0bf8c1fc7155e0a3daf5db4e90c",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-medic_heavy",
+      "path": "layers/old24-medic_heavy-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_heavy"
+      ],
+      "role": "skin",
+      "sha256": "07c83e167f4ca3c0377b1faa418f7cf6713c5cf0206ad3cee7750a582ec4e7fc",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-medic_heavy",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-medic_heavy-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-medic_heavy"
+        ],
+        "role": "original-left-skin",
+        "sha256": "07c83e167f4ca3c0377b1faa418f7cf6713c5cf0206ad3cee7750a582ec4e7fc",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-medic_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_heavy--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "e06e0eda4b49806250d85d0351e48da1d0e345f0b8a84bf2daf38e6b2bc1314a",
+      "path": "layers/gloves/old24-medic_heavy--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_heavy",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "e06e0eda4b49806250d85d0351e48da1d0e345f0b8a84bf2daf38e6b2bc1314a",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-medic_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_heavy--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "0febd7451880b4958e344176ab16b704300279a3379a74aa34963886a635f13a",
+      "path": "layers/gloves/old24-medic_heavy--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_heavy",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "0febd7451880b4958e344176ab16b704300279a3379a74aa34963886a635f13a",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-medic_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_heavy--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "270436eb4daafa6e19a5a0dd258da0b457a4dbc96141e9a958e40e12a76c6970",
+      "path": "layers/gloves/old24-medic_heavy--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_heavy",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "1d395661931575de2fc3613b35e94ae7a3c65aba732f19c60a1922bba62fc8eb",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-medic_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_heavy--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "69bd965374ab7ea8c43452fa6f1672a0dbfd1de6d27140ad3d14f45629cf6965",
+      "path": "layers/gloves/old24-medic_heavy--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_heavy",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "763d75ba8b3fdc471b2de8eba87e33247bfde7a1bb322677d2d3e26ca870e286",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-medic_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_heavy--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "3d70587963e16eeaf7a6b2679d71b6781202421c8e321954ba3a10b986ba782e",
+      "path": "layers/gloves/old24-medic_heavy--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_heavy",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "3d70587963e16eeaf7a6b2679d71b6781202421c8e321954ba3a10b986ba782e",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-medic_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_heavy--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "ec838b03e711ede0c592848dac83a523747de484d764ea95d374b7ca18e9e578",
+      "path": "layers/gloves/old24-medic_heavy--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_heavy",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "ec838b03e711ede0c592848dac83a523747de484d764ea95d374b7ca18e9e578",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-medic_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_heavy--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "4c363c9689e56df4cc25505a2afd8f189c4c3fa3c6b7d9c50e1fb352b88f0be2",
+      "path": "layers/gloves/old24-medic_heavy--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_heavy",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "9ddc206625142c40d3ef058ba87413001df10442593da83296451d3f7d1b06e5",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-medic_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-medic_heavy--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "bf0e0beee3f2dba7cc0bf472428cfd192210a54d6cecde028e8372f34d169ef8",
+      "path": "layers/gloves/old24-medic_heavy--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-medic_heavy",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "e5ef7ecbb037ed55e4aabf3af6bb7135432a96e981a012bf1186853a69a7722a",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "old24-occultist_heavy",
+      "path": "layers/old24-occultist_heavy-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_heavy"
+      ],
+      "role": "item",
+      "sha256": "f67b30b69f7d0038db570e7310958858721202cb212e6829ce1c4059f218b090",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-occultist_heavy",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-occultist_heavy-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-occultist_heavy"
+        ],
+        "role": "item",
+        "sha256": "f67b30b69f7d0038db570e7310958858721202cb212e6829ce1c4059f218b090",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-occultist_heavy-whole-weapon.png",
+        "source_sha256": "f6d7caa71f09235ff0e629145123233e39062d18a952391951f5e46ee501c416",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-occultist_heavy",
+      "path": "layers/old24-occultist_heavy-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_heavy"
+      ],
+      "role": "skin",
+      "sha256": "f023e3049dcb6a35360b3994a3cd1d3d85ef9f73fd1fc323b896fc441d3bdd6a",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-occultist_heavy",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-occultist_heavy-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-occultist_heavy"
+        ],
+        "role": "original-left-skin",
+        "sha256": "f023e3049dcb6a35360b3994a3cd1d3d85ef9f73fd1fc323b896fc441d3bdd6a",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-occultist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_heavy--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "873c6517b66c9c17af7e9898d1e0a08f92cdd8cf662a2a69d9cd3186681ceda3",
+      "path": "layers/gloves/old24-occultist_heavy--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_heavy",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "873c6517b66c9c17af7e9898d1e0a08f92cdd8cf662a2a69d9cd3186681ceda3",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-occultist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_heavy--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "0aca0482cd46f46f94e518e5ee82aa17368ed24011b8d16052c6c2856fd4455f",
+      "path": "layers/gloves/old24-occultist_heavy--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_heavy",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "0aca0482cd46f46f94e518e5ee82aa17368ed24011b8d16052c6c2856fd4455f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-occultist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_heavy--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "c8cff499d03be8fecfa83fb1736695b897aed2098c637e7d8dad3f19de8980c5",
+      "path": "layers/gloves/old24-occultist_heavy--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_heavy",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "bea9b41aaba326d61bbab9b62824fedcd9716d44cbdaa57ec2ec9004dfe59718",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-occultist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_heavy--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "bc8a5aed74106d3dff369a1a25c121640bbbc5ebd9d66f22af822305e47c9eae",
+      "path": "layers/gloves/old24-occultist_heavy--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_heavy",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "5750c62fead1080118c91749de9d0cc424a352a415e1d2a7175d2c6330f97615",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-occultist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_heavy--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "577ab619cf62f14d8f97b75a0ac3f82c05e2c599138ab8672fc9f7842119078f",
+      "path": "layers/gloves/old24-occultist_heavy--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_heavy",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "577ab619cf62f14d8f97b75a0ac3f82c05e2c599138ab8672fc9f7842119078f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-occultist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_heavy--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "3c8d2e583d0bbeea353683ca104b8cfbc4d4c6cf97a731897edbf9e7d90fd7fb",
+      "path": "layers/gloves/old24-occultist_heavy--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_heavy",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "3c8d2e583d0bbeea353683ca104b8cfbc4d4c6cf97a731897edbf9e7d90fd7fb",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-occultist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_heavy--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "2202e6e0fc8f275dab1d64ee974cc8245c0af854eeb257c0986b20e431ffb01c",
+      "path": "layers/gloves/old24-occultist_heavy--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_heavy",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "40ecf93a071d69eeb060db08c1adbf3d99c2ac632c2d99d51f7a841d6d619323",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-occultist_heavy",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-occultist_heavy--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "9c95f52c2c3de3dfbf3614476922359663d75496b71e041af7f20347bd401376",
+      "path": "layers/gloves/old24-occultist_heavy--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-occultist_heavy",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "a97e8bbf4da7e599197ff4fa67860fc6659a2fbea789af291ec2f32d4efa802c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "old24-gatewarden_blade",
+      "path": "layers/old24-gatewarden_blade-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-gatewarden_blade"
+      ],
+      "role": "item",
+      "sha256": "116a01cd6756b8ac9783734fc29861961f7423b914a836f6143460f67d7c395e",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-gatewarden_blade",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-gatewarden_blade-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-gatewarden_blade"
+        ],
+        "role": "item",
+        "sha256": "116a01cd6756b8ac9783734fc29861961f7423b914a836f6143460f67d7c395e",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-gatewarden_blade-whole-weapon.png",
+        "source_sha256": "16897e4b0ce9184e034de0c3ef8a1661e64deefd6e24e29bb543842c11f8c258",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-gatewarden_blade",
+      "path": "layers/old24-gatewarden_blade-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-gatewarden_blade"
+      ],
+      "role": "skin",
+      "sha256": "d09d0e43ef4c13b544786fbf0f2dc7392dd583fdc5a64e8e1c832a24163176b4",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-gatewarden_blade",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-gatewarden_blade-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-gatewarden_blade"
+        ],
+        "role": "original-left-skin",
+        "sha256": "d09d0e43ef4c13b544786fbf0f2dc7392dd583fdc5a64e8e1c832a24163176b4",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-gatewarden_blade",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-gatewarden_blade--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "4e7c8b89f278dc1a05efa1bd0ccbc67df3977f911ff6d73e89b972f1ebe6a332",
+      "path": "layers/gloves/old24-gatewarden_blade--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-gatewarden_blade",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "4e7c8b89f278dc1a05efa1bd0ccbc67df3977f911ff6d73e89b972f1ebe6a332",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-gatewarden_blade",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-gatewarden_blade--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "26342f281c9a3735e1d65ba960309de8ff0ab1bd5d549590f69cbbc4257f689f",
+      "path": "layers/gloves/old24-gatewarden_blade--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-gatewarden_blade",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "26342f281c9a3735e1d65ba960309de8ff0ab1bd5d549590f69cbbc4257f689f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-gatewarden_blade",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-gatewarden_blade--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "72bec2f02ddf0f6c6e9c7318f66afb39215cc7ae558c243003bdae97d3c198b0",
+      "path": "layers/gloves/old24-gatewarden_blade--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-gatewarden_blade",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "d23ef8d1e80180982fbad52fe771c1883dfaa8a3fb5f378b74570231ee199d0e",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-gatewarden_blade",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-gatewarden_blade--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "c66c216d5a14ce633be54e4ca5fac434256c3e550454a529816e4bfedff42048",
+      "path": "layers/gloves/old24-gatewarden_blade--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-gatewarden_blade",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "6dd465eb2054f617db5e5f1a19225fec993d22da30cc137f06a4b013dd2f554d",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-gatewarden_blade",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-gatewarden_blade--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "314b3152b1b52791a20cb243c2703c51cf6d24858ec8625aca984819cf9cae60",
+      "path": "layers/gloves/old24-gatewarden_blade--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-gatewarden_blade",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "314b3152b1b52791a20cb243c2703c51cf6d24858ec8625aca984819cf9cae60",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-gatewarden_blade",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-gatewarden_blade--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "91561492a29dcef4801b91e14f534fd488ea6a3d5837b78b89abdc74f731795c",
+      "path": "layers/gloves/old24-gatewarden_blade--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-gatewarden_blade",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "91561492a29dcef4801b91e14f534fd488ea6a3d5837b78b89abdc74f731795c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-gatewarden_blade",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-gatewarden_blade--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "3572a7e6ad1d7d0f82cae151f65877c0f8b7e004580386abc6b7a21fd4b7f3fc",
+      "path": "layers/gloves/old24-gatewarden_blade--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-gatewarden_blade",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "2640143e66a67402ce803044e0736bb47cb81b5f3166186b8035da79b32c47c2",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-gatewarden_blade",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-gatewarden_blade--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "19e5f9b89d18e1ceeec6878ea31d24d9ad31361ec5fa266e5cc96e12ec4eceb6",
+      "path": "layers/gloves/old24-gatewarden_blade--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-gatewarden_blade",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "25479685c88b39d39187b4f3aa19dc4be553094de54320cb49675e7aeb1ce505",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "old24-quarry_estoc",
+      "path": "layers/old24-quarry_estoc-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-quarry_estoc"
+      ],
+      "role": "item",
+      "sha256": "39898084967aa28b8a7bad2cdc8fe5006ed8f40a46303bd04d8482d62fab8947",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-quarry_estoc",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-quarry_estoc-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-quarry_estoc"
+        ],
+        "role": "item",
+        "sha256": "39898084967aa28b8a7bad2cdc8fe5006ed8f40a46303bd04d8482d62fab8947",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-quarry_estoc-whole-weapon.png",
+        "source_sha256": "388888df6ae9af25b25cdb7240c9139babeecfc1015b02c0218e55b8edc3ad06",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-quarry_estoc",
+      "path": "layers/old24-quarry_estoc-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-quarry_estoc"
+      ],
+      "role": "skin",
+      "sha256": "4658dd90e9a8cd21e0623f77f019408572518f6dd0bf074e8894169e849ed12b",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-quarry_estoc",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-quarry_estoc-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-quarry_estoc"
+        ],
+        "role": "original-left-skin",
+        "sha256": "4658dd90e9a8cd21e0623f77f019408572518f6dd0bf074e8894169e849ed12b",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-quarry_estoc",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-quarry_estoc--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "d1d909c99586f0a49db8f882973ce7a981b951a070e8bc4ed16fa420b00a6e1e",
+      "path": "layers/gloves/old24-quarry_estoc--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-quarry_estoc",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "d1d909c99586f0a49db8f882973ce7a981b951a070e8bc4ed16fa420b00a6e1e",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-quarry_estoc",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-quarry_estoc--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "58fd9baa84cee08c4ee386546b72e67bfc5a1f7db24c3dd3e83f95b856b09aa6",
+      "path": "layers/gloves/old24-quarry_estoc--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-quarry_estoc",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "58fd9baa84cee08c4ee386546b72e67bfc5a1f7db24c3dd3e83f95b856b09aa6",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-quarry_estoc",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-quarry_estoc--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "297a7d56c34884af250ea848ad45c3f8228aef841974b9de68d9426d08bebfc5",
+      "path": "layers/gloves/old24-quarry_estoc--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-quarry_estoc",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "f4d6e2b028072f5dc8e85f6d8e9451b1beb81cbdc481caad2c2ea949a5e57acc",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-quarry_estoc",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-quarry_estoc--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "ffaee8f622e8bb80f228379d440012954e7186ff212636c5c101a4cd1d73a9f7",
+      "path": "layers/gloves/old24-quarry_estoc--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-quarry_estoc",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "048da9553e47fc88d7fba96081cc4878b9755757b4047a00809b4af5ad25f7bc",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-quarry_estoc",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-quarry_estoc--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "3f551f08b45effe4c2d74995b14d0cb53f9e9cf3df5ea2ce84b2d54145fed638",
+      "path": "layers/gloves/old24-quarry_estoc--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-quarry_estoc",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "3f551f08b45effe4c2d74995b14d0cb53f9e9cf3df5ea2ce84b2d54145fed638",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-quarry_estoc",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-quarry_estoc--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "22cbe17da1dc928d0bc3d33bb0deb34648bf74af4322cf03013df922bfd4cb43",
+      "path": "layers/gloves/old24-quarry_estoc--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-quarry_estoc",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "22cbe17da1dc928d0bc3d33bb0deb34648bf74af4322cf03013df922bfd4cb43",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-quarry_estoc",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-quarry_estoc--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "cdce6afa34c1014edd6d90283078bc698e1cfd5f8bbda2555204aaf3a823aeeb",
+      "path": "layers/gloves/old24-quarry_estoc--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-quarry_estoc",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "4d0b52a2fe503805a30791678d975dd77a1cc0c20763254bd4abbb1ca74749b9",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-quarry_estoc",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-quarry_estoc--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "bdf0755ca6ebbc62d27a0447fcc49f00aef2cd8c94254d43fd981e1ebc31c00e",
+      "path": "layers/gloves/old24-quarry_estoc--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-quarry_estoc",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "3b54df511978f2747a0c164170cda00933f8f7df9d1cd120ff280385f37f3730",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "old24-wayfarer_lancet",
+      "path": "layers/old24-wayfarer_lancet-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-wayfarer_lancet"
+      ],
+      "role": "item",
+      "sha256": "7bcdeafc511c5fde230580b5e97f835ca37e0ef5876acf14293efac04912f270",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-wayfarer_lancet",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-wayfarer_lancet-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-wayfarer_lancet"
+        ],
+        "role": "item",
+        "sha256": "7bcdeafc511c5fde230580b5e97f835ca37e0ef5876acf14293efac04912f270",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-wayfarer_lancet-whole-weapon.png",
+        "source_sha256": "54e55db9ba29ec114fd889acac51947083dc5549dcb82e9637f0bf103d94b1b7",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-wayfarer_lancet",
+      "path": "layers/old24-wayfarer_lancet-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-wayfarer_lancet"
+      ],
+      "role": "skin",
+      "sha256": "de41f99725eb07adedaf521a2553e64f8b78e00f50a444b0860da9d54c728b2a",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-wayfarer_lancet",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-wayfarer_lancet-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-wayfarer_lancet"
+        ],
+        "role": "original-left-skin",
+        "sha256": "de41f99725eb07adedaf521a2553e64f8b78e00f50a444b0860da9d54c728b2a",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-wayfarer_lancet",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-wayfarer_lancet--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "1368d401d81ecb5cb0b02ff6d36ad4265d43ac2ae8bfb527211b6f1c4741bb93",
+      "path": "layers/gloves/old24-wayfarer_lancet--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-wayfarer_lancet",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "1368d401d81ecb5cb0b02ff6d36ad4265d43ac2ae8bfb527211b6f1c4741bb93",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-wayfarer_lancet",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-wayfarer_lancet--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "ee998b3cd238a83f6e29dd8367f07b96dc1472030bfe03825fefcd4240438dc8",
+      "path": "layers/gloves/old24-wayfarer_lancet--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-wayfarer_lancet",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "ee998b3cd238a83f6e29dd8367f07b96dc1472030bfe03825fefcd4240438dc8",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-wayfarer_lancet",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-wayfarer_lancet--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "9502ed674413783963397e90a0eb1836670a4f63d4b293b50c4bd777f64e3db7",
+      "path": "layers/gloves/old24-wayfarer_lancet--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-wayfarer_lancet",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "69b60ea568d21a1118c16b8152843b750c30db4c6ef82f9744e254c79be57c4e",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-wayfarer_lancet",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-wayfarer_lancet--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "13dac36e3abc0e8bc46fac4b5414ab947f5921c7121265a6c4e74d2e3b60aeb2",
+      "path": "layers/gloves/old24-wayfarer_lancet--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-wayfarer_lancet",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "b89219d2e29bcf119d2fe6bcf9ccb3a1133c5292a589705dc51136c11085e582",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-wayfarer_lancet",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-wayfarer_lancet--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "79f50a45b7adb9da4c680e180fbfdd4a292dc1d5fec1dcf50ed21d189b20cf16",
+      "path": "layers/gloves/old24-wayfarer_lancet--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-wayfarer_lancet",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "79f50a45b7adb9da4c680e180fbfdd4a292dc1d5fec1dcf50ed21d189b20cf16",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-wayfarer_lancet",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-wayfarer_lancet--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "a0abaf8fd0351c81c021d946d3ab1124f369a2bf19f10081e36d013dee5b417f",
+      "path": "layers/gloves/old24-wayfarer_lancet--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-wayfarer_lancet",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "a0abaf8fd0351c81c021d946d3ab1124f369a2bf19f10081e36d013dee5b417f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-wayfarer_lancet",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-wayfarer_lancet--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "f8c67f542312a75434af2728eae88dab16d3812d078e0e4e7401bd5ad012847b",
+      "path": "layers/gloves/old24-wayfarer_lancet--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-wayfarer_lancet",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "148cb74c2ed24aac4ca57500bf99dedb65d7dc9e3584699adfe930409aa37af5",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-wayfarer_lancet",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-wayfarer_lancet--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "90af4a6351398befef15832d023234bf2ad9903678c1e3e1bd540616a3478fb0",
+      "path": "layers/gloves/old24-wayfarer_lancet--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-wayfarer_lancet",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "bb0cfae9e0ac7b1298415e1d85977e7612ae69b9c2765a0edaf3efe36c72d952",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    },
+    {
+      "key": "old24-ashen_bell",
+      "path": "layers/old24-ashen_bell-item.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-ashen_bell"
+      ],
+      "role": "item",
+      "sha256": "18e4e4532ad6a8f2a9dd0d19fa4f0306fe760edc5d703b827ccd5019854cc9b7",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-ashen_bell",
+        "method": "whole uniform affine",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-ashen_bell-item.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-ashen_bell"
+        ],
+        "role": "item",
+        "sha256": "18e4e4532ad6a8f2a9dd0d19fa4f0306fe760edc5d703b827ccd5019854cc9b7",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/weapon-carry/layers/old24-ashen_bell-whole-weapon.png",
+        "source_sha256": "dd14c558c15fa4295bdfd75f424a725d54e6714d081a43da84fdbf1489d4ef3f",
+        "unless_full_glove": false,
+        "z": 60
+      },
+      "unless_full_glove": false,
+      "z": 60
+    },
+    {
+      "key": "old24-ashen_bell",
+      "path": "layers/old24-ashen_bell-skin.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-ashen_bell"
+      ],
+      "role": "skin",
+      "sha256": "8500b95fb3498b2b3e648f144c2e3c2f9583072894d907a766830f4bae6406ec",
+      "source": {
+        "canonical_id": "hm_trial_v1:old24-ashen_bell",
+        "method": "exact original RGBA within true contour and actual item overlap",
+        "path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/old24-ashen_bell-original-left-skin.png",
+        "physical_hand": "left",
+        "requires": [
+          "opposite:old24-ashen_bell"
+        ],
+        "role": "original-left-skin",
+        "sha256": "8500b95fb3498b2b3e648f144c2e3c2f9583072894d907a766830f4bae6406ec",
+        "source_path": "/home/quatro/games/hollow-march-workstreams/remaining-appearances-undergarment-salvage/lanes/duelist/base-candidate.png",
+        "source_sha256": "0805dcdbebd47e7c33a2316acbc927fbf4032b67f993af722a9d0912a4218ce1",
+        "unless_full_glove": true,
+        "z": 70
+      },
+      "unless_full_glove": true,
+      "z": 70
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-ashen_bell",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-ashen_bell--gloves-01-linen-handwraps-left-rear.png",
+      "old_sha256": "60d1f78de442b35ffd22e0d34acd227a65c4941e18428dbe2f8f59b05407ec24",
+      "path": "layers/gloves/old24-ashen_bell--gloves-01-linen-handwraps-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-ashen_bell",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "rear",
+      "sha256": "60d1f78de442b35ffd22e0d34acd227a65c4941e18428dbe2f8f59b05407ec24",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 50
+    },
+    {
+      "glove": "gloves-01-linen-handwraps",
+      "key": "old24-ashen_bell",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-ashen_bell--gloves-01-linen-handwraps-left-front.png",
+      "old_sha256": "d16bcec3542430e528b163d4003f750f3b53f86ced6de8b11b6625774ebe0394",
+      "path": "layers/gloves/old24-ashen_bell--gloves-01-linen-handwraps-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-ashen_bell",
+        "gloves-01-linen-handwraps"
+      ],
+      "role": "front",
+      "sha256": "d16bcec3542430e528b163d4003f750f3b53f86ced6de8b11b6625774ebe0394",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-01-linen-handwraps-off.png",
+      "source_sha256": "50b643b1548cf4afa47ac775856d38e4f65e5439c4cad88d1096d6bd792ae67d",
+      "z": 80
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-ashen_bell",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-ashen_bell--gloves-02-grip-gloves-left-rear.png",
+      "old_sha256": "de452fcf0f2c52c07d948ce27cb52868739f040b8128a346e3e97b46b4303b30",
+      "path": "layers/gloves/old24-ashen_bell--gloves-02-grip-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-ashen_bell",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "rear",
+      "sha256": "235daa55e49cba5a6f4219eb308be2f28236b478267e88cdccb3bc1ca3c5c76c",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 50
+    },
+    {
+      "glove": "gloves-02-grip-gloves",
+      "key": "old24-ashen_bell",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-ashen_bell--gloves-02-grip-gloves-left-front.png",
+      "old_sha256": "34cdff1bddf7481bf453d6580a875b8c36ee6a7e945f2ba74ee781ab353e3e9f",
+      "path": "layers/gloves/old24-ashen_bell--gloves-02-grip-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-ashen_bell",
+        "gloves-02-grip-gloves"
+      ],
+      "role": "front",
+      "sha256": "f12de5bf85d8448b33b37634ac23b4f35f30784f92ff337802874e09e28ad336",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-02-grip-gloves-off.png",
+      "source_sha256": "a40bbfb5327426963ecc5dffa0eb9d67e04b5c664c61bec0a7d96402bead962f",
+      "z": 80
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-ashen_bell",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-ashen_bell--gloves-03-draw-gloves-left-rear.png",
+      "old_sha256": "e74f575eb1c38ead7ff90c51c68d5f6368d74178178e11f97bafd3e0b870aa7f",
+      "path": "layers/gloves/old24-ashen_bell--gloves-03-draw-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-ashen_bell",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "rear",
+      "sha256": "e74f575eb1c38ead7ff90c51c68d5f6368d74178178e11f97bafd3e0b870aa7f",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 50
+    },
+    {
+      "glove": "gloves-03-draw-gloves",
+      "key": "old24-ashen_bell",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-ashen_bell--gloves-03-draw-gloves-left-front.png",
+      "old_sha256": "25fff3fd6ea25a6a42a0aa18f06f3965717e1b5afd56c24c81a62392a6077972",
+      "path": "layers/gloves/old24-ashen_bell--gloves-03-draw-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-ashen_bell",
+        "gloves-03-draw-gloves"
+      ],
+      "role": "front",
+      "sha256": "25fff3fd6ea25a6a42a0aa18f06f3965717e1b5afd56c24c81a62392a6077972",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-03-draw-gloves-off.png",
+      "source_sha256": "8a567987c83fab57516fe7ac92b7191ce0fe62fb1714542345f787d174bc8967",
+      "z": 80
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-ashen_bell",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-ashen_bell--gloves-04-mail-gloves-left-rear.png",
+      "old_sha256": "245a56aafea524814aec5e8754aa658c90eb10b4fcf02764617a7ee918d5e922",
+      "path": "layers/gloves/old24-ashen_bell--gloves-04-mail-gloves-rear.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-ashen_bell",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "rear",
+      "sha256": "17a98e80bd80db550c027a0174bd18ff1e15b6ca11aa56edea638a505bb58938",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 50
+    },
+    {
+      "glove": "gloves-04-mail-gloves",
+      "key": "old24-ashen_bell",
+      "old_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/opposite-hand-art/roster-duelist-v1/layers/gloves/old24-ashen_bell--gloves-04-mail-gloves-left-front.png",
+      "old_sha256": "f03a17ba18f247fcb38f70836be9fef40c850c88505c2fbffe991bafab181aad",
+      "path": "layers/gloves/old24-ashen_bell--gloves-04-mail-gloves-front.png",
+      "physical_hand": "left",
+      "requires": [
+        "opposite:old24-ashen_bell",
+        "gloves-04-mail-gloves"
+      ],
+      "role": "front",
+      "sha256": "bbd06cc8e72bb524771461d434f1bca4c461a8b9b31e843d000d1b7b09a95037",
+      "source": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/lanes/hands-belts/layers/gloves-04-mail-gloves-off.png",
+      "source_sha256": "3901bedcc3f3b2c677d15df3e31c8aee17bd403250ccb725d5c0b8d5c02070b6",
+      "z": 80
+    }
+  ],
+  "original_recipe": {
+    "path": "/home/quatro/games/hollow-march-workstreams/duelist-model-first-equipment-redo-20261025/helmet-front-corrections/parent-review/CURRENT_50_WITH_REVIEWED_HELMETS.json",
+    "role": "current_corrected_recipe",
+    "sha256": "4d189a4fac25836a760c02572816f46f4bf63f4d9e37b629ee708cef7ef0e894"
+  },
+  "original_records_unchanged": true,
+  "runtime_adoption": false,
+  "scope": "16 cells x45 pairwise contexts, not all-slot Cartesian/runtime proof",
+  "status": "PARTIAL_HOLD_REVIEW_PENDING"
+}

@@ -1,0 +1,34 @@
+{
+  "equipment-master.png": {
+    "provider": "openai-codex",
+    "model": "gpt-image-2-medium",
+    "requested_size": "1536x1024",
+    "size": "1536x1024",
+    "pixel_size": "1536x1024",
+    "quality": "medium",
+    "reported_quality": "low",
+    "reported_size": "1536x1024",
+    "imagegen_request_id": "18edf6f4-46ce-4de2-9c8c-b5226c25e070",
+    "input_image_count": 1,
+    "input_image": "../sources/base-mercenary.png",
+    "prompt": "Create a standalone medieval equipment painted asset sheet matching the rich handpainted worn realistic illustrated style, black dark paint contours and warm top-left light of this mercenary. DO NOT DRAW THE MAN. Four SEPARATE complete objects on perfectly flat saturated magenta #ff00ff with no text, no labels, no shadows on background. FOUR VERTICAL COLUMNS left to right, generous magenta gutters: (1) an iron arming sword, pommel at TOP, dark brown leather hilt and guard near top quarter, long tapered blade pointing straight DOWN; (2) one handed bearded battleaxe, iron blade and head near TOP on left of straight timber haft, long grip in middle, complete butt at bottom; (3) round round wooden shield obliquely viewed slightly from left, iron rim and boss, deep muted oxblood painted wood, whole outline; (4) tall kite shield in same oblique perspective, iron rim, worn desaturated dark moss green plank face and modest pale diagonal painted slash. Full objects no cutoffs, no hands, no people, no scenic background, no inventory frames. The sword and axe are slender full size weapons and shields are wide; allocate equal column widths. Rich textured paint, not vector, not 3D icons, not cartoon, dark edges retained against pure magenta."
+  },
+  "brigandine-master.png": {
+    "provider": "openai-codex",
+    "model": "gpt-image-2-medium",
+    "requested_size": "1024x1536",
+    "size": "1024x1536",
+    "pixel_size": "1024x1536",
+    "quality": "medium",
+    "reported_quality": "medium",
+    "reported_size": "1024x1536",
+    "imagegen_request_id": "b32e5446-2465-4738-acf5-11c23dcb8600",
+    "input_image_count": 1,
+    "input_image": "../sources/base-mercenary.png",
+    "prompt": "Edit this exact painted full-body mercenary in place into ONE armor variant. Preserve the image framing, exact anatomy, pixel alignment, exposed face, beard, hands, trouser legs and boots, the exact standing pose, blank relaxed glove hands, warm light, detailed textured painting. Change ONLY the brown torso coat into a worn dark oxblood brigandine coat with small subtle brass rivets, black leather edge trim and short shoulder protection, same coat hem and sleeves as original, no bag no cape no weapons no shield. Change ONLY the hair/top head covering into a battered iron KETTLE HAT with a full visibly broad sloped brim extending each side, without covering eyes or face. Include same original linen collar below face. Retain precisely pure flat magenta #ff00ff everywhere around character. Never checkerboard. One complete full body, soles/head fully in frame, NO text labels. Armor and helmet will be independently masked out to reuse over immutable original, so same contour position essential. Original shoes/face/hands not new designs. This is a rich painted game sprite, not SVG and not photograph."
+  },
+  "upstream": {
+    "base-mercenary.png": "Supplied by parent; provider receipt owned by parent, not inferred from filename. Decoded 1024x1536.",
+    "mail-mercenary.png": "Supplied by parent; provider receipt owned by parent, not inferred from filename. Decoded 1024x1536."
+  }
+}

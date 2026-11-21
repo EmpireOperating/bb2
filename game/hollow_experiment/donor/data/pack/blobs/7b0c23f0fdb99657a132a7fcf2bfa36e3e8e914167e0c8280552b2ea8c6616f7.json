@@ -1,0 +1,43 @@
+{
+  "status": "USER_ACCEPTED_BOTH_LEFT_UPRIGHT_SUCCESSORS_FOR_CURRENT_PLAYTEST",
+  "source_user_message": "ok this looks good for now too. now is there anything that needs finishing before a do a full combined playtest of everything we have so far?",
+  "prior_acceptance": "ROSTER_VISUAL_ACCEPTANCE_EXCEPT_LEFT_UPRIGHT_V1.json",
+  "accepted_changed_closures": [
+    {
+      "appearance": "shieldbearer",
+      "status": "USER_ACCEPTED_AS_IS_FOR_NOW",
+      "physical_hand": "left",
+      "viewer_side": "right",
+      "direction": "up",
+      "seal": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-left-upright-v1/shieldbearer/SEAL.json",
+      "seal_sha256": "8bcdf88d5a55f5279cbe146b70250815bd74b86e2cddac622192412c04ffbf88",
+      "review": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-left-upright-v1/shieldbearer/build-2/FOCUSED_BEFORE_AFTER_REVIEW.png",
+      "review_sha256": "8cf272291d41497e5c4123841935061eabf9dcf9d2a162f64a61bc52cd4b0f30",
+      "recipe": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-left-upright-v1/shieldbearer/build-2/SUCCESSOR_RECIPE.json",
+      "recipe_sha256": "3fe36a74b39a757d97e706cd7a0b7d3030d732d5710a86e9afb15f8af8722f89"
+    },
+    {
+      "appearance": "occultist",
+      "status": "USER_ACCEPTED_AS_IS_FOR_NOW",
+      "physical_hand": "left",
+      "viewer_side": "right",
+      "direction": "up",
+      "seal": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-left-upright-v1/occultist/SEAL.json",
+      "seal_sha256": "2d4fc4903b2e29d97d5dc0c8b8c9f6d99900fbcc8607b82a192049c5a61b3574",
+      "review": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-left-upright-v1/occultist/build-b/FOCUSED_BEFORE_AFTER_REVIEW.png",
+      "review_sha256": "bd5536feb29436c58154bf9581c52be887db61b15d06cb7acf0f435cb88cb998",
+      "recipe": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-left-upright-v1/occultist/build-b/CURRENT_SUCCESSOR_RECIPE.json",
+      "recipe_sha256": "82e85c7f603fbaf97be5c29acf0afbf804354f50d02080d9a2ea7b80070c472b"
+    }
+  ],
+  "effect": "Close both remaining upward-orientation visual gates. Preserve all other reviewed art accepted as-is; no more cosmetic corrections or repeated visual review of unchanged assets. Technical integration and real-window combined-playable verification remain outstanding.",
+  "not_implied": [
+    "New generation/spending authority",
+    "Invented artwork for missing/null routes",
+    "Native/GPU proof from offline acceptance",
+    "Default-game replacement, player-save migration or live-desktop automation",
+    "A completed merge of older campaign, classless branch and equipment trial"
+  ],
+  "generation_calls_granted": 0,
+  "current_live_workers": 0
+}

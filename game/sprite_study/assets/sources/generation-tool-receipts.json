@@ -1,0 +1,53 @@
+[
+  {
+    "success": true,
+    "image": "/home/quatro/.hermes/cache/images/openai_codex_gpt-image-2-medium_20261101_074502_60b8fa70.png",
+    "model": "gpt-image-2-medium",
+    "prompt": "EDIT the attached exact original braced mercenary base. Requested 1024x1536 portrait medium quality. Maintain the exact full body bounding box, identical pose, head size/position, existing face, bare fists and wrists and boot shapes. No pose or face redesign. Only clothe him in a vivid COLD BLUE STEEL MAIL HAUBERK, short sleeves ending at the ORIGINAL rolled-cloth cuff positions, skirt ending at original tunic hem, strong black ring clusters grouped into broad dark shadow planes, crisp silver edge flashes on shoulders and breast, a dark blue fabric collar below exposed original neck. No shoulder plates, no oversized accessories. Replace plain garment material with blue-black chainmail. Keep original brown leather belt shape and buckle. Add a distinctly TALL POINTED CONICAL STEEL NASAL HELMET properly worn over his original crown, with a narrow straight nasal strip centered down original nose, visible original face and ears unchanged. Upper-left hard light, bold ink edges, stylized hand-painted tactical RPG sprite, purposeful 3-4 value grouping, no photoreal soft shading. Helmet and armor materially much brighter than dark base clothes without looking white. Keep SAME hand positions: viewer-left clenched fist near (155,560), viewer-right clenched fist near (670,560). NO weapons NO shields NO props NO extra body parts. All original exposed skin, hands, legs, boots unchanged. Exact solid pure #FF00FF background, no ground/shadow/checkerboard/text. Keep space above helmet and below feet. This is equipment-overlay source art, registration is critical.",
+    "aspect_ratio": "portrait",
+    "modality": "image",
+    "provider": "openai-codex",
+    "size": "1024x1536",
+    "quality": "medium",
+    "input_image_count": 1,
+    "requested_size": "1024x1536",
+    "pixel_size": "1024x1536",
+    "reported_quality": "medium",
+    "reported_size": "1024x1536",
+    "imagegen_request_id": "a396c8ce-feee-4ac4-9343-615246674adc"
+  },
+  {
+    "success": true,
+    "image": "/home/quatro/.hermes/cache/images/openai_codex_gpt-image-2-medium_20261101_074512_fe9f3d81.png",
+    "model": "gpt-image-2-medium",
+    "prompt": "EDIT this exact original braced mercenary sprite, requested 1024x1536 medium quality portrait. Keep EXACT original anatomy/pose/frame/camera/face/headsize/feet and closed fists, do not move or redesign person. Replace ONLY plain tunic with rich OXBLOOD RED BRIGANDINE: strongly saturated dark red dyed leather/cloth torso and skirt, large coherent angular planes, sparse bold iron rivet rows, near-black seams, warm red-orange edge lighting, dark leather sleeves over original sleeve shapes with small visible steel splints. This must read as bold red armor at tiny tactical scale, NOT brown tunic, NOT quilted mail, NOT gray desaturated cloth. Preserve original belt buckle/silhouette. Original neck and hands exposed. Add visibly LOW WIDE BRIMMED KETTLE STEEL HELMET over original crown: dome plus very broad distinctive elliptical brim, cold steel highlight along its upper edge, deep dark underside, actual face unobscured. Visibly distinct silhouette from a pointed nasal helmet. No face/hand/limb repaint. Base original fist positions viewer-left approx (155,560), viewer-right approx (670,560). Strong dark ink contour, large value groups, small brilliant cold-metal accents, high-contrast illustrative original tactical RPG sprite, NO soft photo rendering. NO weapons NO shields NO props NO extra hands. Keep original trousers and boots. Exact pure saturated #FF00FF backdrop, no ground shadow, text or checkerboard. Keep complete silhouette with no clipping and same position as base.",
+    "aspect_ratio": "portrait",
+    "modality": "image",
+    "provider": "openai-codex",
+    "size": "1024x1536",
+    "quality": "medium",
+    "input_image_count": 1,
+    "requested_size": "1024x1536",
+    "pixel_size": "1024x1536",
+    "reported_quality": "medium",
+    "reported_size": "1024x1536",
+    "imagegen_request_id": "d1d77b4d-32c3-420a-8589-e8910e317d8d"
+  },
+  {
+    "success": true,
+    "image": "/home/quatro/.hermes/cache/images/openai_codex_gpt-image-2-medium_20261101_074454_3a2c84d9.png",
+    "model": "gpt-image-2-medium",
+    "prompt": "Create an ORIGINAL painted equipment object atlas for this attached stylized ink-contour tactical RPG character, not a person. Requested landscape 1536x1024 medium quality. SIX COMPLETE SEPARATE OBJECTS arranged exactly in 3 columns by 2 rows with LARGE clean pure #FF00FF gutters, all on pure #FF00FF flat background. Top-left: a long one-handed straight steel arming sword UPRIGHT point up, broad bright blade, dark central fuller, strong black outline, simple straight crossguard, dark wrapped grip and round steel pommel. Top-middle: a one-handed BROAD battle axe UPRIGHT with long brown haft and a huge crescent steel head projecting RIGHT, bright cutting edge, strong dark socket, not a small hatchet. Top-right: a TALL pointed kite shield FRONT/SLIGHT THREE-QUARTER view, blue-black field with bold ivory diagonal chevron, broad iron rim with silver accent and bosses, no fine heraldry. Bottom-left: broad ROUND shield front/very slight three-quarter view, red-brown wooden planks, thick iron rim and large bright iron boss, no straps extending from front. Bottom-middle: a complete long wooden SPEAR UPRIGHT point up, broad silver leaf tip, dark socket, brown shaft. Bottom-right: a complete long curved dark golden-brown RECURVE BOW upright with visible taut pale string, no arrow or quiver, curvature bulges to the RIGHT and string on LEFT. Each item isolated and entirely inside its own grid cell with no overlapping cell borders, sword and spear and axe are long vertical and fit to cell height. NO hands NO human parts NO mannequin NO armor NO lettering NO grid lines NO checkerboard NO shadow on background. Crisp dark contours, deliberately broad angular color blocks, faceted painterly steel with bright edge highlights, readable silhouette at 90-pixel person size. Same ink-paint aesthetic as reference, not photorealism, not washed-out soft concept art.",
+    "aspect_ratio": "landscape",
+    "modality": "image",
+    "provider": "openai-codex",
+    "size": "1536x1024",
+    "quality": "medium",
+    "input_image_count": 1,
+    "requested_size": "1536x1024",
+    "pixel_size": "1536x1024",
+    "reported_quality": "low",
+    "reported_size": "1536x1024",
+    "imagegen_request_id": "0a5317ca-b5ef-4ec0-8305-940f036b294f"
+  }
+]

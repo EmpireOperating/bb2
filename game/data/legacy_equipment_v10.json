@@ -1,0 +1,14 @@
+{
+  "sword": {"name":"Arming sword", "slot":"weapon", "weapon":"sword", "durability":0},
+  "spear": {"name":"Boar spear", "slot":"weapon", "weapon":"spear", "durability":0},
+  "axe": {"name":"Bearded axe", "slot":"weapon", "weapon":"axe", "durability":0},
+  "bow": {"name":"Ash longbow", "slot":"weapon", "weapon":"bow", "durability":0},
+  "leather": {"name":"Stitched leather", "slot":"body", "durability":55},
+  "mail": {"name":"Riveted mail", "slot":"body", "durability":85},
+  "heavy_mail": {"name":"Reinforced mail", "slot":"body", "durability":120},
+  "linen": {"name":"Quilted linen", "slot":"under", "durability":30},
+  "gambeson": {"name":"Padded gambeson", "slot":"under", "durability":45},
+  "cap": {"name":"Iron cap", "slot":"head", "durability":40},
+  "nasal": {"name":"Nasal helm", "slot":"head", "durability":60},
+  "shield": {"name":"Heater shield", "slot":"shield", "durability":0}
+}

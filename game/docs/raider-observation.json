@@ -1,0 +1,620 @@
+[
+	{
+		"clear_ford_day": 0,
+		"samples": [
+			{
+				"active_camps": 11,
+				"day": 2,
+				"displaced_bands": 0,
+				"field_food_eaten": 22,
+				"field_forage": 0,
+				"freight_food_stolen": 0,
+				"hungry_bands": 0,
+				"living_field_members": 22
+			},
+			{
+				"active_camps": 11,
+				"day": 3,
+				"displaced_bands": 0,
+				"field_food_eaten": 44,
+				"field_forage": 0,
+				"freight_food_stolen": 32,
+				"hungry_bands": 0,
+				"living_field_members": 22
+			},
+			{
+				"active_camps": 11,
+				"day": 4,
+				"displaced_bands": 0,
+				"field_food_eaten": 64,
+				"field_forage": 0,
+				"freight_food_stolen": 54,
+				"hungry_bands": 0,
+				"living_field_members": 20
+			},
+			{
+				"active_camps": 11,
+				"day": 5,
+				"displaced_bands": 0,
+				"field_food_eaten": 80,
+				"field_forage": 0,
+				"freight_food_stolen": 54,
+				"hungry_bands": 1,
+				"living_field_members": 18
+			},
+			{
+				"active_camps": 11,
+				"day": 6,
+				"displaced_bands": 0,
+				"field_food_eaten": 90,
+				"field_forage": 2,
+				"freight_food_stolen": 54,
+				"hungry_bands": 3,
+				"living_field_members": 16
+			},
+			{
+				"active_camps": 11,
+				"day": 7,
+				"displaced_bands": 0,
+				"field_food_eaten": 96,
+				"field_forage": 6,
+				"freight_food_stolen": 54,
+				"hungry_bands": 2,
+				"living_field_members": 12
+			},
+			{
+				"active_camps": 11,
+				"day": 8,
+				"displaced_bands": 0,
+				"field_food_eaten": 98,
+				"field_forage": 8,
+				"freight_food_stolen": 54,
+				"hungry_bands": 3,
+				"living_field_members": 10
+			},
+			{
+				"active_camps": 11,
+				"day": 9,
+				"displaced_bands": 0,
+				"field_food_eaten": 102,
+				"field_forage": 12,
+				"freight_food_stolen": 66,
+				"hungry_bands": 1,
+				"living_field_members": 6
+			},
+			{
+				"active_camps": 11,
+				"day": 10,
+				"displaced_bands": 0,
+				"field_food_eaten": 102,
+				"field_forage": 12,
+				"freight_food_stolen": 66,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 11,
+				"displaced_bands": 0,
+				"field_food_eaten": 104,
+				"field_forage": 14,
+				"freight_food_stolen": 66,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 12,
+				"displaced_bands": 0,
+				"field_food_eaten": 106,
+				"field_forage": 16,
+				"freight_food_stolen": 66,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 13,
+				"displaced_bands": 0,
+				"field_food_eaten": 106,
+				"field_forage": 16,
+				"freight_food_stolen": 66,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 14,
+				"displaced_bands": 0,
+				"field_food_eaten": 108,
+				"field_forage": 18,
+				"freight_food_stolen": 66,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 15,
+				"displaced_bands": 0,
+				"field_food_eaten": 110,
+				"field_forage": 20,
+				"freight_food_stolen": 66,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 16,
+				"displaced_bands": 0,
+				"field_food_eaten": 110,
+				"field_forage": 20,
+				"freight_food_stolen": 66,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 17,
+				"displaced_bands": 0,
+				"field_food_eaten": 112,
+				"field_forage": 22,
+				"freight_food_stolen": 66,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 18,
+				"displaced_bands": 0,
+				"field_food_eaten": 114,
+				"field_forage": 24,
+				"freight_food_stolen": 66,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 19,
+				"displaced_bands": 0,
+				"field_food_eaten": 114,
+				"field_forage": 24,
+				"freight_food_stolen": 66,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 20,
+				"displaced_bands": 0,
+				"field_food_eaten": 116,
+				"field_forage": 26,
+				"freight_food_stolen": 66,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 11,
+				"day": 21,
+				"displaced_bands": 0,
+				"field_food_eaten": 118,
+				"field_forage": 28,
+				"freight_food_stolen": 66,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			}
+		],
+		"seed": 1
+	},
+	{
+		"clear_ford_day": 6,
+		"samples": [
+			{
+				"active_camps": 11,
+				"day": 2,
+				"displaced_bands": 0,
+				"field_food_eaten": 22,
+				"field_forage": 0,
+				"freight_food_stolen": 0,
+				"hungry_bands": 0,
+				"living_field_members": 22
+			},
+			{
+				"active_camps": 11,
+				"day": 3,
+				"displaced_bands": 0,
+				"field_food_eaten": 44,
+				"field_forage": 0,
+				"freight_food_stolen": 32,
+				"hungry_bands": 0,
+				"living_field_members": 22
+			},
+			{
+				"active_camps": 11,
+				"day": 4,
+				"displaced_bands": 0,
+				"field_food_eaten": 64,
+				"field_forage": 0,
+				"freight_food_stolen": 42,
+				"hungry_bands": 0,
+				"living_field_members": 20
+			},
+			{
+				"active_camps": 11,
+				"day": 5,
+				"displaced_bands": 0,
+				"field_food_eaten": 79,
+				"field_forage": 0,
+				"freight_food_stolen": 42,
+				"hungry_bands": 1,
+				"living_field_members": 17
+			},
+			{
+				"active_camps": 10,
+				"day": 6,
+				"displaced_bands": 1,
+				"field_food_eaten": 87,
+				"field_forage": 2,
+				"freight_food_stolen": 42,
+				"hungry_bands": 3,
+				"living_field_members": 14
+			},
+			{
+				"active_camps": 10,
+				"day": 7,
+				"displaced_bands": 1,
+				"field_food_eaten": 93,
+				"field_forage": 4,
+				"freight_food_stolen": 42,
+				"hungry_bands": 2,
+				"living_field_members": 12
+			},
+			{
+				"active_camps": 10,
+				"day": 8,
+				"displaced_bands": 1,
+				"field_food_eaten": 99,
+				"field_forage": 6,
+				"freight_food_stolen": 62,
+				"hungry_bands": 2,
+				"living_field_members": 10
+			},
+			{
+				"active_camps": 10,
+				"day": 9,
+				"displaced_bands": 1,
+				"field_food_eaten": 103,
+				"field_forage": 8,
+				"freight_food_stolen": 64,
+				"hungry_bands": 2,
+				"living_field_members": 8
+			},
+			{
+				"active_camps": 10,
+				"day": 10,
+				"displaced_bands": 1,
+				"field_food_eaten": 105,
+				"field_forage": 8,
+				"freight_food_stolen": 64,
+				"hungry_bands": 3,
+				"living_field_members": 8
+			},
+			{
+				"active_camps": 10,
+				"day": 11,
+				"displaced_bands": 1,
+				"field_food_eaten": 111,
+				"field_forage": 12,
+				"freight_food_stolen": 64,
+				"hungry_bands": 0,
+				"living_field_members": 6
+			},
+			{
+				"active_camps": 10,
+				"day": 12,
+				"displaced_bands": 0,
+				"field_food_eaten": 111,
+				"field_forage": 12,
+				"freight_food_stolen": 64,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 13,
+				"displaced_bands": 0,
+				"field_food_eaten": 113,
+				"field_forage": 14,
+				"freight_food_stolen": 64,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 14,
+				"displaced_bands": 0,
+				"field_food_eaten": 113,
+				"field_forage": 14,
+				"freight_food_stolen": 64,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 15,
+				"displaced_bands": 0,
+				"field_food_eaten": 115,
+				"field_forage": 16,
+				"freight_food_stolen": 64,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 16,
+				"displaced_bands": 0,
+				"field_food_eaten": 117,
+				"field_forage": 18,
+				"freight_food_stolen": 64,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 17,
+				"displaced_bands": 0,
+				"field_food_eaten": 117,
+				"field_forage": 18,
+				"freight_food_stolen": 64,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 18,
+				"displaced_bands": 0,
+				"field_food_eaten": 119,
+				"field_forage": 20,
+				"freight_food_stolen": 64,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 19,
+				"displaced_bands": 0,
+				"field_food_eaten": 121,
+				"field_forage": 22,
+				"freight_food_stolen": 64,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 20,
+				"displaced_bands": 0,
+				"field_food_eaten": 121,
+				"field_forage": 22,
+				"freight_food_stolen": 64,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 21,
+				"displaced_bands": 0,
+				"field_food_eaten": 123,
+				"field_forage": 24,
+				"freight_food_stolen": 64,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			}
+		],
+		"seed": 7
+	},
+	{
+		"clear_ford_day": 0,
+		"samples": [
+			{
+				"active_camps": 10,
+				"day": 2,
+				"displaced_bands": 0,
+				"field_food_eaten": 20,
+				"field_forage": 0,
+				"freight_food_stolen": 0,
+				"hungry_bands": 0,
+				"living_field_members": 20
+			},
+			{
+				"active_camps": 10,
+				"day": 3,
+				"displaced_bands": 0,
+				"field_food_eaten": 40,
+				"field_forage": 0,
+				"freight_food_stolen": 26,
+				"hungry_bands": 0,
+				"living_field_members": 20
+			},
+			{
+				"active_camps": 10,
+				"day": 4,
+				"displaced_bands": 0,
+				"field_food_eaten": 58,
+				"field_forage": 0,
+				"freight_food_stolen": 48,
+				"hungry_bands": 0,
+				"living_field_members": 18
+			},
+			{
+				"active_camps": 10,
+				"day": 5,
+				"displaced_bands": 0,
+				"field_food_eaten": 74,
+				"field_forage": 0,
+				"freight_food_stolen": 60,
+				"hungry_bands": 1,
+				"living_field_members": 18
+			},
+			{
+				"active_camps": 10,
+				"day": 6,
+				"displaced_bands": 0,
+				"field_food_eaten": 82,
+				"field_forage": 0,
+				"freight_food_stolen": 60,
+				"hungry_bands": 2,
+				"living_field_members": 12
+			},
+			{
+				"active_camps": 10,
+				"day": 7,
+				"displaced_bands": 0,
+				"field_food_eaten": 89,
+				"field_forage": 2,
+				"freight_food_stolen": 60,
+				"hungry_bands": 2,
+				"living_field_members": 10
+			},
+			{
+				"active_camps": 10,
+				"day": 8,
+				"displaced_bands": 0,
+				"field_food_eaten": 93,
+				"field_forage": 4,
+				"freight_food_stolen": 60,
+				"hungry_bands": 1,
+				"living_field_members": 10
+			},
+			{
+				"active_camps": 10,
+				"day": 9,
+				"displaced_bands": 0,
+				"field_food_eaten": 97,
+				"field_forage": 6,
+				"freight_food_stolen": 60,
+				"hungry_bands": 1,
+				"living_field_members": 6
+			},
+			{
+				"active_camps": 10,
+				"day": 10,
+				"displaced_bands": 0,
+				"field_food_eaten": 101,
+				"field_forage": 8,
+				"freight_food_stolen": 60,
+				"hungry_bands": 1,
+				"living_field_members": 6
+			},
+			{
+				"active_camps": 10,
+				"day": 11,
+				"displaced_bands": 0,
+				"field_food_eaten": 105,
+				"field_forage": 10,
+				"freight_food_stolen": 68,
+				"hungry_bands": 1,
+				"living_field_members": 6
+			},
+			{
+				"active_camps": 10,
+				"day": 12,
+				"displaced_bands": 0,
+				"field_food_eaten": 105,
+				"field_forage": 10,
+				"freight_food_stolen": 68,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 13,
+				"displaced_bands": 0,
+				"field_food_eaten": 109,
+				"field_forage": 14,
+				"freight_food_stolen": 68,
+				"hungry_bands": 0,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 14,
+				"displaced_bands": 0,
+				"field_food_eaten": 109,
+				"field_forage": 14,
+				"freight_food_stolen": 68,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 15,
+				"displaced_bands": 0,
+				"field_food_eaten": 113,
+				"field_forage": 18,
+				"freight_food_stolen": 68,
+				"hungry_bands": 0,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 16,
+				"displaced_bands": 0,
+				"field_food_eaten": 113,
+				"field_forage": 18,
+				"freight_food_stolen": 68,
+				"hungry_bands": 2,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 17,
+				"displaced_bands": 0,
+				"field_food_eaten": 115,
+				"field_forage": 20,
+				"freight_food_stolen": 68,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 18,
+				"displaced_bands": 0,
+				"field_food_eaten": 117,
+				"field_forage": 22,
+				"freight_food_stolen": 68,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 10,
+				"day": 19,
+				"displaced_bands": 0,
+				"field_food_eaten": 119,
+				"field_forage": 24,
+				"freight_food_stolen": 68,
+				"hungry_bands": 1,
+				"living_field_members": 6
+			},
+			{
+				"active_camps": 10,
+				"day": 20,
+				"displaced_bands": 0,
+				"field_food_eaten": 121,
+				"field_forage": 26,
+				"freight_food_stolen": 68,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			},
+			{
+				"active_camps": 9,
+				"day": 21,
+				"displaced_bands": 0,
+				"field_food_eaten": 123,
+				"field_forage": 28,
+				"freight_food_stolen": 68,
+				"hungry_bands": 1,
+				"living_field_members": 4
+			}
+		],
+		"seed": 27
+	}
+]

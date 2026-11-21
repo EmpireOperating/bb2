@@ -1,0 +1,21 @@
+{
+  "provider": "openai-codex",
+  "model": "gpt-image-2-medium",
+  "imagegen_request_id": "0a5317ca-b5ef-4ec0-8305-940f036b294f",
+  "requested_quality": "medium",
+  "reported_quality": "low",
+  "requested_size": "1536x1024",
+  "reported_size": "1536x1024",
+  "decoded_size": [
+    1536,
+    1024
+  ],
+  "decoded_mode": "RGB",
+  "input_images": [
+    "base-master.png"
+  ],
+  "input_sha256": "7ac84c8821b4c9b2ff5af232b5e45e318daf3c9ceb30c9653ef083dd81ea6c52",
+  "original_result_path": "/home/quatro/.hermes/cache/images/openai_codex_gpt-image-2-medium_20261101_074454_3a2c84d9.png",
+  "sha256": "6a6dc0aa25546a07467eda804ab906b12f42e5ef623972ea5b37934a353ff93e",
+  "purpose": "six isolated original painted equipment objects; base supplied as style reference"
+}

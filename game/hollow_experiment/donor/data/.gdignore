@@ -1,0 +1,1 @@
+# Raw, manifest-bound PNGs are decoded by FileAccess; never engine-import inert fixtures.

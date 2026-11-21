@@ -1,0 +1,39 @@
+{
+	"fixture": "Company survival crowns/rations only; unchanged normal stance, no town grants, camp clearances, NPC casualties or injected marks. Paired recovery-enabled control has tracking disabled.",
+	"maximum_daily_sample_marks": 49,
+	"observations": [
+		{
+			"clock": 2880,
+			"day": 7,
+			"marks": 36,
+			"next_id": 1182
+		},
+		{
+			"clock": 6240,
+			"day": 14,
+			"marks": 37,
+			"next_id": 2475
+		},
+		{
+			"clock": 9600,
+			"day": 21,
+			"marks": 36,
+			"next_id": 3904
+		},
+		{
+			"clock": 12960,
+			"day": 28,
+			"marks": 41,
+			"next_id": 5403
+		},
+		{
+			"clock": 16320,
+			"day": 35,
+			"marks": 33,
+			"next_id": 6838
+		}
+	],
+	"seed": 1,
+	"through_day": 37,
+	"world_unchanged": true
+}

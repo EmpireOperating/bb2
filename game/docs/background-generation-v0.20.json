@@ -1,0 +1,410 @@
+{
+  "backgrounds": {
+    "Caravan guard": {
+      "distinct_trees": 563,
+      "groups": {
+        "Bow": 513,
+        "Crossbow": 749,
+        "Fast": 311,
+        "Heavy": 511,
+        "Light": 527,
+        "Marksman": 400,
+        "Medium": 742,
+        "Polearm": 520,
+        "Power": 370,
+        "Shield": 615,
+        "Spear": 742,
+        "Swift": 395,
+        "Sword": 524,
+        "Throwing": 512,
+        "Tough": 331,
+        "Trained": 557,
+        "Vigorous": 581
+      },
+      "people": 890
+    },
+    "Deserter": {
+      "distinct_trees": 613,
+      "groups": {
+        "Bow": 555,
+        "Crossbow": 736,
+        "Fast": 574,
+        "Heavy": 528,
+        "Light": 528,
+        "Marksman": 406,
+        "Medium": 766,
+        "Polearm": 524,
+        "Power": 378,
+        "Shield": 403,
+        "Spear": 539,
+        "Swift": 635,
+        "Sword": 738,
+        "Throwing": 552,
+        "Tough": 313,
+        "Trained": 584,
+        "Vigorous": 351
+      },
+      "people": 911
+    },
+    "Farmhand": {
+      "distinct_trees": 603,
+      "groups": {
+        "Bow": 540,
+        "Crossbow": 533,
+        "Fast": 340,
+        "Heavy": 544,
+        "Light": 758,
+        "Marksman": 437,
+        "Medium": 558,
+        "Polearm": 778,
+        "Power": 621,
+        "Shield": 387,
+        "Spear": 755,
+        "Swift": 415,
+        "Sword": 562,
+        "Throwing": 552,
+        "Tough": 593,
+        "Trained": 346,
+        "Vigorous": 581
+      },
+      "people": 930
+    },
+    "Gravedigger": {
+      "distinct_trees": 592,
+      "groups": {
+        "Bow": 538,
+        "Crossbow": 753,
+        "Fast": 324,
+        "Heavy": 543,
+        "Light": 553,
+        "Marksman": 385,
+        "Medium": 750,
+        "Polearm": 790,
+        "Power": 400,
+        "Shield": 666,
+        "Spear": 537,
+        "Swift": 395,
+        "Sword": 551,
+        "Throwing": 523,
+        "Tough": 589,
+        "Trained": 594,
+        "Vigorous": 339
+      },
+      "people": 923
+    },
+    "Militia": {
+      "distinct_trees": 529,
+      "groups": {
+        "Bow": 460,
+        "Crossbow": 687,
+        "Fast": 318,
+        "Heavy": 629,
+        "Light": 418,
+        "Marksman": 364,
+        "Medium": 657,
+        "Polearm": 460,
+        "Power": 361,
+        "Shield": 606,
+        "Spear": 679,
+        "Swift": 373,
+        "Sword": 676,
+        "Throwing": 446,
+        "Tough": 542,
+        "Trained": 544,
+        "Vigorous": 300
+      },
+      "people": 852
+    },
+    "Outrider": {
+      "distinct_trees": 569,
+      "groups": {
+        "Bow": 758,
+        "Crossbow": 524,
+        "Fast": 583,
+        "Heavy": 502,
+        "Light": 766,
+        "Marksman": 559,
+        "Medium": 526,
+        "Polearm": 548,
+        "Power": 344,
+        "Shield": 322,
+        "Spear": 509,
+        "Swift": 569,
+        "Sword": 743,
+        "Throwing": 506,
+        "Tough": 336,
+        "Trained": 563,
+        "Vigorous": 312
+      },
+      "people": 897
+    },
+    "Poacher": {
+      "distinct_trees": 583,
+      "groups": {
+        "Bow": 765,
+        "Crossbow": 546,
+        "Fast": 567,
+        "Heavy": 537,
+        "Light": 758,
+        "Marksman": 562,
+        "Medium": 533,
+        "Polearm": 513,
+        "Power": 356,
+        "Shield": 326,
+        "Spear": 526,
+        "Swift": 584,
+        "Sword": 536,
+        "Throwing": 770,
+        "Tough": 306,
+        "Trained": 355,
+        "Vigorous": 600
+      },
+      "people": 914
+    },
+    "Woodcutter": {
+      "distinct_trees": 584,
+      "groups": {
+        "Bow": 512,
+        "Crossbow": 517,
+        "Fast": 316,
+        "Heavy": 513,
+        "Light": 507,
+        "Marksman": 400,
+        "Medium": 746,
+        "Polearm": 706,
+        "Power": 609,
+        "Shield": 382,
+        "Spear": 539,
+        "Swift": 375,
+        "Sword": 521,
+        "Throwing": 737,
+        "Tough": 555,
+        "Trained": 314,
+        "Vigorous": 581
+      },
+      "people": 883
+    }
+  },
+  "examples": [
+    {
+      "background": "Caravan guard",
+      "groups": [
+        "Bow",
+        "Throwing",
+        "Crossbow",
+        "Sword",
+        "Heavy",
+        "Medium",
+        "Power",
+        "Shield",
+        "Fast",
+        "Trained"
+      ],
+      "name": "Caspar",
+      "talents": {
+        "defense": 0,
+        "health": 3,
+        "initiative": 2,
+        "ranged_defense": 0,
+        "ranged_skill": 3,
+        "resolve": 0,
+        "skill": 0,
+        "stamina": 0
+      },
+      "weapon": "sword"
+    },
+    {
+      "background": "Outrider",
+      "groups": [
+        "Polearm",
+        "Bow",
+        "Throwing",
+        "Crossbow",
+        "Heavy",
+        "Medium",
+        "Shield",
+        "Power",
+        "Fast",
+        "Trained"
+      ],
+      "name": "Oda",
+      "talents": {
+        "defense": 0,
+        "health": 0,
+        "initiative": 0,
+        "ranged_defense": 1,
+        "ranged_skill": 2,
+        "resolve": 1,
+        "skill": 0,
+        "stamina": 0
+      },
+      "weapon": "crossbow"
+    },
+    {
+      "background": "Gravedigger",
+      "groups": [
+        "Polearm",
+        "Crossbow",
+        "Throwing",
+        "Bow",
+        "Medium",
+        "Heavy",
+        "Power",
+        "Marksman",
+        "Vigorous",
+        "Trained"
+      ],
+      "name": "Jora",
+      "talents": {
+        "defense": 0,
+        "health": 0,
+        "initiative": 0,
+        "ranged_defense": 2,
+        "ranged_skill": 0,
+        "resolve": 0,
+        "skill": 2,
+        "stamina": 1
+      },
+      "weapon": "polearm"
+    },
+    {
+      "background": "Militia",
+      "groups": [
+        "Crossbow",
+        "Sword",
+        "Polearm",
+        "Bow",
+        "Medium",
+        "Heavy",
+        "Marksman",
+        "Shield",
+        "Vigorous",
+        "Trained"
+      ],
+      "name": "Tove",
+      "talents": {
+        "defense": 0,
+        "health": 2,
+        "initiative": 0,
+        "ranged_defense": 1,
+        "ranged_skill": 0,
+        "resolve": 0,
+        "skill": 0,
+        "stamina": 3
+      },
+      "weapon": "sword"
+    },
+    {
+      "background": "Poacher",
+      "groups": [
+        "Throwing",
+        "Bow",
+        "Sword",
+        "Crossbow",
+        "Heavy",
+        "Light",
+        "Marksman",
+        "Swift",
+        "Vigorous",
+        "Fast"
+      ],
+      "name": "Helga",
+      "talents": {
+        "defense": 0,
+        "health": 0,
+        "initiative": 2,
+        "ranged_defense": 0,
+        "ranged_skill": 0,
+        "resolve": 0,
+        "skill": 1,
+        "stamina": 2
+      },
+      "weapon": "sword"
+    },
+    {
+      "background": "Woodcutter",
+      "groups": [
+        "Bow",
+        "Polearm",
+        "Sword",
+        "Spear",
+        "Medium",
+        "Heavy",
+        "Swift",
+        "Power",
+        "Tough",
+        "Fast"
+      ],
+      "name": "Ivar",
+      "talents": {
+        "defense": 2,
+        "health": 0,
+        "initiative": 3,
+        "ranged_defense": 2,
+        "ranged_skill": 0,
+        "resolve": 0,
+        "skill": 0,
+        "stamina": 0
+      },
+      "weapon": "sword"
+    },
+    {
+      "background": "Farmhand",
+      "groups": [
+        "Throwing",
+        "Crossbow",
+        "Polearm",
+        "Spear",
+        "Light",
+        "Medium",
+        "Shield",
+        "Marksman",
+        "Tough",
+        "Vigorous"
+      ],
+      "name": "Greta",
+      "talents": {
+        "defense": 1,
+        "health": 1,
+        "initiative": 0,
+        "ranged_defense": 0,
+        "ranged_skill": 0,
+        "resolve": 0,
+        "skill": 1,
+        "stamina": 0
+      },
+      "weapon": "militia_spear"
+    },
+    {
+      "background": "Deserter",
+      "groups": [
+        "Sword",
+        "Crossbow",
+        "Polearm",
+        "Bow",
+        "Medium",
+        "Heavy",
+        "Swift",
+        "Marksman",
+        "Fast",
+        "Trained"
+      ],
+      "name": "Leif",
+      "talents": {
+        "defense": 0,
+        "health": 1,
+        "initiative": 3,
+        "ranged_defense": 0,
+        "ranged_skill": 0,
+        "resolve": 1,
+        "skill": 0,
+        "stamina": 0
+      },
+      "weapon": "polearm"
+    }
+  ],
+  "maximum_options": 42,
+  "minimum_options": 35,
+  "people": 7200,
+  "scope": "Actual generated populations, 200 seeds. Group inclusion and distinct-tree counts, not combat balance. Stars/stats preserved exactly from corresponding 0.19 rolls. Thirty-two ten-point build fixtures grant XP through the production provider."
+}

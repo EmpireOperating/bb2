@@ -1,0 +1,4857 @@
+{
+	"clearance_site_active": true,
+	"deaths": {
+		"east_ford_1": {
+			"day": 6,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 0
+		},
+		"east_ford_1_r2": {
+			"day": 10,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 0
+		},
+		"east_forest_1": {
+			"day": 6,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 0
+		},
+		"east_forest_1_r2": {
+			"day": 16,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 2
+		},
+		"east_ridge_1": {
+			"day": 10,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 3
+		},
+		"east_ridge_1_r2": {
+			"day": 18,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 0
+		},
+		"ford_1": {
+			"day": 2,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 0
+		},
+		"ford_1_r2": {
+			"day": 10,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 0
+		},
+		"forest_1": {
+			"day": 11,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 0
+		},
+		"ridge_1": {
+			"day": 2,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 0
+		},
+		"ridge_1_r2": {
+			"day": 16,
+			"health": [
+				0,
+				0,
+				0,
+				0,
+				0,
+				0
+			],
+			"hunger": 0
+		}
+	},
+	"elapsed_days": 20,
+	"expedition_records": {
+		"pass_1_1_r2": {
+			"count": 2,
+			"day": 16,
+			"generation": 1,
+			"site": "pass_1"
+		}
+	},
+	"founding_days": [
+		{
+			"count": 1,
+			"day": 18,
+			"hour": 4.3
+		}
+	],
+	"founding_records": {
+		"wild_0_2": {
+			"day": 18,
+			"generation": 2,
+			"site": "wild_0",
+			"source": "pass_1_1_r2"
+		}
+	},
+	"mode": "recovery-witness",
+	"mode_ticks": {
+		"building": 239,
+		"fighting_patrol": 849,
+		"fleeing": 16780,
+		"foraging": 2495,
+		"founding": 807,
+		"hauling": 342,
+		"raiding": 1829,
+		"recovering": 8398,
+		"returning": 20592,
+		"scouting": 17444
+	},
+	"samples": [
+		{
+			"active_camps": 11,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 32,
+					"foraged": 6,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "hauling",
+					"food": 10,
+					"foraged": 4,
+					"generation": 1,
+					"home_distance": 26.8709030151367,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 18,
+					"foraged": 6,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 32,
+					"foraged": 6,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 14,
+					"foraged": 6,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 4,
+					"generation": 1,
+					"home_distance": 197.0595703125,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 4,
+					"generation": 1,
+					"home_distance": 177.023803710938,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "raiding",
+					"food": 14,
+					"foraged": 6,
+					"generation": 1,
+					"home_distance": 143.889007568359,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 4,
+					"generation": 1,
+					"home_distance": 163.071273803711,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 6,
+					"generation": 1,
+					"home_distance": 123.389205932617,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 4,
+					"generation": 1,
+					"home_distance": 202.170669555664,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 2,
+			"expeditions": 0,
+			"farm_food_stolen": 58,
+			"farm_raids": 5,
+			"field_forage": 0,
+			"foundings": 0,
+			"freight_food_stolen": 0,
+			"hungry_bands": 0,
+			"living_field_members": 22,
+			"paid_recruits": 0,
+			"patrol_wins": 0,
+			"town_food": {
+				"ashwick": 126,
+				"dunmere": 38,
+				"east_ashwick": 110,
+				"east_dunmere": 38,
+				"east_stonecross": 47,
+				"stonecross": 47
+			}
+		},
+		{
+			"active_camps": 11,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 33,
+					"foraged": 8,
+					"generation": 1,
+					"home_distance": 165.638717651367,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 10,
+					"foraged": 4,
+					"generation": 1,
+					"home_distance": 88.725830078125,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 21,
+					"foraged": 12,
+					"generation": 1,
+					"home_distance": 208.873168945312,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 17,
+					"foraged": 8,
+					"generation": 1,
+					"home_distance": 8.85000610351562,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 5
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 16,
+					"foraged": 10,
+					"generation": 1,
+					"home_distance": 199.079040527344,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 10,
+					"foraged": 10,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 12,
+					"foraged": 8,
+					"generation": 1,
+					"home_distance": 160.555633544922,
+					"pack": 14,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 17,
+					"foraged": 12,
+					"generation": 1,
+					"home_distance": 114.327568054199,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 8,
+					"generation": 1,
+					"home_distance": 84.4558029174805,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 12,
+					"generation": 1,
+					"home_distance": 130.193450927734,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 8,
+					"generation": 1,
+					"home_distance": 99.5921020507812,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 3,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 5,
+			"field_forage": 0,
+			"foundings": 0,
+			"freight_food_stolen": 14,
+			"hungry_bands": 0,
+			"living_field_members": 18,
+			"paid_recruits": 0,
+			"patrol_wins": 2,
+			"town_food": {
+				"ashwick": 120,
+				"dunmere": 38,
+				"east_ashwick": 104,
+				"east_dunmere": 56,
+				"east_stonecross": 63,
+				"stonecross": 63
+			}
+		},
+		{
+			"active_camps": 11,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 34,
+					"foraged": 10,
+					"generation": 1,
+					"home_distance": 262.405517578125,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 12,
+					"foraged": 8,
+					"generation": 1,
+					"home_distance": 25.068826675415,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 24,
+					"foraged": 18,
+					"generation": 1,
+					"home_distance": 244.755950927734,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 16,
+					"foraged": 10,
+					"generation": 1,
+					"home_distance": 8.85000610351562,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 5
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 18,
+					"foraged": 14,
+					"generation": 1,
+					"home_distance": 89.1235122680664,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 8,
+					"foraged": 10,
+					"generation": 1,
+					"home_distance": 125.143127441406,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 36,
+					"foraged": 12,
+					"generation": 1,
+					"home_distance": 31.9071998596191,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 20,
+					"foraged": 18,
+					"generation": 1,
+					"home_distance": 114.327568054199,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 12,
+					"generation": 1,
+					"home_distance": 165.189910888672,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 18,
+					"generation": 1,
+					"home_distance": 128.119781494141,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 12,
+					"generation": 1,
+					"home_distance": 199.653137207031,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 4,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 5,
+			"field_forage": 0,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 0,
+			"living_field_members": 18,
+			"paid_recruits": 0,
+			"patrol_wins": 2,
+			"town_food": {
+				"ashwick": 114,
+				"dunmere": 74,
+				"east_ashwick": 98,
+				"east_dunmere": 86,
+				"east_stonecross": 85,
+				"stonecross": 133
+			}
+		},
+		{
+			"active_camps": 11,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 1,
+					"field_mode": "returning",
+					"food": 35,
+					"foraged": 12,
+					"generation": 1,
+					"home_distance": 156.516662597656,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 10,
+					"foraged": 14,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 21,
+					"foraged": 24,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 11,
+					"foraged": 12,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 16,
+					"foraged": 18,
+					"generation": 1,
+					"home_distance": 13.548529624939,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 4,
+					"foraged": 10,
+					"generation": 1,
+					"home_distance": 78.052001953125,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 36,
+					"foraged": 18,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 23,
+					"foraged": 24,
+					"generation": 1,
+					"home_distance": 114.327568054199,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 16,
+					"generation": 1,
+					"home_distance": 79.5057907104492,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 16,
+					"foraged": 24,
+					"generation": 1,
+					"home_distance": 41.2541809082031,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 16,
+					"generation": 1,
+					"home_distance": 102.061943054199,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 5,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 5,
+			"field_forage": 0,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 1,
+			"living_field_members": 20,
+			"paid_recruits": 2,
+			"patrol_wins": 2,
+			"town_food": {
+				"ashwick": 108,
+				"dunmere": 74,
+				"east_ashwick": 92,
+				"east_dunmere": 80,
+				"east_stonecross": 125,
+				"stonecross": 141
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 1,
+					"field_hunger": 0,
+					"field_mode": "fighting_patrol",
+					"food": 24,
+					"foraged": 14,
+					"generation": 1,
+					"home_distance": 15.8229246139526,
+					"pack": 3,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+						"count": 1,
+						"due": 8
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 12,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 24,
+					"foraged": 30,
+					"generation": 1,
+					"home_distance": 102.38232421875,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 12,
+					"generation": 1,
+					"home_distance": 190.625137329102,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 22,
+					"generation": 1,
+					"home_distance": 86.9225540161133,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "foraging",
+					"food": 6,
+					"foraged": 14,
+					"generation": 1,
+					"home_distance": 119.487152099609,
+					"pack": 1,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 38,
+					"foraged": 24,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 10,
+					"foraged": 30,
+					"generation": 1,
+					"home_distance": 114.327568054199,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 5,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 8
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 30,
+					"generation": 1,
+					"home_distance": 96.3339233398438,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 25.185546875,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 6,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 5,
+			"field_forage": 1,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 0,
+			"living_field_members": 17,
+			"paid_recruits": 2,
+			"patrol_wins": 2,
+			"town_food": {
+				"ashwick": 126,
+				"dunmere": 78,
+				"east_ashwick": 86,
+				"east_dunmere": 76,
+				"east_stonecross": 117,
+				"stonecross": 133
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 24,
+					"foraged": 16,
+					"generation": 1,
+					"home_distance": 15.8229246139526,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+						"count": 1,
+						"due": 8
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 14,
+					"foraged": 24,
+					"generation": 1,
+					"home_distance": 12.1500244140625,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 21,
+					"foraged": 30,
+					"generation": 1,
+					"home_distance": 18.2938976287842,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 11,
+					"foraged": 14,
+					"generation": 1,
+					"home_distance": 52.4532127380371,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 14,
+					"foraged": 22,
+					"generation": 1,
+					"home_distance": 160.641754150391,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 1,
+					"field_mode": "returning",
+					"food": 8,
+					"foraged": 18,
+					"generation": 1,
+					"home_distance": 36.9460754394531,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 40,
+					"foraged": 28,
+					"generation": 1,
+					"home_distance": 19.1722202301025,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 11,
+					"foraged": 36,
+					"generation": 1,
+					"home_distance": 114.327568054199,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 5,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 8
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 36,
+					"generation": 1,
+					"home_distance": 156.370498657227,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 24,
+					"generation": 1,
+					"home_distance": 185.162734985352,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 7,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 5,
+			"field_forage": 1,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 1,
+			"living_field_members": 14,
+			"paid_recruits": 2,
+			"patrol_wins": 4,
+			"town_food": {
+				"ashwick": 144,
+				"dunmere": 78,
+				"east_ashwick": 80,
+				"east_dunmere": 70,
+				"east_stonecross": 109,
+				"stonecross": 125
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 16,
+					"foraged": 18,
+					"generation": 1,
+					"home_distance": 15.8229246139526,
+					"pack": 0,
+					"reserve": 1,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 1,
+					"training": {
+						"count": 1,
+						"due": 10
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 16,
+					"foraged": 28,
+					"generation": 1,
+					"home_distance": 12.1500244140625,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 1,
+					"field_mode": "fleeing",
+					"food": 24,
+					"foraged": 36,
+					"generation": 1,
+					"home_distance": 232.728393554688,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 8,
+					"foraged": 16,
+					"generation": 1,
+					"home_distance": 152.439636230469,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 12,
+					"foraged": 28,
+					"generation": 1,
+					"home_distance": 5.09435749053955,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 6,
+					"foraged": 22,
+					"generation": 1,
+					"home_distance": 174.244995117188,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 40,
+					"foraged": 34,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 8,
+					"foraged": 42,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 42,
+					"generation": 1,
+					"home_distance": 95.7838745117188,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 28,
+					"generation": 1,
+					"home_distance": 98.3881988525391,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 8,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 5,
+			"field_forage": 1,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 1,
+			"living_field_members": 16,
+			"paid_recruits": 5,
+			"patrol_wins": 4,
+			"town_food": {
+				"ashwick": 162,
+				"dunmere": 78,
+				"east_ashwick": 74,
+				"east_dunmere": 64,
+				"east_stonecross": 101,
+				"stonecross": 117
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 15,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 15.8229246139526,
+					"pack": 0,
+					"reserve": 1,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 1,
+					"training": {
+						"count": 1,
+						"due": 10
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 18,
+					"foraged": 32,
+					"generation": 1,
+					"home_distance": 12.1500244140625,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 2,
+					"field_mode": "fleeing",
+					"food": 27,
+					"foraged": 42,
+					"generation": 1,
+					"home_distance": 188.679702758789,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 7,
+					"foraged": 16,
+					"generation": 1,
+					"home_distance": 213.274108886719,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 10,
+					"foraged": 28,
+					"generation": 1,
+					"home_distance": 71.588737487793,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 2,
+					"foraged": 22,
+					"generation": 1,
+					"home_distance": 111.689804077148,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 42,
+					"foraged": 40,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 9,
+					"foraged": 48,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 16,
+					"foraged": 48,
+					"generation": 1,
+					"home_distance": 134.177307128906,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 10,
+					"foraged": 32,
+					"generation": 1,
+					"home_distance": 157.279052734375,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 9,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 5,
+			"field_forage": 1,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 1,
+			"living_field_members": 16,
+			"paid_recruits": 5,
+			"patrol_wins": 4,
+			"town_food": {
+				"ashwick": 180,
+				"dunmere": 78,
+				"east_ashwick": 92,
+				"east_dunmere": 58,
+				"east_stonecross": 93,
+				"stonecross": 109
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 22,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 20,
+					"foraged": 36,
+					"generation": 1,
+					"home_distance": 12.1500244140625,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 3,
+					"field_mode": "fleeing",
+					"food": 30,
+					"foraged": 48,
+					"generation": 1,
+					"home_distance": 94.2920608520508,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 6,
+					"foraged": 22,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 10,
+					"foraged": 32,
+					"generation": 1,
+					"home_distance": 138.037017822266,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 4,
+					"foraged": 28,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 28,
+					"foraged": 46,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 2,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 12
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 12,
+					"foraged": 54,
+					"generation": 1,
+					"home_distance": 26.1123104095459,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 14,
+					"foraged": 54,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 10,
+					"foraged": 38,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 10,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 5,
+			"field_forage": 1,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 1,
+			"living_field_members": 18,
+			"paid_recruits": 6,
+			"patrol_wins": 4,
+			"town_food": {
+				"ashwick": 198,
+				"dunmere": 78,
+				"east_ashwick": 110,
+				"east_dunmere": 52,
+				"east_stonecross": 89,
+				"stonecross": 101
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 11,
+					"foraged": 24,
+					"generation": 1,
+					"home_distance": 13.8436393737793,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 6,
+					"foraged": 40,
+					"generation": 1,
+					"home_distance": 12.1500244140625,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 13
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 3,
+					"field_mode": "defeated",
+					"food": 17,
+					"foraged": 54,
+					"generation": 1,
+					"home_distance": 127.962432861328,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 5,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 13
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 7,
+					"foraged": 24,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fighting_patrol",
+					"food": 10,
+					"foraged": 36,
+					"generation": 1,
+					"home_distance": 165.265747070312,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "foraging",
+					"food": 6,
+					"foraged": 32,
+					"generation": 1,
+					"home_distance": 179.205123901367,
+					"pack": 1,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 28,
+					"foraged": 52,
+					"generation": 1,
+					"home_distance": 8.49960994720459,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 2,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 12
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 11,
+					"foraged": 60,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 60,
+					"generation": 1,
+					"home_distance": 183.489791870117,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 12,
+					"foraged": 42,
+					"generation": 1,
+					"home_distance": 228.900909423828,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 11,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 5,
+			"field_forage": 2,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 0,
+			"living_field_members": 12,
+			"paid_recruits": 6,
+			"patrol_wins": 7,
+			"town_food": {
+				"ashwick": 216,
+				"dunmere": 78,
+				"east_ashwick": 128,
+				"east_dunmere": 46,
+				"east_stonecross": 85,
+				"stonecross": 93
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 12,
+					"foraged": 26,
+					"generation": 1,
+					"home_distance": 13.8436393737793,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 6,
+					"foraged": 44,
+					"generation": 1,
+					"home_distance": 12.1500244140625,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 13
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 3,
+					"field_mode": "defeated",
+					"food": 18,
+					"foraged": 60,
+					"generation": 1,
+					"home_distance": 127.962432861328,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 5,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 13
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 6,
+					"foraged": 24,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 12,
+					"foraged": 40,
+					"generation": 1,
+					"home_distance": 165.265747070312,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "foraging",
+					"food": 2,
+					"foraged": 32,
+					"generation": 1,
+					"home_distance": 157.771621704102,
+					"pack": 1,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 28,
+					"foraged": 56,
+					"generation": 1,
+					"home_distance": 141.987716674805,
+					"pack": 2,
+					"reserve": 2,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 14,
+					"foraged": 66,
+					"generation": 1,
+					"home_distance": 27.6597385406494,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 66,
+					"generation": 1,
+					"home_distance": 75.3343811035156,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 12,
+					"foraged": 46,
+					"generation": 1,
+					"home_distance": 45.7674903869629,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 12,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 6,
+			"field_forage": 2,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 0,
+			"living_field_members": 10,
+			"paid_recruits": 8,
+			"patrol_wins": 8,
+			"town_food": {
+				"ashwick": 234,
+				"dunmere": 78,
+				"east_ashwick": 146,
+				"east_dunmere": 46,
+				"east_stonecross": 81,
+				"stonecross": 85
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 13,
+					"foraged": 28,
+					"generation": 1,
+					"home_distance": 13.8436393737793,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 4,
+					"foraged": 48,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 15,
+					"foraged": 66,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 7,
+					"foraged": 26,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 14,
+					"foraged": 44,
+					"generation": 1,
+					"home_distance": 165.265747070312,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "foraging",
+					"food": 4,
+					"foraged": 36,
+					"generation": 1,
+					"home_distance": 118.833396911621,
+					"pack": 1,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 26,
+					"foraged": 62,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 2,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 9,
+					"foraged": 66,
+					"generation": 1,
+					"home_distance": 79.4421844482422,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 72,
+					"generation": 1,
+					"home_distance": 86.3937225341797,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 12,
+					"foraged": 50,
+					"generation": 1,
+					"home_distance": 230.277587890625,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 13,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 6,
+			"field_forage": 4,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 0,
+			"living_field_members": 14,
+			"paid_recruits": 12,
+			"patrol_wins": 8,
+			"town_food": {
+				"ashwick": 252,
+				"dunmere": 62,
+				"east_ashwick": 164,
+				"east_dunmere": 46,
+				"east_stonecross": 77,
+				"stonecross": 81
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 14,
+					"foraged": 30,
+					"generation": 1,
+					"home_distance": 13.8436393737793,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 6,
+					"foraged": 52,
+					"generation": 1,
+					"home_distance": 85.5895919799805,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 18,
+					"foraged": 72,
+					"generation": 1,
+					"home_distance": 50.3172492980957,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 8,
+					"foraged": 28,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 16,
+					"foraged": 48,
+					"generation": 1,
+					"home_distance": 165.265747070312,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "foraging",
+					"food": 6,
+					"foraged": 40,
+					"generation": 1,
+					"home_distance": 171.044296264648,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 26,
+					"foraged": 66,
+					"generation": 1,
+					"home_distance": 222.820343017578,
+					"pack": 2,
+					"reserve": 2,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 12,
+					"foraged": 72,
+					"generation": 1,
+					"home_distance": 33.507007598877,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 14,
+					"foraged": 78,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 12,
+					"foraged": 54,
+					"generation": 1,
+					"home_distance": 43.721263885498,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 14,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 6,
+			"field_forage": 5,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 0,
+			"living_field_members": 14,
+			"paid_recruits": 12,
+			"patrol_wins": 8,
+			"town_food": {
+				"ashwick": 270,
+				"dunmere": 56,
+				"east_ashwick": 178,
+				"east_dunmere": 45,
+				"east_stonecross": 73,
+				"stonecross": 77
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 15,
+					"foraged": 32,
+					"generation": 1,
+					"home_distance": 13.8436393737793,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 1,
+					"field_mode": "fleeing",
+					"food": 8,
+					"foraged": 56,
+					"generation": 1,
+					"home_distance": 249.02619934082,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 13,
+					"foraged": 72,
+					"generation": 1,
+					"home_distance": 78.6877670288086,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 9,
+					"foraged": 30,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 18,
+					"foraged": 52,
+					"generation": 1,
+					"home_distance": 165.265747070312,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 1,
+					"field_mode": "returning",
+					"food": 8,
+					"foraged": 44,
+					"generation": 1,
+					"home_distance": 75.2430572509766,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 24,
+					"foraged": 70,
+					"generation": 1,
+					"home_distance": 31.9656372070312,
+					"pack": 2,
+					"reserve": 2,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 11,
+					"foraged": 78,
+					"generation": 1,
+					"home_distance": 62.0728759765625,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 84,
+					"generation": 1,
+					"home_distance": 196.206497192383,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 12,
+					"foraged": 58,
+					"generation": 1,
+					"home_distance": 87.5143280029297,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 15,
+			"expeditions": 0,
+			"farm_food_stolen": 62,
+			"farm_raids": 6,
+			"field_forage": 5,
+			"foundings": 0,
+			"freight_food_stolen": 26,
+			"hungry_bands": 2,
+			"living_field_members": 14,
+			"paid_recruits": 12,
+			"patrol_wins": 8,
+			"town_food": {
+				"ashwick": 288,
+				"dunmere": 50,
+				"east_ashwick": 191,
+				"east_dunmere": 44,
+				"east_stonecross": 69,
+				"stonecross": 73
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 16,
+					"foraged": 34,
+					"generation": 1,
+					"home_distance": 13.8436393737793,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 2,
+					"field_mode": "fleeing",
+					"food": 10,
+					"foraged": 60,
+					"generation": 1,
+					"home_distance": 215.73193359375,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 16,
+					"foraged": 78,
+					"generation": 1,
+					"home_distance": 188.924179077148,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 8,
+					"foraged": 30,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 20,
+					"foraged": 56,
+					"generation": 1,
+					"home_distance": 165.265747070312,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 6,
+					"foraged": 48,
+					"generation": 1,
+					"home_distance": 170.52424621582,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 20,
+					"foraged": 76,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fleeing",
+					"food": 12,
+					"foraged": 84,
+					"generation": 1,
+					"home_distance": 116.678924560547,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 90,
+					"generation": 1,
+					"home_distance": 114.490013122559,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 12,
+					"foraged": 62,
+					"generation": 1,
+					"home_distance": 207.136810302734,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 16,
+			"expeditions": 1,
+			"farm_food_stolen": 62,
+			"farm_raids": 6,
+			"field_forage": 5,
+			"foundings": 0,
+			"freight_food_stolen": 38,
+			"hungry_bands": 1,
+			"living_field_members": 16,
+			"paid_recruits": 12,
+			"patrol_wins": 8,
+			"town_food": {
+				"ashwick": 306,
+				"dunmere": 44,
+				"east_ashwick": 204,
+				"east_dunmere": 51,
+				"east_stonecross": 65,
+				"stonecross": 69
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 17,
+					"foraged": 36,
+					"generation": 1,
+					"home_distance": 13.8436393737793,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 2,
+					"field_mode": "defeated",
+					"food": 12,
+					"foraged": 64,
+					"generation": 1,
+					"home_distance": 176.032073974609,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 13,
+					"foraged": 84,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 9,
+					"foraged": 32,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 6,
+					"foraged": 60,
+					"generation": 1,
+					"home_distance": 165.265747070312,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 19
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 8,
+					"foraged": 52,
+					"generation": 1,
+					"home_distance": 48.1288566589355,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 22,
+					"foraged": 80,
+					"generation": 1,
+					"home_distance": 22.9587497711182,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 15,
+					"foraged": 90,
+					"generation": 1,
+					"home_distance": 81.9679641723633,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 96,
+					"generation": 1,
+					"home_distance": 196.022933959961,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 12,
+					"foraged": 66,
+					"generation": 1,
+					"home_distance": 92.1978912353516,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 17,
+			"expeditions": 1,
+			"farm_food_stolen": 62,
+			"farm_raids": 6,
+			"field_forage": 5,
+			"foundings": 0,
+			"freight_food_stolen": 38,
+			"hungry_bands": 0,
+			"living_field_members": 12,
+			"paid_recruits": 12,
+			"patrol_wins": 10,
+			"town_food": {
+				"ashwick": 324,
+				"dunmere": 38,
+				"east_ashwick": 217,
+				"east_dunmere": 50,
+				"east_stonecross": 61,
+				"stonecross": 65
+			}
+		},
+		{
+			"active_camps": 10,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 18,
+					"foraged": 38,
+					"generation": 1,
+					"home_distance": 13.8436393737793,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 2,
+					"field_mode": "defeated",
+					"food": 14,
+					"foraged": 68,
+					"generation": 1,
+					"home_distance": 176.032073974609,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "fighting_patrol",
+					"food": 16,
+					"foraged": 90,
+					"generation": 1,
+					"home_distance": 116.225463867188,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 10,
+					"foraged": 34,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 6,
+					"foraged": 64,
+					"generation": 1,
+					"home_distance": 165.265747070312,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+						"count": 2,
+						"due": 19
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 6,
+					"foraged": 56,
+					"generation": 1,
+					"home_distance": 178.277313232422,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 22,
+					"foraged": 86,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 18,
+					"foraged": 96,
+					"generation": 1,
+					"home_distance": 81.9679641723633,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": false,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 0,
+					"foraged": 20,
+					"generation": 1,
+					"home_distance": 31.1657829284668,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 16,
+					"foraged": 102,
+					"generation": 1,
+					"home_distance": 96.0818710327148,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 12,
+					"foraged": 70,
+					"generation": 1,
+					"home_distance": 205.187042236328,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 18,
+			"expeditions": 1,
+			"farm_food_stolen": 62,
+			"farm_raids": 6,
+			"field_forage": 5,
+			"foundings": 0,
+			"freight_food_stolen": 38,
+			"hungry_bands": 0,
+			"living_field_members": 12,
+			"paid_recruits": 12,
+			"patrol_wins": 10,
+			"town_food": {
+				"ashwick": 294,
+				"dunmere": 56,
+				"east_ashwick": 235,
+				"east_dunmere": 54,
+				"east_stonecross": 57,
+				"stonecross": 61
+			}
+		},
+		{
+			"active_camps": 11,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 3,
+					"foraged": 40,
+					"generation": 1,
+					"home_distance": 13.8436393737793,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+						"count": 2,
+						"due": 21
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 2,
+					"field_mode": "defeated",
+					"food": 16,
+					"foraged": 72,
+					"generation": 1,
+					"home_distance": 176.032073974609,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 19,
+					"foraged": 96,
+					"generation": 1,
+					"home_distance": 116.225463867188,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 11,
+					"foraged": 36,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 4,
+					"foraged": 68,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 8,
+					"foraged": 60,
+					"generation": 1,
+					"home_distance": 65.9624176025391,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 24,
+					"foraged": 92,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 21,
+					"foraged": 102,
+					"generation": 1,
+					"home_distance": 81.9679641723633,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 0,
+					"foraged": 0,
+					"generation": 2,
+					"home_distance": 165.077758789062,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 0,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 108,
+					"generation": 1,
+					"home_distance": 55.9595718383789,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "recovering",
+					"food": 12,
+					"foraged": 76,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 19,
+			"expeditions": 1,
+			"farm_food_stolen": 62,
+			"farm_raids": 6,
+			"field_forage": 5,
+			"foundings": 1,
+			"freight_food_stolen": 38,
+			"hungry_bands": 0,
+			"living_field_members": 12,
+			"paid_recruits": 14,
+			"patrol_wins": 11,
+			"town_food": {
+				"ashwick": 312,
+				"dunmere": 50,
+				"east_ashwick": 205,
+				"east_dunmere": 54,
+				"east_stonecross": 53,
+				"stonecross": 57
+			}
+		},
+		{
+			"active_camps": 11,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 2,
+					"foraged": 42,
+					"generation": 1,
+					"home_distance": 13.8436393737793,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+						"count": 2,
+						"due": 21
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 2,
+					"field_mode": "defeated",
+					"food": 18,
+					"foraged": 76,
+					"generation": 1,
+					"home_distance": 176.032073974609,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 16,
+					"foraged": 96,
+					"generation": 1,
+					"home_distance": 116.225463867188,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 12,
+					"foraged": 38,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 6,
+					"foraged": 72,
+					"generation": 1,
+					"home_distance": 211.746627807617,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 2,
+					"foraged": 60,
+					"generation": 1,
+					"home_distance": 110.625335693359,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 26,
+					"foraged": 98,
+					"generation": 1,
+					"home_distance": 1.69992196559906,
+					"pack": 4,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 24,
+					"foraged": 108,
+					"generation": 1,
+					"home_distance": 81.9679641723633,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"wild_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 0,
+					"foraged": 0,
+					"generation": 2,
+					"home_distance": 221.106323242188,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 0,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 114,
+					"generation": 1,
+					"home_distance": 208.356536865234,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 14,
+					"foraged": 80,
+					"generation": 1,
+					"home_distance": 204.488357543945,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 20,
+			"expeditions": 1,
+			"farm_food_stolen": 62,
+			"farm_raids": 6,
+			"field_forage": 7,
+			"foundings": 1,
+			"freight_food_stolen": 38,
+			"hungry_bands": 0,
+			"living_field_members": 12,
+			"paid_recruits": 14,
+			"patrol_wins": 11,
+			"town_food": {
+				"ashwick": 330,
+				"dunmere": 44,
+				"east_ashwick": 223,
+				"east_dunmere": 54,
+				"east_stonecross": 49,
+				"stonecross": 53
+			}
+		},
+		{
+			"active_camps": 11,
+			"camps": {
+				"east_ford": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 1,
+					"foraged": 44,
+					"generation": 1,
+					"home_distance": 0.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 4,
+					"training": {
+
+					}
+				},
+				"east_forest": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 2,
+					"field_mode": "defeated",
+					"food": 20,
+					"foraged": 80,
+					"generation": 1,
+					"home_distance": 176.032073974609,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"east_ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 19,
+					"foraged": 102,
+					"generation": 1,
+					"home_distance": 116.225463867188,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 3,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ford": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 11,
+					"foraged": 38,
+					"generation": 1,
+					"home_distance": 13.0,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 1,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"forest": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 1,
+					"field_mode": "returning",
+					"food": 8,
+					"foraged": 76,
+					"generation": 1,
+					"home_distance": 87.5710906982422,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"pass_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "returning",
+					"food": 4,
+					"foraged": 64,
+					"generation": 1,
+					"home_distance": 157.017959594727,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"pass_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 28,
+					"foraged": 102,
+					"generation": 1,
+					"home_distance": 204.25129699707,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+
+					}
+				},
+				"ridge": {
+					"active": true,
+					"field_alive": 0,
+					"field_hunger": 0,
+					"field_mode": "defeated",
+					"food": 11,
+					"foraged": 114,
+					"generation": 1,
+					"home_distance": 81.9679641723633,
+					"pack": 0,
+					"reserve": 0,
+					"residents": 5,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 2,
+					"training": {
+						"count": 2,
+						"due": 23
+					}
+				},
+				"wild_0": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 0,
+					"foraged": 0,
+					"generation": 2,
+					"home_distance": 209.889450073242,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 0,
+					"sponsor_ready": 0,
+					"strength": 1,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_1": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 16,
+					"foraged": 120,
+					"generation": 1,
+					"home_distance": 84.2420043945312,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 4,
+					"sponsor_ready": 0,
+					"strength": 3,
+					"trained": 0,
+					"training": {
+
+					}
+				},
+				"wild_2": {
+					"active": true,
+					"field_alive": 2,
+					"field_hunger": 0,
+					"field_mode": "scouting",
+					"food": 14,
+					"foraged": 84,
+					"generation": 1,
+					"home_distance": 96.1006011962891,
+					"pack": 2,
+					"reserve": 0,
+					"residents": 2,
+					"sponsor_ready": 0,
+					"strength": 2,
+					"trained": 0,
+					"training": {
+
+					}
+				}
+			},
+			"day": 21,
+			"expeditions": 1,
+			"farm_food_stolen": 62,
+			"farm_raids": 6,
+			"field_forage": 11,
+			"foundings": 1,
+			"freight_food_stolen": 38,
+			"hungry_bands": 1,
+			"living_field_members": 14,
+			"paid_recruits": 16,
+			"patrol_wins": 11,
+			"town_food": {
+				"ashwick": 348,
+				"dunmere": 54,
+				"east_ashwick": 241,
+				"east_dunmere": 54,
+				"east_stonecross": 69,
+				"stonecross": 97
+			}
+		}
+	],
+	"scenario": "wipe",
+	"seed": 1
+}

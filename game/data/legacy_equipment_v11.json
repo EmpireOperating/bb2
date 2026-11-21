@@ -1,0 +1,438 @@
+{
+  "sword": {
+    "name": "Arming sword",
+    "slot": "weapon",
+    "weapon": "sword",
+    "durability": 0
+  },
+  "spear": {
+    "name": "Boar spear",
+    "slot": "weapon",
+    "weapon": "spear",
+    "durability": 0
+  },
+  "axe": {
+    "name": "Bearded axe",
+    "slot": "weapon",
+    "weapon": "axe",
+    "durability": 0
+  },
+  "bow": {
+    "name": "Ash longbow",
+    "slot": "weapon",
+    "weapon": "bow",
+    "durability": 0
+  },
+  "leather": {
+    "name": "Stitched leather",
+    "slot": "body",
+    "durability": 55,
+    "group": "body",
+    "layer": "outer",
+    "weight": 5,
+    "color": "795b40",
+    "shape": "leather",
+    "price": 65
+  },
+  "mail": {
+    "name": "Riveted mail",
+    "slot": "body",
+    "durability": 85,
+    "group": "body",
+    "layer": "mail",
+    "weight": 9,
+    "color": "a3aaa0",
+    "shape": "mail",
+    "price": 95
+  },
+  "heavy_mail": {
+    "name": "Reinforced mail",
+    "slot": "body",
+    "durability": 120,
+    "group": "body",
+    "layer": "mail",
+    "weight": 15,
+    "color": "8e9693",
+    "shape": "mail_long",
+    "price": 155
+  },
+  "linen": {
+    "name": "Quilted linen",
+    "slot": "under",
+    "durability": 30,
+    "group": "body",
+    "layer": "base",
+    "weight": 3,
+    "color": "b39a71",
+    "shape": "quilt",
+    "price": 24
+  },
+  "gambeson": {
+    "name": "Padded gambeson",
+    "slot": "under",
+    "durability": 45,
+    "group": "body",
+    "layer": "base",
+    "weight": 6,
+    "color": "896c45",
+    "shape": "quilt",
+    "price": 48
+  },
+  "cap": {
+    "name": "Iron cap",
+    "slot": "head",
+    "durability": 40,
+    "group": "head",
+    "layer": "shell",
+    "weight": 4,
+    "color": "afb4a5",
+    "shape": "cap",
+    "price": 40
+  },
+  "nasal": {
+    "name": "Nasal helm",
+    "slot": "head",
+    "durability": 60,
+    "group": "head",
+    "layer": "shell",
+    "weight": 6,
+    "color": "aeb1a7",
+    "shape": "nasal",
+    "price": 66
+  },
+  "shield": {
+    "name": "Heater shield",
+    "slot": "shield",
+    "durability": 0
+  },
+  "body_kit": {
+    "name": "Body assembly",
+    "slot": "body",
+    "durability": 0,
+    "assembly": true
+  },
+  "head_kit": {
+    "name": "Helmet assembly",
+    "slot": "head",
+    "durability": 0,
+    "assembly": true
+  },
+  "light_quilt": {
+    "name": "Light blue quilting",
+    "slot": "component",
+    "durability": 22,
+    "group": "body",
+    "layer": "base",
+    "weight": 2,
+    "color": "617f8a",
+    "shape": "quilt",
+    "price": 22
+  },
+  "red_gambeson": {
+    "name": "Russet gambeson",
+    "slot": "component",
+    "durability": 38,
+    "group": "body",
+    "layer": "base",
+    "weight": 5,
+    "color": "945b48",
+    "shape": "quilt",
+    "price": 40
+  },
+  "green_jack": {
+    "name": "Green padded jack",
+    "slot": "component",
+    "durability": 32,
+    "group": "body",
+    "layer": "base",
+    "weight": 4,
+    "color": "607459",
+    "shape": "quilt",
+    "price": 32
+  },
+  "short_mail": {
+    "name": "Short mail shirt",
+    "slot": "component",
+    "durability": 62,
+    "group": "body",
+    "layer": "mail",
+    "weight": 6,
+    "color": "aeb6b0",
+    "shape": "mail_short",
+    "price": 72
+  },
+  "long_mail": {
+    "name": "Long sleeved hauberk",
+    "slot": "component",
+    "durability": 105,
+    "group": "body",
+    "layer": "mail",
+    "weight": 12,
+    "color": "899490",
+    "shape": "mail_long",
+    "price": 128
+  },
+  "breastplate": {
+    "name": "Plain breastplate",
+    "slot": "component",
+    "durability": 80,
+    "group": "body",
+    "layer": "outer",
+    "weight": 13,
+    "color": "a3b0af",
+    "shape": "plate",
+    "price": 135
+  },
+  "brigandine": {
+    "name": "Red brigandine",
+    "slot": "component",
+    "durability": 68,
+    "group": "body",
+    "layer": "outer",
+    "weight": 10,
+    "color": "8b4e42",
+    "shape": "brigandine",
+    "price": 108
+  },
+  "scale_vest": {
+    "name": "Bronze scale vest",
+    "slot": "component",
+    "durability": 72,
+    "group": "body",
+    "layer": "outer",
+    "weight": 12,
+    "color": "9d8659",
+    "shape": "scale",
+    "price": 112
+  },
+  "patched_plate": {
+    "name": "Patched iron plates",
+    "slot": "component",
+    "durability": 58,
+    "group": "body",
+    "layer": "outer",
+    "weight": 12,
+    "color": "777c78",
+    "shape": "patched",
+    "price": 70
+  },
+  "shoulders": {
+    "name": "Iron shoulder guards",
+    "slot": "component",
+    "durability": 22,
+    "group": "body",
+    "layer": "reinforce",
+    "weight": 4,
+    "color": "9ba6a2",
+    "shape": "shoulders",
+    "price": 43
+  },
+  "collar": {
+    "name": "Reinforced collar",
+    "slot": "component",
+    "durability": 16,
+    "group": "body",
+    "layer": "reinforce",
+    "weight": 3,
+    "color": "899791",
+    "shape": "collar",
+    "price": 30
+  },
+  "blue_tabard": {
+    "name": "Blue company tabard",
+    "slot": "component",
+    "durability": 0,
+    "group": "body",
+    "layer": "cloth",
+    "weight": 0,
+    "color": "436e8b",
+    "shape": "tabard",
+    "price": 12
+  },
+  "red_surcoat": {
+    "name": "Faded red surcoat",
+    "slot": "component",
+    "durability": 0,
+    "group": "body",
+    "layer": "cloth",
+    "weight": 0,
+    "color": "944f43",
+    "shape": "surcoat",
+    "price": 12
+  },
+  "sash": {
+    "name": "Ochre sash",
+    "slot": "component",
+    "durability": 0,
+    "group": "body",
+    "layer": "cloth",
+    "weight": 0,
+    "color": "b99b55",
+    "shape": "sash",
+    "price": 9
+  },
+  "forest_cloak": {
+    "name": "Forest travelling cloak",
+    "slot": "component",
+    "durability": 0,
+    "group": "body",
+    "layer": "cloak",
+    "weight": 1,
+    "color": "496451",
+    "shape": "cloak",
+    "price": 18
+  },
+  "red_cape": {
+    "name": "Short crimson cape",
+    "slot": "component",
+    "durability": 0,
+    "group": "body",
+    "layer": "cloak",
+    "weight": 1,
+    "color": "813e3b",
+    "shape": "cape",
+    "price": 18
+  },
+  "fur_mantle": {
+    "name": "Grey fur mantle",
+    "slot": "component",
+    "durability": 8,
+    "group": "body",
+    "layer": "cloak",
+    "weight": 3,
+    "color": "989383",
+    "shape": "fur",
+    "price": 28
+  },
+  "arming_cap": {
+    "name": "Padded arming cap",
+    "slot": "component",
+    "durability": 10,
+    "group": "head",
+    "layer": "padding",
+    "weight": 1,
+    "color": "b6a582",
+    "shape": "liner",
+    "price": 14
+  },
+  "padded_hood": {
+    "name": "Padded hood",
+    "slot": "component",
+    "durability": 16,
+    "group": "head",
+    "layer": "padding",
+    "weight": 2,
+    "color": "91795a",
+    "shape": "hood",
+    "price": 22
+  },
+  "mail_coif": {
+    "name": "Mail coif",
+    "slot": "component",
+    "durability": 24,
+    "group": "head",
+    "layer": "mail",
+    "weight": 3,
+    "color": "929d98",
+    "shape": "coif",
+    "price": 32
+  },
+  "mail_curtain": {
+    "name": "Mail neck curtain",
+    "slot": "component",
+    "durability": 16,
+    "group": "head",
+    "layer": "mail",
+    "weight": 2,
+    "color": "a8b0a8",
+    "shape": "curtain",
+    "price": 24
+  },
+  "kettle": {
+    "name": "Kettle helmet",
+    "slot": "component",
+    "durability": 55,
+    "group": "head",
+    "layer": "shell",
+    "weight": 5,
+    "color": "9ca89f",
+    "shape": "kettle",
+    "price": 59
+  },
+  "bascinet": {
+    "name": "Bascinet shell",
+    "slot": "component",
+    "durability": 68,
+    "group": "head",
+    "layer": "shell",
+    "weight": 7,
+    "color": "aab6b3",
+    "shape": "bascinet",
+    "price": 82
+  },
+  "visor": {
+    "name": "Hinged steel visor",
+    "slot": "component",
+    "durability": 24,
+    "group": "head",
+    "layer": "face",
+    "weight": 4,
+    "color": "9aa9a8",
+    "shape": "visor",
+    "price": 42,
+    "requires": [
+      "bascinet"
+    ]
+  },
+  "cheek_guards": {
+    "name": "Iron cheek guards",
+    "slot": "component",
+    "durability": 14,
+    "group": "head",
+    "layer": "face",
+    "weight": 2,
+    "color": "9ca7a0",
+    "shape": "cheeks",
+    "price": 24,
+    "requires": [
+      "cap",
+      "nasal",
+      "bascinet"
+    ]
+  },
+  "red_plume": {
+    "name": "Red horsehair plume",
+    "slot": "component",
+    "durability": 0,
+    "group": "head",
+    "layer": "decor",
+    "weight": 0,
+    "color": "a6493e",
+    "shape": "plume",
+    "price": 14,
+    "needs_shell": true
+  },
+  "blue_wrap": {
+    "name": "Blue cloth wrap",
+    "slot": "component",
+    "durability": 0,
+    "group": "head",
+    "layer": "decor",
+    "weight": 0,
+    "color": "507e9b",
+    "shape": "wrap",
+    "price": 9
+  },
+  "crest": {
+    "name": "Brass ridge crest",
+    "slot": "component",
+    "durability": 0,
+    "group": "head",
+    "layer": "decor",
+    "weight": 1,
+    "color": "b99c5b",
+    "shape": "crest",
+    "price": 20,
+    "needs_shell": true
+  }
+}

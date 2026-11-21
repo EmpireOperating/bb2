@@ -1,0 +1,121 @@
+[
+  {
+    "alive": 2,
+    "arrears": 0,
+    "battles": [
+      {
+        "commands_by_initial_weapon": {
+          "militia_spear/basic": 10,
+          "militia_spear/special": 3,
+          "shortbow/basic": 3,
+          "shortbow/special": 6
+        },
+        "day": 11,
+        "deaths": 3,
+        "enemies": "4 outlaws + 1 thug",
+        "field": 4,
+        "kind": "road_hunt",
+        "map": "ford",
+        "perks": {
+          "0": [
+            "colossus",
+            "fast_adaptation"
+          ],
+          "1": [
+            "colossus"
+          ],
+          "2": [
+            "colossus"
+          ],
+          "3": [
+            "fast_adaptation"
+          ]
+        },
+        "result": "defeat",
+        "retreat": true,
+        "rounds": 11
+      }
+    ],
+    "contracts": [
+      {
+        "day": 11,
+        "kind": "road_hunt",
+        "pay": 0,
+        "result": "defeat"
+      }
+    ],
+    "crowns": 57,
+    "day": 31,
+    "ending": "The Ashen Company endures.",
+    "hires": [
+      {
+        "day": 22,
+        "id": "stonecross_recruit_3_1",
+        "price": 122
+      }
+    ],
+    "key": "roads-gear-1",
+    "max_field": 4,
+    "purchases": [
+      {
+        "day": 13,
+        "definition": "linen",
+        "price": 21,
+        "soldier": 1
+      },
+      {
+        "day": 14,
+        "definition": "crossbow",
+        "price": 120,
+        "soldier": 1
+      },
+      {
+        "day": 18,
+        "definition": "bolts",
+        "price": 17,
+        "soldier": 1
+      },
+      {
+        "day": 18,
+        "definition": "leather",
+        "price": 85,
+        "soldier": 1
+      },
+      {
+        "day": 19,
+        "definition": "nasal",
+        "price": 130,
+        "soldier": 1
+      },
+      {
+        "day": 22,
+        "definition": "linen",
+        "price": 26,
+        "soldier": 4
+      },
+      {
+        "day": 25,
+        "definition": "leather",
+        "price": 90,
+        "soldier": 4
+      },
+      {
+        "day": 26,
+        "definition": "spear",
+        "price": 48,
+        "soldier": 4
+      },
+      {
+        "day": 27,
+        "definition": "round_shield",
+        "price": 22,
+        "soldier": 4
+      }
+    ],
+    "seed": 1.0,
+    "source_policy": "gear",
+    "start_alive": 4.0,
+    "start_crowns": 138,
+    "wins": 8
+  }
+]

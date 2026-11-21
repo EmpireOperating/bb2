@@ -1,0 +1,652 @@
+{
+  "authority": "Presentation-only Named craftsmanship alternate; ordinary metadata and mechanics unchanged.",
+  "definitions": {
+    "cudgel": {
+      "art_key": "new-current-iron-cudgel:named",
+      "donor_definition": "cudgel",
+      "master_batch": 1,
+      "master_crop": [
+        396,
+        0,
+        793,
+        496
+      ],
+      "ordinary_art_key": "new-current-iron-cudgel",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/new-current-iron-cudgel.png",
+      "source_sha256": "105527e48a2a5c1d9dbd35757cd79e71608d3c88ab775a2becd4837c8707a6e3"
+    },
+    "hm_trial_v1:additional_fighting_axe": {
+      "art_key": "approved-medic-fighting-axe:named",
+      "donor_definition": "hm_trial_v1:additional_fighting_axe",
+      "master_batch": 3,
+      "master_crop": [
+        793,
+        0,
+        1190,
+        496
+      ],
+      "ordinary_art_key": "approved-medic-fighting-axe",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/approved-medic-fighting-axe.png",
+      "source_sha256": "d421a3e1ea385c036a6957ce2a26c986f6674a0d72522e5441449a04008479a3"
+    },
+    "hm_trial_v1:belts-03-support-belt": {
+      "art_key": "belts-03-support-belt:named",
+      "donor_definition": "hm_trial_v1:belts-03-support-belt",
+      "master_batch": 3,
+      "master_crop": [
+        1190,
+        496,
+        1586,
+        992
+      ],
+      "ordinary_art_key": "belts-03-support-belt",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/belts-03-support-belt.png",
+      "source_sha256": "f2e617e3c3228eae766df01453ab194e9e15b673e11761e5e11d413651f1cc55"
+    },
+    "hm_trial_v1:cloaks-04-waxed-cape": {
+      "art_key": "cloaks-04-waxed-cape:named",
+      "donor_definition": "hm_trial_v1:cloaks-04-waxed-cape",
+      "master_batch": 3,
+      "master_crop": [
+        793,
+        496,
+        1190,
+        992
+      ],
+      "ordinary_art_key": "cloaks-04-waxed-cape",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/cloaks-04-waxed-cape.png",
+      "source_sha256": "f6c79401f8098b68e176adb94ff5b7dbcd3ccee66a86e20faacdf555946d6f85"
+    },
+    "hm_trial_v1:footwear-04-reinforced-boots": {
+      "art_key": "footwear-04-reinforced-boots:named",
+      "donor_definition": "hm_trial_v1:footwear-04-reinforced-boots",
+      "master_batch": 3,
+      "master_crop": [
+        396,
+        496,
+        793,
+        992
+      ],
+      "ordinary_art_key": "footwear-04-reinforced-boots",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/footwear-04-reinforced-boots.png",
+      "source_sha256": "3c5563ab1c4724f63ac3b8bbf21fe92dccc9ea11bda323cabef1ee583110c31c"
+    },
+    "hm_trial_v1:gloves-04-mail-gloves": {
+      "art_key": "gloves-04-mail-gloves:named",
+      "donor_definition": "hm_trial_v1:gloves-04-mail-gloves",
+      "master_batch": 3,
+      "master_crop": [
+        0,
+        496,
+        396,
+        992
+      ],
+      "ordinary_art_key": "gloves-04-mail-gloves",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/gloves-04-mail-gloves.png",
+      "source_sha256": "6edb059d98838c8c3f853d7969501545e1101c2825dd053163a4119dcdab6f74"
+    },
+    "hm_trial_v1:headwear-02-leather-cap": {
+      "art_key": "headwear-02-leather-cap:named",
+      "donor_definition": "hm_trial_v1:headwear-02-leather-cap",
+      "master_batch": 4,
+      "master_crop": [
+        396,
+        496,
+        793,
+        992
+      ],
+      "ordinary_art_key": "headwear-02-leather-cap",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/headwear-02-leather-cap.png",
+      "source_sha256": "2b1e342ef69be349e6de7511afb368f5d36880ce049663358bc53eae11120dbf"
+    },
+    "hm_trial_v1:headwear-03-iron-skullcap": {
+      "art_key": "headwear-03-iron-skullcap:named",
+      "donor_definition": "hm_trial_v1:headwear-03-iron-skullcap",
+      "master_batch": 4,
+      "master_crop": [
+        793,
+        496,
+        1190,
+        992
+      ],
+      "ordinary_art_key": "headwear-03-iron-skullcap",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/headwear-03-iron-skullcap.png",
+      "source_sha256": "0e08c8941daf6e99ef4c1c5a13d63fc83a80afa19f70b107c6a42b3a4e1b18db"
+    },
+    "hm_trial_v1:headwear-04-kettle-helm": {
+      "art_key": "headwear-04-kettle-helm:named",
+      "donor_definition": "hm_trial_v1:headwear-04-kettle-helm",
+      "master_batch": 4,
+      "master_crop": [
+        1190,
+        496,
+        1586,
+        992
+      ],
+      "ordinary_art_key": "headwear-04-kettle-helm",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/headwear-04-kettle-helm.png",
+      "source_sha256": "197e0b920e1e07ba252075728c7fa8e38928375a5ccad852f626b37591abc3a2"
+    },
+    "hm_trial_v1:old24-archer_heavy": {
+      "art_key": "old24-archer_heavy:named",
+      "donor_definition": "hm_trial_v1:old24-archer_heavy",
+      "master_batch": 1,
+      "master_crop": [
+        793,
+        496,
+        1190,
+        992
+      ],
+      "ordinary_art_key": "old24-archer_heavy",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-archer_heavy.png",
+      "source_sha256": "839a47eac82df70f0563ff0f3759b48ec76896fc2db28b62650bea2befaab460"
+    },
+    "hm_trial_v1:old24-archer_weapon": {
+      "art_key": "old24-archer_weapon:named",
+      "donor_definition": "hm_trial_v1:old24-archer_weapon",
+      "master_batch": 1,
+      "master_crop": [
+        396,
+        496,
+        793,
+        992
+      ],
+      "ordinary_art_key": "old24-archer_weapon",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-archer_weapon.png",
+      "source_sha256": "64203969004e3fad4a9a0bf696ea27b8aa46475c3196a3e6960bc176a3ff1400"
+    },
+    "hm_trial_v1:old24-banded_mail": {
+      "art_key": "old24-banded_mail:named",
+      "donor_definition": "hm_trial_v1:old24-banded_mail",
+      "master_batch": 4,
+      "master_crop": [
+        1190,
+        0,
+        1586,
+        496
+      ],
+      "ordinary_art_key": "old24-banded_mail",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-banded_mail.png",
+      "source_sha256": "b1af880c9f9907772094f6a765d70ca70c6d666ec690bcddc5be53fa67a71b08"
+    },
+    "hm_trial_v1:old24-duelist_heavy": {
+      "art_key": "old24-duelist_heavy:named",
+      "donor_definition": "hm_trial_v1:old24-duelist_heavy",
+      "master_batch": 2,
+      "master_crop": [
+        793,
+        0,
+        1190,
+        496
+      ],
+      "ordinary_art_key": "old24-duelist_heavy",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-duelist_heavy.png",
+      "source_sha256": "c9278c6c4ebaeef5a8dae979033225ef43c58ae6d6beba4ad3a7b633eb0a1b4d"
+    },
+    "hm_trial_v1:old24-duelist_weapon": {
+      "art_key": "old24-duelist_weapon:named",
+      "donor_definition": "hm_trial_v1:old24-duelist_weapon",
+      "master_batch": 2,
+      "master_crop": [
+        396,
+        0,
+        793,
+        496
+      ],
+      "ordinary_art_key": "old24-duelist_weapon",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-duelist_weapon.png",
+      "source_sha256": "d8bcd6a7ebebe4df6cd5ed09cde0320f449fa5e1d4d6d1de6708373be3f4b145"
+    },
+    "hm_trial_v1:old24-ferryman_hook": {
+      "art_key": "old24-ferryman_hook:named",
+      "donor_definition": "hm_trial_v1:old24-ferryman_hook",
+      "master_batch": 2,
+      "master_crop": [
+        1190,
+        496,
+        1586,
+        992
+      ],
+      "ordinary_art_key": "old24-ferryman_hook",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-ferryman_hook.png",
+      "source_sha256": "d99a034c6b0fb98783570810db856abd1467028101ed0374deaaaa425eebe53f"
+    },
+    "hm_trial_v1:old24-gatewarden_blade": {
+      "art_key": "old24-gatewarden_blade:named",
+      "donor_definition": "hm_trial_v1:old24-gatewarden_blade",
+      "master_batch": 2,
+      "master_crop": [
+        793,
+        496,
+        1190,
+        992
+      ],
+      "ordinary_art_key": "old24-gatewarden_blade",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-gatewarden_blade.png",
+      "source_sha256": "81813ef8136e2b5c92ea8e382232a8391c11e9839712c5e60896d77faf3a9489"
+    },
+    "hm_trial_v1:old24-medic_heavy": {
+      "art_key": "old24-medic_heavy:named",
+      "donor_definition": "hm_trial_v1:old24-medic_heavy",
+      "master_batch": 2,
+      "master_crop": [
+        0,
+        496,
+        396,
+        992
+      ],
+      "ordinary_art_key": "old24-medic_heavy",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-medic_heavy.png",
+      "source_sha256": "bb7c5b0e78c6324857504d866e60fcf01624475bd5bf8154482854de6b8f03c4"
+    },
+    "hm_trial_v1:old24-medic_weapon": {
+      "art_key": "old24-medic_weapon:named",
+      "donor_definition": "hm_trial_v1:old24-medic_weapon",
+      "master_batch": 2,
+      "master_crop": [
+        1190,
+        0,
+        1586,
+        496
+      ],
+      "ordinary_art_key": "old24-medic_weapon",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-medic_weapon.png",
+      "source_sha256": "a2015abfcb0683c9f414d871e9e146783a2a135e18e223d9266c86330eea548a"
+    },
+    "hm_trial_v1:old24-polearm_heavy": {
+      "art_key": "old24-polearm_heavy:named",
+      "donor_definition": "hm_trial_v1:old24-polearm_heavy",
+      "master_batch": 2,
+      "master_crop": [
+        0,
+        0,
+        396,
+        496
+      ],
+      "ordinary_art_key": "old24-polearm_heavy",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-polearm_heavy.png",
+      "source_sha256": "da947f2d89c2aa4050cbfe947ed6caf53249ee7a143b181ced66cb4121fb875d"
+    },
+    "hm_trial_v1:old24-polearm_weapon": {
+      "art_key": "old24-polearm_weapon:named",
+      "donor_definition": "hm_trial_v1:old24-polearm_weapon",
+      "master_batch": 1,
+      "master_crop": [
+        1190,
+        496,
+        1586,
+        992
+      ],
+      "ordinary_art_key": "old24-polearm_weapon",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-polearm_weapon.png",
+      "source_sha256": "d67a8e7e82ffdcddc2596aaa5110da432e27461ad9c9cfd2ac7049865855b04c"
+    },
+    "hm_trial_v1:old24-quarry_estoc": {
+      "art_key": "old24-quarry_estoc:named",
+      "donor_definition": "hm_trial_v1:old24-quarry_estoc",
+      "master_batch": 3,
+      "master_crop": [
+        0,
+        0,
+        396,
+        496
+      ],
+      "ordinary_art_key": "old24-quarry_estoc",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-quarry_estoc.png",
+      "source_sha256": "577a5f958a55d24e645313d38690a15f322d2522dd894a119b7c8d9162d8a05c"
+    },
+    "hm_trial_v1:old24-reedrunner_bow": {
+      "art_key": "old24-reedrunner_bow:named",
+      "donor_definition": "hm_trial_v1:old24-reedrunner_bow",
+      "master_batch": 1,
+      "master_crop": [
+        1190,
+        0,
+        1586,
+        496
+      ],
+      "ordinary_art_key": "old24-reedrunner_bow",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-reedrunner_bow.png",
+      "source_sha256": "bc8f147ec96fd0f5a38cdb05dcfebf99d38dcd09f458eef073eedce0f4c44ae9"
+    },
+    "hm_trial_v1:old24-scout_coat": {
+      "art_key": "old24-scout_coat:named",
+      "donor_definition": "hm_trial_v1:old24-scout_coat",
+      "master_batch": 4,
+      "master_crop": [
+        0,
+        0,
+        396,
+        496
+      ],
+      "ordinary_art_key": "old24-scout_coat",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-scout_coat.png",
+      "source_sha256": "05ad9ce1aa6afa85cc54c76e5d3ba4ef5407cc5027ba12b09b681dd2619a00d0"
+    },
+    "hm_trial_v1:old24-shieldbearer_heavy": {
+      "art_key": "old24-shieldbearer_heavy:named",
+      "donor_definition": "hm_trial_v1:old24-shieldbearer_heavy",
+      "master_batch": 1,
+      "master_crop": [
+        0,
+        496,
+        396,
+        992
+      ],
+      "ordinary_art_key": "old24-shieldbearer_heavy",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-shieldbearer_heavy.png",
+      "source_sha256": "901b8838628a4dffb8d5d12b7ec55fb1a103941ae84252de01f22d887669f085"
+    },
+    "hm_trial_v1:old24-ward_spear": {
+      "art_key": "old24-ward_spear:named",
+      "donor_definition": "hm_trial_v1:old24-ward_spear",
+      "master_batch": 2,
+      "master_crop": [
+        396,
+        496,
+        793,
+        992
+      ],
+      "ordinary_art_key": "old24-ward_spear",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-ward_spear.png",
+      "source_sha256": "84e2c3b96996f0558fd6f4d2a33b8f1e0418288021b022b39f1805b44070889c"
+    },
+    "hm_trial_v1:old24-wayfarer_lancet": {
+      "art_key": "old24-wayfarer_lancet:named",
+      "donor_definition": "hm_trial_v1:old24-wayfarer_lancet",
+      "master_batch": 3,
+      "master_crop": [
+        396,
+        0,
+        793,
+        496
+      ],
+      "ordinary_art_key": "old24-wayfarer_lancet",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-wayfarer_lancet.png",
+      "source_sha256": "81fd8b04a4b8f33d319448937dc7fcdc5622b50547bd49ea659dac2cb3840dae"
+    },
+    "hm_trial_v1:twohand_sword": {
+      "art_key": "approved-medic-upright-greatsword:named",
+      "donor_definition": "hm_trial_v1:twohand_sword",
+      "master_batch": 3,
+      "master_crop": [
+        1190,
+        0,
+        1586,
+        496
+      ],
+      "ordinary_art_key": "approved-medic-upright-greatsword",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/approved-medic-upright-greatsword.png",
+      "source_sha256": "a814c280e9a52b86f68533bfbe5730f972b3e2623a29c469283d29f57c58a3ba"
+    },
+    "hollow_campaign:padded_hood": {
+      "art_key": "headwear-01-padded-hood:named",
+      "donor_definition": "padded_hood",
+      "master_batch": 4,
+      "master_crop": [
+        0,
+        496,
+        396,
+        992
+      ],
+      "ordinary_art_key": "headwear-01-padded-hood",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/headwear-01-padded-hood.png",
+      "source_sha256": "22061796dfd691fd4b74d984c718895167e5bde17536a5000e0f192f5807bc65"
+    },
+    "iron_cap": {
+      "art_key": "headwear-03-iron-skullcap:named",
+      "donor_definition": "iron_cap",
+      "master_batch": 4,
+      "master_crop": [
+        793,
+        496,
+        1190,
+        992
+      ],
+      "ordinary_art_key": "headwear-03-iron-skullcap",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/headwear-03-iron-skullcap.png",
+      "source_sha256": "0e08c8941daf6e99ef4c1c5a13d63fc83a80afa19f70b107c6a42b3a4e1b18db"
+    },
+    "march_mail": {
+      "art_key": "old24-march_mail:named",
+      "donor_definition": "march_mail",
+      "master_batch": 4,
+      "master_crop": [
+        793,
+        0,
+        1190,
+        496
+      ],
+      "ordinary_art_key": "old24-march_mail",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-march_mail.png",
+      "source_sha256": "32b9fd68c741390e542a1fa3f1942f8175aaf54348f0c85b31bdb8d1026ee4e2"
+    },
+    "pike": {
+      "art_key": "new-current-ash-pike:named",
+      "donor_definition": "pike",
+      "master_batch": 1,
+      "master_crop": [
+        793,
+        0,
+        1190,
+        496
+      ],
+      "ordinary_art_key": "new-current-ash-pike",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/new-current-ash-pike.png",
+      "source_sha256": "0d5438fdf4ab92806521383da1831c7cfc3a5df42b4bf4fba3f834d62c82c687"
+    },
+    "short_bow": {
+      "art_key": "old24-reedrunner_bow:named",
+      "donor_definition": "short_bow",
+      "master_batch": 1,
+      "master_crop": [
+        1190,
+        0,
+        1586,
+        496
+      ],
+      "ordinary_art_key": "old24-reedrunner_bow",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-reedrunner_bow.png",
+      "source_sha256": "bc8f147ec96fd0f5a38cdb05dcfebf99d38dcd09f458eef073eedce0f4c44ae9"
+    },
+    "short_sword": {
+      "art_key": "old24-shieldbearer_weapon:named",
+      "donor_definition": "short_sword",
+      "master_batch": 1,
+      "master_crop": [
+        0,
+        0,
+        396,
+        496
+      ],
+      "ordinary_art_key": "old24-shieldbearer_weapon",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-shieldbearer_weapon.png",
+      "source_sha256": "6a6c0f2a70663b7cd2ef813caef066e4533b08172835b075c5d2ed9bfbddad2c"
+    },
+    "travel_leather": {
+      "art_key": "old24-travel_leather:named",
+      "donor_definition": "travel_leather",
+      "master_batch": 4,
+      "master_crop": [
+        396,
+        0,
+        793,
+        496
+      ],
+      "ordinary_art_key": "old24-travel_leather",
+      "source_dimensions": [
+        512,
+        512
+      ],
+      "source_kind": "named_concept",
+      "source_path": "res://named_gear/art/old24-travel_leather.png",
+      "source_sha256": "a83d797c13949ee864f22f33eeade6d6374ce2080895c6e88c36c22775492ffa"
+    }
+  },
+  "schema": "bb2-named-item-art-v1"
+}

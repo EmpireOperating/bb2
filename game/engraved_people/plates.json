@@ -1,0 +1,3777 @@
+{
+ "cuts": {
+  "torso/linen": [
+   182,
+   130,
+   621,
+   600,
+   116,
+   174
+  ],
+  "torso/mail": [
+   182,
+   130,
+   187,
+   600,
+   117,
+   181
+  ],
+  "sleeve/single/front/mail": [
+   266,
+   149,
+   1894,
+   1523,
+   67,
+   99
+  ],
+  "sleeve/single/front/cloth": [
+   266,
+   149,
+   1961,
+   1523,
+   67,
+   99
+  ],
+  "hand/single/front": [
+   307,
+   229,
+   1744,
+   1998,
+   28,
+   25
+  ],
+  "sleeve/single/back/mail": [
+   155,
+   144,
+   216,
+   1413,
+   54,
+   109
+  ],
+  "sleeve/single/back/cloth": [
+   155,
+   144,
+   270,
+   1413,
+   54,
+   109
+  ],
+  "hand/single/back": [
+   155,
+   234,
+   1772,
+   1998,
+   28,
+   25
+  ],
+  "sleeve/haft/front/mail": [
+   260,
+   147,
+   346,
+   1727,
+   56,
+   84
+  ],
+  "sleeve/haft/front/cloth": [
+   260,
+   147,
+   402,
+   1727,
+   56,
+   84
+  ],
+  "hand/haft/front": [
+   307,
+   206,
+   2024,
+   1998,
+   24,
+   22
+  ],
+  "sleeve/haft/back/mail": [
+   157,
+   143,
+   835,
+   1628,
+   55,
+   95
+  ],
+  "sleeve/haft/back/cloth": [
+   157,
+   143,
+   890,
+   1628,
+   55,
+   95
+  ],
+  "hand/haft/back": [
+   189,
+   215,
+   1296,
+   1998,
+   28,
+   26
+  ],
+  "sleeve/paired/front/mail": [
+   270,
+   148,
+   1062,
+   1813,
+   68,
+   71
+  ],
+  "sleeve/paired/front/cloth": [
+   270,
+   148,
+   1130,
+   1813,
+   68,
+   71
+  ],
+  "hand/paired/front": [
+   291,
+   197,
+   634,
+   1998,
+   25,
+   29
+  ],
+  "sleeve/paired/back/mail": [
+   187,
+   149,
+   126,
+   1523,
+   90,
+   104
+  ],
+  "sleeve/paired/back/cloth": [
+   187,
+   149,
+   216,
+   1523,
+   90,
+   104
+  ],
+  "hand/paired/back": [
+   254,
+   229,
+   659,
+   1998,
+   25,
+   29
+  ],
+  "sleeve/stock/front/mail": [
+   259,
+   149,
+   62,
+   1813,
+   71,
+   77
+  ],
+  "sleeve/stock/front/cloth": [
+   259,
+   149,
+   133,
+   1813,
+   71,
+   77
+  ],
+  "hand/stock/front": [
+   310,
+   197,
+   684,
+   1998,
+   25,
+   29
+  ],
+  "sleeve/stock/back/mail": [
+   182,
+   150,
+   945,
+   1628,
+   70,
+   95
+  ],
+  "sleeve/stock/back/cloth": [
+   182,
+   150,
+   1015,
+   1628,
+   70,
+   95
+  ],
+  "hand/stock/back": [
+   230,
+   221,
+   709,
+   1998,
+   25,
+   29
+  ],
+  "face/0/hair": [
+   207,
+   52,
+   1300,
+   1271,
+   71,
+   112
+  ],
+  "face/0/shorn": [
+   207,
+   55,
+   324,
+   1413,
+   69,
+   109
+  ],
+  "face/1/hair": [
+   204,
+   48,
+   1544,
+   1523,
+   76,
+   100
+  ],
+  "face/1/shorn": [
+   207,
+   56,
+   1391,
+   1628,
+   68,
+   92
+  ],
+  "face/2/hair": [
+   208,
+   52,
+   1371,
+   1271,
+   68,
+   112
+  ],
+  "face/2/shorn": [
+   208,
+   55,
+   393,
+   1413,
+   67,
+   109
+  ],
+  "face/3/hair": [
+   201,
+   48,
+   765,
+   1413,
+   81,
+   107
+  ],
+  "face/3/shorn": [
+   201,
+   56,
+   0,
+   1628,
+   75,
+   99
+  ],
+  "face/4/hair": [
+   209,
+   52,
+   1439,
+   1271,
+   66,
+   112
+  ],
+  "face/4/shorn": [
+   209,
+   55,
+   460,
+   1413,
+   65,
+   109
+  ],
+  "face/5/hair": [
+   206,
+   48,
+   1620,
+   1523,
+   72,
+   100
+  ],
+  "face/5/shorn": [
+   209,
+   56,
+   1459,
+   1628,
+   65,
+   92
+  ],
+  "face/6/hair": [
+   206,
+   52,
+   1505,
+   1271,
+   73,
+   112
+  ],
+  "face/6/shorn": [
+   206,
+   55,
+   525,
+   1413,
+   71,
+   109
+  ],
+  "face/7/hair": [
+   203,
+   48,
+   846,
+   1413,
+   77,
+   107
+  ],
+  "face/7/shorn": [
+   203,
+   56,
+   75,
+   1628,
+   71,
+   99
+  ],
+  "head/nasal": [
+   200,
+   41,
+   980,
+   1813,
+   82,
+   72
+  ],
+  "weapon/arming": [
+   81,
+   79,
+   532,
+   600,
+   89,
+   175
+  ],
+  "weapon/axe": [
+   108,
+   119,
+   494,
+   1271,
+   59,
+   133
+  ],
+  "weapon/pike": [
+   75,
+   42,
+   0,
+   0,
+   351,
+   324
+  ],
+  "shield/heater": [
+   277,
+   180,
+   1088,
+   1271,
+   91,
+   117
+  ],
+  "weapon/short": [
+   109,
+   123,
+   728,
+   1271,
+   60,
+   131
+  ],
+  "weapon/falchion": [
+   119,
+   103,
+   1614,
+   1116,
+   50,
+   151
+  ],
+  "weapon/cleaver": [
+   303,
+   121,
+   431,
+   1116,
+   90,
+   153
+  ],
+  "weapon/sabre": [
+   306,
+   114,
+   189,
+   954,
+   92,
+   160
+  ],
+  "weapon/warden": [
+   306,
+   109,
+   735,
+   785,
+   68,
+   165
+  ],
+  "weapon/estoc": [
+   306,
+   91,
+   112,
+   600,
+   75,
+   183
+  ],
+  "weapon/belt-knife": [
+   125,
+   174,
+   1487,
+   1727,
+   44,
+   80
+  ],
+  "weapon/rondel": [
+   124,
+   160,
+   1218,
+   1628,
+   45,
+   94
+  ],
+  "weapon/field-knife": [
+   306,
+   189,
+   302,
+   1727,
+   44,
+   85
+  ],
+  "weapon/lancet": [
+   306,
+   173,
+   1231,
+   1523,
+   45,
+   101
+  ],
+  "weapon/great": [
+   252,
+   88,
+   1596,
+   600,
+   192,
+   173
+  ],
+  "weapon/hatchet": [
+   119,
+   149,
+   800,
+   1523,
+   50,
+   102
+  ],
+  "weapon/surgical": [
+   306,
+   175,
+   667,
+   1628,
+   72,
+   97
+  ],
+  "weapon/fighting": [
+   306,
+   145,
+   788,
+   1271,
+   100,
+   127
+  ],
+  "weapon/great-axe": [
+   258,
+   125,
+   553,
+   1271,
+   175,
+   132
+  ],
+  "weapon/head-mace45": [
+   101,
+   127,
+   888,
+   1271,
+   67,
+   124
+  ],
+  "weapon/head-mace55": [
+   306,
+   132,
+   155,
+   1271,
+   70,
+   140
+  ],
+  "weapon/head-club40": [
+   109,
+   137,
+   1179,
+   1271,
+   59,
+   114
+  ],
+  "weapon/head-club47": [
+   306,
+   148,
+   955,
+   1271,
+   61,
+   124
+  ],
+  "weapon/head-hammer46": [
+   96,
+   129,
+   1016,
+   1271,
+   72,
+   122
+  ],
+  "weapon/head-maul62": [
+   258,
+   115,
+   0,
+   1271,
+   155,
+   142
+  ],
+  "weapon/wing68": [
+   105,
+   50,
+   1339,
+   0,
+   315,
+   287
+  ],
+  "weapon/leaf53": [
+   105,
+   67,
+   145,
+   324,
+   297,
+   270
+  ],
+  "weapon/leaf76": [
+   105,
+   42,
+   680,
+   0,
+   325,
+   295
+  ],
+  "weapon/wing80": [
+   105,
+   37,
+   351,
+   0,
+   329,
+   300
+  ],
+  "weapon/bill64": [
+   8,
+   179,
+   1063,
+   1727,
+   424,
+   81
+  ],
+  "weapon/hook64": [
+   105,
+   48,
+   1005,
+   0,
+   334,
+   289
+  ],
+  "weapon/glaive62": [
+   8,
+   196,
+   1198,
+   1813,
+   429,
+   64
+  ],
+  "weapon/shortbow": [
+   269,
+   150,
+   737,
+   600,
+   63,
+   174
+  ],
+  "weapon/longbow": [
+   260,
+   115,
+   787,
+   324,
+   72,
+   243
+  ],
+  "weapon/warbow": [
+   246,
+   102,
+   442,
+   324,
+   87,
+   265
+  ],
+  "weapon/reedbow": [
+   256,
+   136,
+   1508,
+   324,
+   76,
+   199
+  ],
+  "weapon/boar": [
+   76,
+   76,
+   0,
+   324,
+   145,
+   276
+  ],
+  "weapon/militia": [
+   86,
+   96,
+   529,
+   324,
+   135,
+   256
+  ],
+  "weapon/heavy": [
+   70,
+   65,
+   1654,
+   0,
+   151,
+   287
+  ],
+  "weapon/crossbow": [
+   229,
+   146,
+   596,
+   1413,
+   169,
+   109
+  ],
+  "weapon/heavy-crossbow": [
+   229,
+   145,
+   1739,
+   1271,
+   169,
+   111
+  ],
+  "shield/round": [
+   269,
+   176,
+   306,
+   1523,
+   104,
+   104
+  ],
+  "shield/buckler": [
+   299,
+   206,
+   1034,
+   1891,
+   55,
+   56
+  ],
+  "torso/scout": [
+   182,
+   130,
+   800,
+   600,
+   116,
+   174
+  ],
+  "torso/leather": [
+   182,
+   130,
+   916,
+   600,
+   116,
+   174
+  ],
+  "torso/banded": [
+   182,
+   130,
+   304,
+   600,
+   117,
+   181
+  ],
+  "torso/red-quilt": [
+   182,
+   130,
+   1032,
+   600,
+   116,
+   174
+  ],
+  "torso/green-jack": [
+   182,
+   130,
+   1148,
+   600,
+   116,
+   174
+  ],
+  "torso/blue-quilt": [
+   182,
+   130,
+   1264,
+   600,
+   116,
+   174
+  ],
+  "torso/padded": [
+   182,
+   130,
+   1380,
+   600,
+   116,
+   174
+  ],
+  "torso/breastplate": [
+   186,
+   133,
+   410,
+   1523,
+   107,
+   104
+  ],
+  "head/hood": [
+   181,
+   47,
+   0,
+   1413,
+   100,
+   110
+  ],
+  "head/felt": [
+   205,
+   50,
+   756,
+   1953,
+   75,
+   40
+  ],
+  "head/leather": [
+   201,
+   45,
+   1268,
+   1891,
+   81,
+   53
+  ],
+  "head/iron": [
+   201,
+   45,
+   1349,
+   1891,
+   81,
+   53
+  ],
+  "head/kettle": [
+   188,
+   45,
+   376,
+   1891,
+   110,
+   61
+  ],
+  "cloak/traveller": [
+   154,
+   132,
+   1496,
+   600,
+   100,
+   174
+  ],
+  "cloak/scout": [
+   154,
+   132,
+   1731,
+   1116,
+   100,
+   149
+  ],
+  "cloak/scholar": [
+   154,
+   132,
+   1804,
+   324,
+   100,
+   185
+  ],
+  "cloak/waxed": [
+   154,
+   114,
+   394,
+   1271,
+   100,
+   139
+  ],
+  "cloak/cape": [
+   154,
+   126,
+   225,
+   1271,
+   100,
+   140
+  ],
+  "belt/pouch": [
+   195,
+   222,
+   1904,
+   1891,
+   91,
+   47
+  ],
+  "belt/utility": [
+   195,
+   222,
+   188,
+   1998,
+   91,
+   30
+  ],
+  "belt/support": [
+   195,
+   222,
+   279,
+   1998,
+   91,
+   30
+  ],
+  "belt/sash": [
+   195,
+   222,
+   1526,
+   1891,
+   91,
+   52
+  ],
+  "belt/breather": [
+   195,
+   222,
+   370,
+   1998,
+   91,
+   30
+  ],
+  "hand/single/front/grip": [
+   307,
+   229,
+   1800,
+   1998,
+   28,
+   25
+  ],
+  "hand/single/back/grip": [
+   155,
+   234,
+   1828,
+   1998,
+   28,
+   25
+  ],
+  "hand/haft/front/grip": [
+   307,
+   206,
+   0,
+   2033,
+   24,
+   22
+  ],
+  "hand/haft/back/grip": [
+   189,
+   215,
+   1324,
+   1998,
+   28,
+   26
+  ],
+  "hand/paired/front/grip": [
+   291,
+   197,
+   734,
+   1998,
+   25,
+   29
+  ],
+  "hand/paired/back/grip": [
+   254,
+   229,
+   759,
+   1998,
+   25,
+   29
+  ],
+  "hand/stock/front/grip": [
+   310,
+   197,
+   784,
+   1998,
+   25,
+   29
+  ],
+  "hand/stock/back/grip": [
+   230,
+   221,
+   809,
+   1998,
+   25,
+   29
+  ],
+  "hand/single/front/draw": [
+   307,
+   229,
+   1856,
+   1998,
+   28,
+   25
+  ],
+  "hand/single/back/draw": [
+   155,
+   234,
+   1884,
+   1998,
+   28,
+   25
+  ],
+  "hand/haft/front/draw": [
+   307,
+   206,
+   24,
+   2033,
+   24,
+   22
+  ],
+  "hand/haft/back/draw": [
+   189,
+   215,
+   1352,
+   1998,
+   28,
+   26
+  ],
+  "hand/paired/front/draw": [
+   291,
+   197,
+   834,
+   1998,
+   25,
+   29
+  ],
+  "hand/paired/back/draw": [
+   254,
+   229,
+   859,
+   1998,
+   25,
+   29
+  ],
+  "hand/stock/front/draw": [
+   310,
+   197,
+   884,
+   1998,
+   25,
+   29
+  ],
+  "hand/stock/back/draw": [
+   230,
+   221,
+   909,
+   1998,
+   25,
+   29
+  ],
+  "hand/single/front/wrap": [
+   307,
+   229,
+   1912,
+   1998,
+   28,
+   25
+  ],
+  "hand/single/back/wrap": [
+   155,
+   234,
+   1940,
+   1998,
+   28,
+   25
+  ],
+  "hand/haft/front/wrap": [
+   307,
+   206,
+   48,
+   2033,
+   24,
+   22
+  ],
+  "hand/haft/back/wrap": [
+   189,
+   215,
+   1380,
+   1998,
+   28,
+   26
+  ],
+  "hand/paired/front/wrap": [
+   291,
+   197,
+   934,
+   1998,
+   25,
+   29
+  ],
+  "hand/paired/back/wrap": [
+   254,
+   229,
+   959,
+   1998,
+   25,
+   29
+  ],
+  "hand/stock/front/wrap": [
+   310,
+   197,
+   984,
+   1998,
+   25,
+   29
+  ],
+  "hand/stock/back/wrap": [
+   230,
+   221,
+   1009,
+   1998,
+   25,
+   29
+  ],
+  "hand/single/front/mail": [
+   307,
+   229,
+   1968,
+   1998,
+   28,
+   25
+  ],
+  "hand/single/back/mail": [
+   155,
+   234,
+   1996,
+   1998,
+   28,
+   25
+  ],
+  "hand/haft/front/mail": [
+   307,
+   206,
+   72,
+   2033,
+   24,
+   22
+  ],
+  "hand/haft/back/mail": [
+   189,
+   215,
+   1408,
+   1998,
+   28,
+   26
+  ],
+  "hand/paired/front/mail": [
+   291,
+   197,
+   1034,
+   1998,
+   25,
+   29
+  ],
+  "hand/paired/back/mail": [
+   254,
+   229,
+   1059,
+   1998,
+   25,
+   29
+  ],
+  "hand/stock/front/mail": [
+   310,
+   197,
+   1084,
+   1998,
+   25,
+   29
+  ],
+  "hand/stock/back/mail": [
+   230,
+   221,
+   1109,
+   1998,
+   25,
+   29
+  ],
+  "legs/plain/-1": [
+   182,
+   259,
+   946,
+   1116,
+   130,
+   152
+  ],
+  "legs/soft/-1": [
+   182,
+   259,
+   1076,
+   1116,
+   132,
+   152
+  ],
+  "legs/trail/-1": [
+   182,
+   259,
+   1208,
+   1116,
+   135,
+   152
+  ],
+  "legs/wrapped/-1": [
+   181,
+   259,
+   1343,
+   1116,
+   134,
+   152
+  ],
+  "legs/iron/-1": [
+   182,
+   259,
+   1477,
+   1116,
+   137,
+   152
+  ],
+  "legs/plain/0": [
+   192,
+   250,
+   97,
+   954,
+   92,
+   161
+  ],
+  "legs/soft/0": [
+   192,
+   249,
+   803,
+   785,
+   93,
+   162
+  ],
+  "legs/trail/0": [
+   192,
+   249,
+   896,
+   785,
+   96,
+   162
+  ],
+  "legs/wrapped/0": [
+   192,
+   249,
+   992,
+   785,
+   94,
+   162
+  ],
+  "legs/iron/0": [
+   192,
+   249,
+   1086,
+   785,
+   98,
+   162
+  ],
+  "legs/plain/1": [
+   194,
+   249,
+   1184,
+   785,
+   87,
+   162
+  ],
+  "legs/soft/1": [
+   194,
+   249,
+   1271,
+   785,
+   87,
+   162
+  ],
+  "legs/trail/1": [
+   194,
+   249,
+   1358,
+   785,
+   87,
+   162
+  ],
+  "legs/wrapped/1": [
+   194,
+   249,
+   1445,
+   785,
+   87,
+   162
+  ],
+  "legs/iron/1": [
+   194,
+   249,
+   1532,
+   785,
+   87,
+   162
+  ],
+  "legs/plain/2": [
+   199,
+   242,
+   1967,
+   600,
+   81,
+   169
+  ],
+  "legs/soft/2": [
+   199,
+   242,
+   0,
+   785,
+   81,
+   169
+  ],
+  "legs/trail/2": [
+   199,
+   242,
+   81,
+   785,
+   81,
+   169
+  ],
+  "legs/wrapped/2": [
+   199,
+   242,
+   162,
+   785,
+   81,
+   169
+  ],
+  "legs/iron/2": [
+   199,
+   242,
+   243,
+   785,
+   81,
+   169
+  ],
+  "legs/plain/3": [
+   199,
+   243,
+   324,
+   785,
+   81,
+   168
+  ],
+  "legs/soft/3": [
+   199,
+   243,
+   405,
+   785,
+   81,
+   168
+  ],
+  "legs/trail/3": [
+   199,
+   243,
+   486,
+   785,
+   83,
+   168
+  ],
+  "legs/wrapped/3": [
+   199,
+   243,
+   569,
+   785,
+   81,
+   168
+  ],
+  "legs/iron/3": [
+   199,
+   243,
+   650,
+   785,
+   85,
+   168
+  ],
+  "legs/plain/4": [
+   199,
+   249,
+   1619,
+   785,
+   91,
+   162
+  ],
+  "legs/soft/4": [
+   199,
+   249,
+   1710,
+   785,
+   93,
+   162
+  ],
+  "legs/trail/4": [
+   199,
+   249,
+   1803,
+   785,
+   95,
+   162
+  ],
+  "legs/wrapped/4": [
+   199,
+   249,
+   1898,
+   785,
+   93,
+   162
+  ],
+  "legs/iron/4": [
+   199,
+   249,
+   0,
+   954,
+   97,
+   162
+  ],
+  "legs/plain/5": [
+   193,
+   255,
+   1384,
+   954,
+   90,
+   156
+  ],
+  "legs/soft/5": [
+   193,
+   255,
+   1474,
+   954,
+   92,
+   156
+  ],
+  "legs/trail/5": [
+   193,
+   255,
+   1566,
+   954,
+   94,
+   156
+  ],
+  "legs/wrapped/5": [
+   193,
+   255,
+   1660,
+   954,
+   92,
+   156
+  ],
+  "legs/iron/5": [
+   193,
+   255,
+   1752,
+   954,
+   96,
+   156
+  ],
+  "legs/plain/6": [
+   195,
+   258,
+   521,
+   1116,
+   85,
+   153
+  ],
+  "legs/soft/6": [
+   195,
+   258,
+   606,
+   1116,
+   85,
+   153
+  ],
+  "legs/trail/6": [
+   195,
+   258,
+   691,
+   1116,
+   85,
+   153
+  ],
+  "legs/wrapped/6": [
+   195,
+   258,
+   776,
+   1116,
+   85,
+   153
+  ],
+  "legs/iron/6": [
+   195,
+   258,
+   861,
+   1116,
+   85,
+   153
+  ],
+  "legs/plain/7": [
+   197,
+   253,
+   964,
+   954,
+   84,
+   158
+  ],
+  "legs/soft/7": [
+   197,
+   253,
+   1048,
+   954,
+   84,
+   158
+  ],
+  "legs/trail/7": [
+   197,
+   253,
+   1132,
+   954,
+   84,
+   158
+  ],
+  "legs/wrapped/7": [
+   197,
+   253,
+   1216,
+   954,
+   84,
+   158
+  ],
+  "legs/iron/7": [
+   197,
+   253,
+   1300,
+   954,
+   84,
+   158
+  ],
+  "legs/plain/8": [
+   197,
+   256,
+   0,
+   1116,
+   85,
+   155
+  ],
+  "legs/soft/8": [
+   197,
+   256,
+   85,
+   1116,
+   85,
+   155
+  ],
+  "legs/trail/8": [
+   197,
+   256,
+   170,
+   1116,
+   87,
+   155
+  ],
+  "legs/wrapped/8": [
+   197,
+   256,
+   257,
+   1116,
+   85,
+   155
+  ],
+  "legs/iron/8": [
+   197,
+   256,
+   342,
+   1116,
+   89,
+   155
+  ],
+  "legs/plain/9": [
+   197,
+   251,
+   281,
+   954,
+   96,
+   160
+  ],
+  "legs/soft/9": [
+   197,
+   251,
+   377,
+   954,
+   97,
+   160
+  ],
+  "legs/trail/9": [
+   197,
+   251,
+   474,
+   954,
+   100,
+   160
+  ],
+  "legs/wrapped/9": [
+   197,
+   251,
+   574,
+   954,
+   98,
+   160
+  ],
+  "legs/iron/9": [
+   197,
+   251,
+   672,
+   954,
+   102,
+   160
+  ],
+  "wear/body": [
+   216,
+   180,
+   793,
+   1628,
+   42,
+   96
+  ],
+  "wear/head": [
+   229,
+   55,
+   192,
+   2033,
+   11,
+   16
+  ],
+  "wear/shield": [
+   312,
+   210,
+   556,
+   1953,
+   28,
+   41
+  ],
+  "head/t1-leather-cap": [
+   202,
+   43,
+   1692,
+   1523,
+   80,
+   100
+  ],
+  "head/t1-skullcap": [
+   201,
+   43,
+   1722,
+   1891,
+   80,
+   51
+  ],
+  "head/t1-kettle": [
+   180,
+   47,
+   1145,
+   1891,
+   123,
+   54
+  ],
+  "weapon/t1-iron-cudgel": [
+   90,
+   113,
+   1831,
+   1116,
+   86,
+   147
+  ],
+  "weapon/t1-ash-pike": [
+   61,
+   191,
+   1627,
+   1813,
+   411,
+   63
+  ],
+  "torso/t1-scout-coat": [
+   184,
+   120,
+   1904,
+   324,
+   112,
+   185
+  ],
+  "sleeve/single/front/t1-scout-coat": [
+   262,
+   146,
+   1276,
+   1523,
+   71,
+   101
+  ],
+  "sleeve/single/back/t1-scout-coat": [
+   154,
+   141,
+   100,
+   1413,
+   58,
+   110
+  ],
+  "sleeve/haft/front/t1-scout-coat": [
+   255,
+   146,
+   1796,
+   1628,
+   63,
+   86
+  ],
+  "sleeve/haft/back/t1-scout-coat": [
+   156,
+   140,
+   351,
+   1628,
+   56,
+   98
+  ],
+  "sleeve/paired/front/t1-scout-coat": [
+   268,
+   144,
+   326,
+   1813,
+   73,
+   76
+  ],
+  "sleeve/paired/back/t1-scout-coat": [
+   183,
+   146,
+   1475,
+   1413,
+   95,
+   106
+  ],
+  "sleeve/stock/front/t1-scout-coat": [
+   255,
+   147,
+   1606,
+   1727,
+   74,
+   79
+  ],
+  "sleeve/stock/back/t1-scout-coat": [
+   178,
+   147,
+   146,
+   1628,
+   75,
+   99
+  ],
+  "torso/t1-travel-leathers": [
+   184,
+   120,
+   0,
+   600,
+   112,
+   185
+  ],
+  "sleeve/single/front/t1-travel-leathers": [
+   262,
+   146,
+   1347,
+   1523,
+   71,
+   101
+  ],
+  "sleeve/single/back/t1-travel-leathers": [
+   154,
+   141,
+   158,
+   1413,
+   58,
+   110
+  ],
+  "sleeve/haft/front/t1-travel-leathers": [
+   255,
+   146,
+   1859,
+   1628,
+   63,
+   86
+  ],
+  "sleeve/haft/back/t1-travel-leathers": [
+   156,
+   140,
+   407,
+   1628,
+   56,
+   98
+  ],
+  "sleeve/paired/front/t1-travel-leathers": [
+   268,
+   144,
+   399,
+   1813,
+   73,
+   76
+  ],
+  "sleeve/paired/back/t1-travel-leathers": [
+   183,
+   146,
+   1570,
+   1413,
+   95,
+   106
+  ],
+  "sleeve/stock/front/t1-travel-leathers": [
+   255,
+   147,
+   1680,
+   1727,
+   74,
+   79
+  ],
+  "sleeve/stock/back/t1-travel-leathers": [
+   178,
+   147,
+   221,
+   1628,
+   75,
+   99
+  ],
+  "torso/t1-marchers-mail": [
+   184,
+   118,
+   421,
+   600,
+   111,
+   177
+  ],
+  "sleeve/single/front/t1-marchers-mail": [
+   262,
+   146,
+   850,
+   1523,
+   71,
+   102
+  ],
+  "sleeve/single/back/t1-marchers-mail": [
+   155,
+   140,
+   1578,
+   1271,
+   58,
+   112
+  ],
+  "sleeve/haft/front/t1-marchers-mail": [
+   254,
+   145,
+   1922,
+   1628,
+   62,
+   86
+  ],
+  "sleeve/haft/back/t1-marchers-mail": [
+   157,
+   139,
+   296,
+   1628,
+   55,
+   99
+  ],
+  "sleeve/paired/front/t1-marchers-mail": [
+   267,
+   142,
+   1829,
+   1727,
+   71,
+   78
+  ],
+  "sleeve/paired/back/t1-marchers-mail": [
+   182,
+   146,
+   923,
+   1413,
+   95,
+   107
+  ],
+  "sleeve/stock/front/t1-marchers-mail": [
+   255,
+   146,
+   1531,
+   1727,
+   75,
+   80
+  ],
+  "sleeve/stock/back/t1-marchers-mail": [
+   177,
+   147,
+   463,
+   1628,
+   75,
+   98
+  ],
+  "torso/t1-banded-mail": [
+   186,
+   118,
+   853,
+   954,
+   111,
+   159
+  ],
+  "sleeve/single/front/t1-banded-mail": [
+   262,
+   146,
+   921,
+   1523,
+   71,
+   102
+  ],
+  "sleeve/single/back/t1-banded-mail": [
+   155,
+   141,
+   1908,
+   1271,
+   58,
+   111
+  ],
+  "sleeve/haft/front/t1-banded-mail": [
+   255,
+   145,
+   1984,
+   1628,
+   61,
+   86
+  ],
+  "sleeve/haft/back/t1-banded-mail": [
+   157,
+   140,
+   538,
+   1628,
+   55,
+   98
+  ],
+  "sleeve/paired/front/t1-banded-mail": [
+   268,
+   138,
+   849,
+   1727,
+   70,
+   82
+  ],
+  "sleeve/paired/back/t1-banded-mail": [
+   182,
+   146,
+   1018,
+   1413,
+   95,
+   107
+  ],
+  "sleeve/stock/front/t1-banded-mail": [
+   255,
+   147,
+   1754,
+   1727,
+   75,
+   79
+  ],
+  "sleeve/stock/back/t1-banded-mail": [
+   178,
+   147,
+   593,
+   1628,
+   74,
+   98
+  ],
+  "weapon/t1-short-sword": [
+   100,
+   109,
+   325,
+   1271,
+   69,
+   140
+  ],
+  "weapon/t1-war-mace": [
+   93,
+   107,
+   1917,
+   1116,
+   78,
+   147
+  ],
+  "weapon/t1-boar-spear": [
+   60,
+   182,
+   594,
+   1813,
+   386,
+   73
+  ],
+  "weapon/t1-billhook": [
+   65,
+   193,
+   0,
+   1891,
+   376,
+   62
+  ],
+  "weapon/t1-narrow-sabre": [
+   89,
+   80,
+   1884,
+   600,
+   83,
+   170
+  ],
+  "weapon/t1-heavy-falchion": [
+   103,
+   101,
+   1664,
+   1116,
+   67,
+   151
+  ],
+  "weapon/t1-field-knife": [
+   124,
+   156,
+   1524,
+   1628,
+   44,
+   92
+  ],
+  "weapon/t1-surgical-hatchet": [
+   111,
+   140,
+   1238,
+   1271,
+   62,
+   113
+  ],
+  "weapon/t1-ward-spear": [
+   59,
+   192,
+   458,
+   1727,
+   391,
+   83
+  ],
+  "weapon/t1-gatewardens-blade": [
+   90,
+   80,
+   1788,
+   600,
+   96,
+   173
+  ],
+  "weapon/t1-ferrymans-hook": [
+   60,
+   194,
+   486,
+   1891,
+   383,
+   59
+  ],
+  "weapon/t1-quarry-estoc": [
+   102,
+   42,
+   1280,
+   324,
+   66,
+   212
+  ],
+  "weapon/t1-wayfarers-lancet": [
+   116,
+   152,
+   739,
+   1628,
+   54,
+   97
+  ],
+  "weapon/t1-fighting-axe": [
+   93,
+   100,
+   774,
+   954,
+   79,
+   160
+  ],
+  "weapon/t1-two-handed-sword": [
+   244,
+   75,
+   1584,
+   324,
+   220,
+   193
+  ],
+  "weapon/t1-reedrunner-bow": [
+   256,
+   125,
+   859,
+   324,
+   100,
+   228
+  ],
+  "weapon/t1-ash-longbow": [
+   237,
+   79,
+   1805,
+   0,
+   129,
+   286
+  ],
+  "weapon/t1-heavy-hunting-bow": [
+   242,
+   108,
+   664,
+   324,
+   123,
+   248
+  ],
+  "shield/t1-buckler": [
+   296,
+   196,
+   1900,
+   1727,
+   71,
+   78
+  ],
+  "shield/t1-round-wooden-shield": [
+   281,
+   179,
+   1636,
+   1271,
+   103,
+   112
+  ],
+  "hand/single/front/t1-wrap": [
+   307,
+   215,
+   831,
+   1953,
+   27,
+   40
+  ],
+  "hand/single/back/t1-wrap": [
+   155,
+   220,
+   858,
+   1953,
+   28,
+   40
+  ],
+  "hand/haft/front/t1-wrap": [
+   307,
+   206,
+   96,
+   2033,
+   24,
+   22
+  ],
+  "hand/haft/back/t1-wrap": [
+   189,
+   216,
+   1436,
+   1998,
+   27,
+   26
+  ],
+  "hand/paired/front/t1-wrap": [
+   292,
+   185,
+   364,
+   1953,
+   36,
+   42
+  ],
+  "hand/paired/back/t1-wrap": [
+   244,
+   218,
+   584,
+   1953,
+   37,
+   41
+  ],
+  "hand/stock/front/t1-wrap": [
+   297,
+   198,
+   1134,
+   1998,
+   40,
+   29
+  ],
+  "hand/stock/back/t1-wrap": [
+   217,
+   213,
+   1401,
+   1953,
+   40,
+   38
+  ],
+  "hand/single/front/t1-grip": [
+   306,
+   214,
+   621,
+   1953,
+   29,
+   41
+  ],
+  "hand/single/back/t1-grip": [
+   155,
+   219,
+   650,
+   1953,
+   28,
+   41
+  ],
+  "hand/haft/front/t1-grip": [
+   307,
+   206,
+   120,
+   2033,
+   24,
+   22
+  ],
+  "hand/haft/back/t1-grip": [
+   189,
+   216,
+   1463,
+   1998,
+   28,
+   26
+  ],
+  "hand/paired/front/t1-grip": [
+   292,
+   184,
+   400,
+   1953,
+   38,
+   42
+  ],
+  "hand/paired/back/t1-grip": [
+   243,
+   216,
+   438,
+   1953,
+   38,
+   42
+  ],
+  "hand/stock/front/t1-grip": [
+   296,
+   198,
+   1227,
+   1998,
+   41,
+   28
+  ],
+  "hand/stock/back/t1-grip": [
+   217,
+   211,
+   1158,
+   1953,
+   40,
+   39
+  ],
+  "hand/single/front/t1-draw": [
+   307,
+   214,
+   678,
+   1953,
+   27,
+   41
+  ],
+  "hand/single/back/t1-draw": [
+   155,
+   220,
+   886,
+   1953,
+   29,
+   40
+  ],
+  "hand/haft/front/t1-draw": [
+   307,
+   206,
+   144,
+   2033,
+   24,
+   22
+  ],
+  "hand/haft/back/t1-draw": [
+   189,
+   216,
+   1491,
+   1998,
+   28,
+   26
+  ],
+  "hand/paired/front/t1-draw": [
+   291,
+   185,
+   476,
+   1953,
+   39,
+   42
+  ],
+  "hand/paired/back/t1-draw": [
+   244,
+   216,
+   205,
+   1953,
+   37,
+   43
+  ],
+  "hand/stock/front/t1-draw": [
+   296,
+   197,
+   461,
+   1998,
+   41,
+   30
+  ],
+  "hand/stock/back/t1-draw": [
+   218,
+   211,
+   915,
+   1953,
+   39,
+   40
+  ],
+  "hand/single/front/t1-mail": [
+   305,
+   212,
+   88,
+   1953,
+   30,
+   44
+  ],
+  "hand/single/back/t1-mail": [
+   154,
+   218,
+   242,
+   1953,
+   30,
+   43
+  ],
+  "hand/haft/front/t1-mail": [
+   307,
+   206,
+   168,
+   2033,
+   24,
+   22
+  ],
+  "hand/haft/back/t1-mail": [
+   189,
+   216,
+   1268,
+   1998,
+   28,
+   27
+  ],
+  "hand/paired/front/t1-mail": [
+   291,
+   183,
+   118,
+   1953,
+   40,
+   44
+  ],
+  "hand/paired/back/t1-mail": [
+   242,
+   214,
+   0,
+   1953,
+   39,
+   45
+  ],
+  "hand/stock/front/t1-mail": [
+   295,
+   197,
+   502,
+   1998,
+   42,
+   30
+  ],
+  "hand/stock/back/t1-mail": [
+   216,
+   209,
+   515,
+   1953,
+   41,
+   42
+  ],
+  "cloak/t1-travel": [
+   121,
+   123,
+   959,
+   324,
+   165,
+   228
+  ],
+  "cloak/t1-scout": [
+   126,
+   122,
+   1346,
+   324,
+   162,
+   201
+  ],
+  "cloak/t1-scholar": [
+   125,
+   123,
+   1124,
+   324,
+   156,
+   225
+  ],
+  "cloak/t1-waxed": [
+   115,
+   124,
+   1848,
+   954,
+   163,
+   156
+  ],
+  "belt/t1-utility": [
+   195,
+   222,
+   544,
+   1998,
+   90,
+   30
+  ],
+  "belt/t1-pouches": [
+   187,
+   223,
+   1617,
+   1891,
+   105,
+   52
+  ],
+  "belt/t1-support": [
+   192,
+   212,
+   1430,
+   1891,
+   96,
+   53
+  ],
+  "belt/t1-sash": [
+   184,
+   215,
+   1692,
+   1628,
+   104,
+   89
+  ],
+  "palm/haft": [
+   302,
+   207,
+   1519,
+   1998,
+   29,
+   26
+  ],
+  "palm/haft/wrap": [
+   302,
+   207,
+   1548,
+   1998,
+   29,
+   26
+  ],
+  "palm/haft/grip": [
+   302,
+   207,
+   1577,
+   1998,
+   29,
+   26
+  ],
+  "palm/haft/draw": [
+   302,
+   207,
+   1606,
+   1998,
+   29,
+   26
+  ],
+  "palm/haft/mail": [
+   302,
+   207,
+   1635,
+   1998,
+   29,
+   26
+  ],
+  "palm/haft/t1-wrap": [
+   177,
+   199,
+   1198,
+   1953,
+   154,
+   39
+  ],
+  "palm/haft/t1-grip": [
+   177,
+   198,
+   1692,
+   1953,
+   154,
+   36
+  ],
+  "palm/haft/t1-draw": [
+   178,
+   198,
+   1490,
+   1953,
+   153,
+   37
+  ],
+  "palm/haft/t1-mail": [
+   176,
+   196,
+   954,
+   1953,
+   155,
+   40
+  ],
+  "sleeve/sword_pair/back/cloth": [
+   180,
+   148,
+   992,
+   1523,
+   88,
+   102
+  ],
+  "sleeve/sword_pair/back/mail": [
+   180,
+   148,
+   1080,
+   1523,
+   88,
+   102
+  ],
+  "sleeve/sword_pair/back/t1-scout-coat": [
+   177,
+   146,
+   1113,
+   1413,
+   92,
+   107
+  ],
+  "sleeve/sword_pair/back/t1-travel-leathers": [
+   177,
+   146,
+   1205,
+   1413,
+   92,
+   107
+  ],
+  "sleeve/sword_pair/back/t1-marchers-mail": [
+   176,
+   145,
+   1828,
+   1413,
+   92,
+   105
+  ],
+  "sleeve/sword_pair/back/t1-banded-mail": [
+   177,
+   145,
+   1920,
+   1413,
+   91,
+   105
+  ],
+  "hand/sword_pair/back": [
+   256,
+   230,
+   1174,
+   1998,
+   26,
+   29
+  ],
+  "hand/sword_pair/back/t1-grip": [
+   237,
+   223,
+   1846,
+   1953,
+   46,
+   36
+  ],
+  "hand/sword_pair/back/t1-draw": [
+   236,
+   224,
+   1939,
+   1953,
+   46,
+   35
+  ],
+  "hand/sword_pair/back/t1-wrap": [
+   238,
+   224,
+   1985,
+   1953,
+   45,
+   35
+  ],
+  "hand/sword_pair/back/t1-mail": [
+   235,
+   223,
+   1643,
+   1953,
+   49,
+   37
+  ],
+  "sleeve/sword_pair/front/cloth": [
+   243,
+   144,
+   472,
+   1813,
+   61,
+   74
+  ],
+  "sleeve/sword_pair/front/mail": [
+   243,
+   144,
+   533,
+   1813,
+   61,
+   74
+  ],
+  "sleeve/sword_pair/front/t1-scout-coat": [
+   243,
+   142,
+   1971,
+   1727,
+   62,
+   78
+  ],
+  "sleeve/sword_pair/front/t1-travel-leathers": [
+   243,
+   142,
+   0,
+   1813,
+   62,
+   78
+  ],
+  "sleeve/sword_pair/front/t1-marchers-mail": [
+   243,
+   141,
+   204,
+   1813,
+   61,
+   77
+  ],
+  "sleeve/sword_pair/front/t1-banded-mail": [
+   243,
+   141,
+   265,
+   1813,
+   61,
+   77
+  ],
+  "hand/sword_pair/front": [
+   292,
+   198,
+   1200,
+   1998,
+   27,
+   29
+  ],
+  "hand/sword_pair/front/t1-grip": [
+   275,
+   193,
+   54,
+   1998,
+   45,
+   34
+  ],
+  "hand/sword_pair/front/t1-draw": [
+   274,
+   194,
+   99,
+   1998,
+   45,
+   33
+  ],
+  "hand/sword_pair/front/t1-wrap": [
+   276,
+   194,
+   144,
+   1998,
+   44,
+   33
+  ],
+  "hand/sword_pair/front/t1-mail": [
+   273,
+   192,
+   1892,
+   1953,
+   47,
+   36
+  ],
+  "single/right/grip/sleeve/cloth": [
+   152,
+   147,
+   919,
+   1727,
+   72,
+   82
+  ],
+  "single/right/grip/sleeve/mail": [
+   152,
+   147,
+   991,
+   1727,
+   72,
+   82
+  ],
+  "single/right/grip/sleeve/t1-scout-coat": [
+   152,
+   144,
+   0,
+   1727,
+   75,
+   86
+  ],
+  "single/right/grip/sleeve/t1-travel-leathers": [
+   152,
+   144,
+   75,
+   1727,
+   75,
+   86
+  ],
+  "single/right/grip/sleeve/t1-marchers-mail": [
+   152,
+   143,
+   150,
+   1727,
+   76,
+   86
+  ],
+  "single/right/grip/sleeve/t1-banded-mail": [
+   152,
+   143,
+   226,
+   1727,
+   76,
+   86
+  ],
+  "single/right/grip/hand": [
+   138,
+   210,
+   1664,
+   1998,
+   26,
+   26
+  ],
+  "single/right/grip/hand/t1-grip": [
+   138,
+   198,
+   1352,
+   1953,
+   49,
+   39
+  ],
+  "single/right/grip/hand/t1-draw": [
+   137,
+   197,
+   1109,
+   1953,
+   49,
+   40
+  ],
+  "single/right/grip/hand/t1-wrap": [
+   138,
+   199,
+   1441,
+   1953,
+   49,
+   38
+  ],
+  "single/right/grip/hand/t1-mail": [
+   137,
+   196,
+   705,
+   1953,
+   51,
+   41
+  ],
+  "single/right/idle/sleeve/cloth": [
+   163,
+   146,
+   619,
+   1523,
+   59,
+   103
+  ],
+  "single/right/idle/sleeve/mail": [
+   163,
+   146,
+   678,
+   1523,
+   59,
+   103
+  ],
+  "single/right/idle/sleeve/t1-scout-coat": [
+   161,
+   143,
+   0,
+   1523,
+   63,
+   105
+  ],
+  "single/right/idle/sleeve/t1-travel-leathers": [
+   161,
+   143,
+   63,
+   1523,
+   63,
+   105
+  ],
+  "single/right/idle/sleeve/t1-marchers-mail": [
+   163,
+   142,
+   1297,
+   1413,
+   62,
+   107
+  ],
+  "single/right/idle/sleeve/t1-banded-mail": [
+   163,
+   142,
+   1359,
+   1413,
+   62,
+   107
+  ],
+  "single/right/idle/hand": [
+   165,
+   238,
+   0,
+   1998,
+   27,
+   35
+  ],
+  "single/right/idle/hand/t1-grip": [
+   165,
+   216,
+   924,
+   1891,
+   27,
+   57
+  ],
+  "single/right/idle/hand/t1-draw": [
+   165,
+   216,
+   951,
+   1891,
+   27,
+   57
+  ],
+  "single/right/idle/hand/t1-wrap": [
+   165,
+   217,
+   1089,
+   1891,
+   28,
+   56
+  ],
+  "single/right/idle/hand/t1-mail": [
+   165,
+   215,
+   897,
+   1891,
+   27,
+   58
+  ],
+  "single/left/shield/sleeve/cloth": [
+   267,
+   146,
+   1568,
+   1628,
+   62,
+   92
+  ],
+  "single/left/shield/sleeve/mail": [
+   267,
+   146,
+   1630,
+   1628,
+   62,
+   92
+  ],
+  "single/left/shield/sleeve/t1-scout-coat": [
+   265,
+   144,
+   1263,
+   1628,
+   64,
+   94
+  ],
+  "single/left/shield/sleeve/t1-travel-leathers": [
+   265,
+   144,
+   1327,
+   1628,
+   64,
+   94
+  ],
+  "single/left/shield/sleeve/t1-marchers-mail": [
+   264,
+   143,
+   1085,
+   1628,
+   65,
+   95
+  ],
+  "single/left/shield/sleeve/t1-banded-mail": [
+   261,
+   143,
+   1150,
+   1628,
+   68,
+   95
+  ],
+  "single/left/shield/hand": [
+   314,
+   221,
+   1690,
+   1998,
+   27,
+   26
+  ],
+  "single/left/shield/hand/t1-grip": [
+   294,
+   203,
+   158,
+   1953,
+   47,
+   44
+  ],
+  "single/left/shield/hand/t1-draw": [
+   294,
+   204,
+   272,
+   1953,
+   47,
+   43
+  ],
+  "single/left/shield/hand/t1-wrap": [
+   296,
+   204,
+   319,
+   1953,
+   45,
+   43
+  ],
+  "single/left/shield/hand/t1-mail": [
+   292,
+   202,
+   39,
+   1953,
+   49,
+   45
+  ],
+  "single/left/idle/sleeve/cloth": [
+   268,
+   144,
+   517,
+   1523,
+   51,
+   104
+  ],
+  "single/left/idle/sleeve/mail": [
+   268,
+   144,
+   568,
+   1523,
+   51,
+   104
+  ],
+  "single/left/idle/sleeve/t1-scout-coat": [
+   266,
+   142,
+   1665,
+   1413,
+   54,
+   106
+  ],
+  "single/left/idle/sleeve/t1-travel-leathers": [
+   266,
+   142,
+   1719,
+   1413,
+   54,
+   106
+  ],
+  "single/left/idle/sleeve/t1-marchers-mail": [
+   265,
+   141,
+   1421,
+   1413,
+   54,
+   107
+  ],
+  "single/left/idle/sleeve/t1-banded-mail": [
+   264,
+   142,
+   1773,
+   1413,
+   55,
+   106
+  ],
+  "single/left/idle/hand": [
+   291,
+   238,
+   27,
+   1998,
+   27,
+   35
+  ],
+  "single/left/idle/hand/t1-grip": [
+   290,
+   216,
+   978,
+   1891,
+   28,
+   57
+  ],
+  "single/left/idle/hand/t1-draw": [
+   290,
+   216,
+   1006,
+   1891,
+   28,
+   57
+  ],
+  "single/left/idle/hand/t1-wrap": [
+   290,
+   217,
+   1117,
+   1891,
+   28,
+   56
+  ],
+  "single/left/idle/hand/t1-mail": [
+   290,
+   214,
+   869,
+   1891,
+   28,
+   59
+  ],
+  "single/left/bow/sleeve/cloth": [
+   268,
+   142,
+   1772,
+   1523,
+   61,
+   100
+  ],
+  "single/left/bow/sleeve/mail": [
+   268,
+   142,
+   1833,
+   1523,
+   61,
+   100
+  ],
+  "single/left/bow/sleeve/t1-scout-coat": [
+   266,
+   140,
+   1418,
+   1523,
+   63,
+   101
+  ],
+  "single/left/bow/sleeve/t1-travel-leathers": [
+   266,
+   140,
+   1481,
+   1523,
+   63,
+   101
+  ],
+  "single/left/bow/sleeve/t1-marchers-mail": [
+   266,
+   139,
+   737,
+   1523,
+   63,
+   103
+  ],
+  "single/left/bow/sleeve/t1-banded-mail": [
+   266,
+   140,
+   1168,
+   1523,
+   63,
+   102
+  ],
+  "single/left/bow/hand": [
+   309,
+   230,
+   1717,
+   1998,
+   27,
+   26
+  ],
+  "single/left/bow/hand/t1-grip": [
+   302,
+   208,
+   1837,
+   1891,
+   34,
+   48
+  ],
+  "single/left/bow/hand/t1-draw": [
+   301,
+   209,
+   1995,
+   1891,
+   35,
+   47
+  ],
+  "single/left/bow/hand/t1-wrap": [
+   303,
+   209,
+   1871,
+   1891,
+   33,
+   48
+  ],
+  "single/left/bow/hand/t1-mail": [
+   301,
+   207,
+   1802,
+   1891,
+   35,
+   50
+  ],
+  "ammo/field": [
+   145,
+   118,
+   0,
+   2055,
+   66,
+   102
+  ],
+  "ammo/field/1": [
+   130,
+   78,
+   66,
+   2055,
+   31,
+   55
+  ],
+  "ammo/field/2": [
+   130,
+   73,
+   97,
+   2055,
+   41,
+   60
+  ],
+  "ammo/field/3": [
+   125,
+   73,
+   138,
+   2055,
+   46,
+   62
+  ],
+  "ammo/field/4": [
+   125,
+   73,
+   184,
+   2055,
+   46,
+   62
+  ],
+  "ammo/bodkin": [
+   145,
+   118,
+   230,
+   2055,
+   66,
+   102
+  ],
+  "ammo/bodkin/1": [
+   130,
+   78,
+   296,
+   2055,
+   31,
+   55
+  ],
+  "ammo/bodkin/2": [
+   130,
+   73,
+   327,
+   2055,
+   41,
+   60
+  ],
+  "ammo/bodkin/3": [
+   125,
+   73,
+   368,
+   2055,
+   46,
+   62
+  ],
+  "ammo/bodkin/4": [
+   125,
+   73,
+   414,
+   2055,
+   46,
+   62
+  ],
+  "ammo/deep": [
+   140,
+   116,
+   460,
+   2055,
+   78,
+   112
+  ],
+  "ammo/deep/1": [
+   130,
+   78,
+   538,
+   2055,
+   31,
+   55
+  ],
+  "ammo/deep/2": [
+   130,
+   72,
+   569,
+   2055,
+   43,
+   61
+  ],
+  "ammo/deep/3": [
+   123,
+   72,
+   612,
+   2055,
+   50,
+   63
+  ],
+  "ammo/deep/4": [
+   123,
+   72,
+   662,
+   2055,
+   50,
+   63
+  ],
+  "ammo/bolt-case": [
+   153,
+   228,
+   712,
+   2055,
+   66,
+   67
+  ],
+  "ammo/bolt-case/1": [
+   177,
+   209,
+   778,
+   2055,
+   11,
+   32
+  ],
+  "ammo/bolt-case/2": [
+   177,
+   209,
+   789,
+   2055,
+   32,
+   34
+  ],
+  "ammo/bolt-case/3": [
+   165,
+   209,
+   821,
+   2055,
+   44,
+   34
+  ],
+  "ammo/bolt-case/4": [
+   165,
+   209,
+   865,
+   2055,
+   44,
+   34
+  ]
+ },
+ "bindings": {
+  "sword": {
+   "slot": "weapon",
+   "part": "weapon/arming",
+   "stance": "single"
+  },
+  "axe": {
+   "slot": "weapon",
+   "part": "weapon/axe",
+   "stance": "single"
+  },
+  "pike": {
+   "slot": "weapon",
+   "part": "weapon/t1-ash-pike",
+   "stance": "haft"
+  },
+  "shortsword": {
+   "slot": "weapon",
+   "part": "weapon/short",
+   "stance": "single"
+  },
+  "short_sword": {
+   "slot": "weapon",
+   "part": "weapon/t1-short-sword",
+   "stance": "single"
+  },
+  "falchion": {
+   "slot": "weapon",
+   "part": "weapon/falchion",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-duelist_heavy": {
+   "slot": "weapon",
+   "part": "weapon/t1-heavy-falchion",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-duelist_weapon": {
+   "slot": "weapon",
+   "part": "weapon/t1-narrow-sabre",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-gatewarden_blade": {
+   "slot": "weapon",
+   "part": "weapon/t1-gatewardens-blade",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-quarry_estoc": {
+   "slot": "weapon",
+   "part": "weapon/t1-quarry-estoc",
+   "stance": "single"
+  },
+  "knife": {
+   "slot": "weapon",
+   "part": "weapon/belt-knife",
+   "stance": "single"
+  },
+  "dagger": {
+   "slot": "weapon",
+   "part": "weapon/rondel",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-medic_weapon": {
+   "slot": "weapon",
+   "part": "weapon/t1-field-knife",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-wayfarer_lancet": {
+   "slot": "weapon",
+   "part": "weapon/t1-wayfarers-lancet",
+   "stance": "single"
+  },
+  "greatsword": {
+   "slot": "weapon",
+   "part": "weapon/great",
+   "stance": "paired"
+  },
+  "hm_trial_v1:twohand_sword": {
+   "slot": "weapon",
+   "part": "weapon/t1-two-handed-sword",
+   "stance": "sword_pair"
+  },
+  "hatchet": {
+   "slot": "weapon",
+   "part": "weapon/hatchet",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-medic_heavy": {
+   "slot": "weapon",
+   "part": "weapon/t1-surgical-hatchet",
+   "stance": "single"
+  },
+  "hm_trial_v1:additional_fighting_axe": {
+   "slot": "weapon",
+   "part": "weapon/t1-fighting-axe",
+   "stance": "single"
+  },
+  "greataxe": {
+   "slot": "weapon",
+   "part": "weapon/great-axe",
+   "stance": "paired"
+  },
+  "mace": {
+   "slot": "weapon",
+   "part": "weapon/head-mace45",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-shieldbearer_heavy": {
+   "slot": "weapon",
+   "part": "weapon/t1-war-mace",
+   "stance": "single"
+  },
+  "club": {
+   "slot": "weapon",
+   "part": "weapon/head-club40",
+   "stance": "single"
+  },
+  "cudgel": {
+   "slot": "weapon",
+   "part": "weapon/t1-iron-cudgel",
+   "stance": "single"
+  },
+  "hammer": {
+   "slot": "weapon",
+   "part": "weapon/head-hammer46",
+   "stance": "single"
+  },
+  "maul": {
+   "slot": "weapon",
+   "part": "weapon/head-maul62",
+   "stance": "paired"
+  },
+  "hm_trial_v1:twohand_maul": {
+   "slot": "weapon",
+   "part": "weapon/head-maul62",
+   "stance": "paired"
+  },
+  "hm_trial_v1:old24-polearm_weapon": {
+   "slot": "weapon",
+   "part": "weapon/t1-boar-spear",
+   "stance": "haft"
+  },
+  "hm_trial_v1:old24-ward_spear": {
+   "slot": "weapon",
+   "part": "weapon/t1-ward-spear",
+   "stance": "haft"
+  },
+  "polearm": {
+   "slot": "weapon",
+   "part": "weapon/bill64",
+   "stance": "haft"
+  },
+  "hm_trial_v1:old24-polearm_heavy": {
+   "slot": "weapon",
+   "part": "weapon/t1-billhook",
+   "stance": "haft"
+  },
+  "hm_trial_v1:old24-ferryman_hook": {
+   "slot": "weapon",
+   "part": "weapon/t1-ferrymans-hook",
+   "stance": "haft"
+  },
+  "glaive": {
+   "slot": "weapon",
+   "part": "weapon/glaive62",
+   "stance": "haft"
+  },
+  "shortbow": {
+   "slot": "weapon",
+   "part": "weapon/shortbow",
+   "stance": "single"
+  },
+  "short_bow": {
+   "slot": "weapon",
+   "part": "weapon/t1-reedrunner-bow",
+   "stance": "single"
+  },
+  "bow": {
+   "slot": "weapon",
+   "part": "weapon/longbow",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-archer_weapon": {
+   "slot": "weapon",
+   "part": "weapon/t1-ash-longbow",
+   "stance": "single"
+  },
+  "warbow": {
+   "slot": "weapon",
+   "part": "weapon/warbow",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-archer_heavy": {
+   "slot": "weapon",
+   "part": "weapon/t1-heavy-hunting-bow",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-reedrunner_bow": {
+   "slot": "weapon",
+   "part": "weapon/t1-reedrunner-bow",
+   "stance": "single"
+  },
+  "spear": {
+   "slot": "weapon",
+   "part": "weapon/boar",
+   "stance": "single"
+  },
+  "militia_spear": {
+   "slot": "weapon",
+   "part": "weapon/militia",
+   "stance": "single"
+  },
+  "heavy_spear": {
+   "slot": "weapon",
+   "part": "weapon/heavy",
+   "stance": "single"
+  },
+  "crossbow": {
+   "slot": "weapon",
+   "part": "weapon/crossbow",
+   "stance": "stock"
+  },
+  "heavy_crossbow": {
+   "slot": "weapon",
+   "part": "weapon/heavy-crossbow",
+   "stance": "stock"
+  },
+  "shield": {
+   "slot": "shield",
+   "part": "shield/heater",
+   "stance": "single"
+  },
+  "round_shield": {
+   "slot": "shield",
+   "part": "shield/round",
+   "stance": "single"
+  },
+  "hm_trial_v1:offhands-02-round-wooden-shield": {
+   "slot": "shield",
+   "part": "shield/t1-round-wooden-shield",
+   "stance": "single"
+  },
+  "buckler": {
+   "slot": "shield",
+   "part": "shield/buckler",
+   "stance": "single"
+  },
+  "hollow_campaign:buckler": {
+   "slot": "shield",
+   "part": "shield/t1-buckler",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-scout_coat": {
+   "slot": "body",
+   "part": "torso/t1-scout-coat",
+   "stance": "single"
+  },
+  "leather": {
+   "slot": "body",
+   "part": "torso/leather",
+   "stance": "single"
+  },
+  "jerkin": {
+   "slot": "body",
+   "part": "torso/leather",
+   "stance": "single"
+  },
+  "travel_leather": {
+   "slot": "body",
+   "part": "torso/t1-travel-leathers",
+   "stance": "single"
+  },
+  "hm_trial_v1:old24-banded_mail": {
+   "slot": "body",
+   "part": "torso/t1-banded-mail",
+   "stance": "single"
+  },
+  "red_gambeson": {
+   "slot": "body",
+   "part": "torso/red-quilt",
+   "stance": "single"
+  },
+  "green_jack": {
+   "slot": "body",
+   "part": "torso/green-jack",
+   "stance": "single"
+  },
+  "light_quilt": {
+   "slot": "body",
+   "part": "torso/blue-quilt",
+   "stance": "single"
+  },
+  "gambeson": {
+   "slot": "body",
+   "part": "torso/padded",
+   "stance": "single"
+  },
+  "linen": {
+   "slot": "body",
+   "part": "torso/linen",
+   "stance": "single"
+  },
+  "tunic": {
+   "slot": "body",
+   "part": "torso/linen",
+   "stance": "single"
+  },
+  "mail": {
+   "slot": "body",
+   "part": "torso/mail",
+   "stance": "single"
+  },
+  "march_mail": {
+   "slot": "body",
+   "part": "torso/t1-marchers-mail",
+   "stance": "single"
+  },
+  "short_mail": {
+   "slot": "body",
+   "part": "torso/mail",
+   "stance": "single"
+  },
+  "breastplate": {
+   "slot": "body",
+   "part": "torso/breastplate",
+   "stance": "single"
+  },
+  "nasal": {
+   "slot": "head",
+   "part": "head/nasal",
+   "stance": "single"
+  },
+  "hollow_campaign:padded_hood": {
+   "slot": "head",
+   "part": "head/hood",
+   "stance": "single"
+  },
+  "padded_hood": {
+   "slot": "head",
+   "part": "head/hood",
+   "stance": "single"
+  },
+  "felt_cap": {
+   "slot": "head",
+   "part": "head/felt",
+   "stance": "single"
+  },
+  "hm_trial_v1:headwear-02-leather-cap": {
+   "slot": "head",
+   "part": "head/t1-leather-cap",
+   "stance": "single"
+  },
+  "iron_cap": {
+   "slot": "head",
+   "part": "head/t1-skullcap",
+   "stance": "single"
+  },
+  "cap": {
+   "slot": "head",
+   "part": "head/iron",
+   "stance": "single"
+  },
+  "simple_helm": {
+   "slot": "head",
+   "part": "head/iron",
+   "stance": "single"
+  },
+  "hm_trial_v1:headwear-03-iron-skullcap": {
+   "slot": "head",
+   "part": "head/t1-skullcap",
+   "stance": "single"
+  },
+  "kettle": {
+   "slot": "head",
+   "part": "head/kettle",
+   "stance": "single"
+  },
+  "hm_trial_v1:headwear-04-kettle-helm": {
+   "slot": "head",
+   "part": "head/t1-kettle",
+   "stance": "single"
+  },
+  "travel_cloak": {
+   "slot": "cloak",
+   "part": "cloak/t1-travel",
+   "stance": "single"
+  },
+  "forest_cloak": {
+   "slot": "cloak",
+   "part": "cloak/traveller",
+   "stance": "single"
+  },
+  "hm_trial_v1:cloaks-02-scout-cloak": {
+   "slot": "cloak",
+   "part": "cloak/t1-scout",
+   "stance": "single"
+  },
+  "scholar_cloak": {
+   "slot": "cloak",
+   "part": "cloak/t1-scholar",
+   "stance": "single"
+  },
+  "hm_trial_v1:cloaks-04-waxed-cape": {
+   "slot": "cloak",
+   "part": "cloak/t1-waxed",
+   "stance": "single"
+  },
+  "red_cape": {
+   "slot": "cloak",
+   "part": "cloak/cape",
+   "stance": "single"
+  },
+  "pouch_belt": {
+   "slot": "belt",
+   "part": "belt/t1-pouches",
+   "stance": "single"
+  },
+  "hm_trial_v1:belts-01-utility-belt": {
+   "slot": "belt",
+   "part": "belt/t1-utility",
+   "stance": "single"
+  },
+  "hm_trial_v1:belts-03-support-belt": {
+   "slot": "belt",
+   "part": "belt/t1-support",
+   "stance": "single"
+  },
+  "hm_trial_v1:belts-04-woven-sash": {
+   "slot": "belt",
+   "part": "belt/t1-sash",
+   "stance": "single"
+  },
+  "breather_belt": {
+   "slot": "belt",
+   "part": "belt/t1-support",
+   "stance": "single"
+  },
+  "sword_gloves": {
+   "slot": "hands",
+   "part": "t1-grip",
+   "stance": "single"
+  },
+  "archer_gloves": {
+   "slot": "hands",
+   "part": "t1-draw",
+   "stance": "single"
+  },
+  "hm_trial_v1:gloves-01-linen-handwraps": {
+   "slot": "hands",
+   "part": "t1-wrap",
+   "stance": "single"
+  },
+  "hm_trial_v1:gloves-04-mail-gloves": {
+   "slot": "hands",
+   "part": "t1-mail",
+   "stance": "single"
+  },
+  "light_boots": {
+   "slot": "feet",
+   "part": "soft",
+   "stance": "single"
+  },
+  "trail_boots": {
+   "slot": "feet",
+   "part": "trail",
+   "stance": "single"
+  },
+  "hm_trial_v1:footwear-03-wrapped-shoes": {
+   "slot": "feet",
+   "part": "wrapped",
+   "stance": "single"
+  },
+  "hm_trial_v1:footwear-04-reinforced-boots": {
+   "slot": "feet",
+   "part": "iron",
+   "stance": "single"
+  },
+  "arrows": {
+   "slot": "ammo",
+   "part": "ammo/field",
+   "stance": "single"
+  },
+  "bodkin_quiver": {
+   "slot": "ammo",
+   "part": "ammo/bodkin",
+   "stance": "single"
+  },
+  "deep_quiver": {
+   "slot": "ammo",
+   "part": "ammo/deep",
+   "stance": "single"
+  },
+  "bolts": {
+   "slot": "ammo",
+   "part": "ammo/bolt-case",
+   "stance": "single"
+  }
+ },
+ "hip_y": [
+  -1,
+  -12,
+  -11,
+  -17,
+  -15,
+  -11,
+  -6,
+  -4,
+  -10,
+  -9,
+  -13
+ ],
+ "body_sleeves": {
+  "torso/t1-scout-coat": "t1-scout-coat",
+  "torso/t1-travel-leathers": "t1-travel-leathers",
+  "torso/t1-marchers-mail": "t1-marchers-mail",
+  "torso/t1-banded-mail": "t1-banded-mail"
+ },
+ "single_left_bows": [
+  "weapon/longbow",
+  "weapon/shortbow",
+  "weapon/t1-ash-longbow",
+  "weapon/t1-heavy-hunting-bow",
+  "weapon/t1-reedrunner-bow",
+  "weapon/warbow"
+ ],
+ "ammo_strip_from_y": 2055
+}

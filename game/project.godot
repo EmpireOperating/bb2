@@ -1,0 +1,32 @@
+; Battle Brothers 2 — working project name. Original prototype.
+config_version=5
+
+[application]
+config/name="The Ashen Company — Engraved"
+config/icon="res://engraved_imprint/seal.png"
+boot_splash/image="res://engraved_imprint/frontispiece.png"
+boot_splash/bg_color=Color(0.1333, 0.1765, 0.1529, 1)
+boot_splash/fullsize=false
+config/use_custom_user_dir=true
+config/custom_user_dir_name="ashen-company-engraved"
+run/main_scene="res://single_body/main.tscn"
+config/features=PackedStringArray("4.4", "GL Compatibility")
+
+[display]
+window/size/viewport_width=1440
+window/size/viewport_height=900
+window/size/window_width_override=1440
+window/size/window_height_override=900
+window/stretch/mode="canvas_items"
+
+[threading]
+worker_pool/max_threads=2
+
+[editor]
+import/use_multiple_threads=false
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.055, 0.065, 0.065, 1)
+

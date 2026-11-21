@@ -1,0 +1,209 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "foot_anchor": [
+    512,
+    1460
+  ],
+  "pixel_size": 0.00129,
+  "layers": {
+    "foundation": {
+      "sha256": "5a1a4b811fe4041ec8993e7b01cde17b33c9042efb6fdb72ab2b85ff8aa8f006",
+      "bbox": [
+        185,
+        60,
+        817,
+        1468
+      ],
+      "opaque_pixels": 500021
+    },
+    "foundation_helmet": {
+      "sha256": "198a3d1a52548b80a03994155da1561fba6bfd0b3e7e06432127cfdd1b8dac4e",
+      "bbox": [
+        185,
+        116,
+        817,
+        1468
+      ],
+      "opaque_pixels": 490814
+    },
+    "body_quilt": {
+      "sha256": "4c2060740fb6dc12c8a15e468096b4aadaf181a48b19ad3feab25c081c0e637a",
+      "bbox": [
+        185,
+        231,
+        765,
+        966
+      ],
+      "opaque_pixels": 279734
+    },
+    "body_mail": {
+      "sha256": "5150466322bcea2ebedd6b41a9bd3aa84dd42f5389876f667dd8c2a4f6184a71",
+      "bbox": [
+        186,
+        229,
+        765,
+        966
+      ],
+      "opaque_pixels": 287446
+    },
+    "body_brigandine": {
+      "sha256": "3ea0be5974dba1f31dffcc23eb7ef269f2d08439297d7ac4ed782d6b83325dc5",
+      "bbox": [
+        187,
+        231,
+        764,
+        966
+      ],
+      "opaque_pixels": 280962
+    },
+    "head_nasal": {
+      "sha256": "a3eb202b5f0a2b5a76e954d3ba30cac30f9ce9d5671104e58223f1950e232326",
+      "bbox": [
+        410,
+        40,
+        591,
+        226
+      ],
+      "opaque_pixels": 16290
+    },
+    "head_kettle": {
+      "sha256": "bf24704a57347c37dbde8969475610c511bc9799f590a5d78261e68f3abafc10",
+      "bbox": [
+        381,
+        61,
+        645,
+        229
+      ],
+      "opaque_pixels": 16514
+    },
+    "head_cap": {
+      "sha256": "f2ae94c48ec12ac74568faeb52ff9da03c5b684d5f7fb07f8a43f1a4a8d4a635",
+      "bbox": [
+        410,
+        40,
+        591,
+        226
+      ],
+      "opaque_pixels": 15850
+    },
+    "body_shoulders": {
+      "sha256": "8f38f4ed8f5bd58bcfe0767c9e8eb17c6cb67e90b15fad085c9fb3234cc34a1c",
+      "bbox": [
+        232,
+        259,
+        434,
+        450
+      ],
+      "opaque_pixels": 23389
+    },
+    "body_collar": {
+      "sha256": "271fd6c84f9d6ede596e00e2a21646bda2fd7c2dc43039ff6cb99d24f76faa74",
+      "bbox": [
+        385,
+        253,
+        628,
+        375
+      ],
+      "opaque_pixels": 14924
+    },
+    "weapon_sword": {
+      "sha256": "4d2f185a0f3b355845550150bc440eda9d49c3266ffaee5809a74d883fad2903",
+      "bbox": [
+        129,
+        696,
+        336,
+        1327
+      ],
+      "opaque_pixels": 24095
+    },
+    "weapon_axe": {
+      "sha256": "d3815ff9c4bc137df298900e3b6d959bd0cee8a5bcdc847c536ff62644392a1a",
+      "bbox": [
+        138,
+        406,
+        400,
+        1098
+      ],
+      "opaque_pixels": 40383
+    },
+    "weapon_dagger": {
+      "sha256": "3864ba6590271005a7ae6aa68103722d0e0d38803fc883bf0befddbe91860b86",
+      "bbox": [
+        186,
+        733,
+        308,
+        1104
+      ],
+      "opaque_pixels": 8335
+    },
+    "shield_round": {
+      "sha256": "a022eb9724c3e8eee2233a7d65e4a4f191ea2fba27c43c00247ea2a80b95caa6",
+      "bbox": [
+        618,
+        618,
+        908,
+        1019
+      ],
+      "opaque_pixels": 89962
+    },
+    "shield_buckler": {
+      "sha256": "83798b4a771074fae7cb8ce86067065bafef4d79acd970eacc9e965e89d8feee",
+      "bbox": [
+        672,
+        684,
+        847,
+        926
+      ],
+      "opaque_pixels": 32752
+    },
+    "shield_kite": {
+      "sha256": "364b3d632e33357727a27ebe17911af91dfb85d75b93f1a61f37feecbe44ba3d",
+      "bbox": [
+        657,
+        518,
+        904,
+        1167
+      ],
+      "opaque_pixels": 108700
+    },
+    "grip_sword": {
+      "sha256": "5ac3ee646099e9cce1bd719d2e93e8a92d95a9d5fd0dcee5e419c30630589e6a",
+      "bbox": [
+        217,
+        707,
+        314,
+        860
+      ],
+      "opaque_pixels": 5563
+    },
+    "grip_axe": {
+      "sha256": "d4fd0c61c5337be827f23e447195663998a45d0c17a49e9414bbf7d17f2becf6",
+      "bbox": [
+        223,
+        709,
+        313,
+        860
+      ],
+      "opaque_pixels": 6052
+    },
+    "grip_dagger": {
+      "sha256": "3952c2c9a473d042b8e65d0912191365f6638e7045ebf9e39999875905335fea",
+      "bbox": [
+        211,
+        733,
+        307,
+        853
+      ],
+      "opaque_pixels": 3392
+    }
+  },
+  "sources": {
+    "sources/base-mercenary.png": "e931e3ccfaf283467e3e5c6a86b05f63cdefceaf9dc81341f02ab504cddfecc2",
+    "sources/mail-mercenary.png": "a60b89a4fac051b37af0ea3cfb913e942ddbed2a4d413c0b92437361c44bf3b3",
+    "character_sources/brigandine-master.png": "9c02d83cbd64b1500f9c378e20eaca70893f52126a4894dcf7d8a5304d69b999",
+    "character_sources/equipment-master.png": "a450ebfe4211bf98f5d1805291614f68e1e1d2f6b519049e455f4c7844523f8f"
+  }
+}

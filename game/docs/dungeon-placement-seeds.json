@@ -1,0 +1,926 @@
+[
+	{
+		"seed": 1,
+		"sites": [
+			{
+				"east": false,
+				"hours": 23.65,
+				"id": "dungeon_0",
+				"town": "dunmere",
+				"x": 560.0,
+				"y": 256.0
+			},
+			{
+				"east": true,
+				"hours": 15.26,
+				"id": "dungeon_1",
+				"town": "east_dunmere",
+				"x": 1280.0,
+				"y": 1024.0
+			},
+			{
+				"east": true,
+				"hours": 29.85,
+				"id": "dungeon_2",
+				"town": "east_dunmere",
+				"x": 1600.0,
+				"y": 384.0
+			},
+			{
+				"east": false,
+				"hours": 12.73,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 192.0,
+				"y": 608.0
+			},
+			{
+				"east": true,
+				"hours": 8.69,
+				"id": "dungeon_barrow_1",
+				"town": "east_ashwick",
+				"x": 1824.0,
+				"y": 736.0
+			},
+			{
+				"east": true,
+				"hours": 13.39,
+				"id": "dungeon_barrow_2",
+				"town": "east_stonecross",
+				"x": 1024.0,
+				"y": 752.0
+			},
+			{
+				"east": false,
+				"hours": 20.16,
+				"id": "dungeon_complex_0",
+				"town": "stonecross",
+				"x": 944.0,
+				"y": 912.0
+			},
+			{
+				"east": true,
+				"hours": 27.79,
+				"id": "dungeon_complex_1",
+				"town": "east_dunmere",
+				"x": 1120.0,
+				"y": 1136.0
+			},
+			{
+				"east": false,
+				"hours": 31.76,
+				"id": "dungeon_complex_2",
+				"town": "stonecross",
+				"x": 784.0,
+				"y": 1088.0
+			}
+		]
+	},
+	{
+		"seed": 2,
+		"sites": [
+			{
+				"east": false,
+				"hours": 18.18,
+				"id": "dungeon_0",
+				"town": "ashwick",
+				"x": 224.0,
+				"y": 848.0
+			},
+			{
+				"east": true,
+				"hours": 23.43,
+				"id": "dungeon_1",
+				"town": "east_ashwick",
+				"x": 1472.0,
+				"y": 1072.0
+			},
+			{
+				"east": false,
+				"hours": 39.41,
+				"id": "dungeon_2",
+				"town": "ashwick",
+				"x": 80.0,
+				"y": 1088.0
+			},
+			{
+				"east": false,
+				"hours": 5.62,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 304.0,
+				"y": 656.0
+			},
+			{
+				"east": true,
+				"hours": 7.77,
+				"id": "dungeon_barrow_1",
+				"town": "east_stonecross",
+				"x": 1040.0,
+				"y": 928.0
+			},
+			{
+				"east": false,
+				"hours": 11.44,
+				"id": "dungeon_barrow_2",
+				"town": "stonecross",
+				"x": 784.0,
+				"y": 976.0
+			},
+			{
+				"east": false,
+				"hours": 19.17,
+				"id": "dungeon_complex_0",
+				"town": "stonecross",
+				"x": 496.0,
+				"y": 752.0
+			},
+			{
+				"east": true,
+				"hours": 15.96,
+				"id": "dungeon_complex_1",
+				"town": "east_ashwick",
+				"x": 1664.0,
+				"y": 1008.0
+			},
+			{
+				"east": true,
+				"hours": 30.53,
+				"id": "dungeon_complex_2",
+				"town": "east_ashwick",
+				"x": 1824.0,
+				"y": 1104.0
+			}
+		]
+	},
+	{
+		"seed": 3,
+		"sites": [
+			{
+				"east": false,
+				"hours": 21.03,
+				"id": "dungeon_0",
+				"town": "ashwick",
+				"x": 816.0,
+				"y": 1056.0
+			},
+			{
+				"east": true,
+				"hours": 22.56,
+				"id": "dungeon_1",
+				"town": "east_ashwick",
+				"x": 1456.0,
+				"y": 480.0
+			},
+			{
+				"east": true,
+				"hours": 29.03,
+				"id": "dungeon_2",
+				"town": "east_dunmere",
+				"x": 1632.0,
+				"y": 1136.0
+			},
+			{
+				"east": false,
+				"hours": 12.88,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 848.0,
+				"y": 896.0
+			},
+			{
+				"east": true,
+				"hours": 7.19,
+				"id": "dungeon_barrow_1",
+				"town": "east_ashwick",
+				"x": 1168.0,
+				"y": 480.0
+			},
+			{
+				"east": true,
+				"hours": 11.43,
+				"id": "dungeon_barrow_2",
+				"town": "east_ashwick",
+				"x": 1072.0,
+				"y": 432.0
+			},
+			{
+				"east": false,
+				"hours": 21.05,
+				"id": "dungeon_complex_0",
+				"town": "stonecross",
+				"x": 384.0,
+				"y": 272.0
+			},
+			{
+				"east": true,
+				"hours": 25.47,
+				"id": "dungeon_complex_1",
+				"town": "east_dunmere",
+				"x": 1568.0,
+				"y": 1088.0
+			},
+			{
+				"east": false,
+				"hours": 29.94,
+				"id": "dungeon_complex_2",
+				"town": "ashwick",
+				"x": 336.0,
+				"y": 1040.0
+			}
+		]
+	},
+	{
+		"seed": 4,
+		"sites": [
+			{
+				"east": false,
+				"hours": 25.75,
+				"id": "dungeon_0",
+				"town": "dunmere",
+				"x": 544.0,
+				"y": 992.0
+			},
+			{
+				"east": true,
+				"hours": 17.11,
+				"id": "dungeon_1",
+				"town": "east_ashwick",
+				"x": 1344.0,
+				"y": 448.0
+			},
+			{
+				"east": false,
+				"hours": 29.99,
+				"id": "dungeon_2",
+				"town": "stonecross",
+				"x": 448.0,
+				"y": 1072.0
+			},
+			{
+				"east": false,
+				"hours": 5.01,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 512.0,
+				"y": 496.0
+			},
+			{
+				"east": true,
+				"hours": 6.87,
+				"id": "dungeon_barrow_1",
+				"town": "east_stonecross",
+				"x": 1104.0,
+				"y": 944.0
+			},
+			{
+				"east": false,
+				"hours": 6.15,
+				"id": "dungeon_barrow_2",
+				"town": "ashwick",
+				"x": 640.0,
+				"y": 608.0
+			},
+			{
+				"east": false,
+				"hours": 20.76,
+				"id": "dungeon_complex_0",
+				"town": "ashwick",
+				"x": 752.0,
+				"y": 432.0
+			},
+			{
+				"east": true,
+				"hours": 25.52,
+				"id": "dungeon_complex_1",
+				"town": "east_stonecross",
+				"x": 1088.0,
+				"y": 432.0
+			},
+			{
+				"east": true,
+				"hours": 29.88,
+				"id": "dungeon_complex_2",
+				"town": "east_stonecross",
+				"x": 1136.0,
+				"y": 368.0
+			}
+		]
+	},
+	{
+		"seed": 11,
+		"sites": [
+			{
+				"east": false,
+				"hours": 15.95,
+				"id": "dungeon_0",
+				"town": "ashwick",
+				"x": 368.0,
+				"y": 432.0
+			},
+			{
+				"east": true,
+				"hours": 18.16,
+				"id": "dungeon_1",
+				"town": "east_stonecross",
+				"x": 1504.0,
+				"y": 512.0
+			},
+			{
+				"east": true,
+				"hours": 29.8,
+				"id": "dungeon_2",
+				"town": "east_stonecross",
+				"x": 1488.0,
+				"y": 320.0
+			},
+			{
+				"east": false,
+				"hours": 8.13,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 224.0,
+				"y": 640.0
+			},
+			{
+				"east": true,
+				"hours": 10.42,
+				"id": "dungeon_barrow_1",
+				"town": "east_dunmere",
+				"x": 1712.0,
+				"y": 864.0
+			},
+			{
+				"east": true,
+				"hours": 12.52,
+				"id": "dungeon_barrow_2",
+				"town": "east_ashwick",
+				"x": 1344.0,
+				"y": 960.0
+			},
+			{
+				"east": false,
+				"hours": 16.06,
+				"id": "dungeon_complex_0",
+				"town": "dunmere",
+				"x": 832.0,
+				"y": 960.0
+			},
+			{
+				"east": true,
+				"hours": 19.71,
+				"id": "dungeon_complex_1",
+				"town": "east_dunmere",
+				"x": 1840.0,
+				"y": 864.0
+			},
+			{
+				"east": false,
+				"hours": 34.03,
+				"id": "dungeon_complex_2",
+				"town": "ashwick",
+				"x": 112.0,
+				"y": 1136.0
+			}
+		]
+	},
+	{
+		"seed": 71,
+		"sites": [
+			{
+				"east": false,
+				"hours": 15.99,
+				"id": "dungeon_0",
+				"town": "stonecross",
+				"x": 736.0,
+				"y": 1040.0
+			},
+			{
+				"east": true,
+				"hours": 26.2,
+				"id": "dungeon_1",
+				"town": "east_dunmere",
+				"x": 1776.0,
+				"y": 976.0
+			},
+			{
+				"east": true,
+				"hours": 28.85,
+				"id": "dungeon_2",
+				"town": "east_dunmere",
+				"x": 1600.0,
+				"y": 256.0
+			},
+			{
+				"east": false,
+				"hours": 9.97,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 624.0,
+				"y": 464.0
+			},
+			{
+				"east": true,
+				"hours": 11.1,
+				"id": "dungeon_barrow_1",
+				"town": "east_stonecross",
+				"x": 1072.0,
+				"y": 704.0
+			},
+			{
+				"east": true,
+				"hours": 11.79,
+				"id": "dungeon_barrow_2",
+				"town": "east_ashwick",
+				"x": 1264.0,
+				"y": 720.0
+			},
+			{
+				"east": false,
+				"hours": 20.56,
+				"id": "dungeon_complex_0",
+				"town": "east_stonecross",
+				"x": 832.0,
+				"y": 336.0
+			},
+			{
+				"east": true,
+				"hours": 18.7,
+				"id": "dungeon_complex_1",
+				"town": "east_dunmere",
+				"x": 1408.0,
+				"y": 480.0
+			},
+			{
+				"east": false,
+				"hours": 29.08,
+				"id": "dungeon_complex_2",
+				"town": "stonecross",
+				"x": 512.0,
+				"y": 1040.0
+			}
+		]
+	},
+	{
+		"seed": 198,
+		"sites": [
+			{
+				"east": false,
+				"hours": 21.76,
+				"id": "dungeon_0",
+				"town": "ashwick",
+				"x": 144.0,
+				"y": 928.0
+			},
+			{
+				"east": true,
+				"hours": 19.17,
+				"id": "dungeon_1",
+				"town": "east_ashwick",
+				"x": 1680.0,
+				"y": 1024.0
+			},
+			{
+				"east": false,
+				"hours": 31.63,
+				"id": "dungeon_2",
+				"town": "dunmere",
+				"x": 928.0,
+				"y": 1056.0
+			},
+			{
+				"east": false,
+				"hours": 7.05,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 464.0,
+				"y": 896.0
+			},
+			{
+				"east": true,
+				"hours": 10.13,
+				"id": "dungeon_barrow_1",
+				"town": "east_stonecross",
+				"x": 976.0,
+				"y": 736.0
+			},
+			{
+				"east": false,
+				"hours": 5.82,
+				"id": "dungeon_barrow_2",
+				"town": "stonecross",
+				"x": 176.0,
+				"y": 656.0
+			},
+			{
+				"east": false,
+				"hours": 14.99,
+				"id": "dungeon_complex_0",
+				"town": "ashwick",
+				"x": 416.0,
+				"y": 1008.0
+			},
+			{
+				"east": true,
+				"hours": 21.81,
+				"id": "dungeon_complex_1",
+				"town": "east_stonecross",
+				"x": 1024.0,
+				"y": 272.0
+			},
+			{
+				"east": true,
+				"hours": 29.19,
+				"id": "dungeon_complex_2",
+				"town": "east_ashwick",
+				"x": 1376.0,
+				"y": 1104.0
+			}
+		]
+	},
+	{
+		"seed": 592,
+		"sites": [
+			{
+				"east": false,
+				"hours": 20.71,
+				"id": "dungeon_0",
+				"town": "ashwick",
+				"x": 768.0,
+				"y": 368.0
+			},
+			{
+				"east": true,
+				"hours": 25.13,
+				"id": "dungeon_1",
+				"town": "east_stonecross",
+				"x": 1632.0,
+				"y": 304.0
+			},
+			{
+				"east": false,
+				"hours": 28.63,
+				"id": "dungeon_2",
+				"town": "dunmere",
+				"x": 960.0,
+				"y": 352.0
+			},
+			{
+				"east": false,
+				"hours": 11.79,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 688.0,
+				"y": 464.0
+			},
+			{
+				"east": true,
+				"hours": 10.26,
+				"id": "dungeon_barrow_1",
+				"town": "east_stonecross",
+				"x": 1728.0,
+				"y": 464.0
+			},
+			{
+				"east": false,
+				"hours": 5.47,
+				"id": "dungeon_barrow_2",
+				"town": "dunmere",
+				"x": 864.0,
+				"y": 656.0
+			},
+			{
+				"east": false,
+				"hours": 22.6,
+				"id": "dungeon_complex_0",
+				"town": "stonecross",
+				"x": 320.0,
+				"y": 944.0
+			},
+			{
+				"east": true,
+				"hours": 18.42,
+				"id": "dungeon_complex_1",
+				"town": "east_dunmere",
+				"x": 1472.0,
+				"y": 1072.0
+			},
+			{
+				"east": true,
+				"hours": 28.53,
+				"id": "dungeon_complex_2",
+				"town": "east_stonecross",
+				"x": 1376.0,
+				"y": 384.0
+			}
+		]
+	},
+	{
+		"seed": 789,
+		"sites": [
+			{
+				"east": false,
+				"hours": 27.14,
+				"id": "dungeon_0",
+				"town": "stonecross",
+				"x": 784.0,
+				"y": 288.0
+			},
+			{
+				"east": true,
+				"hours": 20.22,
+				"id": "dungeon_1",
+				"town": "east_dunmere",
+				"x": 1440.0,
+				"y": 896.0
+			},
+			{
+				"east": true,
+				"hours": 32.78,
+				"id": "dungeon_2",
+				"town": "east_ashwick",
+				"x": 1568.0,
+				"y": 1120.0
+			},
+			{
+				"east": false,
+				"hours": 10.41,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 288.0,
+				"y": 864.0
+			},
+			{
+				"east": true,
+				"hours": 10.26,
+				"id": "dungeon_barrow_1",
+				"town": "east_ashwick",
+				"x": 1696.0,
+				"y": 480.0
+			},
+			{
+				"east": true,
+				"hours": 10.98,
+				"id": "dungeon_barrow_2",
+				"town": "east_dunmere",
+				"x": 1424.0,
+				"y": 544.0
+			},
+			{
+				"east": false,
+				"hours": 16.4,
+				"id": "dungeon_complex_0",
+				"town": "dunmere",
+				"x": 144.0,
+				"y": 800.0
+			},
+			{
+				"east": true,
+				"hours": 21.22,
+				"id": "dungeon_complex_1",
+				"town": "stonecross",
+				"x": 1104.0,
+				"y": 416.0
+			},
+			{
+				"east": false,
+				"hours": 32.6,
+				"id": "dungeon_complex_2",
+				"town": "stonecross",
+				"x": 560.0,
+				"y": 272.0
+			}
+		]
+	},
+	{
+		"seed": 1380,
+		"sites": [
+			{
+				"east": false,
+				"hours": 16.1,
+				"id": "dungeon_0",
+				"town": "east_stonecross",
+				"x": 848.0,
+				"y": 912.0
+			},
+			{
+				"east": true,
+				"hours": 19.22,
+				"id": "dungeon_1",
+				"town": "east_ashwick",
+				"x": 1792.0,
+				"y": 528.0
+			},
+			{
+				"east": false,
+				"hours": 28.16,
+				"id": "dungeon_2",
+				"town": "east_stonecross",
+				"x": 928.0,
+				"y": 1136.0
+			},
+			{
+				"east": false,
+				"hours": 6.07,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 224.0,
+				"y": 464.0
+			},
+			{
+				"east": true,
+				"hours": 7.48,
+				"id": "dungeon_barrow_1",
+				"town": "east_dunmere",
+				"x": 1216.0,
+				"y": 576.0
+			},
+			{
+				"east": false,
+				"hours": 5.68,
+				"id": "dungeon_barrow_2",
+				"town": "ashwick",
+				"x": 192.0,
+				"y": 672.0
+			},
+			{
+				"east": false,
+				"hours": 26.81,
+				"id": "dungeon_complex_0",
+				"town": "dunmere",
+				"x": 304.0,
+				"y": 1088.0
+			},
+			{
+				"east": true,
+				"hours": 18.84,
+				"id": "dungeon_complex_1",
+				"town": "east_ashwick",
+				"x": 1600.0,
+				"y": 976.0
+			},
+			{
+				"east": true,
+				"hours": 35.8,
+				"id": "dungeon_complex_2",
+				"town": "east_ashwick",
+				"x": 1776.0,
+				"y": 288.0
+			}
+		]
+	},
+	{
+		"seed": 7391,
+		"sites": [
+			{
+				"east": false,
+				"hours": 14.96,
+				"id": "dungeon_0",
+				"town": "ashwick",
+				"x": 864.0,
+				"y": 432.0
+			},
+			{
+				"east": true,
+				"hours": 17.85,
+				"id": "dungeon_1",
+				"town": "east_stonecross",
+				"x": 1552.0,
+				"y": 560.0
+			},
+			{
+				"east": true,
+				"hours": 36.39,
+				"id": "dungeon_2",
+				"town": "east_ashwick",
+				"x": 1680.0,
+				"y": 288.0
+			},
+			{
+				"east": false,
+				"hours": 8.96,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 752.0,
+				"y": 816.0
+			},
+			{
+				"east": true,
+				"hours": 10.27,
+				"id": "dungeon_barrow_1",
+				"town": "east_stonecross",
+				"x": 1632.0,
+				"y": 896.0
+			},
+			{
+				"east": true,
+				"hours": 5.21,
+				"id": "dungeon_barrow_2",
+				"town": "east_stonecross",
+				"x": 1776.0,
+				"y": 704.0
+			},
+			{
+				"east": false,
+				"hours": 23.67,
+				"id": "dungeon_complex_0",
+				"town": "stonecross",
+				"x": 128.0,
+				"y": 272.0
+			},
+			{
+				"east": true,
+				"hours": 17.77,
+				"id": "dungeon_complex_1",
+				"town": "east_stonecross",
+				"x": 1808.0,
+				"y": 1088.0
+			},
+			{
+				"east": false,
+				"hours": 31.28,
+				"id": "dungeon_complex_2",
+				"town": "ashwick",
+				"x": 912.0,
+				"y": 1136.0
+			}
+		]
+	},
+	{
+		"seed": 999999999,
+		"sites": [
+			{
+				"east": false,
+				"hours": 14.35,
+				"id": "dungeon_0",
+				"town": "ashwick",
+				"x": 448.0,
+				"y": 352.0
+			},
+			{
+				"east": true,
+				"hours": 26.79,
+				"id": "dungeon_1",
+				"town": "east_stonecross",
+				"x": 1760.0,
+				"y": 1072.0
+			},
+			{
+				"east": true,
+				"hours": 28.66,
+				"id": "dungeon_2",
+				"town": "east_stonecross",
+				"x": 1552.0,
+				"y": 272.0
+			},
+			{
+				"east": false,
+				"hours": 7.17,
+				"id": "dungeon_barrow_0",
+				"town": "ashwick",
+				"x": 496.0,
+				"y": 496.0
+			},
+			{
+				"east": true,
+				"hours": 9.73,
+				"id": "dungeon_barrow_1",
+				"town": "east_stonecross",
+				"x": 1808.0,
+				"y": 512.0
+			},
+			{
+				"east": true,
+				"hours": 5.52,
+				"id": "dungeon_barrow_2",
+				"town": "east_stonecross",
+				"x": 1856.0,
+				"y": 704.0
+			},
+			{
+				"east": false,
+				"hours": 20.62,
+				"id": "dungeon_complex_0",
+				"town": "ashwick",
+				"x": 768.0,
+				"y": 432.0
+			},
+			{
+				"east": true,
+				"hours": 19.06,
+				"id": "dungeon_complex_1",
+				"town": "east_ashwick",
+				"x": 1440.0,
+				"y": 1056.0
+			},
+			{
+				"east": false,
+				"hours": 30.44,
+				"id": "dungeon_complex_2",
+				"town": "dunmere",
+				"x": 208.0,
+				"y": 1136.0
+			}
+		]
+	}
+]

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+<defs>
+ <linearGradient id="brass" x1="0" y1="0" x2=".7" y2="1"><stop stop-color="#dbc69c"/><stop offset=".3" stop-color="#a58d61"/><stop offset=".55" stop-color="#5f4b32"/><stop offset=".76" stop-color="#b8a174"/><stop offset="1" stop-color="#6b5236"/></linearGradient>
+ <linearGradient id="wax" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#803e39"/><stop offset=".4" stop-color="#542a28"/><stop offset="1" stop-color="#2c1b1e"/></linearGradient>
+ <linearGradient id="ember" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#ffe0ac"/><stop offset=".25" stop-color="#ffad5c"/><stop offset=".55" stop-color="#ff7628"/><stop offset="1" stop-color="#b43b13"/></linearGradient>
+ <linearGradient id="edge" x1="0" y1="0" x2="1" y2=".6"><stop stop-color="#ffca7c"/><stop offset=".5" stop-color="#ff7628"/><stop offset="1" stop-color="#9d3014"/></linearGradient>
+</defs>
+<!-- Candidate only: retain the existing Named signet plate, no letter or crown. -->
+<path d="m9 2.5 10 0 6.5 6.5v10L19 25.5H9L2.5 19V9Z" fill="#080707" opacity=".8" transform="translate(0 .8)"/>
+<path d="m9 2.5 10 0 6.5 6.5v10L19 25.5H9L2.5 19V9Z" fill="url(#brass)" stroke="#30271e" stroke-width=".8"/>
+<path d="m9.8 4.5 8.4 0 5.3 5.3v8.4l-5.3 5.3H9.8l-5.3-5.3V9.8Z" fill="url(#wax)" stroke="#3e3026" stroke-width=".8"/>
+<path d="m3.4 12V9.4l6-6h8.8" fill="none" stroke="#e6d2a8" stroke-width=".5" opacity=".7"/>
+<!-- Forged heraldic wings: broad facets survive at the real 28px size. -->
+<path d="M12.8 15.6 9 13.5 5.5 8.9 6 14.1 8 16.6 6.8 16.4 10.2 19.6 13.2 18.8ZM15.2 15.6 19 13.5 22.5 8.9 22 14.1 20 16.6 21.2 16.4 17.8 19.6 14.8 18.8Z" fill="#1b100b" stroke="#251712" stroke-width=".9" transform="translate(0 .55)"/>
+<path d="M12.8 15.2 9 13.1 5.5 8.5 6 13.7 8 16.2 6.8 16 10.2 19.2 13.2 18.4ZM15.2 15.2 19 13.1 22.5 8.5 22 13.7 20 16.2 21.2 16 17.8 19.2 14.8 18.4Z" fill="url(#edge)" stroke="#442217" stroke-width=".5" stroke-linejoin="round"/>
+<path d="m6.3 10.4 3.2 4.1 2.4 1.3m-4.3-1.4 2.9 2.9m11.2-6.9-3.2 4.1-2.4 1.3m4.3-1.4-2.9 2.9" fill="none" stroke="#ffd397" stroke-width=".48" opacity=".85"/>
+<!-- A bright split-facet sword is the mark; the wings read as forged metal, not text. -->
+<path d="M14 5.1 16.1 9.3 14.95 14.8 17.6 15.8 17.1 17.5 14.8 17 14.8 20.1 15.5 21 14 22.1 12.5 21 13.2 20.1 13.2 17 10.9 17.5 10.4 15.8 13.05 14.8 11.9 9.3Z" fill="#21110b" stroke="#1b0e0a" stroke-width="1.05" stroke-linejoin="round" transform="translate(0 .45)"/>
+<path d="M14 5.1 16.1 9.3 14.95 14.8 17.6 15.8 17.1 17.5 14.8 17 14.8 20.1 15.5 21 14 22.1 12.5 21 13.2 20.1 13.2 17 10.9 17.5 10.4 15.8 13.05 14.8 11.9 9.3Z" fill="url(#ember)" stroke="#6c331a" stroke-width=".5" stroke-linejoin="round"/>
+<path d="m14 5.8-1.55 3.6L14 14.6Z" fill="#ffe8c1"/>
+<path d="m14 5.8 1.55 3.6L14 14.6Z" fill="#ed7b2c"/>
+<path d="M11.2 16.1 14 15.3 16.8 16.1" fill="none" stroke="#ffe0a5" stroke-width=".55"/>
+<path d="m14 17.6 0 2.3" stroke="#652d18" stroke-width=".55"/>
+<path d="m14 20.65.65.4-.65.45-.65-.45Z" fill="#ffe2a7"/>
+<g fill="url(#brass)" stroke="#4b3d2c" stroke-width=".3"><path d="m7.4 19.2 1.2.4 1.3 1.5-1.5-.4Z"/><path d="m20.6 19.2-1.2.4-1.3 1.5 1.5-.4Z"/></g>
+<path d="m10.2 21.4 1.1.6m6.5-.6-1.1.6" stroke="#c3ac7f" stroke-width=".55"/>
+</svg>

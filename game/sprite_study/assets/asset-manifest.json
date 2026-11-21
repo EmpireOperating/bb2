@@ -1,0 +1,305 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "foot_anchor": [
+    512,
+    1490
+  ],
+  "pixel_size": 0.00134,
+  "layer_order": [
+    "foundation OR foundation_helmet",
+    "body_quilt (linen only; do not underlay other armor)",
+    "body_mail OR body_brigandine",
+    "head_nasal OR head_kettle",
+    "weapon_*",
+    "grip_*",
+    "shield_*"
+  ],
+  "unsupported_families": {
+    "body": [
+      "plate",
+      "lamellar",
+      "scale",
+      "leather-as-independent-design"
+    ],
+    "head": [
+      "fullhelm",
+      "hood",
+      "coif"
+    ],
+    "weapon": [
+      "dagger",
+      "mace",
+      "hammer",
+      "crossbow",
+      "flail",
+      "twohand_sword",
+      "poleaxe",
+      "thrown"
+    ],
+    "shield": [
+      "buckler",
+      "tower"
+    ]
+  },
+  "diagnostics": {
+    "unknown_family": "omit unsupported equipment art, retain mechanics, report unsupported_art:<slot>:<family>; never silently alias to sword/mail",
+    "bow": "one-hand static carry, not drawn-bow/attack pose",
+    "spear": "one-hand static carry, not a two-hand thrust pose"
+  },
+  "status": "exploratory offline art; no engine acceptance claimed",
+  "sources": {
+    "sources/base-master.png": "7ac84c8821b4c9b2ff5af232b5e45e318daf3c9ceb30c9653ef083dd81ea6c52",
+    "sources/base-provenance.json": "e629c5db0525256ea9e843e4f44265aa6ee41077fde12e53a6096ada59883c55",
+    "sources/brigandine-master-provenance.json": "e164acb180c978abb3373eba826ee94cf1c0184e388eba6587db568552c8df88",
+    "sources/brigandine-master.png": "fb6839f8e39ae596661b60e813730ba55a1191f904ff72d821c2621a7c2716ed",
+    "sources/equipment-master-provenance.json": "b7b00c2285ff54230928833f6d1f230c1f025190b54dc5f37f1af9140a01025c",
+    "sources/equipment-master.png": "6a6dc0aa25546a07467eda804ab906b12f42e5ef623972ea5b37934a353ff93e",
+    "sources/generation-tool-receipts.json": "a5cd1ef2fcd10b145635297da2993a84cb15d0a87293369d62ef046d376ffa0e",
+    "sources/mail-master-provenance.json": "59972ae76279f12a8092d1a622cca89c4f19276a51a7c84029df1b14fb271f6a",
+    "sources/mail-master.png": "3e346257d3247ae12141ad99ae512fc3ac2722a05c2ecba3211fee4c073373a0"
+  },
+  "recipe_sha256": "b41caf431a2082d1d70e0428399135a1a06554f3827ed1248863b241ef18adc4",
+  "builder_sha256": "48072f169fe708faf74bbe36b0f9bc9e685a44b32ed37891ef29e68e68558cc0",
+  "layers": {
+    "foundation": {
+      "sha256": "fe00b979cf2fe7739b98913add48eb579a8072c810d5c2bca60e8a6619a10ead",
+      "bbox": [
+        72,
+        38,
+        976,
+        1486
+      ],
+      "visible_pixels": 573350,
+      "opaque_pixels": 569175,
+      "opaque_fraction_of_visible": 0.992718234935031
+    },
+    "foundation_helmet": {
+      "sha256": "e820ac150e455aa739ce68ab85f5631bc059b1764b5c684cf0abbab73e7a1c10",
+      "bbox": [
+        72,
+        129,
+        976,
+        1486
+      ],
+      "visible_pixels": 556426,
+      "opaque_pixels": 552818,
+      "opaque_fraction_of_visible": 0.9935157595080029
+    },
+    "body_quilt": {
+      "sha256": "f1cf50f437a9f190b7b58394b5afcf3319ebbdf17e654b097ee6496eb502d457",
+      "bbox": [
+        174,
+        213,
+        907,
+        900
+      ],
+      "visible_pixels": 263281,
+      "opaque_pixels": 257779,
+      "opaque_fraction_of_visible": 0.9791021760020663
+    },
+    "body_mail": {
+      "sha256": "1f324f6ab6767d80fdcf79d157ccc7923de6afbbaf63559393361e615e28ba09",
+      "bbox": [
+        177,
+        201,
+        909,
+        906
+      ],
+      "visible_pixels": 264876,
+      "opaque_pixels": 260146,
+      "opaque_fraction_of_visible": 0.9821425874748939
+    },
+    "body_brigandine": {
+      "sha256": "ac77fd8a3d322b0186ef8d36f559429717121b08236463aa23215309f7d759e9",
+      "bbox": [
+        178,
+        201,
+        910,
+        905
+      ],
+      "visible_pixels": 269754,
+      "opaque_pixels": 264503,
+      "opaque_fraction_of_visible": 0.9805341162688969
+    },
+    "head_nasal": {
+      "sha256": "0bee53ee9dfcde4d35d94c98b8edf15f36193c29c99a17b82d3333ee5e82ab5e",
+      "bbox": [
+        488,
+        5,
+        679,
+        221
+      ],
+      "visible_pixels": 20041,
+      "opaque_pixels": 19054,
+      "opaque_fraction_of_visible": 0.9507509605309117
+    },
+    "head_kettle": {
+      "sha256": "51dde77f21a5a75ae3b29b000b1dc05f64ba14d4904137306fa45a2fe445ee8d",
+      "bbox": [
+        396,
+        40,
+        787,
+        231
+      ],
+      "visible_pixels": 31348,
+      "opaque_pixels": 29940,
+      "opaque_fraction_of_visible": 0.9550848538981753
+    },
+    "weapon_sword": {
+      "sha256": "a305547acaeb9096aa1158c2a880d9f67d0fd5dac6530fb2b4daaaf2d8b4ac7b",
+      "bbox": [
+        41,
+        57,
+        245,
+        669
+      ],
+      "visible_pixels": 38425,
+      "opaque_pixels": 35632,
+      "opaque_fraction_of_visible": 0.927312947299935
+    },
+    "weapon_axe": {
+      "sha256": "ca57c6c1280cb1cf125e6dde7bf9ffcd712b898c34b00d03cf8edb91d92b378a",
+      "bbox": [
+        63,
+        107,
+        328,
+        682
+      ],
+      "visible_pixels": 57566,
+      "opaque_pixels": 54696,
+      "opaque_fraction_of_visible": 0.9501441823298474
+    },
+    "shield_kite": {
+      "sha256": "ba50b9328c104e5edd78aa2f93c5ff062d87303de0adcb23ebd39a24d30c2eb8",
+      "bbox": [
+        620,
+        312,
+        983,
+        928
+      ],
+      "visible_pixels": 148887,
+      "opaque_pixels": 146129,
+      "opaque_fraction_of_visible": 0.9814758843955483
+    },
+    "shield_round": {
+      "sha256": "a2b1ddaac4605e7e41e25b4d82107db88a7a09e9b79530bb67fa7a8de6b15061",
+      "bbox": [
+        586,
+        382,
+        950,
+        792
+      ],
+      "visible_pixels": 117046,
+      "opaque_pixels": 115427,
+      "opaque_fraction_of_visible": 0.9861678314508826
+    },
+    "weapon_spear": {
+      "sha256": "8c22cfebda220ed0d43f88ca7414c6c72abc7c5d835f6b699f213a77acf34f55",
+      "bbox": [
+        72,
+        88,
+        207,
+        927
+      ],
+      "visible_pixels": 38541,
+      "opaque_pixels": 34768,
+      "opaque_fraction_of_visible": 0.9021042526140993
+    },
+    "weapon_bow": {
+      "sha256": "39596c901b54e69348c146d03f34fdafe3f5a5e35fb64213e7ea6dae36c87ff6",
+      "bbox": [
+        113,
+        199,
+        341,
+        917
+      ],
+      "visible_pixels": 35958,
+      "opaque_pixels": 30605,
+      "opaque_fraction_of_visible": 0.8511318760776462
+    },
+    "grip_sword": {
+      "sha256": "f42f1c02565532d19198bb02df9fe14388cbe1329b2f6b94fe0c93c73fcabf72",
+      "bbox": [
+        121,
+        501,
+        188,
+        631
+      ],
+      "visible_pixels": 5556,
+      "opaque_pixels": 5541,
+      "opaque_fraction_of_visible": 0.9973002159827213
+    },
+    "grip_axe": {
+      "sha256": "59edb4ed0f8b97e842716730e3c743c8ff33889796e8eb2c4eb0e7e8d0f36335",
+      "bbox": [
+        122,
+        501,
+        188,
+        631
+      ],
+      "visible_pixels": 6175,
+      "opaque_pixels": 6160,
+      "opaque_fraction_of_visible": 0.9975708502024292
+    },
+    "grip_spear": {
+      "sha256": "2215c995618032548252d4c9ab5b5ca18cca1e05829a91c0b74452d9a00bb186",
+      "bbox": [
+        128,
+        501,
+        177,
+        631
+      ],
+      "visible_pixels": 4925,
+      "opaque_pixels": 4922,
+      "opaque_fraction_of_visible": 0.9993908629441625
+    },
+    "grip_bow": {
+      "sha256": "07a103076008fb0fdbef359278d08e7f1dd44d58e1f57fd7b34de4621b828980",
+      "bbox": [
+        121,
+        501,
+        183,
+        631
+      ],
+      "visible_pixels": 6214,
+      "opaque_pixels": 6204,
+      "opaque_fraction_of_visible": 0.9983907306083039
+    }
+  },
+  "proofs": {
+    "composite-0.png": "fe00b979cf2fe7739b98913add48eb579a8072c810d5c2bca60e8a6619a10ead",
+    "composite-1.png": "4f8a5fee595603b6c5f9aed5b06fddf8819847cf37ca692ec2603660101e4465",
+    "composite-2.png": "d7292eaea8f841dae064b62ad1b8d21dfd60ad642e70c4b00f504a6bf22c8ec2",
+    "composite-3.png": "89bf2780af3ef8581209529d9dfca3e30f04fa380d3a64cad08edb37a63d3fdd",
+    "composite-4.png": "7b7d097a38d0cf8d7052667c3b74b04f218882ed2a27c7190d9f35e74545dfef",
+    "composite-5.png": "9207a513d7a37ff3223bb4255104002d899ced6c0f65c88d55241038d68b5491",
+    "offline-readability-sheet.png": "a0521b81b37cb7f2086d24b49d751c53830a2191ab9efc1417adb8d4e0ac8bb0",
+    "offline-joins.png": "6e102d54763777900b82fb04783e1b1fd98c4557eb73cfd1034cd8ac85ef8e7f",
+    "isolated-layers.png": "4c1205dbd1e66d2d90bdd57dc67e1e2236af128156da6c06d4df05b7c1b52c50",
+    "removal-and-joins-final.png": "8098a5b2ec9cc80e2c235c86d550112ff274436a1deef5e9e1a6030685a185c2"
+  },
+  "supported_families": {
+    "body": [
+      "quilt (linen-family visual)",
+      "mail",
+      "brigandine"
+    ],
+    "head": [
+      "nasal",
+      "kettle"
+    ],
+    "weapon": [
+      "sword",
+      "axe",
+      "spear",
+      "bow"
+    ],
+    "shield": [
+      "kite",
+      "round"
+    ]
+  }
+}

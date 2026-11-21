@@ -1,0 +1,79 @@
+{
+  "status": "USER_VISUAL_ACCEPTANCE_AS_IS_WITH_TWO_ORIENTATION_EXCEPTIONS",
+  "source_user_message": "sheild bearer - weapons in her left hand need to be up not down,\n\noccultist -  weapons in the left hand need to be pointed up not down.\n\neverything else seems good enough for now.",
+  "review_pdf": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-completion-v1/coordinator-review-v1/Hollow-March-Roster-Review.pdf",
+  "review_pdf_sha256": "dfed43f73c520e770641cb361efdcc0bfe2546264ba9aca3412bc02501a03c53",
+  "bound_character_closures": [
+    {
+      "page": 2,
+      "character": "Shieldbearer",
+      "source": "shieldbearer/build-2/CONSOLIDATED_REVIEW.png",
+      "source_sha256": "369c14bf61e3860d9331396e39ee6e70d1cb41bba52535c6daa57896ae765b81",
+      "closure_seal_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-completion-v1/shieldbearer/SEAL.json",
+      "closure_seal_sha256": "9f62d68e234b1ebd927b2ec02875dd499c44a9d76b28d77460472958dd773941",
+      "visual_acceptance": "ACCEPTED_AS_IS_FOR_NOW_EXCEPT_ANATOMICAL_LEFT_WEAPON_UPWARD"
+    },
+    {
+      "page": 3,
+      "character": "Duelist",
+      "source": "duelist/run-2/CONSOLIDATED_REVIEW.png",
+      "source_sha256": "ae8ba106e12e6ee3463d9eb3dbfae03e9f4ac4f898f5555dfbb716d2099ca343",
+      "closure_seal_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-completion-v1/duelist/SEAL.json",
+      "closure_seal_sha256": "e88286c36378da2a1b262d4d01d08c68a2d0ef0d38ef05544701efb337a35f5f",
+      "visual_acceptance": "ACCEPTED_AS_IS_FOR_NOW"
+    },
+    {
+      "page": 4,
+      "character": "Archer",
+      "source": "archer/run-b/CONSOLIDATED_ORIGINAL_OPPOSITE_REVIEW.png",
+      "source_sha256": "6346683df28df36578b4744338decc80f48975f9c7221df22b717739e4ea9346",
+      "closure_seal_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-completion-v1/archer/SEAL.json",
+      "closure_seal_sha256": "f83243bab0ce76648f5d64d068fc56a6225950d5bf959b61fedc5a02494a631d",
+      "visual_acceptance": "ACCEPTED_AS_IS_FOR_NOW"
+    },
+    {
+      "page": 5,
+      "character": "Polearm",
+      "source": "polearm/CONSOLIDATED_REVIEW.png",
+      "source_sha256": "61882bc4c299b537b68e5c613dbea65665588ee35a45bb42c94611fc63d1ebea",
+      "closure_seal_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-completion-v1/polearm/SEAL.json",
+      "closure_seal_sha256": "5cc1669cf3f90297a70a1894fac88b36bcf702bf9a65c1aaf7edbcdc4157ec8b",
+      "visual_acceptance": "ACCEPTED_AS_IS_FOR_NOW"
+    },
+    {
+      "page": 6,
+      "character": "Occultist",
+      "source": "occultist/final-b/CONSOLIDATED_REVIEW.png",
+      "source_sha256": "bbaf7d05ba8c99cb4c1cf86085f6a57ab0d972d8afd01f2037d730541d4a5508",
+      "closure_seal_path": "/home/quatro/games/hollow-march-workstreams/equipment-trial-v1/completion-followthrough-v1/roster-completion-v1/occultist/SEAL.json",
+      "closure_seal_sha256": "9d564477fbb7bc4ad59674960eb362b258f9e309730f0e91499b436dc79a7436",
+      "visual_acceptance": "ACCEPTED_AS_IS_FOR_NOW_EXCEPT_ANATOMICAL_LEFT_WEAPON_UPWARD"
+    }
+  ],
+  "remaining_visual_corrections": [
+    {
+      "appearance": "shieldbearer",
+      "physical_hand": "left",
+      "viewer_side": "right",
+      "required_change": "Weapons must point UP, not DOWN; preserve accepted anatomy and the complete weapon design/scale."
+    },
+    {
+      "appearance": "occultist",
+      "physical_hand": "left",
+      "viewer_side": "right",
+      "required_change": "Weapons must point UP, not DOWN; preserve accepted anatomy and the complete weapon design/scale."
+    }
+  ],
+  "acceptance_effect": "Accept existing reviewed visual imperfections as-is for the current playtest; retire their visual approval/polish blockers without deleting factual coverage/comparison findings or historical HOLD records. Do not ask to re-review unchanged accepted assets. Only the two upward weapon direction corrections require new art review.",
+  "not_authorized": [
+    "The proposed 19-call fresh painting batch",
+    "New image generation, retries or purchases",
+    "Inventing/relabeling the four missing exact-ID sources",
+    "Treating absent or unrendered hand fits as visible approved art",
+    "Changing mechanics, inventory authority, save schema or anatomy",
+    "Live-desktop automation, default-game activation or player-save migration"
+  ],
+  "missing_sources_policy": "Keep genuinely missing sources/icons/hand routes null or explicitly unsupported; no broad new concept work is a prerequisite to this accepted-as-is playtest.",
+  "next_action": "Two independent source-backed whole-weapon orientation correction lanes; no engine or image-provider calls. Preserve all unflagged source/art bytes; reselect only affected left-hand contacts/glove partitions.",
+  "generation_calls_granted": 0
+}

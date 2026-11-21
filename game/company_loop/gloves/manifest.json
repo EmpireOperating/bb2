@@ -1,0 +1,42 @@
+{
+  "canvas": [
+    1024,
+    1536
+  ],
+  "foot_anchor": [
+    512,
+    1490
+  ],
+  "builder_sha256": "dc90f75239f22b705419884bf0301cc679640e70ad3b987e5436f3ca43d3359e",
+  "protected_seal_sha256": "c722871a1425af8e4fb057c4dd7d46d9551d1681bc956a10bd8c5080beee2322",
+  "recipe_sha256": "45472067b7e2e085c8f7590fe7686dfaefedb354bf5570ba6473136d3b5e71b6",
+  "source_sha256": {
+    "quilt": "7788f76576df8e0f536c9d699cbb5c99a1f56674bfb43f1ed74d8b471ab4cac6",
+    "mail": "e0f251e51de4045782e479a584aa1af80554e6f8c7c124e573b195f85d90152c",
+    "brigandine": "eb396cd6a9f8ba3a2b9fe9bcf7b71cf8d049da981f2f5e9e4437487fbbff84e1"
+  },
+  "outputs": {
+    "glove_pair_brigandine.png": "22e2e0bfdd0f58b199557590999a8c38db14a2dbd7a084d604b692fcc56733e9",
+    "glove_pair_mail.png": "4489165807fcaf63ea0e79b4f1462444ac80aea9b640d1e1f10f8f1994f406c6",
+    "glove_pair_quilt.png": "2066d86d8fdd0725dda53f3b7833dc9d7b871053a767336d59a8f95244657587",
+    "hand_keep_mask.png": "d45daeec55e88f271602b0019ca5c00a7fa267ceccfb9c2adc94219f2184fc85"
+  },
+  "extraction": {
+    "quilt": {
+      "nearest_own_paint_pixels": 1009,
+      "maximum_distance_px": 8.94427190999916,
+      "opaque_rgb_source_exact": 42302
+    },
+    "mail": {
+      "nearest_own_paint_pixels": 492,
+      "maximum_distance_px": 4.242640687119285,
+      "opaque_rgb_source_exact": 42810
+    },
+    "brigandine": {
+      "nearest_own_paint_pixels": 382,
+      "maximum_distance_px": 3.605551275463989,
+      "opaque_rgb_source_exact": 42864
+    }
+  },
+  "evidence_kind": "offline PNG source extraction; not native gameplay"
+}
