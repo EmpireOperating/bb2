@@ -1044,5 +1044,24 @@
     "tier": 1,
     "description": "Extreme armour wear and high fatigue.",
     "head_chance": 25
+  },
+  "mason_hammer": {
+    "name": "Mason's Hammer",
+    "min": 23,
+    "max": 31,
+    "ap": 5,
+    "fatigue": 14,
+    "reach": 1,
+    "pierce": 0.3,
+    "armor": 1.5,
+    "skill": 0,
+    "hands": 1,
+    "ranged": false,
+    "ammo": "",
+    "min_range": 1,
+    "family": "hammer",
+    "tier": 1,
+    "description": "A light stoneworker's tool. Wears down armour and works with a shield.",
+    "head_chance": 25
   }
 }

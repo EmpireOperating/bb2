@@ -1208,5 +1208,17 @@
     "quality": "BASIC",
     "hands": 2,
     "weight": 18
+  },
+  "mason_hammer": {
+    "name": "Mason's Hammer",
+    "slot": "weapon",
+    "durability": 0,
+    "weapon": "mason_hammer",
+    "price": 38,
+    "tier": 1,
+    "quality": "BASIC",
+    "hands": 1,
+    "weight": 7,
+    "role": "Affordable one-handed armour breaker; lighter and less powerful than a War hammer."
   }
 }

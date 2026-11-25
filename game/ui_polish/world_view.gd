@@ -21,12 +21,16 @@ var _arrival_initialized := false
 var _arrival_moving := false
 var _arrival_destination := ""
 var _overworld_resources: Control
+var _town_resources: Control
 
 var _person_details: Panel
 var _person_details_sid := -1
 var _person_details_campaign
 # Transient owner/choices from the last actual progression paint, not save data.
 var _progression_paint := {}
+const CompanionArt = preload("res://engraved_people/actors.gd")
+const COMPANIONS_PER_PAGE := 3
+var _companion_page := -1
 const StatBreakdown = preload("res://stat_clarity/breakdown.gd")
 var stat_hover
 const InjuryStatus = preload("res://stat_clarity/injuries.gd")
@@ -47,9 +51,14 @@ func _draw_person() -> void:
  label_at("%d / %d HP" % [person.hp,campaign.max_hp(person)],Vector2(158,251),14,MUTED)
  label_fit(status.temporary if person.alive else "Fallen · no active recovery",Vector2(158,273),394,14,RED if status.active else MUTED)
  label_fit("Scars: "+", ".join(status.scars) if not status.scars.is_empty() else "No permanent scars",Vector2(158,293),394,12,GOLD if not status.scars.is_empty() else MUTED)
+ if person.alive and campaign.has_method("campaign_mood"):
+  var mood: Dictionary = campaign.campaign_mood(person.id)
+  label_fit(mood.text,Vector2(158,309),394,13,PAPER)
+  _progression_paint["campaign_mood"] = mood.text
+ var has_mood: bool = _progression_paint.has("campaign_mood")
  var next: int = Progression.next_xp(person)
- label_at("Next rank: %d / %d XP" % [person.xp,next] if next > 0 else "Maximum rank · service remains recorded",Vector2(158,316),12,GOLD)
- bar(Vector2(158,332),394,person.xp,next if next > 0 else person.xp,BLUE,5)
+ label_at("Next rank: %d / %d XP" % [person.xp,next] if next > 0 else "Maximum rank · service remains recorded",Vector2(158,326 if has_mood else 316),12,GOLD)
+ bar(Vector2(158,338 if has_mood else 332),394,person.xp,next if next > 0 else person.xp,BLUE,5)
  _draw_rename_button()
 
 func stat_breakdown(person: Dictionary, attr: String, offer: bool = false) -> Dictionary:
@@ -138,11 +147,11 @@ func _close_person_details() -> void:
 func set_active(active: bool) -> void:
  if not active:
   if is_instance_valid(stat_hover):stat_hover.retire()
-  _retire_rename();_retire_person_details();town.services.retire_buy()
+  _retire_rename();_retire_person_details();town.services.retire_market()
  super.set_active(active)
 
 func _notification(what: int) -> void:
- if what==NOTIFICATION_DISABLED and town!=null:town.services.retire_buy()
+ if what==NOTIFICATION_DISABLED and town!=null:town.services.retire_market()
 
 func blocked() -> bool:
  return super.blocked() or (host != null and host.aftermath_panel.visible)
@@ -183,7 +192,7 @@ func _sync_town_arrival() -> void:
  # at_site is a 14-unit eligibility radius, not an arrival event. Observe the
  # existing named route completing at its exact endpoint, including same-town
  # returns. An unnamed route or Stop within that radius cannot invent arrival.
- if not ow.path.is_empty():
+ if not ow.path.is_empty() or not campaign.traffic.follow_wagon.is_empty():
   _arrival_moving=true; _arrival_destination=ow.destination; _arrival_pending=""
  elif _arrival_moving:
   _arrival_moving=false
@@ -192,14 +201,15 @@ func _sync_town_arrival() -> void:
   _arrival_destination=""
  _arrival_presence=local
  if not town.site.is_empty() and not town_is_open(): town.close()
+ if not local.is_empty() and host != null and host.has_method("_settle_arrived_contract_payment"):
+  host._settle_arrived_contract_payment(self)
  if not _arrival_pending.is_empty() and local == _arrival_pending and inventory_available() and world_view and not iron.detail and _surface()=="world" and campaign.encounter.is_empty() and campaign.dungeons.active.is_empty() and not campaign.over():
   if local==_town_location(): open_current_town()
   else:
    _arrival_pending=""; action("iron_here")
 
 func _process(delta: float) -> void:
- town.services.sync_buy(self,town)
- town.services.sales.sync(self,town)
+ town.services.sync_market(self,town)
  _sync_rename();_sync_person_details()
  if not visible or blocked(): return
  _sync_town_arrival()
@@ -214,9 +224,8 @@ func known_site(id: String) -> bool:
 
 func rebind(value) -> void:
  if is_instance_valid(stat_hover):stat_hover.retire()
- town.services.retire_buy()
- town.services.sales.retire()
- if value != campaign:town.services.sales.reset()
+ town.services.retire_market()
+ if value != campaign:town.services.reset_market()
  _retire_rename();_rename_paint.clear()
  _retire_person_details()
  if value != campaign:
@@ -236,7 +245,8 @@ func _draw_job_reminder(x: float, y: float) -> void:
  if campaign.has_method("payment_direction") and not campaign.payment_pending.is_empty():
   var job: Dictionary=campaign.payment_pending.job
   label_fit("OBJECTIVE COMPLETE · %d crowns DUE" % job.pay,Vector2(x,y),355,13,GOLD)
-  label_fit("Return to "+campaign.node(job.origin).name+" · Contract Board",Vector2(x,y+27),355,13,MUTED)
+  var automatic: bool = campaign.has_method("pays_contracts_on_arrival") and campaign.pays_contracts_on_arrival()
+  label_fit("Return to "+campaign.node(job.origin).name+(" · paid on arrival" if automatic else " · Contract Board"),Vector2(x,y+27),355,13,MUTED)
   return
  super._draw_job_reminder(x,y)
 
@@ -247,19 +257,24 @@ func _draw_world() -> void:
 
 func _ready() -> void:
  stat_hover = preload("res://stat_clarity/hover.gd").new();stat_hover.world = self;add_child(stat_hover)
- _overworld_resources = preload("res://resource_header/header.gd").new()
- _overworld_resources.name = "OverworldResources"
- _overworld_resources.theme = UI.theme()
- _overworld_resources.position = Vector2(142,8)
- _overworld_resources.size = Vector2(330,48)
- _overworld_resources.purse.alignment = BoxContainer.ALIGNMENT_BEGIN
- _overworld_resources.supplies.alignment = BoxContainer.ALIGNMENT_BEGIN
- _overworld_resources.hide();add_child(_overworld_resources)
+ # Inside existing chrome, left of the companion count; no map paint changes.
+ _overworld_resources = _mount_resource_row("OverworldResources",Rect2(24,20,456,24))
+ _town_resources = _mount_resource_row("TownResources",TownView.RESOURCE_ROW)
  iron = load("res://ui_polish/iron_ui.gd").new()
  super._ready()
  visibility_changed.connect(func():
   if not is_visible_in_tree():
-   _retire_rename();_retire_person_details();town.services.sales.retire();town.services.retire_buy())
+   _retire_rename();_retire_person_details();town.services.retire_market())
+
+func _mount_resource_row(id: String, rect: Rect2) -> Control:
+ var header = preload("res://resource_header/header.gd").new()
+ header.name = id
+ header.theme = UI.theme()
+ header.position = rect.position
+ header.size = rect.size
+ header.hide();add_child(header)
+ return header
+
 func write_save(show_notice: bool = true) -> bool:
  var ok: bool = super.write_save(show_notice)
  if show_notice and ok: tell("Company saved to the between-battle checkpoint.")
@@ -268,8 +283,58 @@ func write_save(show_notice: bool = true) -> bool:
 func _fitting_navigation_available() -> bool:
  return inventory_available()
 
+func _companion_menu_active() -> bool:
+ return is_visible_in_tree() and process_mode != Node.PROCESS_MODE_DISABLED and not blocked() and host != null and host.world == self and host.session.campaign == campaign and not host.aftermath_panel.visible and not is_instance_valid(host.field) and campaign.phase == "camp" and person_offer.is_empty() and not perk_lab_mode
+
+func _draw_companion_switcher(surface: String) -> void:
+ var roster: Array = campaign.soldiers.filter(func(person): return person.alive)
+ if roster.is_empty(): return
+ var page_count := ceili(float(roster.size())/COMPANIONS_PER_PAGE)
+ if _companion_page < 0:
+  var selected_index := roster.find_custom(func(person): return person.id == camp_selected)
+  _companion_page = floori(float(maxi(0,selected_index))/COMPANIONS_PER_PAGE)
+ _companion_page = mini(_companion_page,page_count-1)
+ var prefix := surface+"_companion_"
+ var origin := Vector2(600,174) if surface == "person" else Vector2(828,128)
+ label_at("COMPANIONS"+(" · %d / %d" % [_companion_page+1,page_count] if page_count > 1 else ""),origin-Vector2(0,6),11,GOLD)
+ var x := origin.x
+ var width := 182.0
+ if page_count > 1:
+  for step in [-1,1]:
+   var arrow := prefix+("prev" if step < 0 else "next")
+   button(arrow,"‹" if step < 0 else "›",Rect2(origin+Vector2(0 if step < 0 else 532,0),Vector2(30,44)))
+   buttons[arrow]["companion_page"] = posmod(_companion_page+step,page_count)
+  x += 36; width = 160.0
+ var start := _companion_page*COMPANIONS_PER_PAGE
+ for i in range(start,mini(start+COMPANIONS_PER_PAGE,roster.size())):
+  var person: Dictionary = roster[i]
+  var id := prefix+str(person.id)
+  var current: bool = person.id == camp_selected
+  var rect := Rect2(x,origin.y,width,44)
+  button(id,"",rect,true,current)
+  buttons[id]["title"] = person.name
+  buttons[id]["companion_sid"] = person.id
+  var portrait := CompanionArt.portrait(host.session.preview_unit(person.id))
+  if portrait != null: draw_texture_rect(portrait,Rect2(rect.position+Vector2(4,4),Vector2(36,36)),false)
+  label_fit(person.name,rect.position+Vector2(48,27),width-56,15,GOLD if current else PAPER)
+  x += width+6
+
+func _switch_progression_companion(id: String) -> void:
+ if not _companion_menu_active() or not _admit_progression(id): return
+ var row: Dictionary = buttons[id]
+ if row.has("companion_page"):
+  _companion_page = row.companion_page
+  queue_redraw()
+  return
+ var sid: int = row.get("companion_sid",-1)
+ if sid < 0 or sid >= campaign.soldiers.size() or sid == camp_selected: return
+ var person: Dictionary = campaign.soldiers[sid]
+ if person.id != sid or not person.alive: return
+ growth_selection.clear(); perk_choice = ""; perk_filter = "All"
+ super.action("camp_unit_%d" % sid) # Same camp selection and refresh as the existing roster.
+
 func _admit_progression(id: String) -> bool:
- var surface := "person" if id.begins_with("grow_") or id in ["person_clear","person_train","person_perks"] else "service" if id.begins_with("learn_") else "perk"
+ var surface := "person" if id.begins_with("grow_") or id.begins_with("person_companion_") or id in ["person_clear","person_train","person_perks"] else "service" if id.begins_with("learn_") else "perk"
  # A view flag alone is not a painted control. Bind the enabled hit target to
  # its exact current person/offer and keep the existing modal/save fences.
  if _progression_paint.is_empty() or _surface() != surface or _progression_paint.surface != surface: return false
@@ -291,8 +356,7 @@ func _admit_progression(id: String) -> bool:
 
 func action(id: String) -> void:
  _sync_rename()
- town.services.sync_buy(self,town)
- town.services.sales.sync(self,town)
+ town.services.sync_market(self,town)
  if not visible or blocked(): return
  # Details is observational. Refuse *all* underlying callbacks, including
  # save/load, progression and world commands, before iron/domain dispatch.
@@ -307,6 +371,8 @@ func action(id: String) -> void:
   if id == "person_details_close":_close_person_details()
   return
  if id in ["person_details","person_details_close"]:return # Retired callbacks are inert.
+ if id.begins_with("person_companion_") or id.begins_with("perk_companion_"):
+  _switch_progression_companion(id); return
  if id.begins_with("grow_") or id.begins_with("perk_") or id.begins_with("learn_") or id in ["person_clear","person_train","person_perks"]:
   if not _admit_progression(id): return
  # A hidden dungeon has no map hit target; reject direct/stale callbacks too.
@@ -338,13 +404,13 @@ func action(id: String) -> void:
   open_current_town(); return
  if id == "town_ammunition":
   if town_is_open() and _clear_surface() and _surface()=="town" and buttons.get(id,{}).get("enabled",false):
-   town.change_section("market");town.page=campaign.economy.GOODS.find("ammo");refresh()
+   town.change_section("market");_keyboard_paint=true;_keyboard_id="town_market_good_ammo";refresh()
   return
  if id in ["town_prev","town_next"]:
   if town_is_open() and _clear_surface():
-   town.services.commands.clear(); town.page=clampi(town.page+(-3 if id=="town_prev" else 3),0,maxi(0,town.services.row_count-3)); refresh()
+   _page_town(clampi(town.page+(-1 if id=="town_prev" else 1)*town.services.page_step(town),0,town.services.page_limit(town)))
   return
- if id.begins_with("town_equipment_") or id.begins_with("town_buy_") or id.begins_with("town_sell_") or id.begins_with("town_pick_") or id.begins_with("town_hire_") or id.begins_with("town_profile_") or id.begins_with("town_treat_") or id.begins_with("town_sign_") or id.begins_with("town_hear_") or id in ["town_purchase","town_collect_payment"]:
+ if id.begins_with("town_market_") or id.begins_with("town_buy_") or id.begins_with("town_sell_") or id.begins_with("town_hire_") or id.begins_with("town_profile_") or id.begins_with("town_treat_") or id.begins_with("town_sign_") or id.begins_with("town_hear_") or id in ["town_collect_payment","town_tavern_round"]:
   town.services.action(self,town,id); return
  if id == "town_leave":
   if town_is_open() and _clear_surface(): close_town()
@@ -508,21 +574,22 @@ func _sync_keyboard_focus() -> void:
 
 func _draw() -> void:
  if is_instance_valid(_overworld_resources):
-  _overworld_resources.visible = visible and not blocked() and campaign.phase == "camp" and _surface() == "world" and campaign.dungeons.active.is_empty()
+  var resource_surface := _surface() if is_visible_in_tree() and can_process() and not blocked() and world_view and _clear_surface() and campaign.dungeons.active.is_empty() else ""
+  _overworld_resources.visible = resource_surface == "world"
+  _town_resources.visible = resource_surface == "town"
   # Re-project the current campaign on every paint; no cached supply authority.
   if _overworld_resources.visible:_overworld_resources.present(campaign)
- town.services.sync_buy(self,town)
- town.services.sales.sync(self,town)
+  elif _town_resources.visible:_town_resources.present(campaign)
+ town.services.sync_market(self,town)
  _sync_rename();_sync_person_details()
+ var previous_surface: String = _progression_paint.get("surface","")
  if not _progression_paint.is_empty() and (_progression_paint.campaign != campaign or _progression_paint.sid != camp_selected or _progression_paint.offer != person_offer):
   growth_selection.clear(); perk_choice = "" # Choices never migrate to another person.
+  _companion_page = -1
  _progression_paint = {"campaign":campaign,"sid":camp_selected,"offer":person_offer,"surface":"","actions":[]}
  _ui_perk_cards = {}
  town_legacy.quotes.clear(); town_legacy.consumed.clear()
  super._draw()
- if is_instance_valid(_overworld_resources) and _overworld_resources.visible:
-  label_at("PURSE & AMMO",Vector2(24,26),13,UI.GOLD)
-  label_at("SUPPLIES",Vector2(24,50),13,UI.GOLD)
  if not visible or blocked(): return
  # The retained camp draw returns before the battle-only record branch.
  # Paint the same record owner here, only when it is the top surface.
@@ -531,6 +598,8 @@ func _draw() -> void:
  if _person_details_open() or _rename_open():return
  var surface := _surface()
  if surface in ["person","perk","service"] and buttons.has("perk_close" if surface == "perk" else "person_close" if surface == "person" else "service_close"):
+  if surface != previous_surface: _companion_page = -1
+  if surface in ["person","perk"] and _companion_menu_active(): _draw_companion_switcher(surface)
   var person: Dictionary = campaign.soldiers[camp_selected] if person_offer.is_empty() else campaign.recruit_pools[person_offer]
   _progression_paint.merge({
    "surface":surface,
@@ -560,9 +629,14 @@ func _draw_record() -> void:
  centered("1 / 1 · no retained events",Vector2(720,762),12,GOLD)
  button("record_next","OLDER >",Rect2(1100,738,155,36),false)
 
+func _page_town(next: int) -> void:
+ if next==town.page:return
+ town.services.retire_market();town.services.commands.clear();town.page=next;refresh()
+
 func _input(event: InputEvent) -> void:
- if event is InputEventMouseButton:_keyboard_paint = false
- elif event is InputEventKey and event.pressed and event.keycode == KEY_TAB:_keyboard_paint = true
+ var market: bool = town.section=="market" and campaign!=null and _surface()=="town"
+ if event is InputEventMouseButton or (market and event is InputEventMouseMotion):_keyboard_paint = false
+ elif event is InputEventKey and event.pressed and (event.keycode==KEY_TAB or (market and event.keycode in [KEY_LEFT,KEY_RIGHT,KEY_UP,KEY_DOWN])):_keyboard_paint = true
  var had_rename := _rename_open()
  _sync_rename()
  if had_rename:
@@ -609,10 +683,9 @@ func _input(event: InputEvent) -> void:
    action("save" if event.keycode==KEY_F5 else "load")
    get_viewport().set_input_as_handled();return
   if _surface()=="town" and not event.echo and event.keycode in [KEY_PAGEUP,KEY_PAGEDOWN,KEY_HOME,KEY_END]:
-   if event.keycode==KEY_HOME: town.page=0
-   elif event.keycode==KEY_END: town.page=maxi(0,town.services.row_count-3)
-   else: town.page=clampi(town.page+(-3 if event.keycode==KEY_PAGEUP else 3),0,maxi(0,town.services.row_count-3))
-   town.services.commands.clear(); refresh(); get_viewport().set_input_as_handled(); return
+   var limit: int = town.services.page_limit(town)
+   var next: int = 0 if event.keycode==KEY_HOME else limit if event.keycode==KEY_END else clampi(town.page+(-1 if event.keycode==KEY_PAGEUP else 1)*town.services.page_step(town),0,limit)
+   _page_town(next); get_viewport().set_input_as_handled(); return
   var scope := _surface()
   if (event.keycode == KEY_I or event.physical_keycode == KEY_I) and campaign.phase == "camp" and scope in ["world","town","company"] and inventory_available():
    if not event.echo:action("company")
@@ -642,8 +715,11 @@ func _input(event: InputEvent) -> void:
   elif event.keycode in [KEY_TAB,KEY_ENTER,KEY_KP_ENTER,KEY_SPACE] and scope != "world":
    get_viewport().set_input_as_handled(); return
  if _surface() == "town":
+  # Allow passive GUI hover/leave only; the immediate-mode town still owns all
+  # buttons and wheels, and no town motion reaches the inherited map input.
+  if event is InputEventMouseMotion:return
   if event is InputEventMouseButton and event.pressed and event.button_index in [MOUSE_BUTTON_WHEEL_UP,MOUSE_BUTTON_WHEEL_DOWN] and Rect2(326,198,1090,606).has_point(event.position):
-   town.services.commands.clear(); town.page=clampi(town.page+(-1 if event.button_index==MOUSE_BUTTON_WHEEL_UP else 1),0,maxi(0,town.services.row_count-3)); refresh()
+   _page_town(clampi(town.page+(-1 if event.button_index==MOUSE_BUTTON_WHEEL_UP else 1)*town.services.page_step(town,true),0,town.services.page_limit(town)))
   if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
    for id in buttons:
     if buttons[id].enabled and buttons[id].rect.has_point(event.position): action(id); break

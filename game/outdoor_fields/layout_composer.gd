@@ -1,5 +1,5 @@
 extends RefCounted
-## V3 only. Compose relief, obstruction cores and passable routes in the
+## Compose relief, obstruction cores and passable routes in the
 ## opening's native hex frame. Presentation consumes ordinary authored tiles.
 const Axis = preload("res://outdoor_fields/axis_layout.gd")
 const SIZE := 32
@@ -7,6 +7,10 @@ const AREA := SIZE * SIZE
 const STEPS := [Vector2i(-1,0),Vector2i(1,0),Vector2i(-1,-1),Vector2i(0,-1),Vector2i(-1,1),Vector2i(0,1)]
 enum { FIRM, GROVE, SCREE, TRACK }
 const MATERIALS := ["", "forest", "rocks", "road"]
+const FOREST_CAMP_CENTER := Vector2i(15,15)
+const GATE_ARMS := [Vector2i(0,-4),Vector2i(0,-3),Vector2i(0,-2),
+ Vector2i(0,0),Vector2i(0,1),Vector2i(0,2),Vector2i(1,-5),Vector2i(2,-5),
+ Vector2i(1,2),Vector2i(2,1)]
 
 class Landform:
  var at: Vector2
@@ -95,10 +99,11 @@ static func _routes(rng: RandomNumberGenerator) -> Array[Route]:
  routes.append(_route(rng,-side*other,rng.randf_range(1.2,2.0),rng.randf_range(8.0,13.0)))
  return routes
 
-static func compose(n: int, family: String, title: String, road: bool) -> Dictionary:
+static func compose(n: int, family: String, title: String, road: bool, fixed_center: Vector2i = Vector2i.ZERO) -> Dictionary:
  var ridge := family=="ridge"
  var opening_rng := _rng(n,0x1a73e549)
  var center := Vector2i(opening_rng.randi_range(14,17),opening_rng.randi_range(14,17))
+ if fixed_center!=Vector2i.ZERO:center=fixed_center
  var origin := Axis.axial(center)
  var axis := Axis.ordinary(center)
  var pads := {}
@@ -179,6 +184,66 @@ static func compose(n: int, family: String, title: String, road: bool) -> Dictio
    if surface[i]==TRACK:presentation.road.append(k)
    tiles[k]=tile
  return {"id":family+"_field","title":title,"width":SIZE,"height":SIZE,"goal":goal,"spawns":Axis.descriptor_spawns(axis),"tiles":tiles,"presentation":presentation}
+
+# V4 only: a west-facing broken gate and two return walls enclose an open
+# yard. Keep the masonry at fixed hexes so the ruin reads as one place.
+static func forest_camp(n: int, road: bool) -> Dictionary:
+ var d := compose(n,"forest","Broken Gate",road,FOREST_CAMP_CENTER)
+ d.presentation["landmark"]="forest_broken_gate"
+ var origin := Axis.axial(FOREST_CAMP_CENTER)
+ for u in range(-5,7):
+  for v in range(-7,8):
+   if absf(v+u*.5)>5.5:continue
+   var k := _camp_key(origin,Vector2i(u,v))
+   d.tiles[k]={"terrain":"grass","height":0}
+ for at: Vector2i in GATE_ARMS:
+  var k := _camp_key(origin,at)
+  d.tiles[k]={"terrain":"wall","height":0,"obstacle":"wall","blocked":true,"vision_blocking":true}
+  if at in [Vector2i(0,-2),Vector2i(0,0)]:d.presentation.keep.append(k)
+ d.goal=Axis.offset(origin+Vector2i(2,-1))
+ _camp_ground(d,origin,[Vector2i(1,-1),Vector2i(2,-1)],"stone")
+ # Change the costs and sight lines of the approaches, never the stones.
+ # The breach is a passage in all three cases, not a rotating door.
+ match n%3:
+  0: # Worn gate apron: the quick, exposed route into the court.
+   _camp_ground(d,origin,[Vector2i(-2,0),Vector2i(-2,1),Vector2i(-1,0),Vector2i(0,-1)],"stone")
+   _camp_ground(d,origin,[Vector2i(-2,-3),Vector2i(-1,-3),Vector2i(0,-5),Vector2i(-1,4),Vector2i(1,4)],"forest",0,"tree")
+  1: # Leaf-screened hook: south return is low and quick; debris slows the gate.
+   _camp_ground(d,origin,[Vector2i(-2,0),Vector2i(-1,0),Vector2i(0,-1)],"rubble")
+   _camp_ground(d,origin,[Vector2i(-2,-2),Vector2i(-1,-3),Vector2i(0,-5),Vector2i(1,0),Vector2i(1,1),Vector2i(0,4)],"forest",0,"tree")
+  2: # High spur: standable ledge over the north return, rough lower ground.
+   _camp_ground(d,origin,[Vector2i(-2,0),Vector2i(-1,0),Vector2i(0,-1)],"rubble")
+   _camp_ground(d,origin,[Vector2i(-2,-2),Vector2i(-2,-3),Vector2i(-1,-3),Vector2i(-1,-4),
+    Vector2i(-1,-5),Vector2i(0,-5),Vector2i(0,-6),Vector2i(1,-6),Vector2i(2,-6),Vector2i(3,-6)],"hill",1)
+   _camp_ground(d,origin,[Vector2i(-2,3),Vector2i(-1,3),Vector2i(0,4)],"forest",0,"tree")
+ d.presentation.road=d.presentation.road.filter(func(k):return d.tiles[k].terrain=="road")
+ # Grade the stamp's joins into the inherited landscape. Lowering only high
+ # edge cells keeps native one-level edges without changing its path rules.
+ for k: String in d.tiles:
+  if d.tiles[k].height!=2:continue
+  var x := int(k.get_slice(",",0))
+  var y := int(k.get_slice(",",1))
+  for step: Vector2i in STEPS:
+   var neighbor := "%d,%d"%[x+step.x+((y&1) if step.y else 0),y+step.y]
+   if d.tiles.get(neighbor,{}).get("height",2)==0:d.tiles[k].height=1;break
+ return d
+
+# Battle-only overlay on the v7 stamp. Do not attach this to the bound
+# descriptor: old pending Forest checkpoints must reconstruct exact bytes.
+static func broken_gate_work_cells(n: int) -> Dictionary:
+ var origin := Axis.axial(FOREST_CAMP_CENTER)
+ var tree := Vector2i(-2,3) if n%3==2 else Vector2i(-1,-3)
+ return {"wood":Axis.offset(origin+tree),"stone":Axis.offset(origin+Vector2i(0,-3))}
+
+static func _camp_ground(d: Dictionary, origin: Vector2i, area: Array, tag: String, height: int = 0, obstacle: String = "") -> void:
+ for at: Vector2i in area:
+  var tile := {"terrain":tag,"height":height}
+  if not obstacle.is_empty():tile.merge({"blocked":true,"vision_blocking":true,"obstacle":obstacle})
+  d.tiles[_camp_key(origin,at)]=tile
+
+static func _camp_key(origin: Vector2i, at: Vector2i) -> String:
+ var p := Axis.offset(origin+at)
+ return "%d,%d"%[p.x,p.y]
 
 static func _grade_and_link(height: PackedByteArray, solid: PackedByteArray) -> void:
  var seen := PackedByteArray()

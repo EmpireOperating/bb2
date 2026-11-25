@@ -1,5 +1,7 @@
 extends RefCounted
+const Forge = preload("res://layer_forge/rules.gd")
 const Named = preload("res://src/named_equipment.gd")
+const NamedMail = preload("res://layer_forge/named_mail.gd")
 ## Assemblies own component references; each physical piece has one parent at most.
 const LAYERS = {"body":["base","mail","outer","reinforce","cloth","cloak"],"head":["padding","mail","shell","face","decor"]}
 const LABELS = {"base":"Base garment","mail":"Mail","outer":"Outer protection","reinforce":"Reinforcement","cloth":"Overclothes","cloak":"Cloak / mantle","padding":"Padding","shell":"Helmet shell","face":"Face protection","decor":"Decoration"}
@@ -82,9 +84,11 @@ static func tier(load_value: int) -> int:
 static func explain_load(load_value: int) -> String:
 	return "%d load: +%d attack/guard fatigue, -%d turn recovery, +%d movement fatigue/AP." % [load_value,tier(load_value),tier(load_value),load_value/24]
 
-static func valid_battle_parts(value: Variant, catalog: Dictionary) -> bool:
-	if not value is Array or value.size() > 11: return false
+static func valid_battle_parts(value: Variant, catalog: Dictionary, claimed_mail: String = "") -> bool:
+	if not value is Array or value.size() > Forge.LAYERS.body.size()+Forge.LAYERS.head.size(): return false
 	var ids = {}; var slots = {}
+	var forge_parts := 0
+	var fitted := {"body":{},"head":{}}
 	for p in value:
 		if not p is Dictionary or not p.get("item") is String or not p.get("definition") is String or not catalog.has(p.definition): return false
 		if not Named.valid(p,catalog): return false
@@ -92,6 +96,11 @@ static func valid_battle_parts(value: Variant, catalog: Dictionary) -> bool:
 		if not d.has("group") or not d.has("layer"): return false
 		var slot = d.group+"/"+d.layer
 		if ids.has(p.item) or slots.has(slot): return false
+		if Forge.is_layer(p.definition,catalog):
+			if p.has("named") and not NamedMail.valid_projection(p,catalog,claimed_mail): return false
+			if not d.layer in Forge.LAYERS.get(d.group,[]): return false
+			forge_parts += 1
+			fitted[d.group][d.layer] = p.definition
 		ids[p.item] = true; slots[slot] = true
 		var pool = "helmet" if d.group == "head" else ("padding" if d.layer == "base" else "armor")
 		if p.get("pool") != pool or p.get("group") != d.group or p.get("layer") != d.layer: return false
@@ -99,7 +108,8 @@ static func valid_battle_parts(value: Variant, catalog: Dictionary) -> bool:
 			if not p.get(field) is int or p[field] < 0: return false
 		if p.has("named") and p.weight != int(d.get("weight",0)): return false
 		if p.maximum != d.durability or p.condition > p.maximum or not p.weight in [0,int(d.get("weight",0))]: return false
-	return true
+	if forge_parts == 0: return value.size() <= 11  # Legacy rules and ceiling unchanged.
+	return forge_parts == value.size() and Forge.conflict(fitted.body,"body").is_empty() and Forge.conflict(fitted.head,"head").is_empty()
 
 static func damage_parts(u: Dictionary, pool: String, damage: int) -> void:
 	var order: Array = DAMAGE_ORDER[pool].duplicate()
@@ -107,6 +117,18 @@ static func damage_parts(u: Dictionary, pool: String, damage: int) -> void:
 	for layer in order:
 		for p in u.armor_parts:
 			if p.pool != pool or p.layer != layer: continue
+			var loss = mini(damage,p.condition)
+			p.condition -= loss; damage -= loss
+			if damage <= 0: return
+	# Keep established wear priority. New Forge pieces in other positions can
+	# still own protection, so spend any remaining wear on them in rail order.
+	if damage <= 0: return
+	var group: String = GROUPS[pool]
+	for layer: String in Forge.LAYERS[group]:
+		if layer in order: continue
+		for p in u.armor_parts:
+			if p.pool != pool or p.layer != layer or p.get("group","") != group: continue
+			if not str(p.get("definition","")).begins_with("forge:"): continue
 			var loss = mini(damage,p.condition)
 			p.condition -= loss; damage -= loss
 			if damage <= 0: return

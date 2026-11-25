@@ -87,11 +87,11 @@ func present(unit: Dictionary, catalog: Dictionary, actor, battle) -> void:
  var reserves: Array = Arsenal.bag_slots(unit)
  for slot: String in reserves:
   var item: Dictionary = unit.get("arms",{}).get(slot,{})
-  carried.append("Reserve %s · " % slot.trim_prefix("carry")+Presentation.identity(item,catalog))
-  full_carried.append(slot.to_upper()+"\n"+Equipment.item_details(item,catalog))
- carried_label.text = "CARRIED ARMS · %d RESERVES\n" % reserves.size()+"\n".join(carried)
+  carried.append("Pocket %s · " % slot.trim_prefix("carry")+Presentation.identity(item,catalog))
+  full_carried.append("POCKET %s\n" % slot.trim_prefix("carry")+Equipment.item_details(item,catalog))
+ carried_label.text = "POCKETS · %d\n" % reserves.size()+"\n".join(carried)
  carried_label.visible = true
- carried_notes.text = "CARRIED ARMS\n"+"\n\n".join(full_carried)
+ carried_notes.text = "POCKETS\n"+"\n\n".join(full_carried)
  art_note.text = Equipment.diagnostics_text(actor.render_diagnostics())
  omission_label.text = Presentation.omission(actor.render_diagnostics())
  details_panel.hide();details.scroll_vertical = 0;provenance.scroll_vertical = 0

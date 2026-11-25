@@ -64,6 +64,9 @@ static func detail(app, selected: String) -> void:
 	elif v.carried:
 		paragraph(app,"The raiders have the cargo and are returning to camp. Intercept them before the goods reach their stores.",370)
 		app.button("traffic_intercept","PURSUE RAIDERS",Rect2(1030,505,364,45),not c.over(),true)
+	elif c.has_method("can_follow_freight") and c.active.get("kind")=="freight_escort" and c.active.get("shipment")==id:
+		paragraph(app,"Your signed caravan. Wait for departure or follow it to the receiving town. The road is not secured.",370)
+		app.button("traffic_escort","FOLLOW ESCORT",Rect2(1030,505,364,45),c.can_follow_freight(id),true)
 	else:
 		paragraph(app,"Waiting to depart." if cargo.status == "waiting" else "Moving along the trade road. Travel alongside it to watch for raiders. A company escort contract is still taken at its origin town.",370)
 		app.button("traffic_approach","APPROACH CARAVAN",Rect2(1030,505,364,45),not c.over(),true)
@@ -86,7 +89,9 @@ static func action(app, id: String) -> bool:
 		app.world_selected = "wagon:"+id.trim_prefix("convoy_"); return true
 	if not id.begins_with("traffic_"): return false
 	var key: String = app.world_selected.get_slice(":",1)
-	if id == "traffic_inspect": c.traffic.inspect_trace(c,key)
+	if id == "traffic_escort":
+		if selected_wagon(app,key) and c.has_method("begin_freight_follow"):c.begin_freight_follow(key)
+	elif id == "traffic_inspect": c.traffic.inspect_trace(c,key)
 	elif id == "traffic_trace_travel" and c.traffic.traces.has(key): c.begin_travel(c.traffic.traces[key].position)
 	elif id == "traffic_follow" and not ow.tracks.enabled and c.traffic.traces.has(key) and c.traffic.traces[key].inspected:
 		var target: String = c.traffic.traces[key].site
@@ -98,3 +103,6 @@ static func action(app, id: String) -> bool:
 				if id == "traffic_intercept": c.traffic.pursuit = v.raider
 	app.write_save(false)
 	return true
+
+static func selected_wagon(app,id: String) -> bool:
+	return app.world_selected == "wagon:"+id and app.world_controls_available()

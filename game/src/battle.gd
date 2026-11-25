@@ -11,6 +11,8 @@ var perk_rules = false
 var tactical_ai = false
 var engagement_ai = false
 var axe_mace_rules = false
+# Explicit rules cohort; absent in historical battles and their command replays.
+var mace_stun_rules := false
 var hammer_dagger_rules = false
 var inventory_rules = false
 var double_grip_rules = false
@@ -29,6 +31,24 @@ var activated: Array = []
 var finished: Array = []
 var waited: Array = []
 var turn_scores: Dictionary = {}
+var _tactical_morale := false
+# IDs remain in their original normal/Wait buckets (with their original AP).
+# A newly routed nonactive actor falls behind both buckets for this round.
+var _morale_deferred: Array = []
+var _morale_pressure: Array[int] = []
+var _morale_initial_board := false
+var _morale_company_levels: Array[int] = []
+enum MoraleMotion { VOLUNTARY, FORCED }
+enum MoraleEvent { WOUND, ALLY_DEATH, ENEMY_DEATH, ALLY_ROUT, ENGAGE, DISPLACE, SELF_RALLY, RALLY, COMPATIBILITY }
+const MORALE_REASONS := {
+	MoraleEvent.WOUND:"flesh wound", MoraleEvent.ALLY_DEATH:"ally fell", MoraleEvent.ENEMY_DEATH:"enemy fell",
+	MoraleEvent.ALLY_ROUT:"ally fleeing", MoraleEvent.ENGAGE:"nearby enemies", MoraleEvent.DISPLACE:"forced into danger",
+	MoraleEvent.SELF_RALLY:"self-rally", MoraleEvent.RALLY:"rally the troops",
+}
+# Ashen encounter equivalents, not a retail enemy or settlement XP table.
+const MORALE_BANDIT_XP := {"Bandit thug":100,"Outlaw":130,"Raider":160,"Veteran deserter":220}
+const MORALE_UNDEAD_XP := {"archer":60,"spearman":90,"thrall":90,"guard":120,"sentinel":150,
+	"barrow_lord":250,"watch_captain":250,"buried_king":250,"warden":250}
 const Armor = preload("res://src/armor.gd")
 var equipment_catalog_override: Dictionary = {}
 var defer_initial_round := false
@@ -60,6 +80,7 @@ var rng_state = 1
 var seed_value = 1
 var held: Array = [0, 0]
 var commands: Array = []
+var _rally_spent: Dictionary = {}
 var map_id = "ford"
 var objective = "hold"
 const ORDERS = {"free":"Free order", "line":"Shield line", "loose":"Loose order"}
@@ -78,6 +99,80 @@ var _personal: Dictionary = {}
 var _personal_targets: Dictionary = {}
 var _public_events: Array = [[],[]]
 var _movement_cache: Dictionary = {}
+# Encounter-local overlay. The preview only checkpoints before battle.
+const TERRAIN_WORK_AP := 6
+const TERRAIN_WORK_FATIGUE := 10
+const TERRAIN_WORK_SEED_SALT := 0x5445525241494E # "TERRAIN"; disjoint from combat's seed domain.
+const TERRAIN_WORK_SPECS := {
+	"wood":{"obstacle":"tree","terrain":"forest","clear_to":"grass","tool":"axe","name":"Flank tree","verb":"Chop","max_hp":50},
+	"stone":{"obstacle":"wall","terrain":"wall","clear_to":"rubble","tool":"hammer","name":"Weak side wall","verb":"Breach","max_hp":80},
+	"plank":{"obstacle":"wall","terrain":"wall","clear_to":"grass","tool":"axe","name":"Weak plank bay","verb":"Chop","max_hp":50},
+	"wall":{"obstacle":"wall","terrain":"wall","clear_to":"rubble","tool":"hammer","name":"Weak masonry bay","verb":"Breach","max_hp":80},
+}
+var _terrain_work: Dictionary = {}
+var _terrain_work_clears: Dictionary = {} # Cleared cell -> teams that have seen the opening.
+var _terrain_work_rng := RandomNumberGenerator.new()
+const BrokenGateDefense = preload("res://outdoor_fields/broken_gate_defense.gd")
+var _broken_gate_defense: BrokenGateDefense
+
+func configure_broken_gate_defense(center: Vector2i, weak_wall: Vector2i) -> void:
+	# Only the validated Broken Gate deployment enrolls these encounter-local orders.
+	if individual and visibility_enabled:
+		_broken_gate_defense = BrokenGateDefense.new(self,center,weak_wall)
+
+func configure_terrain_work(cells: Dictionary) -> bool:
+	# Broken Gate still enrolls precisely its original two cells, atomically.
+	if not terrain_rules_enabled or not _terrain_work.is_empty() or cells.size() != 2: return false
+	var work := {}
+	for kind: String in ["wood","stone"]:
+		var cell = cells.get(kind)
+		if not cell is Vector2i or work.has(cell): return false
+		var item := _terrain_work_item(cell,kind)
+		if item.is_empty(): return false
+		work[cell] = item
+	_terrain_work = work
+	return true
+
+func configure_fort_terrain_work(cell: Vector2i, kind: String) -> bool:
+	# The caller has installed the exact validated, fixed V5 designation.
+	if not terrain_rules_enabled or not _terrain_work.is_empty() or kind not in ["plank","wall"]: return false
+	var item := _terrain_work_item(cell,kind)
+	if item.is_empty(): return false
+	_terrain_work[cell] = item
+	return true
+
+func configure_structural_terrain_work(cells: Dictionary) -> bool:
+	# The Session selects structure kinds from a validated, opted-in descriptor.
+	# Preserve the older named work designations, then add all ordinary props atomically.
+	if not terrain_rules_enabled or not has_meta("authored_map") or not commands.is_empty(): return false
+	var names := {"wood":"Tree","plank":"Timber stockade","wall":"Masonry wall"}
+	var added := {}
+	for cell in cells:
+		var kind = cells[cell]
+		if not cell is Vector2i or not names.has(kind): return false
+		if _terrain_work.has(cell): continue
+		var item := _terrain_work_item(cell,kind)
+		if item.is_empty(): return false
+		item.name = names[kind]
+		added[cell] = item
+	_terrain_work.merge(added)
+	return true
+
+func _terrain_work_item(cell: Vector2i, kind: String) -> Dictionary:
+	var spec: Dictionary = TERRAIN_WORK_SPECS[kind]
+	var tile: Dictionary = tiles.get(key(cell),{})
+	if tile.get("obstacle") != spec.obstacle or tile.get("terrain") != spec.terrain or not tile.get("blocked",false) or not tile.get("vision_blocking",false): return {}
+	return {"kind":kind,"hp":spec.max_hp,"max_hp":spec.max_hp,"name":spec.name,"verb":spec.verb}
+
+func terrain_work_at(cell: Vector2i) -> Dictionary:
+	# Authoritative tile metadata; callers qualify fog with tile_visible().
+	return _terrain_work.get(cell,{}).duplicate()
+
+func terrain_work_cells() -> Array:
+	return _terrain_work.keys()
+
+func terrain_work_clear_known(team: int, cell: Vector2i) -> bool:
+	return team in [0,1] and (_terrain_work_clears.get(cell,0) & (1 << team)) != 0
 
 func configure_visibility(profile: Dictionary = {}) -> bool:
 	var radius = profile.get("radius",7) # Provisional day radius; not a parity claim.
@@ -89,6 +184,9 @@ func configure_visibility(profile: Dictionary = {}) -> bool:
 	_visible = [{},{}]; _explored = [{},{}]; _known = [{},{}]
 	_public_events = [[],[]]
 	refresh_visibility()
+	if _morale_initial_board:
+		_seed_morale_pressure()
+		_morale_initial_board = false
 	log_public_event(objective_text(),[0,1])
 	return true
 
@@ -107,6 +205,8 @@ func refresh_visibility() -> void:
 			if living(target) and _personal[int(u.id)].has(key(pos(target))): _personal_targets[int(u.id)][int(target.id)] = true
 	for team in 2:
 		_explored[team].merge(_visible[team],true)
+		for cell: Vector2i in _terrain_work_clears:
+			if _visible[team].has(key(cell)): _terrain_work_clears[cell] |= 1 << team
 		_known[team] = {}
 		for u in units:
 			if u.side != team and living(u) and _visible[team].has(key(pos(u))): _known[team][int(u.id)] = true
@@ -119,6 +219,10 @@ func tile_visible(team: int, cell: Vector2i) -> bool:
 
 func tile_explored(team: int, cell: Vector2i) -> bool:
 	return team in [0,1] and tiles.has(key(cell)) and (not visibility_enabled or _explored[team].has(key(cell)))
+
+func unit_can_see_tile(observer_id: int, cell: Vector2i) -> bool:
+	# Unlike tile_visible(), this must not inherit the side's sight or fog-off truth.
+	return visibility_enabled and _personal.get(observer_id,{}).has(key(cell))
 
 func unit_visible(team: int, id: int) -> bool:
 	if not team in [0,1] or id < 0 or id >= units.size(): return false
@@ -151,7 +255,12 @@ func configure_board(board_width: int, board_height: int, goal_cell: Vector2i) -
 	return true
 
 func setup(seed_number: int = 7391, field: String = "ford", mission: String = "hold", advanced_weapons: bool = false, individual_turns: bool = false, pooled_damage: bool = false, baseline_combat: bool = false, personal_perks: bool = false, expanded_roster: bool = false, ambushed: bool = false) -> void:
+	_tactical_morale = false; _morale_deferred.clear(); _morale_pressure.clear(); _morale_initial_board = false
+	_morale_company_levels.clear()
 	_board_size = Vector2i.ZERO; _board_goal = Vector2i.ZERO
+	_terrain_work.clear()
+	_terrain_work_clears.clear()
+	_broken_gate_defense = null
 	visibility_enabled = false; visibility_profile = {}; _personal = {}; _personal_targets = {}; _public_events = [[],[]]; _movement_cache.clear()
 	_visible = [{},{}]; _explored = [{},{}]; _known = [{},{}]
 	terrain_rules_enabled = false
@@ -176,10 +285,12 @@ func setup(seed_number: int = 7391, field: String = "ford", mission: String = "h
 	objective = mission
 	rng_state = maxi(1, seed_number % 2147483647)
 	seed_value = rng_state
+	_terrain_work_rng.seed = seed_value ^ TERRAIN_WORK_SEED_SALT
 	units.clear()
 	tiles.clear()
 	events.clear()
 	commands.clear()
+	_rally_spent.clear()
 	round_no = 1
 	side = 0
 	result = ""
@@ -330,7 +441,7 @@ func adjacent_enemies(u: Dictionary, from: Vector2i) -> Array:
 		if terrain_rules_enabled:
 			if v.side != u.side and terrain_controls(v,from): out.append(v.id)
 			continue
-		if fighting(v) and v.side != u.side and distance(from, pos(v)) == 1 and (not core_rules or (not v.weapon in Arsenal.RANGED and absi(tiles[key(from)].height-tiles[key(pos(v))].height) <= 1)): out.append(v.id)
+		if fighting(v) and not v.get("stunned",false) and v.side != u.side and distance(from, pos(v)) == 1 and (not core_rules or (not v.weapon in Arsenal.RANGED and absi(tiles[key(from)].height-tiles[key(pos(v))].height) <= 1)): out.append(v.id)
 	return out
 
 func shield_neighbors(u: Dictionary, from: Vector2i) -> Array:
@@ -449,6 +560,7 @@ func advance_group(ids: Array, direction: int) -> bool:
 	var links = linked_shields()
 	var sorted = ids.duplicate()
 	sorted.sort()
+	var before := _morale_contacts()
 	for step in preview.steps:
 		var u: Dictionary = units[step.id]
 		u.ap -= step.cost
@@ -461,6 +573,10 @@ func advance_group(ids: Array, direction: int) -> bool:
 		if weapon_rules: cancel_stance(u)
 	if weapon_rules:
 		for id in sorted: spearwall_reactions(id,offset(axial(pos(units[id]))-DIRECTIONS[direction]))
+	if _tactical_morale:
+		for step in preview.steps:
+			var u: Dictionary = units[step.id]
+			if pos(u) == Vector2i(step.q,step.r): _morale_arrival(u,before,MoraleMotion.VOLUNTARY)
 	commands.append(["advance",sorted,direction])
 	log_event("%d soldiers advance together; formation orders remain." % ids.size())
 	report_broken_links(links)
@@ -474,7 +590,7 @@ func step_cost(a: Vector2i, b: Vector2i) -> int:
 	return cost + maxi(0, int(tiles[key(b)].height) - int(tiles[key(a)].height))
 
 func can_act(id: int) -> bool:
-	return id >= 0 and id < units.size() and result.is_empty() and living(units[id]) and units[id].side == side and (not individual or id == active_id)
+	return id >= 0 and id < units.size() and result.is_empty() and living(units[id]) and not units[id].get("stunned",false) and units[id].side == side and (not individual or id == active_id)
 
 func terrain_movement_map(id: int, preview_budget: int = -1) -> Dictionary:
 	if not can_act(id): return {}
@@ -644,12 +760,15 @@ func flee_step(id: int) -> void:
 	var best = pos(u)
 	var edge: int = distances.get(key(best),999999)
 	var paid = 999999
-	for route in movement_map(id).values():
+	var routes := movement_map(id)
+	for route in routes.values():
 		var p: Vector2i = route.path.back()
 		var gap: int = distances.get(key(p),999999)
 		if gap < edge or (gap == edge and best != pos(u) and route.cost < paid):
 			best = p; edge = gap; paid = route.cost
-	if best != pos(u): move_unit(id,best)
+	if best != pos(u):
+		if _tactical_morale: _execute_movement(id,best,routes[key(best)].path,routes[key(best)].cost)
+		else: move_unit(id,best)
 	else: finish_unit(id)
 
 # Transient presentation receipt; deliberately absent from snapshot/restore.
@@ -663,6 +782,7 @@ func movement_path_quote(id: int, path: Array) -> Dictionary:
 	var out = {"valid":false,"cost":0,"fatigue":0}
 	if not can_act(id) or path.is_empty(): return out
 	var u: Dictionary = units[id]
+	if _tactical_morale and u.routed: return out
 	var previous = pos(u)
 	for cell in path:
 		if not cell is Vector2i: return out
@@ -677,6 +797,7 @@ func movement_path_quote(id: int, path: Array) -> Dictionary:
 	return out
 
 func move_unit(id: int, target: Vector2i) -> bool:
+	if _tactical_morale and (not can_act(id) or units[id].routed): return false
 	var reachable = movement_map(id)
 	if not reachable.has(key(target)): return false
 	return _execute_movement(id,target,reachable[key(target)].path,reachable[key(target)].cost)
@@ -684,6 +805,7 @@ func move_unit(id: int, target: Vector2i) -> bool:
 func _execute_movement(id: int, target: Vector2i, path: Array, legacy_cost: int = -1) -> bool:
 	var links = linked_shields()
 	var u: Dictionary = units[id]
+	var began_routed: bool = u.routed
 	if u.side == 0:
 		last_traversed = {"actor":id,"origin":pos(u),"path":[],"serial":int(last_traversed.get("serial",0))+1}
 	if weapon_rules or terrain_rules_enabled or visibility_enabled:
@@ -698,6 +820,7 @@ func _execute_movement(id: int, target: Vector2i, path: Array, legacy_cost: int 
 			if terrain_rules_enabled and (cost >= 999 or u.ap < cost or u.fatigue+fatigue > fatigue_max(u)): break
 			u.ap -= cost; u.fatigue += fatigue
 			if terrain_rules_enabled and departure_stopped(u): break
+			var before := _morale_contacts()
 			u.q = step.x; u.r = step.y
 			if u.side == 0: last_traversed.path.append(step)
 			refresh_visibility()
@@ -709,6 +832,8 @@ func _execute_movement(id: int, target: Vector2i, path: Array, legacy_cost: int 
 					if pos(u) != previous: last_traversed.path.append(pos(u))
 				break
 			if not living(u): break
+			_morale_arrival(u,before,MoraleMotion.VOLUNTARY)
+			if _tactical_morale and not began_routed and u.routed: break
 			if escape_unit(u): break
 	else:
 		var cost = legacy_cost if legacy_cost >= 0 else movement_path_quote(id,path).cost
@@ -915,6 +1040,7 @@ func attack(a: int, b: int) -> bool:
 func strike(a: int, b: int, special: bool = false, reaction: bool = false, paid_fatigue: int = 0, spearwall: bool = false, wall_previous: Vector2i = Vector2i(-1,-1)) -> bool:
 	var u: Dictionary = units[a]
 	var v: Dictionary = units[b]
+	if reaction and u.get("stunned",false): return false
 	var w: Dictionary = weapon_stats(u)
 	# Capture disclosure at strike time, before lethal damage changes sight.
 	var log_viewers = strike_log_viewers(a,b)
@@ -986,6 +1112,7 @@ func strike(a: int, b: int, special: bool = false, reaction: bool = false, paid_
 	if actual > v.worst_hit:
 		v.worst_hit = actual
 		v.worst_head = head
+	var death_witnesses: Array = unit_event_audience(v) if _tactical_morale and damage >= v.hp else []
 	v.hp = maxi(0, int(v.hp) - damage)
 	refresh_visibility()
 	if perk_rules: after_perk_attack(u,v,special,reaction,true,paid_fatigue,head)
@@ -998,9 +1125,10 @@ func strike(a: int, b: int, special: bool = false, reaction: bool = false, paid_
 		log_event("%s hits %s: %d HP / %d %s / %d padding%s." % [u.name, v.name, actual, armor_loss, "helm" if head else "mail",padding_loss,"; %d%% hit chance" % chance if not visibility_enabled else ""])
 		combat_feedback.emit({"id":b,"kind":"hit","hp":actual,"armor":armor_loss,"padding":padding_loss,"layer":layer,"head":head,"strike_viewers":feedback_viewers,"text":"-%d HP / -%d %s" % [actual,armor_loss,"helm" if head else "mail"]})
 	if v.hp == 0:
+		v.erase("stunned")
 		u.kills += 1
 		if core_rules:
-			death_morale(u,v)
+			death_morale(u,v,death_witnesses)
 		elif individual:
 			for other in units:
 				if other.side == u.side and fighting(other) and distance(pos(other),pos(v)) <= 3: morale_check(other,0,"enemy fell",true)
@@ -1009,12 +1137,17 @@ func strike(a: int, b: int, special: bool = false, reaction: bool = false, paid_
 		for other in units:
 			if not core_rules and fighting(other) and other.side == v.side and distance(pos(other), pos(v)) <= 3: morale_loss(other, 24+(8 if v.id in other.comrades else 0),"comrade fell" if v.id in other.comrades else "ally fell")
 	elif core_rules:
-		if actual >= 15: baseline_morale_check(v,-40.0*(1.0-float(v.hp)/v.max_hp),"flesh wound")
+		if actual >= 15:
+			var modifier: float = -40.0*(1.0-float(v.hp)/v.max_hp)
+			if _tactical_morale: _tactical_check(v,modifier,MoraleEvent.WOUND)
+			else: baseline_morale_check(v,modifier,"flesh wound")
 	elif damage >= 8:
 		morale_loss(v, 10 + (8 if v.hp < v.max_hp / 3.0 else 0),"severe wound" if v.hp < v.max_hp / 3.0 else "flesh wound")
 	if weapon_rules and special and fighting(v):
 		if Arsenal.family(u.weapon) == "mace":
-			if axe_mace_rules: apply_stagger(v,"Staggering Blow")
+			if mace_stun_rules:
+				if not reaction: _resolve_mace_stun(u,v)
+			elif axe_mace_rules: apply_stagger(v,"Staggering Blow")
 			else:
 				v.ap = maxi(0,v.ap-2); v.stagger = 2
 				log_event(v.name+" is staggered: -2 current and next-turn AP.")
@@ -1022,10 +1155,12 @@ func strike(a: int, b: int, special: bool = false, reaction: bool = false, paid_
 		elif Arsenal.family(u.weapon) == "polearm" and not (perk_rules and vital_state(v).indomitable):
 			var destination = hook_tile(u,v)
 			if destination != pos(v):
+				var before := _morale_contacts()
 				v.q = destination.x; v.r = destination.y; v.guard = false; cancel_stance(v)
 				refresh_visibility()
 				if perk_rules: reset_segment(v)
 				log_event(v.name+" is dragged one hex out of position.")
+				_morale_arrival(v,before,MoraleMotion.FORCED)
 	if hammer_dagger_rules and not reaction and special and Arsenal.family(u.weapon) == "hammer" and Perks.has(u,"deep_impact") and actual > 0 and fighting(v):
 		apply_deep_impact(v)
 	if axe_mace_rules and not reaction and Arsenal.family(u.weapon) == "mace" and Perks.has(u,"concussive_strikes") and head and actual+armor_loss+padding_loss > 0:
@@ -1143,6 +1278,7 @@ func recover(id: int) -> bool:
 func withdraw(id: int, target: Vector2i) -> bool:
 	if not can_act(id) or units[id].ap < 4 or units[id].fatigue+12 > fatigue_max(units[id]): return false
 	var u: Dictionary = units[id]
+	if _tactical_morale and u.routed: return false
 	if visibility_enabled and not tile_visible(u.side,target): return false
 	if distance(pos(u), target) != 1 or at(target) != -1 or step_cost(pos(u), target) >= 999: return false
 	var foes = adjacent_enemies(u, pos(u))
@@ -1161,10 +1297,12 @@ func withdraw(id: int, target: Vector2i) -> bool:
 	var links = linked_shields()
 	if living(u) and not stopped:
 		var previous = pos(u)
+		var before := _morale_contacts()
 		u.q = target.x
 		u.r = target.y
 		refresh_visibility()
 		if weapon_rules: spearwall_reactions(id,previous)
+		if pos(u) != previous: _morale_arrival(u,before,MoraleMotion.VOLUNTARY)
 		if perk_rules: reset_segment(u)
 	report_broken_links(links)
 	check_result()
@@ -1390,15 +1528,20 @@ func coordinated_step() -> void:
 				var score = ai_hit_score(id,v.id)+(1.0-float(v.hp)/v.max_hp)*35+(18 if v.id == enemy_plan.focus else 0)
 				if score > target_score: target_score = score; target = v.id
 		if target >= 0: attack(id,target); return
-		var best_pos = pos(u)
-		var best_score = coordinated_position_score(u,best_pos)
-		for route in movement_map(id).values():
-			var p: Vector2i = route.path.back()
-			var score = coordinated_position_score(u,p)-route.cost*0.18
-			# Preserve an attack after moving when possible; no free follow-up.
-			if u.ap-route.cost < weapon_stats(u).ap: score -= 2.5
-			if score > best_score+0.01: best_score = score; best_pos = p
-		if best_pos != pos(u): move_unit(id,best_pos); return
+		var post := BrokenGateDefense.NO_POST if _broken_gate_defense == null else _broken_gate_defense.post_for(self,u)
+		if post != BrokenGateDefense.NO_POST:
+			var path := _broken_gate_defense.approach(self,u,post)
+			if not path.is_empty() and move_unit_path(id,path): return
+		else:
+			var best_pos = pos(u)
+			var best_score = coordinated_position_score(u,best_pos)
+			for route in movement_map(id).values():
+				var p: Vector2i = route.path.back()
+				var score = coordinated_position_score(u,p)-route.cost*0.18
+				# Preserve an attack after moving when possible; no free follow-up.
+				if u.ap-route.cost < weapon_stats(u).ap: score -= 2.5
+				if score > best_score+0.01: best_score = score; best_pos = p
+			if best_pos != pos(u): move_unit(id,best_pos); return
 		if not u.guard and guard_unit(id): return
 		finish_unit(id)
 		return
@@ -1560,6 +1703,9 @@ func snapshot() -> Dictionary:
 	saved["damage_metrics_version"] = 1
 	saved["damage_received_version"] = 1
 	saved["withdrawing"] = withdrawing
+	if mace_stun_rules and core_rules and perk_rules and individual and weapon_rules: saved["mace_stun_rules"] = true
+	if _tactical_morale:
+		saved["tactical_morale"] = {"version":1,"company_levels":_morale_company_levels.duplicate(),"pressure":_morale_pressure.duplicate(),"deferred":_morale_deferred.duplicate()}
 	if roster_rules: saved["ambush"] = ambush
 	return saved
 
@@ -1626,10 +1772,13 @@ func restore(data: Variant) -> bool:
 	var baseline = data.get("core_rules",false) if data.version >= 12 else false
 	if data.version >= 12 and not data.has("core_rules"): return false
 	if not baseline is bool or (baseline and not pooled): return false
+	if data.has("tactical_morale") and (not baseline or not new_turns or not _valid_tactical_morale(data,slots)): return false
 	var check_weapons: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/weapons.json" if baseline else "res://data/legacy_weapons_v15.json" if pooled else "res://data/legacy_weapons_v14.json"))
 	var personal = data.get("perk_rules",false) if data.version >= 13 else false
 	if not personal is bool or (personal and not baseline) or (data.version >= 13 and not data.has("perk_rules")): return false
 	if data.version >= 15 and not personal: return false
+	var stun_rules = data.has("mace_stun_rules")
+	if stun_rules and (not data.mace_stun_rules is bool or not data.mace_stun_rules or not personal or data.version < 18): return false
 	var equipment_ids = {}
 	var occupied: Dictionary = {}
 	for i in data.units.size():
@@ -1656,6 +1805,7 @@ func restore(data: Variant) -> bool:
 		if not u.get("stance") in ["","riposte","brace"] or not u.get("reactions") is int or u.reactions < 0 or u.reactions > 2 or not u.get("stagger") is int or not u.stagger in [0,2]: return false
 		if (u.stance == "riposte" and Arsenal.family(u.weapon) != "sword") or (u.stance == "brace" and Arsenal.family(u.weapon) != "spear"): return false
 		if u.stance.is_empty() and u.reactions != 0: return false
+		if u.has("stunned") and (not stun_rules or not u.stunned is bool or not u.stunned or u.get("ap") != 0 or u.get("guard") != false or not u.stance.is_empty() or data.active_id == i): return false
 		if data.version < 7: u["armor_parts"] = []; u["load"] = 0
 		if not Armor.valid_battle_parts(u.get("armor_parts"),check_catalog) or not u.get("load") is int or u.load < 0 or u.load > 100: return false
 		for part in u.armor_parts:
@@ -1745,6 +1895,7 @@ func restore(data: Variant) -> bool:
 	tactical_ai = data.version >= 15
 	engagement_ai = data.version >= 17
 	axe_mace_rules = data.version >= 18
+	mace_stun_rules = stun_rules
 	hammer_dagger_rules = data.version >= 19
 	inventory_rules = data.version >= 20
 	double_grip_rules = data.version >= 16
@@ -1756,12 +1907,36 @@ func restore(data: Variant) -> bool:
 	side = int(data.side)
 	result = str(data.result)
 	withdrawing = data.get("withdrawing",false)
+	if data.has("tactical_morale"):
+		_tactical_morale = true
+		_morale_company_levels.assign(data.tactical_morale.company_levels)
+		_morale_pressure.assign(data.tactical_morale.pressure)
+		_morale_deferred = data.tactical_morale.deferred.duplicate()
 	rng_state = int(data.rng)
 	held = data.held.duplicate()
 	events = data.events.duplicate()
 	commands = data.commands.duplicate(true)
+	_rally_spent.clear()
 	enemy_plan = plan.duplicate(true)
 	shared_line = shared.duplicate(true)
+	return true
+
+func _valid_tactical_morale(data: Dictionary, slots: int) -> bool:
+	var morale: Variant = data.tactical_morale
+	if not morale is Dictionary or morale.size() != 4 or not morale.get("version") is int or morale.version != 1: return false
+	if not morale.get("company_levels") is Array or morale.company_levels.size() != slots: return false
+	for i in slots:
+		var level: Variant = morale.company_levels[i]
+		if not level is int or level < 0 or level > 11: return false
+		if level == 0 and data.units[i].hp > 0: return false
+	if not morale.get("pressure") is Array or morale.pressure.size() != data.units.size(): return false
+	for count in morale.pressure:
+		if not count is int or count < 1 or count > 6: return false
+	var pending := Array(data.turn_queue)+Array(data.delayed)
+	if not morale.get("deferred") is Array or morale.deferred.size() > pending.size(): return false
+	for id in morale.deferred:
+		if not id is int or not id in pending: return false
+		pending.erase(id)
 	return true
 
 func normalize_json_numbers(value: Variant) -> Variant:
@@ -1845,6 +2020,9 @@ func ammo_count(u: Dictionary) -> int:
 func action_quote(id: int, action: String, target: int = -1, hex: Vector2i = Vector2i(-1,-1), slot: String = "") -> Dictionary:
 	# Detached values only; never sample RNG, restore a snapshot or mutate wear.
 	var q = {"action":action,"name":action.capitalize(),"legal":false,"reason":"Select a fighting soldier on their turn.","ap":0,"fatigue":0,"target_kind":"none","hit":{},"damage":{},"ammo":0}
+	if action == "terrain_work": return _terrain_work_quote(q,id,target,hex)
+	if action == "shield_bash": return _shield_bash_quote(q,id,target)
+	if action == Perks.RALLY: return _rally_action_quote(q,id)
 	if id < 0 or id >= units.size(): return q
 	var u: Dictionary = units[id]
 	if action in ["basic","special"] and not target_visibility_reason(id,target).is_empty():
@@ -1858,7 +2036,7 @@ func action_quote(id: int, action: String, target: int = -1, hex: Vector2i = Vec
 			"recover":
 				q.ap = int(u.ap); q.reason = recover_reason(id)
 			"wait": q.reason = "" if can_wait(id) else "Cannot wait again or no other activation remains."
-			"end": q.reason = "" if can_act(id) else "Only the active soldier can finish."
+			"end": q.reason = "" if can_act(id) and not (_tactical_morale and u.routed) else "Only the active soldier can finish."
 			"switch":
 				q.name = "Switch carried item"
 				q.ap = switch_ap(u,slot); q.fatigue = switch_fatigue(); q.reason = switch_reason(id,slot)
@@ -1889,6 +2067,55 @@ func action_quote(id: int, action: String, target: int = -1, hex: Vector2i = Vec
 			q["preview_reason"] = "Exact forecast unavailable: nearby ground is out of sight."
 	return q
 
+func _shield_bash_quote(q: Dictionary, id: int, target: int) -> Dictionary:
+	q.name = "Bash"; q.ap = 4; q.fatigue = 20; q.target_kind = "enemy"; q["ready"] = false
+	if not core_rules or not can_act(id) or not fighting(units[id]): return q
+	var u: Dictionary = units[id]
+	if perk_rules: q.fatigue = Perks.fatigue_cost(u,q.fatigue,false)
+	var shield: Dictionary = u.get("arms",{}).get("shield",{})
+	if not Arsenal.shield(shield.get("definition","")) or int(shield.get("condition",0)) <= 0:
+		q.reason = "Bash needs a working shield."
+	elif u.ap < q.ap:
+		q.reason = "Needs %d AP." % q.ap
+	elif u.fatigue+q.fatigue > fatigue_max(u):
+		q.reason = "Needs %d free fatigue." % q.fatigue
+	else:
+		q.ready = true
+	if not q.ready: return q
+	q.reason = "Choose an adjacent enemy."
+	if target < 0 or target >= units.size(): return q
+	var sight := target_visibility_reason(id,target)
+	if not sight.is_empty(): q.reason = sight; return q
+	var v: Dictionary = units[target]
+	if not living(v) or v.side == u.side: return q
+	var source := pos(u); var origin := pos(v)
+	if distance(source,origin) != 1: return q
+	q.reason = TerrainRules.attack_reason(tiles.get(key(source),{}),tiles.get(key(origin),{}),1,1,1,false)
+	if not q.reason.is_empty(): return q
+	if v.get("entangled",false) or (perk_rules and vital_state(v).indomitable):
+		q.reason = "This target cannot be knocked back."
+		return q
+	# Odd-row offsets are not vectors. Continue the axial direction first,
+	# then try the two rear diagonals in stable order. Refuse before probing
+	# any earlier candidate under fog, regardless of its true occupancy.
+	var direction := DIRECTIONS.find(axial(origin)-axial(source))
+	q.reason = "All landing hexes are blocked."
+	for turn: int in [0,-1,1]:
+		var landing := offset(axial(origin)+DIRECTIONS[posmod(direction+turn,6)])
+		if not tiles.has(key(landing)): continue
+		if not tile_visible(u.side,landing):
+			q.reason = "Knock Back landing is not in party sight."
+			return q
+		if at(landing) >= 0 or not TerrainRules.edge(tiles[key(origin)],tiles[key(landing)],1).reason.is_empty(): continue
+		q["destination"] = {"q":landing.x,"r":landing.y}
+		q.legal = true; q.reason = ""
+		if combat_preview_neighborhood_visible(id,target):
+			q.hit = baseline_hit_breakdown(id,target,false,false,true)
+		else:
+			q["preview_reason"] = "Exact forecast unavailable: nearby ground is out of sight."
+		break
+	return q
+
 func combat_preview_neighborhood_visible(actor: int, target: int) -> bool:
 	if not visibility_enabled: return true
 	# Shield/support/spacing/surround/Target Practice/ribs read adjacent cells.
@@ -1902,11 +2129,70 @@ func combat_preview_neighborhood_visible(actor: int, target: int) -> bool:
 			if not tile_visible(team,cell): return false
 	return true
 
+func _terrain_work_quote(q: Dictionary, id: int, target: int, cell: Vector2i) -> Dictionary:
+	q.name = "Terrain work"; q.target_kind = "hex"
+	q.ap = TERRAIN_WORK_AP; q.fatigue = TERRAIN_WORK_FATIGUE
+	if id < 0 or id >= units.size(): return q
+	var u: Dictionary = units[id]
+	if target != -1 or not tile_visible(u.side,cell):
+		q.reason = "Choose a visible terrain hex."
+		return q
+	var work := terrain_work_at(cell)
+	if work.is_empty():
+		q.reason = "No terrain work at this hex."
+		return q
+	q.name = work.verb
+	q["terrain_work"] = work
+	var bounds := _terrain_weapon_bounds(u,work.kind)
+	if bounds.x >= 0:
+		q["terrain_damage"] = {"min":_terrain_work_power(work,bounds.x),"max":_terrain_work_power(work,bounds.y)}
+	q.reason = _terrain_work_reason(id,u,cell,work,bounds.x >= 0)
+	q.legal = q.reason.is_empty()
+	return q
+
+func _terrain_weapon_bounds(u: Dictionary, kind: String) -> Vector2i:
+	# The held definition, not the effective (rolled) item profile or a reserve.
+	var invalid := Vector2i(-1,-1)
+	var held_id = u.arms.weapon.get("definition","")
+	if not held_id is String or held_id != u.weapon or Arsenal.family(held_id) != TERRAIN_WORK_SPECS[kind].tool: return invalid
+	var definition = weapons.get(held_id)
+	if not definition is Dictionary: return invalid
+	var low = definition.get("min")
+	var high = definition.get("max")
+	for value in [low,high]:
+		# Authored JSON gives integer-valued floats. Keep the inclusive span in int32.
+		if not (value is int or value is float) or not is_finite(value): return invalid
+		if value < 0 or value >= 2147483647 or value != int(value): return invalid
+	return Vector2i(int(low),int(high)) if low <= high else invalid
+
+@warning_ignore("integer_division")
+func _terrain_work_power(work: Dictionary, roll: int) -> int:
+	var power := 21 + (3 * roll) / 10 if TERRAIN_WORK_SPECS[work.kind].tool == "hammer" else 18 + roll / 4
+	# Power is independent of remaining HP, but a full-health tile must survive one swing.
+	return mini(power,int(work.max_hp)-1)
+
+func _terrain_work_reason(id: int, u: Dictionary, cell: Vector2i, work: Dictionary, has_tool: bool) -> String:
+	if not can_act(id) or not fighting(u): return "Select a fighting soldier on their turn."
+	if work.hp <= 0: return "This terrain has already been cleared."
+	if distance(pos(u),cell) != 1: return "Work from an adjacent hex."
+	if absi(int(tiles[key(pos(u))].height)-int(tiles[key(cell)].height)) > 1: return "Terrain is out of reach vertically."
+	if at(cell) != -1: return "The terrain hex is occupied."
+	if not has_tool:
+		if work.kind == "plank": return "Equip an axe to chop these planks."
+		return "Equip an axe to chop this tree." if work.kind == "wood" else "Equip a hammer or maul to breach this wall."
+	if u.ap < TERRAIN_WORK_AP: return "Needs %d AP." % TERRAIN_WORK_AP
+	if u.fatigue+TERRAIN_WORK_FATIGUE > fatigue_max(u): return "Needs %d free fatigue." % TERRAIN_WORK_FATIGUE
+	return ""
+
 func perform_action(id: int, action: String, target: int = -1, hex: Vector2i = Vector2i(-1,-1), slot: String = "") -> bool:
 	# Revalidate at commit; a previously displayed quote grants no authority.
-	if not action_quote(id,action,target,hex,slot).legal: return false
+	var q := action_quote(id,action,target,hex,slot)
+	if not q.legal: return false
 	match action:
 		"basic","special": return use_weapon(id,action == "special",target)
+		"terrain_work": _apply_terrain_work(id,hex); return true
+		"shield_bash": _apply_shield_bash(id,target,q); return true
+		Perks.RALLY: _apply_rally_action(id,q); return true
 		"guard": return guard_unit(id)
 		"recover": return recover(id)
 		"wait": return wait_unit(id)
@@ -1914,6 +2200,132 @@ func perform_action(id: int, action: String, target: int = -1, hex: Vector2i = V
 		"rotation","footwork","indomitable": return use_perk(id,action,hex)
 		"end": end_turn(); return true
 	return false
+
+func _rally_action_quote(q: Dictionary, id: int) -> Dictionary:
+	q.name = "Rally the Troops"; q.ap = 5; q.fatigue = 25
+	# In the authored campaign tactical state is ephemeral; stock active saves
+	# must not acquire an action whose in-flight status they cannot serialize.
+	if not (core_rules and perk_rules and individual and visibility_enabled and terrain_rules_enabled and has_meta("authored_map")): return q
+	if id < 0 or id >= units.size() or units[id].side != 0: return q
+	var u: Dictionary = units[id]
+	if withdrawing:
+		q.reason = "The company is withdrawing."
+	elif not can_act(id) or not fighting(u): return q
+	elif not Perks.has(u,Perks.RALLY): q.reason = "Learn Rally the Troops in camp."
+	elif _rally_spent.has(id): q.reason = "Already rallied this activation."
+	else:
+		q.fatigue = Perks.fatigue_cost(u,25,false)
+		if u.ap < q.ap: q.reason = "Needs %d AP." % q.ap
+		elif u.fatigue + q.fatigue > fatigue_max(u): q.reason = "Needs %d free fatigue." % q.fatigue
+		else: q.reason = ""; q.legal = true
+	return q
+
+func _rally_action_resolve(u: Dictionary) -> int:
+	# Optional morale-core seam. When independent on the pinned parent, use
+	# its Resolve components, not resolve_chance's adjacency and 0..95 clamp.
+	if has_method("effective_resolve"): return int(call("effective_resolve",u))
+	var resolve := floori(u.resolve*(1.25 if Perks.has(u,"fortified_mind") else 1.0))
+	resolve += comrade_support(u)-u.strain_penalty-u.grief_penalty+(10 if u.temperament == "stoic" else 0)+(15 if "steadfast" in u.perks else 0)
+	return floori(resolve*(1.0+minf(0,u.morale_state)*0.1))
+
+func _rally_action_check(u: Dictionary, modifier: float) -> bool:
+	# Prefer the peer's single transition entry. The pinned parent already
+	# owns ordinary positive rolls; only its explicit rescue needs adapting.
+	if has_method("rally_morale"): return bool(call("rally_morale",u,modifier))
+	var before: int = u.morale_state
+	if before != -3:
+		baseline_morale_check(u,modifier,"Rally the Troops",true)
+		return u.morale_state != before
+	if not u.routed or roll(1,100) > resolve_chance(u,modifier,true): return false
+	u.routed = false; u.morale_state = -1; u.morale = morale_number(-1); u.fleeing_rounds = 0
+	combat_feedback.emit({"id":u.id,"kind":"morale","text":"RALLIED · WAVERING","audience":[u.side]})
+	return true
+
+func _apply_rally_action(id: int, q: Dictionary) -> void:
+	var u: Dictionary = units[id]
+	_rally_spent[id] = true
+	u.ap -= q.ap; u.fatigue += q.fatigue
+	clear_weapon_sequence(u)
+	commands.append([Perks.RALLY,id])
+	log_event("%s uses Rally the Troops." % u.name,[u.side])
+	var bonus := floori(_rally_action_resolve(u)*0.4)
+	var rallied := 0
+	for ally: Dictionary in units:
+		if ally.id == id or ally.side != u.side or not living(ally) or ally.get("faction","") == "undead" or _rally_spent.has(ally.id): continue
+		if ally.get("morale_state",0) not in [-3,-2,-1]: continue
+		var gap := distance(pos(u),pos(ally))
+		if gap > 4: continue
+		if not _rally_action_check(ally,float(bonus if ally.routed else bonus-gap*10)): continue
+		_rally_spent[ally.id] = true
+		rallied += 1
+		log_event("%s rallies to %s." % [ally.name,morale_name(ally).to_lower()],[u.side])
+	if rallied == 0: log_event("No ally rallied.",[u.side])
+	else: _movement_cache.clear() # A rescued fighter can control hexes again.
+
+func _apply_shield_bash(id: int, target: int, q: Dictionary) -> void:
+	var u: Dictionary = units[id]; var v: Dictionary = units[target]
+	var audience := [0,1].filter(func(team): return unit_visible(team,id) and unit_visible(team,target))
+	var odds: Dictionary = q.hit
+	if odds.is_empty(): odds = baseline_hit_breakdown(id,target,false,false,true)
+	var hit := roll(1,100) <= int(odds.chance)
+	u.ap -= q.ap; u.fatigue += q.fatigue
+	if perk_rules:
+		u.guard = false
+		clear_sequence(u)
+	if not spearwall_active(u): cancel_stance(u)
+	commands.append(["shield_bash",id,target])
+	if perk_rules:
+		var state := vital_state(u)
+		if Perks.has(u,"fast_adaptation"): state.adaptation = 0 if hit else mini(24,state.adaptation+8)
+		if Perks.has(u,"overwhelm") and not target in activated:
+			var other := vital_state(v); other.overwhelm = mini(2,other.overwhelm+1)
+	if hit:
+		var links := linked_shields()
+		var before := _morale_contacts()
+		# Like Hook's involuntary displacement, bypass paid movement and ZoC.
+		v.q = q.destination.q; v.r = q.destination.r
+		v.fatigue = mini(fatigue_max(v),v.fatigue+10)
+		v.guard = false; cancel_stance(v)
+		if perk_rules: reset_segment(v)
+		refresh_visibility()
+		log_event("%s knocks %s back with a shield bash." % [u.name,v.name],audience)
+		_morale_arrival(v,before,MoraleMotion.FORCED)
+		report_broken_links(links)
+	else:
+		log_event("%s misses %s with a shield bash." % [u.name,v.name],audience)
+	combat_feedback.emit({"id":target,"kind":"shield_bash","hit":hit,"audience":audience})
+
+func _apply_terrain_work(id: int, cell: Vector2i) -> void:
+	var u: Dictionary = units[id]
+	var work: Dictionary = _terrain_work[cell]
+	var bounds := _terrain_weapon_bounds(u,work.kind)
+	u.ap -= TERRAIN_WORK_AP; u.fatigue += TERRAIN_WORK_FATIGUE
+	if not core_rules or perk_rules: u.guard = false
+	cancel_stance(u)
+	clear_weapon_sequence(u)
+	commands.append(["terrain_work",id,cell.x,cell.y])
+	var audience := unit_event_audience(u).filter(func(team): return tile_visible(team,cell))
+	var roll := bounds.x
+	if bounds.x == bounds.y:
+		_terrain_work_rng.randi() # Godot skips the draw for equal randi_range bounds.
+	else:
+		roll = _terrain_work_rng.randi_range(bounds.x,bounds.y)
+	var removed := mini(int(work.hp),_terrain_work_power(work,roll))
+	work.hp -= removed
+	if work.hp == 0:
+		if _broken_gate_defense != null and u.side == 0 and work.kind == "stone":
+			_broken_gate_defense.observe_wall_fall(self,cell)
+		var tile: Dictionary = tiles[key(cell)]
+		tile.terrain = TERRAIN_WORK_SPECS[work.kind].clear_to
+		tile.erase("obstacle")
+		tile.erase("blocked")
+		tile.erase("vision_blocking")
+		_terrain_work_clears[cell] = 0 if visibility_enabled else 3
+		# Refresh both teams and invalidate the path cache before returning.
+		refresh_visibility()
+		log_event("%s: %s — %s cleared." % [u.name,work.verb,work.name],audience)
+	else:
+		log_event("%s: %s — %s damaged." % [u.name,work.verb,work.name],audience)
 
 func primary_attack_name(u: Dictionary) -> String:
 	return str(weapon_stats(u).name) if Undead.intrinsic(u) else Arsenal.primary(u.weapon)
@@ -2104,7 +2516,7 @@ func ai_weapon_step(id: int) -> bool:
 		if not weapon_action_reason(id,true,v.id).is_empty() or not special_info(u.weapon).target: continue
 		var protection: int = v.armor+(v.padding if damage_rules else 0)
 		var shatter_worth = shatter_useful(u,v) if damage_rules else protection > 65
-		var worth = (Arsenal.family(u.weapon) == "axe" and v.shield and v.arms.shield.condition <= (split_shield_damage(u,v) if axe_mace_rules else 24)) or (Arsenal.family(u.weapon) == "mace" and v.stagger == 0 and v.hp > 25 and (not axe_mace_rules or not vital_state(v).indomitable)) or (Arsenal.family(u.weapon) == "hammer" and (shatter_worth or (hammer_dagger_rules and Perks.has(u,"deep_impact") and not impact_active(v) and protection > 0 and v.hp > 25 and ai_hit_score(id,v.id,true) >= 40))) or (Arsenal.family(u.weapon) == "dagger" and protection > 30 and ai_hit_score(id,v.id,true) >= 45) or (Arsenal.family(u.weapon) == "bow" and (ai_hit_score(id,v.id) < 65 or (tactical_ai and Perks.has(u,"patient_hunter") and id in waited))) or (Arsenal.family(u.weapon) == "throwing" and protection > 50) or (Arsenal.family(u.weapon) == "polearm" and v.order == "line")
+		var worth = (Arsenal.family(u.weapon) == "axe" and v.shield and v.arms.shield.condition <= (split_shield_damage(u,v) if axe_mace_rules else 24)) or (Arsenal.family(u.weapon) == "mace" and _ai_mace_special(u,v)) or (Arsenal.family(u.weapon) == "hammer" and (shatter_worth or (hammer_dagger_rules and Perks.has(u,"deep_impact") and not impact_active(v) and protection > 0 and v.hp > 25 and ai_hit_score(id,v.id,true) >= 40))) or (Arsenal.family(u.weapon) == "dagger" and protection > 30 and ai_hit_score(id,v.id,true) >= 45) or (Arsenal.family(u.weapon) == "bow" and (ai_hit_score(id,v.id) < 65 or (tactical_ai and Perks.has(u,"patient_hunter") and id in waited))) or (Arsenal.family(u.weapon) == "throwing" and protection > 50) or (Arsenal.family(u.weapon) == "polearm" and v.order == "line")
 		if worth and use_weapon(id,true,v.id): return true
 	if Arsenal.family(u.weapon) == "spear" and not trapped and u.stance.is_empty():
 		var defend = objective != "eliminate" and distance(pos(u),goal()) <= 1
@@ -2191,6 +2603,8 @@ func tie_priority(id: int) -> int:
 
 func start_round() -> void:
 	var previous_waited = waited.duplicate()
+	_morale_deferred.clear()
+	if _tactical_morale: _seed_morale_pressure()
 	activated = []; finished = []; waited = []; delayed = []; turn_queue = []; turn_scores = {}; active_id = -1
 	for u in units:
 		u.ap = 0
@@ -2220,15 +2634,17 @@ func activate_next() -> void:
 	check_result()
 	if not result.is_empty(): return
 	while not turn_queue.is_empty() or not delayed.is_empty():
-		var id: int = turn_queue.pop_front() if not turn_queue.is_empty() else delayed.pop_front()
+		var id: int = _take_pending_turn()
 		if not living(units[id]):
 			units[id].ap = 0
+			units[id].erase("stunned")
 			if not id in finished: finished.append(id)
 			continue
 		active_id = id; side = units[id].side
 		var u: Dictionary = units[id]
 		if not id in activated:
 			activated.append(id)
+			if _tactical_morale: _morale_pressure[id] = maxi(1,_morale_control_count(u))
 			if perk_rules:
 				var state = vital_state(u)
 				state.activation += 1; state.quick_used = false; state.vigor_used = false; state.reach = 0; state.indomitable = false; state.bow_shots = 0
@@ -2237,6 +2653,16 @@ func activate_next() -> void:
 			u.fatigue = maxi(0,mini(fatigue_max(u)-15,u.fatigue-People.recovery(u))) if core_rules else maxi(0,u.fatigue-People.recovery(u))
 			if core_rules and u.routed and not (withdrawing and u.side == 0): rally_check(u)
 			u.guard = false; cancel_stance(u)
+		if mace_stun_rules and u.get("stunned",false):
+			# Spend this slot, including a delayed Wait slot, without publishing
+			# a playable activation or adding a fictitious player/AI command.
+			u.erase("stunned")
+			if perk_rules: end_perk_activation(u)
+			u.ap = 0
+			finished.append(id)
+			_movement_cache.clear()
+			log_event("%s loses their activation to Stun." % u.name,unit_event_audience(u))
+			continue
 		log_event("%s acts%s · initiative %d." % [u.name," after waiting" if id in waited else "",turn_scores[str(id)]],[u.side])
 		return
 	active_id = -1
@@ -2270,9 +2696,21 @@ func wait_unit(id: int) -> bool:
 
 func upcoming() -> Array:
 	var out: Array = [active_id] if active_id >= 0 and living(units[active_id]) else []
-	for id in turn_queue+delayed:
+	for id in _pending_turn_order():
 		if living(units[id]): out.append(id)
 	return out
+
+func _pending_turn_order() -> Array:
+	var pending := turn_queue+delayed
+	if _morale_deferred.is_empty(): return pending
+	return pending.filter(func(id): return id not in _morale_deferred)+_morale_deferred
+
+func _take_pending_turn() -> int:
+	if _morale_deferred.is_empty():
+		return turn_queue.pop_front() if not turn_queue.is_empty() else delayed.pop_front()
+	var id: int = _pending_turn_order().front()
+	turn_queue.erase(id); delayed.erase(id); _morale_deferred.erase(id)
+	return id
 
 static func morale_number(state: int) -> int:
 	return {-3:15,-2:35,-1:60,0:85,1:100}.get(state,85)
@@ -2343,7 +2781,7 @@ func valid_turn_state(d: Dictionary) -> bool:
 # Baseline combat formulas. Authored traits/perks are explicit property additions;
 # their values are not advertised as the commercial game's trait catalogue.
 func special_info(weapon: String) -> Dictionary:
-	var info = Arsenal.special(weapon).duplicate()
+	var info = Arsenal.special(weapon,mace_stun_rules).duplicate()
 	if not core_rules: return info
 	match Arsenal.family(weapon):
 		"bow":
@@ -2373,41 +2811,50 @@ func surround_count(u: Dictionary) -> int:
 	# living melee opponent even while fleeing, but not ranged weapon holders.
 	var count = 0
 	for v in units:
-		if living(v) and v.side != u.side and not v.weapon in Arsenal.RANGED and distance(pos(u),pos(v)) == 1 and absi(tiles[key(pos(u))].height-tiles[key(pos(v))].height) <= 1: count += 1
+		if living(v) and v.side != u.side and not v.get("stunned",false) and not v.weapon in Arsenal.RANGED and distance(pos(u),pos(v)) == 1 and absi(tiles[key(pos(u))].height-tiles[key(pos(v))].height) <= 1: count += 1
 	return maxi(0,count-1)
 
-func baseline_hit_breakdown(a: int, b: int, special: bool = false, reaction: bool = false) -> Dictionary:
+func baseline_hit_breakdown(a: int, b: int, special: bool = false, reaction: bool = false, bash: bool = false) -> Dictionary:
 	var u: Dictionary = units[a]; var v: Dictionary = units[b]
 	var w: Dictionary = weapon_stats(u); var family = Arsenal.family(u.weapon)
 	if special and family == "axe": return {"parts":[{"name":"Split shield: automatic hit","value":100}],"raw":100,"chance":100}
-	var ranged: bool = u.weapon in Arsenal.RANGED
+	var ranged: bool = not bash and u.weapon in Arsenal.RANGED
 	var skill: int = u.ranged_skill if ranged else u.skill
 	if perk_rules:
 		if Perks.has(u,"hybridization"): skill += floori((u.skill if ranged else u.ranged_skill)*0.1)
 		skill = floori(skill*(1.0-0.1*vital_state(u).overwhelm))
 	var defence: int = v.ranged_defense if ranged else v.defense
 	var action_bonus = int(w.skill)
-	if special: action_bonus += int({"mace":-10,"hammer":-5,"dagger":-20,"polearm":-10,"bow":10,"throwing":-5}.get(family,0))
-	var trait_bonus = temperament_accuracy(u)+(5 if "weapon_drill" in u.perks else 0)
+	if special and not (mace_stun_rules and family == "mace"): action_bonus += int({"mace":-10,"hammer":-5,"dagger":-20,"polearm":-10,"bow":10,"throwing":-5}.get(family,0))
+	if bash: action_bonus = 25+(15 if perk_rules and Perks.has(u,"shield_expert") else 0)
+	var trait_bonus = temperament_accuracy(u)+(5 if not bash and "weapon_drill" in u.perks else 0)
 	var shield = shield_defence(v,ranged)
 	var wall = shield if v.guard else 0
 	var support = wall_support(v)
 	var cautious = 5 if v.temperament == "cautious" else 0
 	var perk_def = perk_defence(v,ranged,u) if perk_rules else 0
 	var before_defence = defence+shield+wall+support+cautious+perk_def
-	var after_defence = floori(before_defence*morale_multiplier(v))
+	var after_defence = _morale_scaled(before_defence,v) if _tactical_morale else floori(before_defence*morale_multiplier(v))
+	var accuracy := 0
+	if perk_rules: accuracy = perk_accuracy(u,v,reaction) if not bash else (-10 if impact_active(u) else 0)+(int(vital_state(u).adaptation) if Perks.has(u,"fast_adaptation") else 0)
+	var skill_before: int = skill+action_bonus+trait_bonus
+	var accuracy_delta: float = skill_before*(morale_multiplier(u)-1.0)
+	if _tactical_morale:
+		skill_before += accuracy
+		accuracy_delta = _morale_scaled(skill_before,u)-skill_before
 	var parts = [{"name":"Ranged skill" if ranged else "Melee skill","value":skill}]
 	var rows = [
-		["Weapon / action accuracy",action_bonus],
+		["Knock Back accuracy" if bash else "Weapon / action accuracy",action_bonus],
 		["Traits / weapon handling",trait_bonus],
-		["Attacker morale",(skill+action_bonus+trait_bonus)*(morale_multiplier(u)-1.0)],
+		["Attacker morale",accuracy_delta],
 		["Ranged defence" if ranged else "Melee defence",-defence],
 		["Shield",-shield], ["Active Shieldwall",-wall], ["Adjacent active walls",-support],
 		["Perk defence",-perk_def], ["Cautious defender",-cautious], ["Defender morale / rounding",before_defence-after_defence],
 		["Defence above 50: half value",maxf(0,(after_defence-50)*0.5)],
 		["Melee surrounding",0 if ranged else perk_surround(u,v) if perk_rules else surround_count(v)*5]]
-	if perk_rules: rows.append(["Perk accuracy",perk_accuracy(u,v,reaction)])
-	if perk_rules and int(w.reach) == 2 and family in ["polearm","spear"] and distance(pos(u),pos(v)) == 1:
+	if perk_rules:
+		rows.append(["Perk accuracy",accuracy])
+	if not bash and perk_rules and int(w.reach) == 2 and family in ["polearm","spear"] and distance(pos(u),pos(v)) == 1:
 		var mastery := "spear_mastery" if family == "spear" else "polearm_mastery"
 		if not Perks.has(u,mastery): rows.append(["Adjacent pike" if family == "spear" else "Adjacent polearm",-15])
 	var height: int = tiles[key(pos(u))].height-tiles[key(pos(v))].height
@@ -2441,6 +2888,7 @@ func recover_reason(id: int) -> String:
 	return ""
 
 func resolve_chance(u: Dictionary, difficulty: float, positive: bool = false, physical: bool = false) -> int:
+	if _tactical_morale: return _tactical_resolve_chance(u,_morale_bravery(u,physical and not positive),difficulty,positive)
 	var bravery = floori(u.resolve*(1.25 if perk_rules and Perks.has(u,"fortified_mind") else 1.0))+comrade_support(u)-u.strain_penalty-u.grief_penalty+(10 if u.temperament == "stoic" else 0)+(15 if "steadfast" in u.perks else 0)
 	if perk_rules and physical and not positive and Perks.has(u,"bulwark"): bravery += mini(15,floori((u.helmet+u.armor+u.padding)/25.0))
 	bravery = floori(bravery*(1.0+minf(0,u.morale_state)*0.1))
@@ -2453,7 +2901,99 @@ func resolve_chance(u: Dictionary, difficulty: float, positive: bool = false, ph
 	# has a 95 ceiling but no guaranteed 5% success floor.
 	return maxi(0,floori(minf(95,bravery+difficulty-opponents*3+(0 if positive else friends*3))))
 
+func enable_tactical_morale(company_levels: Array[int]) -> void:
+	if _tactical_morale or not core_rules or not individual or company_levels.size() != player_slots(): return
+	for i in company_levels.size():
+		if company_levels[i] < 0 or company_levels[i] > 11 or (company_levels[i] == 0 and living(units[i])): return
+	_tactical_morale = true
+	_morale_company_levels = company_levels.duplicate()
+	_seed_morale_pressure()
+	_morale_initial_board = not visibility_enabled
+
+func _tactical_morale_xp(u: Dictionary) -> int:
+	if u.side == 0:
+		var level: int = _morale_company_levels[u.id]
+		return 100+30*(level-1) if level > 0 else 0
+	if u.get("faction","") == "undead": return MORALE_UNDEAD_XP.get(u.get("undead_kind",""),90)
+	var grade: String = u.get("bandit_grade",u.title)
+	return int(MORALE_BANDIT_XP.get(grade,120))+(30 if u.get("bandit_role","") == "leader" else 0)
+
+func _morale_scaled(value: int, u: Dictionary, resolve: bool = false) -> int:
+	var state: int = u.get("morale_state",0)
+	var percent := 100+10*(mini(state,0) if resolve else state)
+	return floori(value*float(percent)/100.0 if value >= 0 else value*100.0/percent)
+
+func effective_resolve(u: Dictionary) -> int:
+	# The character stat; Stoic, Steadfast, comrade support and Bulwark are
+	# check-specific Ashen modifiers, not extra caster Resolve for Rally.
+	var trained := floori(int(u.get("resolve",0))*(1.25 if perk_rules and Perks.has(u,"fortified_mind") else 1.0))
+	return _morale_scaled(trained,u,true)
+
+func _morale_bravery(u: Dictionary, physical: bool) -> int:
+	var bravery := floori(u.resolve*(1.25 if perk_rules and Perks.has(u,"fortified_mind") else 1.0))
+	bravery += comrade_support(u)-u.strain_penalty-u.grief_penalty+(10 if u.temperament == "stoic" else 0)+(15 if "steadfast" in u.perks else 0)
+	if perk_rules and physical and Perks.has(u,"bulwark"): bravery += mini(15,floori((u.helmet+u.armor+u.padding)/25.0))
+	return _morale_scaled(bravery,u,true)
+
+func _tactical_resolve_chance(u: Dictionary, bravery: int, modifier: float, positive: bool) -> int:
+	var adjacency := 0
+	for cell: Vector2i in neighbors(pos(u)):
+		var id := at(cell)
+		if id < 0 or not fighting(units[id]): continue
+		if units[id].side == u.side:
+			if not positive: adjacency += 3
+		elif unit_can_see(u.id,id): adjacency -= 3
+	return floori(clampf(bravery+modifier+adjacency,0.0,95.0))
+
+func _morale_control_count(u: Dictionary) -> int:
+	if not living(u): return 0
+	# Control is not the attack's surrounding bonus. No unobserved actor or
+	# memory contact can contribute to a committed morale check.
+	return adjacent_enemies(u,pos(u)).filter(func(id): return unit_can_see(u.id,id)).size()
+
+func _morale_contacts() -> Array[int]:
+	var counts: Array[int] = []
+	if _tactical_morale:
+		for u: Dictionary in units: counts.append(_morale_control_count(u))
+	return counts
+
+func _seed_morale_pressure() -> void:
+	_morale_pressure = _morale_contacts()
+	for id in _morale_pressure.size(): _morale_pressure[id] = maxi(1,_morale_pressure[id])
+
+func _morale_arrival(u: Dictionary, before: Array[int], motion: MoraleMotion) -> void:
+	if not _tactical_morale or not living(u): return
+	var own_count := _morale_control_count(u)
+	var own_max: int = _morale_pressure[u.id]
+	# Reset a mover after their arrival. Other actors retain their maximum
+	# until their next activation or their own move.
+	_morale_pressure[u.id] = maxi(1,own_count)
+	if motion == MoraleMotion.FORCED:
+		if own_count > maxi(own_max,before[u.id]): _tactical_check(u,40.0,MoraleEvent.DISPLACE)
+		return
+	if not fighting(u): return
+	for cell: Vector2i in neighbors(pos(u)):
+		var id := at(cell)
+		if id < 0: continue
+		var other: Dictionary = units[id]
+		if not fighting(other) or other.side == u.side or not terrain_controls(u,cell) or not unit_can_see(id,u.id): continue
+		var count := _morale_control_count(other)
+		if count <= maxi(before[id],_morale_pressure[id]): continue
+		_morale_pressure[id] = count
+		_tactical_check(other,maxf(10.0,50.0-0.1*_tactical_morale_xp(u)),MoraleEvent.ENGAGE)
+
+func _enter_morale_flight(u: Dictionary) -> void:
+	u.routed = true; u.order = "free"; u.guard = false; cancel_stance(u)
+	if not _tactical_morale: return
+	if perk_rules: vital_state(u).indomitable = false
+	_movement_cache.clear()
+	if u.id != active_id and (u.id in turn_queue or u.id in delayed) and u.id not in _morale_deferred:
+		_morale_deferred.append(u.id)
+
 func baseline_morale_check(u: Dictionary, difficulty: float, cause: String, positive: bool = false) -> void:
+	if _tactical_morale:
+		_tactical_check(u,difficulty,MoraleEvent.COMPATIBILITY,cause,positive)
+		return
 	if u.get("faction","") == "undead": return
 	if not fighting(u) or (positive and u.morale_state == 1): return
 	var chance = resolve_chance(u,difficulty,positive,cause in ["flesh wound","ally fell","comrade fell","nearby enemies"])
@@ -2466,13 +3006,58 @@ func baseline_morale_check(u: Dictionary, difficulty: float, cause: String, posi
 	log_event("%s: %s · %s (%d%% resolve check)." % [u.name,morale_name(u),cause,chance])
 	combat_feedback.emit({"id":u.id,"kind":"morale","text":morale_name(u)})
 	if u.morale_state != -3: return
-	u.routed = true; u.order = "free"; u.guard = false; cancel_stance(u)
+	_enter_morale_flight(u)
 	log_event("%s breaks and flees toward a field edge." % u.name,unit_event_audience(u))
 	for other in units:
 		if other.id != u.id and other.side == u.side and fighting(other):
 			baseline_morale_check(other,30-200*0.035+pow(distance(pos(u),pos(other)),3),"ally fleeing")
 
-func death_morale(killer: Dictionary, victim: Dictionary) -> void:
+func _tactical_check(u: Dictionary, modifier: float, event: MoraleEvent, legacy_cause: String = "", legacy_positive: bool = false) -> bool:
+	if not living(u) or u.get("dying",false) or u.get("faction","") == "undead": return false
+	var rescue := event in [MoraleEvent.SELF_RALLY,MoraleEvent.RALLY]
+	var positive := rescue or event == MoraleEvent.ENEMY_DEATH or (event == MoraleEvent.COMPATIBILITY and legacy_positive)
+	var cap := 0 if rescue else 1
+	if rescue and withdrawing and u.side == 0: return false
+	if (u.routed and not rescue) or (positive and u.morale_state >= cap): return false
+	var physical := event in [MoraleEvent.WOUND,MoraleEvent.ALLY_DEATH,MoraleEvent.ENGAGE,MoraleEvent.DISPLACE]
+	if event == MoraleEvent.COMPATIBILITY: physical = legacy_cause in ["flesh wound","ally fell","comrade fell","nearby enemies"]
+	var bravery := _morale_bravery(u,physical and not positive)
+	if bravery > 500: return false # Before event difficulty and adjacency.
+	var chance := _tactical_resolve_chance(u,bravery,modifier,positive)
+	var passed := roll(1,100) <= chance
+	var reason: String = MORALE_REASONS.get(event,legacy_cause)
+	if passed != positive:
+		if not positive: log_event("%s holds nerve (%d%% · %s)." % [u.name,chance,reason])
+		return false
+	var was_routed: bool = u.routed
+	u.morale_state = -1 if rescue and was_routed else clampi(u.morale_state+(1 if positive else -1),-3,cap)
+	u.morale = morale_number(u.morale_state); u.fleeing_rounds = 0
+	if u.morale_state == -3: _enter_morale_flight(u)
+	elif was_routed:
+		u.routed = false
+		_movement_cache.clear()
+	log_event("%s: %s · %s (%d%% resolve check)." % [u.name,morale_name(u),reason,chance])
+	combat_feedback.emit({"id":u.id,"kind":"morale","text":("RALLIED · " if was_routed else "")+morale_name(u)})
+	if u.routed:
+		log_event("%s breaks and flees toward a field edge." % u.name,unit_event_audience(u))
+		var xp := _tactical_morale_xp(u)
+		for other: Dictionary in units:
+			if other.id != u.id and other.side == u.side and fighting(other):
+				_tactical_check(other,30-xp*0.035+pow(distance(pos(u),pos(other)),3),MoraleEvent.ALLY_ROUT)
+	return true
+
+func death_morale(killer: Dictionary, victim: Dictionary, witnesses: Array = []) -> void:
+	if _tactical_morale:
+		var xp := _tactical_morale_xp(victim)
+		if xp <= 1: return
+		for other: Dictionary in units:
+			if not fighting(other): continue
+			var gap := distance(pos(other),pos(victim))
+			if other.side == victim.side:
+				_tactical_check(other,20-xp*0.035+pow(gap,2.4),MoraleEvent.ALLY_DEATH)
+			elif other.side in witnesses:
+				_tactical_check(other,-30+xp*0.04-pow(gap,3)+(15 if other.id == killer.id else 0),MoraleEvent.ENEMY_DEATH)
+		return
 	# Prototype humanoid encounter value 200; separate from company XP awards.
 	# Distances and check equations follow the reference baseline.
 	for other in units:
@@ -2484,11 +3069,20 @@ func death_morale(killer: Dictionary, victim: Dictionary) -> void:
 			baseline_morale_check(other,-30+200*0.04-pow(gap,3)+(15 if other.id == killer.id else 0),"enemy fell",true)
 
 func rally_check(u: Dictionary) -> void:
+	if _tactical_morale:
+		if not living(u) or not u.routed or (withdrawing and u.side == 0): return
+		if _morale_control_count(u) == 0 and _tactical_check(u,u.fleeing_rounds*2.0,MoraleEvent.SELF_RALLY): return
+		u.fleeing_rounds += 1
+		return
 	if adjacent_enemies(u,pos(u)).is_empty() and roll(1,100) <= resolve_chance(u,u.fleeing_rounds*2,true):
 		u.routed = false; u.morale_state = -1; u.morale = morale_number(-1); u.fleeing_rounds = 0
 		log_event(u.name+" rallies to wavering.")
 		combat_feedback.emit({"id":u.id,"kind":"morale","text":"RALLIED · WAVERING"})
 	else: u.fleeing_rounds += 1
+
+func rally_morale(u: Dictionary, modifier: float) -> bool:
+	# Only the Rally carrier supplies cost, range, sight, and per-use eligibility.
+	return _tactical_morale and _tactical_check(u,modifier,MoraleEvent.RALLY)
 
 # Personal-perk rules. Every transient value is in perk_state and saved/replayed.
 func all_perk_definitions() -> Dictionary:
@@ -2569,6 +3163,7 @@ func reset_segment(u: Dictionary) -> void:
 	var s = vital_state(u); s.origin_q = u.q; s.origin_r = u.r
 
 func end_perk_activation(u: Dictionary) -> void:
+	_rally_spent.erase(u.id) # Wait is not an activation end.
 	clear_sequence(u)
 	var s = vital_state(u); s.overwhelm = 0
 	if hammer_dagger_rules and s.activation >= weapon_state(u).impact_end: weapon_state(u).impact_end = 0
@@ -2614,7 +3209,7 @@ func perk_surround(u: Dictionary, v: Dictionary) -> int:
 	if Perks.has(v,"underdog"): return 0
 	var virtual = 0
 	for ally in units:
-		if ally.id == u.id or ally.side != u.side or not fighting(ally) or not Perks.has(ally,"long_reach") or Arsenal.family(ally.weapon) != "polearm": continue
+		if ally.id == u.id or ally.side != u.side or not fighting(ally) or ally.get("stunned",false) or not Perks.has(ally,"long_reach") or Arsenal.family(ally.weapon) != "polearm": continue
 		if distance(pos(ally),pos(v)) == 2 and in_range(ally,v) and absi(tiles[key(pos(ally))].height-tiles[key(pos(v))].height) <= 1:
 			virtual = 1; break
 	return (surround_count(v)+virtual)*(10 if Perks.has(u,"backstabber") else 5)
@@ -2675,6 +3270,7 @@ func perk_penetration(u: Dictionary, w: Dictionary, reaction: bool = false) -> f
 func damage_context(u: Dictionary, v: Dictionary, w: Dictionary, special: bool, reaction: bool, spearwall: bool = false) -> Dictionary:
 	var family = Arsenal.family(u.weapon); var s = vital_state(u)
 	var factor: float = {"mace":0.75,"dagger":0.8,"polearm":0.65,"bow":1.1}.get(family,1.0) if special else 1.0
+	if special and mace_stun_rules and family == "mace": factor = Arsenal.MACE_STUN_DAMAGE
 	var bonus = 0.0
 	if s.frenzy_end > 0: bonus += 0.2
 	if spearwall and Perks.has(u,"spearwaller"): bonus += 0.2
@@ -2754,6 +3350,7 @@ func perk_action_reason(id: int, action: String, target: Vector2i = Vector2i(-1,
 	var other = at(target)
 	if action == "footwork": return "Choose an empty hex." if other >= 0 else ""
 	if other < 0 or units[other].side != u.side or not fighting(units[other]): return "Choose a standing adjacent ally."
+	if units[other].get("stunned",false): return "Cannot rotate a stunned ally."
 	return ""
 
 func use_perk(id: int, action: String, target: Vector2i = Vector2i(-1,-1)) -> bool:
@@ -2764,6 +3361,8 @@ func use_perk(id: int, action: String, target: Vector2i = Vector2i(-1,-1)) -> bo
 	u.fatigue += cost.fatigue
 	clear_weapon_sequence(u)
 	var swap_id := -1
+	var before: Array[int] = []
+	if action != "indomitable": before = _morale_contacts()
 	if action == "indomitable": vital_state(u).indomitable = true
 	else:
 		if action == "rotation":
@@ -2774,6 +3373,8 @@ func use_perk(id: int, action: String, target: Vector2i = Vector2i(-1,-1)) -> bo
 	refresh_visibility()
 	commands.append(["perk",id,action,target.x,target.y])
 	log_event(u.name+": "+Perks.catalog()[action].name+".")
+	if action in ["footwork","rotation"]: _morale_arrival(u,before,MoraleMotion.VOLUNTARY)
+	if swap_id >= 0: _morale_arrival(units[swap_id],before,MoraleMotion.VOLUNTARY)
 	if action in ["footwork","rotation","indomitable"]: _observe_utility(u,action,"weapon")
 	if swap_id>=0: _observe_utility(units[swap_id],action,"weapon")
 	return true
@@ -2802,6 +3403,26 @@ func split_shield_damage(u: Dictionary, v: Dictionary = {}) -> int:
 
 func advantage_ready(u: Dictionary, v: Dictionary, reaction: bool = false) -> bool:
 	return axe_mace_rules and perk_rules and not reaction and Arsenal.family(u.weapon) == "mace" and Perks.has(u,"push_the_advantage") and v.get("stagger",0) > 0
+
+func _ai_mace_special(u: Dictionary, v: Dictionary) -> bool:
+	if v.hp <= 25: return false
+	if not mace_stun_rules: return v.stagger == 0 and (not axe_mace_rules or not vital_state(v).indomitable)
+	return fighting(v) and not v.get("stunned",false) and not vital_state(v).indomitable and ai_hit_score(u.id,v.id,true) >= 40
+
+func _resolve_mace_stun(u: Dictionary, v: Dictionary) -> void:
+	if v.get("stunned",false): return # Repeat hits still deal damage but do not refresh the skip.
+	var audience := unit_event_audience(v)
+	if vital_state(v).indomitable:
+		log_event("%s is immune to Stun while Indomitable." % v.name,audience)
+		return
+	if not Perks.has(u,"mace_mastery") and roll(1,100) > Arsenal.MACE_STUN_CHANCE:
+		log_event("%s resists Stun." % v.name,audience)
+		return
+	v["stunned"] = true
+	v.ap = 0; v.guard = false; cancel_stance(v)
+	_movement_cache.clear()
+	log_event("%s is stunned: next activation lost." % v.name,audience)
+	combat_feedback.emit({"id":v.id,"kind":"stun","text":"STUNNED","audience":audience})
 
 func apply_stagger(v: Dictionary, source: String) -> bool:
 	if not fighting(v) or v.stagger > 0 or vital_state(v).indomitable: return false

@@ -35,6 +35,7 @@ func _ready() -> void:
 	add_child(_canvas)
 	_build_overlays()
 	session = _create_session()
+	if _show_launch_title(): return
 	if FileAccess.file_exists(checkpoint_path):
 		if not session.load_camp(checkpoint_path):
 			_loading_failed = true
@@ -44,6 +45,9 @@ func _ready() -> void:
 	else:
 		session.setup()
 	_open_company()
+
+func _show_launch_title() -> bool:
+	return false
 
 func _open_company() -> void:
 	if not session.changed.is_connected(_session_changed): session.changed.connect(_session_changed)

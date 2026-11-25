@@ -4,6 +4,9 @@ const VERSION = 1
 const LIFE = 80 # Four game hours; each world step is three minutes.
 const FRESH = 20
 const FAINT = 50
+const FRESH_RANGE = 224.0 # Observation only, in world units, not party sight.
+const FRESH_SCOUT_RANGE = 256.0
+const MARK_MARGIN = 16.0 # Bounds the existing boot ink, selection ring and click rect.
 const SPACING = 12000 # Twelve world units, accumulated as millimetres.
 const MAX_MARKS = 512
 const SCOUT_PACE = 0.70
@@ -51,9 +54,29 @@ func opacity(mark: Dictionary) -> float:
 func visible(c, mark: Dictionary) -> bool:
 	if not enabled or c.dungeons.active != "" or clock-mark.born >= LIFE: return false
 	var ow = c.overworld
-	var radius: float = (72.0 if scouting and focus == SEARCH_TICKS else 42.0)*(0.35+0.65*opacity(mark)/0.90)
-	if ow.hour < 6 or ow.hour >= 20: radius *= 0.70
-	return ow.discovered(mark.position) and ow.position.distance_to(mark.position) <= radius
+	if not ow.discovered(mark.position): return false
+	var focused: bool = scouting and focus == SEARCH_TICKS
+	var fade: float = 0.35+0.65*opacity(mark)/0.90
+	var dark: bool = ow.hour < 6 or ow.hour >= 20
+	var distance: float = ow.position.distance_to(mark.position)
+	var radius: float = (72.0 if focused else 42.0)*fade
+	if dark: radius *= 0.70
+	if distance <= radius: return true # Keep the existing close inspection rule.
+	var age: int = clock-mark.born
+	if age < 0 or age >= FRESH: return false
+	var extended_radius: float = (FRESH_SCOUT_RANGE if focused else FRESH_RANGE)*fade
+	if dark: extended_radius *= 0.70
+	if distance > extended_radius: return false
+	# Marks and their hit areas sit above fog. Extend only if their entire
+	# footprint is on explored ground, not just the centre cell.
+	var lo: Vector2i = ow.cell(mark.position-Vector2.ONE*MARK_MARGIN)
+	var hi: Vector2i = ow.cell(mark.position+Vector2.ONE*MARK_MARGIN)
+	var bounds := Rect2i(Vector2i.ZERO,ow.SIZE)
+	if not bounds.has_point(lo) or not bounds.has_point(hi): return false
+	for y in range(lo.y,hi.y+1):
+		for x in range(lo.x,hi.x+1):
+			if not ow.discovered(ow.cell_point(Vector2i(x,y))): return false
+	return true
 
 func freshness(mark: Dictionary) -> String:
 	var age: int = clock-mark.born

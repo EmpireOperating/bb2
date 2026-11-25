@@ -8,6 +8,26 @@ var _portrait: AtlasTexture
 const InjuryStatus = preload("res://stat_clarity/injuries.gd")
 var injury_badge: Label
 var _injury_tooltip := ""
+var mood_badge: Control
+var _mood_tooltip := ""
+var _mood_expression := 0
+
+func present_mood(mood: Dictionary) -> void:
+ _mood_tooltip = mood.get("text","")
+ _mood_expression = {"Happy":1,"Demoralized":-1}.get(mood.get("label",""),0)
+ mood_badge.visible = not _mood_tooltip.is_empty()
+ mood_badge.queue_redraw()
+
+func _draw_mood_badge() -> void:
+ var color := Color("acc397") if _mood_expression>0 else Color("d79487") if _mood_expression<0 else Color("c9bd9f")
+ var center := Vector2(10,10)
+ mood_badge.draw_circle(center,9,Color("24201b"),true,-1.0,true)
+ mood_badge.draw_arc(center,8.0,0.0,TAU,32,color,1.35,true)
+ mood_badge.draw_circle(Vector2(7,8),1.05,color,true,-1.0,true)
+ mood_badge.draw_circle(Vector2(13,8),1.05,color,true,-1.0,true)
+ var bend := float(_mood_expression)*1.4
+ mood_badge.draw_polyline(PackedVector2Array([Vector2(6.5,12.5-bend),Vector2(8.5,12.5+bend),Vector2(11.5,12.5+bend),Vector2(13.5,12.5-bend)]),color,1.5,true)
+
 func present_injuries(person: Dictionary) -> void:
  var status: Dictionary = InjuryStatus.describe(person)
  _injury_tooltip = status.tooltip if status.active else ""
@@ -16,6 +36,7 @@ func present_injuries(person: Dictionary) -> void:
  injury_badge.add_theme_color_override("font_color",Color("ef8f78") if status.temporary == "Deep wound" else Color("c5ad78"))
  _layout()
 func _get_tooltip(at: Vector2) -> String:
+ if mood_badge != null and mood_badge.visible and Rect2(art.position+mood_badge.position,mood_badge.size).has_point(at):return _mood_tooltip
  if injury_badge != null and injury_badge.visible and Rect2(injury_badge.position,injury_badge.size).has_point(at):return _injury_tooltip
  return tooltip_text
 func _make_custom_tooltip(for_text: String) -> Object:
@@ -52,6 +73,10 @@ func _init() -> void:
  assignment = _label(12);assignment.add_theme_color_override("font_color",Color("c5ad78"))
  vitals=preload("res://iron_oath/vitals.gd").new();add_child(vitals)
  level_up_badge=preload("res://ui_polish/level_up_badge.gd").new();art.add_child(level_up_badge)
+ mood_badge = Control.new();mood_badge.name = "CampaignMood"
+ mood_badge.mouse_filter = Control.MOUSE_FILTER_IGNORE;mood_badge.focus_mode = Control.FOCUS_NONE
+ mood_badge.position = Vector2.ONE;mood_badge.size = Vector2(20,20)
+ mood_badge.draw.connect(_draw_mood_badge);art.add_child(mood_badge);mood_badge.hide()
  injury_badge = _label(17);injury_badge.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER;injury_badge.hide()
  var plate := StyleBoxFlat.new();plate.bg_color = Color("241a19");plate.border_color = Color("bd8465");plate.set_border_width_all(1);plate.set_corner_radius_all(3)
  injury_badge.add_theme_stylebox_override("normal",plate)

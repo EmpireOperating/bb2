@@ -4,33 +4,56 @@ extends RefCounted
 const LEGACY_VERSION := "march_ground_v1"
 const AXIS_VERSION := "march_ground_v2"
 const VERSION := "march_ground_v3"
-const RECIPES := [LEGACY_VERSION,AXIS_VERSION,VERSION]
+const FOREST_CAMP_VERSION := "march_ground_v4"
+const FORT_CAMP_VERSION := "march_ground_v5"
+const RECIPES := [LEGACY_VERSION,AXIS_VERSION,VERSION,FOREST_CAMP_VERSION,FORT_CAMP_VERSION]
+# Work policy is part of the binding, not the geometry fingerprint. Historical
+# pending visits can reconstruct the identical board with their original work.
+const WORK_RECIPES := {
+ "march_ground_v2_work_v1":AXIS_VERSION, "march_ground_v3_work_v1":VERSION,
+ "march_ground_v4_work_v1":FOREST_CAMP_VERSION, "march_ground_v5_work_v1":FORT_CAMP_VERSION,
+}
 const SIZE := 32
 const NAMES := {"ford":"River Crossing", "ridge":"Broken Ridge", "forest":"Wooded Hollow", "plains":"Open Heath"}
 const REACH_TITLES := {"stone_span":"Tollhouse Span", "reed_shoal":"Reed Gate Shoal", "spring_cut":"Packhorse Heights"}
 const Fingerprint = preload("res://procedural_woodland/generator.gd")
 const Axis = preload("res://outdoor_fields/axis_layout.gd")
 const Composer = preload("res://outdoor_fields/layout_composer.gd")
+const FortLayouts = preload("res://outdoor_fields/fort_layouts.gd")
 
 static func binding(p:Dictionary,kind:String) -> Dictionary:
+ if geometry_recipe(p.recipe) in [FOREST_CAMP_VERSION,FORT_CAMP_VERSION] and kind!="camp":return {}
  return {"recipe":p.recipe+"/"+kind+"/"+p.family,"seed":p.seed,"fingerprint":p.fingerprint}
 
 static func composed_family(family:String) -> bool:
  return family in ["forest","ridge"]
 
 static func axial_recipe(recipe:Variant) -> bool:
- return recipe in [AXIS_VERSION,VERSION]
+ return geometry_recipe(recipe) in [AXIS_VERSION,VERSION,FOREST_CAMP_VERSION,FORT_CAMP_VERSION]
+
+static func geometry_recipe(recipe:Variant) -> Variant:
+ return WORK_RECIPES.get(recipe,recipe)
+
+static func supported_recipe(recipe:Variant) -> bool:
+ return recipe in RECIPES or WORK_RECIPES.has(recipe)
 
 static func generate(n:int,family:String,road:bool,ambush:bool,recipe:String=LEGACY_VERSION) -> Dictionary:
  if n<0 or n>0x7fffffff or (not NAMES.has(family) and not REACH_TITLES.has(family)):return {}
- if recipe not in RECIPES:return {}
- if recipe==VERSION and (ambush or not composed_family(family)):return {}
- var d := Composer.compose(n,family,NAMES[family],road) if recipe==VERSION else _build(n,family,road,ambush,recipe==AXIS_VERSION)
+ if not supported_recipe(recipe):return {}
+ var geometry: String=geometry_recipe(recipe)
+ if geometry in [VERSION,FORT_CAMP_VERSION] and (ambush or not composed_family(family)):return {}
+ if geometry==FOREST_CAMP_VERSION and (ambush or family!="forest"):return {}
+ var d: Dictionary
+ match geometry:
+  FORT_CAMP_VERSION:d=FortLayouts.compose(n,family,road)
+  FOREST_CAMP_VERSION:d=Composer.forest_camp(n,road)
+  VERSION:d=Composer.compose(n,family,NAMES[family],road)
+  _:d=_build(n,family,road,ambush,geometry==AXIS_VERSION)
  if axial_recipe(recipe) and Axis.reserved(d).is_empty():return {}
  return {"recipe":recipe,"family":family,"seed":n,"road":road,"ambush":ambush,"descriptor":d,"fingerprint":Fingerprint.descriptor_fingerprint(d)}
 
 static func valid(p:Dictionary) -> bool:
- if p.size()!=7 or p.get("recipe") not in RECIPES or not p.get("seed") is int or not p.get("family") is String or not p.get("road") is bool or not p.get("ambush") is bool:return false
+ if p.size()!=7 or not supported_recipe(p.get("recipe")) or not p.get("seed") is int or not p.get("family") is String or not p.get("road") is bool or not p.get("ambush") is bool:return false
  return p==generate(p.seed,p.family,p.road,p.ambush,p.recipe)
 
 static func key(p:Vector2i) -> String:return "%d,%d"%[p.x,p.y]

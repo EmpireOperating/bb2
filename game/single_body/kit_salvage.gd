@@ -25,7 +25,7 @@ static func pieces(unit:String, arms:Dictionary, parts:Array, catalog:Dictionary
 # Called only for the explicit physical-claim shape. Bind its sources to the
 # historic dead roster and the issued item tokens, not to present inventory wear
 # (which can be repaired, damaged, equipped or sold after the claim).
-static func valid_claim(d:Dictionary, key:String, claim:Dictionary, credited:Dictionary, context:Dictionary) -> bool:
+static func valid_claim(d:Dictionary, key:String, claim:Dictionary, credited:Dictionary, context:Dictionary, forge:bool=false, edition:int=1) -> bool:
  if not d.has("human_kits") or claim.size()!=3 or not claim.kit_grades is Dictionary:return false
  if claim.kit_grades.is_empty() or claim.kit_grades.size()>claim.casualties:return false
  if not d.get("bandit_spoils") is Dictionary or not d.bandit_spoils.get("members") is Array:return false
@@ -51,7 +51,7 @@ static func valid_claim(d:Dictionary, key:String, claim:Dictionary, credited:Dic
    if not band is Dictionary or unit.trim_prefix("member/") not in band.fallen:return false
   var group:String=context.groups[unit];var grade:Variant=claim.kit_grades[unit]
   if not grade is int or grade not in {"ford":[0,1],"forest":[1,2],"ridge":[1,2,3]}[group]:return false
-  var kit:Dictionary=Roles.Kits.recipe(d.seed,unit,Roles.role_for(d.seed,unit),group,grade,context.catalog)
+  var kit:Dictionary=Roles.Kits.recipe(d.seed,unit,Roles.role_for(d.seed,unit),group,grade,context.catalog,forge,edition)
   issued.merge(pieces(unit,kit.arms,kit.parts,context.catalog));credited[unit]=true
  for row:Variant in claim.drops:
   if not row is Dictionary or not row.get("source_item") is String or not issued.has(row.source_item):return false

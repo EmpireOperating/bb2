@@ -75,7 +75,8 @@ static func draw_farms(app) -> void:
    var tint=app.RED if damaged else app.GOLD
    var key: String="farm_open_"+f.town if f.regional else "farm_open"
    var highlighted: bool=app.marker_highlighted(key)
-   if not painted.has_area():draw_marker(app,"farm",p,tint,highlighted)
+   if not painted.has_area():
+    draw_farm_miniature(app,p,"farm:"+f.town,tint,damaged,highlighted)
    if damaged or highlighted:app.centered("Raided farm" if damaged else "Farm",p+Vector2(0,28) if painted.has_area() else p+Vector2(0,-23),12,tint,true)
    app.buttons[key]={"rect":painted if painted.has_area() else Rect2(p-Vector2(18,18),Vector2(36,36)),"enabled":true}
   for cart in f.carts.values():
@@ -83,6 +84,22 @@ static func draw_farms(app) -> void:
    draw_marker(app,"caravan",cart.position,app.GOLD)
    app.centered("HARVEST",cart.position+Vector2(0,-12),9,app.GOLD)
  app.button("farm_report","FARM SUPPLY",Rect2(52,185,130,25),true)
+
+static func draw_farm_miniature(app,p: Vector2,id: String,tint: Color,damaged: bool,highlighted: bool) -> void:
+ var texture: Texture2D = app.painter.textures.get("farm_01")
+ if texture == null:
+  draw_marker(app,"farm",p,tint,highlighted)
+  return
+ var opacity: float = app.painter.farm_marker_opacity(id)
+ if opacity > 0.0:
+  # Reuse the Copper & Pine painting at sign size, inside the existing target.
+  # A miniature on opaque fog represents a known report, not revealed land.
+  var size := Vector2(32.0,32.0*texture.get_height()/float(texture.get_width()))
+  app.draw_texture_rect(texture,Rect2(p-size*0.5,size),false,Color(0.97,0.92,0.83,0.94*opacity))
+ if damaged:
+  var q := p+Vector2(12,-6)
+  app.draw_colored_polygon(PackedVector2Array([q+Vector2(0,-4),q+Vector2(4,0),q+Vector2(0,4),q+Vector2(-4,0)]),tint)
+ if highlighted:app.draw_arc(p,16,0,TAU,32,Color(0.78,0.70,0.45,0.8),1,true)
 
 static func draw_sites(app) -> void:
  # Preserve the stock visibility, rumour and completed-state semantics exactly.

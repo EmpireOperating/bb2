@@ -261,8 +261,11 @@ func _build_overlays() -> void:
  var retry:=Button.new();retry.text="Retry checkpoint";GameUI.button(retry,true)
  retry.custom_minimum_size.y=44;retry.pressed.connect(_retry_checkpoint);error.column.add_child(retry)
  var close:=Button.new();close.text="Quit without overwriting the checkpoint";GameUI.button(close)
- close.custom_minimum_size.y=44;close.pressed.connect(func():get_tree().quit());error.column.add_child(close)
+ close.custom_minimum_size.y=44;close.pressed.connect(_quit_without_checkpoint);error.column.add_child(close)
  error_panel.hide()
+
+func _quit_without_checkpoint() -> void:
+ get_tree().quit()
 
 func _overlay_scope() -> Control:
  if is_instance_valid(error_panel) and error_panel.visible:return error_panel

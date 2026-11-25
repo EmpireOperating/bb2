@@ -31,7 +31,7 @@ static func summary(item: Dictionary, catalog: Dictionary) -> String:
    lines.append("Protection "+line.split(" → ")[-1].split(" · ")[0])
   elif line.begins_with("Shield bonuses") or line.begins_with("Intact shield:") or line.begins_with("Accuracy ") or line.begins_with("Load "):
    lines.append(line)
-  elif line.begins_with("Reserve capacity"):
+  elif line.begins_with("Pocket capacity"):
    lines.append(line.split(";")[0])
   elif line.begins_with("Utility is active"):
    lines.append("Utility active at zero condition")

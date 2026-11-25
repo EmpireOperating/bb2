@@ -8,7 +8,7 @@ boot_splash/image="res://engraved_imprint/frontispiece.png"
 boot_splash/bg_color=Color(0.1333, 0.1765, 0.1529, 1)
 boot_splash/fullsize=false
 config/use_custom_user_dir=true
-config/custom_user_dir_name="ashen-company-engraved"
+config/custom_user_dir_name="ashen-company-layer-forge"
 run/main_scene="res://single_body/main.tscn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 

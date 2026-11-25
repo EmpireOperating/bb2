@@ -192,7 +192,11 @@ func step(world, town_safe: bool, traffic = null, background: bool = false, camp
 	if background and campaign != null: campaign.recon.watch.clear()
 	if not background: grace = maxf(0.0,snappedf(grace-STEP,STEP))
 	var moving = not path.is_empty()
-	if not background:
+	if not background and traffic != null and campaign != null and not traffic.follow_wagon.is_empty():
+		var dock: String = traffic.advance_follow(campaign)
+		if not dock.is_empty():
+			out.arrived = dock; destination = ""; paused = true
+	elif not background:
 		# Traffic has already refreshed the order and revoked lost contacts.
 		# Only the company moves farther; the tick and terrain costs stay fixed.
 		var pursuing: bool = traffic != null and traffic.enabled and not traffic.pursuit.is_empty()

@@ -3,6 +3,7 @@ extends RefCounted
 const FIELDS = ["crypt","crypt_barrow","crypt_gallery","crypt_throne","crypt_mound","crypt_garrison","crypt_royal"]
 const RECIPE = "seeded_crypt_v2"
 const CANONICAL_RECIPE := "seeded_crypt_horizontal_v3"
+const WORK_RECIPE := "seeded_crypt_horizontal_v3_work_v1"
 const Opening = preload("res://dungeon_maps/canonical_opening.gd")
 const WIDTH = 25
 const HEIGHT = 13
@@ -11,9 +12,9 @@ static func _request(field: Variant, seed: Variant) -> bool:
 static func generate(field_id: Variant, seed: Variant, recipe: Variant = RECIPE) -> Dictionary:
  if not _request(field_id,seed) or not recipe is String: return {}
  if recipe == RECIPE: return _build(field_id,seed)
- if recipe != CANONICAL_RECIPE: return {}
+ if recipe not in [CANONICAL_RECIPE,WORK_RECIPE]: return {}
  var packet := Opening.geometry(field_id,seed)
- packet["recipe"]=CANONICAL_RECIPE
+ packet["recipe"]=recipe
  packet["field"]=field_id
  packet["seed"]=seed
  var d: Dictionary=packet.descriptor

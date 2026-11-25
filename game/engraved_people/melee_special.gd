@@ -1,6 +1,7 @@
 extends RefCounted
 ## Four special-only fitted strips. No combat authority, wear or feedback here.
 const RingboundMaul = preload("res://engraved_people/ringbound_maul.gd")
+const Wear = preload("res://engraved_people/named_wear.gd")
 const PATH := "res://engraved_people/melee-special-cuts"
 const BEFORE := {
  "split_shield":[0.23,0.59,0.77,1.0],
@@ -114,11 +115,12 @@ static func compose(recipe:Dictionary,gesture:Dictionary,index:int,plates:Dictio
  for cut:String in order:
   if cut==part and RingboundMaul.stamp(im,recipe,kind,index,shift):continue
   if not row.ink.has(cut):stamp.call(im,cut,shift);continue
+  if Wear.stamp(im,cut,shift,recipe,"melee/%s/%d" % [lane,index]):continue
   var p:Array=_data.cuts[int(row.ink[cut])]
   im.blend_rect(_sheet,Rect2i(p[2],p[3],p[4],p[5]),Vector2i(p[0],p[1])+shift)
  im.generate_mipmaps()
  var tex:=ImageTexture.create_from_image(im)
- tex.set_meta("engraved_head",{"face":recipe.face,"head":recipe.head,"head_wear":recipe.head_wear})
+ tex.set_meta("engraved_head",Wear.head_recipe(recipe))
  tex.set_meta("melee_special_pose",{"kind":kind,"lane":lane,"role":row.role,"frame":index,"edge":Vector2(row.edge[0],row.edge[1])+Vector2(shift),"grip":Vector2(row.grip[0],row.grip[1])+Vector2(shift)})
  if pad.x>0:tex.set_meta("painted_side_pad",pad.x)
  if pad.y>0:tex.set_meta("painted_top_pad",pad.y)

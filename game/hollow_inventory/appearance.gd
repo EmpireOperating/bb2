@@ -2,7 +2,7 @@ extends "res://hollow_systems/appearance.gd"
 ## A detached projection of current owned definitions, never a cosmetic loadout.
 const People = preload("res://src/people.gd")
 const Rarity = preload("res://hollow_campaign/rarity.gd")
-const EFFECT_LABELS := {"skill":"Melee skill","ranged_skill":"Ranged skill","defense":"Melee defense","ranged_defense":"Ranged defense","stamina":"Stamina capacity","initiative":"Initiative","recovery":"Normal recovery","move_fatigue_discount":"Movement fatigue discount per paid edge","carried_load_discount":"Occupied reserve load discount after halving"}
+const EFFECT_LABELS := {"skill":"Melee skill","ranged_skill":"Ranged skill","defense":"Melee defense","ranged_defense":"Ranged defense","stamina":"Stamina capacity","initiative":"Initiative","recovery":"Normal recovery","move_fatigue_discount":"Movement fatigue discount per paid edge","carried_load_discount":"Occupied pocket load discount after halving"}
 
 static func item_tier(item: Dictionary, catalog: Dictionary) -> String:
 	if item.is_empty(): return ""
@@ -65,7 +65,7 @@ static func item_details(item: Dictionary, catalog: Dictionary) -> String:
 	for field: String in EFFECT_LABELS:
 		var value := int(effective.get("effects",{}).get(field,0))
 		if value != 0: lines.append("%s %+d%s" % [EFFECT_LABELS[field],value," (disabled while broken)" if maximum > 0 and int(item.get("condition",maximum)) <= 0 and value > 0 else ""])
-	if ordinary.get("slot","") == "belt": lines.append("Reserve capacity +%d; base 2, Bags and Belts 4. Only actual capacity belts add a reserve; existing paid single-item switches." % int(effective.get("capacity",0)))
+	if ordinary.get("slot","") == "belt": lines.append("Pocket capacity +%d; base 2, Bags and Belts 4. A belt with capacity adds pockets; switching still costs AP and fatigue." % int(effective.get("capacity",0)))
 	for line: String in Rarity.utility_lines(item,ordinary):lines.append("Utility roll · "+line)
 	if int(ordinary.get("durability",0)) == 0 and ordinary.get("slot","") in ["hands","feet","cloak","belt"]: lines.append("Utility is active at zero condition. Whole-point utility rolls derive independently from immutable item identity; fixed functions stay unchanged.")
 	elif ordinary.get("slot","") in ["hands","feet","cloak","belt"]: lines.append("Rarity improves protection only on this protective alternative; authored penalties stay unchanged.")

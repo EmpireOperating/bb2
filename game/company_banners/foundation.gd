@@ -13,6 +13,7 @@ var create_button:Button
 var cancel_button:Button
 var cards:Dictionary={}
 var selected_banner:="ash_raven"
+var from_title := false
 var _controls:Dictionary={}
 func _ready()->void:
  set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -50,7 +51,7 @@ func _ready()->void:
   var motto:=Label.new();motto.text=MOTTO[i];motto.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;UI.label(motto,11,UI.MUTED);stack.add_child(motto)
   var status:=Label.new();status.name="Selection";status.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;UI.label(status,12,UI.GOLD);stack.add_child(status)
   card.set_meta("selection",status)
- var warning:=Label.new();warning.text="Starting fresh replaces unsaved progress. Existing checkpoint and named saves stay unchanged.\nSave/F5 checkpoints the new company; named saves change only through the save library. Cancel keeps your company as it is.";UI.label(warning,14,UI.MUTED);column.add_child(warning)
+ var warning:=Label.new();warning.text="Founding does not change existing saves. Use Save / F5 in camp to save this company." if from_title else "Starting fresh replaces unsaved progress. Existing checkpoint and named saves stay unchanged.\nSave/F5 checkpoints the new company; named saves change only through the save library. Cancel keeps your company as it is.";UI.label(warning,14,UI.MUTED);column.add_child(warning)
  error_label=Label.new();error_label.custom_minimum_size.y=23;UI.label(error_label,14,UI.DANGER);column.add_child(error_label)
  var footer:=HBoxContainer.new();footer.add_theme_constant_override("separation",16);column.add_child(footer)
  var hint:=Label.new();hint.text="Spaces, apostrophes & hyphens welcome · 1–40 characters";UI.label(hint,13,UI.MUTED);hint.size_flags_horizontal=Control.SIZE_EXPAND_FILL;footer.add_child(hint)

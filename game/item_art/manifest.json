@@ -10,6 +10,22 @@
     "normalized_sha256": "48b72c24bb5b29a3dd97432f29ddba02216458e9ab7c0200ceb693d9e7e2db8f"
   },
   "definitions": {
+    "mason_hammer": {
+      "definition": "mason_hammer",
+      "donor_definition": "",
+      "catalog_binding": "ordinary_mason_hammer",
+      "art_key": "mason-hammer-painted-v1",
+      "source_path": "res://item_art/transparent/mason-hammer.png",
+      "source_sha256": "6c28f78d38f1c1c31e020f8813b03ab3fd3801b0db0bdbbac72aaf7066a5bbce",
+      "source_dimensions": [
+        320,
+        320
+      ],
+      "origin_path": "/home/quatro/Games/BB2-Playtest-Fixes/lanes/mason-hammer-art/painting-master.png",
+      "origin_sha256": "23e24b0f2c0a7965e2bd7475de657ad9dfc9921c406bf9a994b18eb57954dbf2",
+      "transformation": "Standalone painting; flat matte removed and reduced uniformly to 320x320. No fitted-character pixels.",
+      "approval_status": "NEW_PLAYTEST_ART"
+    },
     "hm_trial_v1:twohand_maul": {
       "definition": "hm_trial_v1:twohand_maul",
       "donor_definition": "",

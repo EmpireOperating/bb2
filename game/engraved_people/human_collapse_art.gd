@@ -104,6 +104,7 @@ static func _frame_set(recipe: Dictionary, extension := "", compact := false) ->
 		paint.append(recipe.get(field))
 	# Both physical mauls share the same part and arm rig but not the same carry ink.
 	if RingboundMaul.matches(recipe):paint.append("ringbound_iron")
+	if recipe.has("named_paint"):paint.append(recipe.named_paint)
 	var key := JSON.stringify(paint if extension.is_empty() else [extension, paint, recipe.get("seated_bolt", false)])
 	if compact:
 		key = "compact/" + key
@@ -246,7 +247,9 @@ static func _source_layers(r: Dictionary, extension := "") -> Dictionary:
 			if group == "weapon" and RingboundMaul.matches(r):
 				src = RingboundMaul.collapse_source()
 				if not src.is_empty():layers.weapon_fit_reference = _read_cut(cut)
-			if src.is_empty():src = _read_cut(cut)
+			if src.is_empty():
+				src = Actors.Wear.collapse_source(r,cut)
+				if src.is_empty():src = _read_cut(cut)
 		if src.is_empty():
 			return {}
 		if not layers.has(group):

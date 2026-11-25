@@ -5,6 +5,7 @@ signal navigation_requested(id: String)
 const CompanyPages = preload("res://company_town/company_pages.gd")
 const PlayerWorkflows = preload("res://company_town/player_workflows.gd")
 const Recovery = preload("res://src/recovery.gd")
+const Armor = preload("res://src/armor.gd")
 var section := "equipment"
 var section_buttons := {}
 var formation_button: Button
@@ -15,7 +16,6 @@ var _ammo_callback: Callable
 var _ammo_paint := {}
 var pages: Panel
 var perks_view: Panel
-var layered_button: Button
 var memorial_button: Button
 var roster_counts: Label
 const Inventory = preload("res://hollow_campaign/appearance.gd")
@@ -27,6 +27,8 @@ const InventoryCard = preload("res://iron_oath/inventory_card.gd")
 const InventoryArt = preload("res://iron_oath/inventory_art.gd")
 const REPAIR_MARK = preload("res://company_town/assets/resources/repair-hammers-32.png")
 const Offer = preload("res://company_town/equipment_offer.gd")
+const Forge = preload("res://layer_forge/outfitter.gd")
+var forge: Forge
 const VaultItems = preload("res://vault_key_items/presentation.gd")
 const KeyCard = preload("res://battle_report/loot_card.gd")
 var keyring: VBoxContainer
@@ -42,29 +44,28 @@ var resource_label: Label
 var resource_header: Control
 var inventory_tab: Button
 var camp_background: TextureRect
-var item_art: TextureRect
-var item_detail_frame: Panel
-var item_detail_heading: Label
-var item_details_button: Button
-var item_provenance: Label
+var item_hover
 const EngravedActors = preload("res://engraved_people/actors.gd")
 var selected_level_badge: Control
-const LEFT_SLOTS := ["mainhand","head","hands","cloak"]
-const RIGHT_SLOTS := ["offhand","body","feet","belt","ammo"]
+const LEFT_SLOTS := ["mainhand","head"]
+const RIGHT_SLOTS := ["offhand","body","ammo","belt"]
+const BODY_LAYERS := {"base":"Base", "mail":"Mail", "outer":"Outer"}
+var body_card: Button
+var body_layers: VBoxContainer
+var body_close: Button
+var body_stash_label: Label
+var body_remove: Button
+var body_fit: Button
+var _body_buttons := {}
+var _body_intents := {}
+var _body_callbacks := {}
+var _body_open := false
+var _body_layer := "base"
+var _stash_before_body := 0
 var details_button: Button
 var details_panel: Panel
 var details_close_button: Button
-const WeaponSkills = preload("res://company_town/weapon_skill_preview.gd")
-var weapon_skills_heading: Label
-var weapon_skills_context: Label
-var weapon_skill_buttons := {}
-var weapon_skill_effects := {}
-var _expanded_skills := {}
-var _skill_item_uid := ""
-var weapon_skills_column: VBoxContainer
 var _retained_weapon_uid := ""
-var item_summary: Label
-var item_scroll: ScrollContainer
 var omission_label: Label
 var _detail_context := ""
 var _details_owner := {}
@@ -152,44 +153,17 @@ func _ready() -> void:
  selected_level_badge=preload("res://ui_polish/level_up_badge.gd").new();preview.add_child(selected_level_badge)
  stats_label = _label(14,INK,portrait_card);stats_label.hide()
  omission_label = _label(12,MUTED,portrait_card)
- carry_card = _card("CARRIED ARMS");carry_heading = carry_card.get_node("Heading")
- layered_button = _button("Armor",carry_card);layered_button.custom_minimum_size.y = 32
- layered_button.tooltip_text = PlayerWorkflows.ARMOR_REASON if PlayerWorkflows.LAYERED_ARMOR_PARKED else "Layered armor"
- layered_button.add_theme_font_size_override("font_size",15);layered_button.pressed.connect(_navigate.bind("armor"))
+ carry_card = _card("POCKETS");carry_heading = carry_card.get_node("Heading")
  carry_column = VBoxContainer.new();carry_column.hide();carry_card.add_child(carry_column)
  carry_row = HBoxContainer.new();carry_row.add_theme_constant_override("separation",8);carry_card.add_child(carry_row)
  comparison_label = _label(13,GOLD,stash_card);comparison_label.hide()
  reason_label = _label(13,MUTED,stash_card)
  equip_button = _button("Equip selected",stash_card);equip_button.pressed.connect(_equip)
- item_details_button = _button("Item details",stash_card);item_details_button.pressed.connect(_toggle_item_details)
  remove_button = _button("Remove slot",portrait_card);remove_button.pressed.connect(_remove)
+ if Forge.active():forge = Forge.new(self)
+ else:_build_body_armor()
  deploy_button = _button("",self);deploy_button.hide();deploy_button.disabled = true
- item_detail_frame = Panel.new();item_detail_frame.add_theme_stylebox_override("panel",IronSkin.panel(8))
- # On demand, over the figure and never in the stash's layout/hit area.
- add_child(item_detail_frame);item_detail_frame.hide()
- item_detail_heading = _label(14,GOLD,item_detail_frame);item_detail_heading.text = "ITEM DETAILS"
- item_detail_heading.autowrap_mode = TextServer.AUTOWRAP_OFF;item_detail_heading.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
- item_art = TextureRect.new();item_art.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
- item_art.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED;item_art.mouse_filter = Control.MOUSE_FILTER_IGNORE
- item_detail_frame.add_child(item_art);UI.Press.mount_icon(item_art)
- item_scroll = ScrollContainer.new();item_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
- item_scroll.focus_mode = Control.FOCUS_ALL
- item_scroll.follow_focus = true
- item_detail_frame.add_child(item_scroll)
- weapon_skills_column = VBoxContainer.new();weapon_skills_column.size_flags_horizontal = Control.SIZE_EXPAND_FILL;item_scroll.add_child(weapon_skills_column)
- weapon_skills_heading = _label(16,GOLD,weapon_skills_column);weapon_skills_heading.text = "Weapon skills"
- weapon_skills_context = _label(13,MUTED,weapon_skills_column)
- weapon_skills_context.autowrap_mode = TextServer.AUTOWRAP_OFF
- weapon_skills_context.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
- for id: String in ["basic","special"]:
-  var row := _button("",weapon_skills_column);row.alignment = HORIZONTAL_ALIGNMENT_LEFT
-  row.add_theme_font_size_override("font_size",14);row.custom_minimum_size.y = 38
-  weapon_skill_buttons[id] = row;row.pressed.connect(_toggle_weapon_skill.bind(id))
-  var effect := _label(14,INK,weapon_skills_column);effect.hide();effect.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-  weapon_skill_effects[id] = effect
- item_summary = _label(15,INK,weapon_skills_column);item_summary.size_flags_horizontal = Control.SIZE_EXPAND_FILL
- weapon_skills_column.move_child(item_summary,0) # Inspect the item before its optional skill disclosures.
- item_provenance = _label(14,MUTED,weapon_skills_column);item_provenance.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+ item_hover = preload("res://ui_polish/item_hover.gd").new();add_child(item_hover)
  back_button = _button("Return to map [Esc]",self);back_button.pressed.connect(_back)
  inventory_tab = _button("Equipment",self)
  section_buttons["equipment"] = inventory_tab
@@ -225,8 +199,10 @@ func _ready() -> void:
  selected_slot = "mainhand";_ready_ui = true;_bind();refresh()
 func set_session(value) -> void:
  _retained_weapon_uid = "";selected_key = ""
+ _body_open = false;_body_layer = "base";_body_intents.clear();_stash_before_body = 0
+ if forge != null:forge.reset()
  _repair_press = null
- if is_instance_valid(item_detail_frame):item_detail_frame.hide()
+ if is_instance_valid(item_hover):item_hover.retire()
  super.set_session(value)
  selected_slot = "mainhand"; refresh()
 func set_return_label(text: String) -> void:
@@ -250,7 +226,8 @@ func _navigate(id: String) -> void:
 func _view_changed() -> void:
  if not is_visible_in_tree():
   _retire_details();market_panel.hide()
-  item_detail_frame.hide()
+  _body_intents.clear()
+  if forge != null:forge.reset()
   _repair_press = null
   _detail_context = ""
  elif _ready_ui:refresh()
@@ -286,6 +263,8 @@ func _back() -> void:
   _close_market();return
  if is_instance_valid(details_panel) and details_panel.visible:
   _close_details();return
+ if _forge_open():
+  forge.close();return
  back_requested.emit()
 func _deploy() -> void: pass # No demo deployment route; use actual world contact.
 func _input(event: InputEvent) -> void:
@@ -315,8 +294,7 @@ func _input(event: InputEvent) -> void:
    if not event.echo:Presentation.cycle(perks_view.confirm_panel,event.shift_pressed)
    get_viewport().set_input_as_handled();return
  var focused := get_viewport().gui_get_focus_owner()
- var inspecting := item_detail_frame.visible and focused != null and item_detail_frame.is_ancestor_of(focused)
- var scroll: ScrollContainer = market_scroll if market_panel.visible else roster_scroll if focused != null and roster_scroll.is_ancestor_of(focused) else _section_scroll(focused) if section != "equipment" else item_scroll if inspecting else stash_scroll
+ var scroll: ScrollContainer = market_scroll if market_panel.visible else roster_scroll if focused != null and roster_scroll.is_ancestor_of(focused) else _section_scroll(focused) if section != "equipment" else forge.stash_scroll if _forge_open() else stash_scroll
  if scroll != null and Presentation.scroll_key(scroll,event):
   get_viewport().set_input_as_handled();return
  if event.keycode == KEY_TAB or event.physical_keycode == KEY_TAB:
@@ -334,7 +312,7 @@ func _input(event: InputEvent) -> void:
   get_viewport().set_input_as_handled();return
  if event.keycode == KEY_ESCAPE or event.physical_keycode == KEY_ESCAPE:
   if not event.echo:
-   if item_detail_frame.visible and not market_panel.visible and not perks_view.confirm_panel.visible:_toggle_item_details()
+   if _body_open and not market_panel.visible and not perks_view.confirm_panel.visible:_toggle_body_armor()
    else:_back()
   get_viewport().set_input_as_handled()
 func _section_scroll(focused: Control) -> ScrollContainer:
@@ -348,26 +326,50 @@ func _person() -> Dictionary:
    if person.id == selected_sid:return person
  return {}
 func _item_row(uid: String) -> Dictionary:
- var item: Dictionary = session.campaign.items.get(uid,{})
- var definition: Dictionary = session.campaign.item_def(uid)
- return {"item_id":uid,"definition":item.get("definition",""),"name":definition.get("name","Empty"),"condition":item.get("condition",0),"maximum":definition.get("durability",0)}
+ var c = session.campaign
+ if forge != null:
+  var region: String = c.forge_set_group(uid)
+  if not region.is_empty():return Forge.set_row(c,uid,region)
+ var item: Dictionary = c.items.get(uid,{})
+ var definition: Dictionary = c.item_def(uid)
+ return {"item_id":uid,"definition":item.get("definition",""),"name":c.item_name(uid) if not item.is_empty() else "Empty","condition":item.get("condition",0),"maximum":definition.get("durability",0)}
 func _available_rows() -> Array:
- # A stash is all owned, loose, unassigned equippable items, not a hidden slot filter.
+ # The general stash retains every loose record, including legacy and stored kits.
+ # The disclosure filters the same physical stash, never the catalog.
  var out: Array = []
- for uid: String in session.campaign.items:
-  if session.campaign.owner(uid) >= 0 or not session.campaign.parent_kit(uid).is_empty():continue
-  var definition: String = session.campaign.items[uid].definition
-  if not session.campaign.VISIBLE_SLOTS.any(func(slot):return session.campaign.slot_allowed(definition,slot)):continue
-  out.append(_item_row(uid))
+ var c = session.campaign
+ for uid: String in (c.components("body",_body_layer) if _body_open else c.sale_items()):
+  var row := _item_row(uid)
+  if forge != null:
+   var d: Dictionary = c.item_def(uid)
+   if not row.has("set_group") and not Forge.is_piece(row.definition,d) and d.get("slot","") not in ["weapon","shield","ammo"]:continue
+  out.append(row)
  return out
+func _regular_slot(slot: String) -> bool:
+ if forge != null:return slot in Forge.ORDINARY_SLOTS or slot in Arsenal.CARRIED
+ if slot == "belt":return session != null and session.campaign.has_method("armor_lab_enabled") and session.campaign.call("armor_lab_enabled")
+ return slot in ["mainhand","offhand","head","ammo"] or slot in Arsenal.CARRIED
+func _forge_open() -> bool:
+ return forge != null and not forge.group.is_empty()
 func _select_item(id: String) -> void:
- if not _browse_reason().is_empty() or not _items.any(func(row):return row.item_id == id):return
+ if section != "equipment" or _forge_open() or not _browse_reason().is_empty() or not _items.any(func(row):return row.item_id == id):return
+ var c = session.campaign
+ var d: Dictionary = c.item_def(id)
+ if forge != null:
+  var region: String = c.forge_set_group(id)
+  if not region.is_empty():
+   forge.open(region,"",id,true);return
+  if Forge.is_piece(c.items[id].definition,d):
+   forge.open(d.group,d.layer,id);return
+ if forge == null and not _body_open and d.get("group") == "body" and d.get("layer","") in BODY_LAYERS:
+  _body_open = true;_stash_before_body = stash_scroll.scroll_vertical;_body_layer = d.layer
+  stash_scroll.scroll_vertical = 0
+ elif not _body_open and Offer.armor_lab_refusal(d).is_empty() and not c.slot_allowed(c.items[id].definition,selected_slot):
+  for slot: String in (Forge.ORDINARY_SLOTS if forge != null else ["mainhand","offhand","head","ammo","belt"]):
+   if _regular_slot(slot) and c.slot_allowed(c.items[id].definition,slot):selected_slot = slot;break
  _retained_weapon_uid = ""
- var definition: String = session.campaign.items[id].definition
- if not session.campaign.slot_allowed(definition,selected_slot):
-  for slot: String in session.campaign.VISIBLE_SLOTS:
-   if session.campaign.slot_allowed(definition,slot):selected_slot = slot;break
  selected_key = "";selected_item_id = id;_feedback = "";refresh()
+ if _body_open and item_buttons.has(id):item_buttons[id].grab_focus()
 func _carry_rows() -> Array:
  var out: Array = []
  var person := _person()
@@ -375,14 +377,14 @@ func _carry_rows() -> Array:
  for i in session.campaign.carry_capacity(person):
   var key := "carry%d" % (i+1)
   var row := _item_row(session.campaign.slot_uid(person,key))
-  row.merge({"key":key,"label":"Reserve %d" % (i+1)},true);out.append(row)
+  row.merge({"key":key,"label":"Pocket %d" % (i+1)},true);out.append(row)
  return out
 func refresh() -> void:
  if _drop_refresh_held:
   _drop_refresh_pending = true
   return
  if not _ready_ui: return
- checkpoint_label.text = "BATTLE · READ-ONLY · Company records before battle. Live damage / AP / fatigue / reserve swaps remain in the combat HUD." if battle_read_only else ("SAVED" if host != null and host.saved_ok else "UNSAVED") + " · Save / F5 in the world menu checkpoints your company. No automatic saves."
+ checkpoint_label.text = "BATTLE · READ-ONLY · Company records before battle. Live damage / AP / fatigue / pocket swaps remain in the combat HUD." if battle_read_only else ("SAVED" if host != null and host.saved_ok else "UNSAVED") + " · Save / F5 in the world menu checkpoints your company. No automatic saves."
  _sync_details()
  _revision += 1
  var people: Array = []
@@ -392,8 +394,14 @@ func refresh() -> void:
  if not people.any(func(person): return person.id == selected_sid):
   selected_sid = int(people[0].id) if not people.is_empty() else -1
   selected_item_id = ""
+  if _forge_open():forge.clear_candidate()
  _unit = session.preview_unit(selected_sid) if selected_sid >= 0 else {}
  _slots = session.slot_rows(selected_sid) if selected_sid >= 0 else []
+ _slots = _slots.filter(func(row):return _regular_slot(row.key))
+ for row: Dictionary in _slots:
+  if row.key == "head":row.label = "Helmet"
+  elif row.key == "belt":row.label = "Pocket belt"
+ if selected_sid < 0:_body_open = false
  _carried = _carry_rows()
  if not (_slots+_carried).any(func(row):return row.key == selected_slot):
   selected_slot = "mainhand"; selected_item_id = ""
@@ -409,16 +417,16 @@ func refresh() -> void:
  for slot: Dictionary in _slots:
   var row: Button = slot_buttons[slot.key]
   row.text = "%s\n%s" % [slot.label.to_upper(), _item_text(slot)]
-  row.tooltip_text = row.text.replace("\n", " · ")
+  row.tooltip_text = row.text.replace("\n", " · ") if slot.item_id.is_empty() else ""
   _mark(row, slot.key == selected_slot)
  _sync_cards(item_buttons, inventory_grid, _items, "item_id", _select_item,"stash")
  for item: Dictionary in _items:
   var row: Button = item_buttons[item.item_id]
   row.text = _item_text(item)
-  row.tooltip_text = row.text.replace("\n", " · ")
   _mark(row, item.item_id == selected_item_id)
  _refresh_keyring()
- _empty_stash.visible = _items.is_empty() and _owned_keys.is_empty()
+ keyring.visible = not _body_open and not _owned_keys.is_empty()
+ _empty_stash.visible = _items.is_empty() and (_body_open or _owned_keys.is_empty())
  _empty_stash.text = "No suitable unassigned items.\nEquipment already worn by a brother is not in the stash."
  var stash_count := _items.size()+_owned_keys.size()
  stash_title.text = "OWNED STASH  /  %d %s" % [stash_count,"ITEM" if stash_count==1 else "ITEMS"]
@@ -426,12 +434,11 @@ func refresh() -> void:
  name_label.tooltip_text = name_label.text
  identity_label.text = "HP %d/%d  ·  %s" % [_unit.hp, _unit.max_hp, _unit.get("title", "MERCENARY")] if not _unit.is_empty() else ""
  identity_label.tooltip_text = identity_label.text
- stats_label.text = "Body %d/%d  ·  Head %d/%d\nMelee %d  ·  Ranged %d\nDefense %d  ·  Load %d" % [_unit.armor + _unit.padding, _unit.max_armor + _unit.max_padding, _unit.helmet, _unit.max_helmet, _unit.skill, _unit.ranged_skill, _unit.defense, _unit.load] if not _unit.is_empty() else ""
  _sync_cards(carry_buttons,carry_row,_carried,"key",_select_slot,"carry")
  for row: Dictionary in _carried:
   carry_buttons[row.key].text = row.label.to_upper()+"\n"+_item_text(row)
   _mark(carry_buttons[row.key],row.key == selected_slot)
- if is_instance_valid(carry_heading): carry_heading.text = "CARRIED ARMS · %d" % _carried.size()
+ if is_instance_valid(carry_heading): carry_heading.text = "POCKETS · %d" % _carried.size()
  if not _unit.is_empty():
   var tier := str(_unit.get("companion_roll",{}).get("tier",""))
   identity_label.text += " · "+(tier.capitalize() if not tier.is_empty() else "Unrated")
@@ -441,7 +448,6 @@ func refresh() -> void:
  if context != _detail_context:
   _detail_context = context
   _retire_details()
-  item_scroll.scroll_vertical = 0
  _update_portrait()
  selected_level_badge.present(_person())
  _paint_inventory(people)
@@ -479,10 +485,7 @@ func _refresh_workspace() -> void:
 func _update_portrait() -> void:
  if _unit.is_empty():
   _retained_weapon_uid = ""
-  if is_instance_valid(item_summary):item_summary.text = "No current fighter.";item_summary.tooltip_text = ""
-  item_provenance.hide()
   if is_instance_valid(mapping_notes):mapping_notes.text = ""
-  _refresh_weapon_skills()
   preview.present(null)
   preview_layers.clear()
   _rendered_unit.clear()
@@ -510,55 +513,16 @@ func _update_portrait() -> void:
  var item: Dictionary = session.campaign.items.get(uid,{})
  var record := Inventory.item_details(item,session.campaign.catalog)
  mapping_notes.text = Inventory.effective_stats(_unit,session.campaign.battle)+"\n\n"+Inventory.person_details(_unit)+"\n\n"+selected_slot.to_upper()+"\n"+record+"\n\n"+Inventory.diagnostics_text(preview_actor.render_diagnostics() if is_instance_valid(preview_actor) else {})
- if is_instance_valid(item_summary):
-  var owner_id: int = session.campaign.owner(uid)
-  var origin := "Owned stash" if owner_id < 0 else "Assigned to "+str(session.campaign.soldiers[owner_id].name)
-  item_summary.text = Presentation.summary(item,session.campaign.catalog)
-  item_provenance.text = "\nFULL ITEM RECORD\n"+record+"\n"+origin
-  item_provenance.visible = not item.is_empty()
-  mapping_notes.text += "\n\n"+origin
-  var ammo_uid: String = session.campaign.slot_uid(_person(),"ammo")
-  var ammo: Dictionary = session.campaign.items.get(ammo_uid,{})
-  var crossbow_ui = load("res://crossbows/ui.gd")
-  var readiness: String = crossbow_ui.inspection(item,ammo,_unit,session.campaign.battle,session.campaign.catalog,true)
-  if not readiness.is_empty():
-   item_summary.text = crossbow_ui.summary(item,ammo,_unit,session.campaign.battle,session.campaign.catalog,true)
-   mapping_notes.text += "\n\n"+readiness+"\nCAMP physical record, not battle readiness. Inspection never loads or refills equipment."
-  item_summary.tooltip_text = item_summary.text
-  omission_label.text = Presentation.omission(preview_actor.render_diagnostics())
-  _refresh_weapon_skills()
-
-func weapon_skill_preview() -> Dictionary:
- if session == null:return {"rows":[]}
- var uid := _inspected_item_uid()
- return WeaponSkills.project(_unit,session.campaign.items.get(uid,{}),session.campaign.battle)
-func weapon_skill_expanded(id: String) -> bool:
- return bool(_expanded_skills.get(id,false))
-func _toggle_weapon_skill(id: String) -> void:
- if not _browse_reason().is_empty() or not weapon_skill_buttons.has(id):return
- _expanded_skills[id] = not weapon_skill_expanded(id)
- _refresh_weapon_skills()
-func _refresh_weapon_skills() -> void:
- if not is_instance_valid(weapon_skills_heading):return
- var data := weapon_skill_preview()
- if str(data.get("uid","")) != _skill_item_uid:
-  _skill_item_uid = str(data.get("uid",""));_expanded_skills.clear();item_scroll.scroll_vertical = 0
- weapon_skills_heading.visible = not data.rows.is_empty()
- weapon_skills_context.visible = weapon_skills_heading.visible
- var owner_id: int = session.campaign.owner(_inspected_item_uid()) if session != null else -1
+ var owner_id: int = session.campaign.owner(uid)
  var origin := "Owned stash" if owner_id < 0 else "Assigned to "+str(session.campaign.soldiers[owner_id].name)
- weapon_skills_context.text = "If equipped by %s\n%s · perks included · conditions apply" % [_unit.get("name",""),origin]
- weapon_skills_context.tooltip_text = weapon_skills_context.text+"\nNo target or movement discounts are assumed. Expand a skill for details."
- var supported: Array = data.rows.map(func(row):return row.id)
- for id: String in weapon_skill_buttons:weapon_skill_buttons[id].visible = id in supported
- for effect: Label in weapon_skill_effects.values():effect.hide()
- for row: Dictionary in data.rows:
-  var button: Button = weapon_skill_buttons[row.id];button.show()
-  button.text = "%s %s\n%d AP · %d fatigue%s" % ["▾" if weapon_skill_expanded(row.id) else "▸",row.name,row.ap,row.fatigue," †" if not row.notes.is_empty() else ""]
-  var effect: Label = weapon_skill_effects[row.id]
-  effect.text = row.effect+"\nRange: "+row.range+"\nRequires: "+row.requirements+("\n"+row.notes if not row.notes.is_empty() else "")
-  effect.visible = weapon_skill_expanded(row.id)
-  button.tooltip_text = effect.text
+ mapping_notes.text += "\n\n"+origin
+ var ammo_uid: String = session.campaign.slot_uid(_person(),"ammo")
+ var ammo: Dictionary = session.campaign.items.get(ammo_uid,{})
+ var crossbow_ui = load("res://crossbows/ui.gd")
+ var readiness: String = crossbow_ui.inspection(item,ammo,_unit,session.campaign.battle,session.campaign.catalog,true)
+ if not readiness.is_empty():mapping_notes.text += "\n\n"+readiness+"\nCAMP physical record, not battle readiness. Inspection never loads or refills equipment."
+ omission_label.text = Presentation.omission(preview_actor.render_diagnostics())
+
 func _inspected_item_uid() -> String:
  if not selected_key.is_empty():return ""
  if session != null and session.campaign.items.has(_retained_weapon_uid):return _retained_weapon_uid
@@ -567,6 +531,145 @@ func _selected_row() -> Dictionary:
  for row: Dictionary in _slots+_carried:
   if row.key == selected_slot:return row
  return {}
+func _build_body_armor() -> void:
+ body_card = _button("Body Armor",portrait_card);body_card.name = "BodyArmor"
+ body_card.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+ body_card.add_theme_font_size_override("font_size",15)
+ body_card.clip_text = true;body_card.pressed.connect(_toggle_body_armor)
+ body_layers = VBoxContainer.new();body_layers.name = "BodyArmorLayers"
+ body_layers.add_theme_constant_override("separation",4);stash_card.add_child(body_layers)
+ for layer: String in BODY_LAYERS:
+  var option := _button(BODY_LAYERS[layer],body_layers)
+  option.add_theme_font_size_override("font_size",15);option.custom_minimum_size.y = 32
+  option.alignment = HORIZONTAL_ALIGNMENT_LEFT;option.clip_text = true
+  option.pressed.connect(_select_body_layer.bind(layer));_body_buttons[layer] = option
+ body_close = _button("All stash",stash_card);body_close.name = "BodyArmorClose"
+ body_close.add_theme_font_size_override("font_size",15)
+ body_close.tooltip_text = "Close layers and return to the full owned stash [Esc]."
+ body_close.pressed.connect(_toggle_body_armor)
+ body_stash_label = _label(14,GOLD,stash_card)
+ comparison_label.name = "BodyArmorComparison"
+ body_remove = _button("Remove layer",stash_card);body_remove.name = "RemoveBodyLayer"
+ body_fit = _button("Fit piece",stash_card);body_fit.name = "FitBodyPiece"
+ for button in [body_remove,body_fit]:button.add_theme_font_size_override("font_size",16)
+
+func _toggle_body_armor() -> void:
+ if forge != null or section != "equipment" or _person().is_empty() or not _browse_reason().is_empty():return
+ if _body_open:
+  _leave_body_armor();selected_item_id = "";_feedback = "";refresh()
+  # Wait for the general stash's restored content bounds, not the old filter.
+  stash_scroll.set_deferred("scroll_vertical",_stash_before_body)
+  body_card.grab_focus()
+ else:
+  _stash_before_body = stash_scroll.scroll_vertical
+  _body_open = true;_select_body_layer(_body_layer)
+  _body_buttons[_body_layer].grab_focus()
+
+func _leave_body_armor() -> void:
+ _body_open = false;_body_intents.clear()
+
+func _select_body_layer(layer: String) -> void:
+ if section != "equipment" or not _body_open or not BODY_LAYERS.has(layer) or not _browse_reason().is_empty():return
+ _body_layer = layer;selected_key = "";selected_item_id = "";_retained_weapon_uid = "";_feedback = ""
+ stash_scroll.scroll_vertical = 0
+ refresh()
+
+func _body_parts(person: Dictionary) -> Dictionary:
+ return session.campaign.kit_parts(person.get("gear",{}).get("body",""))
+
+func _body_reason(person: Dictionary, uid: String, fitted: String, quote: Dictionary) -> String:
+ var reason := _camp_reason()
+ if not reason.is_empty():return reason
+ if section != "equipment" or not _body_open or host == null or host.session != session or not can_process() or is_queued_for_deletion():return "Open the current Company Equipment screen."
+ if person.is_empty() or not person.get("alive",false):return "Select a living companion."
+ if not session.campaign.encounter.is_empty() or not session.campaign.dungeons.active.is_empty():return "Resolve the current contact before fitting."
+ if not session.has_method("fit_body_layer"):return "Layer fitting is unavailable in this build."
+ if uid.is_empty() and _body_layer == "base":return "Replace the base garment instead of removing it."
+ if uid.is_empty() and fitted.is_empty():return "This layer is empty."
+ if uid == fitted:return "This piece is already fitted."
+ if not quote.get("ok",false):return str(quote.get("reason","Choose a compatible owned piece."))
+ return ""
+
+func _paint_body_armor() -> void:
+ var person := _person()
+ body_card.disabled = person.is_empty() or not _browse_reason().is_empty()
+ var open := _body_open and not person.is_empty() and section == "equipment"
+ for control: Control in [body_layers,body_close,body_stash_label,body_fit,body_remove,comparison_label]:control.visible = open
+ body_remove.visible = open and _body_layer != "base"
+ equip_button.visible = not open;remove_button.visible = not open
+ body_card.text = "Body Armor  ▸\nNo companion";body_card.tooltip_text = ""
+ _body_intents.clear()
+ if person.is_empty():return
+ var c = session.campaign
+ var totals: Dictionary = c.armor_stats(person)
+ # Armor totals also contain the helmet. The canonical empty-head projection isolates body load.
+ var body_only: Dictionary = c.armor_stats(person,"head",{})
+ var pool := Armor.display_pool(totals,"body")
+ body_card.text = "Body Armor  %s\n%d/%d armor\n%d fatigue load" % ["▾" if open else "▸",pool.current,pool.maximum,body_only.load]
+ body_card.tooltip_text = "Combined Body Armor: %d / %d protection · %d armor load (reduces fatigue capacity).\n%s" % [pool.current,pool.maximum,body_only.load,"Company records before battle; read-only." if battle_read_only else "Browse base garments, mail and outer protection."]
+ _mark(body_card,open)
+ if not open:return
+ var parts := _body_parts(person)
+ for layer: String in BODY_LAYERS:
+  var equipped: String = parts.get(layer,"")
+  var option: Button = _body_buttons[layer]
+  option.text = "%s  ·  %s" % [BODY_LAYERS[layer],"Empty" if equipped.is_empty() else c.item_name(equipped)]
+  option.tooltip_text = option.text+("\nItem "+equipped if not equipped.is_empty() else "")
+  option.disabled = not _browse_reason().is_empty()
+  _mark(option,layer == _body_layer)
+ stash_title.text = "BODY ARMOR / LAYERS"
+ body_stash_label.text = "OWNED STASH  /  %s (%d)" % [BODY_LAYERS[_body_layer].to_upper(),_items.size()]
+ _empty_stash.text = "No owned pieces for this layer."
+ var fitted: String = parts.get(_body_layer,"")
+ var uid := selected_item_id
+ var fit_quote: Dictionary = c.component_preview(selected_sid,"body",_body_layer,uid) if not uid.is_empty() else {}
+ var remove_quote: Dictionary = c.component_preview(selected_sid,"body",_body_layer,"") if _body_layer != "base" and not fitted.is_empty() else {}
+ var quote := fit_quote if not uid.is_empty() else remove_quote
+ comparison_label.text = "Current: %d/%d protection · %d load\nChoose an owned piece to compare." % [pool.current,pool.maximum,body_only.load]
+ if not quote.get("after",{}).is_empty():
+  var diff := Armor.comparison(quote.before,quote.after,"body")
+  var load_change: int = int(quote.after.load)-int(quote.before.load)
+  comparison_label.text = "%s: %d/%d → %d/%d protection\nChange: %+d current · %+d max\nLoad %d → %d (%+d)" % ["If fitted" if not uid.is_empty() else "If removed",diff.before.current,diff.before.maximum,diff.after.current,diff.after.maximum,diff.now_change,diff.max_change,body_only.load,int(body_only.load)+load_change,load_change]
+ var fit_reason := "Select an owned piece to fit." if uid.is_empty() else _body_reason(person,uid,fitted,fit_quote)
+ var remove_reason := _body_reason(person,"",fitted,remove_quote)
+ body_remove.text = "Remove "+BODY_LAYERS[_body_layer]
+ body_fit.text = "Fit "+BODY_LAYERS[_body_layer]
+ _bind_body_intent(body_fit,uid,fitted,person,fit_quote,fit_reason)
+ _bind_body_intent(body_remove,"",fitted,person,remove_quote,remove_reason)
+ var status := fit_reason if not uid.is_empty() else "Nothing changes until you confirm."
+ if not session.has_method("fit_body_layer"):status = "Preview only · layer fitting unavailable."
+ if battle_read_only:status = "Read-only during battle."
+ reason_label.text = _feedback if not _feedback.is_empty() else status
+
+func _bind_body_intent(button: Button, uid: String, fitted: String, person: Dictionary, quote: Dictionary, reason: String) -> void:
+ if _body_callbacks.has(button):button.pressed.disconnect(_body_callbacks[button]);_body_callbacks.erase(button)
+ button.disabled = not reason.is_empty();button.tooltip_text = reason
+ if button.disabled:return
+ var token := {"campaign":session.campaign,"sid":selected_sid,"person":person,"layer":_body_layer,"uid":uid,"fitted":fitted,"selected":selected_item_id,"revision":_revision,"quote":quote}
+ _body_intents[button] = token
+ var callback := _commit_body_layer.bind(button,token)
+ _body_callbacks[button] = callback;button.pressed.connect(callback)
+
+func _commit_body_layer(button: Button, token: Dictionary) -> void:
+ if session == null or not _body_intents.has(button) or not is_same(_body_intents[button],token) or button.disabled or not button.is_visible_in_tree():return
+ var person := _person()
+ var c = session.campaign
+ if token.campaign != c or token.sid != selected_sid or not is_same(token.person,person) or token.layer != _body_layer or token.selected != selected_item_id or token.revision != _revision:return
+ if _body_parts(person).get(_body_layer,"") != token.fitted:return
+ var quote: Dictionary = c.component_preview(selected_sid,"body",token.layer,token.uid)
+ if quote != token.quote:
+  _feedback = "Armor has changed. Review the new comparison before fitting.";refresh();return
+ if not _body_reason(person,token.uid,token.fitted,quote).is_empty():return
+ _body_intents.clear() # Consume before the Session's synchronous changed listeners.
+ selected_item_id = ""
+ var accepted: bool = session.call("fit_body_layer",token.sid,token.layer,token.uid)
+ if accepted:
+  _feedback = "Removed to the owned stash." if token.uid.is_empty() else "Fitted. Any replaced piece is back in the stash."
+ else:
+  selected_item_id = token.selected
+  _feedback = session.last_error if not session.last_error.is_empty() else "The layer change was refused."
+ refresh();_body_buttons[_body_layer].grab_focus()
+
 func _workspace_reason() -> String:
  if _host_blocked():return "Close the checkpoint or battle overlay before outfitting."
  if is_instance_valid(perks_view) and perks_view.confirm_panel.visible:return "Finish or cancel the progression choice first."
@@ -574,7 +677,7 @@ func _workspace_reason() -> String:
  if is_instance_valid(market_panel) and market_panel.visible:return "Close town stock before fitting."
  return ""
 func _camp_reason() -> String:
- if battle_read_only:return "Battle Company is read-only. Change equipment, reserves and training after battle."
+ if battle_read_only:return "Battle Company is read-only. Change equipment, pockets and training after battle."
  var reason := _workspace_reason()
  return reason if not reason.is_empty() else super._camp_reason()
 func _memorial_reason() -> String:
@@ -592,14 +695,22 @@ func _equip() -> void:
 func _remove_reason() -> String:
  if not selected_key.is_empty():return "Company key item · read-only. Not equipment."
  if section != "equipment":return "Open Equipment before changing items."
+ if _forge_open():return "Review one layer at a time."
+ if _body_open or not _regular_slot(selected_slot):return "Use the Body Armor card to change body layers."
  var reason := _camp_reason()
  return reason if not reason.is_empty() else session.campaign.equipment_change_reason(_person(),selected_slot,"")
 func _equip_reason() -> String:
  if not selected_key.is_empty():return "Company key item · read-only. Cannot equip or sell."
  if section != "equipment":return "Open Equipment before changing items."
+ if _forge_open():return "Review one layer at a time."
+ if _body_open or not _regular_slot(selected_slot):return "Use the Body Armor card to change body layers."
  var reason := _camp_reason()
  if not reason.is_empty():return reason
  if selected_item_id.is_empty():return "Choose a slot and an owned stash item."
+ if forge != null and Forge.is_piece(session.campaign.items.get(selected_item_id,{}).get("definition",""),session.campaign.item_def(selected_item_id)):
+  return "Choose this piece in its layer review."
+ var unavailable := Offer.armor_lab_refusal(session.campaign.item_def(selected_item_id))
+ if not unavailable.is_empty():return unavailable
  return session.campaign.equipment_change_reason(_person(),selected_slot,selected_item_id)
 func _ammo_context() -> Dictionary:
  if not _camp_reason().is_empty() or section != "equipment" or session == null:return {}
@@ -639,7 +750,6 @@ func _refill_ammo(token: Dictionary) -> void:
  refresh()
 func _update_actions() -> void:
  _refresh_ammo()
- _sync_item_details_button()
  var reason := _equip_reason()
  equip_button.disabled = not reason.is_empty();equip_button.tooltip_text = reason
  reason = _remove_reason();remove_button.disabled = not reason.is_empty();remove_button.tooltip_text = reason
@@ -650,14 +760,15 @@ func _update_actions() -> void:
  if is_instance_valid(formation_button):
   formation_button.disabled = not _camp_reason().is_empty()
   memorial_button.disabled = not _memorial_reason().is_empty()
-  layered_button.disabled = PlayerWorkflows.LAYERED_ARMOR_PARKED or not _camp_reason().is_empty()
   for button: Button in section_buttons.values():button.disabled = _host_blocked() or details_panel.visible or market_panel.visible or perks_view.confirm_panel.visible
  if is_instance_valid(market_button):
   market_button.disabled = not _market_reason().is_empty() or market_panel.visible
   market_button.tooltip_text = _market_reason()
   back_button.disabled = market_panel.visible
   for button: Button in item_buttons.values():button.disabled = not _browse_reason().is_empty()
-  _refresh_market()
+ if forge != null:forge.paint()
+ else:_paint_body_armor()
+ _refresh_market()
 func _label(font_size: int, color: Color, parent: Node) -> Label:
  var value := super._label(font_size,color,parent)
  value.add_theme_color_override("font_color",UI.TEXT if color == INK else UI.MUTED if color == MUTED else UI.GOLD)
@@ -708,6 +819,14 @@ func _sync_cards(buttons: Dictionary, parent: Control, rows: Array, key: String,
   if mode != "roster":
    var target: String = "" if mode == "stash" else str(id)
    button.set_drag_forwarding(_inventory_drag.bind(button,target),_inventory_can_drop.bind(target,button),_inventory_drop.bind(target))
+ if mode == "stash" and buttons.keys() != ids:
+  # A filtered view retains some cards. Reconcile both display and registry order.
+  var ordered := {}
+  for i in ids.size():
+   var card: Button = buttons[ids[i]]
+   if card.get_index() != i:parent.move_child(card,i)
+   ordered[ids[i]] = card
+  buttons.clear();buttons.merge(ordered)
 func _stash_repair_input(event: InputEvent, card: Button, uid: String) -> void:
  if not event is InputEventMouseButton or event.button_index != MOUSE_BUTTON_LEFT:return
  if event.pressed:
@@ -726,10 +845,13 @@ func _stash_repair_input(event: InputEvent, card: Button, uid: String) -> void:
  session.changed.emit()
 func _inventory_drag(_position: Vector2, card: Button, source: String) -> Variant:
  if not selected_key.is_empty() or card == _repair_press:return null
- if section != "equipment" or not _camp_reason().is_empty() or card.disabled:return null
+ if section != "equipment" or _body_open or _forge_open() or not _camp_reason().is_empty() or card.disabled:return null
  var uid: String = card.item_uid
  var c = session.campaign
  if uid.is_empty() or not c.items.has(uid):return null
+ var d: Dictionary = c.item_def(uid)
+ if forge != null and (Forge.is_piece(c.items[uid].definition,d) or d.get("assembly",false)):return null
+ if d.get("group","") == "body" or not Offer.armor_lab_refusal(d).is_empty():return null
  if source.is_empty():
   if c.owner(uid) >= 0 or not c.parent_kit(uid).is_empty():return null
  elif c.slot_uid(_person(),source) != uid or c.owner(uid) != selected_sid:return null
@@ -744,12 +866,15 @@ func _inventory_drag(_position: Vector2, card: Button, source: String) -> Varian
 func _inventory_drop_reason(data: Variant, target: String) -> String:
  if not selected_key.is_empty():return "Company key item · read-only."
  if section != "equipment":return "Open Equipment before changing items."
+ if _forge_open():return "Close the layer review to move ordinary equipment."
+ if _body_open or (not target.is_empty() and not _regular_slot(target)):return "Use the Body Armor card to change body layers."
  var reason := _camp_reason()
  if not reason.is_empty():return reason
  if not data is Dictionary or _drag_ticket.is_empty() or data.size() != _drag_ticket.size():return "This drag is stale or foreign."
  for key in _drag_ticket:
   if not data.has(key) or typeof(data[key]) != typeof(_drag_ticket[key]) or data[key] != _drag_ticket[key]:return "This drag is stale or foreign."
  if data.workspace != get_instance_id() or data.session != session.get_instance_id() or data.campaign != session.campaign.get_instance_id() or data.revision != _revision or data.sid != selected_sid:return "The selected companion or equipment has changed."
+ if not data.source.is_empty() and not _regular_slot(data.source):return "This item does not have a fitting slot here."
  return session.campaign.equipment_move_reason(selected_sid,data.uid,data.source,target)
 func _inventory_can_drop(_position: Vector2, data: Variant, target: String, surface: Control) -> bool:
  var reason := _inventory_drop_reason(data,target)
@@ -791,33 +916,53 @@ func _paint_inventory(people: Array) -> void:
   row.present_vitals(unit)
   row.present_progression(person)
   row.present_injuries(person)
+  row.present_mood(session.campaign.campaign_mood(person.id) if person.alive and session.campaign.has_method("campaign_mood") else {})
   row.tooltip_text = "%s · %s\n%s" % [person.name,row.assignment.text,row.vitals.tooltip_text]
  for row: Dictionary in _slots+_carried+_items:
   var is_slot: bool = row.has("key")
   var card = slot_buttons.get(row.get("key",""),carry_buttons.get(row.get("key",""))) if is_slot else item_buttons[row.item_id]
   var item: Dictionary = session.campaign.items.get(row.item_id,{})
-  var icon := InventoryArt.item_icon(item,session.campaign.catalog,null,"")
+  var d: Dictionary = session.campaign.item_def(row.item_id)
+  var forge_piece := forge != null and Forge.is_piece(row.definition,d)
+  var forge_set := row.has("set_group")
+  var icon := Forge.set_icon(session.campaign,row) if forge_set else Forge.owned_icon(session.campaign,row.item_id) if forge_piece else InventoryArt.item_icon(item,session.campaign.catalog,null,"")
   card.set_meta("icon_source",icon)
   var detail := _item_text(row)
   if not is_slot:detail=detail.trim_prefix(str(row.name)+" · ") # The stash heading already names the item.
-  card.present(row.label if is_slot else row.name,detail,icon.get("texture"),row.item_id,Inventory.item_tier(item,session.campaign.catalog),row.condition,row.maximum)
+  var tier := "" if forge_set else Inventory.item_tier(item,session.campaign.catalog)
+  if forge_piece and item.has("named"):tier = Forge.named_tier(session.campaign,row.item_id)
+  var unavailable := Offer.armor_lab_refusal(d)
+  if forge_set:detail = "%d/%d · %d %s" % [row.condition,row.maximum,row.set_count,"pc" if row.set_count==1 else "pcs"]
+  elif forge_piece:detail = "%d/%d protection" % [row.condition,row.maximum] if int(row.maximum) > 0 else "Cosmetic"
+  elif Offer.capacity_belt(d):detail = "+%d pocket capacity" % d.capacity
+  elif is_slot and row.key == "belt" and not row.item_id.is_empty():detail = "No extra pockets"
+  elif not unavailable.is_empty():detail = "Stored · not fitted"
+  elif not is_slot and d.get("group","") == "body":detail = Offer.armor_lab_role(d).trim_prefix("Body Armor / ")+" layer"
+  var title: String = row.set_group.capitalize()+" set" if forge_set else row.label if is_slot else row.name
+  card.present(title,detail,icon.get("texture"),row.item_id,tier,row.condition,row.maximum if unavailable.is_empty() else 0)
   card.art.modulate = Color.WHITE # Wear is the meter, never a tint of the physical painting.
   if not is_slot:
    var repairable: bool = session.campaign.stored_repair_cost(row.item_id) > 0
    var queued: bool = repairable and row.item_id in session.campaign.recovery.stored
    card.get_node("RepairQueued").visible = queued
-   if queued:card.tooltip_text += "\nQueued for repair"
-   if repairable and not battle_read_only:card.tooltip_text += "\nShift-click to "+("cancel repair" if queued else "queue repair")
-  if not item.is_empty() and icon.is_empty():card.tooltip_text += " · No exact item paint; actual item retained."
- var inspected: Dictionary = session.campaign.items.get(_inspected_item_uid(),{})
- item_art.texture = InventoryArt.item_icon(inspected,session.campaign.catalog,null,"").get("texture")
- item_art.modulate = Color.WHITE
+   card.tooltip_text = row.name+"\n"+(unavailable if not unavailable.is_empty() else detail if Offer.capacity_belt(d) else _item_text(row))+"\nItem "+row.item_id
+   if forge_set:
+    card.tooltip_text = row.name+"\n"+row.set_tooltip
+   elif forge_piece:
+    card.tooltip_text = row.name+"\n"+Forge.position_title(d)+" · "+detail+"\nItem "+row.item_id
+    if item.has("named"):card.tooltip_text += "\n"+Forge.named_details(session.campaign,row.item_id)
+    if icon.is_empty():card.tooltip_text += "\nNo standalone art."
+   if repairable:card.tooltip_text += "\nShift-click to "+("cancel repair." if queued else "queue repair over time.")
+  elif row.key == "belt" and not row.item_id.is_empty():
+   card.tooltip_text = row.name+"\n"+detail+" · no protection or load\nItem "+row.item_id
  if not _unit.is_empty():
   var stats := Inventory.inventory_stats(_unit,session.campaign.battle)
   identity_label.text = "HP %d / %d    ·    Fatigue %d / %d    ·    %s" % [_unit.hp,_unit.max_hp,stats.fatigue,stats.fatigue_max,_unit.get("title","")]
  _paint_key_details()
 func _select_slot(key: String) -> void:
  if not _browse_reason().is_empty() or not (slot_buttons.has(key) or carry_buttons.has(key)):return
+ _leave_body_armor()
+ if forge != null:forge.reset()
  _retained_weapon_uid = ""
  selected_key = ""
  selected_slot = key;selected_item_id = "";_feedback = ""
@@ -827,6 +972,8 @@ func _select_bro(id: int) -> void:
  var uid := _inspected_item_uid()
  _retained_weapon_uid = uid if session.campaign.items.get(uid,{}).get("definition","") in Arsenal.WEAPONS else ""
  selected_key = ""
+ if _body_open:selected_item_id = "";stash_scroll.scroll_vertical = 0
+ if _forge_open() and selected_sid != id:forge.clear_candidate()
  selected_sid = id;_feedback = "";refresh()
 func _refresh_keyring() -> void:
  _owned_keys = VaultItems.owned(session.campaign) if session != null else []
@@ -842,45 +989,24 @@ func _refresh_keyring() -> void:
   card.annotate("", "Vault opened" if entry.opened else "Held")
   card.rarity_label.text = "Company key item"
   card.set_selected(entry.key_id == selected_key)
-  card.tooltip_text = entry.destination+"\n"+entry.status+" · read-only"
+  card.set_meta("vault_key_id",entry.key_id)
   card.pressed.connect(_select_key.bind(entry.key_id));key_buttons[entry.key_id] = card
 func _select_key(id: String) -> void:
- if not _browse_reason().is_empty() or not key_buttons.has(id):return
+ if _body_open or _forge_open() or not _browse_reason().is_empty() or not key_buttons.has(id):return
  _retained_weapon_uid = ""
  selected_key = id;selected_item_id = "";_feedback = ""
- item_scroll.scroll_vertical = 0
  # These cards are intentionally outside item_buttons and drag forwarding.
  for key: String in key_buttons:key_buttons[key].set_selected(key == id)
- _drag_ticket.clear();_clear_drag_hint();_refresh_weapon_skills();_paint_key_details();_update_actions();_layout()
+ _drag_ticket.clear();_clear_drag_hint();_paint_key_details();_update_actions();_layout()
 func _paint_key_details() -> void:
  if selected_key.is_empty():return
  var entry := VaultItems.row(session.campaign,selected_key)
  if entry.is_empty():return
- item_detail_heading.text = "VAULT KEY · READ-ONLY"
- item_detail_heading.tooltip_text = entry.name+" · Company key item · read-only"
- item_art.texture = VaultItems.artwork();item_art.modulate = Color.WHITE
- item_summary.text = entry.name+"\n"+VaultItems.details(entry)+("\n\nNo artwork" if item_art.texture == null else "")
- item_summary.tooltip_text = item_summary.text
- item_provenance.hide() # Use only the existing spoiler-safe key projection.
- mapping_notes.text = item_summary.text
+ mapping_notes.text = entry.name+"\n"+VaultItems.details(entry)+("\n\nNo artwork" if key_buttons[selected_key].art.texture == null else "")
 func _item_text(row: Dictionary) -> String:
  var uid := str(row.get("item_id",""))
  if uid.is_empty() or session == null:return "Empty"
  return Presentation.identity(session.campaign.items.get(uid,{}),session.campaign.catalog)
-func _sync_item_details_button() -> void:
- var available := section == "equipment" and (not selected_key.is_empty() or not _inspected_item_uid().is_empty())
- if not available:item_detail_frame.hide()
- item_details_button.disabled = not available or not _browse_reason().is_empty()
- item_details_button.text = "Close item" if item_detail_frame.visible else "Item details"
- item_details_button.tooltip_text = "Close item details [Esc]" if item_detail_frame.visible else "Inspect the selected item: stats, weapon skills and full item record" if available else "Select an item to inspect"
-func _toggle_item_details() -> void:
- if item_details_button.disabled or not item_details_button.is_visible_in_tree() or not _browse_reason().is_empty():return
- item_detail_frame.visible = not item_detail_frame.visible
- if item_detail_frame.visible:
-  item_scroll.scroll_vertical = 0
-  item_scroll.grab_focus()
- else:item_details_button.grab_focus()
- _sync_item_details_button()
 func _open_details() -> void:
  if section != "equipment" or not _browse_reason().is_empty() or _person().is_empty():return
  _details_owner = {"session":session,"campaign":session.campaign,"sid":selected_sid,"person":_person(),"slot":selected_slot,"item":selected_item_id,"key":selected_key}
@@ -950,33 +1076,32 @@ func _layout() -> void:
   selected_level_badge.position=Vector2(maxf(0,figure_width-24),0);selected_level_badge.size=Vector2(24,24)
  var card_height := minf(90,(portrait_card.size.y-132)/5)
  var slot_top := 86.0
+ var armor_height := maxf(70,card_height)
  for index in LEFT_SLOTS.size():
   if slot_buttons.has(LEFT_SLOTS[index]):_place(slot_buttons[LEFT_SLOTS[index]],0,slot_top+index*(card_height+10),flank,card_height)
- for index in RIGHT_SLOTS.size():
-  if slot_buttons.has(RIGHT_SLOTS[index]):_place(slot_buttons[RIGHT_SLOTS[index]],middle_width-flank,slot_top+index*(card_height+8),flank,card_height)
+ for key: String in RIGHT_SLOTS:
+  var control: Button = body_card if key == "body" else slot_buttons.get(key)
+  if control == null:continue
+  var y := slot_top if key == "offhand" else slot_top+card_height+8 if key == "body" else slot_top+card_height+armor_height+16
+  if key == "belt":y += card_height+8
+  _place(control,middle_width-flank,y,flank,armor_height if key == "body" else card_height)
+ if forge != null:
+  if slot_buttons.has("ammo"):_place(slot_buttons.ammo,middle_width-flank,slot_top+card_height+92,flank,card_height)
+  forge.layout(stash_width,height,middle_width,flank,slot_top,card_height)
  _place(remove_button,0,portrait_card.size.y-42,flank,36)
  _place(omission_label,flank+10,portrait_card.size.y-18,figure_width,18)
  omission_label.text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS;omission_label.autowrap_mode = TextServer.AUTOWRAP_OFF
  _place(carry_heading,14,10,middle_width-170,26)
- _place(layered_button,middle_width-146,8,132,32)
  _place(carry_row,12,48,middle_width-24,carry_height-56)
  for card: Button in carry_buttons.values():card.custom_minimum_size = Vector2(0,carry_height-50)
- _place(stash_scroll,12,48,stash_width-24,height-148)
+ if _body_open:_layout_body_armor(stash_width,height)
+ else:
+  _place(stash_scroll,12,48,stash_width-24,height-148)
+  _place(_empty_stash,22,64,stash_width-44,100)
  for card: Button in item_buttons.values():card.custom_minimum_size = Vector2(0,116 if size.x < 1400 else 140)
- _place(_empty_stash,22,64,stash_width-44,100)
- var detail_width := minf(434,middle_width)
- _place(item_detail_frame,middle_x+middle_width-detail_width,top,detail_width,height)
- item_detail_heading.text = "ITEM DETAILS"
- item_detail_heading.tooltip_text = ""
- _place(item_detail_heading,12,7,detail_width-69,30)
- _place(item_art,detail_width-48,5,40,40)
- _place(item_scroll,12,49,detail_width-24,height-61)
- if not selected_key.is_empty():_paint_key_details()
  _place(reason_label,18,height-91,stash_width-36,32)
  reason_label.max_lines_visible = 2
- var inspect_width := minf(154,(stash_width-36)*.46)
- _place(equip_button,18,height-53,stash_width-inspect_width-44,42)
- _place(item_details_button,stash_width-inspect_width-18,height-53,inspect_width,42)
+ _place(equip_button,18,height-53,stash_width-36,42)
  if is_instance_valid(market_panel):
   market_panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
   var side := maxf(16,(size.x-920)/2)
@@ -987,6 +1112,19 @@ func _layout() -> void:
   _place(market_close_button,size.x-side-244,size.y-60,244,44)
  if is_instance_valid(details_panel):
   details_panel.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+func _layout_body_armor(width: float, height: float) -> void:
+ stash_title.add_theme_font_size_override("font_size",16)
+ _place(stash_title,14,10,width-130,26)
+ _place(body_close,width-107,8,94,31)
+ _place(body_layers,12,54,width-24,104)
+ _place(body_stash_label,14,168,width-28,22)
+ # Reserve the comparison’s three native text lines above the separate status row.
+ _place(stash_scroll,12,196,width-24,height-371)
+ _place(_empty_stash,16,201,width-32,42)
+ _place(comparison_label,18,height-171,width-36,74)
+ body_remove.add_theme_font_size_override("font_size",14 if size.x < 1400 else 16)
+ _place(body_remove,18,height-53,(width-46)/2,42)
+ _place(body_fit,18 if _body_layer == "base" else 28+(width-46)/2,height-53,width-36 if _body_layer == "base" else (width-46)/2,42)
 func _build_market() -> void:
  market_button = _button("Town stock · Buy equipment",self)
  market_button.pressed.connect(_open_market)
@@ -1012,15 +1150,7 @@ func _market_reason() -> String:
  return ""
 func _market_offers() -> Array:
  if session == null or not _market_reason().is_empty():return []
- var c = session.campaign
- var out: Array = []
- for offer: Dictionary in c.weapons_stock():
-  var row := offer.duplicate(true);row["kind"] = offer.get("kind","weapon");out.append(row)
- for group in ["body","head"]:
-  for layer in (["base","mail","outer"] if group == "body" else ["shell"]):
-   for offer: Dictionary in c.armorer_stock(group,layer):
-    var row := offer.duplicate(true);row["kind"] = offer.get("kind","component");out.append(row)
- return out
+ return session.campaign.merchant_offers()
 func _open_market() -> void:
  if details_panel.visible or not _market_reason().is_empty():return
  if is_instance_valid(details_panel):details_panel.hide()
@@ -1039,6 +1169,8 @@ func _market_buy_reason() -> String:
  if _market_selection.is_empty():return "Choose an offer. Purchases go to your stash; equip separately."
  for offer: Dictionary in _market_offers():
   if offer.id == _market_selection:
+   var refusal := Offer.armor_lab_refusal(session.campaign.catalog.get(offer.definition,{}))
+   if not refusal.is_empty():return refusal
    if Offer.stock_item(offer).is_empty():return "Roll details unavailable. No purchase possible."
    return "Not enough crowns: need %d; have %d." % [offer.price,session.campaign.crowns] if session.campaign.crowns < offer.price else ""
  return "Sold out or no longer offered here. No purchase made."
@@ -1056,11 +1188,11 @@ func _refresh_market() -> void:
   available = available and not item.is_empty()
   var tier: String = Inventory.item_tier(item,session.campaign.catalog)
   var properties := Offer.lines(offer,session.campaign.catalog,session.campaign.battle.weapons)
-  button.text = "%s · %s · %s · %d crowns%s\n%s" % [d.get("name",offer.definition),tier.capitalize() if not tier.is_empty() else "Roll unavailable",str(d.get("slot",d.get("group","equipment"))).capitalize(),offer.price,"" if available else " · Sold out / unavailable","\n".join(properties)]
+  button.text = "%s · %s · %s · %d crowns%s\n%s" % [d.get("name",offer.definition),tier.capitalize() if not tier.is_empty() else "Roll unavailable",Offer.armor_lab_role(d),offer.price,"" if available else " · Sold out / unavailable","\n".join(properties)]
   button.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
   button.custom_minimum_size.y = 108
-  button.tooltip_text = button.text+"\n"+preload("res://company_town/equipment_offer.gd").BASE_NOTE+"\nOffer "+offer.id
-  var icon := InventoryArt.item_icon(item,session.campaign.catalog,null,"")
+  button.tooltip_text = button.text+"\n"+Offer.BASE_NOTE+"\nStock item "+str(offer.get("item",{}).get("id",offer.id))+"\nOffer "+offer.id
+  var icon := Forge.item_icon(offer.definition,d) if forge != null and Forge.is_piece(offer.definition,d) else InventoryArt.item_icon(item,session.campaign.catalog,null,"")
   button.set_meta("icon_source",icon)
   button.icon = icon.get("texture")
   button.expand_icon = true;button.add_theme_constant_override("icon_max_width",64)
@@ -1105,16 +1237,18 @@ func observation() -> Dictionary:
  out["details_text"] = pages.character_text
  out["mapping_text"] = mapping_notes.text
  out["details_open"] = details_panel.visible
- out["item_summary"] = item_summary.text
- out.actions["item_details"] = _target(item_details_button)
- out["item_details_open"] = item_detail_frame.visible
+ out["item_hover"] = item_hover.observation()
  out.actions["details"] = _target(details_button)
  out.actions["town_stock"] = _target(market_button)
  out["market"] = {"open":market_panel.visible,"selection":_market_selection,"reason":market_reason_label.text,"buy":_target(market_buy_button),"close":_target(market_close_button),"offers":_market_seen.values().duplicate(true),"targets":{}}
  for id in market_buttons:out.market.targets[id] = _target(market_buttons[id])
  out["company"] = {"section":section,"sections":{},"formation":_target(formation_button),"recovery":recovery_label.text,"character_text":pages.character_text,"page_rect":_rect(_canvas_rect(pages)),"page_scroll":_rect(_canvas_rect(pages.scroll)),"field_ids":session.campaign.active_ids(),"reserve_ids":session.campaign.reserve_ids()}
  out.company["perks"] = perks_view.observation()
- out.company["navigation"] = {"formation":_target(formation_button),"armor":_target(layered_button),"memorial":_target(memorial_button)}
+ out.company["navigation"] = {"formation":_target(formation_button),"memorial":_target(memorial_button)}
+ if forge == null:
+  out["body_armor"] = {"card":_target(body_card),"open":_body_open,"layer":_body_layer,"layers":{},"close":_target(body_close),"fit":_target(body_fit),"remove":_target(body_remove)}
+  for layer: String in _body_buttons:out.body_armor.layers[layer] = _target(_body_buttons[layer])
+ else:out["layer_forge"] = forge.observation()
  for id: String in pages.navigation_buttons:out.company.navigation[id] = _target(pages.navigation_buttons[id])
  for id: String in section_buttons:out.company.sections[id] = _target(section_buttons[id])
  out.merge(Inventory.unit_observation(_unit,session.campaign.battle),true)

@@ -5,8 +5,10 @@ const Arsenal = preload("res://src/arsenal.gd")
 const Armor = preload("res://src/armor.gd")
 const Acquisition = preload("res://painted_merge/acquisition.gd")
 const Support = preload("res://support_equipment/policy.gd")
+const ForgeKit = preload("res://layer_forge/rules.gd")
 const OFFER_KIT := "random_kit_v1"
 const FIRST_WEEK := "random_recruit_start_week_v1"
+const FORGE_KNIVES := ["hm_trial_v1:old24-medic_weapon","hm_trial_v1:old24-wayfarer_lancet"]
 const OPTIONAL := ["offhand","body","head","hands","feet","cloak","belt","carry1","carry2"]
 const OPTIONAL_DEFINITIONS := {
  "offhand":["hollow_campaign:buckler","hm_trial_v1:offhands-02-round-wooden-shield"],
@@ -18,7 +20,7 @@ const OPTIONAL_DEFINITIONS := {
  "belt":[Support.UTILITY,Support.SASH,Support.SUPPORT],
 }
 
-static func roll(seed_number: int, candidate: Dictionary, catalog: Dictionary) -> Dictionary:
+static func roll(seed_number: int, candidate: Dictionary, catalog: Dictionary, historic_forge: bool = false) -> Dictionary:
  var key := JSON.stringify(["random-company-v1",seed_number,candidate.person_seed,candidate.get("id","")])
  var rng := RandomNumberGenerator.new()
  rng.seed = key.sha256_buffer().decode_u32(0)
@@ -28,12 +30,12 @@ static func roll(seed_number: int, candidate: Dictionary, catalog: Dictionary) -
  var ammo := Arsenal.ammo_type(weapon)
  if not ammo.is_empty(): kit["ammo"] = ammo
 
- # Roll the count before any optional slot or item. A full roll fills all
- # compatible slots, including both ordinary reserves; ammunition is required
- # by the held weapon and is not an extra.
- var available := OPTIONAL.duplicate()
+ # Replay the original draws to keep mainhand, ammo and offhand stable and
+ # allow exact seed validation of already-issued quotes.
+ var forge := ForgeKit.enabled()
+ var available: Array = ["offhand","carry1","carry2"] if forge else OPTIONAL.duplicate()
  if weapon in Arsenal.TWO_HANDS: available.erase("offhand")
- var count := optional_count(rng,available.size())
+ var count: int = mini(available.size(),optional_count(rng,available.size())) if forge else optional_count(rng,available.size())
  var chosen := []
  for i in count:
   var tickets := 0
@@ -54,6 +56,15 @@ static func roll(seed_number: int, candidate: Dictionary, catalog: Dictionary) -
   var definition: String = pool[rng.randi_range(0,pool.size()-1)]
   kit[slot] = definition
   if slot in Arsenal.CARRIED: spares.erase(definition)
+ if forge and not historic_forge:
+  kit.erase("carry1")
+  kit.erase("carry2")
+  if weapon in Arsenal.RANGED:
+   # Independent of both the old kit draw and the campaign RNG.
+   var ticket := ForgeKit.ticket(seed_number,key,"pocket-knife-v1") % 100
+   if ticket < 40:
+    var knife: String = FORGE_KNIVES[0 if ticket < 30 else 1]
+    if Acquisition.active(knife,catalog): kit["carry1"] = knife
  return kit
 
 static func slot_weight(slot: String) -> int:
@@ -107,5 +118,8 @@ static func valid_offers(data: Dictionary, catalog: Dictionary, enabled: bool) -
   if offer.has(OFFER_KIT) != expected: return false
   if not expected: continue
   if not offer.get("person_seed") is int or offer.person_seed < 1 or offer.person_seed > 2147483646 or not offer.get("id") is String or offer.id != id or not offer[OFFER_KIT] is Dictionary: return false
-  if offer[OFFER_KIT] != roll(data.seed,offer,catalog): return false
+  if offer[OFFER_KIT] != roll(data.seed,offer,catalog):
+   # Existing Forge caches remain the original quotes. Admit only the exact
+   # predecessor ticket result, not arbitrary old-style pocket contents.
+   if not ForgeKit.enabled() or offer[OFFER_KIT] != roll(data.seed,offer,catalog,true): return false
  return true

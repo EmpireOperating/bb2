@@ -20,7 +20,7 @@ static func portrait(texture: Texture2D, diagnostics: Dictionary) -> Texture2D:
 
 const ICON_LIMIT := 128 # 53 ordinary + 34 Named bindings / 32 Named paintings; never per-owner.
 const CONCEPT_MANIFEST := "res://item_art/manifest.json"
-const CONCEPT_MANIFEST_SHA256 := "29a9e04fa26ad3ef308872f17e40c2d17bb98bb73ebfbaed3450a3c2695a215d"
+const CONCEPT_MANIFEST_SHA256 := "caa77188154e34bec9c257e520a9506d14645cc64ab938a75af065b360aa12ac"
 const STOCK_QUIVERS := ["arrows","bodkin_quiver","deep_quiver"]
 const Named = preload("res://src/named_equipment.gd")
 const NAMED_MANIFEST := "res://named_gear/manifest.json"
@@ -69,6 +69,10 @@ static func item_icon(item: Dictionary, catalog: Dictionary, _resolver = null, _
  elif entry.get("catalog_binding","") == "authored_ringbound_maul":
   # This is a native authored definition, not a donor alias or the legacy maul.
   if is_named or definition != "hm_trial_v1:twohand_maul" or actual.get("campaign_adopted",false)!=true or actual.has("donor_definition"):return {}
+  if not actual.get("slot") is String or actual.slot!="weapon":return {}
+  if not actual.get("weapon") is String or actual.weapon!=definition:return {}
+ elif entry.get("catalog_binding","") == "ordinary_mason_hammer":
+  if is_named or definition != "mason_hammer" or actual.has("donor_definition"):return {}
   if not actual.get("slot") is String or actual.slot!="weapon":return {}
   if not actual.get("weapon") is String or actual.weapon!=definition:return {}
  else:

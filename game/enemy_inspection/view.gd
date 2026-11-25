@@ -97,7 +97,7 @@ func present(unit:Dictionary, catalog:Dictionary, actor, battle) -> void:
  # Parent assigns TextureRect.texture directly; initialize the figure painter too.
  preview.texture=null;preview.present(actor.preview_texture())
  identity_label.text=("ENEMY" if unit.side!=0 else "YOUR COMPANY")+" · READ-ONLY · BATTLE PAUSED"
- stats_label.text+="\nMorale %d · Resolve %d"%[unit.get("morale",0),unit.get("resolve",0)]
+ stats_label.text+="\nMorale %s · Resolve %d"%[preload("res://morale_flags/readout.gd").current_name(battle,unit.id),unit.get("resolve",0)]
  for slot:String in inventory_cards:_card(inventory_cards[slot],slot,slots.get(slot,{}),catalog,actor)
  for child in carried_grid.get_children():carried_grid.remove_child(child);child.free()
  carry_cards.clear()

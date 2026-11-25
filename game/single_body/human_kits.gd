@@ -1,8 +1,9 @@
 extends RefCounted
-## Campaign human kit policy 1. Only called at the final ordinary role seam.
+## Campaign human kits: the edition changes one issue slot, never the v1 draws.
 const A = preload("res://src/arsenal.gd")
 const Armor = preload("res://src/armor.gd")
 const Designs = preload("res://painted_merge/acquisition.gd")
+const Forge = preload("res://layer_forge/rules.gd")
 const Support = preload("res://support_equipment/policy.gd")
 const GRADES = ["Bandit thug", "Outlaw", "Raider", "Veteran deserter"]
 # Same grade, different supply: crossing thugs / woodland outlaws / deserters.
@@ -15,6 +16,22 @@ const WEAPON_PAIRS = {
  "pikeman":["pike","hm_trial_v1:old24-polearm_weapon","hm_trial_v1:old24-ward_spear"],
  # One active two-handed sword design. Vary its protection, not its action family.
  "two_hander":["hm_trial_v1:twohand_sword","hm_trial_v1:twohand_sword"]}
+
+static func initial_edition(forge:bool) -> int:
+ return 2 if forge else 1
+
+static func checkpoint_edition(d:Dictionary,forge:bool) -> int:
+ if not d.has("human_kits"):return -1 if forge else 0
+ var state:Variant=d.human_kits
+ if not state is Dictionary or state.size()!=2 or not state.get("version") is int or not state.get("survivors") is Dictionary:return -1
+ return state.version if state.version==1 or (forge and state.version==2) else -1
+
+static func riveted_source(key:String,group:String,grade:int,issued:bool) -> bool:
+ if group!="ridge" or grade!=2 or not issued:return false
+ var bits:=key.split("/")
+ if bits.size()!=4 or bits[0]!="resident" or bits[1]!="ridge" or bits[3]!="1" or not bits[2].is_valid_int():return false
+ var generation:=int(bits[2])
+ return generation>0 and bits[2]==str(generation)
 
 static func group_for(c,u:Dictionary) -> String:
  var job:Dictionary = c.battle_job()
@@ -40,7 +57,29 @@ static func has_salvaged_helm(seed_value:int,key:String) -> bool:
   return roll(seed_value,bits[1],"salvaged helm",16)==1
  return false
 
-static func recipe(seed_value:int, key:String, role:String, group:String, grade:int, catalog:Dictionary) -> Dictionary:
+# Original parts use the same hash-keyed issue scheme as the retained arms.
+# A token identifies one specific position on one source, not the scalar pool.
+static func forge_parts(seed_value:int, key:String, grade:int, issued:bool, prize:bool, percent:int, catalog:Dictionary) -> Array:
+ var body:Array=["base"]
+ if grade>=1 or issued:body.append("mail")
+ if grade>=2:body.append("outer")
+ if grade>=3:body.append("reinforce")
+ if grade>=1:body.append("cloth")
+ var head:Array=["padding"]
+ if grade>=2 or (grade>=1 and issued) or prize:head.append("shell")
+ if grade>=2 and issued:head.append("face")
+ if grade>=3:head.append("decor")
+ var parts:Array=[]
+ for group:String in ["body","head"]:
+  for layer:String in (body if group=="body" else head):
+   var position:=group+"/"+layer
+   var id:=Forge.pick(catalog,group,layer,Forge.ticket(seed_value,key,position))
+   var d:Dictionary=catalog[id]
+   var pool: String = "helmet" if group=="head" else ("padding" if layer=="base" else "armor")
+   parts.append({"item":"enemy_kit/"+key+"/"+position,"definition":id,"group":group,"layer":layer,"pool":pool,"condition":int(d.durability)*percent/100,"maximum":int(d.durability),"weight":int(d.weight),"hollow_slot":group})
+ return parts
+
+static func recipe(seed_value:int, key:String, role:String, group:String, grade:int, catalog:Dictionary, forge:bool=false, edition:int=1) -> Dictionary:
  var supply:int = WELL_SUPPLIED[group]
  # A single weighted outfit choice correlates weapon issue, shield and protection.
  var issued:bool = roll(seed_value,key,"issue",100)<clampi(supply+grade*9,5,90)
@@ -59,13 +98,20 @@ static func recipe(seed_value:int, key:String, role:String, group:String, grade:
  var head:String = Designs.HEADS[armor_grade] if issued or grade>0 else ""
  # Only the first persistent member of a modest source band can own its prize.
  # Never promote its grade or whole outfit. No exceptional/special item roll.
- if grade<=1 and has_salvaged_helm(seed_value,key):head=Designs.SKULLCAP
+ var prize:bool=grade<=1 and has_salvaged_helm(seed_value,key)
+ if prize:head=Designs.SKULLCAP
  var token:String="enemy_kit/"+key+"/"
  var arms:Dictionary=A.empty_arms()
  for slot:String in defs:
   var id:String=defs[slot]
   if id!="":arms[slot]={"id":token+slot,"definition":id,"condition":int(catalog[id].durability),"loaded":false}
  var percent:int=(65+roll(seed_value,key,"wear",26)) if grade<2 else (85+roll(seed_value,key,"wear",16))
+ if forge:
+  var parts:Array=forge_parts(seed_value,key,armor_grade,issued,prize,percent,catalog)
+  if edition==2 and riveted_source(key,group,grade,issued):
+   var mantle:Dictionary=catalog[Forge.RIVETED_MANTLE]
+   parts.append({"item":token+"body/cloak","definition":Forge.RIVETED_MANTLE,"group":"body","layer":"cloak","pool":"armor","condition":int(mantle.durability)*percent/100,"maximum":int(mantle.durability),"weight":int(mantle.weight),"hollow_slot":"body"})
+  return {"arms":arms,"parts":parts}
  var unit:Dictionary={"weapon":weapon,"armor_parts":[]}
  for id:String in [Designs.BODIES[armor_grade],head]:
   if id.is_empty():continue
@@ -77,14 +123,15 @@ static func recipe(seed_value:int, key:String, role:String, group:String, grade:
 static func install(c,u:Dictionary,key:String,role:String,group:String,grade:int) -> void:
  var prior:Dictionary=c.human_kit_wear.get(key,{})
  if not prior.is_empty():grade=prior.grade
- var gear:Dictionary=recipe(c.seed_value,key,role,group,grade,c.catalog)
+ var gear:Dictionary=recipe(c.seed_value,key,role,group,grade,c.catalog,c.forge_enabled(),c.human_kit_edition)
  if not prior.is_empty():
   gear.arms=prior.arms.duplicate(true)
   for i in gear.parts.size():gear.parts[i].condition=prior.conditions[i]
  u.human_kit_identity=key
  u.human_kit_grade=grade
  u.human_kit_group=group
- u.arms=gear.arms;u.armor_parts=gear.parts;u.support_acquisition_v1=true
+ u.arms=gear.arms;u.armor_parts=gear.parts
+ if not c.forge_enabled():u.support_acquisition_v1=true
  u.merge(Armor.totals(u.armor_parts),true)
  c.battle.sync_arms(u)
 
@@ -115,11 +162,11 @@ static func source_groups(d:Dictionary) -> Dictionary:
    if member!="":out["member/"+member]=camp.map
  return out
 
-static func valid_wear(raw:Variant,seed_value:int,key:String,role:String,group:String,catalog:Dictionary) -> bool:
+static func valid_wear(raw:Variant,seed_value:int,key:String,role:String,group:String,catalog:Dictionary,forge:bool=false,edition:int=1) -> bool:
  if not raw is Dictionary or raw.size()!=3 or not raw.get("grade") is int or raw.grade<0 or raw.grade>3:return false
  if raw.grade not in {"ford":[0,1],"forest":[1,2],"ridge":[1,2,3]}[group]:return false
  if not raw.get("conditions") is Array or not A.valid_arms(raw.get("arms"),catalog):return false
- var initial:Dictionary=recipe(seed_value,key,role,group,raw.grade,catalog)
+ var initial:Dictionary=recipe(seed_value,key,role,group,raw.grade,catalog,forge,edition)
  if raw.arms.size()!=initial.arms.size() or raw.conditions.size()!=initial.parts.size():return false
  for i in initial.parts.size():
   var hp=raw.conditions[i]

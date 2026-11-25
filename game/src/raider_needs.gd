@@ -261,7 +261,8 @@ func choose_freight(c, s: Dictionary, background: bool) -> String:
 		if distance > c.bandits.vision(c) or c.bandits.sheltered(c,v.position): continue
 		# Only visible traffic is considered. No access to distant town stock or target coordinates.
 		if c.guards.cover(c,v.position,c.bandits.power(id)*(1.35 if urgent == 2 else 1.0)): continue
-		if visible and v.position.distance_to(c.overworld.position) < 100: continue
+		# An escort is not a protection flag. Keep every other stock risk gate.
+		if visible and v.position.distance_to(c.overworld.position) < 100 and c.traffic.follow_wagon != wid: continue
 		var take = cargo.material.amount if cargo.has("material") else mini(cargo.cargo,carry_limit(c,id)-c.world.raider_supply.packs[id].food)
 		var value = float(take)/(20.0+distance*(2.0 if urgent == 2 else 1.0))
 		if rules_version >= 3 and cargo.has("material"):

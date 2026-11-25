@@ -11,9 +11,13 @@ var missions: Dictionary = {} # existing scout id -> shipment id
 var traces: Dictionary = {}
 var alerts: Array = []
 var pursuit = ""
+var follow_wagon := ""
+var follow_dock := false # Only the live movement tick can publish this edge.
+var _follow_path: Array = []
 
 func setup(c, active: bool) -> void:
 	fading_tracks = c.overworld.tracks.enabled
+	follow_wagon = ""
 	enabled = active; rules_version = VERSION; c.overworld.road_corner_rules = true; wagons.clear(); missions.clear(); traces.clear(); alerts.clear(); pursuit = ""
 	c.world.spatial_trade = enabled
 	if enabled: sync(c)
@@ -47,6 +51,7 @@ func release(c, id: String, message: String) -> void:
 	if not message.is_empty(): c.world.log_event(c.world.short_id(id)+": "+message)
 
 func move_wagons(c, background: bool = false) -> void:
+	follow_dock = false; _follow_path.clear()
 	if not enabled: return
 	sync(c)
 	var ow = c.overworld; var w = c.world
@@ -61,11 +66,13 @@ func move_wagons(c, background: bool = false) -> void:
 		var r: Dictionary = w.route_data(cargo.route)
 		var target: Vector2 = ow.places[r.path[cargo.index+1]]
 		if v.path.is_empty(): v.path = ow.route(v.position,target)
+		if not background and id == follow_wagon and ow.position == v.position: _follow_path = v.path.duplicate()
 		v.position = ow.advance_party(v.position,v.path,ow.STEP,WAGON_SPEED)
 		if v.path.is_empty() and v.position.distance_to(target) < 1:
 			cargo.index += 1; v.leg = cargo.index
 			if cargo.index == 2:
-				w.deliver(id); c.news.arrive(c,id); v.status = cargo.status; release(c,id,"")
+				if w.deliver(id) and not background and id == follow_wagon: follow_dock = true
+				c.news.arrive(c,id); v.status = cargo.status; release(c,id,"")
 			else:
 				cargo.remaining = 1
 				c.raiders.shares.market_stop(c,id)
@@ -85,6 +92,29 @@ func move_wagons(c, background: bool = false) -> void:
 			if d < distance: closest = id; distance = d
 		if not closest.is_empty():
 			missions[s.id] = closest; wagons[closest].raider = s.id; s.path.clear(); s.replan = 0.0
+
+func cancel_follow(ow) -> void:
+	if not follow_wagon.is_empty(): ow.destination = ""
+	follow_wagon = ""
+
+func advance_follow(c) -> String:
+	var ow = c.overworld
+	var v: Dictionary = wagons.get(follow_wagon,{})
+	if c.active.get("kind") != "freight_escort" or c.active.get("shipment") != follow_wagon or v.is_empty() or v.position.distance_to(ow.position)>ow.sight() or v.carried or not (v.status in ["waiting","transit"] or follow_dock):
+		cancel_follow(ow); ow.paused = true
+		return ""
+	if not _follow_path.is_empty():
+		# A company already abreast takes the SAME physical route and pace, not the wagon's coordinates.
+		ow.position = ow.advance_party(ow.position,_follow_path,ow.STEP,WAGON_SPEED)
+	elif ow.position != v.position:
+		# Catch-up is ordinary terrain-bound travel, and can fail or lose sight.
+		var approach: Array = ow.route(ow.position,v.position)
+		if approach.is_empty(): cancel_follow(ow); ow.paused = true; return ""
+		ow.position = ow.advance_party(ow.position,approach,ow.STEP,ow.travel_pace())
+	if not follow_dock: return ""
+	if not ow.destination.is_empty() and ow.position == ow.places.get(ow.destination) and ow.position == v.position: return ow.destination
+	cancel_follow(ow); ow.paused = true
+	return ""
 
 func order_for(s: Dictionary, ow) -> Dictionary:
 	if not enabled or not missions.has(s.id): return {}

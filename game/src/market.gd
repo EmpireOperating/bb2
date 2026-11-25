@@ -1,6 +1,7 @@
 extends RefCounted
 ## Weekly equipment inventories and finite private merchant purses.
 const Arsenal = preload("res://src/arsenal.gd")
+const ForgeMarket = preload("res://layer_forge/rules.gd")
 const TOWNS = ["ashwick","stonecross","dunmere"]
 const BASIC = ["knife","club","hatchet","militia_spear","shortbow","shield","arrows","bolts"]
 const SPECIALTIES = {
@@ -36,6 +37,7 @@ static func stock(town: String, level: int, seed_number: int, week: int, catalog
   if not d.has("group") and not (d.get("campaign_adopted",false) and d.get("slot") in ["weapon","shield"]): continue
   if d.price <= (45 if level == 1 else 115 if level == 2 else 999): out.append(definition)
  if acquisition != null: out = acquisition.stock(out,catalog)
+ if ForgeMarket.enabled() and acquisition != null: out = out.filter(func(id):return ForgeMarket.tradeable(id,catalog))
  out.sort()
  return out
 static func create(c, town: String) -> Dictionary:
@@ -73,6 +75,7 @@ static func valid(books: Variant, sales: Variant, d: Dictionary, catalog: Dictio
   var expected: Array = stock(config.towns[b.town].get("market_role",b.town),b.tier,d.seed,b.week,catalog,b.get("ranged_stock",false),b.get("bolas_stock",false),b.get("opening_stock",false),acquisition)
   var prior_maul := expected.duplicate()
   prior_maul.erase("hm_trial_v1:twohand_maul")
+  if ForgeMarket.enabled() and acquisition != null and b.get("stock") != expected: return false
   if b.get("stock") not in [expected,prior_maul]:
    if acquisition == null: return false
    var older := []

@@ -5,6 +5,7 @@ var bandit_members: Array = []
 const Dungeons = preload("res://src/dungeons.gd")
 var dungeons = Dungeons.new()
 const Named = preload("res://src/named_equipment.gd")
+const NamedMail = preload("res://layer_forge/named_mail.gd")
 var named_rewards: Dictionary = {}
 const RegionalNews = preload("res://src/regional_news.gd")
 var news = RegionalNews.new()
@@ -479,7 +480,7 @@ func add_person(candidate: Dictionary) -> void:
 	gear["carry3"] = ""; gear["carry4"] = ""
 	gear["ammo"] = add_item(candidate.ammo_loadout) if candidate.ammo_loadout != "" else ""
 	for group in Armor.LAYERS:
-		var parts = Armor.empty_parts(group)
+		var parts = empty_owned_parts(group)
 		for layer in parts:
 			var definition: String = candidate.armor_loadout[group][layer]
 			if definition.is_empty(): continue
@@ -574,9 +575,20 @@ func owner(id: String) -> int:
 		if id in s.gear.values() or (not parent.is_empty() and parent in s.gear.values()): return int(s.id)
 	return -1
 
+func owned_layer_keys(group: String) -> Array:
+	return Armor.LAYERS.get(group,[])
+
+func empty_owned_parts(group: String) -> Dictionary:
+	var out = {}
+	for layer in owned_layer_keys(group): out[layer] = ""
+	return out
+
+func owned_assembly_conflict(parts: Dictionary, group: String, definitions: Dictionary) -> String:
+	return Armor.conflict(parts,group,definitions)
+
 func add_assembly(group: String, parts: Dictionary = {}) -> String:
 	var id = add_item(group+"_kit")
-	items[id]["parts"] = Armor.empty_parts(group) if parts.is_empty() else parts.duplicate()
+	items[id]["parts"] = empty_owned_parts(group) if parts.is_empty() else parts.duplicate()
 	return id
 
 func wrap_spare_armor() -> void:
@@ -628,10 +640,19 @@ func battle_parts(s: Dictionary, override_group: String = "", override: Dictiona
 			var id: String = parts[layer]
 			if not items.has(id): continue
 			var item: Dictionary = items[id]
+			if dungeons.forge_rewards and item.has("named") and not forge_named_mail_owned(id): continue
 			var d: Dictionary = item_def(id)
 			out.append({"item":id,"definition":item.definition,"group":group,"layer":layer,"pool":"helmet" if group == "head" else ("padding" if layer == "base" else "armor"),"condition":item.condition,"maximum":int(d.durability),"weight":Armor.part_weight(item,catalog)})
 			if item.has("named"): out[-1]["named"] = item.named.duplicate(true)
 	return out
+
+func forge_named_mail_owned(uid: String) -> bool:
+	if not dungeons.forge_rewards or not NamedMail.owned(uid,items,named_rewards,next_item,catalog): return false
+	var replay: Dictionary = dungeons.replay_named_mail(region,seed_value)
+	if replay.is_empty() or named_rewards[NamedMail.KEY].item != replay.item: return false
+	var site: Dictionary = dungeons.sites[NamedMail.SITE]
+	var room: Dictionary = site.floors[NamedMail.FLOOR].rooms[NamedMail.ROOM]
+	return site.completed == true and room.looted == true and NamedMail.cleared(site,room)
 
 func armor_stats(s: Dictionary, group: String = "", parts: Dictionary = {}) -> Dictionary:
 	return Armor.totals(battle_parts(s,group,parts))
@@ -660,11 +681,11 @@ func equip(soldier_id: int, item_id: String, destination: String = "") -> bool:
 
 func component_preview(soldier_id: int, group: String, layer: String, item_id: String = "", definition: String = "") -> Dictionary:
 	var out = {"ok":false,"reason":"Select a living soldier and a component.","before":{},"after":{},"appearance":{}}
-	if soldier_id < 0 or soldier_id >= soldiers.size() or not group in Armor.LAYERS or not layer in Armor.LAYERS[group]: return out
+	if soldier_id < 0 or soldier_id >= soldiers.size() or not layer in owned_layer_keys(group): return out
 	var s: Dictionary = soldiers[soldier_id]
 	out.before = armor_stats(s)
 	var parts = kit_parts(s.gear[group])
-	if parts.is_empty(): parts = Armor.empty_parts(group)
+	if parts.is_empty(): parts = empty_owned_parts(group)
 	var defs = component_definitions(parts)
 	if not item_id.is_empty():
 		if not items.has(item_id) or owner(item_id) >= 0 or not parent_kit(item_id).is_empty(): out.reason = "That piece is already fitted or carried by a soldier."; return out
@@ -679,7 +700,7 @@ func component_preview(soldier_id: int, group: String, layer: String, item_id: S
 		out.after[pool] += int(d.durability); out.after["max_"+pool] += int(d.durability); out.after.load += int(d.weight)
 	out.appearance = armor_appearance(s)
 	out.appearance[group] = defs
-	out.reason = Armor.conflict(defs,group,catalog)
+	out.reason = owned_assembly_conflict(defs,group,catalog)
 	if phase != "camp" or over() or not s.alive: out.reason = "Equipment can be changed by living soldiers in an active camp."
 	out.ok = out.reason.is_empty()
 	return out
@@ -695,7 +716,7 @@ func fit_component(soldier_id: int, group: String, layer: String, item_id: Strin
 	if kit.parts[layer] == item_id: return false
 	kit.parts[layer] = item_id
 	recovery.stored.erase(item_id)
-	note("%s: %s %s." % [s.name,"removed" if item_id.is_empty() else "fitted",Armor.LABELS[layer] if item_id.is_empty() else item_def(item_id).name])
+	note("%s: %s %s." % [s.name,"removed" if item_id.is_empty() else "fitted",Armor.LABELS.get(layer,layer) if item_id.is_empty() else item_def(item_id).name])
 	return true
 
 func swap_kit(a: int, b: int, group: String) -> bool:
@@ -1296,9 +1317,9 @@ func restore(raw: Variant) -> bool:
 		if item.has("legacy_weight") and not item.legacy_weight is bool: return false
 		if definition.get("assembly",false):
 			var group: String = definition.slot
-			if not item.get("parts") is Dictionary or item.parts.size() != Armor.LAYERS[group].size(): return false
+			if not item.get("parts") is Dictionary or item.parts.size() != owned_layer_keys(group).size(): return false
 			var defs = {}
-			for layer in Armor.LAYERS[group]:
+			for layer in owned_layer_keys(group):
 				var id = item.parts.get(layer)
 				if not id is String: return false
 				defs[layer] = ""
@@ -1308,7 +1329,7 @@ func restore(raw: Variant) -> bool:
 				if component.get("group") != group or component.get("layer") != layer: return false
 				children[id] = item.id
 				defs[layer] = d.items[id].definition
-			if not Armor.conflict(defs,group,check_catalog).is_empty(): return false
+			if not owned_assembly_conflict(defs,group,check_catalog).is_empty(): return false
 		elif item.has("parts"): return false
 	if not d.get("purchased_gear") is Array or (not endless_save and d.purchased_gear.size() > 900): return false
 	var purchases = {}
@@ -1363,7 +1384,7 @@ func restore(raw: Variant) -> bool:
 	var spatial_region = candidate_region
 	if dungeon_save:
 		var geography = Overworld.new(); geography.setup(candidate_region,candidate_world)
-		if not candidate_dungeons.restore(d.dungeons,candidate_region,geography,d.get("named_rewards",{})): return false
+		if not candidate_dungeons.restore(d.dungeons,candidate_region,geography,d.get("named_rewards",{}),d.seed): return false
 		if candidate_dungeons.rules_version >= 2 and not roster: return false
 		spatial_region = candidate_dungeons.spatial_region(candidate_region)
 	if place_in(spatial_region,d.location).is_empty(): return false
@@ -1941,10 +1962,11 @@ func equip_enemy(u: Dictionary, threat: int) -> void:
 	var family: String = families[n%families.size()]
 	var reserves: int = world.camps[encounter.site if not encounter.is_empty() else location].reserves
 	var wealth = clampi(threat+(1 if reserves >= 36 else 0)+(1 if logical_id == 6 else 0),1,3)
-	var pool = Arsenal.WEAPONS.filter(func(id): return Arsenal.family(id) == family and battle.weapons[id].tier <= wealth)
+	# The authored Mason's Hammer is not an enemy draw; every previous interval stays literal.
+	var pool = Arsenal.WEAPONS.filter(func(id): return id != Arsenal.MASON_HAMMER and Arsenal.family(id) == family and battle.weapons[id].tier <= wealth)
 	if pool.is_empty():
 		# Some families have no tier-one item; use their cheapest available tier.
-		var available = Arsenal.WEAPONS.filter(func(id): return Arsenal.family(id) == family)
+		var available = Arsenal.WEAPONS.filter(func(id): return id != Arsenal.MASON_HAMMER and Arsenal.family(id) == family)
 		var minimum = 99
 		for id in available: minimum = mini(minimum,battle.weapons[id].tier)
 		pool = available.filter(func(id): return battle.weapons[id].tier == minimum)
@@ -2498,9 +2520,27 @@ func dungeon_search() -> bool:
 	var current = dungeons.room()
 	if not current.cleared or current.looted or current.loot.is_empty() or not Dungeons.can_search(current): return false
 	var item = ""
-	if current.reward != "":
-		item = claim_named_reward(Dungeons.reward_key(dungeons.active,dungeons.floor_index,dungeons.room_index))
-		if item == "": return false
+	var reward_key := Dungeons.reward_key(dungeons.active,dungeons.floor_index,dungeons.room_index)
+	var site: Dictionary = dungeons.sites[dungeons.active]
+	var is_mail: bool = dungeons.forge_rewards and (current.reward == NamedMail.TOKEN or (reward_key == NamedMail.KEY and NamedMail.registered_site(region,seed_value,dungeons.rules_version,site) and named_rewards.has(reward_key)))
+	if is_mail or current.reward != "":
+		if is_mail:
+			if reward_key != NamedMail.KEY or combat_pending or location != dungeons.active or not overworld.at_site(location) or site.completed != false or not NamedMail.cleared(site,current): return false
+			var exact: Dictionary = dungeons.replay_named_mail(region,seed_value)
+			var row = named_rewards.get(reward_key)
+			if exact.is_empty() or not NamedMail.valid_row(row,catalog) or row.claimed != "" or row.item != exact.item: return false
+			item = "item_%03d" % next_item
+			if not NamedMail.uid_valid(item,next_item+1) or items.has(item): return false
+			# All predicates precede the first write. Only Search allocates this
+			# physical leaf; no temporary ordinary roll and no assembled armor.
+			var leaf: Dictionary = exact.item.duplicate(true)
+			leaf["id"] = item
+			items[item] = leaf
+			next_item += 1
+			row.claimed = item
+		else:
+			item = claim_named_reward(reward_key)
+			if item == "": return false
 	current.looted = true
 	for key in current.loot:
 		match key:

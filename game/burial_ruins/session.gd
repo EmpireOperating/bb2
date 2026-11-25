@@ -52,7 +52,7 @@ func _validated_snapshot(raw: Variant):
   if not raw.active.get("participants") is Array: return null
   for id in raw.active.participants:
    if not id is int: return null
-  if raw.active.kind not in ["clear","recover"]: return null
+  if raw.active.kind not in ["clear","recover","courier","freight_escort"]: return null
   if raw.active.kind=="recover" and not raw.economy.get("freight",{}).get("shipments",{}).get(raw.active.shipment,{}).has("seizer"):return null
  for person in raw.soldiers:
   if not person is Dictionary or not person.get("gear") is Dictionary or not person.get("alive") is bool: return null
@@ -64,6 +64,8 @@ func _validated_snapshot(raw: Variant):
    var item: Dictionary = raw.items[id]
    if not item.get("definition") is String or item.definition != group+"_kit" or not item.get("parts") is Dictionary: return null
  var candidate = _new_campaign()
+ if raw.active.get("kind")=="courier" and not _hosts_courier(candidate): return null
+ if raw.active.get("kind")=="freight_escort" and not _hosts_freight_escort(candidate): return null
  if not candidate.restore(raw) or not _features(candidate): return null
  if _canonical(candidate.snapshot()) != _canonical(raw): return null
  return candidate
@@ -75,9 +77,15 @@ func contract_accept_preview_reason(id: String) -> String:
  if not campaign.active.is_empty(): return "Finish or abandon the active contract first."
  if not campaign.encounter.is_empty() or campaign.overworld.pending != "" or campaign.dungeons.active != "": return "Resolve the pending contact or dungeon first."
  return _contract_offer_reason(campaign,id)
+func _hosts_courier(c) -> bool:
+ return c.has_method("courier_enabled") and c.courier_enabled()
+func _hosts_freight_escort(c) -> bool:
+ return c.has_method("freight_escort_enabled") and c.freight_escort_enabled()
 func _contract_offer_reason(c, id: String) -> String:
  for job in c.offers():
   if job.id != id: continue
+  if job.kind=="courier" and _hosts_courier(c):return ""
+  if job.kind=="freight_escort" and _hosts_freight_escort(c):return ""
   if job.kind=="recover" and c.economy.freight.physical(job.shipment):return ""
   if job.kind != "clear": return "Only funded camp-clearing contracts are hosted in this slice."
   return ""
@@ -98,12 +106,15 @@ func accept_contract(id: String) -> bool:
  if reason != "": return _fail(reason)
  var candidate = _validated_snapshot(campaign.snapshot())
  if candidate == null or not candidate.accept_job(id): return _fail("Stock funded acceptance refused; unchanged.")
- if candidate.active.get("kind") not in ["clear","recover"] or _validated_snapshot(candidate.snapshot()) == null: return _fail("Unsupported current contract; unchanged.")
+ var kind = candidate.active.get("kind")
+ if kind not in ["clear","recover"] and not (kind=="courier" and _hosts_courier(candidate)) and not (kind=="freight_escort" and _hosts_freight_escort(candidate)): return _fail("Unsupported current contract; unchanged.")
+ if _validated_snapshot(candidate.snapshot()) == null: return _fail("Unsupported current contract; unchanged.")
  campaign = candidate
  return _success()
 func _contract_reason(c) -> String:
  if c.phase != "camp" or c.over() or c.active_ids().is_empty(): return "A living field company in CAMP is required."
  if not c.encounter.is_empty() or c.overworld.pending != "" or c.dungeons.active != "": return "Resolve the pending contact or dungeon first."
+ if c.active.get("kind") is String and c.active.kind=="courier" and _hosts_courier(c): return "Take the sealed packet to its receiving town. No battle required."
  if c.active.is_empty() or not c.active.get("kind") is String or c.active.kind != "clear": return "A supported funded clear contract is required."
  if not c.active.get("target") is String: return "Invalid contract target."
  var site: String = c.active.target

@@ -68,16 +68,23 @@ func economic_reports(c,town: String,stamp: int) -> Array:
   if e.industry.funds(c,town,job)<job.fee:continue
   for good in job.inputs:needs[good]=needs.get(good,0)+job.inputs[good]
  var deficits: Array=[];var surplus: Dictionary={};var largest:=0
+ var grain_lead: Dictionary={}
  for good in e.STORED:
   var stock: int=e.stock(c,town,good);var free: int=stock-needs.get(good,0)
   if free<0:deficits.append(record(town,"shortage",good,-free,stamp))
-  elif good in e.TRADE_GOODS and free>=2*e.TARGET[good] and free-e.TARGET[good]>largest:
-   largest=free-e.TARGET[good];surplus=record(town,"surplus",good,stock,stamp)
+  elif good in e.TRADE_GOODS and free>=2*e.TARGET[good]:
+   # Give the existing surplus slot to a grain lead when it also helps
+   # ration buyers. Archive only the grain fact, never a standing offer.
+   if good=="grain" and market.stock>=e.BUNDLE["food"] and e.grain_ration_relief(c,town)>0:
+    grain_lead=record(town,"surplus",good,stock,stamp)
+   elif free-e.TARGET[good]>largest:
+    largest=free-e.TARGET[good];surplus=record(town,"surplus",good,stock,stamp)
  deficits.sort_custom(func(a,b):return a.value>b.value if a.value!=b.value else a.subject<b.subject)
  for deficit in deficits.slice(0,2):
   deficit.value=mini(deficit.value,MAX_SHORTFALL)
   out.append(deficit)
- if not surplus.is_empty():out.append(surplus)
+ if not grain_lead.is_empty():out.append(grain_lead)
+ elif not surplus.is_empty():out.append(surplus)
  return out
 func depart(c,id: String) -> void:
  if not enabled or packets.has(id):return
@@ -168,7 +175,9 @@ func title(c,report: Dictionary) -> String:
   "missing":return "Shipment overdue: "+c.world.short_id(report.subject)
   "lean":return "Food running low · %d rations left" % report.value
   "shortage":return "Funded work short of %s%d %s" % ["at least " if report.value==MAX_SHORTFALL else "",report.value,c.economy.NAMES[report.subject].to_lower()]
-  "surplus":return "%s in surplus · %d in store" % [c.economy.NAMES[report.subject],report.value]
+  "surplus":
+   if report.subject=="grain":return "Grain surplus reported · %d in store then · check local ration prices" % report.value
+   return "%s in surplus · %d in store" % [c.economy.NAMES[report.subject],report.value]
  return "No pressing trouble reported"
 func age(c,report: Dictionary) -> String:
  var hours=maxi(0,(clock(c)-report.observed)/60)

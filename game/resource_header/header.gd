@@ -1,5 +1,5 @@
 extends Control
-## Read-only Company supplies. Painted symbols own the visible names; tooltips explain them.
+## One passive resource row and one forecast, shared by Company, map and town.
 const Press=preload("res://engraved_ui/press.gd")
 const Recovery=preload("res://src/recovery.gd")
 const PAINT := "res://company_town/assets/resources/"
@@ -10,35 +10,29 @@ const RESOURCES := [
  ["Medicine","medicine-painted-32","Medicine · supplies for treating injuries"],
  ["Ammo","ammunition-painted-32","Ammunition · supplies for ranged weapons"]
 ]
+# Font size, icon width, row gap, icon-to-number gap. Use the tighter sizes
+# only when unusually large exact counts need them in the fixed HUD width.
+const FITS := [Vector4i(16,24,12,4),Vector4i(14,24,8,4),Vector4i(12,24,8,4),Vector4i(12,16,4,2),Vector4i(11,16,4,2)]
 var entries := {}
-var wages: Label
-var column: VBoxContainer
-var purse: HBoxContainer
-var supplies: HBoxContainer
-var _company := false
-func _init(company: bool = false) -> void:
- _company = company
+var row: HBoxContainer
+
+func _init(align_right: bool = false) -> void:
  name = "ResourceHeader"
- mouse_filter = Control.MOUSE_FILTER_PASS
- column = VBoxContainer.new()
- column.add_theme_constant_override("separation",0)
- add_child(column);column.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
- purse = HBoxContainer.new();purse.name = "Purse"
- if not _company:
-  supplies = HBoxContainer.new();supplies.name = "Supplies"
- for row in ([purse] if _company else [purse,supplies]):
-  row.alignment = BoxContainer.ALIGNMENT_END
-  row.add_theme_constant_override("separation",12)
-  row.custom_minimum_size.y = 24
-  row.mouse_filter = Control.MOUSE_FILTER_PASS
-  column.add_child(row)
- for i in RESOURCES.size():
-  var entry := HBoxContainer.new();entry.name = RESOURCES[i][0]
+ mouse_filter = Control.MOUSE_FILTER_IGNORE
+ row = HBoxContainer.new()
+ row.name = "Resources"
+ row.alignment = BoxContainer.ALIGNMENT_END if align_right else BoxContainer.ALIGNMENT_BEGIN
+ row.add_theme_constant_override("separation",12)
+ row.custom_minimum_size.y = 24
+ row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+ add_child(row);row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+ for spec in RESOURCES:
+  var entry := HBoxContainer.new();entry.name = spec[0]
   entry.add_theme_constant_override("separation",4)
-  entry.mouse_filter = Control.MOUSE_FILTER_PASS
-  (purse if _company or RESOURCES[i][0] in ["Crowns","Ammo"] else supplies).add_child(entry)
+  entry.mouse_filter = Control.MOUSE_FILTER_PASS # Hover, never a command or focus target.
+  row.add_child(entry)
   var icon := TextureRect.new();icon.name = "Icon"
-  icon.texture = load(PAINT+RESOURCES[i][1]+".png")
+  icon.texture = load(PAINT+spec[1]+".png")
   icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
   icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
   icon.custom_minimum_size = Vector2(24,24)
@@ -46,17 +40,9 @@ func _init(company: bool = false) -> void:
   icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
   entry.add_child(icon);Press.mount_icon(icon,true)
   var value := _number();value.name = "Value";entry.add_child(value)
-  entries[RESOURCES[i][0]] = entry
- wages = _number();wages.name = "Wages"
- wages.add_theme_font_size_override("font_size",14)
- wages.add_theme_color_override("font_color",Press.BRASS)
- wages.mouse_filter = Control.MOUSE_FILTER_PASS
- purse.add_child(wages)
- if _company:
-  # Keep one line of icons/amounts; daily upkeep belongs on the Crowns hover.
-  purse.size_flags_vertical = Control.SIZE_EXPAND_FILL
-  wages.hide()
+  entries[spec[0]] = entry
  resized.connect(_fit_numbers)
+
 func _number() -> Label:
  var label := Label.new()
  label.add_theme_font_size_override("font_size",16)
@@ -67,54 +53,53 @@ func _number() -> Label:
  label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
  label.mouse_filter = Control.MOUSE_FILTER_IGNORE
  return label
+
 func present(c) -> void:
  var values := [c.crowns,c.food,c.tools,c.medicine,c.ammunition]
  for i in RESOURCES.size():
   var entry: HBoxContainer = entries[RESOURCES[i][0]]
-  entry.get_node("Value").text = str(values[i])
-  entry.get_node("Value").add_theme_color_override("font_color",Press.VERMILION if values[i] == 0 else Press.TYPE)
+  var value: Label = entry.get_node("Value")
+  value.text = str(values[i])
+  value.add_theme_color_override("font_color",Press.VERMILION if values[i] == 0 else Press.TYPE)
   entry.tooltip_text = "%s: %d" % [RESOURCES[i][2],values[i]]
- wages.text = "%d / day" % c.wage_cost()
- wages.tooltip_text = "Daily company wages: %d crowns / day" % c.wage_cost()
- if _company:_company_tooltips(c)
+ _upkeep_tooltips(c)
  _fit_numbers()
-func _company_tooltips(c) -> void:
+
+func _upkeep_tooltips(c) -> void:
  var daily_wages: int = c.wage_cost()
  var mouths: int = c.alive_count()
  entries.Crowns.tooltip_text += "\nWages: %d crowns / day" % daily_wages
  if c.arrears > 0:entries.Crowns.tooltip_text += "\n%d crowns in arrears" % c.arrears
  entries.Crowns.tooltip_text += "\n"+(_full_days(maxi(0,c.crowns-c.arrears),daily_wages)+" of wages" if daily_wages > 0 else "No daily wages")
  entries.Food.tooltip_text += "\n"+(_full_days(c.food,mouths)+" at %d rations / day" % mouths if mouths > 0 else "No daily ration use")
- var needed := Recovery.tools_needed(c)
- entries.Tools.tooltip_text += "\nFull repair: %s (worn repairables + marked stash)" % _tool_amount(needed)
- if needed > c.tools:entries.Tools.tooltip_text += "\nShort by "+_tool_amount(needed-c.tools)
+ var tools := Recovery.tools_needed(c)
+ entries.Tools.tooltip_text += "\nFull repair: %s\nWorn repairables + marked stash" % _tool_amount(tools)
+ if tools > c.tools:
+  entries.Tools.tooltip_text += "\nFrom current stock: %s\nShort by %s" % [_tool_amount(c.tools),_tool_amount(tools-c.tools)]
+ var medicine := Recovery.medicine_needed(c)
+ entries.Medicine.tooltip_text += "\nFull treatment: %d medicine\nTemporary wounds · food required" % medicine
+ if medicine > c.medicine:
+  entries.Medicine.tooltip_text += "\nFrom current stock: %d medicine\nShort by %d medicine" % [c.medicine,medicine-c.medicine]
+
 func _full_days(stock: int, per_day: int) -> String:
  var days := floori(float(stock)/per_day)
  return "%d full day%s" % [days,"" if days == 1 else "s"]
+
 func _tool_amount(count: int) -> String:
  return "%d tool%s" % [count,"" if count == 1 else "s"]
+
 func _fit_numbers() -> void:
  if not is_inside_tree() or size.x <= 0:return
- # Keep exact digits and full-size paintings; only unusually large stocks need smaller type.
- var font: Font = wages.get_theme_font("font")
- var font_size := 16
- var separation := 12
- for candidate in [16,14,12]:
-  font_size = candidate
-  separation = 8 if candidate < 16 else 12
-  if _company:
-   var width: float = separation*(entries.size()-1)
-   for entry in entries.values():width += 28+ceilf(font.get_string_size(entry.get_node("Value").text,HORIZONTAL_ALIGNMENT_LEFT,-1,candidate).x)
-   if width <= size.x:break
-   continue
-  var supply_width: float = separation*2
-  for key in ["Food","Tools","Medicine"]:
-   supply_width += 28+ceilf(font.get_string_size(entries[key].get_node("Value").text,HORIZONTAL_ALIGNMENT_LEFT,-1,candidate).x)
-  var purse_width: float = separation*2+ceilf(font.get_string_size(wages.text,HORIZONTAL_ALIGNMENT_LEFT,-1,14).x)
-  for key in ["Crowns","Ammo"]:
-   purse_width += 28+ceilf(font.get_string_size(entries[key].get_node("Value").text,HORIZONTAL_ALIGNMENT_LEFT,-1,candidate).x)
-  if maxf(supply_width,purse_width) <= size.x:break
- for entry: HBoxContainer in entries.values():entry.get_node("Value").add_theme_font_size_override("font_size",font_size)
- purse.add_theme_constant_override("separation",separation)
- if not _company:supplies.add_theme_constant_override("separation",separation)
- column.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+ var font: Font = entries.Crowns.get_node("Value").get_theme_font("font")
+ var fit: Vector4i
+ for candidate: Vector4i in FITS:
+  fit = candidate
+  var width: float = fit.z*(entries.size()-1)
+  for entry in entries.values():width += fit.y+fit.w+ceilf(font.get_string_size(entry.get_node("Value").text,HORIZONTAL_ALIGNMENT_LEFT,-1,fit.x).x)
+  if width <= size.x:break
+ for entry: HBoxContainer in entries.values():
+  entry.add_theme_constant_override("separation",fit.w)
+  entry.get_node("Icon").custom_minimum_size.x = fit.y
+  entry.get_node("Value").add_theme_font_size_override("font_size",fit.x)
+ row.add_theme_constant_override("separation",fit.z)
+ row.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)

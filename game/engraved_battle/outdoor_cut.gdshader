@@ -9,14 +9,17 @@ uniform float painted_mix = .85;
 uniform int outdoor_family = 0; // slate, bark, leaf
 uniform float shelf_moss = 0.0;
 uniform float contact_height = 0.0;
+uniform float work_wear = 0.0;
 varying vec3 world_position;
 varying vec3 world_normal;
 varying float prop_height;
+varying vec2 prop_xz;
 
 void vertex() {
     world_position = (MODEL_MATRIX*vec4(VERTEX,1.0)).xyz;
     world_normal = normalize(mat3(MODEL_MATRIX)*NORMAL);
     prop_height = VERTEX.y;
+    prop_xz = VERTEX.xz;
     VERTEX.x += sin(TIME*1.45+world_position.x*2.1+world_position.z)*wind_strength*max(VERTEX.y,0.0);
 }
 
@@ -32,6 +35,44 @@ float cut_noise(vec2 p) {
     t = t*t*(3.0-2.0*t);
     return mix(mix(cut_hash(cell),cut_hash(cell+vec2(1,0)),t.x),
                mix(cut_hash(cell+vec2(0,1)),cut_hash(cell+vec2(1,1)),t.x),t.y);
+}
+
+float work_distance(vec2 p, vec2 a, vec2 b) {
+    vec2 line = b - a;
+    return length(p - a - line * clamp(dot(p - a, line) / dot(line, line), 0.0, 1.0));
+}
+
+vec3 work_cut(vec3 base, vec3 local, float wear, int family) {
+    // Match the Broken Gate's masonry yaw. Incisions stay on the actual
+    // prop, depth/fade/shadow and fog remain the stock material's job.
+    float x = dot(local.xz, vec2(.8660254,-.5));
+    float front = dot(local.xz, vec2(.5,.8660254));
+    if (family == 1 && front > -.055) {
+        float w = mix(.084,.134,sqrt(wear));
+        float tip = clamp((x + .024) / (2.0 * w) + .5, 0.0, 1.0);
+        float y = local.y - (.76 + x * .27);
+        float opening = mix(.079,.139,wear) * (1.0 - tip);
+        float outline = max(abs(x + .024) - w,max(y - opening,-y - opening * .52));
+        vec3 cut = mix(vec3(.99,.71,.34),vec3(.16,.075,.031),smoothstep(-.009,.021,y));
+        return mix(base,cut,1.0 - smoothstep(-.004,.011,outline));
+    }
+    if (family == 0 && x < -.27 && front > .063) {
+        // Same shifted flank as the exposed courses, not the fore pier.
+        vec2 p = vec2(x + .72,local.y);
+        float d = work_distance(p,vec2(-.27,1.47),vec2(-.084,1.08));
+        d = min(d,work_distance(p,vec2(-.084,1.08),vec2(-.18,.91)));
+        d = min(d,work_distance(p,vec2(-.18,.91),vec2(.055,.69)));
+        d = min(d,work_distance(p,vec2(.055,.69),vec2(-.02,.50)));
+        d = min(d,work_distance(p,vec2(-.02,.50),vec2(.18,.31)));
+        if (wear > .44) {
+            d = min(d,work_distance(p,vec2(.055,.69),vec2(.23,.78)));
+            d = min(d,work_distance(p,vec2(.23,.78),vec2(.34,.68)));
+        }
+        float width = mix(.018,.037,wear);
+        base = mix(base,vec3(.73,.68,.55),.65 * (1.0 - smoothstep(width, width + .026,d)));
+        return mix(base,vec3(.08,.069,.057),1.0 - smoothstep(width - .012,width + .003,d));
+    }
+    return base;
 }
 
 void fragment() {
@@ -81,6 +122,7 @@ void fragment() {
         }
         ALBEDO = slate*contact;
     }
+    if (work_wear > 0.0) { ALBEDO = work_cut(ALBEDO, vec3(prop_xz.x,prop_height,prop_xz.y), work_wear, outdoor_family); }
     ROUGHNESS = .94;
     SPECULAR = .10;
 }

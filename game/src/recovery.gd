@@ -35,6 +35,16 @@ static func tools_needed(c) -> int:
 	for id in ids: missing += maxi(0,int(c.item_def(id).durability)-int(c.items[id].condition))
 	return ceili(float(maxi(0,missing-c.recovery.tool_credit))/POINTS_PER_TOOL)
 
+static func medicine_needed(c) -> int:
+	# step() charges one dose per wound day, not for lost HP or permanent scars.
+	# A day already paid for (including temple care) needs no second dose.
+	var needed := 0
+	for s in c.soldiers:
+		if not s.alive or s.wound_days <= 0: continue
+		var paid: bool = c.recovery.patients.get(str(s.id),{}).get("paid",false)
+		needed += s.wound_days - int(paid)
+	return needed
+
 static func point(c, ids: Array) -> bool:
 	for id in ids:
 		if not c.items.has(id) or c.items[id].condition >= c.item_def(id).durability: continue

@@ -7,6 +7,7 @@ const CATEGORIES = {"weapons":["Spear","Sword","Polearm","Bow","Crossbow","Throw
 const MELEE = ["Spear","Sword","Polearm","Axe","Mace","Hammer","Dagger"]
 const RANGED = ["Bow","Crossbow","Throwing"]
 const CORE = ["colossus","pathfinder","fast_adaptation","fortified_mind","steel_brow","quick_hands"]
+const RALLY := "rally_the_troops"
 const GROUPS = {
 	"Hammer":["smackdown","hammer_mastery","deep_impact"],
 	"Dagger":["between_the_ribs","dagger_mastery","swift_stabs"],
@@ -94,8 +95,21 @@ static func initialize(s: Dictionary, groups: Array = [], starting_weapon: Strin
 	s["perk_version"] = 2; s["perk_groups"] = groups.duplicate(); s["perk_pool"] = pool(groups)
 	s["gifted_choices"] = []
 
+static func _rally_offered(s: Dictionary) -> bool:
+	# A common Tier 3 option for current careers, not a reroll or an edit to
+	# the authoritative personal pool saved for any existing version.
+	return s.get("perk_version",0) == 6 and s.get("growth_version",0) == 1
+
+static func offered_perks(s: Dictionary) -> Array:
+	var out: Array = s.get("perk_pool",[]).duplicate()
+	if _rally_offered(s):
+		var i := 0
+		while i < out.size() and (catalog()[out[i]].tier < 3 or (catalog()[out[i]].tier == 3 and out[i] < RALLY)): i += 1
+		out.insert(i,RALLY)
+	return out
+
 static func learn_reason(s: Dictionary, id: String, earned_points: int) -> String:
-	if not id in s.perk_pool: return "Outside this recruit's personal pool."
+	if not id in s.perk_pool and not (id == RALLY and _rally_offered(s)): return "Outside this recruit's personal pool."
 	if id in s.perks: return "Already learned."
 	if s.perks.size() >= earned_points: return "Earn another level for a perk point."
 	if s.perks.size() < catalog()[id].tier-1: return "Spend %d points anywhere to unlock this tier." % (catalog()[id].tier-1)
@@ -138,7 +152,7 @@ static func valid(s: Dictionary) -> bool:
 	if has(s,"gifted") and s.gifted_choices.size() < 3 and s.perks.back() != "gifted": return false
 	var bought = 0
 	for id in s.get("perks",[]):
-		if not id in s.perk_pool or catalog()[id].tier > bought+1: return false
+		if (not id in s.perk_pool and not (id == RALLY and _rally_offered(s))) or catalog()[id].tier > bought+1: return false
 		bought += 1
 	return true
 

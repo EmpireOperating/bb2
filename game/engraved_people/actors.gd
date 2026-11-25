@@ -8,17 +8,27 @@ const DrawArt = preload("res://engraved_people/reload_draw.gd")
 const ShieldArt = preload("res://engraved_people/shield_contact.gd")
 const MeleeSpecial = preload("res://engraved_people/melee_special.gd")
 const UtilityPoseArt = preload("res://engraved_people/utility_pose_art.gd")
+const Wardrobe = preload("res://layer_forge/wardrobe.gd")
 const CANVAS := Vector2i(480,464)
 const FOOT := Vector2(240,411)
 const WALK_FRAMES := 10
 const CYCLE := 0.66
 const PORTRAIT := Rect2i(170,32,142,142)
+# The highest Forge crest begins at y=12. Keep the old portrait's bottom
+# edge and a square crop centered on the same actor; never resize the ink.
+const FORGE_PORTRAIT := Rect2i(158,10,164,164)
 const BODY_ORDER := ["base","mail","outer"]
 const HEAD_ORDER := ["padding","mail","shell"]
+const LAB_FINISH := {
+ "linen":["body/base","t1-grip","soft"],
+ "mail":["body/mail","t1-mail","trail"],
+ "breastplate":["body/outer","t1-mail","iron"],
+}
 const Named = preload("res://src/named_equipment.gd")
 const Catalog = preload("res://hollow_campaign/catalog.gd")
 static var _catalog := {}
 static var _sheet: Image
+const Wear = preload("res://engraved_people/named_wear.gd")
 static var _textures := {}
 const THRUST_WEAPONS := ["weapon/boar","weapon/militia","weapon/heavy"]
 const SWING_SWORDS := ["weapon/arming","weapon/falchion","weapon/short","weapon/t1-gatewardens-blade","weapon/t1-heavy-falchion","weapon/t1-narrow-sabre","weapon/t1-short-sword"]
@@ -27,6 +37,7 @@ const Bow = preload("res://engraved_people/bow_motion.gd")
 const BowHookSpecial = preload("res://engraved_people/bow_hook_special.gd")
 static var _strike_sheets: Dictionary = {}
 static var _strike_cuts: Dictionary = {}
+static var _forge_pose_plates: Dictionary = {}
 
 static func strike_frame(seconds: float,r:Dictionary={}) -> int:
  if r.has("melee_special"):return MeleeSpecial.frame(r.melee_special.kind,seconds,strike_contact(r))
@@ -110,7 +121,7 @@ static func _read(d: Dictionary, slot: String, channel: String, record: Dictiona
  d.signature[slot]=entry
  var binding: Dictionary = DATA.data.bindings.get(id,{})
  if channel == "carried":
-  _reason(d,slot,"Stowed in a reserve slot; not worn.");return
+  _reason(d,slot,"Stowed in a pocket; not worn.");return
  if binding.get("slot","") != channel or binding.is_empty():
   _reason(d,slot,"No registered engraving for this physical definition and slot.");return
  if channel == "shield" and entry.condition <= 0 or entry.maximum > 0 and entry.condition <= 0 and channel not in ["weapon","ammo"]:
@@ -123,6 +134,9 @@ static func _read(d: Dictionary, slot: String, channel: String, record: Dictiona
   d.recipe.under_body=d.recipe.body
   d.recipe.under_wear=d.recipe.body_wear
  elif not prev.is_empty():
+  if d.recipe.has("named_paint"):
+   d.recipe.named_paint.erase(d.recipe.get(channel,""))
+   if d.recipe.named_paint.is_empty():d.recipe.erase("named_paint")
   d.signature[prev].visible=false;d.signature[prev].painted=false
   _reason(d,prev,"Covered by a higher physical layer.")
  d.owners[channel]=slot
@@ -134,10 +148,35 @@ static func _read(d: Dictionary, slot: String, channel: String, record: Dictiona
   d.recipe.stance=binding.stance
   if id=="hm_trial_v1:twohand_maul":d.recipe.tier_one_maul_motion=true
  entry.visible=true;entry.painted=true
- if record.has("named"):d.notes.append("%s · base definition shown; Named ornament is not illustrated." % id)
+ var named_id:=Wear.select(record,slot,channel,binding.part)
+ if not named_id.is_empty():
+  if not d.recipe.has("named_paint"):d.recipe.named_paint={}
+  d.recipe.named_paint[binding.part]=named_id
+  entry.asset="named/"+named_id
+ elif record.has("named"):
+  d.notes.append("%s · base definition shown; Named ornament is not illustrated." % id)
+
 
 static func describe(unit: Dictionary) -> Dictionary:
- return describe_with_face(unit,_face(unit))
+ var d:=describe_with_face(unit,_face(unit))
+ if d.ok and ProjectSettings.get_setting("application/config/use_custom_user_dir",false) and ProjectSettings.get_setting("application/config/custom_user_dir_name","")=="ashen-company-armor-lab":
+  _finish_lab_outfit(d)
+ return d
+
+static func _finish_lab_outfit(d: Dictionary) -> void:
+ # The visible physical owner chooses existing hand and gait cuts, not new
+ # items. Keep genuinely occupied support slots (including omitted ones).
+ var slot: String=d.owners.get("body","")
+ var owner: Dictionary=d.signature.get(slot,{})
+ var finish: Array=LAB_FINISH.get(owner.get("definition",""),[])
+ if finish.is_empty() or finish[0]!=slot or owner.item.is_empty():return
+ # If an intact upper physical layer has no exact cut, an ostensibly
+ # complete lower outfit would misrepresent it. Broken layers reveal below.
+ for index in range(BODY_ORDER.find(slot.get_slice("/",1))+1,BODY_ORDER.size()):
+  var upper: Dictionary=d.signature.get("body/"+BODY_ORDER[index],{})
+  if not upper.is_empty() and (upper.maximum<=0 or upper.condition>0):return
+ if not d.signature.has("body/hands"):d.recipe.hands=finish[1]
+ if not d.signature.has("body/feet"):d.recipe.feet=finish[2]
 
 ## Neutral shared fittings. The caller supplies its own stable face, never a forged companion record.
 static func describe_with_face(unit:Dictionary,face:int)->Dictionary:
@@ -150,6 +189,10 @@ static func describe_with_face(unit:Dictionary,face:int)->Dictionary:
  var equipped:Dictionary=arms.get("weapon",{})
  if StockBolt.fitted(d.recipe) and d.recipe.weapon==StockBolt.DEFINITIONS.get(equipped.get("definition"),"") and equipped.get("loaded",false)==true:
   d.recipe.seated_bolt=true
+ if Wardrobe.applies(unit):
+  var claim = unit.get("forge_named_mail_uid")
+  Wardrobe.bind(d,unit.get("armor_parts",[]),claim if unit.get("side",-1) == 0 and claim is String else "")
+  return d
  # Layer order is independent of dictionary serialization or inspection order.
  var parts: Array = unit.get("armor_parts",[]).duplicate()
  parts.sort_custom(func(a,b):return _order(a) < _order(b))
@@ -175,9 +218,16 @@ static func _ready_sheet() -> bool:
  _sheet.convert(Image.FORMAT_RGBA8)
  return true
 
+static func _head_recipe(r: Dictionary) -> Dictionary:
+ var head := Wear.head_recipe(r)
+ if r.has("forge_head"):head.forge_head=r.get("forge_head",[])
+ return head
+
 static func _cuts(r: Dictionary, head_only: bool) -> Array:
  var face := "face/%d/%s" % [r.face,"hair" if r.head == "" else "shorn"]
- if head_only:return [face,r.head,r.head_wear]
+ if head_only:
+  if r.has("forge_head"):return [Wardrobe.BACK,face,r.head,r.head_wear]
+  return [face,r.head,r.head_wear]
  var under: String = r.get("under_body","")
  var sleeve_body: String = r.body if under.is_empty() else under
  var sleeve: String = DATA.data.body_sleeves.get(sleeve_body,"mail" if sleeve_body in ["torso/mail","torso/banded"] else "cloth")
@@ -192,6 +242,9 @@ static func _cuts(r: Dictionary, head_only: bool) -> Array:
   var right := "single/right/"+("grip" if r.weapon != "" and not bow else "idle")+"/"
   # The shield face belongs to the foreground, not the far-arm stack.
   # Retain that depth at rest and in motion so the lowering rim cannot pop behind the coat.
+  if r.has("forge_body"):
+   # Coat and hat go behind the live grip/weapon, even when they cross the chest.
+   return [left+"sleeve/"+sleeve,r.body,face,r.head,r.head_wear,(r.weapon if bow else ""),left+"hand"+glove,right+"sleeve/"+sleeve,("" if bow else r.weapon),right+"hand"+glove,r.shield,r.shield_wear]
   return [left+"sleeve/"+sleeve,(r.weapon if bow else ""),left+"hand"+glove,under,r.get("under_wear",""),r.body,r.body_wear,r.belt,face,r.head,r.head_wear,right+"sleeve/"+sleeve,("" if bow else r.weapon),right+"hand"+glove,r.shield,r.shield_wear]
  var cuts := [arm+"back/"+sleeve,under,r.get("under_wear",""),r.body,r.body_wear,r.belt,face,r.head,r.head_wear,arm+"front/"+sleeve,("palm/haft"+glove if pose == "haft" else ""),r.weapon,hand+"back"+glove,hand+"front"+glove,r.shield,r.shield_wear]
  # Right sleeve crosses the coat and belt to meet the rear grip. Its shoulder
@@ -210,6 +263,24 @@ static func _stamp(im: Image, key: String, shift: Vector2i) -> void:
  var p: Array = DATA.data.cuts[key]
  im.blend_rect(_sheet,Rect2i(int(p[2]),int(p[3]),int(p[4]),int(p[5])),Vector2i(int(p[0]),int(p[1]))+shift)
 
+static func _stamp_ground(im: Image, key: String, shift: Vector2i, r: Dictionary) -> void:
+ if not r.has("forge_body"):
+  _stamp(im,key,shift)
+  return
+ var suffix := "_legs_"+key.get_file()
+ # Replace the neutral cut only when this exact foundation frame has ink.
+ # VI always lies over the foundation (or neutral fallback), below the coat.
+ if not Wardrobe.stamp_accessory(im,r,"base",suffix,shift):_stamp(im,key,shift)
+ Wardrobe.stamp_accessory(im,r,"reinforce",suffix,shift)
+
+# Keep a single paint choice at the original z-order in every consumer.
+static func _stamp_wear(im: Image, key: String, shift: Vector2i, r: Dictionary, sleeves: int = 0) -> void:
+ if r.has("forge_body") and key.begins_with("legs/"):
+  _stamp_ground(im,key,shift,r)
+  return
+ if Wardrobe.stamp(im,key,shift,r,sleeves):return
+ if not Wear.stamp(im,key,shift,r):_stamp(im,key,shift)
+
 static func shield_plate(part:String,worn:bool) -> Image:
  if not _ready_sheet() or not part.begins_with("shield/") or not DATA.data.cuts.has(part):return null
  var p:Array=DATA.data.cuts[part]
@@ -218,12 +289,21 @@ static func shield_plate(part:String,worn:bool) -> Image:
  if worn:_stamp(plate,"wear/shield",-Vector2i(p[0],p[1]))
  return plate
 
+static func _forge_sleeve_fit(r: Dictionary, strike: int, draw: int, block: int) -> int:
+ if not r.has("forge_body") or r.stance!="single" or draw>=0 or block>=0 or r.weapon in DATA.data.single_left_bows:return 0
+ # The authored cuffs match the sword carry and the neutral far sleeve, not
+ # a generic silhouette in every weapon/arm family. The legs remain grounded.
+ var near_fit: int=Wardrobe.NEAR if strike<0 and not r.weapon.is_empty() else 0
+ var far_fit: int=Wardrobe.FAR if r.shield.is_empty() else 0
+ return near_fit|far_fit
+
 static func _render(r: Dictionary, frame: int, head_only: bool, strike: int = -1, draw: int = -1, block: int = -1, ranged_block:bool=false) -> Texture2D:
  if r.is_empty() or frame < -1 or frame >= WALK_FRAMES or not _ready_sheet():return null
+ if head_only and r.has("forge_head"):r=_head_recipe(r)
  if strike>=0 and not head_only and draw<0 and block<0 and r.has("melee_special"):
   var gear:=r.duplicate()
   gear.erase("melee_special")
-  return MeleeSpecial.compose(gear,r.melee_special,strike,DATA.data,_cuts,_stamp)
+  return _pose_head(MeleeSpecial.compose(gear,r.melee_special,strike,DATA.data,_cuts,_stamp_wear.bind(gear,0)),gear)
  var style:=_strike_style(r) if strike>=0 else ""
  var count: int=Motion.ENDS[style].size() if Motion.ENDS.has(style) else 8
  var ferry:=style==BowHookSpecial.FERRY
@@ -231,7 +311,7 @@ static func _render(r: Dictionary, frame: int, head_only: bool, strike: int = -1
  if strike>=0 and (head_only or strike>=count or not can_strike(r)):return null
  if draw>=0 and (head_only or strike>=0 or not StockBolt.fitted(r) or not DrawArt.ready()):return null
  if block>=0 and (head_only or strike>=0 or draw>=0 or r.get("stance")!="single" or r.get("shield","").is_empty() or not ShieldArt.ready()):return null
- var key := "portrait/%d/%s/%s" % [r.face,r.head,r.head_wear] if head_only else JSON.stringify([r,frame])
+ var key := "portrait/"+JSON.stringify(_head_recipe(r)) if head_only else JSON.stringify([r,frame])
  if strike>=0:key+="/strike/%d" % strike
  if draw>=0:key+="/reload/%d" % draw
  if block>=0:key+="/shield/%d" % block
@@ -246,22 +326,24 @@ static func _render(r: Dictionary, frame: int, head_only: bool, strike: int = -1
   var carry:=r.duplicate();carry.erase("billhook_hook")
   return _render(carry,-1,false)
  var side_pad: int=Motion.Hook.SIDE_PAD[strike] if hooked else 96 if bill else 0
- var size := PORTRAIT.size if head_only else CANVAS
+ var portrait_crop := FORGE_PORTRAIT if r.has("forge_head") else PORTRAIT
+ var size := portrait_crop.size if head_only else CANVAS
  # Signed paint destinations are foot-relative; pad only those motion cuts.
  var top_pad: int=192 if style=="sword_overhead" and strike in [1,2,3,4] else 0
  if hooked:top_pad=Motion.Hook.TOP_PAD if strike in Motion.Hook.TOP_ROWS else 0
  elif bill and strike in [1, 2, 3, 4]:top_pad=256
  if style=="maul_overhead" and strike in [1, 2]:top_pad=192
  var im := Image.create_empty(size.x+side_pad*2,size.y+top_pad,false,Image.FORMAT_RGBA8)
- var shift := -PORTRAIT.position if head_only else Vector2i(side_pad,top_pad+int(DATA.data.hip_y[frame+1]))
+ var shift := -portrait_crop.position if head_only else Vector2i(side_pad,top_pad+int(DATA.data.hip_y[frame+1]))
  if not head_only:
   # The mantle follows the shoulder; its hem hangs behind both walking legs.
-  _stamp(im,r.cloak,shift)
+  if r.has("forge_body"):_stamp_wear(im,r.cloak,shift,r)
+  else:_stamp(im,r.cloak,shift)
   # The carrier rides outside the cloak but behind the wearer's arms and legs.
   if r.has("ammo"):
    _stamp(im,r.ammo,shift)
    if r.ammo_fill>0:_stamp(im,r.ammo+"/"+str(r.ammo_fill),shift)
-  _stamp(im,"legs/%s/%d" % [r.feet,frame],Vector2i(side_pad,top_pad))
+  _stamp_ground(im,"legs/%s/%d" % [r.feet,frame],Vector2i(side_pad,top_pad),r)
  # The Billhook fit uses the same carry at settle, idle and gait.
  var ink_style:="billhook_overhead" if bill and not hooked else style
  # Exact prior art from final sight through empty release and lowering.
@@ -277,6 +359,14 @@ static func _render(r: Dictionary, frame: int, head_only: bool, strike: int = -1
  # one cut, with new wear. The following cuts carry the bracing recoil.
  var moved_shield:=block>=0 and not (ranged_block and block==0)
  var cuts:=_cuts(r,head_only)
+ var sleeves:=_forge_sleeve_fit(r,strike,draw,block)
+ if (sleeves&Wardrobe.NEAR)!=0:
+  # Show the fitted near cuff over the neutral sleeve at carry only. The
+  # existing grip stays over both; strikes use the original moving sleeve.
+  var sleeve:="single/right/grip/sleeve/cloth"
+  if cuts.has(sleeve):
+   cuts.erase(sleeve)
+   cuts.insert(cuts.find(r.body),sleeve)
  var overhead_front:bool=(style=="sword_overhead" and strike in range(9)) or (style in ["billhook_overhead","maul_overhead"] and strike in [1,2])
  if overhead_front or (hooked and strike in Motion.Hook.FRONT_ROWS):
   # The crossing sleeve belongs above face, headgear and their wear layers.
@@ -327,6 +417,10 @@ static func _render(r: Dictionary, frame: int, head_only: bool, strike: int = -1
   var blade_index:=cuts.find(r.weapon)
   cuts.insert(blade_index,r.shield)
   if not r.shield_wear.is_empty():cuts.insert(blade_index+1,r.shield_wear)
+ # Carry shares the two registered hand cuts across its gait. Moving gloves
+ # are opt-in only at the stock arming-sword Contact 3, never from carry ink.
+ var contact_gloves: bool=ink_style=="attack" and ink_row==3 and r.weapon=="weapon/arming" and pose.has(r.weapon) and pose.has("single/right/grip/hand")
+ var glove_fit: bool=not head_only and r.has("forge_body") and r.stance=="single" and r.weapon not in DATA.data.single_left_bows and draw<0 and block<0 and (strike<0 or contact_gloves)
  for cut: String in cuts:
   if moved_shield and ShieldArt.stamp_sleeve(im,cut,shift,block,shield_lane):pass
   elif moved_shield and not cut.is_empty() and (cut==r.shield or cut==r.shield_wear or cut.begins_with("single/left/shield/hand")):_stamp(im,cut,shift+ShieldArt.offset(block,shield_lane))
@@ -334,9 +428,19 @@ static func _render(r: Dictionary, frame: int, head_only: bool, strike: int = -1
   elif draw>=0 and cut.begins_with("hand/stock/front"):_stamp(im,cut,shift+DrawArt.hand_offset(draw))
   elif not head_only and cut==r.weapon and RingboundMaul.stamp(im,r,"maul_overhead" if ink_style=="maul_overhead" else "carry",strike if ink_style=="maul_overhead" else 0,shift):pass
   elif pose.has(cut):
-   var p: Array=pose[cut]
-   im.blend_rect(_strike_sheets[ink_style],Rect2i(int(p[2]),int(p[3]),int(p[4]),int(p[5])),Vector2i(int(p[0]),int(p[1]))+shift)
-  else:_stamp(im,cut,shift)
+   if Wear.stamp(im,cut,shift,r,"%s/%d" % [ink_style,ink_row]):
+    pass # Same rectangle/role as stock weapon ink. Bolt and arrow stamps still run below.
+   else:
+    var p: Array=pose[cut]
+    im.blend_rect(_strike_sheets[ink_style],Rect2i(int(p[2]),int(p[3]),int(p[4]),int(p[5])),Vector2i(int(p[0]),int(p[1]))+shift)
+  else:_stamp_wear(im,cut,shift,r,sleeves)
+  if glove_fit:
+   # Coat each exact bare palm in place: far before the weapon, near over
+   # the hilt. An alternate grip (including shield) matches neither key.
+   var glove := "_glove_near" if cut=="single/right/grip/hand" else "_glove_far" if cut=="single/left/idle/hand" else ""
+   if not glove.is_empty():
+    if contact_gloves:glove+="_contact"
+    for layer: String in ["base","reinforce"]:Wardrobe.stamp_accessory(im,r,layer,glove,shift)
   # Stamp next to the stock, before the two fitted gloves and other foreground cuts.
   if not head_only and cut==r.weapon and StockBolt.fitted(r):
    socket=StockBolt.TIPS[cut]+shift
@@ -349,7 +453,7 @@ static func _render(r: Dictionary, frame: int, head_only: bool, strike: int = -1
    Bow.stamp(im,bow_nock,bow_tip)
  im.generate_mipmaps()
  var texture := ImageTexture.create_from_image(im)
- if not head_only:texture.set_meta("engraved_head",{ "face":r.face, "head":r.head, "head_wear":r.head_wear })
+ if not head_only:texture.set_meta("engraved_head",_head_recipe(r))
  if top_pad>0:texture.set_meta("painted_top_pad",top_pad)
  if side_pad>0:texture.set_meta("painted_side_pad",side_pad)
  if socket!=Vector2i.ZERO:texture.set_meta("stock_bolt_socket",Vector2(socket))
@@ -372,10 +476,24 @@ static func _render(r: Dictionary, frame: int, head_only: bool, strike: int = -1
  _textures[key]=texture
  return texture
 
+static func _pose_head(texture: Texture2D, recipe: Dictionary) -> Texture2D:
+ if texture != null and recipe.has("forge_head"):texture.set_meta("engraved_head",_head_recipe(recipe))
+ return texture
+
 ## Art-only overlay on an idle registration. The caller owns action semantics.
 static func utility_pose(recipe: Dictionary, kind: String, frame: int) -> Texture2D:
  if not _ready_sheet():return null
- return UtilityPoseArt.compose(recipe,kind,frame,DATA.data,_cuts,_stamp)
+ var plates: Dictionary=DATA.data
+ if recipe.has("forge_body"):
+  # Utility only checks these virtual cuts for membership; its existing stamp
+  # callback handles them. Do not register them as real legacy atlas rectangles.
+  if _forge_pose_plates.is_empty():
+   _forge_pose_plates=plates.duplicate()
+   _forge_pose_plates.cuts=plates.cuts.duplicate()
+   for key: String in [Wardrobe.BACK,Wardrobe.BODY_FRONT,Wardrobe.HEAD_FRONT]:
+    _forge_pose_plates.cuts[key]=[]
+  plates=_forge_pose_plates
+ return _pose_head(UtilityPoseArt.compose(recipe,kind,frame,plates,_cuts,_stamp_wear.bind(recipe,0)),recipe)
 
 static func field(unit: Dictionary, frame: int = -1) -> Texture2D:
  return _render(describe(unit).recipe,frame,false)

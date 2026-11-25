@@ -21,7 +21,7 @@ static func pick(seed_number: int, person: Dictionary, slot: String, weights: Di
  assert(false,"Founder design weights must total 100")
  return ""
 
-static func outfit(seed_number: int, offer: Dictionary, catalog: Dictionary) -> void:
+static func outfit_arms(seed_number: int, offer: Dictionary) -> void:
  # The caller owns this detached acquisition offer. The native identity/growth
  # template, perk tree, and saved physical records never pass through this roll.
  var role: String = offer.companion_role
@@ -30,6 +30,9 @@ static func outfit(seed_number: int, offer: Dictionary, catalog: Dictionary) -> 
  offer.loadout.shield = pick(seed_number,offer,"shield",SHIELD) if role == "shield" else ""
  offer.ammo_loadout = Arsenal.ammo_type(offer.weapon)
  # Ranged founders retain their existing fitted reserve field knife.
+
+static func outfit(seed_number: int, offer: Dictionary, catalog: Dictionary) -> void:
+ outfit_arms(seed_number,offer)
  for group: String in ["body","head"]:
   var id := pick(seed_number,offer,group,BODY if group == "body" else HEAD)
   var parts := Armor.empty_parts(group)

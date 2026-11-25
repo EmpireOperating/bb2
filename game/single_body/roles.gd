@@ -38,5 +38,13 @@ static func install(c, u: Dictionary) -> void:
   var definition: String = definitions[slot]
   if definition.is_empty():continue
   u.arms[slot] = {"id":"enemy_%d_%d_%s" % [c.encounters,u.id,slot],"definition":definition,"condition":int(c.catalog[definition].durability),"loaded":false}
+ if c.forge_enabled():
+  # This actor never gets a persistent band/corpse identity. Replace only
+  # the ordinary role's physical outfit, not its authored arms or stats.
+  var grade:=maxi(0,Kits.GRADES.find(u.bandit_grade))
+  var source:="unbound/%d/%d" % [c.encounters,u.id]
+  var percent:=65+Kits.roll(c.seed_value,source,"wear",26)
+  u.armor_parts=Kits.forge_parts(c.seed_value,source,grade,grade>=2,false,percent,c.catalog)
+  u.merge(c.Armor.totals(u.armor_parts),true)
  c.battle.sync_arms(u)
  if role == "archer":u.ranged_skill = u.skill

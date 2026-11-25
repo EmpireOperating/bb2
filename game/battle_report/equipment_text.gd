@@ -43,6 +43,6 @@ static func details(item: Dictionary, catalog: Dictionary) -> String:
  for field: String in Equipment.EFFECT_LABELS:
   var value := int(d.get("effects",{}).get(field,0))
   if value != 0:lines.append("%s %+d%s" % [Equipment.EFFECT_LABELS[field],value," (inactive while broken)" if broken and value > 0 else ""])
- if d.get("slot","") == "belt":lines.append("Carried reserve capacity +%d" % int(d.get("capacity",0)))
+ if d.get("slot","") == "belt":lines.append("Pocket capacity +%d" % int(d.get("capacity",0)))
  if maximum <= 0 and d.get("slot","") in ["hands","feet","cloak","belt"]:lines.append("Utility bonuses stay active without durability.")
  return "\n".join(lines)

@@ -3,6 +3,7 @@ extends RefCounted
 ## Browsing never mints gear, consumes RNG or reconstructs a missing roll.
 const Arsenal = preload("res://src/arsenal.gd")
 const Rarity = preload("res://hollow_campaign/rarity.gd")
+const Forge = preload("res://layer_forge/outfitter.gd")
 const BASE_NOTE := "Fixed stock · rarity and rolls shown before purchase · fitting is separate"
 const EFFECT_LABELS := {"skill":"Melee skill","ranged_skill":"Ranged skill","defense":"Melee defense","ranged_defense":"Ranged defense","stamina":"Stamina","initiative":"Initiative","recovery":"Recovery"}
 
@@ -15,14 +16,47 @@ static func stock_item(offer: Dictionary) -> Dictionary:
  if not item is Dictionary or not item.has("instance_roll") or item.get("definition")!=offer.get("definition") or not Rarity.valid_item(item):return {}
  return item
 
+## Presentation admission only. Never alters merchant records, prices or quotes.
+static func armor_lab_refusal(d: Dictionary) -> String:
+ if d.get("assembly",false):return "Stored assembly; cannot fit as a piece."
+ if Forge.active():
+  # Drop the predecessor's Base/Mail/Outer + single Shell presentation veto.
+  # The real merchant still controls stock, legal definitions, quote and price.
+  return "Standalone support gear is not fitted in Layer Forge." if d.get("slot","") in ["hands","feet","cloak","belt"] else ""
+ if capacity_belt(d):return ""
+ if d.get("lab_outfit",false):return "Cosmetic piece; no protection or load. Not fitted here."
+ if d.get("slot","") in ["hands","feet","cloak","belt"]:return "Legacy support item; not fitted in Armor Lab."
+ if d.get("slot","") == "body" and not d.get("layer","") in ["base","mail","outer"]:return "Legacy armor piece; not fitted in Armor Lab."
+ if d.get("slot","") == "head" and d.get("layer","") != "shell":return "Legacy helmet piece; not fitted in Armor Lab."
+ return ""
+
+static func capacity_belt(d: Dictionary) -> bool:
+ return d.get("slot","") == "belt" and d.get("lab_outfit",false) and int(d.get("capacity",0)) > 0
+
+static func armor_lab_role(d: Dictionary) -> String:
+ if Forge.active():
+  var position := Forge.position_title(d)
+  if not position.is_empty():return position
+  return str(d.get("slot",d.get("group","equipment"))).capitalize()
+ if capacity_belt(d):return "Pocket belt"
+ if d.get("group","") == "body" and d.get("layer","") in ["base","mail","outer"]:
+  return "Body Armor / "+str(d.layer).capitalize()
+ if d.get("group","") == "head" and d.get("layer","") == "shell":return "Helmet"
+ return str(d.get("slot",d.get("group","equipment"))).capitalize()
+
 static func lines(offer: Dictionary, catalog: Dictionary, weapons: Dictionary) -> PackedStringArray:
+ var raw: Dictionary = catalog.get(offer.get("definition",""),{})
+ var refusal := armor_lab_refusal(raw)
+ if not refusal.is_empty():return PackedStringArray([refusal])
  var item:=stock_item(offer)
  if item.is_empty():return PackedStringArray(["Roll details unavailable."])
+ if capacity_belt(raw):return PackedStringArray(["Pocket capacity +%d · no armor or load" % raw.capacity])
  var d: Dictionary = Rarity.effective_definition(item,catalog.get(offer.get("definition",""),{}))
  if d.is_empty():return PackedStringArray(["Roll details unavailable."])
  var primary := PackedStringArray()
  var secondary := PackedStringArray()
  var slot := str(d.get("slot",""))
+ var forge_piece := Forge.active() and Forge.is_piece(offer.get("definition",""),d)
  if slot == "weapon":
   var w: Dictionary = Rarity.effective_weapon(item,weapons.get(d.get("weapon",""),{}))
   if _number(w,"min") and _number(w,"max"): primary.append("Damage %d–%d (+%d%%)" % [w.min,w.max,item.instance_roll.percent.damage])
@@ -46,11 +80,11 @@ static func lines(offer: Dictionary, catalog: Dictionary, weapons: Dictionary) -
   if d.get("ammo") is String: primary.append(d.ammo.capitalize())
   if _number(d,"durability") and d.durability > 0: primary.append("Rounds %d" % d.durability)
  elif _number(d,"durability"):
-  primary.append("Protection %d (+%d%%)" % [d.durability,item.instance_roll.percent.protection] if d.durability > 0 else "No armor protection")
+  primary.append("Protection %d (+%d%%)" % [d.durability,item.instance_roll.percent.protection] if d.durability > 0 else "Cosmetic · no protection" if forge_piece else "No armor protection")
  var definition := str(offer.get("definition",""))
  var load_text := ""
  if Arsenal.LOAD.has(definition): load_text = "Load %d" % Arsenal.LOAD[definition]
- elif _number(d,"weight"): load_text = "Load %d" % d.weight
+ elif _number(d,"weight"): load_text = ("Fatigue burden %d" if forge_piece else "Load %d") % d.weight
  if not load_text.is_empty():
   if slot == "shield": secondary.append(load_text)
   else: primary.append(load_text)
@@ -58,8 +92,8 @@ static func lines(offer: Dictionary, catalog: Dictionary, weapons: Dictionary) -
  for field: String in EFFECT_LABELS:
   if _number(effects,field) and effects[field] != 0: secondary.append("%s %+d" % [EFFECT_LABELS[field],effects[field]])
  if _number(effects,"move_fatigue_discount") and effects.move_fatigue_discount != 0: secondary.append("Move fatigue %+d/edge" % -effects.move_fatigue_discount)
- if _number(effects,"carried_load_discount") and effects.carried_load_discount != 0: secondary.append("Reserve load %+d/slot" % -effects.carried_load_discount)
- if slot == "belt" and _number(d,"capacity") and d.capacity > 0: secondary.append("Reserve capacity +%d" % d.capacity)
+ if _number(effects,"carried_load_discount") and effects.carried_load_discount != 0: secondary.append("Pocket load %+d/slot" % -effects.carried_load_discount)
+ if slot == "belt" and _number(d,"capacity") and d.capacity > 0: secondary.append("Pocket capacity +%d" % d.capacity)
  if slot == "belt" and _number(d,"switch_ap") and d.switch_ap == 2: secondary.append("Weapon switching 2 AP · Quick Hands free first")
  var out := PackedStringArray()
  if not primary.is_empty(): out.append(" · ".join(primary))

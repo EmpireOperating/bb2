@@ -12,9 +12,18 @@ var combat_dock: PanelContainer
 var combat_top: PanelContainer
 var combat_hover: Label
 var hit_chance_hover: Label
+const UnitCard = preload("res://field_hud/unit_card.gd")
+const AbilityHelp = preload("res://field_hud/ability_help.gd")
+var combat_unit_hover: PanelContainer
 var _combat_hover_pointer := Vector2(-1,-1)
 var _terrain_ray_stamp: Array = []
 var _terrain_quote_stamp: Array = []
+var _work_dock_base := ""
+var _work_dock_base_tooltip := ""
+var _work_dock_active := false
+const WORK_NOTICE_PAID := "Swing completed."
+const WORK_NOTICE_FAILED := "Swing did not resolve."
+var _terrain_swing: Dictionary = {}
 const HoverMovement = preload("res://src/tactical_movement_plan.gd")
 var combat_target_name: Label
 var combat_actions: GridContainer
@@ -38,6 +47,7 @@ var combat_active_portrait: Control
 var combat_active_identity: Label
 const CombatSkin = preload("res://iron_oath/skin.gd")
 const CombatIcons = preload("res://iron_oath/combat_icons.gd")
+const WeaponSkillIcons = preload("res://iron_oath/weapon_skill_icons.gd")
 var combat_surface: Control
 var combat_selected_identity: Label
 var combat_active_stats: Label
@@ -154,6 +164,8 @@ func _ready() -> void:
   camera_focus=camera_focus.lerp(view_center,.56)
   _apply_camera()
  refresh()
+ # Passive morale render span (no combat, HUD, or actor picking ownership).
+ add_child(preload("res://morale_flags/hip_flags.gd").new())
 var _movement_walk_stamp:=0
 func refresh() -> void:
  # Hold the mounted HUD, portraits, and fitted target wear until contact.
@@ -245,7 +257,7 @@ func _build_hud() -> void:
    button.pressed.disconnect(connection.callable)
  action_buttons.attack.pressed.connect(_attack_from_hud)
  action_buttons.end.pressed.connect(_end_from_hud)
- var toggle := _button("Carried arms…",_toggle_reserves)
+ var toggle := _button("Pockets…",_toggle_reserves)
  toggle.position = Vector2(214,106)
  toggle.size = Vector2(170,40)
  hud.add_child(toggle)
@@ -265,6 +277,7 @@ func _build_hud() -> void:
  hit_chance_hover.autowrap_mode=TextServer.AUTOWRAP_OFF
  hit_chance_hover.add_theme_stylebox_override("normal",CombatSkin.panel(6))
  hit_chance_hover.z_index=100;hud.add_child(hit_chance_hover);hit_chance_hover.hide()
+ combat_unit_hover=UnitCard.new();hud.add_child(combat_unit_hover)
  get_viewport().mouse_exited.connect(func():
   _combat_hover_pointer=Vector2(-1,-1);_refresh_pointer_hover())
 
@@ -279,10 +292,15 @@ func _update_hit_hover(point: Vector2) -> void:
  if target<0 or battle.units[target].side==0 or not battle.unit_visible(0,target):return
  var action:="basic"
  # Inspection can retain a legacy controller quote. Only this activation's
- # explicitly armed, enemy-targeted Special changes the passive forecast.
- if controller.selected==attacker and armed_action=="special" and controller.action=="special" and _armed_actor==attacker and _armed_round==battle.round_no and _armed_selected==attacker and battle.special_info(battle.units[attacker].weapon).target:
-  action="special"
+ # explicitly armed enemy-targeted action changes the passive forecast.
+ if controller.selected==attacker and controller.action==armed_action and _armed_actor==attacker and _armed_round==battle.round_no and _armed_selected==attacker:
+  if armed_action=="shield_bash":action=armed_action
+  elif armed_action=="special" and battle.special_info(battle.units[attacker].weapon).target:action="special"
  var quote:Dictionary=battle.action_quote(attacker,action,target)
+ if action=="shield_bash":
+  hit_chance_hover.text="Bash · %d%% to hit"%quote.hit.chance if not quote.hit.is_empty() else str(quote.get("preview_reason",quote.reason))
+  _place_hover(hit_chance_hover,point)
+  return
  if not quote.legal or quote.hit.is_empty():return
  hit_chance_hover.text="%d%% to hit"%quote.hit.chance
  _place_hover(hit_chance_hover,point)
@@ -295,15 +313,70 @@ func _place_hover(label:Label,point:Vector2) -> void:
 
 func _refresh_pointer_hover() -> void:
  _update_hit_hover(_combat_hover_pointer)
+ _update_unit_hover(_combat_hover_pointer)
  _update_terrain_hover()
+
+func _update_unit_hover(point:Vector2) -> void:
+ if not is_instance_valid(combat_unit_hover):return
+ var view:=get_viewport()
+ if not is_visible_in_tree() or _reserve_modal() or not view.get_visible_rect().has_point(point) or view.gui_get_hovered_control()!=null or Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):
+  combat_unit_hover.clear_card();return
+ var id:=pick_unit(point)
+ if id<0:
+  # The bars may be inspected without making their rectangle a click target.
+  for candidate:int in presented_unit_ids():
+   var strips:=_unit_vital_rows(candidate)
+   if not strips.is_empty() and strips[0].track.merge(strips[-1].track).has_point(point):id=candidate;break
+ if id<0 or not battle.unit_visible(0,id) or not battle.living(battle.units[id]):
+  combat_unit_hover.clear_card();return
+ var u:Dictionary=battle.units[id]
+ var soldier:Dictionary={}
+ var campaign=session.campaign
+ if u.side==0 and campaign.battle==battle:
+  var company_id:int=u.get("company_id",campaign.deployment[id] if id<campaign.deployment.size() else -1)
+  if company_id>=0 and company_id<campaign.soldiers.size():soldier=campaign.soldiers[company_id]
+ combat_unit_hover.present(battle,u,soldier)
+ _layout_unit_hover(id,point)
+
+func _unit_hover_footprint(id:int) -> Rect2:
+ var foot:Vector3=actors[id].global_position
+ var feet:=camera.unproject_position(foot)
+ var top:=unit_label_point(foot)
+ var half_width:=maxf(22.0,(feet.y-top.y)*0.28)
+ return Rect2(Vector2(top.x-half_width,top.y-9),Vector2(half_width*2,feet.y-top.y+13))
+
+func _layout_unit_hover(id:int,point:Vector2) -> void:
+ # The map gap is bounded by the live initiative row and command dock.
+ var view:=get_viewport().get_visible_rect().grow(-8)
+ var top:=maxf(combat_initiative_scroll.get_global_rect().end.y,combat_top.get_global_rect().end.y)+4
+ var bottom:=combat_dock.get_global_rect().position.y-4
+ var size:Vector2=combat_unit_hover.size
+ var subject:=_unit_hover_footprint(id).grow(8)
+ var avoid:=subject.merge(Rect2(point-Vector2(6,6),Vector2(12,12)))
+ if hit_chance_hover.visible:avoid=avoid.merge(hit_chance_hover.get_global_rect().grow(4))
+ var x:=clampf(point.x-size.x/2,view.position.x,maxf(view.position.x,view.end.x-size.x))
+ var y:=clampf(point.y-34,top,maxf(top,bottom-size.y))
+ var area:=Rect2(Vector2(view.position.x,top),Vector2(view.size.x,maxf(0,bottom-top)))
+ var candidates:=[Vector2(avoid.end.x,y),Vector2(avoid.position.x-size.x,y),Vector2(x,avoid.position.y-size.y),Vector2(x,avoid.end.y)]
+ var best:=INF
+ for position:Vector2 in candidates:
+  var rect:=Rect2(position,size)
+  if not area.encloses(rect):continue
+  var score:=rect.get_center().distance_to(point)
+  for other:int in presented_unit_ids():
+   if other!=id and actors.has(other):score+=rect.intersection(_unit_hover_footprint(other)).get_area()
+  if score<best:best=score;combat_unit_hover.position=position
+ combat_unit_hover.visible=best<INF
 
 func _update_terrain_hover(already_picked:bool=false) -> void:
  if not is_instance_valid(combat_hover):return
  var viewport:=get_viewport()
  var point:=_combat_hover_pointer
  var view:=viewport.get_visible_rect()
- if not built or not is_visible_in_tree() or _reserve_modal() or not view.has_point(point) or viewport.gui_get_hovered_control()!=null or hit_chance_hover.visible or Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):
-  combat_hover.hide();return
+ if not built or not is_visible_in_tree() or _reserve_modal() or not view.has_point(point) or viewport.gui_get_hovered_control()!=null or hit_chance_hover.visible or (is_instance_valid(combat_unit_hover) and combat_unit_hover.visible) or Input.is_mouse_button_pressed(MOUSE_BUTTON_MIDDLE):
+  _paint_special_skill()
+  _show_work_dock("")
+  combat_hover.hide();combat_hover.text="";return
  # Motion usually arrives with the inherited hit result. Reproject on a
  # stationary pointer when the camera moves, and re-quote after field refresh.
  var ray_stamp:=[point,view,camera.global_transform,camera.size,revision]
@@ -313,16 +386,74 @@ func _update_terrain_hover(already_picked:bool=false) -> void:
  if quote_stamp!=_terrain_quote_stamp:
   _terrain_quote_stamp=quote_stamp
   hover_text=_terrain_hover_copy(hover)
-  combat_hover.text=hover_text
- if hover_text.is_empty():combat_hover.hide()
+ # A work quote is live, like the hit hover. Do not cache it in hover_text
+ # (the inherited public observation) or leave work details after losing sight.
+ var work:=_visible_terrain_work(hover) if controller.action not in ["footwork","rotation"] else {}
+ if not work.is_empty() and pick_unit(point)>=0:work={}
+ var text:=hover_text
+ var dock:=""
+ var work_kind:=""
+ if not work.is_empty():
+  var quote:Dictionary=battle.action_quote(controller.selected,"terrain_work",-1,hover) if work.hp>0 else {}
+  text=_terrain_work_copy(work,quote)
+  if armed_action=="special":
+   dock=_terrain_work_copy(work,quote,true)
+   if quote.get("legal",false):work_kind=work.kind
+ _paint_special_skill(work_kind)
+ _show_work_dock(dock)
+ if combat_hover.text!=text:combat_hover.text=text
+ if text.is_empty():combat_hover.hide()
  else:_place_hover(combat_hover,point)
 
+func _visible_terrain_work(cell: Vector2i) -> Dictionary:
+ if not battle.tile_visible(0,cell) or not battle.has_method("terrain_work_at"):return {}
+ return battle.terrain_work_at(cell)
+
+func _show_work_dock(text: String) -> void:
+ if not is_instance_valid(target_label):return
+ if text.is_empty() and not _work_dock_active:return
+ _work_dock_active=not text.is_empty()
+ var shown:=text if _work_dock_active else _work_dock_base
+ var tooltip:=text if _work_dock_active else _work_dock_base_tooltip
+ if target_label.text!=shown:target_label.text=shown
+ if target_label.tooltip_text!=tooltip:target_label.tooltip_text=tooltip
+ # A stock unit-action notice can outlive its quote (e.g. after AP changes).
+ # The ground quote already gives the exact refusal; keep only paid-work
+ # feedback here. The controller's untouched notice returns off this hex.
+ var notice:String=controller.notice
+ if _work_dock_active and notice not in [WORK_NOTICE_PAID,WORK_NOTICE_FAILED]:notice=""
+ if notice_label.text!=notice:
+  notice_label.text=notice
+  notice_label.tooltip_text=notice
+
+func _terrain_work_copy(work: Dictionary, quote: Dictionary, compact: bool=false) -> String:
+ var title:="%s · %s"%[work.verb,work.name]
+ var hp:="%d/%d HP"%[work.hp,work.max_hp]
+ if work.hp==0:
+  var cleared:="Cleared · Click hex to plan movement" if armed_action=="special" else "Cleared"
+  return title+"\n"+cleared # Debris is no longer a work target.
+ var damage:Dictionary=quote.get("terrain_damage",{})
+ if not damage.is_empty():hp+=" · %d–%d damage"%[damage.min,damage.max]
+ var cost:="%d AP / %d fatigue"%[quote.ap,quote.fatigue]
+ var detail:String=quote.reason
+ if quote.legal:
+  detail="Click hex to swing" if armed_action=="special" else "Choose weapon special [2], then click hex"
+  if not damage.is_empty() and work.hp<=damage.max:
+   detail=("Guaranteed to clear" if work.hp<=damage.min else "May clear")+" · "+detail
+  if not compact:detail="Always hits · "+detail
+ if compact:return title+"\n"+cost+" · "+("Click hex to swing" if quote.legal else quote.reason)
+ return title+"\n"+hp+"\n"+cost+" per swing\n"+detail
+
 func _terrain_hover_copy(cell:Vector2i) -> String:
- var tile:Dictionary=battle.tiles.get(battle.key(cell),{})
+ var key:String=battle.key(cell)
+ var tile:Dictionary=battle.tiles.get(key,{})
  if tile.is_empty():return ""
  if not battle.tile_explored(0,cell):return "Unexplored terrain."
+ var sight:bool=battle.tile_visible(0,cell)
+ if not sight and terrain!=null and terrain.has_method("remembered_work_tile"):
+  tile=terrain.remembered_work_tile(key,tile)
  var terrain_text:="%s · elevation %d"%[String(tile.terrain).capitalize(),tile.height]
- if not battle.tile_visible(0,cell):return "Remembered "+terrain_text
+ if not sight:return "Remembered "+terrain_text
  if not TerrainRules.tile_reason(tile).is_empty():return terrain_text+" · Blocked"
  var id:int=controller.selected
  if id>=0 and id<battle.units.size() and battle.pos(battle.units[id])==cell:return terrain_text+" · Current hex"
@@ -423,9 +554,19 @@ func _compact_combat_hud() -> void:
  combat_perks.hide()
  for key in ["footwork","rotation","indomitable"]:
   var button:Button=action_buttons[key];button.reparent(perk_row);button.show();_iron_button(button)
+ var rally:=_button("Rally the Troops",_press_rally)
+ rally.name="RallyTheTroops";_iron_button(rally);perk_row.add_child(rally);rally.hide()
+ action_buttons["rally_the_troops"]=rally
  for key in ["attack","end"]:
   var button:Button=action_buttons[key];button.reparent(combat_surface);button.show();_iron_button(button,key=="end")
   button.clip_text=true;button.custom_minimum_size=Vector2.ZERO
+ # Use the free space above Execute so the six stock action tiles don't shrink.
+ var bash:=_button("Bash",_choose.bind("shield_bash"))
+ bash.name="ShieldBash";_iron_button(bash);combat_surface.add_child(bash)
+ bash.custom_minimum_size=Vector2.ZERO;bash.add_theme_font_size_override("font_size",14)
+ for state in ["normal","hover","pressed","disabled"]:
+  bash.add_theme_stylebox_override(state,_bash_style(state in ["hover","pressed"],state=="disabled"))
+ action_buttons.shield_bash=bash
  action_buttons.end.add_theme_font_override("font",load("res://assets/serif.ttf"))
  action_buttons.end.add_theme_font_size_override("font_size",24)
  notice_label.reparent(combat_surface);notice_label.show();combat_style.label(notice_label,15)
@@ -447,6 +588,12 @@ func _iron_button(button:Button, primary:bool=false) -> void:
  combat_style.button(button)
  for state in ["normal","hover","pressed","disabled"]:
   button.add_theme_stylebox_override(state,CombatSkin.button(primary,state in ["hover","pressed"],state=="disabled"))
+
+func _bash_style(selected:bool,disabled:bool=false) -> StyleBoxTexture:
+ # The normal vertical theme padding raises the real minimum past the gap.
+ var style:=CombatSkin.button(false,selected,disabled)
+ style.content_margin_top=3;style.content_margin_bottom=3
+ return style
 
 func _toggle_battle_obstacles() -> void:
  if _reserve_modal():return
@@ -473,13 +620,33 @@ func _toggle_combat_perks() -> void:
  _retire_movement()
  reserve_panel.hide();combat_perks.visible=not combat_perks.visible
  if combat_perks.visible:
-  for key in ["footwork","rotation","indomitable"]:
+  for key in ["footwork","rotation","indomitable","rally_the_troops"]:
    var button:Button=action_buttons[key]
    if button.visible and not button.disabled:button.grab_focus();break
  else:action_buttons.more.grab_focus()
 
+func _press_rally() -> void:
+ var button: Button=action_buttons["rally_the_troops"]
+ if _reserve_modal() or not button.is_visible_in_tree() or button.disabled:return
+ _execute("rally_the_troops")
+ if action_buttons.more.is_visible_in_tree():action_buttons.more.grab_focus()
+
+func _refresh_rally_control(id: int) -> void:
+ var button: Button=action_buttons["rally_the_troops"]
+ var learned: bool=id>=0 and id<battle.units.size() and battle.units[id].side==0 and battle.living(battle.units[id]) and "rally_the_troops" in battle.units[id].perks
+ var changed:=button.visible!=learned
+ button.visible=learned
+ var q: Dictionary=battle.action_quote(id,"rally_the_troops")
+ button.disabled=not q.legal
+ button.text="%s · %d AP"%[q.name,q.ap]
+ button.tooltip_text="%d AP / %d fatigue\n%s"%[q.ap,q.fatigue,q.reason if not q.legal else "Rally allies within 4 hexes. Each rolls Resolve; Fleeing can recover to Wavering. Cannot raise morale above Steady."]
+ if changed:_layout_combat_dock()
+
 func _choose(action:String) -> void:
  if not _commands_available():return
+ if action=="shield_bash":
+  if not battle.action_quote(controller.selected,action).get("ready",false):return
+  controller.target=-1
  if controller.is_reload_action(action):
   _execute(action)
   return
@@ -529,7 +696,7 @@ func _refresh_combat_identity() -> void:
   combat_active_portrait.present(actors.get(active),active,is_active,not is_active,battle.units[active].side!=0)
   var u:Dictionary=battle.units[active]
   combat_vitals.show();combat_vitals.present(u)
-  combat_active_stats.text="AP  %d / %d\nFatigue  %d / %d\nHead %d · Body %d\nInitiative %d\nMorale %d" % [u.ap,battle.MAX_AP,u.fatigue,battle.fatigue_max(u),u.helmet,u.armor+u.padding,battle.initiative_value(u),u.morale]
+  combat_active_stats.text="AP  %d / %d\nFatigue  %d / %d\nHead %d · Body %d\nInitiative %d\nMorale %s" % [u.ap,battle.MAX_AP,u.fatigue,battle.fatigue_max(u),u.helmet,u.armor+u.padding,battle.initiative_value(u),preload("res://morale_flags/readout.gd").current_name(battle,active)]
   combat_active_stats.tooltip_text=combat_vitals.tooltip_text
  else:
   combat_active_identity.text="ENEMY TURN" if battle.side!=0 else "NO ACTIVE FIGHTER"
@@ -569,11 +736,13 @@ func _layout_combat_dock() -> void:
  action_buttons.more.position=Vector2(rail_x+rail_width-80,10);action_buttons.more.size=Vector2(80,28)
  target_label.position=Vector2(rail_x,39);target_label.size=Vector2(rail_width,43)
  combat_actions.position=Vector2(rail_x,86);combat_actions.size=Vector2(rail_width,102)
+ action_buttons.shield_bash.position=Vector2(end_x,2);action_buttons.shield_bash.size=Vector2(end_width,26)
  action_buttons.attack.position=Vector2(end_x,30);action_buttons.attack.size=Vector2(end_width,46)
  action_buttons.end.position=Vector2(end_x,86);action_buttons.end.size=Vector2(end_width,102)
  notice_label.position=Vector2(rail_x,190);notice_label.size=Vector2(combat_dock.size.x-rail_x-12,22)
  reserve_panel.position=Vector2(rail_x+12,combat_dock.position.y-212);reserve_panel.size=Vector2(minf(500,view.x-rail_x-24),202)
- combat_perks.position=Vector2(end_x-220,combat_dock.position.y-150);combat_perks.size=Vector2(220,140)
+ var perk_height:=172.0 if action_buttons["rally_the_troops"].visible else 140.0
+ combat_perks.position=Vector2(end_x-220,combat_dock.position.y-perk_height-10);combat_perks.size=Vector2(220,perk_height)
  if is_instance_valid(help_panel):
   help_panel.set_anchors_and_offsets_preset(Control.PRESET_CENTER)
   var half:=Vector2(minf(380,(view.x-40)/2),minf(280,(view.y-40)/2))
@@ -596,7 +765,7 @@ func _build_combat_guide() -> void:
  scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_SHOW_NEVER;column.add_child(scroll)
  combat_help_copy=_label(16);combat_help_copy.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
  combat_help_copy.size_flags_horizontal=Control.SIZE_EXPAND_FILL;scroll.add_child(combat_help_copy)
- combat_help_copy.text="YOUR ACTIVATION\nOnly the named active fighter may act. Selecting another fighter is inspection, not a change of turn. Click ground for footprints and exact AP / fatigue. Click the same destination again to move. Plain clicks on other tiles append waypoints; an earlier planned tile truncates. Your origin, right-click or Escape clears the route. The complete route must fit this activation. Amber steps warn of known control / reactions, not guaranteed safety.\n\nCHOOSE AND ATTACK\nChoose Basic [1] or Special [2], then click a legal enemy once to attack immediately. Choosing a skill never attacks an old target. Execute [Enter] remains optional for attacks and commits nonattack actions. Costs, legality and forecasts come from Battle. Damage is on hit, before morale and reactions; a hit is not guaranteed.\n\nTURN CONTROLS\nShieldwall / Guard [B], Recover [R], Wait [Space / Q], End [F]. Recover ends the activation; Wait defers it without recovery. Learned Footwork / Rotation: choose the action, select a hex / ally, then Execute. Escape cancels targeting. Indomitable acts directly.\n\nCARRIED ARMS\nOpen Carried arms and choose an owned item. Switching pays the displayed Battle-owned AP / fatigue cost; it is not a free inspection. Fit reserves in camp.\n\nSIGHT AND FORECASTS\nShared party sight is not personal attack sight. Unknown influencing ground withholds the forecast rather than reporting zero damage. Lost contacts cannot be targeted.\n\nCAMERA AND EQUIPMENT\nWASD / arrows / middle drag pan; wheel or +/- zoom. Home restores close view; O shows the board; G toggles the grid. Equipment [I] is read-only and pauses battle. Tab / Shift-Tab navigates controls. Escape closes the top overlay.\n\nSAVING AND WITHDRAWAL\nSave / F5 in camp creates a manual checkpoint. Nothing auto-saves; battle and aftermath are not saved. Quitting resumes your last manual checkpoint. Withdraw is a confirmed loss: wounds, casualties and equipment wear remain. Return does not heal or repair. A save failure blocks progress until retry succeeds."
+ combat_help_copy.text="YOUR ACTIVATION\nOnly the named active fighter may act. Selecting another fighter is inspection, not a change of turn. Click ground for footprints and exact AP / fatigue. Click the same destination again to move. Plain clicks on other tiles append waypoints; an earlier planned tile truncates. Your origin, right-click or Escape clears the route. The complete route must fit this activation. Amber steps warn of known control / reactions, not guaranteed safety.\n\nCHOOSE AND ATTACK\nChoose Basic [1] or Special [2], then click a legal enemy once to attack immediately. Choosing a skill never attacks an old target. Execute [Enter] remains optional for attacks and commits nonattack actions. Costs, legality and forecasts come from Battle. Damage is on hit, before morale and reactions; a hit is not guaranteed.\n\nTURN CONTROLS\nShieldwall / Guard [B], Recover [R], Wait [Space / Q], End [F]. Recover ends the activation; Wait defers it without recovery. Learned Footwork / Rotation: choose the action, select a hex / ally, then Execute. Escape cancels targeting. Indomitable acts directly.\n\nPOCKETS\nOpen Pockets and choose an owned item. Switching pays the displayed AP / fatigue cost. Fill pockets on the Equipment page in camp.\n\nSIGHT AND FORECASTS\nShared party sight is not personal attack sight. Unknown influencing ground withholds the forecast rather than reporting zero damage. Lost contacts cannot be targeted.\n\nCAMERA AND EQUIPMENT\nWASD / arrows / middle drag pan; wheel or +/- zoom. Home restores close view; O shows the board; G toggles the grid. Equipment [I] is read-only and pauses battle. Tab / Shift-Tab navigates controls. Escape closes the top overlay.\n\nSAVING AND WITHDRAWAL\nSave / F5 in camp creates a manual checkpoint. Nothing auto-saves; battle and aftermath are not saved. Quitting resumes your last manual checkpoint. Withdraw is a confirmed loss: wounds, casualties and equipment wear remain. Return does not heal or repair. A save failure blocks progress until retry succeeds."
  _combat_guide_text=combat_help_copy.text
  combat_journal=CombatJournal.new();column.add_child(combat_journal);combat_journal.hide()
  combat_help_close=_button("Return to battle [Esc]",_toggle_help);column.add_child(combat_help_close)
@@ -777,10 +946,59 @@ func _unhandled_input(event: InputEvent) -> void:
   var id:int=pick_unit(event.position)
   if id>=0 and battle.units[id].side!=0 and armed_action.is_empty():
    controller.cancel_movement();_inspect_enemy(id);get_viewport().set_input_as_handled();return
+  if id>=0 and battle.units[id].side!=0 and armed_action=="shield_bash":
+   if controller.select_target(id):_execute("shield_bash")
+   get_viewport().set_input_as_handled();return
   if id<0 and controller.action not in ["footwork","rotation"]:
-   armed_action=""
-   controller.movement_click(pick_hex(event.position));get_viewport().set_input_as_handled();return
+   var cell:=pick_hex(event.position)
+   if controller.action=="shield_bash":controller.reset_action();controller.target=-1
+   if not _try_terrain_work(cell):
+    armed_action=""
+    controller.movement_click(cell)
+   get_viewport().set_input_as_handled();return
  super._unhandled_input(event)
+
+func _try_terrain_work(cell: Vector2i) -> bool:
+ if armed_action!="special" or not controller.available():return false
+ var work:=_visible_terrain_work(cell)
+ if work.is_empty() or work.hp<=0:return false
+ var id:int=controller.selected
+ var quote:Dictionary=battle.action_quote(id,"terrain_work",-1,cell)
+ controller.cancel_movement()
+ controller.target=-1 # Execute must not hit a previously selected unit after aiming at ground.
+ if not quote.legal:
+  controller.notice="Cannot swing · see the hex hover."
+  controller.changed.emit()
+  return true
+ var actor:Node3D=actors.get(id)
+ if not is_instance_valid(actor) or not actor.is_visible_in_tree():return true
+ actor.play_attack(to_global(tile_world(cell))-actor.global_position)
+ var delay:float=actor.attack_contact_delay() if actor.has_method("attack_contact_delay") else 0.0
+ _terrain_swing={"battle":battle,"actor":actor.get_instance_id(),"id":id,"round":battle.round_no,
+  "origin":battle.pos(battle.units[id]),"weapon":battle.units[id].arms.weapon.duplicate(),"cell":cell}
+ controller.notice="Winding up…"
+ controller.changed.emit()
+ # Owned by this mounted field. A retired field cannot finish the payment.
+ var swing:=create_tween()
+ swing.tween_interval(delay if delay>0.0 else 0.19)
+ swing.tween_callback(_finish_terrain_swing)
+ return true
+
+func impact_pending() -> bool:
+ return not _terrain_swing.is_empty() or super.impact_pending()
+
+func _finish_terrain_swing() -> void:
+ var swing:=_terrain_swing
+ _terrain_swing={}
+ var id:int=swing.id
+ var actor:Node3D=actors.get(id)
+ var current:bool=is_visible_in_tree() and swing.battle==battle and battle.active_id==id and battle.round_no==swing.round and controller.selected==id and not _reserve_modal()
+ current=current and is_instance_valid(actor) and actor.get_instance_id()==swing.actor and actor.is_visible_in_tree()
+ if current:
+  current=battle.pos(battle.units[id])==swing.origin and battle.units[id].arms.weapon==swing.weapon
+ var paid:bool=current and battle.perform_action(id,"terrain_work",-1,swing.cell)
+ controller.notice=WORK_NOTICE_PAID if paid else WORK_NOTICE_FAILED
+ controller.changed.emit() # Existing field refresh updates HUD, fog and movement cues.
 
 func toggle_inspection() -> void:
  if inspector_open():
@@ -817,6 +1035,12 @@ func cancel_retreat() -> void:
 func _update_hover() -> void:
  _update_terrain_hover(true)
 
+func _feedback(event:Dictionary) -> void:
+ if event.get("kind","")!="shield_bash":
+  super._feedback(event);return
+ if 0 in event.audience and battle.unit_visible(0,int(event.id)):
+  _publish_impact({"id":event.id,"kind":"shield_bash","text":"KNOCKED BACK" if event.hit else "BASH MISSED"})
+
 func _attack_from_hud() -> void:
  if _reserve_modal(): return
  controller.attack_target()
@@ -838,7 +1062,7 @@ func _reserve_modal() -> bool:
  return impact_pending() or _company_modal() or help_open or inspector_open() or (is_instance_valid(retreat_confirm) and retreat_confirm.visible)
 
 func _reserve_reason(slot: String) -> String:
- if _reserve_modal(): return "Close the open overlay before switching carried arms."
+ if _reserve_modal(): return "Close the open overlay before switching pocket equipment."
  var id: int = controller.selected
  if id < 0 or id >= battle.units.size() or battle.units[id].side != 0: return "Select your active fighter."
  return battle.switch_reason(id,slot)
@@ -878,14 +1102,14 @@ func _refresh_reserves() -> void:
   var item: Dictionary = unit.arms.get(slot,{})
   var definition: Dictionary = load("res://src/named_equipment.gd").definition(item,battle.armor_catalog)
   var reason := _reserve_reason(slot)
-  button.text = "Reserve %s · %s" % [slot.trim_prefix("carry"),definition.get("name","Empty")]
+  button.text = "Pocket %s · %s" % [slot.trim_prefix("carry"),definition.get("name","Empty")]
   if not item.is_empty():
    any_item = true
    button.text += " · %d AP / %d fatigue" % [battle.switch_ap(unit,slot),battle.switch_fatigue()]
   button.tooltip_text = Inventory.item_details(item,battle.armor_catalog)+( "\n"+reason if not reason.is_empty() else "")
   button.disabled = not reason.is_empty()
  action_buttons.reserves.disabled = not any_item or _reserve_modal() or not battle.result.is_empty()
- action_buttons.reserves.tooltip_text = "Switch an owned reserve on the selected fighter's activation; the displayed AP/fatigue cost is paid. Fit reserves in camp."
+ action_buttons.reserves.tooltip_text = "Switch the selected fighter’s owned pocket equipment during their activation. The displayed AP/fatigue cost applies. Fill pockets in camp."
  if _reserve_modal() or battle.result != "": reserve_panel.hide()
 
 func _switch_reserve(slot: String) -> void:
@@ -893,9 +1117,39 @@ func _switch_reserve(slot: String) -> void:
  controller.cancel_movement()
  var accepted: bool = battle.switch_carried(controller.selected,slot)
  if accepted:
-  controller.notice = "Owned reserve switched; AP and fatigue paid."
+  controller.notice = "Pocket equipment switched; AP and fatigue paid."
   reserve_panel.hide()
  refresh()
+
+var _presented_round := 0
+var _round_cue_timer: Timer
+
+func _refresh_round_status() -> void:
+ var previous := _presented_round
+ _presented_round=battle.round_no
+ var showing := _round_cue_timer!=null and not _round_cue_timer.is_stopped()
+ # The first refresh seeds the ordinary label. Only a real, nonterminal
+ # round advance can start the cue, irrespective of who activates next.
+ if not battle.result.is_empty() or _presented_round<previous:
+  if showing:
+   _round_cue_timer.stop()
+   _clear_round_cue()
+  else:status_label.text="Round %d"%_presented_round
+  return
+ if previous>0 and _presented_round>previous:
+  if _round_cue_timer==null:
+   _round_cue_timer=Timer.new()
+   _round_cue_timer.one_shot=true
+   add_child(_round_cue_timer)
+   _round_cue_timer.timeout.connect(_clear_round_cue)
+  _round_cue_timer.start(1.35)
+  status_label.add_theme_stylebox_override("normal",CombatStyle.panel(Color("5b4328"),CombatStyle.GOLD,3))
+  showing=true
+ status_label.text=("NEW ROUND %d" if showing else "Round %d")%_presented_round
+
+func _clear_round_cue() -> void:
+ status_label.remove_theme_stylebox_override("normal")
+ status_label.text="Round %d"%_presented_round
 
 func _update_hud() -> void:
  # This public formatter intentionally stops the raw superchain at
@@ -904,7 +1158,7 @@ func _update_hud() -> void:
  _refresh_reserves()
  if not is_instance_valid(combat_dock):return
  status_label.tooltip_text=status_label.text
- status_label.text="Round %d" % battle.round_no
+ _refresh_round_status()
  kit_label.text=str(session.deployed_map.get("title","Encounter")).split(" — Seed")[0]
  for unit_id in roster_buttons:roster_buttons[unit_id].hide()
  var id:int=controller.selected
@@ -916,6 +1170,13 @@ func _update_hud() -> void:
   for action in ["footwork","rotation","indomitable"]:action_buttons[action].hide()
  # Reformat only the already-public quote, excluding inherited art/debug prose.
  target_label.text=_quote_text(_last_quote) if not _last_quote.is_empty() else "Select an action."
+ var bash:Button=action_buttons.shield_bash
+ var bash_quote:Dictionary=battle.action_quote(id,"shield_bash")
+ bash.text="Bash · %d AP"%bash_quote.ap
+ bash.disabled=battle.side!=0 or not bash_quote.ready
+ bash.tooltip_text="Knock Back · %d AP / %d fatigue\n%s"%[bash_quote.ap,bash_quote.fatigue,
+  bash_quote.reason if bash.disabled else "Click an adjacent enemy. On hit, pushes them one hex away and breaks their stance. No HP or armour damage."]
+ bash.add_theme_stylebox_override("normal",_bash_style(armed_action=="shield_bash"))
  combat_target_name.text="Target · select an enemy"
  if controller.target>=0 and battle.unit_visible(0,controller.target):
   combat_target_name.text="Target · "+str(battle.units[controller.target].name)
@@ -923,39 +1184,64 @@ func _update_hud() -> void:
  action_buttons.attack.text="Execute [Enter]"
  action_buttons.end.text="END TURN"
  action_buttons.end.tooltip_text="End the current activation [F]."
- action_buttons.reserves.text="Reserve…"
+ action_buttons.reserves.text="Pockets…"
  combat_selected_identity.text=("Active · " if id==battle.active_id else "Inspecting · ")+str(battle.units[id].name) if id>=0 and battle.unit_visible(0,id) else "Select a known fighter"
  if controller.target>=0 and battle.unit_visible(0,controller.target):combat_selected_identity.text+="  →  "+str(battle.units[controller.target].name)
  combat_selected_identity.tooltip_text=unit_label.text
  var movement:Dictionary=controller.movement_preview()
  if movement.valid:
   target_label.text="MOVE · %d AP / %d fatigue\n%s"%[movement.cost,movement.fatigue,movement.danger_text if movement.known_danger else "Click endpoint again to confirm · other tiles add waypoints"]
- if controller.target>=0 and battle.unit_visible(0,controller.target):
+ if controller.action!="shield_bash" and controller.target>=0 and battle.unit_visible(0,controller.target):
   var target: Dictionary = battle.units[controller.target]
-  if target.side != 0:
+  if target.side != 0 and battle.living(target):
    var shield: Dictionary = target.get("arms",{}).get("shield",{})
    var status: String = " · SHIELD BROKEN" if not shield.is_empty() and int(shield.condition)<=0 else ""
-   target_label.text = str(target.title)+status+"\n"+target_label.text
+   target_label.text = str(target.title)+status+" · "+preload("res://morale_flags/readout.gd").current_name(battle,int(target.id))+"\n"+target_label.text
    target_label.tooltip_text = "Fixed appearance; combat equipment is authoritative. Pictured gear is not recovered."
  target_label.tooltip_text=target_label.text
  notice_label.tooltip_text=notice_label.text
+ _refresh_rally_control(id)
  var any_perk:=false
- for key in ["footwork","rotation","indomitable"]:any_perk=any_perk or action_buttons[key].visible
+ for key in ["footwork","rotation","indomitable","rally_the_troops"]:any_perk=any_perk or action_buttons[key].visible
  action_buttons.more.visible=any_perk
  if _combat_perk_actor!=id or not any_perk or _reserve_modal():combat_perks.hide()
  _combat_perk_actor=id
- for key in ["basic","special"]:
-  if not action_buttons[key].disabled:
-   action_buttons[key].tooltip_text="Choose this skill, then click a legal enemy once to attack. Execute [Enter] is optional." if key=="basic" or battle.special_info(battle.units[id].weapon).target else "Choose this skill, then Execute [Enter] to commit."
- action_buttons.wait.tooltip_text+="\nWait [Space / Q]: defer without recovering; remaining AP and fatigue are preserved."
  for key in ["basic","special","guard","recover","wait"]:
   var button:Button=action_buttons[key]
-  button.tooltip_text=key.capitalize()+" · "+button.text+"\n"+button.tooltip_text
   if " · " in button.text:button.text=button.text.split(" · ")[0]
+  if key=="guard":button.text="Shieldwall"
   button.modulate=Color.WHITE
   button.add_theme_stylebox_override("normal",CombatSkin.button(false,armed_action==key,false))
  _refresh_combat_identity()
  load("res://crossbows/ui.gd").present_combat(self,id)
+ var tip_font:=hud.get_theme_font("font","TooltipLabel")
+ var tip_size:=hud.get_theme_font_size("font_size","TooltipLabel")
+ for key:String in AbilityHelp.ACTIONS:
+  action_buttons[key].tooltip_text=AbilityHelp.wrap(AbilityHelp.copy(self,key),tip_font,tip_size)
+ # Basic stays class-owned. Special may show the current admitted ground action.
+ var icon:=WeaponSkillIcons.texture("basic",_skill_weapon())
+ if action_buttons.basic.icon!=icon:action_buttons.basic.icon=icon
+ _paint_special_skill()
+ _work_dock_base=target_label.text
+ _work_dock_base_tooltip=target_label.tooltip_text
+ _work_dock_active=false
+
+func _skill_weapon() -> String:
+ var id:int=controller.selected
+ return battle.units[id].weapon if id>=0 and id<battle.units.size() and battle.units[id].side==0 else ""
+
+func _paint_special_skill(work_kind:String="") -> void:
+ var button:Button=action_buttons.get("special")
+ if not is_instance_valid(button):return
+ var icon:=WeaponSkillIcons.terrain_texture(work_kind)
+ if icon==null:
+  var weapon:=_skill_weapon()
+  # The current perk-rules Battle permanently refuses Riposte for these swords.
+  # Keep the inherited slot, copy and input semantics; do not illustrate a skill they lack.
+  if not (battle.perk_rules and weapon in battle.Arsenal.TWO_HANDS and battle.Arsenal.family(weapon)=="sword"):
+   icon=WeaponSkillIcons.texture("special",weapon)
+ if button.icon!=icon:button.icon=icon
+
 func _finish_markers() -> void:
  var preview:Dictionary=controller.movement_preview()
  if preview.valid:
@@ -980,6 +1266,16 @@ func _finish_markers() -> void:
 func observation() -> Dictionary:
  _validate_inspection();_sync_inspection_intent()
  var out := super.observation()
+ # The inherited profiles describe static terrain. Only these mutable cells
+ # need last-witnessed tile data when explored but not currently visible.
+ if terrain!=null and terrain.has_method("work_tile_keys"):
+  for key:String in terrain.work_tile_keys():
+   if not out.tile_profiles.has(key) or key in out.fog.visible_tiles:continue
+   var tile:Dictionary=terrain.remembered_work_tile(key,{}).duplicate()
+   tile.obstacle=tile.get("obstacle","");tile.blocked=tile.get("blocked",false);tile.vision_blocking=tile.get("vision_blocking",false);tile.cover=tile.get("cover",false)
+   var base:Array=TerrainRules.COSTS.get(tile.terrain,[999,999])
+   tile.profile={"ap":base[0],"fatigue":base[1],"reason":TerrainRules.tile_reason(tile)}
+   out.tile_profiles[key]=tile
  # Extend only rows already admitted by the retained sight projection.
  for row: Dictionary in out.units:
   var unit: Dictionary = battle.units[int(row.id)]

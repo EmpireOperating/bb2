@@ -1322,6 +1322,7 @@ func action(id: String) -> void:
 		else: campaign.recon.watch.clear(); campaign.overworld.paused = true
 		write_save(false); refresh(); return
 	if id == "world_stop":
+		campaign.traffic.cancel_follow(campaign.overworld)
 		campaign.recon.watch.clear()
 		campaign.traffic.pursuit = ""
 		campaign.exploration.cancel(campaign)
@@ -3297,9 +3298,10 @@ func _draw_perk_tree() -> void:
 			var lines = wrapped_lines(d.effect,1230,15,3)
 			for n in lines.size(): label_at(lines[n],Vector2(48,311+i*100+n*21),15,PAPER)
 		return
+	var options := Perks.offered_perks(s)
 	var learned: Array = s.get("perks",[])
 	var earned = 0 if offer else PerkProgression.earned(s)
-	label_at("%d OPTIONS   ·   %d / 10 CAREER PICKS   ·   %d POINTS AVAILABLE" % [s.perk_pool.size(),learned.size(),maxi(0,earned-learned.size())],Vector2(48,143),14,BLUE)
+	label_at("%d OPTIONS   ·   %d / 10 CAREER PICKS   ·   %d POINTS AVAILABLE" % [options.size(),learned.size(),maxi(0,earned-learned.size())],Vector2(48,143),14,BLUE)
 	label_at("Background changes odds only. Gear never rerolls this tree. Spend points anywhere to unlock tiers." if s.perk_version == 3 else "All groups can be mixed. A tier needs its number minus one points spent anywhere.",Vector2(48,171),13,MUTED)
 	var filters = ["All"]+s.perk_groups
 	for i in filters.size():
@@ -3318,7 +3320,7 @@ func _draw_perk_tree() -> void:
 		var y = 252+(tier-1)*77
 		label_at("T%d" % tier,Vector2(48,y+28),17,GOLD if learned.size() >= tier-1 else MUTED,true)
 		label_at("%d spent" % (tier-1),Vector2(43,y+49),9,MUTED)
-		var row = s.perk_pool.filter(func(id): return Perks.catalog()[id].tier == tier)
+		var row = options.filter(func(id): return Perks.catalog()[id].tier == tier)
 		var width = minf(147,880.0/maxi(1,row.size()))
 		# Keep the original card widths and 7px gaps; center the complete row.
 		var row_width = row.size()*width-7
@@ -3361,7 +3363,7 @@ func _draw_perk_tree() -> void:
 		for i in names.size(): label_at(names[i],Vector2(1020,286+i*29),24,PAPER,true)
 		label_at("TIER %d · ONE POINT" % d.tier,Vector2(1020,341),12,GOLD)
 		var tags = s.perk_groups.filter(func(g): return inspected_perk in Perks.GROUPS[g])
-		if inspected_perk in Perks.CORE+["bags_and_belts"]: tags.push_front("Shared")
+		if inspected_perk in Perks.CORE+["bags_and_belts",Perks.RALLY]: tags.push_front("Shared")
 		label_at(" · ".join(tags),Vector2(1020,367),11,BLUE)
 		var lines = wrapped_lines(d.effect,346,14,15)
 		for i in lines.size(): label_at(lines[i],Vector2(1020,400+i*21),14,PAPER)

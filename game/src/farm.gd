@@ -7,8 +7,12 @@ var fading_tracks = false
 
 static func layouts(ow, w) -> Dictionary:
 	if w.TOWNS.size() > 3:
+		# Overworld places preserve the generated locations array, unlike JSON object keys.
+		# Its town order is the original placement priority; do not sort these farms.
+		var town_order: Array = ow.places.keys().filter(func(id):return id in w.TOWNS)
+		if town_order.size() != w.TOWNS.size(): return {}
 		var expanded = {}; var used: Array = []
-		for id in w.TOWNS:
+		for id in town_order:
 			var place = Farmstead.layout(ow,w,id,w.config.towns[id].farm_camp,used)
 			if place.is_empty(): return {}
 			expanded[id] = place; used.append(place.position)

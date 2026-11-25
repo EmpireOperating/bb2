@@ -2,6 +2,7 @@ extends Control
 ## A real-Control modal above the retained painted world. The host owns lifetime.
 const UI=preload("res://ui_polish/style.gd")
 var host
+var load_only := false # Set by the launch host before mounting this browser.
 var rows: Array=[]
 var selected_id := "@checkpoint"
 var controls: Dictionary={}
@@ -25,9 +26,10 @@ func _ready() -> void:
  for side in ["left","right","top","bottom"]:margin.add_theme_constant_override("margin_"+side,32)
  var card:=PanelContainer.new();card.add_theme_stylebox_override("panel",UI.Press.box("binding",24,24));margin.add_child(card)
  var column:=VBoxContainer.new();column.add_theme_constant_override("separation",12);card.add_child(column)
- var heading:=Label.new();heading.text="Save & load company";UI.label(heading,28);column.add_child(heading)
+ var heading:=Label.new();heading.text="Load company" if load_only else "Save & load company";UI.label(heading,28);column.add_child(heading)
  var explanation:=Label.new();explanation.text="Named saves are kept across compatible builds. Manual checkpoint never overwrites them. CAMP only — return from battle first."
  if not host.save_library.owned_checkpoint.is_empty():explanation.text="Named saves belong to this build. The manual checkpoint never overwrites them. CAMP only — return from battle first."
+ if load_only:explanation.text="Choose a saved company to continue. Loading does not change your save files."
  explanation.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;UI.label(explanation,16,UI.MUTED);column.add_child(explanation)
  list=ItemList.new();list.size_flags_vertical=Control.SIZE_EXPAND_FILL;list.custom_minimum_size.y=170;list.add_theme_constant_override("v_separation",10);column.add_child(list)
  controls["list"]=list;list.item_selected.connect(_select)
@@ -55,11 +57,18 @@ func _ready() -> void:
  _button(footer,"refresh","Refresh",func():refresh())
  _button(footer,"folder","Open save folder",_folder)
  _button(footer,"close","Close · Esc",func():host._close_save_browser())
- refresh();name_entry.grab_focus()
+ if load_only:
+  names.hide()
+  for id in ["rename","overwrite","delete","import","cancel_import","folder"]:controls[id].hide()
+  controls.close.text="Back to title · Esc"
+ refresh()
+ if load_only:list.grab_focus()
+ else:name_entry.grab_focus()
 func _button(parent: Node, id: String, text: String, callback: Callable) -> Button:
  var button:=Button.new();button.text=text;UI.button(button,id=="create");button.custom_minimum_size.y=44;button.pressed.connect(callback);parent.add_child(button);controls[id]=button
  return button
 func _folder() -> void:
+ if load_only:return
  if not host.save_library._safe_root(true):_tell(host.save_library.last_error);return
  var error:=OS.shell_open(host.save_library.root_path)
  _tell("Save folder: "+host.save_library.root_path if error==OK else "Could not open folder. Copy this path: "+host.save_library.root_path)
@@ -92,6 +101,9 @@ func refresh(choose: String = "") -> void:
   else:summary+=" · Unavailable — "+row.error
   list.add_item(summary)
   if row.id==selected_id:selected=i
+ if load_only and not rows[selected].valid:
+  for i in rows.size():
+   if rows[i].valid:selected=i;break
  list.select(selected);_select(selected)
 func _select(index: int) -> void:
  if not pending.is_empty():return
@@ -103,7 +115,7 @@ func _select(index: int) -> void:
  if row.id!="@checkpoint" and import_source.is_empty():name_entry.text=row.name if row.valid else ""
  _update_buttons()
 func _create() -> void:
- if not pending.is_empty():return
+ if load_only or not pending.is_empty():return
  var result: Dictionary
  if import_source.is_empty():result=host.save_library.create(host.session,name_entry.text)
  else:result=host.save_library.import_checkpoint(host.session,import_source.path,name_entry.text,import_source.revision)
@@ -111,7 +123,7 @@ func _create() -> void:
  _cancel_import()
  refresh(result.row.id);_tell("Named copy saved. Manual checkpoint will never overwrite it.")
 func _choose_import() -> void:
- if not pending.is_empty():return
+ if load_only or not pending.is_empty():return
  if not host.save_library.owned_checkpoint.is_empty():
   _import_selected(ProjectSettings.globalize_path(host.save_library.owned_checkpoint));return
  if not is_instance_valid(file_dialog):
@@ -122,7 +134,7 @@ func _choose_import() -> void:
   add_child(file_dialog);file_dialog.file_selected.connect(_import_selected)
  file_dialog.popup_centered_ratio(0.8)
 func _import_selected(path: String) -> void:
- if not pending.is_empty():return
+ if load_only or not pending.is_empty():return
  var result: Dictionary=host.save_library.inspect_checkpoint(host.session,path)
  if not result.ok:_tell(result.error);return
  import_source={"path":path,"revision":result.revision}
@@ -139,7 +151,7 @@ func _update_buttons() -> void:
  var row:=_selected()
  var busy:=not pending.is_empty()
  for id in ["create","rename","overwrite","delete","load","refresh","folder","close","import","cancel_import"]:controls[id].disabled=busy
- controls.cancel_import.visible=not import_source.is_empty()
+ controls.cancel_import.visible=not load_only and not import_source.is_empty()
  controls.create.text="Create named save" if import_source.is_empty() else "Import as named save"
  name_entry.editable=not busy
  for index in list.item_count:list.set_item_selectable(index,not busy)
@@ -148,23 +160,25 @@ func _update_buttons() -> void:
   for id in ["rename","overwrite","delete"]:controls[id].disabled=row.get("id","")=="@checkpoint" or not row.get("valid",false) or not import_source.is_empty()
   if not import_source.is_empty():controls.load.disabled=true
 func _rename() -> void:
- if not pending.is_empty() or controls.rename.disabled:return
+ if load_only or not pending.is_empty() or controls.rename.disabled:return
  var row:=_selected()
  var result: Dictionary=host.save_library.rename_slot(host.session,row.id,name_entry.text,row.revision)
  if not result.ok:_tell(result.error);return
  refresh(row.id);_tell("Save renamed. Its campaign data is unchanged.")
 func _request(kind: String) -> void:
+ if load_only and kind!="load":return
  if not pending.is_empty() or not controls.has(kind) or controls[kind].disabled:return
  var row:=_selected()
  pending={"kind":kind,"row":row.duplicate(true)}
  var wording: Dictionary={"load":"Load ‘%s’? Unsaved progress will be lost. The current-build manual checkpoint and named files stay unchanged. Create a named copy of your current company first to keep unsaved progress. Use Save / F5 after loading to replace the manual checkpoint.","overwrite":"Overwrite ‘%s’ with the current company? Its previous campaign contents will be permanently replaced.","delete":"Permanently delete ‘%s’? This cannot be undone."}
- confirm_text.text=wording[kind] % row.name
+ confirm_text.text=("Load ‘%s’? Your save files will stay unchanged." if load_only else wording[kind]) % row.name
  controls.confirm.text={"load":"Load company","overwrite":"Overwrite save","delete":"Delete save"}[kind]
  confirm_panel.show();_update_buttons();controls.cancel.grab_focus()
 func _cancel() -> void:
  pending.clear();confirm_panel.hide();_update_buttons();controls.load.grab_focus()
 func _confirm() -> void:
  if pending.is_empty():return
+ if load_only and (host.save_browser!=self or pending.kind!="load"):return
  var request:=pending;pending={};confirm_panel.hide();_update_buttons()
  var row: Dictionary=request.row
  var result: Dictionary

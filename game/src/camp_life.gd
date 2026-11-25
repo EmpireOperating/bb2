@@ -1,6 +1,7 @@
 extends RefCounted
 ## One resourced recruitment process per camp occupation. No campaign RNG is consumed.
 const VERSION = 1
+const Forge = preload("res://layer_forge/rules.gd")
 const FORAGE = 6
 const STORE_LIMIT = 60
 const RECRUIT_FOOD = 8
@@ -15,7 +16,7 @@ var records: Dictionary = {}
 static func key(site: String, generation: int) -> String:
 	return "camp/%s/%d" % [site,generation]
 
-static func roll(map_seed: int, site: String, generation: int, strength: int, catalog: Dictionary, acquisition = null, policy_version: int = 3) -> Dictionary:
+static func roll(map_seed: int, site: String, generation: int, strength: int, catalog: Dictionary, acquisition = null, policy_version: int = 3, forge: bool = false) -> Dictionary:
 	var rng = RandomNumberGenerator.new()
 	rng.seed = map_seed ^ 0xC01471 ^ (((["ford","forest","ridge"].find(site)+1) if site in ["ford","forest","ridge"] else int(site.hash()&0x7fffffff))*0x1F123B) ^ (generation*0x4451)
 	var chance: int = CHANCES[clampi(strength,1,3)-1]; var draw = rng.randi_range(0,99)
@@ -27,6 +28,9 @@ static func roll(map_seed: int, site: String, generation: int, strength: int, ca
 	if acquisition != null:
 		definition = acquisition.reward(definition,catalog)
 		if policy_version < 3 and acquisition.has_method("previous_design"): definition = acquisition.previous_design(definition)
+	# Keep the exact source draw. Forge has no Named wearable collection yet;
+	# reserve the same Named arms, but do not reroll a legacy armor result.
+	if forge and catalog.get(definition,{}).get("slot") != "weapon": definition = ""
 	var out := {"chance":chance,"draw":draw,"seed":reward_seed,"definition":definition}
 	if projected: out["policy"] = policy_version
 	return out
@@ -43,7 +47,7 @@ func sync(c) -> void:
 		var camp: Dictionary = c.world.camps[site]; var k = key(site,camp.generation)
 		if not records.has(k):
 			var strength: int = c.world.config.camps[site].strength if camp.generation == 1 else 1
-			var reward = roll(c.region.get("seed",c.seed_value),site,camp.generation,strength,c.catalog,acquisition)
+			var reward = roll(c.region.get("seed",c.seed_value),site,camp.generation,strength,c.catalog,acquisition,3,Forge.enabled())
 			records[k] = {"site":site,"generation":camp.generation,"started":c.day,"last_day":c.day,"party":c.overworld.party_id(site,camp.generation),"next_party":2,"foraged":0,"trained":0,"assigned":0,"reserve":0,"recruit_spent":0,"care_spent":0,"training":{},"closed":not camp.active,"reward":reward,"resolved":false}
 			if not reward.definition.is_empty(): c.reserve_named_reward(k,reward.definition,reward.seed,c.node(site).name)
 	# A relocated wounded party may need the new occupation's resident count during paid care.
@@ -196,9 +200,9 @@ func restore(raw: Variant, cdata: Dictionary, ow, w, bands, catalog: Dictionary,
 			if not r.get("reward") is Dictionary: return false
 			var policy_version = r.reward.get("policy",1)
 			if not policy_version is int or policy_version not in [1,2,3]: return false
-			var reward = roll(region.get("seed",cdata.seed),site,generation,w.config.camps[site].strength if generation == 1 else 1,catalog,acquisition,policy_version)
+			var reward = roll(region.get("seed",cdata.seed),site,generation,w.config.camps[site].strength if generation == 1 else 1,catalog,acquisition,policy_version,Forge.enabled())
 			if r.get("reward") != reward:
-				if policy_version != 1 or acquisition == null or not acquisition.has_method("reward_before_crossbows"): return false
+				if Forge.enabled() or policy_version != 1 or acquisition == null or not acquisition.has_method("reward_before_crossbows"): return false
 				var retained: Dictionary = reward.duplicate(true)
 				retained.definition = acquisition.reward_before_crossbows(reward.definition,catalog)
 				if r.get("reward") != retained: return false

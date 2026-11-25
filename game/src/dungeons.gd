@@ -5,6 +5,8 @@ const U = preload("res://src/undead.gd")
 const Placement = preload("res://src/dungeon_placement.gd")
 const Variety = preload("res://src/dungeon_variety.gd")
 const Keys = preload("res://src/vault_keys.gd")
+const Named = preload("res://src/named_equipment.gd")
+const NamedMail = preload("res://layer_forge/named_mail.gd")
 var vault_keys = Keys.new()
 const VERSION = 6
 var rules_version = VERSION
@@ -13,6 +15,7 @@ const TITLES = {"entry":"Stairwell","hall":"Burial hall","battle":"Guard chamber
 var acquisition = null
 var support_acquisition = null
 var intrinsic_undead_enabled := false
+var forge_rewards := false
 var equipment_catalog_override: Dictionary = {}
 var sites: Dictionary = {}
 var active = ""
@@ -23,6 +26,62 @@ var previous = 0
 func enabled() -> bool:
 	return not sites.is_empty()
 
+# Only the Named-item channel changes. The seed, room, roster and supplies
+# are not rerolled, and cleared rooms remain searchable normally.
+func _project_named_rewards(site: Dictionary) -> void:
+	if not forge_rewards: return
+	for floor: Dictionary in site.floors:
+		for room: Dictionary in floor.rooms:
+			if room.reward == "": continue
+			var id: String = room.reward if acquisition == null else acquisition.reward(room.reward,equipment_catalog_override)
+			if equipment_catalog_override.get(id,{}).get("slot") != "weapon": room.reward = ""
+
+func _named_mail_room(site: Dictionary, region: Dictionary, seed_number: int, generation: int) -> Dictionary:
+	# It must first be the original selected minor-barrow finale, not a
+	# replacement draw. Of that class, one exact artifact has approved paint.
+	if not forge_rewards or not NamedMail.registered_site(region,seed_number,generation,site): return {}
+	var id: String = site.place.id
+	if not id in Variety.IDS or not Variety.small(id) or not site.get("floors") is Array or site.floors.size() != 1: return {}
+	var floor = site.floors[NamedMail.FLOOR]
+	if not floor is Dictionary or floor.get("index") != NamedMail.FLOOR or floor.get("exit") != NamedMail.ROOM or floor.get("seed") != 468635108: return {}
+	if not floor.get("rooms") is Array or floor.rooms.size() <= NamedMail.ROOM: return {}
+	var room = floor.rooms[NamedMail.ROOM]
+	if not room is Dictionary or room.get("id") != NamedMail.ROOM or room.get("kind") != "finale" or room.get("field") != "crypt_mound": return {}
+	if room.get("reward") != NamedMail.TOKEN or room.get("seed") != NamedMail.PACKET.seed: return {}
+	return room
+
+func _named_mail_reservation(room: Dictionary, source: String) -> Dictionary:
+	var catalog := equipment_catalog_override
+	if acquisition == null or acquisition.reward(room.reward,catalog) != NamedMail.PRECURSOR or catalog.get(NamedMail.PRECURSOR,{}).get("group") != "body": return {}
+	var rolled := Named.generate(NamedMail.PRECURSOR,room.seed,source,catalog)
+	var item := {"definition":NamedMail.PART,"named":rolled,"condition":0}
+	if not NamedMail.valid_packet(item,catalog): return {}
+	item.condition = int(Named.definition(item,catalog).durability)
+	var row := {"item":item,"claimed":""}
+	return row if NamedMail.valid_row(row,catalog) else {}
+
+func replay_named_mail(region: Dictionary, seed_number: int) -> Dictionary:
+	var site: Dictionary = sites.get(NamedMail.SITE,{})
+	var live := _named_mail_room(site,region,seed_number,rules_version)
+	if live.is_empty(): return {}
+	var original := Variety.make_site(self,site.seed,NamedMail.SITE,site.place,true,true)
+	var raw := _named_mail_room(original,region,seed_number,rules_version)
+	if raw.is_empty(): return {}
+	for field in ["x","y","links","roster","loot","hazard","shortcut","risk"]:
+		if live.get(field) != raw[field]: return {}
+	if live.get("resolution") != raw.resolution: return {}
+	return _named_mail_reservation(raw,site.place.name)
+
+func _reserve_named_mail(c, key: String, room: Dictionary, source: String) -> bool:
+	if key != NamedMail.KEY or not Named.valid_text(key,96) or c.combat_pending: return false
+	var row := _named_mail_reservation(room,source)
+	if row.is_empty() or not NamedMail.valid_row(row,c.catalog): return false
+	if c.named_rewards.has(key):
+		return NamedMail.valid_row(c.named_rewards[key],c.catalog) and c.named_rewards[key] == row
+	if c.named_rewards.size() >= 1000: return false
+	c.named_rewards[key] = row
+	return true
+
 func expand(c) -> bool:
 	if rules_version != 2 or c.roster_version != 1 or c.phase != "camp" or not c.encounter.is_empty() or active != "": return false
 	var additions = Variety.generate_sites(self,c)
@@ -31,14 +90,20 @@ func expand(c) -> bool:
 	# and progress are not regenerated, including the three original landmarks.
 	var keys = []
 	for site in additions.values():
+		var mail := _named_mail_room(site,c.region,c.seed_value,VERSION).duplicate()
+		_project_named_rewards(site)
 		for floor in site.floors:
 			for r in floor.rooms:
-				if r.reward == "": continue
+				var is_mail: bool = not mail.is_empty() and floor.index == NamedMail.FLOOR and r.id == NamedMail.ROOM
+				if r.reward == "" and not is_mail: continue
 				var key = reward_key(site.place.id,floor.index,r.id)
-				if c.reserve_named_reward(key,r.reward,r.seed,site.place.name).is_empty():
+				var existed: bool = c.named_rewards.has(key)
+				var reserved: bool = _reserve_named_mail(c,key,mail,site.place.name) if is_mail else not c.reserve_named_reward(key,r.reward,r.seed,site.place.name).is_empty()
+				if not reserved:
 					for added in keys: c.named_rewards.erase(added)
 					return false
-				keys.append(key)
+				if is_mail: r.reward = NamedMail.TOKEN
+				if not existed: keys.append(key)
 	sites.merge(additions); rules_version = 3
 	c.overworld.configure(spatial_region(c.region))
 	enable_keys(c)
@@ -89,6 +154,7 @@ func generate(c) -> bool:
 		var place = {"id":id,"name":NAMES[index],"kind":"dungeon","x":int(position.x),"y":int(position.y),"description":"An old burial complex held by the unquiet dead."}
 		sites[id] = make_site(seed_number,index+1,place)
 	for site in sites.values():
+		_project_named_rewards(site)
 		for floor in site.floors:
 			for room in floor.rooms:
 				if room.reward != "": c.reserve_named_reward(reward_key(site.place.id,floor.index,room.id),room.reward,room.seed,site.place.name)
@@ -208,13 +274,14 @@ func snapshot() -> Dictionary:
 	if rules_version >= 4: saved["vault_keys"] = vault_keys.snapshot()
 	return saved
 
-func restore(raw: Variant, region: Dictionary, spatial, rewards: Dictionary) -> bool:
+func restore(raw: Variant, region: Dictionary, spatial, rewards: Dictionary, campaign_seed: int = -1) -> bool:
 	if not raw is Dictionary or raw.size() != (7 if raw.get("version",0) in [4,5,6] else 6) or raw.get("version") not in [1,2,3,4,5,VERSION] or not raw.get("sites") is Dictionary or raw.sites.size() != (9 if raw.version >= 3 else 3): return false
 	if not raw.get("active") is String or (raw.active != "" and not raw.sites.has(raw.active)): return false
 	for key in ["floor","room","previous"]:
 		if not raw.get(key) is int or raw[key] < 0: return false
 	var occupied = spatial.places.values()
 	var ids = ["dungeon_0","dungeon_1","dungeon_2"]+(Variety.IDS if raw.version >= 3 else [])
+	var joined_mail := false
 	for index in ids.size():
 		var id: String = ids[index]; var extra: bool = id in Variety.IDS; var s = raw.sites.get(id)
 		if not s is Dictionary or s.size() != (8 if extra else 7) or not s.get("seed") is int or s.seed < 1 or s.seed > 2147483646 or s.get("tier") != (Variety.tier(id) if extra else index+1): return false
@@ -229,6 +296,8 @@ func restore(raw: Variant, region: Dictionary, spatial, rewards: Dictionary) -> 
 			if not s.get(key) is bool: return false
 		if extra and (s.get("discovery") not in ["","rumour","map"] or s.rumour != (s.discovery != "") or p.description != Variety.description(id,s.seed,raw.version >= 5)): return false
 		var expected = Variety.make_site(self,s.seed,id,p,raw.version >= 5,raw.version >= 6) if extra else make_site(s.seed,s.tier,p,mini(raw.version,2))
+		var mail := _named_mail_room(expected,region,campaign_seed,raw.version).duplicate()
+		_project_named_rewards(expected)
 		if not s.get("floors") is Array or s.floors.size() != expected.floors.size(): return false
 		for f in s.floors.size():
 			var floor = s.floors[f]; var original: Dictionary = expected.floors[f]
@@ -236,6 +305,20 @@ func restore(raw: Variant, region: Dictionary, spatial, rewards: Dictionary) -> 
 			for r in floor.rooms.size():
 				var current = floor.rooms[r]; var base: Dictionary = original.rooms[r]
 				if not current is Dictionary: return false
+				var is_mail := false
+				if not mail.is_empty() and f == NamedMail.FLOOR and r == NamedMail.ROOM:
+					var mail_key := reward_key(id,f,r)
+					if mail_key != NamedMail.KEY: return false
+					var token = current.get("reward")
+					if not token is String: return false
+					if token == NamedMail.TOKEN:
+						var exact := _named_mail_reservation(mail,p.name)
+						var row = rewards.get(mail_key)
+						if exact.is_empty() or not NamedMail.valid_row(row,equipment_catalog_override) or row.item != exact.item or current.get("looted") != (row.claimed != ""): return false
+						base.reward = mail.reward
+						is_mail = true
+						joined_mail = true
+					elif token != "" or rewards.has(mail_key): return false
 				var cohort: bool = current.has("support_cohort")
 				if cohort and (support_acquisition == null or not current.support_cohort is int or current.support_cohort != 1): return false
 				var cap_policy: bool = current.has("headwear_policy")
@@ -264,14 +347,18 @@ func restore(raw: Variant, region: Dictionary, spatial, rewards: Dictionary) -> 
 						if not valid_room_wear(current.wear[i],U.wear(b.units[b.player_slots()+i]),b.armor_catalog,cohort): return false
 					if current.cleared != current.wear.all(func(w): return w.hp == 0): return false
 				elif not current.roster.is_empty() and current.cleared: return false
-				if current.reward != "":
+				if current.reward != "" and not is_mail:
 					var key = reward_key(id,f,r); var reward = rewards.get(key)
 					var expected_definition: String = current.reward if acquisition == null else acquisition.reward(current.reward,equipment_catalog_override)
-					var retained_definition: String = acquisition.reward_before_crossbows(current.reward,equipment_catalog_override) if acquisition != null and acquisition.has_method("reward_before_crossbows") else expected_definition
+					var retained_definition: String = acquisition.reward_before_crossbows(current.reward,equipment_catalog_override) if not forge_rewards and acquisition != null and acquisition.has_method("reward_before_crossbows") else expected_definition
 					if not reward is Dictionary or reward.get("item",{}).get("definition") not in [expected_definition,retained_definition] or reward.item.get("named",{}).get("seed") != current.seed or reward.item.named.source != p.name: return false
 					if current.looted != (reward.get("claimed","") != ""): return false
 		var finale: Dictionary = s.floors[-1].rooms[s.floors[-1].exit]
 		if s.completed != finale.looted or (s.completed and not s.entered): return false
+	if forge_rewards:
+		for key in rewards:
+			var row = rewards[key]
+			if row is Dictionary and row.get("item") is Dictionary and row.item.get("definition") == NamedMail.PART and (not joined_mail or key != NamedMail.KEY): return false
 	if raw.active != "":
 		var site: Dictionary = raw.sites[raw.active]
 		if not site.entered or raw.floor >= site.floors.size() or raw.room >= site.floors[raw.floor].rooms.size() or raw.previous >= site.floors[raw.floor].rooms.size(): return false

@@ -5,11 +5,20 @@ const UI = preload("res://ui_polish/style.gd")
 const IronSkin = preload("res://iron_oath/skin.gd")
 const Presentation = preload("res://ui_polish/inventory_presentation.gd")
 const InventoryArt = preload("res://iron_oath/inventory_art.gd")
+const Forge = preload("res://layer_forge/outfitter.gd")
 const Equipment = preload("res://hollow_campaign/appearance.gd")
 const LootCard = preload("res://battle_report/loot_card.gd")
 const GearText = preload("res://battle_report/equipment_text.gd")
 const VaultItems = preload("res://vault_key_items/presentation.gd")
 const HEADERS := ["COMPANION","STATUS","HP","DAMAGE\nDealt","DAMAGE\nReceived","KILLS","XP"]
+# Standalone paintings already used by the Company resource header.
+const RESOURCE_ART := {
+ "crowns":["crowns",preload("res://company_town/assets/resources/crowns-32.png")],
+ "food":["rations",preload("res://company_town/assets/resources/rations-32.png")],
+ "tools":["tools",preload("res://company_town/assets/resources/repair-hammers-32.png")],
+ "medicine":["medicine",preload("res://company_town/assets/resources/medicine-painted-32.png")],
+ "ammunition":["ammunition",preload("res://company_town/assets/resources/ammunition-painted-32.png")],
+}
 var return_button: Button
 var scroll: ScrollContainer
 var content: VBoxContainer
@@ -17,6 +26,7 @@ var result_label: Label
 var mission_label: Label
 var context_label: Label
 var summary: HBoxContainer
+var resource_icons: HFlowContainer
 var resource_totals: Label
 var resource_sources: Label
 var resource_section: VBoxContainer
@@ -66,7 +76,12 @@ func _ready() -> void:
  content = VBoxContainer.new();content.size_flags_horizontal = Control.SIZE_EXPAND_FILL;content.add_theme_constant_override("separation",12);scroll.add_child(content)
  summary = HBoxContainer.new();summary.add_theme_constant_override("separation",12);content.add_child(summary)
  resource_section = _section(content)
- _label("RECOVERED RESOURCES  /  ALREADY IN COMPANY STORES",17,UI.GOLD,resource_section,true)
+ _label("RECOVERED RESOURCES",17,UI.GOLD,resource_section,true)
+ resource_icons = HFlowContainer.new();resource_icons.name = "RecoveredResourceIcons"
+ resource_icons.mouse_filter = Control.MOUSE_FILTER_IGNORE
+ resource_icons.add_theme_constant_override("h_separation",20)
+ resource_icons.add_theme_constant_override("v_separation",6)
+ resource_section.add_child(resource_icons)
  resource_totals = _label("",20,UI.TEXT,resource_section,true);resource_totals.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
  resource_sources = _label("",13,UI.MUTED,resource_section);resource_sources.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
  var company := _section(content);_label("COMPANY PERFORMANCE",17,UI.GOLD,company,true)
@@ -96,7 +111,7 @@ func _ready() -> void:
  return_button = Button.new();return_button.name = "ReturnToWorld";return_button.text = "Return to world · keep these results"
  UI.button(return_button,true);return_button.custom_minimum_size.y = 44;return_button.add_theme_font_override("font",load("res://assets/serif.ttf"));return_button.add_theme_font_size_override("font_size",19)
  footer.add_child(return_button);return_button.pressed.connect(func():return_requested.emit())
- var save_note := _label("Review only · returning saves your company. No healing, repairs or second loot claim.",12,UI.MUTED,footer)
+ var save_note := _label("Review only · Press F5 to save after returning to CAMP. No healing, repairs or second loot claim.",12,UI.MUTED,footer)
  save_note.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART;save_note.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
  resized.connect(_layout);_layout()
 func _section(parent: Node) -> VBoxContainer:
@@ -114,16 +129,8 @@ func present(session_value) -> void:
  result_label.add_theme_color_override("font_color",UI.Press.PAPER_INK if result_label.text == "VICTORY" else UI.Press.PAPER_RED)
  mission_label.text = str(_result.get("title","Company sortie"))
  context_label.text = "Day %d   ·   Round %d   ·   Settlement complete" % [_result.get("day",0),_result.get("round",0)]
- _clear(summary)
- var pending: Dictionary = _session.campaign.payment_pending
- var due: int = int(pending.get("job",{}).get("pay",0))
- payment_text = "CONTRACT PAYMENT DUE · %d crowns" % due if due > 0 else "MISSION PAYMENT RECEIVED · %d crowns" % _result.get("pay",0)
- for stat in [["CONTRACT PAYMENT DUE" if due > 0 else "MISSION PAYMENT RECEIVED",str(due if due > 0 else _result.get("pay",0)),UI.GOLD],["FALLEN",str(_result.get("fallen",0)),UI.DANGER],["WOUNDED",str(_result.get("wounded",0)),UI.TEXT]]:
-  var box := _section(summary);_label(stat[0],12,UI.MUTED,box);_label(stat[1],24,stat[2],box,true)
- var resources: Dictionary = _result.get("resource_spoils",{})
- resource_totals.text = _resource_text(resources.get("total",{}))
- resource_sources.text = "Pockets: %s\nCamp personal stash: %s\nExisting camp stores: %s · Carried rations recovered: %d\nImmediate spoils, not contract payment. Food and stolen camp crowns credit the small personal-supply targets." % [_resource_text(resources.get("pockets",{})),_resource_text(resources.get("camp_stash",{})),_resource_text(resources.get("camp_stores",{})),resources.get("carried_food",0)]
- if not resources.get("materials",{}).is_empty():resource_sources.text += "\nRecovered trade cargo: "+_session.campaign.economy.freight.describe(resources.materials)
+ _present_pay_and_casualties()
+ _present_resources()
  _prepare_art()
  _clear(table);_table_line(HEADERS,true)
  for row: Dictionary in _result.get("rows",[]):
@@ -144,8 +151,77 @@ func _prepare_art() -> void:
   var id := int(row.get("id",-1))
   var unit: Dictionary = _session.preview_unit(id)
   _portraits[id] = EngravedActors.portrait(unit)
+func _present_pay_and_casualties() -> void:
+ _clear(summary)
+ var pending: Dictionary = _session.campaign.payment_pending
+ var due: int = int(pending.get("job",{}).get("pay",0))
+ var paid: int = int(_result.get("pay",0))
+ var payment := PackedStringArray()
+ if paid > 0 or due > 0:
+  var box := _section(summary)
+  if paid > 0:
+   _label("MISSION PAYMENT RECEIVED",12,UI.MUTED,box)
+   _resource_gain(box,"crowns",paid)
+   payment.append("MISSION PAYMENT RECEIVED · %d crowns" % paid)
+  if due > 0:
+   _label("CONTRACT PAYMENT DUE",12,UI.MUTED,box)
+   _label("%d crowns" % due,24,UI.GOLD,box,true)
+   payment.append("CONTRACT PAYMENT DUE · %d crowns" % due)
+ payment_text = "NO MISSION PAYMENT" if payment.is_empty() else "\n".join(payment)
+ for stat in [["FALLEN",str(_result.get("fallen",0)),UI.DANGER],["WOUNDED",str(_result.get("wounded",0)),UI.TEXT]]:
+  var box := _section(summary);_label(stat[0],12,UI.MUTED,box);_label(stat[1],24,stat[2],box,true)
+
+func _present_resources() -> void:
+ var resources: Dictionary = _result.get("resource_spoils",{})
+ var ammo: Dictionary = _result.get("ammunition",{})
+ var gains: Dictionary = resources.get("total",{}).duplicate()
+ # `total` already includes the component sources. Ammunition's award is
+ # the gross recovery, separate from automatic refill and stock remaining.
+ gains["ammunition"] = ammo.get("looted",0)
+ _clear(resource_icons)
+ for key: String in RESOURCE_ART:
+  var amount: int = int(gains.get(key,0))
+  if amount > 0:_resource_gain(resource_icons,key,amount)
+ resource_icons.visible = resource_icons.get_child_count() > 0
+ resource_totals.visible = not resource_icons.visible
+ resource_totals.text = _resource_text(gains) if resource_icons.visible else "No crowns or supplies recovered."
+ var lines := PackedStringArray(["Gained this battle · not total company stock or contract payment."])
+ var sources := PackedStringArray()
+ for source in [["pockets","Pockets"],["camp_stash","Camp personal stash"],["camp_stores","Camp stores"]]:
+  var text := _resource_text(resources.get(source[0],{}))
+  if not text.is_empty():sources.append("%s: %s" % [source[1],text])
+ var carried: int = int(resources.get("carried_food",0))
+ if carried > 0:sources.append("Carried rations: +%d" % carried)
+ if not sources.is_empty():lines.append("Sources · "+"   |   ".join(sources))
+ if gains.ammunition > 0 and ammo.get("spent",0) > 0:lines.append("Automatic refill used %d ammunition." % ammo.spent)
+ if not resources.get("materials",{}).is_empty():lines.append("Recovered trade cargo: "+_session.campaign.economy.freight.describe(resources.materials))
+ resource_sources.text = "\n".join(lines)
+
+func _resource_amount(key: String, amount: int) -> String:
+ return "+%d %s" % [amount,RESOURCE_ART[key][0]]
+
 func _resource_text(amounts: Dictionary) -> String:
- return "+%d crowns · +%d rations · +%d tools · +%d medicine" % [amounts.get("crowns",0),amounts.get("food",0),amounts.get("tools",0),amounts.get("medicine",0)]
+ var parts := PackedStringArray()
+ for key: String in RESOURCE_ART:
+  var amount: int = int(amounts.get(key,0))
+  if amount > 0:parts.append(_resource_amount(key,amount))
+ return " · ".join(parts)
+
+func _resource_gain(parent: Control, key: String, amount: int) -> void:
+ var row := HBoxContainer.new()
+ row.mouse_filter = Control.MOUSE_FILTER_IGNORE
+ row.add_theme_constant_override("separation",8)
+ parent.add_child(row)
+ var icon := TextureRect.new()
+ icon.texture = RESOURCE_ART[key][1]
+ icon.custom_minimum_size = Vector2(28,28)
+ icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+ icon.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+ icon.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
+ icon.mouse_filter = Control.MOUSE_FILTER_IGNORE
+ row.add_child(icon);UI.Press.mount_icon(icon,true)
+ var value := _label(_resource_amount(key,amount),18,UI.TEXT,row,true)
+ value.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 func _present_loot() -> void:
  var previous := selected_uid
  _clear(loot_grid);loot_buttons.clear();_loot_rows.clear()
@@ -154,7 +230,10 @@ func _present_loot() -> void:
   var uid := str(row.get("item",""))
   var item: Dictionary = c.items.get(uid,{})
   var d: Dictionary = c.item_def(uid)
-  var icon := InventoryArt.item_icon(item,c.catalog,null,"")
+  var definition: String = item.get("definition","")
+  # Match Company's Forge stash and compatible-layer list. Standalone artwork
+  # belongs to the owned item, not a preview actor or the text on the receipt.
+  var icon := Forge.item_icon(definition,d) if Forge.active() and Forge.is_piece(definition,d) else InventoryArt.item_icon(item,c.catalog)
   var card = LootCard.new();card.name = "Recovered_"+uid;card.mode = "slot";card.custom_minimum_size = Vector2(150,110)
   loot_grid.add_child(card)
   var tier := Equipment.item_tier(item,c.catalog)
@@ -169,7 +248,7 @@ func _present_loot() -> void:
   card.annotate(tier,condition_text);card.set_meta("icon_source",icon)
   card.tooltip_text = identity
   card.pressed.connect(_select_loot.bind(uid));loot_buttons[uid] = card
-  _loot_rows.append({"uid":uid,"name":item_name,"source":row.get("source",""),"tier":tier,"condition":condition,"maximum":maximum,"art_status":"No artwork" if icon.is_empty() else "Exact inventory artwork","art_key":icon.get("art_key","")})
+  _loot_rows.append({"uid":uid,"name":item_name,"source":row.get("source",""),"tier":tier,"condition":condition,"maximum":maximum,"art_status":"No artwork" if icon.is_empty() else "Exact inventory artwork","art_key":icon.get("art_key",icon.get("path",""))})
  # Only explicit settlement receipts enter recovered loot, never old prose or
  # the complete historical keyring. Key IDs remain separate from equipment UIDs.
  for id in _result.get("vault_keys",[]):

@@ -116,8 +116,18 @@ func release(c, won: bool) -> void:
 func stock(c, town: String, kind: String) -> int:
 	return c.world.towns[town].stock if kind == "food" else towns[town].goods[kind].stock
 
+func grain_ration_relief(c, town: String) -> int:
+	# Cash value of excess milling input per ration bundle, not extra inventory.
+	# Capping at a sixth of the base keeps relief below the 25% resale spread
+	# even if the company changes the grain stock between ration trades.
+	var excess := stock(c,town,"grain") - 2*TARGET["grain"]
+	var base: int = c.world.towns[town].base_price
+	return clampi(excess,0,base/6)
+
 func unit_price(c, town: String, kind: String, amount: int, demand_target: int = -1) -> float:
-	if kind == "food": return (c.world.towns[town].base_price+ceil(maxf(0.0,120.0-amount)/3.0))/24.0
+	if kind == "food":
+		var base: int = c.world.towns[town].base_price - grain_ration_relief(c,town)
+		return (base+ceil(maxf(0.0,120.0-amount)/3.0))/24.0
 	var target: int=demand_target if demand_target>=0 else TARGET[kind]+industry.needed(c,town,kind)
 	return float(BASE[kind])/BUNDLE[kind]*clampf(2.0*target/(amount+target),0.5,2.5)
 

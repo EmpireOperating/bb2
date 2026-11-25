@@ -363,7 +363,7 @@
     "name": "Mace Mastery",
     "tier": 4,
     "reference": "https://github.com/Battle-Modders/mod-reforged/blob/ae90bbfbd05aa0e767e37d658f17e3b57ea2273e/mod_reforged/hooks/skills/perks/perk_mastery_mace.nut",
-    "effect": "Mace attacks and Staggering Blow cost 25% less fatigue. No AP or accuracy bonus; Staggering Blow keeps its -10 accuracy. Applies to clubs and flanged maces. Adapted mastery: no stun guarantee or Bear Down."
+    "effect": "Mace attacks cost 25% less fatigue. In current battles, a landed Stun always takes effect on an eligible target. This does not improve accuracy or bypass immunity. In legacy battles, the fatigue discount also applies to Staggering Blow."
   },
   "push_the_advantage": {
     "name": "Push the Advantage",
@@ -412,5 +412,11 @@
     "tier": 1,
     "effect": "Two additional carried slots. Carried items have no maximum fatigue or initiative penalty, except two-handed weapons. Equipped gear retains its normal load.",
     "reference": "V"
+  },
+  "rally_the_troops": {
+    "name": "Rally the Troops",
+    "tier": 3,
+    "reference": "V",
+    "effect": "Learn an untargeted rally (5 AP, 25 base fatigue). Other allies within four hexes can regain one morale step up to Steady, or return from Fleeing to Wavering. The caster adds 40% of their effective Resolve; allies not fleeing lose 10 chance per hex. A successful recipient and the caster cannot rally or be rallied again until their activation ends. Cannot interrupt a company withdrawal."
   }
 }

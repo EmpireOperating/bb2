@@ -3,8 +3,33 @@ const MANUAL_CHECKPOINT := "user://single-body-camp.json"
 func _create_save_library():
  return preload("res://named_saves/library.gd").new(MANUAL_CHECKPOINT)
 func _create_session():
- checkpoint_path=MANUAL_CHECKPOINT
+ checkpoint_path = MANUAL_CHECKPOINT
  return load("res://outdoor_fields/session.gd").new()
+
+func _can_save_and_quit(view) -> bool:
+ return (
+  is_instance_valid(view) and view == world
+  and session != null and view.campaign == session.campaign
+  and view._surface() == "sheet:menu" and view.save_surface_available()
+  and not _saving and not _loading_failed
+ )
+
+func _save_and_quit(view) -> void:
+ if not _can_save_and_quit(view):return
+ # Reuse the validated atomic checkpoint and its normal Retry/error overlay.
+ if view.write_save():get_tree().quit()
+
+func _settle_arrived_contract_payment(view) -> void:
+ if view != world or session == null or view.campaign != session.campaign:return
+ var c = session.campaign
+ if c.payment_pending.is_empty():return
+ var job: Dictionary = c.payment_pending.job
+ var ow = c.overworld
+ # Cheap physical gate before the settlement's full snapshot validation.
+ if c.location != job.origin or not ow.paused or not ow.path.is_empty() or ow.destination != "" or ow.rest_left != 0 or ow.position != ow.places.get(job.origin):return
+ if session.collect_contract_payment(c.payment_pending):
+  view.tell("Received %d contract crowns from %s." % [job.pay,c.node(job.origin).name])
+  view.refresh()
 func _ready() -> void:
  _load_music_settings()
  super._ready()

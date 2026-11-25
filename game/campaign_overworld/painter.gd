@@ -71,6 +71,7 @@ var explored_snapshot: Dictionary = {}
 var knowledge_position = Vector2.INF
 var knowledge_sight = -1.0
 var fog_base = PackedByteArray()
+var farm_marker_opacities: Dictionary = {}
 var relief_grid = PackedFloat32Array()
 var forest_grid = PackedFloat32Array()
 var forest_noise = FastNoiseLite.new()
@@ -290,14 +291,36 @@ func update_knowledge() -> void:
  fog_material.set_shader_parameter("party_uv",(c.overworld.position-ORIGIN)/MAP_SIZE)
  fog_material.set_shader_parameter("vision_radius",c.overworld.sight())
  for item in stamps+painted_bridges: item.knowledge=knowledge(item.bounds)
- # Town artwork alone may appear progressively beneath the unchanged opaque
- # fog child. Keep .knowledge (and therefore marker/label/hit geometry) on
- # the original whole-bounds gate; never extend this exception to scenery.
+ # Fixed town/farm art may emerge behind the unchanged opaque fog child.
+ # Whole-footprint knowledge still owns hit geometry. Reports alone may
+ # show a miniature in annotations, never farm scenery beneath the fog.
+ farm_marker_opacities.clear()
  for stamp in stamps:
-  if stamp.place.get("kind","") != "town": continue
-  var anchor = Vector2(stamp.place.x,stamp.place.y)
-  stamp["paint_knowledge"] = maxi(stamp.knowledge,1) if ow.discovered(anchor) else 0
+  match stamp.place.get("kind",""):
+   "town":
+    var anchor = Vector2(stamp.place.x,stamp.place.y)
+    stamp["paint_knowledge"] = maxi(stamp.knowledge,1) if ow.discovered(anchor) else 0
+   "farm":
+    var anchor: Vector2 = stamp.foot - Vector2(0,8)
+    var discovered: bool = ow.discovered(anchor)
+    stamp["paint_knowledge"] = maxi(stamp.knowledge,1) if discovered else 0
+    if discovered and stamp.knowledge==0:
+     farm_marker_opacities[stamp.place.id] = 1.0-smoothstep(0.10,0.52,_farm_reveal_fraction(stamp.rect))
  queue_redraw()
+
+func farm_marker_opacity(id: String) -> float:
+ return float(farm_marker_opacities.get(id,1.0))
+
+func _farm_reveal_fraction(rect: Rect2) -> float:
+ # Blue is already eroded by one neighbour ring, matching the mask that
+ # permits any visible paint. This is only a blend weight, not discovery.
+ var start = Vector2i(((rect.position-ORIGIN)/CELL).floor()).clamp(Vector2i.ZERO,Vector2i(W,H))
+ var end = Vector2i(((rect.end-ORIGIN)/CELL).ceil()).clamp(Vector2i.ZERO,Vector2i(W,H))
+ var revealed := 0
+ for y in range(start.y,end.y):
+  for x in range(start.x,end.x):
+   if fog_base[(y*W+x)*4+2]>0:revealed+=1
+ return float(revealed)/maxi(1,(end.x-start.x)*(end.y-start.y))
 func rect_discovered(rect: Rect2) -> bool:
  if not Rect2(ORIGIN,MAP_SIZE).encloses(rect): return false
  var start = Vector2i(((rect.position-ORIGIN)/CELL).floor())

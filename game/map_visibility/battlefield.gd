@@ -21,8 +21,6 @@ var _hidden_obstacle_meshes: Array[MeshInstance3D] = []
 var _recoil_beat: Dictionary = {}
 const FallPlane = preload("res://engraved_battle/fall_plane.gd")
 const UndeadFall = preload("res://painted_merge/hostile_motion/undead_fall.gd")
-const HumanFall = preload("res://engraved_battle/human_fall.gd")
-const HumanCollapseArt = preload("res://engraved_people/human_collapse_art.gd")
 # One noninteractive projection per witnessed casualty, owned by this field.
 var _corpses: Dictionary = {}
 
@@ -133,7 +131,8 @@ var _hook_drag:Dictionary={}
 func impact_pending() -> bool:
  if not _impact_beats.is_empty() or not _hook_drag.is_empty():return true
  if battle.result.is_empty():return false
- # Keep the existing terminal delay for visible, still-animating fitted falls.
+ # Keep the existing terminal delay for visible, still-animating undead falls.
+ # The approved human pose settles within the existing result beat.
  # Settled bodies must never hold the battle open.
  for fall in _corpses.values():
   if not fall is FallPlane and fall.age<_fall_duration(fall) and fall.is_visible_in_tree() and battle.tile_visible(0,fall.get_meta("fall_cell")):return true
@@ -589,6 +588,7 @@ func _advance_hook_drag(delta:float) -> void:
 func refresh() -> void:
  if not built or _hold_impact_refresh():return
  _advance_corpses(0.0)
+ if terrain!=null and terrain.has_method("refresh_terrain_work"):terrain.refresh_terrain_work(battle)
  if terrain!=null and battle.visibility_enabled:
   if fog==null:
    fog=load("res://map_visibility/fog.gd").new();fog.configure(battle,terrain)
@@ -773,20 +773,32 @@ func _process(delta: float) -> void:
  if observe_enabled and observe_time>=0.25:observe_time=0;_write_observation()
 
 func _draw_unit_labels() -> void:
- var font := ThemeDB.fallback_font
  var shown:=presented_unit_ids()
  for id in _pending_vitals:
-  if id not in shown and _held_casualty(id) and actors.has(id) and actors[id].visible:shown.append(id)
+  if id not in shown and _held_casualty(id):shown.append(id)
  for id in shown:
-  var u: Dictionary=_display_hit_vitals(id)
-  var foot: Vector3=actors[id].global_position if actors.has(id) else to_global(tile_world(battle.pos(u)))
-  var point := unit_label_point(foot)
-  var rect := Rect2(point+Vector2(-28,-5),Vector2(56,9))
-  units_overlay.draw_rect(rect,Color(0.04,0.04,0.04,0.9))
-  units_overlay.draw_rect(Rect2(rect.position+Vector2.ONE,Vector2(54*float(u.hp)/u.max_hp,4)),Color("659eaf") if u.side==0 else Color("b74938"))
-  var armor: float=float(u.armor+u.padding)/maxf(1,float(u.max_armor+u.max_padding))
-  units_overlay.draw_rect(Rect2(rect.position+Vector2(1,6),Vector2(54*armor,2)),Color("c0bba6"))
-  if id in [controller.selected,controller.target]:units_overlay.draw_string(font,point+Vector2(-28,-9),u.name,HORIZONTAL_ALIGNMENT_LEFT,-1,13,Color("f3e5c6"))
+  for row in _unit_vital_rows(id):
+   units_overlay.draw_rect(row.track.grow(0.5),Color("13120f"))
+   units_overlay.draw_rect(row.track,Color("48433b"))
+   if row.fill.has_area():units_overlay.draw_rect(row.fill,row.tint)
+
+func _unit_vital_rows(id: int) -> Array[Dictionary]:
+ var actor:Node3D=actors.get(id)
+ if not is_instance_valid(actor) or not actor.is_visible_in_tree():return []
+ if not battle.unit_visible(0,id) and not _held_casualty(id):return []
+ var u:Dictionary=_display_hit_vitals(id)
+ var origin:=unit_label_point(actor.global_position).round()+Vector2(-21,-7)
+ var rows:Array[Dictionary]=[]
+ # Always head, pooled body (including padding), then health. The same palette
+ # and empty tracks apply to both sides; allegiance is carried by the field.
+ for vital in [[u.helmet,u.max_helmet,Color("b5d4e5")],
+   [u.armor+u.padding,u.max_armor+u.max_padding,Color("d7b97b")],
+   [u.hp,u.max_hp,Color("df6458")]]:
+  var track:=Rect2(origin+Vector2(0,rows.size()*5),Vector2(42,4))
+  var fill:=track
+  fill.size.x*=clampf(float(vital[0])/float(vital[1]),0.0,1.0) if vital[1]>0 else 0.0
+  rows.append({"track":track,"fill":fill,"tint":vital[2]})
+ return rows
 
 func pick_unit(screen: Vector2) -> int:
  var id: int=super.pick_unit(screen)
@@ -814,7 +826,7 @@ func _update_hud() -> void:
  if id<0 or id>=battle.units.size() or battle.units[id].side!=0:return
  var u: Dictionary=battle.units[id]
  var active: bool=battle.can_act(id) and battle.side==0 and battle.fighting(u)
- unit_label.text="%s · %s\nHP %d/%d · AP %d · Initiative %d\nArmor %d · Head %d\nFatigue %d/%d · Morale %d\n%s"%[u.name,String(u.weapon).capitalize(),u.hp,u.max_hp,u.ap,battle.initiative_value(u),u.armor+u.padding,u.helmet,u.fatigue,battle.fatigue_max(u),u.morale,"Shieldwall" if u.guard else u.get("stance","")]
+ unit_label.text="%s · %s\nHP %d/%d · AP %d · Initiative %d\nArmor %d · Head %d\nFatigue %d/%d · Morale %s\n%s"%[u.name,String(u.weapon).capitalize(),u.hp,u.max_hp,u.ap,battle.initiative_value(u),u.armor+u.padding,u.helmet,u.fatigue,battle.fatigue_max(u),preload("res://morale_flags/readout.gd").current_name(battle,id),"Shieldwall" if u.guard else u.get("stance","")]
  carry_choice.clear()
  var selected_index=0
  for slot in battle.Arsenal.bag_slots(u):
@@ -901,7 +913,7 @@ func _feedback(event: Dictionary) -> void:
      beat.melee_uid=uid
     # Copy only the fields read by the on-board vitals painter.
     var u:Dictionary=battle.units[id]
-    beat.vitals={"hp":u.hp,"max_hp":u.max_hp,"armor":u.armor,"max_armor":u.max_armor,"padding":u.padding,"max_padding":u.max_padding,"side":u.side,"name":u.name}
+    beat.vitals={"hp":u.hp,"max_hp":u.max_hp,"helmet":u.helmet,"max_helmet":u.max_helmet,"armor":u.armor,"max_armor":u.max_armor,"padding":u.padding,"max_padding":u.max_padding,"side":u.side,"name":u.name}
   if not _impact_beats.is_empty():
    if _impact_beats.size()<MAX_IMPACT_BEATS:
     _impact_beats.back().journal=battle.public_events(0).duplicate()
@@ -950,7 +962,7 @@ func _feedback(event: Dictionary) -> void:
   if received.has("bow_uid"):received.shortbow_cue="body"
   if disclosed and received.has("bow_uid"):received.arrow_head=bool(event.get("head",false))
   received.fall=int(battle.units[id].hp)<=0
- var safe := {"id":id,"kind":kind,"text":{"hit":"HIT","miss":"MISS","shield":"SHIELD HIT","stagger":"STAGGER","death":"FALLEN","morale":"MORALE","route":"ROUTING"}.get(kind,"")}
+ var safe := {"id":id,"kind":kind,"text":{"hit":"HIT","miss":"MISS","shield":"SHIELD HIT","stagger":"STAGGER","stun":"STUNNED","death":"FALLEN","morale":"MORALE","route":"ROUTING"}.get(kind,"")}
  if kind=="hit" and disclosed:
   safe["hp"]=int(event.hp);safe["armor"]=int(event.armor)+int(event.get("padding",0));safe["layer"]=String(event.layer)
   safe.text="-%d ARMOUR / -%d HP%s"%[safe.armor,safe.hp," · HEAD" if event.get("head",false) else ""]
@@ -1000,7 +1012,8 @@ func _show_final_fall(beat:Dictionary) -> void:
  if unit.get("faction","")=="undead" or not str(unit.get("undead_kind","")).is_empty():
   _show_undead_fall(dst,sprite,id,cell)
   return
- if _try_human_fall(dst,sprite,id,cell):return
+ # The approved in-hex collapse consumes the mounted composite directly,
+ # preserving its actual Layer Forge layers and mirror at witnessed contact.
  var fall:=FallPlane.new()
  fall.set_meta("fall_actor",id);fall.set_meta("fall_cell",cell)
  var ring:=PackedVector3Array()
@@ -1022,27 +1035,8 @@ func _show_undead_fall(dst:Node3D,sprite:Sprite3D,id:int,cell:Vector2i) -> void:
  fall.position=center;fall.set_meta("undead_fall_actor",id);fall.set_meta("fall_cell",cell)
  add_child(fall);_corpses[id]=fall;dst.hide()
 
-func _try_human_fall(dst:Node3D,sprite:Sprite3D,id:int,cell:Vector2i) -> bool:
- if not dst.has_method("fitted_collapse_recipe"):return false
- var recipe:Dictionary=dst.fitted_collapse_recipe()
- if recipe.is_empty():return false
- var center:=tile_world(cell)
- var ring:PackedVector3Array=Layout.corners(cell,float(battle.tiles[battle.key(cell)].height),0.91)
- var inset:=INF
- for i in ring.size():
-  var mid:Vector3=(ring[i]+ring[(i+1)%ring.size()])*0.5-center
-  inset=minf(inset,Vector2(mid.x,mid.z).length())
- var fall:=HumanFall.new()
- if not fall.start(sprite,HumanCollapseArt.frames(recipe),inset):fall.free();return false
- fall.position=center
- fall.set_meta("human_fall_actor",id);fall.set_meta("fall_cell",cell)
- add_child(fall);fall.advance(0.0)
- _corpses[id]=fall;dst.hide()
- return true
-
 func _fall_duration(fall:Node3D) -> float:
  if fall is FallPlane:return FallPlane.RETIRE
- if fall is HumanFall:return HumanFall.RETIRE
  return UndeadFall.RETIRE
 
 func _advance_corpses(delta:float) -> void:

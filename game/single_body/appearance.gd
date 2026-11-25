@@ -15,7 +15,8 @@ func _road_kit(unit:Dictionary,catalog:Dictionary,identity:String)->Dictionary:
   var rec:Dictionary=_record(key,slots[key],catalog);sig[key]=rec
   var layer:Dictionary=fitted.signature.get(key,{})
   if layer.get("visible",false):
-   rec.visible=true;rec.painted=true;rec.asset=People.DATA.data.bindings[rec.definition].part
+   rec.visible=true;rec.painted=true
+   rec.asset=layer.get("asset","") if str(rec.definition).begins_with("forge:") else People.DATA.data.bindings[rec.definition].part
   else:
    var why:String="Not visible in the worn kit."
    for note:Dictionary in fitted.issues:

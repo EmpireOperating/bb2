@@ -8,6 +8,8 @@ static func profile(parts: Array, catalog: Dictionary) -> Dictionary:
  var out: Dictionary = {}
  for field in EFFECTS: out[field] = 0
  for part in parts:
+  # The immutable instance roll may still contain legacy utility bonuses.
+  if catalog.get(part.definition,{}).get("lab_outfit",false): continue
   var definition: Dictionary = Named.definition(part,catalog)
   var broken = int(part.get("maximum",definition.get("durability",0))) > 0 and int(part.get("condition",0)) <= 0
   for field in EFFECTS:

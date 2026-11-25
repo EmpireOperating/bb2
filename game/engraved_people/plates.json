@@ -1,5 +1,6 @@
 {
  "cuts": {
+  "head/t1-kettle-named": [180, 39, 778, 2097, 123, 62],
   "torso/linen": [
    182,
    130,
@@ -3371,6 +3372,11 @@
    "stance": "single"
   },
   "hammer": {
+   "slot": "weapon",
+   "part": "weapon/head-hammer46",
+   "stance": "single"
+  },
+  "mason_hammer": {
    "slot": "weapon",
    "part": "weapon/head-hammer46",
    "stance": "single"

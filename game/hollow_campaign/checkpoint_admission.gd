@@ -3,7 +3,7 @@ extends RefCounted
 const Rarity = preload("res://hollow_campaign/rarity.gd")
 # Derived battle/preview authority is rebuilt, never checkpoint input. Reject
 # forged capacity/effect projections instead of silently retaining or dropping them.
-const RUNTIME_ONLY = ["capacity","hollow_capacity","hollow_systems","equipment_slots","inventory_effects","inventory_equipment_base"]
+const RUNTIME_ONLY = ["capacity","hollow_capacity","hollow_systems","equipment_slots","inventory_effects","inventory_equipment_base","forge_named_mail_uid"]
 static func no_runtime_authority(record: Dictionary) -> bool:
  for key in RUNTIME_ONLY:
   if record.has(key): return false

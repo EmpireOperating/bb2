@@ -1,6 +1,8 @@
 # The Ashen Company (BB2)
 
-Private source backup of the current **Living Roads** playtest, with the procedural Forest/Ridge layouts and outdoor daylight art. The full editable Godot project is in [`game/`](game/project.godot), including GDScript, scenes, campaign data, fonts, art, animation, sound effects, **The Road Unseen** (travel), and **Iron Cadence** (battle).
+An in-development tactical mercenary game. This repository contains the editable Godot project for the **Layer Forge** playtest: GDScript, scenes, campaign data, art, animation, and audio.
+
+Open [`game/project.godot`](game/project.godot) to play or inspect the source.
 
 ## Restore and play
 
@@ -19,8 +21,8 @@ godot --headless --path game --import
 godot --path game
 ```
 
-## What is (and isn't) backed up
+## Scope and notices
 
-This is a source snapshot of the active playtest, not the previous prototypes' Git history or the original packed Linux distribution. Player saves, settings, QA campaign captures, logs, and generated Godot caches are not included. The engine is downloaded separately. Older documents below `game/` describe historical prototypes and are not the launch instructions for this snapshot.
+This is an editable playtest snapshot, not a standalone binary or an open-source license grant. The current snapshot excludes player saves, settings, logs, generated Godot caches, and the experimental world-history generator. Godot is downloaded separately. Product runtime assets and their existing notices are included; see [`game/assets/FONT-LICENSE.txt`](game/assets/FONT-LICENSE.txt) for the bundled fonts.
 
-See [snapshot provenance and verification](verification/SNAPSHOT.md). This private backup is not a public release or a grant of rights to redistribute bundled assets.
+See [Layer Forge verification](verification/LAYER-FORGE.md) for the current snapshot, and [Living Roads provenance](verification/SNAPSHOT.md) for the preceding snapshot. Older documents in `game/` describe historical prototypes and are not launch instructions.

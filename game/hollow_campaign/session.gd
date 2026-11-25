@@ -9,6 +9,20 @@ func preview_unit(sid: int) -> Dictionary:
  return unit
 func equip(sid: int, uid: String, slot: String) -> bool:
  return _success() if campaign.equip(sid,uid,slot) else _fail("Physical fitting refused; unchanged.")
+func fit_body_layer(sid: int, layer: String, uid: String) -> bool:
+ if not campaign.armor_lab_enabled(): return _fail("Body layers require the Armor Lab profile.")
+ var preview: Dictionary = campaign.component_preview(sid,"body",layer,uid)
+ if not preview.ok: return _fail(preview.reason)
+ return _success() if campaign.fit_component(sid,"body",layer,uid) else _fail("Physical fitting refused; unchanged.")
+func fit_forge_layer(sid: int, group: String, layer: String, uid: String) -> bool:
+ if not campaign.forge_enabled(): return _fail("Layer fitting requires the Forge profile.")
+ var preview: Dictionary = campaign.component_preview(sid,group,layer,uid)
+ if not preview.ok: return _fail(preview.reason)
+ return _success() if campaign.fit_component(sid,group,layer,uid) else _fail("Physical fitting refused; unchanged.")
+func fit_forge_set(sid: int, group: String, uid: String) -> bool:
+ var preview: Dictionary = campaign.forge_set_preview(sid,group,uid)
+ if not preview.ok: return _fail(preview.reason)
+ return _success() if campaign.fit_forge_set(sid,group,uid) else _fail("Set change refused; unchanged.")
 func unequip(sid: int, slot: String) -> bool:
  return _success() if campaign.unequip(sid,slot) else _fail("Physical removal refused; unchanged.")
 func move_equipment(sid: int, uid: String, source: String, target: String) -> bool:
@@ -18,7 +32,7 @@ func move_equipment(sid: int, uid: String, source: String, target: String) -> bo
 func slot_rows(sid: int) -> Array:
  if sid < 0 or sid >= campaign.soldiers.size(): return []
  var out := []
- for slot in campaign.VISIBLE_SLOTS:
+ for slot in campaign.visible_equipment_slots():
   var uid: String = campaign.slot_uid(campaign.soldiers[sid],slot)
   var item: Dictionary = campaign.items.get(uid,{})
   var d: Dictionary = campaign.item_def(uid)

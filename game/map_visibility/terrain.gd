@@ -5,8 +5,62 @@ const BIN_SIZE := 2.0
 var _floor_bins: Dictionary = {}
 var _road_bins: Dictionary = {}
 var mask_stats: Dictionary = {}
+var _draw_terrain_work := false
+var _work := {}
+var _intact_mount_tiles := {}
+
+func build(battle) -> void:
+ _work.clear()
+ _intact_mount_tiles.clear()
+ if _draw_terrain_work:
+  var authored:Dictionary=battle.get_meta("authored_map",{}).get("tiles",{})
+  for cell:Vector2i in battle.terrain_work_cells():
+   var key:String=battle.key(cell)
+   if not authored.has(key):continue
+   var original:Dictionary=authored[key]
+   # Mount the authored silhouette regardless of private damage, then reveal
+   # only witnessed clearances. Presentation never consumes remaining HP.
+   if battle.tiles.get(key)!=original:_intact_mount_tiles[key]=original
+   _work[key]={"cell":cell,"kind":battle.terrain_work_at(cell).kind,"last_tile":original}
+ super.build(battle)
+ _tiles=battle.tiles
+ _intact_mount_tiles.clear()
+ # Stage low, non-occluding debris before the Fog collector binds meshes.
+ for object:Dictionary in occluders:
+  if not _work.has(object.tile):continue
+  var row:Dictionary=_work[object.tile]
+  row.object=object
+  row.remnant=_work_remnant(object.tile,row.kind)
+  row.remnant.hide()
+
+func _work_remnant(_key:String,_kind:String) -> Node3D:
+ return null # Implemented only by opted-in terrain painters.
+
+func work_tile_keys() -> Array:
+ return _work.keys()
+
+func remembered_work_tile(key:String,fallback:Dictionary) -> Dictionary:
+ return _work[key].last_tile if _work.has(key) else fallback
+
+func refresh_terrain_work(battle) -> void:
+ for key:String in _work:
+  var row:Dictionary=_work[key]
+  if not row.has("object") or row.get("cleared",false) or not battle.terrain_work_clear_known(0,row.cell):continue
+  row.last_tile=battle.tiles[key].duplicate()
+  row.object.root.hide()
+  faded_occluders.erase(row.object.root)
+  occluders.erase(row.object)
+  row.remnant.show()
+  row.cleared=true
+  _terrain_work_retired(battle,row)
+
+func _terrain_work_retired(_battle,_row:Dictionary) -> void:
+ pass
 
 func _prepare_masks(keys: Array) -> void:
+ if not _intact_mount_tiles.is_empty():
+  _tiles=_tiles.duplicate()
+  _tiles.merge(_intact_mount_tiles,true)
  super._prepare_masks(keys)
  _floor_bins.clear(); _road_bins.clear()
  mask_stats = {"queries":0,"floor_candidates":0,"road_candidates":0,"floor_max":0,"road_max":0}

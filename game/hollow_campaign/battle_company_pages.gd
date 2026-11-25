@@ -36,7 +36,7 @@ func action(id: String) -> void:
  elif id == "person_perks":workspace.open_section("perks")
  elif id.begins_with("perk_select_"):
   var choice := id.trim_prefix("perk_select_")
-  if choice in workspace._person().perk_pool:perk_choice = choice
+  if _ui_perk_cards.has(choice):perk_choice = choice
  elif id.begins_with("perk_group_"):
   var group := id.trim_prefix("perk_group_")
   if group == "All" or group in workspace._person().perk_groups:perk_filter = group

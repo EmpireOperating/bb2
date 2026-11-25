@@ -65,13 +65,17 @@ func _draw_journal(app) -> void:
  var rows=[["news_journal","Reports & directions"],["vault_journal","Expeditions"],["trade","Trade & roads"],["politics","Councils"],["farm_report","Farms"],["guard_report","Town guards"],["iron_records","Company records"]]
  for i in rows.size(): app.button(rows[i][0],rows[i][1],Rect2(72,164+i*71,292,48))
  app.label_at("Company chronicle",Vector2(406,194),26,UI.TEXT,true)
+ var offset := 0
+ if c.active.get("kind")=="courier":
+  app.label_fit(c.contract_direction(),Vector2(406,228),932,18,UI.GOLD)
+  offset=28
  var known=c.journal.filter(app.known_news)
  var pages=maxi(1,ceili(known.size()/6.0)); journal_page=clampi(journal_page,0,pages-1)
  var end=maxi(0,known.size()-journal_page*6)
  var recent=known.slice(maxi(0,end-6),end)
  for i in recent.size():
   var lines=app.wrapped_lines(str(recent[i]),932,16,2)
-  for j in lines.size(): app.label_at(lines[j],Vector2(406,239+i*67+j*22),16,UI.TEXT if i==recent.size()-1 else UI.MUTED)
+  for j in lines.size(): app.label_at(lines[j],Vector2(406,239+offset+i*67+j*22),16,UI.TEXT if i==recent.size()-1 else UI.MUTED)
  app.button("iron_log_prev","Newer",Rect2(406,672,150,42),journal_page>0)
  app.button("iron_log_next","Older",Rect2(572,672,150,42),journal_page+1<pages)
  app.label_at("ROAD ACTIVITY",Vector2(72,747),12,UI.GOLD)

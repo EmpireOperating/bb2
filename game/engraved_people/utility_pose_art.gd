@@ -1,6 +1,7 @@
 extends RefCounted
 ## Paint only. No action state, timing, equip changes, rotation, or offsets.
 const RingboundMaul = preload("res://engraved_people/ringbound_maul.gd")
+const Wear = preload("res://engraved_people/named_wear.gd")
 const PATH := "res://engraved_people/utility-cuts"
 const FRAME_COUNT := 2
 const HELD_FRAME := 1
@@ -101,14 +102,15 @@ static func compose(r:Dictionary, kind:String, frame:int, plates:Dictionary, pla
   if cut==r.weapon and RingboundMaul.stamp(im,r,lane if paint.has(cut) else "carry",frame if paint.has(cut) else 0,shift+upper):continue
   if paint.has(cut):
    var id:int=int(paint[cut])
-   if id>=0:_paint(im,_data.cuts[str(id)],shift+upper)
+   if id>=0 and not Wear.stamp(im,cut,shift+upper,r,"utility/%s/%d" % [lane,1 if both else frame]):
+    _paint(im,_data.cuts[str(id)],shift+upper)
   else:
    var stamp_shift:=shift+head_shift if cut in [face,r.head,r.head_wear] else shift+upper
    stamp.call(im,cut,stamp_shift)
   if cut==r.weapon and seated:_paint(im,_data.cuts[str(int(paint["$bolt"]))],shift)
  im.generate_mipmaps()
  var texture:=ImageTexture.create_from_image(im)
- texture.set_meta("engraved_head",{"face":r.face,"head":r.head,"head_wear":r.head_wear})
+ texture.set_meta("engraved_head",Wear.head_recipe(r))
  texture.set_meta("utility_pose",{"kind":"guard" if both else kind,"spearwall":both,"frame":frame,"frames":FRAME_COUNT,"held":HELD_FRAME,"weapon":r.weapon,"shield":r.shield})
  if not r.shield.is_empty():
   var plate:Array=plates.cuts[r.shield]
